@@ -1,11 +1,11 @@
 {
-  "name": "Incidencias L4",
-  "short_name": "Incidencias L4",
+  "name": "Incidències L4",
+  "short_name": "Incidències L4",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#101010",
   "theme_color": "#181818",
-  "description": "Consulta y gestión de incidencias de trenes L4",
+  "description": "Consulta i gestió d’incidències dels trens de l’L4",
   "orientation": "portrait-primary",
   "prefer_related_applications": false,
   "icons": [
@@ -19,5 +19,6 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ]
+  ],
+  "lang": "ca"
 }
