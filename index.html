@@ -32,6 +32,11 @@
 
   <title>Incidències L4 - TMB</title>
   <link rel="manifest" href="manifest.json">
+  <style>
+    html:not(.access-approved) flutter-view { visibility: hidden !important; }
+    #access-status { position: fixed; inset: 0; z-index: 2147483647; display: grid; place-content: center; padding: 24px; background: #101010; color: white; font: 16px sans-serif; text-align: center; }
+    .access-approved #access-status { display: none; }
+  </style>
 </head>
 <body>
   <!--
@@ -42,7 +47,12 @@
     For more details:
     * https://docs.flutter.dev/platform-integration/web/initialization
   -->
-  <script src="flutter_bootstrap.js" async></script>
+  <div id="access-status" role="status">
+    <p id="access-message">Comprovant el teu accés…</p>
+    <button id="access-retry" hidden>Tornar-ho a provar</button>
+    <noscript>Cal activar JavaScript per comprovar l’accés.</noscript>
+  </div>
+  <script type="module" src="access-entry.js"></script>
 </body>
 </html>
 
