@@ -101304,7 +101304,7 @@ q=A.hJ(A.b([A.hj(h,h,B.rw,h,h,new A.aB6(a),h,h,"Tornar a l\u2019inici")],s),h,h,
 p=i.gatt()
 o=i.d
 o===$&&A.a()
-o=A.b([B.ag3,B.bY,A.aLT(B.R7,new A.aY(B.qM,A.b8("Data de servei: "+B.c.dL(B.f.j(A.c3(o)),2,"0")+"/"+B.c.dL(B.f.j(A.b7(o)),2,"0")+"/"+A.b_(o),h,h,h,h,h,h,h),h),i.gavt()),B.ee,B.agD,B.bD],s)
+o=A.b([B.ag3,B.bY,A.aLT(B.R7,new A.aY(B.qM,A.b8("Data de servei: "+B.c.dL(B.f.j(A.c3(o)),2,"0")+"/"+B.c.dL(B.f.j(A.b7(o)),2,"0")+"/"+A.b_(o),h,h,h,h,h,h,h),h),i.gavt()),B.ee,B.bD],s)
 if(i.z)o.push(B.a6k)
 else{n=i.y
 if(n!=null){n=A.b8(n,h,h,h,h,h,h,h)
@@ -101451,7 +101451,7 @@ else{n=A.b8("Trinitat Nova \u2192 La Pau: "+A.aNz(k),p,p,p,B.IU,p,p,p)
 r=A.b8("La Pau \u2192 Trinitat Nova: "+A.aNz(j),p,p,p,B.IU,p,p,p)
 if(l==null)q="Hora de sortida de les cap\xe7aleres pendent de confirmar."
 else{q=l==="23:00"?"":" de l\u2019endem\xe0"
-q="Sortida de les cap\xe7aleres: "+l+q+"."}B.b.S(s,A.b([new A.aY(B.qK,n,p),new A.aY(B.qK,r,p),A.b8(q,p,p,p,B.fq,p,p,p),B.agz],o))}return A.aa8(new A.aY(B.cJ,A.cR(s,B.b6,B.C,B.R),p),p,p,p)}}
+q="Sortida de les cap\xe7aleres: "+l+q+"."}B.b.S(s,A.b([new A.aY(B.qK,n,p),new A.aY(B.qK,r,p)],o))}return A.aa8(new A.aY(B.cJ,A.cR(s,B.b6,B.C,B.R),p),p,p,p)}}
 A.Tm.prototype={
 M(a){var s,r,q,p=null,o="deposito",n=this.c,m=J.d(n.h(0,"movimiento"),"SORTIDA"),l=m?B.a4M:B.a4O,k=n.h(0,"direccion"),j=k==null?p:B.c.dz(J.c4(k))
 if(j==null)j=""
