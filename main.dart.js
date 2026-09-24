@@ -102314,11 +102314,11 @@ case 6:case 1:return A.x(q,r)
 case 2:return A.w(o.at(-1),r)}})
 return A.y($async$pk,r)},
 M(a){var s,r,q=this,p=null,o=A.hJ(p,B.cF,p,p,p,A.b8("AFEGIR TREN \xb7 "+q.a.c,p,p,p,p,p,p,p)),n=A.oD(p,B.bL,!1,p,!0,B.F,p,A.tS(),q.d,p,p,p,p,p,2,B.RR,B.a6,!0,p,!0,p,!1,p,B.bT,p,p,p,p,B.abb,p,p,p,1,p,p,!1,"\u2022",p,p,p,p,p,!1,p,p,!1,p,!0,p,B.cl,p,p,p,p,p,p,p,p,p,p,p,p,!0,B.aq,p,B.cV,p,p,p,p),m=q.r?p:q.gaeq(),l=q.f
-m=A.aLT(B.Rk,new A.aY(B.iT,A.b8(l==null?"SELECCIONAR FOTO":l.b,p,p,p,p,p,p,p),p),m)
+m=A.aLT(B.Rk,new A.aY(B.iT,A.b8("SELECCIONAR FOTO",p,p,p,p,p,p,p),p),m)
 l=A.oD(p,B.bL,!1,p,!0,B.F,p,A.tS(),q.e,p,p,p,p,p,2,B.RQ,B.a6,!0,p,!0,p,!1,p,B.bT,p,p,p,p,p,p,p,p,8,3,p,!1,"\u2022",p,p,p,p,p,!1,p,p,!1,p,!0,p,B.cl,p,p,p,p,p,p,p,p,p,p,p,p,!0,B.aq,p,B.cV,p,p,p,p)
 s=q.r
 r=s?p:q.gag4()
-return A.fQ(o,p,A.EA(A.cR(A.b([n,B.kJ,m,B.kJ,A.aLT(B.Rk,new A.aY(B.iT,A.b8("FER FOTO",p,p,p,p,p,p,p),p),q.r?p:q.gdeaCamera()),B.kJ,l,B.or,A.aLf(s?B.Io:B.Rh,B.a6l,r)],t.p),B.bp,B.C,B.R),B.cl,p),p)}}
+return A.fQ(o,p,A.EA(A.cR(A.b([n,B.kJ,m,B.kJ,A.aLT(B.Rk,new A.aY(B.iT,A.b8("FER FOTO",p,p,p,p,p,p,p),p),q.r?p:q.gdeaCamera()),...(q.f==null?[]:[B.kJ,A.fx(p,A.aQB(q.f.c,new A.azO(),B.dL,B.ij,new A.azP()),B.v,p,p,p,p,220,p,p,p,p,p)]),B.kJ,l,B.or,A.aLf(s?B.Io:B.Rh,B.a6l,r)],t.p),B.bp,B.C,B.R),B.cl,p),p)}}
 A.aCN.prototype={
 $0(){this.a.f=this.b},
 $S:0}
