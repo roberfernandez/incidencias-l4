@@ -26,7 +26,7 @@ async function initialize() {
       unavailable,
       start: () => {
         const script = document.createElement('script');
-        script.src = 'flutter_bootstrap.js?v=horaris-text-v1';
+        script.src = 'flutter_bootstrap.js?v=train-camera-v1';
         script.async = true;
         script.onerror = () => { gate.suspend(); unavailable(); };
         document.body.append(script);
