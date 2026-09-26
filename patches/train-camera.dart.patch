@@ -29,7 +29,7 @@
 +            const SizedBox(height: 18),
 +            OutlinedButton.icon(
 +              onPressed: guardando ? null : () => _elegirImagen(ImageSource.camera),
-+              icon: const Icon(Icons.photo_library),
++              icon: const Icon(Icons.camera_alt),
 +              label: const Padding(
 +                padding: EdgeInsets.symmetric(vertical: 14),
 +                child: Text('FER FOTO'),
