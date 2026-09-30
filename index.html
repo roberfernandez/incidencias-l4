@@ -38,10 +38,15 @@
     .access-approved #access-status { display: none; }
   </style>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <link rel="stylesheet" href="tmb-return.css">
 </head>
 <body>
-  <header class="tmb-return"><a href="https://roberfernandez.github.io/tmb-agent/">← TMB Agent</a></header>
+  <a class="tmb-home" href="https://roberfernandez.github.io/tmb-agent/" aria-label="Tornar a TMB Agent" title="Tornar a TMB Agent"><img src="https://roberfernandez.github.io/tmb-agent/assets/icons/tmb-agent-192.png" alt=""></a>
+  <style>
+    html,body{margin:0;width:100%;height:100%;overflow:hidden}
+    #flutter_host{position:absolute;inset:0;overflow:hidden}
+    .tmb-home{position:fixed;z-index:1100;top:max(10px,env(safe-area-inset-top,0px));left:max(14px,env(safe-area-inset-left,0px));width:38px;height:38px;display:grid;place-items:center;border-radius:10px}
+    .tmb-home img{width:32px;height:32px;border-radius:8px;object-fit:cover}
+  </style>
   <div id="flutter_host"></div>
   <!--
     You can customize the "flutter_bootstrap.js" script.
