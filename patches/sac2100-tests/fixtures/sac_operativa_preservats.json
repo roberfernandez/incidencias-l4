@@ -1,0 +1,508 @@
+{
+  "procedimiento_tren_stop_rearme": {
+    "text": "SAC 23 · Confirma variant. No abaixis cap tèrmic genèric.\n\nFont: L4 Avaries tècniques, pàg. 44, 64.",
+    "question": false,
+    "yes": null,
+    "no": null,
+    "warning": null,
+    "image": null,
+    "images": [],
+    "options": [
+      [
+        "2100 original",
+        "sac23_original"
+      ],
+      [
+        "2100 remodelat",
+        "sac23_remodelat"
+      ],
+      [
+        "No identificat",
+        "sac_pendent"
+      ]
+    ]
+  },
+  "sac17_pendent": {
+    "text": "SAC 17 · Suspensió pneumàtica\n\nProcediment pendent d’incorporar. Identifica el cotxe i la informació del DISPLAY i comunica el cas al CCM/Portacotxeres. No s’assigna una maniobra automàtica.",
+    "question": false,
+    "yes": null,
+    "no": null,
+    "warning": null,
+    "image": null,
+    "images": [],
+    "options": []
+  },
+  "sac18_pendent": {
+    "text": "SAC 18 · Aire condicionat\n\nProcediment pendent d’incorporar. Identifica el cotxe i la informació del DISPLAY i comunica el cas al CCM/Portacotxeres. No s’assigna una maniobra automàtica.",
+    "question": false,
+    "yes": null,
+    "no": null,
+    "warning": null,
+    "image": null,
+    "images": [],
+    "options": []
+  },
+  "sac25": {
+    "text": "SAC 25 · Avaria megafonia\n\nQuin símptoma presenta?\n\nFont: L4 Avaries tècniques, pàg. 46–48.",
+    "question": false,
+    "yes": null,
+    "no": null,
+    "warning": null,
+    "image": null,
+    "images": [],
+    "options": [
+      [
+        "No funciona el bip-bip de portes",
+        "sac25_iris"
+      ],
+      [
+        "No anuncia correctament les estacions",
+        "sac25_edp"
+      ],
+      [
+        "No identificat",
+        "sac_pendent"
+      ]
+    ]
+  },
+  "sac26": {
+    "text": "SAC 26 · Avaria caixa negra\n\nProva de miralls: estacionat a l’andana i amb selecció de portes, inicia la marxa amb el mirall obert. Aproximadament a 5 km/h s’ha de tancar.\n\nLa prova comprova que el tren reconeix que ja no està a velocitat 0; no és la fuita pneumàtica del SAC 09.\n\nFont: L4 Avaries tècniques, pàg. 49.\n\nEl mirall es tanca aproximadament als 5 km/h?\n\nFont: L4 Avaries tècniques, pàg. 49.",
+    "question": false,
+    "yes": null,
+    "no": null,
+    "warning": null,
+    "image": null,
+    "images": [],
+    "options": [
+      [
+        "ES TANCA A ~5 KM/H",
+        "sac26_cesis"
+      ],
+      [
+        "NO ES TANCA",
+        "sac26_retirada"
+      ]
+    ]
+  },
+  "sac27": {
+    "text": "SAC 27 · Avaria Agate Link\n\nQuin comportament addicional observes? No es fa reset de bateries de manera habitual: una RIOM afectada pot influir en la PMA.\n\nFont: L4 Avaries tècniques, pàg. 50.",
+    "question": false,
+    "yes": null,
+    "no": null,
+    "warning": null,
+    "image": null,
+    "images": [],
+    "options": [
+      [
+        "DISPLAY congelat",
+        "sac27_display"
+      ],
+      [
+        "El tren no tracciona",
+        "sac27_traccio"
+      ],
+      [
+        "DISPLAY marca pèrdua RIOM",
+        "sac27_riom"
+      ],
+      [
+        "RIOM afecta PMA / equips desconnectats",
+        "sac27_pma"
+      ],
+      [
+        "No identificat",
+        "sac_pendent"
+      ]
+    ]
+  },
+  "sac28_pendent": {
+    "text": "SAC 28 · Absència d’enllumenat\n\nProcediment pendent d’incorporar. Identifica el cotxe i la informació del DISPLAY i comunica el cas al CCM/Portacotxeres. No s’assigna una maniobra automàtica.",
+    "question": false,
+    "yes": null,
+    "no": null,
+    "warning": null,
+    "image": null,
+    "images": [],
+    "options": []
+  },
+  "sac29_pendent": {
+    "text": "SAC 29 · Unitat seccionada\n\nProcediment pendent d’incorporar. Identifica el cotxe i la informació del DISPLAY i comunica el cas al CCM/Portacotxeres. No s’assigna una maniobra automàtica.",
+    "question": false,
+    "yes": null,
+    "no": null,
+    "warning": null,
+    "image": null,
+    "images": [],
+    "options": []
+  },
+  "sac20": {
+    "text": "SAC 20 · Visualitza el compressor afectat al DISPLAY. A l’armari de tèrmics de qualsevol testera, prem «rearme tèrmic compressor»; la reposició és independent del compressor afectat.\n\nFont: L4 Avaries tècniques, pàg. 41.\n\nHa reposat i has comprovat el funcionament correcte?\n\nFont: L4 Avaries tècniques, pàg. 41.",
+    "question": false,
+    "yes": null,
+    "no": null,
+    "warning": null,
+    "image": "manual/s2100/sac_20/rearme-compressor.png",
+    "images": [],
+    "options": [
+      [
+        "HA REPOSAT",
+        "sac_resultat_confirmat"
+      ],
+      [
+        "NO REPOSA",
+        "sac20_verificar"
+      ]
+    ]
+  },
+  "sac20_verificar": {
+    "text": "Si no reposa, comprova funcionament real dels compressors observant l’evolució de TDP: pot haver-hi fallada de comunicació. Contacta Portacotxeres i valora la situació; no assumeixis compressor aturat només per l’avís.\n\nFont: L4 Avaries tècniques, pàg. 41.",
+    "question": false,
+    "yes": null,
+    "no": null,
+    "warning": null,
+    "image": "manual/s2100/sac_21/manometre-tdp.png",
+    "images": [],
+    "options": []
+  },
+  "sac21": {
+    "text": "SAC 21 · Comprova pressió real de canonada general (òptima 8–11 kg/cm² segons fitxa) i evolució de l’alarma durant la càrrega.\n\nFont: L4 Avaries tècniques, pàg. 42.",
+    "question": false,
+    "yes": null,
+    "no": null,
+    "warning": null,
+    "image": "manual/s2100/sac_21/manometre-tdp.png",
+    "images": [],
+    "options": [
+      [
+        "Puntual / intermitent",
+        "sac21_intermitent"
+      ],
+      [
+        "Fixa durant tota la càrrega",
+        "sac21_fixa"
+      ],
+      [
+        "No puc determinar-ho",
+        "sac_pendent"
+      ]
+    ]
+  },
+  "sac21_intermitent": {
+    "text": "Pot aparèixer amb pressió insuficient i normalitzar en arribar a la desitjada. Monitoritza l’agulla del manòmetre i parla amb Portacotxeres. No s’ha confirmat recuperació només per seleccionar aquest cas.\n\nFont: L4 Avaries tècniques, pàg. 42.",
+    "question": false,
+    "yes": null,
+    "no": null,
+    "warning": null,
+    "image": null,
+    "images": [
+      [
+        "manual/s2100/sac_21/manometre-tdp.png",
+        "Manòmetre: pressió real",
+        42,
+        "S2100 · variant no diferenciada a la fitxa",
+        []
+      ]
+    ],
+    "options": []
+  },
+  "sac21_fixa": {
+    "text": "Compressor que no treballa o manca de pressió. Parla amb Portacotxeres i valora retirada/canvi. El manual contempla un sol compressor fins a retirar, vigilant pressió; no és autorització automàtica de continuïtat.\n\nFont: L4 Avaries tècniques, pàg. 42.",
+    "question": false,
+    "yes": null,
+    "no": null,
+    "warning": null,
+    "image": null,
+    "images": [],
+    "options": []
+  },
+  "sac23_original": {
+    "text": "La fitxa indica que al 2100 original no afecta la conducció. Si persisteix el símptoma, cal identificar una altra causa; no aplicar la seqüència del remodelat.\n\nFont: L4 Avaries tècniques, pàg. 44.",
+    "question": false,
+    "yes": null,
+    "no": null,
+    "warning": null,
+    "image": null,
+    "images": [],
+    "options": []
+  },
+  "sac23_remodelat": {
+    "text": "Rearma amb TR de l’IRIS o amb el polsador verd de rearme a la part inferior de l’armari. El pilot també pot indicar IRIS sense alimentació.\n\nFont: L4 Avaries tècniques, pàg. 44, 64.\n\nS’ha resolt el símptoma després de l’actuació?\n\nFont: L4 Avaries tècniques, pàg. 44, 64.",
+    "question": false,
+    "yes": null,
+    "no": null,
+    "warning": null,
+    "image": "manual/s2100/sac_23/remodelat-armari-tren-stop.png",
+    "images": [
+      [
+        "manual/s2100/sac_23/remodelat-pilot.png",
+        "Pilot Tren Stop del pupitre",
+        64,
+        "S2100 remodelat · només en aquesta variant",
+        []
+      ]
+    ],
+    "options": [
+      [
+        "HA REARMAT",
+        "sac_resultat_confirmat"
+      ],
+      [
+        "NO REARMA",
+        "sac23_anullar"
+      ]
+    ]
+  },
+  "sac23_anullar": {
+    "text": "Si no rearma, la fitxa identifica el polsador vermell d’anul·lació Tren Stop. Confirma l’element i coordina amb CCM; no és un tèrmic genèric.\n\nFont: L4 Avaries tècniques, pàg. 44, 64.\n\nS’ha resolt el símptoma mantenint registrada l’anul·lació de Tren Stop?\n\nFont: L4 Avaries tècniques, pàg. 44, 64.",
+    "question": false,
+    "yes": null,
+    "no": null,
+    "warning": "Tren Stop anul·lat: conserva aquesta condició i les indicacions del CCM.",
+    "image": "manual/s2100/sac_23/remodelat-rearme-anullacio.png",
+    "images": [],
+    "options": [
+      [
+        "RESOLT AMB TREN STOP ANUL·LAT",
+        "sac_resultat_confirmat"
+      ],
+      [
+        "NO RESOLT",
+        "sac_pendent"
+      ]
+    ]
+  },
+  "sac25_iris_ko": {
+    "text": "IRIS KO: també falla la megafonia. Desallotja i comunica la incidència al CCM.\n\nFont: L4 Avaries tècniques, pàg. 47.",
+    "question": false,
+    "yes": null,
+    "no": null,
+    "warning": null,
+    "image": null,
+    "images": [],
+    "options": []
+  },
+  "sac25_canvi": {
+    "text": "Si únicament falla el bip-bip, es pot anar amb passatge a canvi de motors utilitzant el sistema auxiliar. Valora amb CCM desallotjar si provoca molt retard a la línia.\n\nFont: L4 Avaries tècniques, pàg. 47.",
+    "question": false,
+    "yes": null,
+    "no": null,
+    "warning": null,
+    "image": null,
+    "images": [],
+    "options": []
+  },
+  "sac25_edp": {
+    "text": "Quin equip EDP cal recuperar?\n\nFont: L4 Avaries tècniques, pàg. 48.",
+    "question": false,
+    "yes": null,
+    "no": null,
+    "warning": null,
+    "image": null,
+    "images": [],
+    "options": [
+      [
+        "MA1",
+        "sac25_edp_ma1"
+      ],
+      [
+        "MA2",
+        "sac25_edp_ma2"
+      ],
+      [
+        "No identificat",
+        "sac_pendent"
+      ]
+    ]
+  },
+  "sac25_edp_ma1": {
+    "text": "Atura manualment l’equip de detecció de posició mantenint polsat fins que s’apagui ON. Torna a encendre’l polsant marxa.\n\nFont: L4 Avaries tècniques, pàg. 48.\n\nUn cop recuperat l’equip, torna a anunciar correctament?\n\nFont: L4 Avaries tècniques, pàg. 48.",
+    "question": false,
+    "yes": null,
+    "no": null,
+    "warning": null,
+    "image": "manual/s2100/sac_25/equip-posicio-ma1.png",
+    "images": [],
+    "options": [
+      [
+        "ANUNCIS CORRECTES",
+        "sac_resultat_confirmat"
+      ],
+      [
+        "CONTINUA LA FALLADA",
+        "sac_pendent"
+      ]
+    ]
+  },
+  "sac25_edp_ma2": {
+    "text": "Tira el tèrmic EDP i deixa’l baixat 2/3 estacions. Recupera’l amb el tren parat/estacionat. La detecció automàtica es pot recuperar a Trinitat Nova, Urquinaona i La Pau.\n\nFont: L4 Avaries tècniques, pàg. 48.\n\nUn cop recuperat l’equip, torna a anunciar correctament?\n\nFont: L4 Avaries tècniques, pàg. 48.",
+    "question": false,
+    "yes": null,
+    "no": null,
+    "warning": null,
+    "image": "manual/s2100/sac_25/termic-edp-ma2.png",
+    "images": [],
+    "options": [
+      [
+        "ANUNCIS CORRECTES",
+        "sac_resultat_confirmat"
+      ],
+      [
+        "CONTINUA LA FALLADA",
+        "sac_pendent"
+      ]
+    ]
+  },
+  "sac26_cesis": {
+    "text": "L’avaria no sembla real. Tira/rearma el tèrmic CESIS per normalitzar l’alarma.\n\nFont: L4 Avaries tècniques, pàg. 49.\n\nS’ha normalitzat l’alarma?\n\nFont: L4 Avaries tècniques, pàg. 49.",
+    "question": false,
+    "yes": null,
+    "no": null,
+    "warning": null,
+    "image": null,
+    "images": [],
+    "options": [
+      [
+        "ALARMA NORMALITZADA",
+        "sac_resultat_confirmat"
+      ],
+      [
+        "CONTINUA L’ALARMA",
+        "sac_pendent"
+      ]
+    ]
+  },
+  "sac26_retirada": {
+    "text": "Possible fallada de detecció de velocitat 0: no es garanteixen les seguretats de portes lligades a tren parat. Desallotja i retira el tren.\n\nFont: L4 Avaries tècniques, pàg. 49.",
+    "question": false,
+    "yes": null,
+    "no": null,
+    "warning": null,
+    "image": null,
+    "images": [],
+    "options": []
+  },
+  "sac27_display": {
+    "text": "Tira i rearma el tèrmic del DISPLAY.\n\nFont: L4 Avaries tècniques, pàg. 50.\n\nEl DISPLAY torna a respondre correctament?\n\nFont: L4 Avaries tècniques, pàg. 50.",
+    "question": false,
+    "yes": null,
+    "no": null,
+    "warning": null,
+    "image": null,
+    "images": [],
+    "options": [
+      [
+        "DISPLAY RECUPERAT",
+        "sac_resultat_confirmat"
+      ],
+      [
+        "CONTINUA CONGELAT",
+        "sac_pendent"
+      ]
+    ]
+  },
+  "sac27_traccio": {
+    "text": "Possible RIOM núm. 1. La fitxa indica provar anul·lació de llaç i prova de tracció, seguida de desallotjament i retirada. La fitxa no precisa aquí quin llaç: confirma la maniobra concreta amb CCM/Portacotxeres abans d’actuar. No es dona una anul·lació genèrica automàtica.\n\nFont: L4 Avaries tècniques, pàg. 50.",
+    "question": false,
+    "yes": null,
+    "no": null,
+    "warning": null,
+    "image": null,
+    "images": [],
+    "options": [
+      [
+        "Maniobra confirmada i prova realitzada",
+        "sac27_retirada"
+      ],
+      [
+        "Pendent de concreció CCM",
+        "sac_pendent"
+      ]
+    ]
+  },
+  "sac27_riom": {
+    "text": "Observa la tensió i comprova si el tren tracciona i desfrena. Comunica el resultat a CCM; la fitxa indica desallotjar i composició a retirada.\n\nFont: L4 Avaries tècniques, pàg. 50.",
+    "question": false,
+    "yes": null,
+    "no": null,
+    "warning": null,
+    "image": null,
+    "images": [],
+    "options": [
+      [
+        "TRACCIONA I DESFRENA · RETIRADA",
+        "sac27_retirada"
+      ],
+      [
+        "NO TRACCIONA O NO DESFRENA · INFORMAR CCM",
+        "sac27_retirada"
+      ]
+    ]
+  },
+  "sac27_retirada": {
+    "text": "Desallotja i coordina composició a retirada. Una resposta a la prova no elimina aquesta conseqüència de la fitxa.\n\nFont: L4 Avaries tècniques, pàg. 50.",
+    "question": false,
+    "yes": null,
+    "no": null,
+    "warning": null,
+    "image": null,
+    "images": [],
+    "options": []
+  },
+  "sac27_pma": {
+    "text": "Possible desconnexió d’equips per RIOM: connecta mitjançant PMA. No substitueixis aquesta actuació per un reset de bateries.\n\nFont: L4 Avaries tècniques, pàg. 50.\n\nS’han reconnectat els equips i comprovat el funcionament?\n\nFont: L4 Avaries tècniques, pàg. 50.",
+    "question": false,
+    "yes": null,
+    "no": null,
+    "warning": null,
+    "image": "manual/s2100/connexio/bateries-pma.png",
+    "images": [],
+    "options": [
+      [
+        "EQUIPS RECUPERATS",
+        "sac_resultat_confirmat"
+      ],
+      [
+        "NO RECUPERATS",
+        "sac_pendent"
+      ]
+    ]
+  },
+  "sac25_iris": {
+    "text": "Tira i rearma el tèrmic IRIS per reiniciar l’equip.\n\nFont: L4 Avaries tècniques, pàg. 47; aplicació a comandament de portes segons criteri operatiu confirmat.\n\nSi cal tancar portes, pots fer servir la controla: el tancament és independent d’IRIS.\n\nCostat d’andana seleccionat. Prem el clàxon de la controla abans de tancar.\n\nSolució amb CONTROLAS AUXILIARS:\n\nSi el tren no obre o tanca portes des dels comandaments del pupitre principal, utilitza la botonera lateral.\n\n1. Introdueix la clau de capçalera al bombí lateral.\n2. Obre la tapa metàl·lica per alliberar els polsadors auxiliars.\n3. Executa l’obertura, el bip-bip o el tancament local des de la controla.\n\nFont: L4 Avaries tècniques, pàg. 25.\n\nComprova també la megafonia del tren i el tancament de portes. Selecciona el resultat conjunt; usar controla no substitueix la prova de megafonia.",
+    "question": false,
+    "yes": null,
+    "no": null,
+    "warning": null,
+    "image": "manual/s2100/sac_25/termic-iris.png",
+    "images": [
+      [
+        "manual/s2100/sac_07/controla-claxon.png",
+        "Controla lateral: clàxon abans de tancar",
+        25,
+        "S2100 · variant no diferenciada a la fitxa",
+        []
+      ],
+      [
+        "manual/s2100/sac_07/botonera-portes.png",
+        "Botonera de portes: selecció de costat",
+        25,
+        "S2100 · variant no diferenciada a la fitxa",
+        []
+      ]
+    ],
+    "options": [
+      [
+        "BIP-BIP I MEGAFONIA OK",
+        "sac_resultat_confirmat"
+      ],
+      [
+        "NOMÉS FALLA EL BIP-BIP",
+        "sac25_canvi"
+      ],
+      [
+        "TAMBÉ FALLA LA MEGAFONIA",
+        "sac25_iris_ko"
+      ]
+    ]
+  }
+}

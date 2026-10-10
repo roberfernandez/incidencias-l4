@@ -26,7 +26,7 @@ async function initialize() {
       unavailable,
       start: () => {
         const script = document.createElement('script');
-        script.src = 'flutter_bootstrap.js?v=train-photo-preview-v1';
+        script.src = 'flutter_bootstrap.js?v=sac2100-panel-v1';
         script.async = true;
         script.onerror = () => { gate.suspend(); unavailable(); };
         document.body.append(script);

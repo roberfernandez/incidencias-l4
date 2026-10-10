@@ -1,0 +1,3634 @@
+--- a/lib/main.dart
++++ b/lib/main.dart
+@@ -1,4 +1,6 @@
+-﻿import 'package:flutter/material.dart';
++import 'imatge_manual_protegida.dart';
++import 'sac2100_screen.dart';
++import 'package:flutter/material.dart';
+ import 'package:flutter_localizations/flutter_localizations.dart';
+ import 'package:image_picker/image_picker.dart';
+ import 'package:supabase_flutter/supabase_flutter.dart';
+@@ -709,6 +711,8 @@
+       _sesiones.putIfAbsent(inicio, () => SesionDiagnostico(inicio));
+ 
+   void _volverInicio() {
++    // Home abandons the current S2100 incident; Back keeps normal navigation.
++    _sesiones.clear();
+     final inicio = ModalRoute.of(context);
+     Navigator.of(context).popUntil((route) => route == inicio);
+   }
+@@ -725,7 +729,7 @@
+         elevation: 0,
+         actions: [
+           IconButton(
+-            tooltip: 'Tornar a selecci� de material',
++            tooltip: 'Tornar a selecció de material',
+             icon: const Icon(Icons.home_rounded),
+             onPressed: () => Navigator.pop(context),
+           ),
+@@ -772,8 +776,8 @@
+                           context,
+                           MaterialPageRoute(
+                             builder: (_) => DiagnosticoInteractivoScreen(
+-                              pasoInicialId: 'inicio_no_desfrena',
+-                              sesion: _sesion('inicio_no_desfrena'),
++                              pasoInicialId: 'sac_bahaste_identificada',
++                              sesion: _sesion('sac_bahaste_identificada'),
+                               volverInicio: _volverInicio,
+                               pasos: ramaNoDesfrenaS2100,
+                               causasPorRama: causasPorRama,
+@@ -800,8 +804,8 @@
+                           context,
+                           MaterialPageRoute(
+                             builder: (_) => DiagnosticoInteractivoScreen(
+-                              pasoInicialId: 'inicio_no_tracciona',
+-                              sesion: _sesion('inicio_no_tracciona'),
++                              pasoInicialId: 'sac_pedet_identificada',
++                              sesion: _sesion('sac_pedet_identificada'),
+                               volverInicio: _volverInicio,
+                               pasos: ramaNoDesfrenaS2100,
+                               causasPorRama: causasPorRama,
+@@ -816,6 +820,29 @@
+                 ],
+               ),
+ 
++              const SizedBox(height: 14),
++
++              Card(
++                key: const ValueKey('sac-display-entry'),
++                margin: EdgeInsets.zero,
++                child: ListTile(
++                  contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
++                  leading: const Icon(Icons.grid_view, color: Colors.deepOrangeAccent),
++                  title: const Text('SAC / DISPLAY'),
++                  subtitle: const Text('Avaria identificada pel tren'),
++                  trailing: const Icon(Icons.chevron_right),
++                  onTap: () => Navigator.push(context, MaterialPageRoute(
++                    builder: (_) => Sac2100Screen(onSelect: (desti) {
++                      Navigator.push(context, MaterialPageRoute(
++                        builder: (_) => DiagnosticoInteractivoScreen(
++                          pasoInicialId: desti, sesion: _sesion(desti),
++                          volverInicio: _volverInicio, pasos: ramaNoDesfrenaS2100,
++                        ),
++                      ));
++                    }),
++                  )),
++                ),
++              ),
+               const SizedBox(height: 14),
+ 
+               Row(
+@@ -902,7 +929,7 @@
+                           MaterialPageRoute(
+                             builder: (_) => PantallaImagenCompleta(
+                               volverInicio: _volverInicio,
+-                              imagenPath: 'assets/resolucion/termicos_2100.png',
++                              imagenPath: 'manual/s2100/compartits/termics-existents.jpg',
+                             ),
+                           ),
+                         );
+@@ -1369,7 +1396,9 @@
+         actions: [
+           if (editor)
+             IconButton(
+-              tooltip: 'Tornar a Qu� li passa al tren?',
++              tooltip: widget.serie == '2100'
++                  ? 'Tornar a Què li passa al tren?'
++                  : 'Tornar a Qu� li passa al tren?',
+               icon: const Icon(Icons.arrow_back_rounded),
+               onPressed: () async {
+                 if (mounted) {
+@@ -2727,12 +2756,33 @@
+                                       volverInicio: widget.volverInicio,
+                                     ),
+                                   _construirTextoFormateado(
+-                                    paso.preguntaOInstruccion,
++                                    identical(widget.pasos, ramaNoDesfrenaS2100)
++                                        ? textOperatiu2100(paso.preguntaOInstruccion)
++                                        : paso.preguntaOInstruccion,
+                                   ),
++                                  for (final imatge in paso.imatgesManual) ...[
++                                    const SizedBox(height: 16),
++                                    Text(identical(widget.pasos, ramaNoDesfrenaS2100) ? textOperatiu2100(imatge.titol) : imatge.titol, style: const TextStyle(fontWeight: FontWeight.bold)),
++                                    if (identical(widget.pasos, ramaNoDesfrenaS2100) && (imatge.variant.contains('remodelat') || imatge.variant.contains('original')))
++                                      Text(imatge.variant, style: const TextStyle(color: Colors.white70, fontSize: 12)),
++                                    if (!identical(widget.pasos, ramaNoDesfrenaS2100))
++                                    Text('${imatge.variant} · Manual, pàg. ${imatge.pagina}', style: const TextStyle(color: Colors.white70, fontSize: 12)),
++                                    const SizedBox(height: 8),
++                                    VisorImagenDiagnostico(imagenPath: imatge.path, volverInicio: widget.volverInicio),
++                                  ],
++                                  for (final opcio in paso.opcions)
++                                    Padding(
++                                      padding: const EdgeInsets.only(top: 12),
++                                      child: OutlinedButton(
++                                        style: OutlinedButton.styleFrom(minimumSize: const Size(0, 52)),
++                                        onPressed: () => _procesarRespuesta(opcio.desti),
++                                        child: Text(opcio.text, textAlign: TextAlign.center),
++                                      ),
++                                    ),
+                                   if (paso.advertencia != null) ...[
+                                     const SizedBox(height: 12),
+                                     Text(
+-                                      paso.advertencia!,
++                                      identical(widget.pasos, ramaNoDesfrenaS2100) ? textOperatiu2100(paso.advertencia!) : paso.advertencia!,
+                                       textAlign: TextAlign.center,
+                                       style: const TextStyle(
+                                         color: Colors.amber,
+@@ -2749,7 +2799,9 @@
+                     ),
+                     Padding(
+                       padding: const EdgeInsets.fromLTRB(16, 8, 16, 12),
+-                      child: paso.esPregunta
++                      child: paso.opcions.isNotEmpty
++                          ? const SizedBox.shrink()
++                          : paso.esPregunta
+                           ? Row(
+                               children: [
+                                 Expanded(
+@@ -2838,7 +2890,7 @@
+         ? const [
+             (
+               'Localització al tren',
+-              'assets/resolucion/pictogramas_s2100.png',
++              'manual/s2100/compartits/pictogrames-existents.png',
+             ),
+           ]
+         : const [
+@@ -2901,6 +2953,7 @@
+   @override
+   Widget build(BuildContext context) {
+     if (imagenPath.trim().isEmpty) return const SizedBox.shrink();
++    if (imagenPath.startsWith('manual/')) return ImatgeManualProtegida(path: imagenPath);
+     return Image.asset(
+       imagenPath,
+       key: ValueKey(imagenPath),
+@@ -2975,7 +3028,7 @@
+         actions: [
+           if (widget.volverInicio != null)
+             BotonHomeDiagnostico(onPressed: widget.volverInicio!),
+-          IconButton(
++          if (!widget.imagenPath.startsWith('manual/')) IconButton(
+             icon: const Icon(Icons.center_focus_strong),
+             onPressed: () {
+               controller.value = Matrix4.identity();
+@@ -2983,7 +3036,9 @@
+           ),
+         ],
+       ),
+-      body: InteractiveViewer(
++      body: widget.imagenPath.startsWith('manual/')
++          ? ImatgeManualProtegida(path: widget.imagenPath, fullScreen: true)
++          : InteractiveViewer(
+         transformationController: controller,
+         minScale: 1,
+         maxScale: 6,
+--- a/lib/data/s2100_data.dart
++++ b/lib/data/s2100_data.dart
+@@ -1,4 +1,15 @@
+-﻿class PasoDiagnostico {
++part 'sac2100_data.dart';
++part 'cotxes2100_data.dart';
++part 'imatges2100_data.dart';
++part 'sac2100_ux.dart';
++part 'sac2100_operativa.dart';
++
++class OpcioSac {
++  final String text, desti;
++  const OpcioSac(this.text, this.desti);
++}
++
++class PasoDiagnostico {
+   final String id;
+   final String preguntaOInstruccion;
+   final bool esPregunta;
+@@ -8,7 +19,9 @@
+   final String? causaDescartadaAlSi;
+   final String? causaDescartadaAlNo;
+   final String? imagenPath;
++  final List<ImatgePasManual> imatgesManual;
+   final bool separarTextoTrenStop;
++  final List<OpcioSac> opcions;
+ 
+   PasoDiagnostico({
+     required this.id,
+@@ -20,9 +33,12 @@
+     this.causaDescartadaAlSi,
+     this.causaDescartadaAlNo,
+     this.imagenPath,
++    this.imatgesManual = const [],
+     this.separarTextoTrenStop = false,
++    this.opcions = const [],
+   });
+ }
++
+ final Map<String, List<String>> causasPorRama = {
+   "no_desfrena": [
+     "Bolet de cabina / Selector",
+@@ -68,7 +84,7 @@
+   "Fallada dels comandaments del pupitre principal": "inicio_pupitre_fallo",
+ };
+ 
+-final Map<String, PasoDiagnostico> ramaNoDesfrenaS2100 = {
++final Map<String, PasoDiagnostico> ramaNoDesfrenaS2100 = configurarCotxes2100({
+   // ==========================================
+   // === RAMA 1: NO DESFRENA (LAZO EMERGENCIA)
+   // ==========================================
+@@ -85,16 +101,18 @@
+   "procedimiento_tirador": PasoDiagnostico(
+     id: "procedimiento_tirador",
+     preguntaOInstruccion:
+-        "Gestió del tirador d’alarma S2100:\n\n"
+-        "1. A l’equip IRIS, prem el botó TA per parlar amb el passatge.\n"
+-        "2. Comunica la situació al CCM.\n"
+-        "3. Immobilitza el tren, tanca la cabina i emporta’t la clau de govern, la clau de quadradet i el walkie.\n"
+-        "4. Ves al cotxe amb el llum ambre exterior i rearma el tirador amb la clau de quadradet.",
+-    esPregunta: false,
++        "SAC 22 · Tirador d’alarma\n\nEn quina situació s’ha accionat?\n\nFont: L4 Avaries tècniques, pàg. 43.",
++    esPregunta: false,
++    opcions: [
++      OpcioSac("En marxa", "sac22_marxa"),
++      OpcioSac("En estació / tren parat", "sac22_estacio"),
++      OpcioSac("No identificat", "sac_pendent"),
++    ],
+   ),
+ 
+   "pregunta_seta": PasoDiagnostico(
+     id: "pregunta_seta",
++    imatgesManual: imatgesManual2100["pregunta_seta"]!,
+     preguntaOInstruccion:
+         "El bolet d’emergència està activat o el selector de marxes és a zero?",
+     esPregunta: true,
+@@ -105,6 +123,7 @@
+ 
+   "procedimiento_seta": PasoDiagnostico(
+     id: "procedimiento_seta",
++    imatgesManual: imatgesManual2100["procedimiento_seta"]!,
+     preguntaOInstruccion:
+         "1. Gira el bolet d’emergència per rearmar-lo (desactivar-lo).\n"
+         "2. Assegura’t que el selector de marxes no sigui a la posició zero.\n"
+@@ -117,26 +136,33 @@
+     preguntaOInstruccion: "Tens el mode ATP seleccionat correctament i respon?",
+     esPregunta: true,
+     botonSiDestino: "pregunta_hom_muerto",
+-    botonNoDestino: "procedimiento_modo_especial",
++    botonNoDestino: "atp_reset_tbs",
+     causaDescartadaAlSi: "ATP (sense codis)",
+   ),
+ 
++  "atp_reset_tbs": PasoDiagnostico(
++    id: "atp_reset_tbs",
++    preguntaOInstruccion: "Pèrdua de codis ATP\n\nFes RESET TBS durant 2–3 s.\n\nS’ha normalitzat?",
++    esPregunta: false,
++    opcions: [OpcioSac("S’HA NORMALITZAT", "atp_normalitzat"), OpcioSac("NO ES NORMALITZA", "atp_m25")],
++  ),
++  "atp_normalitzat": PasoDiagnostico(
++    id: "atp_normalitzat", preguntaOInstruccion: "Comprova la recuperació del funcionament. Si el tren continua sense desfrenar, continua la comprovació de causes.", esPregunta: false,
++    opcions: [OpcioSac("RECUPERAT", "atp_recuperat"), OpcioSac("CONTINUA SENSE DESFRENAR", "pregunta_hom_muerto")],
++  ),
++  "atp_recuperat": PasoDiagnostico(
++    id: "atp_recuperat", preguntaOInstruccion: "Funcionament recuperat. Comunica el resultat al CCM.", esPregunta: false,
++  ),
++  "atp_m25": PasoDiagnostico(
++    id: "atp_m25", preguntaOInstruccion: "Selecciona M+25 i comprova el resultat.\n\nHas pogut seleccionar M+25?", esPregunta: false,
++    opcions: [OpcioSac("M+25 SELECCIONAT", "atp_normalitzat"), OpcioSac("NO ES POT SELECCIONAR M+25", "procedimiento_modo_especial")],
++  ),
+   "procedimiento_modo_especial": PasoDiagnostico(
+     id: "procedimiento_modo_especial",
+-    preguntaOInstruccion:
+-        "Connectar el MODE ESPECIAL:\n\n"
+-        "1. Desconnecta l’equip ATC amb la clau M.E.\n"
+-        "2. Manipulador M/F en posició 0.\n"
+-        "3. Selector de marxes a 0.\n"
+-        "4. Clau de govern a 0.\n"
+-        "5. Comprova que el llum M.E. estigui encès.\n"
+-        "6. Connecta la clau de govern.\n"
+-        "7. Selector de marxes endavant.\n"
+-        "8. Afluixa el fre d’estacionament (polsador verd 'DES').",
+-    esPregunta: false,
+-    imagenPath: "assets/resolucion/todo a 0.jpg",
+-    advertencia:
+-        "⚠️ ATENCIÓ: No el connectis sense autorització del CCM. Velocitat màx.: 25 km/h amb passatge.",
++    preguntaOInstruccion: "No es pot seleccionar M+25: desallotja el tren abans d’entrar en Mode Especial. Coordina l’actuació amb el CCM.",
++    esPregunta: false,
++    botonSiDestino: "inicio_modo_especial",
++    advertencia: "No circular amb passatge en Mode Especial.",
+   ),
+ 
+   "pregunta_hom_muerto": PasoDiagnostico(
+@@ -158,10 +184,11 @@
+ 
+   "pregunta_tdp": PasoDiagnostico(
+     id: "pregunta_tdp",
++    imatgesManual: imatgesManual2100["pregunta_tdp"]!,
+     preguntaOInstruccion:
+         "La pressió de la canonada principal (TDP) és inferior als mínims (8 bar) als manòmetres?",
+     esPregunta: true,
+-    botonSiDestino: "procedimiento_b12_esquema",
++    botonSiDestino: "sac_aire",
+     botonNoDestino: "pregunta_tren_stop_iris",
+     causaDescartadaAlNo: "Aire (Baixa pressió TDP -8)",
+   ),
+@@ -174,31 +201,33 @@
+     esPregunta: true,
+     botonSiDestino: "procedimiento_b12_ma",
+     botonNoDestino: "procedimiento_b12_mb_r",
+-    imagenPath: "assets/resolucion/grifos b12.jpg",
++    imagenPath: "manual/s2100/sac_14/grifos-b12.jpg",
+   ),
+ 
+   "procedimiento_b12_ma": PasoDiagnostico(
+     id: "procedimiento_b12_ma",
+     preguntaOInstruccion:
+-        "Ubicació al COTXE MA:\n\n"
++        "Ubicació al MA1 / MA2:\n\n"
+         "Un es troba sota els seients del passatge i l’altre és a l’armari del costat del passadís d’intercirculació entre cotxes.\n\n"
+         "Un cop tancats, comprova des del pupitre si el tren ja desfrena.",
+     esPregunta: false,
+-    imagenPath: "assets/resolucion/b12 2.jpg",
++    botonSiDestino: "b12_resultat",
++    imagenPath: "manual/s2100/sac_14/b12-2.jpg",
+     advertencia:
+-        "⚠️ RECORDA: En tancar l’aixeta B12, el cotxe es queda COMPLETAMENT sense fre pneumàtic.",
++        "⚠️ RECORDA: En tancar l’aixeta B12, el cotxe es queda COMPLETAMENT sense fre pneumàtic. Cal anul·lar el llaç de fre. Coordina l’actuació amb el CCM.",
+   ),
+ 
+   "procedimiento_b12_mb_r": PasoDiagnostico(
+     id: "procedimiento_b12_mb_r",
+     preguntaOInstruccion:
+-        "Ubicació als COTXES B / REMOLC:\n\n"
++        "Ubicació als MB1 / R / MB2:\n\n"
+         "Totes dues aixetes es troben sota els seients del passatge; aixeca les tapes del cofre amb la clau de quadradet.\n\n"
+         "Un cop tancats, comprova des del pupitre si el tren ja desfrena.",
+     esPregunta: false,
+-    imagenPath: "assets/resolucion/b12.jpg",
++    botonSiDestino: "b12_resultat",
++    imagenPath: "manual/s2100/sac_14/b12.jpg",
+     advertencia:
+-        "⚠️ RECORDA: En tancar l’aixeta B12, el cotxe es queda COMPLETAMENT sense fre pneumàtic.",
++        "⚠️ RECORDA: En tancar l’aixeta B12, el cotxe es queda COMPLETAMENT sense fre pneumàtic. Cal anul·lar el llaç de fre. Coordina l’actuació amb el CCM.",
+   ),
+ 
+   "pregunta_tren_stop_iris": PasoDiagnostico(
+@@ -215,10 +244,13 @@
+   "procedimiento_tren_stop_rearme": PasoDiagnostico(
+     id: "procedimiento_tren_stop_rearme",
+     preguntaOInstruccion:
+-        "Rearmament del Tren Stop per deslocalització:\n\n"
+-        "1. Prem la tecla TR al terminal de cabina IRIS per rearmar-lo.\n"
+-        "2. Si el sistema no es recupera, ves a l’armari de tèrmics de cabina i abaixa (anul·la) temporalment el tèrmic del Tren Stop amb autorització del CCM.",
+-    esPregunta: false,
++        "SAC 23 · Confirma variant. No abaixis cap tèrmic genèric.\n\nFont: L4 Avaries tècniques, pàg. 44, 64.",
++    esPregunta: false,
++    opcions: [
++      OpcioSac("2100 original", "sac23_original"),
++      OpcioSac("2100 remodelat", "sac23_remodelat"),
++      OpcioSac("No identificat", "sac_pendent"),
++    ],
+   ),
+ 
+   "pregunta_maniobra_estacionamiento": PasoDiagnostico(
+@@ -226,7 +258,7 @@
+     preguntaOInstruccion:
+         "El fre d’estacionament està aplicat en algun dels cotxes i no el pots treure des del pupitre?",
+     esPregunta: true,
+-    botonSiDestino: "pregunta_b19_es_ma",
++    botonSiDestino: "sac13",
+     botonNoDestino: "fin_no_desfrena_llamar_ccm",
+     causaDescartadaAlNo: "Estacionaments aplicats",
+   ),
+@@ -252,35 +284,34 @@
+   "procedimiento_b19_ma": PasoDiagnostico(
+     id: "procedimiento_b19_ma",
+     preguntaOInstruccion:
+-        "Anul·lació per B19 al COTXE MA:\n\n"
++        "Anul·lació per B19 al MA1 / MA2:\n\n"
+         "1. Obre l’armari pneumàtic situat a la paret de la testera (marcat amb el pictograma del quadrat vermell).\n"
+         "2. Gira en sentit ANTIHORARI la roda negra de l’electrovàlvula B19 per obrir el pas d’aire.\n"
+         "3. Comprova al SAC si el fre d’estacionament continua apareixent aplicat.",
+     esPregunta: false,
+     botonSiDestino: "pregunta_confirma_b19",
+-    imagenPath: "assets/resolucion/b19 coches a.jpg",
++    imagenPath: "manual/s2100/sac_13/b19-coches-a.jpg",
+   ),
+ 
+   "procedimiento_b19_mb_r": PasoDiagnostico(
+     id: "procedimiento_b19_mb_r",
+     preguntaOInstruccion:
+-        "Anul·lació per B19 als COTXES MB / REMOLC:\n\n"
++        "Anul·lació per B19 als MB1 / R / MB2:\n\n"
+         "1. Obre el cofre sota els seients amb la clau de quadradet.\n"
+         "2. Gira en sentit ANTIHORARI la roda negra de l’electrovàlvula B19.\n"
+         "3. Comprova al SAC si el fre d’estacionament continua apareixent aplicat.",
+     esPregunta: false,
+     botonSiDestino: "pregunta_confirma_b19",
+-    imagenPath: "assets/resolucion/b19.jpg",
++    imagenPath: "manual/s2100/sac_13/b19.jpg",
+   ),
+ 
+   "pregunta_confirma_b19": PasoDiagnostico(
+     id: "pregunta_confirma_b19",
+     preguntaOInstruccion:
+-        "Ha desaparegut del SAC l’avís de fre d’estacionament?",
++        "Has comprovat l’alliberament real de l’estacionament? En el cas 1F09, el SAC pot continuar indicant-lo encara que entri aire i el cotxe estigui desfrenat.\n\nFont: L4 Avaries tècniques, pàg. 33, 38.",
+     esPregunta: true,
+     botonSiDestino: "fin_freno_liberado",
+     botonNoDestino: "pregunta_b17_es_ma",
+-    causaDescartadaAlSi: "Estacionaments aplicats",
+   ),
+ 
+   "pregunta_b17_es_ma": PasoDiagnostico(
+@@ -296,46 +327,47 @@
+   "procedimiento_b17_ma": PasoDiagnostico(
+     id: "procedimiento_b17_ma",
+     preguntaOInstruccion:
+-        "Pas 1: Tancar B17 al COTXE MA:\n\n"
++        "Pas 1: Tancar B17 al MA1 / MA2:\n\n"
+         "1. Obre l’armari de la testera.\n"
+         "2. Gira l’aixeta B17 en sentit antihorari amb la clau de quadradet per tallar l’aire.",
+     esPregunta: false,
+     botonSiDestino: "procedimiento_sirgas_accion",
+-    imagenPath: "assets/resolucion/b17 ma.jpg",
++    imagenPath: "manual/s2100/sac_13/b17-ma.jpg",
+   ),
+ 
+   "procedimiento_b17_mb_r": PasoDiagnostico(
+     id: "procedimiento_b17_mb_r",
+     preguntaOInstruccion:
+-        "Pas 1: Tancar B17 als COTXES MB / REMOLC:\n\n"
++        "Pas 1: Tancar B17 als MB1 / R / MB2:\n\n"
+         "1. Obre l’armari sota els seients del passatge.\n"
+         "2. Gira l’aixeta B17 en sentit antihorari amb la clau de quadradet.",
+     esPregunta: false,
+     botonSiDestino: "procedimiento_sirgas_accion",
+-    imagenPath: "assets/resolucion/b17 mb remolque.jpg",
++    imagenPath: "manual/s2100/sac_13/b17-mb-remolque.jpg",
+   ),
+ 
+   "procedimiento_sirgas_accion": PasoDiagnostico(
+     id: "procedimiento_sirgas_accion",
+     preguntaOInstruccion:
+         "Pas 2: Estirar les SIRGUES (exterior del bogi - 🟥 Quadrat vermell):\n\n"
+-        "1. Baixa a la via amb precaució.\n"
++        "1. Coordina amb CCM qualsevol accés a la via abans de baixar.\n"
+         "2. Localitza a l’exterior el pictograma de la balança al lateral.\n"
+         "3. Estira amb força la sirga cap amunt en tot el seu recorregut per alliberar mecànicament la molla.\n"
+         "4. Puja a la cabina i comprova-ho al SAC.\n\n"
+-        "Ha desaparegut l’avís de fre d’estacionament?",
++        "Has comprovat l’alliberament real del fre?",
++    advertencia:
++        "B17/sirgues: desallotjament i llaç de portes per traccionar segons la fitxa. No és marxa normal.",
+     esPregunta: true,
+     botonSiDestino: "fin_freno_liberado",
+     botonNoDestino: "procedimiento_ccm_final",
+-    imagenPath: "assets/resolucion/sirgas.jpg",
++    imagenPath: "manual/s2100/sac_13/sirgas.jpg",
+     causaDescartadaAlSi: "Estacionaments aplicats",
+   ),
+ 
+   "fin_freno_liberado": PasoDiagnostico(
+     id: "fin_freno_liberado",
+     preguntaOInstruccion:
+-        "Fre d’estacionament alliberat correctament.\n\n"
+-        "Pots continuar amb la marxa normal del tren.",
++        "Has confirmat l’alliberament de l’estacionament comprovat. Revisa actuacions i condicions amb CCM: B17/sirgues requereix desallotjament i llaç de portes; el cas 1F09 també té aquestes condicions. No equival a marxa normal.\n\nFont: L4 Avaries tècniques, pàg. 33, 38.",
+     esPregunta: false,
+   ),
+ 
+@@ -346,27 +378,29 @@
+     id: "inicio_no_tracciona",
+     preguntaOInstruccion: "Tens les portes tancades físicament a tot el tren?",
+     esPregunta: true,
+-    botonSiDestino: "pregunta_estacionamiento",
++    botonSiDestino: "sac_portes_reconegudes",
+     botonNoDestino: "procedimiento_puertas_fallo",
+-    causaDescartadaAlSi: "Portes obertes",
+   ),
+ 
+   "procedimiento_puertas_fallo": PasoDiagnostico(
+     id: "procedimiento_puertas_fallo",
+     preguntaOInstruccion:
+-        "Assegura’t de tancar totes les portes de passatge. Si hi ha alguna porta encallada o oberta:\n\n"
+-        "1. Utilitza la clau de quadradet per actuar manualment sobre la porta corredissa.\n"
+-        "2. Acompanya la fulla de la porta amb TOTES DUES MANS tant en obrir com en tancar per evitar cops.\n"
+-        "3. Si la porta està avariada, utilitza el forrellat mecànic superior per aïllar-la i condemnar-la.",
+-    esPregunta: false,
+-    advertencia:
+-        "⚠️ PRIORITAT: Si les portes del tren estan obertes, prioritza sempre l’accés per la porta de passatge.",
++        "SAC 08 · Porta oberta / avaria de portes\n\nQuin és el símptoma?\n\nFont: L4 Avaries tècniques, pàg. 24–29.",
++    esPregunta: false,
++    opcions: [
++      OpcioSac("Les portes no tanquen", "sac08_no_tanquen"),
++      OpcioSac("SAC marca porta oberta / no tracciona", "sac08_oberta"),
++      OpcioSac("Porta bloquejada per objecte", "sac08_objecte"),
++      OpcioSac("No es pot seleccionar costat", "sac08_seleccio"),
++      OpcioSac("No permet permissió de portes", "sac08_permissio"),
++      OpcioSac("No identificat", "sac_pendent"),
++    ],
+   ),
+ 
+   "pregunta_estacionamiento": PasoDiagnostico(
+     id: "pregunta_estacionamiento",
+     preguntaOInstruccion:
+-        "Has tret el fre d’estacionament a cabina (polsador verd 'DES' accionat)?",
++        "L’estacionament està realment afluixat, després d’actuar DES?",
+     esPregunta: true,
+     botonSiDestino: "pregunta_eed",
+     botonNoDestino: "procedimiento_quitar_estacionamiento_cabina",
+@@ -375,13 +409,15 @@
+ 
+   "procedimiento_quitar_estacionamiento_cabina": PasoDiagnostico(
+     id: "procedimiento_quitar_estacionamiento_cabina",
++    imatgesManual:
++        imatgesManual2100["procedimiento_quitar_estacionamiento_cabina"]!,
+     preguntaOInstruccion:
+         "Afluixament des de cabina:\n\n"
+-        "1. Prem fermament el polsador verd 'DES' al panell de comandaments.\n"
++        "1. Prem fermament el polsador 'DES' al panell de comandaments.\n"
+         "2. Comprova si l’indicador d’aplicat s’apaga.\n"
+-        "3. Si continua bloquejat, prem CONTINUAR per iniciar el procediment B19 / B17 + sirgues.",
+-    esPregunta: false,
+-    botonSiDestino: "pregunta_b19_es_ma",
++        "3. Si continua bloquejat, prem CONTINUAR per comprovar el resultat i identificar l’abast al SAC 13.",
++    esPregunta: false,
++    botonSiDestino: "sac_des_comprova",
+   ),
+ 
+   "pregunta_eed": PasoDiagnostico(
+@@ -415,8 +451,13 @@
+   "procedimiento_tension_nula": PasoDiagnostico(
+     id: "procedimiento_tension_nula",
+     preguntaOInstruccion:
+-        "Fallada d’alimentació a la catenària. Comprova els pantògrafs i comunica’t amb el CCM per verificar l’estat de la subestació.",
+-    esPregunta: false,
++        "SAC 04 · Contrasta amb CCM/operadors d’energia si hi ha hagut caiguda de tensió. 0 V també pot correspondre a desconnexió involuntària.\n\nFont: L4 Avaries tècniques, pàg. 22.",
++    esPregunta: false,
++    opcions: [
++      OpcioSac("Caiguda externa confirmada", "sac04_externa"),
++      OpcioSac("Caiguda negada i tren a final", "sac04_terminal"),
++      OpcioSac("No confirmat", "sac_pendent"),
++    ],
+   ),
+ 
+   // ==========================================
+@@ -433,41 +474,11 @@
+ 
+   "procedimiento_rearme_disyuntor": PasoDiagnostico(
+     id: "procedimiento_rearme_disyuntor",
+-    preguntaOInstruccion:
+-        "Abans d’aïllar cap semiunitat, intenta recuperar el disjuntor des del pupitre:\n\n"
+-        "1. Situa el manipulador M/F en posició 0.\n"
+-        "2. Situa el selector de marxes en posició 0.\n"
+-        "3. Prem el comandament de connexió del disjuntor al pupitre de conducció.\n\n"
+-        "Aquesta situació és força habitual després de posar en servei un tren que estava apagat.\n\n"
+-        "S’ha normalitzat el disjuntor al SAC?",
+-    esPregunta: true,
+-    botonSiDestino: "fin_disyuntor_recuperado",
+-    botonNoDestino: "procedimiento_aislamiento_semiunidad",
+-  ),
+-
+-  "fin_disyuntor_recuperado": PasoDiagnostico(
+-    id: "fin_disyuntor_recuperado",
+-    preguntaOInstruccion:
+-        "Disjuntor normalitzat correctament al SAC.\n\n"
+-        "Comprova que el tren torna a traccionar amb normalitat.",
+-    esPregunta: false,
+-  ),
+-
+-  "procedimiento_aislamiento_semiunidad": PasoDiagnostico(
+-    id: "procedimiento_aislamiento_semiunidad",
+-    preguntaOInstruccion:
+-        "El disjuntor no s’ha normalitzat o es torna a obrir.\n\n"
+-        "Anul·lació de semiunitat per obertura del disjuntor (Feeder):\n\n"
+-        "1. Posa el manipulador M/F i el selector de marxes a 0.\n"
+-        "2. Desconnecta els equips posant la clau de govern en posició de desconnexió.\n"
+-        "3. Verifica al display que tots els pantògrafs han baixat.\n"
+-        "4. Aïlla els dos pantògrafs de la semiunitat afectada tancant:\n"
+-        "   - Clau U18 al cotxe MA (armari auxiliar de cabina).\n"
+-        "   - Clau U21 al cotxe MB (sota els seients, pictograma 'P').\n"
+-        "5. Torna a connectar els equips manualment.",
+-    esPregunta: false,
+-    advertencia:
+-        "⚠️ IMPORTANT: NO abaixis els tèrmics del pantògraf al cotxe MA, o no podràs recuperar l’altra semiunitat.",
++    imatgesManual: imatgesManual2100["procedimiento_rearme_disyuntor"]!,
++    preguntaOInstruccion:
++        "SAC 01 · Disjuntor\n\nDes de la cabina habilitada per conduir, preferiblement amb el tren estacionat:\n1. Posa el manipulador M/F a 0.\n2. Polsa CON DISJUNTOR.\n\nFont: L4 Avaries tècniques, pàg. 16.",
++    esPregunta: false,
++    botonSiDestino: "sac01_comprova",
+   ),
+ 
+   "procedimiento_ccm_final": PasoDiagnostico(
+@@ -482,27 +493,51 @@
+   // ==========================================
+   "inicio_modo_especial": PasoDiagnostico(
+     id: "inicio_modo_especial",
+-    preguntaOInstruccion:
+-        "Pas 1: Preparació del pupitre\n\n"
++    imatgesManual: imatgesManual2100["inicio_modo_especial"]!,
++    preguntaOInstruccion:
++        "Mode Especial: cal autorització del CCM i tren sense passatge.\n\nPas 1: Preparació del pupitre\n\n"
+         "1. Situa el manipulador M/F en posició 0.\n"
+         "2. Posa el selector de marxes a 0.\n"
+         "3. Gira la clau de govern a 0.",
+     esPregunta: false,
+     botonSiDestino: "procedimiento_modo_especial_llave",
+-    imagenPath: "assets/resolucion/todo a 0.jpg",
++    imagenPath: "manual/s2100/compartits/preparacio-pupitre.jpg",
+   ),
+ 
+   "procedimiento_modo_especial_llave": PasoDiagnostico(
+     id: "procedimiento_modo_especial_llave",
+-    preguntaOInstruccion:
+-        "Pas 2: Connexió i obertura\n\n"
+-        "1. Introdueix la clau M.E. al bombí i desconnecta l’equip ATC.\n"
+-        "2. Comprova que el pilot vermell M.E. s’encengui.\n"
+-        "3. Connecta la clau de govern, posa el selector endavant i prem el botó verd 'DES'.",
+-    esPregunta: false,
+-    imagenPath: "assets/resolucion/llave especial.jpg",
+-    advertencia:
+-        "⚠️ ATENCIÓ: No el connectis sense autorització del CCM. Velocitat màxima restringida a 25 km/h.",
++    imatgesManual: imatgesManual2100["procedimiento_modo_especial_llave"]!,
++    preguntaOInstruccion: "Amb M/F, selector i clau de govern ja a 0, desconnecta l’equip ATC amb la clau M.E.\n\nEl pilot M.E. parpelleja?",
++    esPregunta: false,
++    opcions: [OpcioSac("EL PILOT PARPELLEJA", "me_establert"), OpcioSac("NO PARPELLEJA", "me_repetir")],
++    advertencia: "Cal autorització del CCM. No circular amb passatge en Mode Especial.",
++  ),
++  "me_repetir": PasoDiagnostico(
++    id: "me_repetir",
++    preguntaOInstruccion: "Repeteix l’operació: posa M/F, selector i clau de govern a 0 abans de desconnectar ATC amb la clau M.E.\n\nEl pilot M.E. parpelleja?",
++    esPregunta: false,
++    opcions: [OpcioSac("EL PILOT PARPELLEJA", "me_establert"), OpcioSac("NO PARPELLEJA", "me_testera_contraria")],
++  ),
++  "me_testera_contraria": PasoDiagnostico(
++    id: "me_testera_contraria",
++    preguntaOInstruccion: "Fes l’operació a la testera contrària: primer M/F, selector i clau de govern a 0; després desconnecta ATC amb la clau M.E.\n\nEl pilot M.E. parpelleja?",
++    esPregunta: false,
++    opcions: [OpcioSac("EL PILOT PARPELLEJA", "me_retorn"), OpcioSac("NO PARPELLEJA", "me_no_establert")],
++  ),
++  "me_retorn": PasoDiagnostico(
++    id: "me_retorn",
++    preguntaOInstruccion: "Un cop establert el Mode Especial a la testera contrària, torna a la cabina de conducció segons el procediment. Comprova que el pilot M.E. parpelleja abans de continuar.",
++    esPregunta: false,
++    opcions: [OpcioSac("EL PILOT PARPELLEJA", "me_establert"), OpcioSac("NO PARPELLEJA", "me_no_establert")],
++  ),
++  "me_no_establert": PasoDiagnostico(
++    id: "me_no_establert", preguntaOInstruccion: "Mode Especial no establert. No iniciïs la marxa; comunica el resultat al CCM i segueix les seves instruccions.", esPregunta: false,
++  ),
++  "me_establert": PasoDiagnostico(
++    id: "me_establert",
++    preguntaOInstruccion: "Amb el pilot M.E. parpellejant, connecta la clau de govern, posa el selector endavant i prem el botó verd DES. Coordina la circulació amb el CCM. Velocitat màxima: 25 km/h, sense passatge.",
++    esPregunta: false,
++    advertencia: "No circular amb passatge en Mode Especial.",
+   ),
+ 
+   // ==========================================
+@@ -510,19 +545,12 @@
+   // ==========================================
+   "inicio_pupitre_fallo": PasoDiagnostico(
+     id: "inicio_pupitre_fallo",
+-    preguntaOInstruccion:
+-        "Solució amb CONTROLAS AUXILIARS:\n\n"
+-        "Si el tren no obre o tanca portes des dels comandaments del pupitre principal, utilitza la botonera lateral.\n\n"
+-        "1. Introdueix la clau de capçalera al bombí lateral.\n"
+-        "2. Obre la tapa metàl·lica per alliberar els polsadors auxiliars.\n"
+-        "3. Executa l’obertura, el bip-bip o el tancament local des de la controla.",
+-    esPregunta: false,
+-    imagenPath: "assets/resolucion/controlas.jpg",
+-  ),
+-};
+-
+-
+-
+-
+-
+-
++    imatgesManual: imatgesManual2100["inicio_pupitre_fallo"]!,
++    preguntaOInstruccion:
++        "Costat d’andana seleccionat. Prem el clàxon de la controla abans de tancar.\n\nSolució amb CONTROLAS AUXILIARS:\n\nSi el tren no obre o tanca portes des dels comandaments del pupitre principal, utilitza la botonera lateral.\n\n1. Introdueix la clau de capçalera al bombí lateral.\n2. Obre la tapa metàl·lica per alliberar els polsadors auxiliars.\n3. Executa l’obertura, el bip-bip o el tancament local des de la controla.\n\nFont: L4 Avaries tècniques, pàg. 25.",
++    esPregunta: false,
++    botonSiDestino: "sac07_ok",
++    imagenPath: "manual/s2100/compartits/controla-existent.jpg",
++  ),
++  ...procedimientosSac2100,
++});
+--- /dev/null
++++ b/lib/data/cotxes2100_data.dart
+@@ -0,0 +1,298 @@
++part of 's2100_data.dart';
++
++const cotxes2100 = ['MA1', 'MB1', 'R', 'MB2', 'MA2'];
++
++/// Cab and car are explicit choices in the navigation graph. Going back cannot
++/// leave a hidden, stale cab/car selection behind in another procedure.
++String? rutaFre2100(String cotxe, String cabina) {
++  if (!cotxes2100.contains(cotxe) || !['MA1', 'MA2'].contains(cabina))
++    return null;
++  final propers = cabina == 'MA1' ? ['MA1', 'MB1'] : ['MA2', 'MB2'];
++  return propers.contains(cotxe) ? 'sac14_1f11' : 'sac14_b12';
++}
++
++PasoDiagnostico copiarPasCotxe(
++  PasoDiagnostico p,
++  String id,
++  String cotxe, {
++  String? text,
++  String? seguent,
++}) => PasoDiagnostico(
++  id: id,
++  preguntaOInstruccion: 'Cotxe: $cotxe\n\n${text ?? p.preguntaOInstruccion}',
++  esPregunta: p.esPregunta,
++  botonSiDestino: seguent ?? p.botonSiDestino,
++  botonNoDestino: p.botonNoDestino,
++  advertencia: p.advertencia,
++  imagenPath: p.imagenPath,
++  imatgesManual: p.imatgesManual
++      .where((i) => i.cotxes.isEmpty || i.cotxes.contains(cotxe))
++      .toList(),
++  causaDescartadaAlSi: p.causaDescartadaAlSi,
++  causaDescartadaAlNo: p.causaDescartadaAlNo,
++  separarTextoTrenStop: p.separarTextoTrenStop,
++  opcions: p.opcions,
++);
++
++Map<String, PasoDiagnostico> configurarCotxes2100(
++  Map<String, PasoDiagnostico> source,
++) {
++  final nodes = Map<String, PasoDiagnostico>.from(source);
++  void selector(String id, String Function(String) desti) {
++    nodes[id] = PasoDiagnostico(
++      id: id,
++      preguntaOInstruccion: id == 'sac02_un'
++          ? 'Quin cotxe apareix inhibit al DISPLAY?'
++          : 'Quin cotxe està afectat?',
++      esPregunta: false,
++      opcions: [
++        for (final c in cotxes2100) OpcioSac(c, desti(c)),
++        const OpcioSac('No identificat', 'sac_pendent'),
++      ],
++    );
++  }
++
++  // These existing shared procedures retain their actions and illustrations.
++  for (final entry in {
++    'procedimiento_b12_esquema': [
++      'procedimiento_b12_ma',
++      'procedimiento_b12_mb_r',
++    ],
++    'pregunta_b19_es_ma': ['procedimiento_b19_ma', 'procedimiento_b19_mb_r'],
++    'pregunta_b17_es_ma': ['procedimiento_b17_ma', 'procedimiento_b17_mb_r'],
++  }.entries) {
++    selector(entry.key, (c) {
++      final original = source[entry.value[c == 'MA1' || c == 'MA2' ? 0 : 1]]!;
++      final id = '${entry.key}_$c';
++      nodes[id] = copiarPasCotxe(original, id, c);
++      return id;
++    });
++  }
++  // All entry points (SAC, BAHASTE and PEDET) still target the same node IDs.
++  for (final id in [
++    'sac02_un',
++    'sac08_objecte',
++    'sac08_evacuacio_cotxe',
++    'sac12',
++    'sac13_un_pressio',
++    'sac16_continua',
++    'sac19_09',
++    'sac19_11',
++    'sac19_13',
++    'procedimiento_eed_rearmar',
++  ]) {
++    final original = source[id];
++    if (original == null) continue;
++    selector(id, (c) {
++      // Do not apply a MA-only procedure to another type of car.
++      if (id == 'sac19_13' && c != 'MA1' && c != 'MA2')
++        return 'sac_cotxe_incompatible';
++      final dest = '${id}_$c';
++      nodes[dest] = copiarPasCotxe(original, dest, c);
++      return dest;
++    });
++  }
++  nodes['sac_cotxe_incompatible'] = PasoDiagnostico(
++    id: 'sac_cotxe_incompatible',
++    preguntaOInstruccion:
++        'La informació seleccionada no permet aplicar aquest procediment al cotxe indicat. Revisa el DISPLAY abans de continuar.',
++    esPregunta: false,
++  );
++
++  selector('sac14', (c) {
++    final cabNode = 'sac14_cabina_$c';
++    nodes[cabNode] = PasoDiagnostico(
++      id: cabNode,
++      preguntaOInstruccion: 'Cotxe: $c\n\nQuina cabina està habilitada?',
++      esPregunta: false,
++      opcions: [
++        for (final cab in ['MA1', 'MA2'])
++          OpcioSac(
++            cab,
++            rutaFre2100(c, cab) == 'sac14_1f11'
++                ? 'sac14_viable_${c}_$cab'
++                : 'sac14_${c}_$cab',
++          ),
++        const OpcioSac('No identificada', 'sac_pendent'),
++      ],
++    );
++    for (final cab in ['MA1', 'MA2']) {
++      final route = rutaFre2100(c, cab)!;
++      final dest = 'sac14_${c}_$cab';
++      final mechanical = 'sac14_b12_cotxe_$c';
++      nodes[mechanical] = copiarPasCotxe(
++        source[c == 'MA1' || c == 'MA2'
++            ? 'procedimiento_b12_ma'
++            : 'procedimiento_b12_mb_r']!,
++        mechanical,
++        c,
++      );
++      if (route == 'sac14_1f11') {
++        final viable = 'sac14_viable_${c}_$cab';
++        nodes[viable] = PasoDiagnostico(
++          id: viable,
++          preguntaOInstruccion:
++              'Cotxe: $c · Cabina: $cab\n\nÉs viable actuar sobre 1F11 en aquest cotxe? Si correspon actuació mecànica, selecciona No.',
++          esPregunta: true,
++          botonSiDestino: dest,
++          botonNoDestino: mechanical,
++        );
++      }
++      String? next;
++      if (route == 'sac14_b12') {
++        next = 'sac14_b12_cotxe_$c';
++        nodes[next] = copiarPasCotxe(
++          source[c == 'MA1' || c == 'MA2'
++              ? 'procedimiento_b12_ma'
++              : 'procedimiento_b12_mb_r']!,
++          next,
++          c,
++        );
++      }
++      nodes[dest] = copiarPasCotxe(
++        source[route]!,
++        dest,
++        c,
++        text: 'Cabina: $cab\n\n${source[route]!.preguntaOInstruccion}',
++        seguent: next,
++      );
++    }
++    return cabNode;
++  });
++  // Only ask the physical cab where the procedure actually depends on it.
++  for (final entry in {
++    'sac19_13_pendent': (String text, String cab) => text.replaceAll(
++      'cabina contrària',
++      'la cabina ${cab == 'MA1' ? 'MA2' : 'MA1'}',
++    ),
++  }.entries) {
++    final original = source[entry.key]!;
++    nodes[entry.key] = PasoDiagnostico(
++      id: entry.key,
++      preguntaOInstruccion: 'Quina cabina està habilitada?',
++      esPregunta: false,
++      opcions: [
++        for (final cab in ['MA1', 'MA2']) OpcioSac(cab, '${entry.key}_$cab'),
++        const OpcioSac('No identificada', 'sac_pendent'),
++      ],
++    );
++    for (final cab in ['MA1', 'MA2']) {
++      final id = '${entry.key}_$cab';
++      nodes[id] = PasoDiagnostico(
++        id: id,
++        preguntaOInstruccion:
++            'Cabina: $cab\n\n${entry.value(original.preguntaOInstruccion, cab)}',
++        imatgesManual: original.imatgesManual,
++        esPregunta: original.esPregunta,
++        botonNoDestino: original.botonNoDestino,
++        opcions: original.opcions,
++        advertencia: original.advertencia,
++        imagenPath: original.imagenPath,
++        botonSiDestino: original.botonSiDestino,
++      );
++    }
++  }
++  // Reuse the action and private images; each context retains its own outcome.
++  void action(String id, String originalId, String next) {
++    final p = source[originalId]!;
++    nodes[id] = PasoDiagnostico(
++      id: id,
++      preguntaOInstruccion: p.preguntaOInstruccion,
++      esPregunta: false,
++      botonSiDestino: next,
++      advertencia: p.advertencia,
++      imagenPath: p.imagenPath,
++      imatgesManual: p.imatgesManual,
++    );
++  }
++
++  for (final entry in {
++    'sac03_reset': 'sac03_reset_ok',
++    'sac06_reset': 'sac06_reset_ok',
++    'sac08_reset': 'sac08_reset_ok',
++  }.entries) {
++    action(entry.key, 'sac01_reset', entry.value);
++  }
++  action('sac16_recuperar', 'sac02_recuperar', 'sac16_recuperar_ok');
++  action('sac08_controla', 'inicio_pupitre_fallo', 'sac08_tancament_ok');
++  action(
++    'sac08_permissio_controla',
++    'inicio_pupitre_fallo',
++    'sac08_permissio_ok',
++  );
++  action('sac25_controla', 'inicio_pupitre_fallo', 'sac25_megafonia_ok');
++  for (final entry in {
++    'sac07_iris': 'sac07_recomprova',
++    'sac25_iris': 'sac25_despres_iris',
++  }.entries) {
++    nodes[entry.key] = PasoDiagnostico(
++      id: entry.key,
++      preguntaOInstruccion:
++          'Tira i rearma el tèrmic IRIS per reiniciar l’equip.\n\nFont: L4 Avaries tècniques, pàg. 47; aplicació a comandament de portes segons criteri operatiu confirmat.',
++      esPregunta: false,
++      botonSiDestino: entry.value,
++      imagenPath: 'manual/s2100/sac_25/termic-iris.png',
++    );
++  }
++  // All-car parking release uses each physical car and the same B19 action.
++  for (var i = 0; i < cotxes2100.length; i++) {
++    final c = cotxes2100[i];
++    final id = 'sac13_b19_$c';
++    final original =
++        source[c == 'MA1' || c == 'MA2'
++            ? 'procedimiento_b19_ma'
++            : 'procedimiento_b19_mb_r']!;
++    nodes[id] = copiarPasCotxe(original, id, c, seguent: '${id}_ok');
++    nodes['${id}_ok'] = PasoDiagnostico(
++      id: '${id}_ok',
++      preguntaOInstruccion:
++          'S’ha alliberat realment l’estacionament del cotxe $c?',
++      esPregunta: true,
++      botonSiDestino: i + 1 < cotxes2100.length
++          ? 'sac13_b19_${cotxes2100[i + 1]}'
++          : 'sac13_tots_final',
++      botonNoDestino: 'sac_pendent',
++    );
++  }
++  // F13 never loses the mandatory tow after a B12 release.
++  selector('sac19_13_b12', (c) {
++    if (c != 'MA1' && c != 'MA2') return 'sac_cotxe_incompatible';
++    final id = 'sac19_13_b12_$c';
++    nodes[id] = copiarPasCotxe(
++      source['procedimiento_b12_ma']!,
++      id,
++      c,
++      seguent: 'sac19_13_b12_ok',
++    );
++    return id;
++  });
++  nodes['sac19_13_b12_ok'] = PasoDiagnostico(
++    id: 'sac19_13_b12_ok',
++    preguntaOInstruccion: 'S’ha comprovat l’alliberament amb B12?',
++    esPregunta: true,
++    botonSiDestino: 'sac19_13_remolcada_final',
++    botonNoDestino: 'sac_pendent',
++  );
++  nodes['sac19_13_remolcada_final'] = PasoDiagnostico(
++    id: 'sac19_13_remolcada_final',
++    preguntaOInstruccion:
++        'B12 aplicades: el cotxe queda sense fre pneumàtic. Cal anul·lació del llaç de fre i REMOLCADA, coordinada amb CCM. No és marxa normal.\n\nFont: L4 Avaries tècniques, pàg. 40.',
++    esPregunta: false,
++  );
++  // A trailer has no traction motor: do not offer motor-coffer recovery for R.
++  nodes['sac16_continua_R'] = copiarPasCotxe(
++    source['sac16_continua']!,
++    'sac16_continua_R',
++    'R',
++    seguent: 'sac16_R_ok',
++  );
++  nodes['sac16_R_ok'] = PasoDiagnostico(
++    id: 'sac16_R_ok',
++    preguntaOInstruccion:
++        'S’ha normalitzat l’alarma del cotxe R després de reiniciar l’electrònica de fre?',
++    esPregunta: true,
++    botonSiDestino: 'sac_resultat_confirmat',
++    botonNoDestino: 'sac16_observar',
++  );
++  return ajustarOperativaSac2100(simplificarUxSac2100(nodes));
++}
+--- /dev/null
++++ b/lib/data/imatges2100_data.dart
+@@ -0,0 +1,126 @@
++part of 's2100_data.dart';
++class ImatgePasManual {
++  final String path, titol, variant;
++  final int? pagina;
++  final List<String> cotxes;
++  const ImatgePasManual(this.path, this.titol, this.pagina, this.variant, [this.cotxes = const []]);
++}
++const imatgesManual2100 = <String, List<ImatgePasManual>>{
++  "procedimiento_rearme_disyuntor": [
++    ImatgePasManual("manual/s2100/sac_01/pupitre-disjuntor.png", "Pupitre: comandament del disjuntor", 16, "S2100 · variant no diferenciada a la fitxa", []),
++    ImatgePasManual("manual/s2100/sac_01/detall-con-des.png", "Disjuntor: detall CON / DES", 16, "S2100 · variant no diferenciada a la fitxa", []),
++  ],
++  "sac01_reset": [
++    ImatgePasManual("manual/s2100/connexio/bateries-pma.png", "Bateries i posada en marxa automàtica (PMA)", 15, "S2100 · variant no diferenciada a la fitxa", []),
++    ImatgePasManual("manual/s2100/connexio/display-pma.png", "DISPLAY: estat dels equips a la posada en marxa", 15, "S2100 · variant no diferenciada a la fitxa", []),
++  ],
++  "sac02_reset": [
++    ImatgePasManual("manual/s2100/connexio/bateries-pma.png", "Bateries i posada en marxa automàtica (PMA)", 15, "S2100 · variant no diferenciada a la fitxa", []),
++    ImatgePasManual("manual/s2100/connexio/display-pma.png", "DISPLAY: estat dels equips a la posada en marxa", 15, "S2100 · variant no diferenciada a la fitxa", []),
++  ],
++  "sac04_terminal": [
++    ImatgePasManual("manual/s2100/connexio/bateries-pma.png", "Bateries i posada en marxa automàtica (PMA)", 15, "S2100 · variant no diferenciada a la fitxa", []),
++    ImatgePasManual("manual/s2100/connexio/display-pma.png", "DISPLAY: estat dels equips a la posada en marxa", 15, "S2100 · variant no diferenciada a la fitxa", []),
++  ],
++  "sac02_un": [
++    ImatgePasManual("manual/s2100/sac_02/display-un-inhibit.png", "Exemple del DISPLAY: un equip inhibit", 18, "S2100 · variant no diferenciada a la fitxa", []),
++  ],
++  "sac02_seguiment": [
++    ImatgePasManual("manual/s2100/sac_02/cofre-motor.png", "Cofre motor: 1F17 / 1F12; intervenció coordinada amb Portacotxeres", 18, "S2100 · variant no diferenciada a la fitxa", []),
++  ],
++  "sac16_continua": [
++    ImatgePasManual("manual/s2100/sac_02/cofre-motor.png", "Cofre motor: 1F17 / 1F12; intervenció coordinada amb Portacotxeres", 18, "S2100 · variant no diferenciada a la fitxa", []),
++    ImatgePasManual("manual/s2100/sac_19/armari-1f09.png", "1F09; només si correspon al cotxe", 38, "S2100 · variant no diferenciada a la fitxa", []),
++    ImatgePasManual("manual/s2100/sac_14/termic-1f11.png", "1F11; només si correspon al cotxe", 35, "S2100 · variant no diferenciada a la fitxa", []),
++    ImatgePasManual("manual/s2100/sac_19/armari-1f13.png", "1F13; exclusiu MA1 / MA2", 40, "S2100 · variant no diferenciada a la fitxa", ["MA1", "MA2"]),
++  ],
++  "sac02_tots": [
++    ImatgePasManual("manual/s2100/sac_02/display-tots-inhibits.png", "Exemple del DISPLAY: tots inhibits", 19, "S2100 · variant no diferenciada a la fitxa", []),
++    ImatgePasManual("manual/s2100/compartits/bolet-emergencia.png", "Bolet d’emergència de la cabina habilitada", 52, "S2100 · variant no diferenciada a la fitxa", []),
++  ],
++  "sac03_un": [
++    ImatgePasManual("manual/s2100/sac_03/display-un-aillat.png", "Exemple del DISPLAY: un equip aïllat", 20, "S2100 · variant no diferenciada a la fitxa", []),
++  ],
++  "sac03_tots": [
++    ImatgePasManual("manual/s2100/sac_03/display-tots-aillats.png", "Exemple del DISPLAY: tots aïllats", 21, "S2100 · variant no diferenciada a la fitxa", []),
++    ImatgePasManual("manual/s2100/sac_03/cofre-exterior.png", "Cofre de tracció: ubicació exterior", 21, "S2100 · variant no diferenciada a la fitxa", []),
++    ImatgePasManual("manual/s2100/sac_03/cofre-interior.png", "Cofre de tracció: detall interior", 21, "S2100 · variant no diferenciada a la fitxa", []),
++  ],
++  "sac06_pendent": [
++    ImatgePasManual("manual/s2100/sac_06/instruments-bateria.png", "Instruments A / B de bateria; identificació, procediment pendent", 23, "S2100 · variant no diferenciada a la fitxa", []),
++    ImatgePasManual("manual/s2100/sac_06/comandament-convertidor.png", "Convertidor P.M.M.; identificació, procediment pendent", 23, "S2100 · variant no diferenciada a la fitxa", []),
++  ],
++  "inicio_pupitre_fallo": [
++    ImatgePasManual("manual/s2100/sac_07/controla-claxon.png", "Controla lateral: clàxon abans de tancar", 25, "S2100 · variant no diferenciada a la fitxa", []),
++    ImatgePasManual("manual/s2100/sac_07/botonera-portes.png", "Botonera de portes: selecció de costat", 25, "S2100 · variant no diferenciada a la fitxa", []),
++  ],
++  "procedimiento_puertas_fallo": [
++    ImatgePasManual("manual/s2100/sac_08/pilot-exterior.png", "Pilot exterior: localitzar la porta afectada", 26, "S2100 · variant no diferenciada a la fitxa", []),
++    ImatgePasManual("manual/s2100/sac_08/selector-ma.png", "Absència de tensió: selector MA1 / MA2", 27, "S2100 · variant no diferenciada a la fitxa", ["MA1", "MA2"]),
++    ImatgePasManual("manual/s2100/sac_08/selector-mb-r.png", "Absència de tensió: selector MB1 / R / MB2", 27, "S2100 · variant no diferenciada a la fitxa", ["MB1", "R", "MB2"]),
++    ImatgePasManual("manual/s2100/sac_08/remodelat-pinyo.png", "Accés al pinyó inferior; retirada d’objectes només sense tensió", 64, "S2100 remodelat · només en aquesta variant", []),
++  ],
++  "sac12": [
++    ImatgePasManual("manual/s2100/sac_12/comandament-pantograf.png", "Connexió del pantògraf a posada en marxa", 30, "S2100 · variant no diferenciada a la fitxa", []),
++  ],
++  "sac13_tots_pressio": [
++    ImatgePasManual("manual/s2100/sac_13/display-tots-estacionaments.png", "Exemple del DISPLAY: estacionaments a tots els cotxes", 32, "S2100 · variant no diferenciada a la fitxa", []),
++    ImatgePasManual("manual/s2100/sac_21/manometre-tdp.png", "Manòmetre: pressió real", 42, "S2100 · variant no diferenciada a la fitxa", []),
++  ],
++  "sac13_un_pressio": [
++    ImatgePasManual("manual/s2100/sac_13/display-un-estacionament.png", "Exemple del DISPLAY: estacionament a un cotxe", 33, "S2100 · variant no diferenciada a la fitxa", []),
++    ImatgePasManual("manual/s2100/sac_21/manometre-tdp.png", "Manòmetre: pressió real", 42, "S2100 · variant no diferenciada a la fitxa", []),
++  ],
++  "procedimiento_tirador": [
++    ImatgePasManual("manual/s2100/sac_22/pilot-taronja.png", "Localització del cotxe: pilot exterior taronja", 43, "S2100 · variant no diferenciada a la fitxa", []),
++    ImatgePasManual("manual/s2100/sac_22/tirador-rearme.png", "Tirador d’alarma: rearme amb clau", 43, "S2100 · variant no diferenciada a la fitxa", []),
++  ],
++  "sac23_remodelat": [
++    ImatgePasManual("manual/s2100/sac_23/remodelat-pilot.png", "Pilot Tren Stop del pupitre", 64, "S2100 remodelat · només en aquesta variant", []),
++  ],
++  "sac25_pendent": [
++    ImatgePasManual("manual/s2100/sac_25/termic-iris.png", "IRIS: identificació del tèrmic; procediment pendent", 47, "S2100 · variant no diferenciada a la fitxa", []),
++    ImatgePasManual("manual/s2100/sac_25/termic-edp-ma2.png", "EDP a MA2: identificació; procediment pendent", 48, "S2100 · variant no diferenciada a la fitxa", ["MA2"]),
++    ImatgePasManual("manual/s2100/sac_25/equip-posicio-ma1.png", "Equip de detecció de posició a MA1: identificació; procediment pendent", 48, "S2100 · variant no diferenciada a la fitxa", ["MA1"]),
++  ],
++  "pregunta_seta": [
++    ImatgePasManual("manual/s2100/compartits/bolet-emergencia.png", "Bolet d’emergència de la cabina habilitada", 52, "S2100 · variant no diferenciada a la fitxa", []),
++  ],
++  "procedimiento_seta": [
++    ImatgePasManual("manual/s2100/compartits/bolet-emergencia.png", "Bolet d’emergència de la cabina habilitada", 52, "S2100 · variant no diferenciada a la fitxa", []),
++  ],
++  "sac13_tots_persisteix": [
++    ImatgePasManual("manual/s2100/compartits/bolet-emergencia.png", "Bolet d’emergència de la cabina habilitada", 52, "S2100 · variant no diferenciada a la fitxa", []),
++  ],
++  "inicio_modo_especial": [
++    ImatgePasManual("manual/s2100/mode_especial/manipulador.png", "Manipulador marxa / fre", 8, "S2100 · variant no diferenciada a la fitxa", []),
++    ImatgePasManual("manual/s2100/mode_especial/selector-marxes.png", "Selector de marxes", 8, "S2100 · variant no diferenciada a la fitxa", []),
++    ImatgePasManual("manual/s2100/mode_especial/clau-govern.png", "Clau de govern", 8, "S2100 · variant no diferenciada a la fitxa", []),
++  ],
++  "procedimiento_modo_especial": [
++    ImatgePasManual("manual/s2100/mode_especial/manipulador.png", "Manipulador marxa / fre", 8, "S2100 · variant no diferenciada a la fitxa", []),
++    ImatgePasManual("manual/s2100/mode_especial/selector-marxes.png", "Selector de marxes", 8, "S2100 · variant no diferenciada a la fitxa", []),
++    ImatgePasManual("manual/s2100/mode_especial/clau-govern.png", "Clau de govern", 8, "S2100 · variant no diferenciada a la fitxa", []),
++    ImatgePasManual("manual/s2100/mode_especial/clau-atc.png", "Bombí de desconnexió ATC / mode especial", 8, "S2100 · variant no diferenciada a la fitxa", []),
++    ImatgePasManual("manual/s2100/mode_especial/pilot-me.png", "Pilot de mode especial", 8, "S2100 · variant no diferenciada a la fitxa", []),
++  ],
++  "procedimiento_modo_especial_llave": [
++    ImatgePasManual("manual/s2100/mode_especial/clau-atc.png", "Bombí de desconnexió ATC / mode especial", 8, "S2100 · variant no diferenciada a la fitxa", []),
++    ImatgePasManual("manual/s2100/mode_especial/pilot-me.png", "Pilot de mode especial", 8, "S2100 · variant no diferenciada a la fitxa", []),
++  ],
++  "pregunta_tdp": [
++    ImatgePasManual("manual/s2100/sac_21/manometre-tdp.png", "Manòmetre: pressió real", 42, "S2100 · variant no diferenciada a la fitxa", []),
++  ],
++  "sac_aire": [
++    ImatgePasManual("manual/s2100/sac_21/manometre-tdp.png", "Manòmetre: pressió real", 42, "S2100 · variant no diferenciada a la fitxa", []),
++  ],
++  "sac_aire_pendent": [
++    ImatgePasManual("manual/s2100/sac_21/manometre-tdp.png", "Manòmetre: pressió real", 42, "S2100 · variant no diferenciada a la fitxa", []),
++  ],
++  "sac21_intermitent": [
++    ImatgePasManual("manual/s2100/sac_21/manometre-tdp.png", "Manòmetre: pressió real", 42, "S2100 · variant no diferenciada a la fitxa", []),
++  ],
++  "procedimiento_quitar_estacionamiento_cabina": [
++    ImatgePasManual("manual/s2100/sac_13/des-con-des.png", "Estacionament: CON / DES", 32, "S2100 · variant no diferenciada a la fitxa", []),
++  ],
++};
+--- /dev/null
++++ b/lib/data/sac2100_data.dart
+@@ -0,0 +1,1368 @@
++part of 's2100_data.dart';
++
++class CasellaSac {
++  final int numero;
++  final String text;
++  final String? desti;
++  const CasellaSac(this.numero, this.text, this.desti);
++}
++
++const casellesSac2100 = <CasellaSac>[
++  CasellaSac(1, "Disjuntor", "procedimiento_rearme_disyuntor"),
++  CasellaSac(2, "Equip tracció inhibit", "sac02"),
++  CasellaSac(3, "Equip tracció aïllat", "sac03"),
++  CasellaSac(4, "Tensió nul·la", "procedimiento_tension_nula"),
++  CasellaSac(5, "Fusible convertidor", "sac05"),
++  CasellaSac(6, "Faltà convertidor", "sac06"),
++  CasellaSac(7, "Comandament portes", "sac07"),
++  CasellaSac(8, "Porta oberta", "procedimiento_puertas_fallo"),
++  CasellaSac(9, "Miralls retrovisor", "sac09"),
++  CasellaSac(10, "", null),
++  CasellaSac(11, "", null),
++  CasellaSac(12, "Fallada pantògraf", "sac12"),
++  CasellaSac(13, "Fre estacionament", "sac13"),
++  CasellaSac(14, "Fallada fre pneumàtic", "sac14"),
++  CasellaSac(15, "Anul·lació fre de servei", "sac15"),
++  CasellaSac(16, "(Anomalia) antipatinatge / antibloqueig", "sac16"),
++  CasellaSac(17, "Suspensió pneumàtica", "sac17_pendent"),
++  CasellaSac(18, "Aire condicionat", "sac18_pendent"),
++  CasellaSac(19, "Tèrmics", "sac19"),
++  CasellaSac(20, "Tèrmic compressor", "sac20"),
++  CasellaSac(21, "Avaria compressor", "sac21"),
++  CasellaSac(22, "Tirador alarma accionat", "procedimiento_tirador"),
++  CasellaSac(23, "Equip tren-stop", "procedimiento_tren_stop_rearme"),
++  CasellaSac(24, "Llaç d’emergència", "sac24"),
++  CasellaSac(25, "Avaria megafonia", "sac25"),
++  CasellaSac(26, "Avaria caixa negra", "sac26"),
++  CasellaSac(27, "Avaria Agate Link", "sac27"),
++  CasellaSac(28, "Absència d’enllumenat", "sac28_pendent"),
++  CasellaSac(29, "Unitat seccionada", "sac29_pendent"),
++  CasellaSac(30, "", null),
++];
++
++final Map<String, PasoDiagnostico> procedimientosSac2100 = {
++  "sac05": PasoDiagnostico(
++    id: "sac05",
++    preguntaOInstruccion:
++        "SAC 05 · Fusible convertidor\n\nEl fusible s’ha fos: el convertidor NO rearmarà. Retira el tren al més aviat possible. Circular amb un únic convertidor és crític en S2100: desallotja al moment. Desconnecta llums, aire condicionat i megafonia i coordina la retirada amb CCM/Portacotxeres.\n\nFont: L4 Avaries tècniques, pàg. 23.",
++    esPregunta: false,
++  ),
++  "sac06": PasoDiagnostico(
++    id: "sac06",
++    preguntaOInstruccion:
++        "SAC 06 · Fallada convertidor\n\nComprova degradació d’aire condicionat / enllumenat, amperímetre de bateria a descàrrega (A) i voltímetre de bateria inferior a 87 V (B) a la unitat afectada.\n\nAmb un únic convertidor, desallotja al moment i coordina retirada al més aviat possible. Desconnecta llums, aire condicionat i megafonia.\n\nFont: L4 Avaries tècniques, pàg. 23.",
++    esPregunta: false,
++    botonSiDestino: "sac06_con",
++    imagenPath: "manual/s2100/sac_06/instruments-bateria.png",
++  ),
++  "sac09": PasoDiagnostico(
++    id: "sac09",
++    preguntaOInstruccion:
++        "SAC 09 · Miralls retrovisors\n\nAmb fuita al quadre pneumàtic de cabina pot faltar aire per obrir el mirall. Identifica i gira l’aixeta corresponent del quadre pneumàtic. No és la prova de velocitat del SAC 26.\n\nFont: L4 Avaries tècniques, pàg. 57.",
++    esPregunta: false,
++    botonSiDestino: "sac09_ok",
++  ),
++  "sac15": PasoDiagnostico(
++    id: "sac15",
++    preguntaOInstruccion:
++        "SAC 15 · Anul·lació fre de servei\n\nEl fre de servei és el fre pneumàtic. L’avís informa que està anul·lat; no ordena tornar-lo a anul·lar. Conserva les condicions d’aïllament i llaç de fre de la maniobra realitzada.\n\nFont: criteri operatiu confirmat; actuació B12 a la pàg. 35.",
++    esPregunta: false,
++    opcions: [
++      OpcioSac("Hi ha una fallada de fre pneumàtic per resoldre", "sac14"),
++      OpcioSac(
++        "L’anul·lació ja s’ha realitzat · informar CCM",
++        "sac15_informat",
++      ),
++      OpcioSac("No es coneix la causa de l’anul·lació", "sac_pendent"),
++    ],
++  ),
++  "sac17_pendent": PasoDiagnostico(
++    id: "sac17_pendent",
++    preguntaOInstruccion:
++        "SAC 17 · Suspensió pneumàtica\n\nProcediment pendent d’incorporar. Identifica el cotxe i la informació del DISPLAY i comunica el cas al CCM/Portacotxeres. No s’assigna una maniobra automàtica.",
++    esPregunta: false,
++  ),
++  "sac18_pendent": PasoDiagnostico(
++    id: "sac18_pendent",
++    preguntaOInstruccion:
++        "SAC 18 · Aire condicionat\n\nProcediment pendent d’incorporar. Identifica el cotxe i la informació del DISPLAY i comunica el cas al CCM/Portacotxeres. No s’assigna una maniobra automàtica.",
++    esPregunta: false,
++  ),
++  "sac25": PasoDiagnostico(
++    id: "sac25",
++    preguntaOInstruccion:
++        "SAC 25 · Avaria megafonia\n\nQuin símptoma presenta?\n\nFont: L4 Avaries tècniques, pàg. 46–48.",
++    esPregunta: false,
++    opcions: [
++      OpcioSac("No funciona el bip-bip de portes", "sac25_iris"),
++      OpcioSac("No anuncia correctament les estacions", "sac25_edp"),
++      OpcioSac("No identificat", "sac_pendent"),
++    ],
++  ),
++  "sac26": PasoDiagnostico(
++    id: "sac26",
++    preguntaOInstruccion:
++        "SAC 26 · Avaria caixa negra\n\nProva de miralls: estacionat a l’andana i amb selecció de portes, inicia la marxa amb el mirall obert. Aproximadament a 5 km/h s’ha de tancar.\n\nLa prova comprova que el tren reconeix que ja no està a velocitat 0; no és la fuita pneumàtica del SAC 09.\n\nFont: L4 Avaries tècniques, pàg. 49.",
++    esPregunta: false,
++    botonSiDestino: "sac26_mirall",
++  ),
++  "sac27": PasoDiagnostico(
++    id: "sac27",
++    preguntaOInstruccion:
++        "SAC 27 · Avaria Agate Link\n\nQuin comportament addicional observes? No es fa reset de bateries de manera habitual: una RIOM afectada pot influir en la PMA.\n\nFont: L4 Avaries tècniques, pàg. 50.",
++    esPregunta: false,
++    opcions: [
++      OpcioSac("DISPLAY congelat", "sac27_display"),
++      OpcioSac("El tren no tracciona", "sac27_traccio"),
++      OpcioSac("DISPLAY marca pèrdua RIOM", "sac27_riom"),
++      OpcioSac("RIOM afecta PMA / equips desconnectats", "sac27_pma"),
++      OpcioSac("No identificat", "sac_pendent"),
++    ],
++  ),
++  "sac28_pendent": PasoDiagnostico(
++    id: "sac28_pendent",
++    preguntaOInstruccion:
++        "SAC 28 · Absència d’enllumenat\n\nProcediment pendent d’incorporar. Identifica el cotxe i la informació del DISPLAY i comunica el cas al CCM/Portacotxeres. No s’assigna una maniobra automàtica.",
++    esPregunta: false,
++  ),
++  "sac29_pendent": PasoDiagnostico(
++    id: "sac29_pendent",
++    preguntaOInstruccion:
++        "SAC 29 · Unitat seccionada\n\nProcediment pendent d’incorporar. Identifica el cotxe i la informació del DISPLAY i comunica el cas al CCM/Portacotxeres. No s’assigna una maniobra automàtica.",
++    esPregunta: false,
++  ),
++  "sac_pendent": PasoDiagnostico(
++    id: "sac_pendent",
++    preguntaOInstruccion:
++        "No s’ha confirmat la resolució. Conserva les condicions de les actuacions realitzades i comunica al CCM/Portacotxeres els avisos i el cotxe identificat. No es dona autorització de marxa.\n\nFont: L4 Avaries tècniques, pàg. 3–5.",
++    esPregunta: false,
++  ),
++  "sac_resultat_confirmat": PasoDiagnostico(
++    id: "sac_resultat_confirmat",
++    preguntaOInstruccion:
++        "Has confirmat la resolució del símptoma comprovat. Això no normalitza els aïllaments ni elimina les condicions operatives: comunica les actuacions al CCM. No equival a una autorització de marxa normal.\n\nFont: L4 Avaries tècniques, pàg. 3–5.",
++    esPregunta: false,
++  ),
++  "sac_identificada": PasoDiagnostico(
++    id: "sac_identificada",
++    preguntaOInstruccion:
++        "Selecciona l’alarma concreta que veus al SAC. No la dedueixis únicament del símptoma.",
++    esPregunta: false,
++    opcions: [
++      OpcioSac("01 · Disjuntor", "procedimiento_rearme_disyuntor"),
++      OpcioSac("02 · Equip tracció inhibit", "sac02"),
++      OpcioSac("03 · Equip tracció aïllat", "sac03"),
++      OpcioSac("04 · Tensió nul·la", "procedimiento_tension_nula"),
++      OpcioSac("05 · Fusible convertidor", "sac05"),
++      OpcioSac("06 · Faltà convertidor", "sac06"),
++      OpcioSac("07 · Comandament portes", "sac07"),
++      OpcioSac("08 · Porta oberta", "procedimiento_puertas_fallo"),
++      OpcioSac("09 · Miralls retrovisor", "sac09"),
++      OpcioSac("12 · Fallada pantògraf", "sac12"),
++      OpcioSac("13 · Fre estacionament", "sac13"),
++      OpcioSac("14 · Fallada fre pneumàtic", "sac14"),
++      OpcioSac("15 · Anul·lació fre de servei", "sac15"),
++      OpcioSac("16 · (Anomalia) antipatinatge / antibloqueig", "sac16"),
++      OpcioSac("17 · Suspensió pneumàtica", "sac17_pendent"),
++      OpcioSac("18 · Aire condicionat", "sac18_pendent"),
++      OpcioSac("19 · Tèrmics", "sac19"),
++      OpcioSac("20 · Tèrmic compressor", "sac20"),
++      OpcioSac("21 · Avaria compressor", "sac21"),
++      OpcioSac("22 · Tirador alarma accionat", "procedimiento_tirador"),
++      OpcioSac("23 · Equip tren-stop", "procedimiento_tren_stop_rearme"),
++      OpcioSac("24 · Llaç d’emergència", "sac24"),
++      OpcioSac("25 · Avaria megafonia", "sac25"),
++      OpcioSac("26 · Avaria caixa negra", "sac26"),
++      OpcioSac("27 · Avaria Agate Link", "sac27"),
++      OpcioSac("28 · Absència d’enllumenat", "sac28_pendent"),
++      OpcioSac("29 · Unitat seccionada", "sac29_pendent"),
++    ],
++  ),
++  "sac_bahaste_identificada": PasoDiagnostico(
++    id: "sac_bahaste_identificada",
++    preguntaOInstruccion: "El SAC o el DISPLAY identifica una avaria concreta?",
++    esPregunta: true,
++    botonSiDestino: "sac_identificada",
++    botonNoDestino: "inicio_no_desfrena",
++  ),
++  "sac_pedet_identificada": PasoDiagnostico(
++    id: "sac_pedet_identificada",
++    preguntaOInstruccion: "El SAC o el DISPLAY identifica una avaria concreta?",
++    esPregunta: true,
++    botonSiDestino: "sac_identificada",
++    botonNoDestino: "inicio_no_tracciona",
++  ),
++  "sac01_comprova": PasoDiagnostico(
++    id: "sac01_comprova",
++    preguntaOInstruccion: "S’ha connectat el disjuntor?",
++    esPregunta: true,
++    botonSiDestino: "sac01_recuperacio",
++    botonNoDestino: "sac01_reset",
++  ),
++  "sac01_recuperacio": PasoDiagnostico(
++    id: "sac01_recuperacio",
++    preguntaOInstruccion:
++        "Comprova el DISPLAY i la recuperació de la tracció. S’ha recuperat el funcionament?",
++    esPregunta: true,
++    botonSiDestino: "sac_resultat_confirmat",
++    botonNoDestino: "sac_pendent",
++  ),
++  "sac01_reset": PasoDiagnostico(
++    id: "sac01_reset",
++    preguntaOInstruccion:
++        "Reset de bateries, coordinat amb Portacotxeres; preferiblement a final de línia o via de maniobra pel risc de no reconnectar.\n\n1. DES P.M.A. i espera la desconnexió dels equips.\n2. DES Bateria.\n3. CON Bateria.\n4. CON P.M.A. i espera la connexió dels equips.\n5. Amb clau de govern, comprova al DISPLAY la connexió dels equips. Si algun resta desconnectat, connecta l’element individualment d’acord amb Portacotxeres.\n\nFont: L4 Avaries tècniques, pàg. 15–16.",
++    esPregunta: false,
++    botonSiDestino: "sac01_despres_reset",
++    imatgesManual: imatgesManual2100["sac01_reset"]!,
++  ),
++  "sac01_despres_reset": PasoDiagnostico(
++    id: "sac01_despres_reset",
++    preguntaOInstruccion:
++        "Després del reset de bateries, s’ha connectat el disjuntor?",
++    esPregunta: true,
++    botonSiDestino: "sac01_recuperacio",
++    botonNoDestino: "sac_pendent",
++  ),
++  "sac02": PasoDiagnostico(
++    id: "sac02",
++    preguntaOInstruccion:
++        "SAC 02 · Equip tracció inhibit\n\nQuin abast mostra el DISPLAY?",
++    esPregunta: false,
++    opcions: [
++      OpcioSac("Un cotxe inhibit", "sac02_un"),
++      OpcioSac("Tots els cotxes inhibits", "sac02_tots"),
++      OpcioSac("No identificat", "sac_pendent"),
++    ],
++  ),
++  "sac02_un": PasoDiagnostico(
++    id: "sac02_un",
++    preguntaOInstruccion:
++        "Passa tot per 0, incloent govern.\n\nAmb un únic cotxe inhibit, el tren pot continuar amb passatge; cal avisar Portacotxeres. No extrapolar a diversos cotxes.\n\nFont: L4 Avaries tècniques, pàg. 18.",
++    esPregunta: false,
++    botonSiDestino: "sac02_un_ok",
++    imatgesManual: imatgesManual2100["sac02_un"]!,
++  ),
++  "sac02_un_ok": PasoDiagnostico(
++    id: "sac02_un_ok",
++    preguntaOInstruccion:
++        "El cotxe ha deixat d’aparèixer inhibit després de passar tot per 0?",
++    esPregunta: true,
++    botonSiDestino: "sac02_recuperat",
++    botonNoDestino: "sac02_seguiment",
++  ),
++  "sac02_seguiment": PasoDiagnostico(
++    id: "sac02_seguiment",
++    preguntaOInstruccion:
++        "Amb un únic cotxe inhibit, el tren pot continuar amb passatge i cal avisar Portacotxeres. La recuperació de la cadena es fa d’acord amb aquest personal, habitualment per ells.\n\nSi la inhibició repetitiva s’ha produït 3 vegades, correspon aïllar la cadena de tracció afectada.\n\nFont: L4 Avaries tècniques, pàg. 18.",
++    esPregunta: false,
++    opcions: [
++      OpcioSac("Portacotxeres acorda recuperar la cadena", "sac02_recuperar"),
++      OpcioSac("La inhibició es repeteix 3 vegades", "sac02_tres_inhibicions"),
++      OpcioSac(
++        "No es decideix recuperar / pendent d’acord",
++        "sac02_continuitat",
++      ),
++    ],
++  ),
++  "sac02_recuperar": PasoDiagnostico(
++    id: "sac02_recuperar",
++    preguntaOInstruccion:
++        "Recuperació de la cadena de tracció del cotxe identificat, d’acord amb Portacotxeres:\n\n1. Baixa 1F17 (A.C. cofre motor tracció).\n2. Polsa 1F12 vermell (alimentació equip fre).\n3. Polsa 1F12 verd (alimentació equip fre).\n4. Puja 1F17.\n\nFont: L4 Avaries tècniques, pàg. 18.",
++    esPregunta: false,
++    botonSiDestino: "sac02_recuperar_ok",
++    imatgesManual: imatgesManual2100["sac02_seguiment"]!,
++  ),
++  "sac02_recuperar_ok": PasoDiagnostico(
++    id: "sac02_recuperar_ok",
++    preguntaOInstruccion: "El cotxe ha deixat d’aparèixer inhibit?",
++    esPregunta: true,
++    botonSiDestino: "sac02_recuperat",
++    botonNoDestino: "sac02_persisteix",
++  ),
++  "sac02_recuperat": PasoDiagnostico(
++    id: "sac02_recuperat",
++    preguntaOInstruccion:
++        "El cotxe ja no apareix inhibit. La inhibició s’ha repetit 3 vegades?",
++    esPregunta: true,
++    botonSiDestino: "sac02_tres_inhibicions",
++    botonNoDestino: "sac_resultat_confirmat",
++  ),
++  "sac02_persisteix": PasoDiagnostico(
++    id: "sac02_persisteix",
++    preguntaOInstruccion:
++        "El cotxe continua inhibit. La inhibició s’ha repetit 3 vegades?",
++    esPregunta: true,
++    botonSiDestino: "sac02_tres_inhibicions",
++    botonNoDestino: "sac02_continuitat",
++  ),
++  "sac02_tres_inhibicions": PasoDiagnostico(
++    id: "sac02_tres_inhibicions",
++    preguntaOInstruccion:
++        "La inhibició repetitiva 3 vegades comporta aïllar la cadena de tracció afectada. Coordina l’actuació amb Portacotxeres. No és un aïllament automàtic d’una semiunitat.\n\nFont: L4 Avaries tècniques, pàg. 18.",
++    esPregunta: false,
++  ),
++  "sac02_continuitat": PasoDiagnostico(
++    id: "sac02_continuitat",
++    preguntaOInstruccion:
++        "Amb un únic cotxe inhibit, el manual permet continuar amb passatge i avisar Portacotxeres. Mantén registrada la incidència: no s’ha confirmat recuperació. Si arriba a 3 inhibicions repetitives, correspon aïllar la cadena afectada d’acord amb Portacotxeres.\n\nFont: L4 Avaries tècniques, pàg. 18.",
++    esPregunta: false,
++  ),
++  "sac02_tots": PasoDiagnostico(
++    id: "sac02_tots",
++    preguntaOInstruccion:
++        "Tots els cotxes inhibits. Si apareix SAC 01, resol primer el disjuntor. Si apareix SAC 13, revisa el fre d’estacionament i la causa corresponent.\n\nFont: L4 Avaries tècniques, pàg. 19.",
++    esPregunta: false,
++    imatgesManual: imatgesManual2100["sac02_tots"]!,
++    opcions: [
++      OpcioSac("SAC 01 · Disjuntor", "procedimiento_rearme_disyuntor"),
++      OpcioSac("SAC 13 · Fre estacionament", "sac13"),
++      OpcioSac("Cap dels anteriors · revisar selector", "sac02_selector"),
++    ],
++  ),
++  "sac02_selector": PasoDiagnostico(
++    id: "sac02_selector",
++    preguntaOInstruccion:
++        "El selector de marxa és en una posició diferent de 0?",
++    esPregunta: true,
++    botonSiDestino: "sac02_reset",
++    botonNoDestino: "sac02_selector_normalitzar",
++  ),
++  "sac02_selector_normalitzar": PasoDiagnostico(
++    id: "sac02_selector_normalitzar",
++    preguntaOInstruccion:
++        "Revisa i situa el selector de marxa en una posició diferent de 0.\n\nFont: L4 Avaries tècniques, pàg. 19.",
++    esPregunta: false,
++    botonSiDestino: "sac02_selector_ok",
++  ),
++  "sac02_selector_ok": PasoDiagnostico(
++    id: "sac02_selector_ok",
++    preguntaOInstruccion:
++        "S’han recuperat els equips després de revisar el selector?",
++    esPregunta: true,
++    botonSiDestino: "sac_resultat_confirmat",
++    botonNoDestino: "sac02_reset",
++  ),
++  "sac02_reset": PasoDiagnostico(
++    id: "sac02_reset",
++    preguntaOInstruccion:
++        "Reset de bateries, coordinat amb Portacotxeres; preferiblement a final de línia o via de maniobra pel risc de no reconnectar.\n\n1. DES P.M.A. i espera la desconnexió dels equips.\n2. DES Bateria.\n3. CON Bateria.\n4. CON P.M.A. i espera la connexió dels equips.\n5. Amb clau de govern, comprova al DISPLAY la connexió dels equips. Si algun resta desconnectat, connecta l’element individualment d’acord amb Portacotxeres.\n\nFont: L4 Avaries tècniques, pàg. 15–16.\n\nSi després de les proves resten dos o tres equips inhibits, continuar sense passatge, coordinat amb CCM/Portacotxeres (pàg. 19).",
++    esPregunta: false,
++    botonSiDestino: "sac02_reset_resultat",
++    imatgesManual: imatgesManual2100["sac02_reset"]!,
++  ),
++  "sac02_reset_resultat": PasoDiagnostico(
++    id: "sac02_reset_resultat",
++    preguntaOInstruccion: "Quin estat mostra ara el DISPLAY?",
++    esPregunta: false,
++    opcions: [
++      OpcioSac(
++        "Tots recuperats i funcionament comprovat",
++        "sac_resultat_confirmat",
++      ),
++      OpcioSac("Resta un cotxe inhibit", "sac02_un"),
++      OpcioSac("Resten dos o tres equips inhibits", "sac02_sense_passatge"),
++      OpcioSac("Un altre resultat / no identificat", "sac_pendent"),
++    ],
++  ),
++  "sac02_sense_passatge": PasoDiagnostico(
++    id: "sac02_sense_passatge",
++    preguntaOInstruccion:
++        "Després de les proves resten dos o tres equips inhibits: continuar SENSE PASSATGE segons el manual, coordinat amb CCM/Portacotxeres. No es considera recuperació confirmada.\n\nFont: L4 Avaries tècniques, pàg. 19.",
++    esPregunta: false,
++  ),
++  "sac03": PasoDiagnostico(
++    id: "sac03",
++    preguntaOInstruccion:
++        "SAC 03 · Aïllat no és inhibit. Quin abast mostra el DISPLAY?\n\nFont: L4 Avaries tècniques, pàg. 20–21.",
++    esPregunta: false,
++    opcions: [
++      OpcioSac("Un cotxe", "sac03_un"),
++      OpcioSac("Dos cotxes", "sac03_dos"),
++      OpcioSac("Tots els cotxes", "sac03_tots"),
++      OpcioSac("No identificat", "sac_pendent"),
++    ],
++  ),
++  "sac03_un": PasoDiagnostico(
++    id: "sac03_un",
++    preguntaOInstruccion:
++        "El DISPLAY identifica un cotxe motor en vermell: avaria important de la cadena de tracció. Amb un sol cotxe motor aïllat es pot continuar amb passatge; avisa Portacotxeres. Habitualment es va a canvi de motors a Trinitat Nova per normalitzar el cofre ONIX. Si apareix un segon cotxe aïllat, desallotjar i anar a canvi.\n\nFont: L4 Avaries tècniques, pàg. 20.",
++    esPregunta: false,
++    opcions: [
++      OpcioSac(
++        "Valorar reset en terminal amb Portacotxeres",
++        "sac03_reset_acord",
++      ),
++      OpcioSac("Apareix un segon cotxe aïllat", "sac03_dos"),
++      OpcioSac(
++        "Continuïtat amb un únic cotxe motor aïllat",
++        "sac03_continuitat",
++      ),
++    ],
++    imatgesManual: imatgesManual2100["sac03_un"]!,
++  ),
++  "sac03_dos": PasoDiagnostico(
++    id: "sac03_dos",
++    preguntaOInstruccion:
++        "Quan s’aïlla un segon cotxe, el manual recomana desallotjar i anar a canvi. Coordina amb CCM/Portacotxeres.\n\nFont: L4 Avaries tècniques, pàg. 20.",
++    esPregunta: false,
++  ),
++  "sac03_tots": PasoDiagnostico(
++    id: "sac03_tots",
++    preguntaOInstruccion:
++        "Tots els cotxes apareixen aïllats al DISPLAY. Pot passar durant la posada en marxa si es mou el selector sense prou pressió TDP.\n\nDesconnecta PMA per baixar pantògrafs i comprova el voltímetre de línia.\n\nFont: L4 Avaries tècniques, pàg. 21.",
++    esPregunta: false,
++    botonSiDestino: "sac03_zero",
++    imatgesManual: imatgesManual2100["sac03_tots"]!.take(1).toList(),
++  ),
++  "sac04_externa": PasoDiagnostico(
++    id: "sac04_externa",
++    preguntaOInstruccion:
++        "Espera normalització. Si algun equip no recupera, la fitxa preveu connexió manual a P.M.M., coordinada amb CCM/Portacotxeres.\n\nFont: L4 Avaries tècniques, pàg. 22.",
++    esPregunta: false,
++    botonSiDestino: "sac04_ok",
++  ),
++  "sac04_terminal": PasoDiagnostico(
++    id: "sac04_terminal",
++    imatgesManual: imatgesManual2100["sac04_terminal"]!,
++    preguntaOInstruccion:
++        "Possible desconnexió involuntària en treure govern: reconnecta mitjançant PMA d’acord amb CCM/Portacotxeres.\n\nFont: L4 Avaries tècniques, pàg. 22.",
++    esPregunta: false,
++    botonSiDestino: "sac04_ok",
++  ),
++  "sac04_ok": PasoDiagnostico(
++    id: "sac04_ok",
++    preguntaOInstruccion:
++        "S’ha resolt el símptoma després de l’actuació?\n\nFont: L4 Avaries tècniques, pàg. 22.",
++    esPregunta: true,
++    botonSiDestino: "sac_resultat_confirmat",
++    botonNoDestino: "sac_pendent",
++  ),
++  "sac07_ok": PasoDiagnostico(
++    id: "sac07_ok",
++    preguntaOInstruccion:
++        "S’ha resolt el símptoma després de l’actuació?\n\nFont: L4 Avaries tècniques, pàg. 25.",
++    esPregunta: true,
++    botonSiDestino: "sac_resultat_confirmat",
++    botonNoDestino: "sac_pendent",
++  ),
++  "sac22_ok": PasoDiagnostico(
++    id: "sac22_ok",
++    preguntaOInstruccion:
++        "S’ha resolt el símptoma després de l’actuació?\n\nFont: L4 Avaries tècniques, pàg. 43.",
++    esPregunta: true,
++    botonSiDestino: "sac_resultat_confirmat",
++    botonNoDestino: "sac_pendent",
++  ),
++  "sac08_persisteix": PasoDiagnostico(
++    id: "sac08_persisteix",
++    preguntaOInstruccion:
++        "Si continua marcant portes, el manual indica desallotjar, anul·lar llaç de portes i canvi/retirada amb CCM. No es dona una sortida de marxa normal.\n\nFont: L4 Avaries tècniques, pàg. 26.",
++    esPregunta: false,
++  ),
++  "sac12": PasoDiagnostico(
++    id: "sac12",
++    imatgesManual: imatgesManual2100["sac12"]!,
++    preguntaOInstruccion:
++        "SAC 12 · Identifica el cotxe al DISPLAY. Comprova connexió del pantògraf a posada en marxa i la seva aixeta. Quan sigui possible, verifica visualment la posició.\n\nFont: L4 Avaries tècniques, pàg. 30.",
++    esPregunta: false,
++    botonSiDestino: "sac12_ok",
++  ),
++  "sac12_ok": PasoDiagnostico(
++    id: "sac12_ok",
++    preguntaOInstruccion:
++        "S’ha resolt el símptoma després de l’actuació?\n\nFont: L4 Avaries tècniques, pàg. 30.",
++    esPregunta: true,
++    botonSiDestino: "sac_resultat_confirmat",
++    botonNoDestino: "sac12_persisteix",
++  ),
++  "sac12_persisteix": PasoDiagnostico(
++    id: "sac12_persisteix",
++    preguntaOInstruccion:
++        "Comprova amb CCM/Portacotxeres que cada semiunitat està alimentada almenys per un pantògraf. No pressuposis una avaria externa de catenària.\n\nFont: L4 Avaries tècniques, pàg. 30.",
++    esPregunta: false,
++  ),
++  "sac13": PasoDiagnostico(
++    id: "sac13",
++    preguntaOInstruccion:
++        "SAC 13 · Identifica al DISPLAY l’abast de l’avaria.\n\nFont: L4 Avaries tècniques, pàg. 32–34.",
++    esPregunta: false,
++    opcions: [
++      OpcioSac("Tots els cotxes", "sac13_tots_pressio"),
++      OpcioSac("Un cotxe", "sac13_un_pressio"),
++      OpcioSac("No queda clar l’abast", "sac_pendent"),
++    ],
++  ),
++  "sac13_tots_pressio": PasoDiagnostico(
++    id: "sac13_tots_pressio",
++    imatgesManual: imatgesManual2100["sac13_tots_pressio"]!,
++    preguntaOInstruccion:
++        "La pressió de canonada general és superior a 7 kg/cm²?\n\nFont: L4 Avaries tècniques, pàg. 32–33.",
++    esPregunta: true,
++    botonSiDestino: "sac13_tots_cabina",
++    botonNoDestino: "sac_aire",
++  ),
++  "sac13_tots_cabina": PasoDiagnostico(
++    id: "sac13_tots_cabina",
++    imagenPath: "manual/s2100/sac_13/des-con-des.png",
++    preguntaOInstruccion:
++        "Repeteix DES. Si continua aplicat, prova CON i després DES. Comprova l’alliberament.\n\nFont: L4 Avaries tècniques, pàg. 32–33.",
++    esPregunta: false,
++    botonSiDestino: "sac13_tots_ok",
++  ),
++  "sac13_tots_ok": PasoDiagnostico(
++    id: "sac13_tots_ok",
++    preguntaOInstruccion:
++        "S’ha alliberat realment l’estacionament i resolt el símptoma?\n\nFont: L4 Avaries tècniques, pàg. 32–33.",
++    esPregunta: true,
++    botonSiDestino: "sac_resultat_confirmat",
++    botonNoDestino: "sac13_tots_persisteix",
++  ),
++  "sac13_un_pressio": PasoDiagnostico(
++    id: "sac13_un_pressio",
++    imatgesManual: imatgesManual2100["sac13_un_pressio"]!,
++    preguntaOInstruccion:
++        "La pressió de canonada general és superior a 7 kg/cm²?\n\nFont: L4 Avaries tècniques, pàg. 32–33.",
++    esPregunta: true,
++    botonSiDestino: "sac13_un_cabina",
++    botonNoDestino: "sac_aire",
++  ),
++  "sac13_un_cabina": PasoDiagnostico(
++    id: "sac13_un_cabina",
++    imagenPath: "manual/s2100/sac_13/des-con-des.png",
++    preguntaOInstruccion:
++        "Repeteix DES. Si continua aplicat, prova CON i després DES. Comprova l’alliberament.\n\nFont: L4 Avaries tècniques, pàg. 32–33.",
++    esPregunta: false,
++    botonSiDestino: "sac13_un_ok",
++  ),
++  "sac13_un_ok": PasoDiagnostico(
++    id: "sac13_un_ok",
++    preguntaOInstruccion:
++        "S’ha alliberat realment l’estacionament i resolt el símptoma?\n\nFont: L4 Avaries tècniques, pàg. 32–33.",
++    esPregunta: true,
++    botonSiDestino: "sac_resultat_confirmat",
++    botonNoDestino: "pregunta_b19_es_ma",
++  ),
++  "sac13_tots_persisteix": PasoDiagnostico(
++    id: "sac13_tots_persisteix",
++    preguntaOInstruccion:
++        "Revisa el bolet d’emergència de la cabina habilitada i rearma’l si està activat. Comprova de nou l’estacionament.\n\nFont: L4 Avaries tècniques, pàg. 32.",
++    esPregunta: false,
++    botonSiDestino: "sac13_bolet_ok",
++    imatgesManual: imatgesManual2100["sac13_tots_persisteix"]!,
++  ),
++  "sac14": PasoDiagnostico(
++    id: "sac14",
++    preguntaOInstruccion:
++        "SAC 14 · Localitza al DISPLAY el cotxe amb fallada de fre pneumàtic.\n\nFont: L4 Avaries tècniques, pàg. 35.",
++    esPregunta: false,
++  ),
++  "sac14_1f11": PasoDiagnostico(
++    id: "sac14_1f11",
++    imagenPath: "manual/s2100/sac_14/termic-1f11.png",
++    preguntaOInstruccion:
++        "Al cotxe identificat, la fitxa preveu tirar el tèrmic 1F11. Coordina l’actuació i comprova el resultat.\n\nFont: L4 Avaries tècniques, pàg. 35.",
++    esPregunta: false,
++    botonSiDestino: "sac14_ok",
++  ),
++  "sac14_b12": PasoDiagnostico(
++    id: "sac14_b12",
++    preguntaOInstruccion:
++        "Amb el cotxe identificat i coordinació CCM, utilitza les B12. El cotxe queda sense fre pneumàtic; aquest supòsit requereix anul·lar el llaç de fre per desfrenar.\n\nFont: L4 Avaries tècniques, pàg. 35.",
++    esPregunta: false,
++    botonSiDestino: "procedimiento_b12_esquema",
++  ),
++  "sac14_ok": PasoDiagnostico(
++    id: "sac14_ok",
++    preguntaOInstruccion:
++        "S’ha resolt el símptoma després de l’actuació?\n\nFont: L4 Avaries tècniques, pàg. 35.",
++    esPregunta: true,
++    botonSiDestino: "sac_resultat_confirmat",
++    botonNoDestino: "sac_pendent",
++  ),
++  "sac16": PasoDiagnostico(
++    id: "sac16",
++    preguntaOInstruccion:
++        "SAC 16 · L’alarma és intermitent o contínua?\n\nFont: L4 Avaries tècniques, pàg. 36.",
++    esPregunta: false,
++    opcions: [
++      OpcioSac("Intermitent", "sac16_observar"),
++      OpcioSac("Contínua", "sac16_continua"),
++      OpcioSac("No identificat", "sac_pendent"),
++    ],
++  ),
++  "sac16_observar": PasoDiagnostico(
++    id: "sac16_observar",
++    preguntaOInstruccion:
++        "Mantén en observació i avisa Portacotxeres.\n\nFont: L4 Avaries tècniques, pàg. 36.",
++    esPregunta: false,
++  ),
++  "sac16_continua": PasoDiagnostico(
++    id: "sac16_continua",
++    preguntaOInstruccion:
++        "Identifica el cotxe al DISPLAY. No és una incidència crítica: preferiblement a final de línia, reinicia l’electrònica de fre amb els tèrmics aplicables 1F09 / 1F11 / 1F13 (aquest últim exclusiu MA). No actuïs sobre elements que no corresponguin al cotxe.\n\nFont: L4 Avaries tècniques, pàg. 36.",
++    esPregunta: false,
++    botonSiDestino: "sac16_ok",
++    imatgesManual: imatgesManual2100["sac16_continua"]!
++        .where((i) => !i.path.contains("cofre-motor"))
++        .toList(),
++  ),
++  "sac19": PasoDiagnostico(
++    id: "sac19",
++    preguntaOInstruccion:
++        "SAC 19 / DISPLAY · Identifica tèrmic, cotxe i combinació d’avisos. La combinació sola no substitueix la identificació.\n\nFont: L4 Avaries tècniques, pàg. 37–41.",
++    esPregunta: false,
++    opcions: [
++      OpcioSac("1F09 identificat · 19 + 13", "sac19_09"),
++      OpcioSac("1F13 identificat al DISPLAY", "sac19_13"),
++      OpcioSac("Tèrmic compressor · SAC 20", "sac20"),
++      OpcioSac("No identificat", "sac_pendent"),
++    ],
++  ),
++  "sac19_09": PasoDiagnostico(
++    id: "sac19_09",
++    imagenPath: "manual/s2100/sac_19/armari-1f09.png",
++    preguntaOInstruccion:
++        "Confirma cotxe i 1F09. Prova de rearmar el tèrmic identificat.\n\nFont: L4 Avaries tècniques, pàg. 38.",
++    esPregunta: false,
++    botonSiDestino: "sac19_09_ok",
++  ),
++  "sac19_09_ok": PasoDiagnostico(
++    id: "sac19_09_ok",
++    preguntaOInstruccion:
++        "S’ha resolt el símptoma després de l’actuació?\n\nFont: L4 Avaries tècniques, pàg. 38.",
++    esPregunta: true,
++    botonSiDestino: "sac_resultat_confirmat",
++    botonNoDestino: "sac19_09_pendent",
++  ),
++  "sac19_11": PasoDiagnostico(
++    id: "sac19_11",
++    imagenPath: "manual/s2100/sac_14/termic-1f11.png",
++    preguntaOInstruccion:
++        "Confirma cotxe i 1F11. Prova de rearmar el tèrmic identificat.\n\nFont: L4 Avaries tècniques, pàg. 39.",
++    esPregunta: false,
++    botonSiDestino: "sac19_11_ok",
++  ),
++  "sac19_11_ok": PasoDiagnostico(
++    id: "sac19_11_ok",
++    preguntaOInstruccion:
++        "S’ha resolt el símptoma després de l’actuació?\n\nFont: L4 Avaries tècniques, pàg. 39.",
++    esPregunta: true,
++    botonSiDestino: "sac_resultat_confirmat",
++    botonNoDestino: "sac19_11_pendent",
++  ),
++  "sac19_13": PasoDiagnostico(
++    id: "sac19_13",
++    imagenPath: "manual/s2100/sac_19/armari-1f13.png",
++    preguntaOInstruccion:
++        "Confirma cotxe i 1F13 (exclusiu MA1 / MA2). Prova de rearmar el tèrmic identificat.\n\nFont: L4 Avaries tècniques, pàg. 40.",
++    esPregunta: false,
++    botonSiDestino: "sac19_13_ok",
++  ),
++  "sac19_13_ok": PasoDiagnostico(
++    id: "sac19_13_ok",
++    preguntaOInstruccion:
++        "S’ha resolt el símptoma després de l’actuació?\n\nFont: L4 Avaries tècniques, pàg. 40.",
++    esPregunta: true,
++    botonSiDestino: "sac_resultat_confirmat",
++    botonNoDestino: "sac19_13_pendent",
++  ),
++  "sac19_09_pendent": PasoDiagnostico(
++    id: "sac19_09_pendent",
++    preguntaOInstruccion:
++        "Si 1F09 no rearma: desallotjar i alliberar estacionament mecànicament. Reutilitza B19 i, si no entra aire, B17/sirgues. El SAC pot mantenir l’avís malgrat alliberament real. Cal llaç de portes per traccionar, coordinat amb CCM.\n\nFont: L4 Avaries tècniques, pàg. 38.",
++    esPregunta: false,
++    botonSiDestino: "pregunta_b19_es_ma",
++  ),
++  "sac19_11_pendent": PasoDiagnostico(
++    id: "sac19_11_pendent",
++    preguntaOInstruccion:
++        "No anul·lis el llaç sense localitzar el cotxe: podria continuar frenat. Comunica DISPLAY i resultat a CCM/Portacotxeres. Sense informació del DISPLAY cal diagnòstic de causes, no atribuir-ho automàticament a 1F11.\n\nFont: L4 Avaries tècniques, pàg. 39.",
++    esPregunta: false,
++  ),
++  "sac19_13_pendent": PasoDiagnostico(
++    id: "sac19_13_pendent",
++    preguntaOInstruccion:
++        "Si 1F13 no rearma, el tren queda frenat per emergència. És possible desfrenar des de cabina contrària, d’acord amb CCM?\n\nFont: L4 Avaries tècniques, pàg. 40.",
++    esPregunta: true,
++    botonSiDestino: "sac19_13_cabina",
++    botonNoDestino: "sac19_13_remolcada",
++  ),
++  "sac20": PasoDiagnostico(
++    id: "sac20",
++    imagenPath: "manual/s2100/sac_20/rearme-compressor.png",
++    preguntaOInstruccion:
++        "SAC 20 · Visualitza el compressor afectat al DISPLAY. A l’armari de tèrmics de qualsevol testera, prem «rearme tèrmic compressor»; la reposició és independent del compressor afectat.\n\nFont: L4 Avaries tècniques, pàg. 41.",
++    esPregunta: false,
++    botonSiDestino: "sac20_ok",
++  ),
++  "sac20_ok": PasoDiagnostico(
++    id: "sac20_ok",
++    preguntaOInstruccion:
++        "Ha reposat i has comprovat el funcionament correcte?\n\nFont: L4 Avaries tècniques, pàg. 41.",
++    esPregunta: true,
++    botonSiDestino: "sac_resultat_confirmat",
++    botonNoDestino: "sac20_verificar",
++  ),
++  "sac20_verificar": PasoDiagnostico(
++    id: "sac20_verificar",
++    imagenPath: "manual/s2100/sac_21/manometre-tdp.png",
++    preguntaOInstruccion:
++        "Si no reposa, comprova funcionament real dels compressors observant l’evolució de TDP: pot haver-hi fallada de comunicació. Contacta Portacotxeres i valora la situació; no assumeixis compressor aturat només per l’avís.\n\nFont: L4 Avaries tècniques, pàg. 41.",
++    esPregunta: false,
++  ),
++  "sac21": PasoDiagnostico(
++    id: "sac21",
++    imagenPath: "manual/s2100/sac_21/manometre-tdp.png",
++    preguntaOInstruccion:
++        "SAC 21 · Comprova pressió real de canonada general (òptima 8–11 kg/cm² segons fitxa) i evolució de l’alarma durant la càrrega.\n\nFont: L4 Avaries tècniques, pàg. 42.",
++    esPregunta: false,
++    opcions: [
++      OpcioSac("Puntual / intermitent", "sac21_intermitent"),
++      OpcioSac("Fixa durant tota la càrrega", "sac21_fixa"),
++      OpcioSac("No puc determinar-ho", "sac_pendent"),
++    ],
++  ),
++  "sac21_intermitent": PasoDiagnostico(
++    id: "sac21_intermitent",
++    imatgesManual: imatgesManual2100["sac21_intermitent"]!,
++    preguntaOInstruccion:
++        "Pot aparèixer amb pressió insuficient i normalitzar en arribar a la desitjada. Monitoritza l’agulla del manòmetre i parla amb Portacotxeres. No s’ha confirmat recuperació només per seleccionar aquest cas.\n\nFont: L4 Avaries tècniques, pàg. 42.",
++    esPregunta: false,
++  ),
++  "sac21_fixa": PasoDiagnostico(
++    id: "sac21_fixa",
++    preguntaOInstruccion:
++        "Compressor que no treballa o manca de pressió. Parla amb Portacotxeres i valora retirada/canvi. El manual contempla un sol compressor fins a retirar, vigilant pressió; no és autorització automàtica de continuïtat.\n\nFont: L4 Avaries tècniques, pàg. 42.",
++    esPregunta: false,
++  ),
++  "sac23_original": PasoDiagnostico(
++    id: "sac23_original",
++    preguntaOInstruccion:
++        "La fitxa indica que al 2100 original no afecta la conducció. Si persisteix el símptoma, cal identificar una altra causa; no aplicar la seqüència del remodelat.\n\nFont: L4 Avaries tècniques, pàg. 44.",
++    esPregunta: false,
++  ),
++  "sac23_remodelat": PasoDiagnostico(
++    id: "sac23_remodelat",
++    imatgesManual: imatgesManual2100["sac23_remodelat"]!,
++    imagenPath: "manual/s2100/sac_23/remodelat-armari-tren-stop.png",
++    preguntaOInstruccion:
++        "Rearma amb TR de l’IRIS o amb el polsador verd de rearme a la part inferior de l’armari. El pilot també pot indicar IRIS sense alimentació.\n\nFont: L4 Avaries tècniques, pàg. 44, 64.",
++    esPregunta: false,
++    botonSiDestino: "sac23_ok",
++  ),
++  "sac23_ok": PasoDiagnostico(
++    id: "sac23_ok",
++    preguntaOInstruccion:
++        "S’ha resolt el símptoma després de l’actuació?\n\nFont: L4 Avaries tècniques, pàg. 44, 64.",
++    esPregunta: true,
++    botonSiDestino: "sac_resultat_confirmat",
++    botonNoDestino: "sac23_anullar",
++  ),
++  "sac23_anullar": PasoDiagnostico(
++    id: "sac23_anullar",
++    imagenPath: "manual/s2100/sac_23/remodelat-rearme-anullacio.png",
++    preguntaOInstruccion:
++        "Si no rearma, la fitxa identifica el polsador vermell d’anul·lació Tren Stop. Confirma l’element i coordina amb CCM; no és un tèrmic genèric.\n\nFont: L4 Avaries tècniques, pàg. 44, 64.",
++    esPregunta: false,
++    botonSiDestino: "sac23_anullat_ok",
++    advertencia:
++        "Tren Stop anul·lat: conserva aquesta condició i les indicacions del CCM.",
++  ),
++  "sac23_anullat_ok": PasoDiagnostico(
++    id: "sac23_anullat_ok",
++    preguntaOInstruccion:
++        "S’ha resolt el símptoma mantenint registrada l’anul·lació de Tren Stop?\n\nFont: L4 Avaries tècniques, pàg. 44, 64.",
++    esPregunta: true,
++    botonSiDestino: "sac_resultat_confirmat",
++    botonNoDestino: "sac_pendent",
++  ),
++  "sac24": PasoDiagnostico(
++    id: "sac24",
++    preguntaOInstruccion:
++        "SAC 24 · El llaç obert no identifica per si sol la causa. Pot ser tirador, home mort, punt 7, bolet, pressió mínima, Tren Stop, tèrmics o absència de mode. Prioritza la causa concreta al DISPLAY. Si no normalitza, el manual indica desallotjar i anul·lar llaç de fre quan correspongui, amb CCM i sense deixar un cotxe frenat.\n\nFont: L4 Avaries tècniques, pàg. 45.",
++    esPregunta: false,
++    opcions: [
++      OpcioSac("13 · Fre estacionament", "sac13"),
++      OpcioSac("14 · fre pneumàtic", "sac14"),
++      OpcioSac("19 · Tèrmic identificat", "sac19"),
++      OpcioSac("1F11 caigut identificat al DISPLAY", "sac19_11"),
++      OpcioSac("22 · tirador", "procedimiento_tirador"),
++      OpcioSac("23 · Tren Stop", "procedimiento_tren_stop_rearme"),
++      OpcioSac("Una altra alarma concreta", "sac_identificada"),
++      OpcioSac("24 sol · diagnosticar causa", "inicio_no_desfrena"),
++    ],
++  ),
++  "sac_aire": PasoDiagnostico(
++    id: "sac_aire",
++    imatgesManual: imatgesManual2100["sac_aire"]!,
++    preguntaOInstruccion:
++        "TDP baixa no implica fallada de fre pneumàtic. Hi ha alarma de compressor identificada?\n\nFont: L4 Avaries tècniques, pàg. 41–42, 45.",
++    esPregunta: false,
++    opcions: [
++      OpcioSac("20 · Tèrmic compressor", "sac20"),
++      OpcioSac("21 · Avaria compressor", "sac21"),
++      OpcioSac("Cap alarma concreta / possible fuita", "sac_aire_pendent"),
++    ],
++  ),
++  "sac_aire_pendent": PasoDiagnostico(
++    id: "sac_aire_pendent",
++    imatgesManual: imatgesManual2100["sac_aire_pendent"]!,
++    preguntaOInstruccion:
++        "Comprova evolució de la pressió i possibles fuites. Comunica dades reals a CCM/Portacotxeres. No passar a B12 només perquè hi hagi poca pressió.\n\nFont: L4 Avaries tècniques, pàg. 41–42, 45, 53–55.",
++    esPregunta: false,
++  ),
++  "sac_des_comprova": PasoDiagnostico(
++    id: "sac_des_comprova",
++    preguntaOInstruccion:
++        "S’ha afluixat realment l’estacionament?\n\nFont: L4 Avaries tècniques, pàg. 32–34.",
++    esPregunta: true,
++    botonSiDestino: "pregunta_eed",
++    botonNoDestino: "sac13",
++  ),
++  "sac_portes_reconegudes": PasoDiagnostico(
++    id: "sac_portes_reconegudes",
++    preguntaOInstruccion:
++        "Amb portes físicament tancades, el SAC/DISPLAY també les reconeix tancades?\n\nFont: L4 Avaries tècniques, pàg. 26.",
++    esPregunta: true,
++    causaDescartadaAlSi: "Portes obertes",
++    botonSiDestino: "pregunta_estacionamiento",
++    botonNoDestino: "procedimiento_puertas_fallo",
++  ),
++
++  "sac03_continuitat": PasoDiagnostico(
++    id: "sac03_continuitat",
++    preguntaOInstruccion:
++        "Continua amb passatge només en el supòsit d’un únic cotxe motor aïllat, amb avís i seguiment de Portacotxeres. Acorda el canvi de motors / normalització ONIX. No s’ha confirmat recuperació.\n\nFont: L4 Avaries tècniques, pàg. 20.",
++    esPregunta: false,
++  ),
++  "sac03_reset_acord": PasoDiagnostico(
++    id: "sac03_reset_acord",
++    preguntaOInstruccion:
++        "Sou en terminal i Portacotxeres acorda fer el reset de bateries?\n\nFont: L4 Avaries tècniques, pàg. 20.",
++    esPregunta: true,
++    botonSiDestino: "sac03_reset",
++    botonNoDestino: "sac03_continuitat",
++  ),
++  "sac03_reset_ok": PasoDiagnostico(
++    id: "sac03_reset_ok",
++    preguntaOInstruccion:
++        "Després del reset, s’ha recuperat l’equip i comprovat el funcionament?\n\nFont: L4 Avaries tècniques, pàg. 20.",
++    esPregunta: true,
++    botonSiDestino: "sac_resultat_confirmat",
++    botonNoDestino: "sac03",
++  ),
++  "sac03_zero": PasoDiagnostico(
++    id: "sac03_zero",
++    preguntaOInstruccion:
++        "Els pantògrafs estan baixats i el voltímetre de línia marca 0?\n\nFont: L4 Avaries tècniques, pàg. 21.",
++    esPregunta: true,
++    botonSiDestino: "sac03_cofres",
++    botonNoDestino: "sac_pendent",
++  ),
++  "sac03_cofres": PasoDiagnostico(
++    id: "sac03_cofres",
++    preguntaOInstruccion:
++        "Amb les condicions anteriors confirmades, rearma els cofres de tracció de tots els cotxes, coordinat amb Portacotxeres.\n\nFont: L4 Avaries tècniques, pàg. 21.",
++    esPregunta: false,
++    botonSiDestino: "sac03_ok",
++    imatgesManual: imatgesManual2100["sac03_tots"]!.skip(1).toList(),
++  ),
++  "sac06_con": PasoDiagnostico(
++    id: "sac06_con",
++    preguntaOInstruccion:
++        "Intenta connectar CONVERTIDOR des de la P.M.M.\n\nFont: L4 Avaries tècniques, pàg. 23.",
++    esPregunta: false,
++    botonSiDestino: "sac06_fusible",
++    imagenPath: "manual/s2100/sac_06/comandament-convertidor.png",
++  ),
++  "sac06_fusible": PasoDiagnostico(
++    id: "sac06_fusible",
++    preguntaOInstruccion:
++        "S’il·lumina SAC 05 · Fusible convertidor?\n\nFont: L4 Avaries tècniques, pàg. 23.",
++    esPregunta: true,
++    botonSiDestino: "sac05",
++    botonNoDestino: "sac06_ok",
++  ),
++  "sac06_ok": PasoDiagnostico(
++    id: "sac06_ok",
++    preguntaOInstruccion:
++        "Ha rearmat el convertidor i s’ha comprovat la recuperació?\n\nFont: L4 Avaries tècniques, pàg. 23.",
++    esPregunta: true,
++    botonSiDestino: "sac_resultat_confirmat",
++    botonNoDestino: "sac06_reset_acord",
++  ),
++  "sac06_reset_acord": PasoDiagnostico(
++    id: "sac06_reset_acord",
++    preguntaOInstruccion:
++        "Sense SAC 05, Portacotxeres acorda provar un reset incloent bateries?\n\nFont: L4 Avaries tècniques, pàg. 23.",
++    esPregunta: true,
++    botonSiDestino: "sac06_reset",
++    botonNoDestino: "sac06_retirada",
++  ),
++  "sac06_reset_ok": PasoDiagnostico(
++    id: "sac06_reset_ok",
++    preguntaOInstruccion:
++        "Després del reset, s’ha recuperat el convertidor?\n\nFont: L4 Avaries tècniques, pàg. 23.",
++    esPregunta: true,
++    botonSiDestino: "sac_resultat_confirmat",
++    botonNoDestino: "sac06_retirada",
++  ),
++  "sac06_retirada": PasoDiagnostico(
++    id: "sac06_retirada",
++    preguntaOInstruccion:
++        "Amb un únic convertidor: desallotja al moment, desconnecta llums, aire condicionat i megafonia. Retira al més aviat possible amb CCM/Portacotxeres; situació crítica en S2100.\n\nFont: L4 Avaries tècniques, pàg. 23.",
++    esPregunta: false,
++  ),
++  "sac07": PasoDiagnostico(
++    id: "sac07",
++    preguntaOInstruccion:
++        "SAC 07 · Comandament portes\n\nIdentifica la porta afectada. És costat andana?\n\nFont: criteri operatiu confirmat per l’usuari; no és el procediment de controla.",
++    esPregunta: true,
++    botonSiDestino: "sac07_andana",
++    botonNoDestino: "sac07_via",
++  ),
++  "sac07_andana": PasoDiagnostico(
++    id: "sac07_andana",
++    preguntaOInstruccion:
++        "A la següent estació, comprova si el passatge obre aquesta porta. Això permet comprovar si té tensió.\n\nFont: criteri operatiu confirmat.",
++    esPregunta: false,
++    botonSiDestino: "sac07_tensio",
++  ),
++  "sac07_via": PasoDiagnostico(
++    id: "sac07_via",
++    preguntaOInstruccion:
++        "Amb el tren correctament estacionat, desplaça’t a la porta afectada del costat via i acciona el comandament per comprovar si té tensió.\n\nFont: criteri operatiu confirmat.",
++    esPregunta: false,
++    botonSiDestino: "sac07_tensio",
++  ),
++  "sac07_tensio": PasoDiagnostico(
++    id: "sac07_tensio",
++    preguntaOInstruccion: "La porta disposa de tensió?",
++    esPregunta: true,
++    botonSiDestino: "sac07_normal",
++    botonNoDestino: "sac07_iris",
++  ),
++  "sac07_normal": PasoDiagnostico(
++    id: "sac07_normal",
++    preguntaOInstruccion:
++        "Amb tensió comprovada, continua la marxa normal. Habitualment desapareix l’avís de comandament.\n\nFont: criteri operatiu confirmat.",
++    esPregunta: false,
++  ),
++  "sac07_recomprova": PasoDiagnostico(
++    id: "sac07_recomprova",
++    preguntaOInstruccion:
++        "Després de rearmar IRIS, la porta disposa de tensió?",
++    esPregunta: true,
++    botonSiDestino: "sac07_normal",
++    botonNoDestino: "procedimiento_puertas_fallo",
++  ),
++  "sac08_no_tanquen": PasoDiagnostico(
++    id: "sac08_no_tanquen",
++    preguntaOInstruccion:
++        "Pot fallar el bip-bip o el polsador de tancament. Utilitza la controla amb el costat seleccionat, clau de capçalera d’andana i clàxon abans de tancar.\n\nFont: L4 Avaries tècniques, pàg. 25.",
++    esPregunta: false,
++    opcions: [
++      OpcioSac("Utilitzar controla", "sac08_controla"),
++      OpcioSac("No funciona el bip-bip", "sac25_iris"),
++    ],
++  ),
++  "sac08_tancament_ok": PasoDiagnostico(
++    id: "sac08_tancament_ok",
++    preguntaOInstruccion:
++        "Les portes han tancat i el SAC/DISPLAY les reconeix tancades?\n\nFont: L4 Avaries tècniques, pàg. 25.",
++    esPregunta: true,
++    botonSiDestino: "sac_resultat_confirmat",
++    botonNoDestino: "sac08_persisteix",
++  ),
++  "sac08_oberta": PasoDiagnostico(
++    id: "sac08_oberta",
++    preguntaOInstruccion:
++        "Localitza la porta al DISPLAY o pel pilot exterior blanc; revisa també la porta de testera. Dona permissió, agafa claus i walkie, desplaça’t a la porta i obre-la per comprovar obstacles. Torna a cabina i tanca. Si hi ha un objecte, aplica les condicions del procediment d’obstrucció abans de retirar-lo.\n\nFont: L4 Avaries tècniques, pàg. 26.",
++    esPregunta: false,
++    opcions: [
++      OpcioSac("Comprovar el tancament", "sac08_tancament_ok"),
++      OpcioSac("Hi ha un objecte", "sac08_objecte"),
++    ],
++    imagenPath: "manual/s2100/sac_08/pilot-exterior.png",
++  ),
++  "sac08_objecte": PasoDiagnostico(
++    id: "sac08_objecte",
++    preguntaOInstruccion:
++        "Identifica el cotxe i el costat de la porta bloquejada. Retira tensió al costat/cotxe mitjançant el selector, retira l’objecte, restitueix tensió i tanca.\n\nLa fitxa també contempla retirar l’objecte amb permissió de portes seleccionada. En S2100 remodelat, la manipulació s’ha de fer amb ABSÈNCIA DE TENSIÓ.\n\nFont: L4 Avaries tècniques, pàg. 27, 64.",
++    esPregunta: false,
++    botonSiDestino: "sac08_tancament_ok",
++    imatgesManual: imatgesManual2100["procedimiento_puertas_fallo"]!
++        .where((i) => i.path.contains("selector-") || i.path.contains("pinyo"))
++        .toList(),
++  ),
++  "sac08_seleccio": PasoDiagnostico(
++    id: "sac08_seleccio",
++    preguntaOInstruccion:
++        "Prova la seqüència normal d’obertura. Encara que el pilot groc no s’encengui, permet autoritzar permissió?\n\nFont: L4 Avaries tècniques, pàg. 28.",
++    esPregunta: true,
++    botonSiDestino: "sac08_bombeta",
++    botonNoDestino: "sac08_seleccio_zero",
++  ),
++  "sac08_bombeta": PasoDiagnostico(
++    id: "sac08_bombeta",
++    preguntaOInstruccion:
++        "Continua la marxa amb normalitat i comunica a Portacotxeres que la bombeta de selecció està fosa.\n\nFont: L4 Avaries tècniques, pàg. 28.",
++    esPregunta: false,
++  ),
++  "sac08_seleccio_zero": PasoDiagnostico(
++    id: "sac08_seleccio_zero",
++    preguntaOInstruccion:
++        "Passa tot per 0 i comprova de nou. Ara permet la selecció/permissió?\n\nFont: L4 Avaries tècniques, pàg. 28.",
++    esPregunta: true,
++    botonSiDestino: "sac_resultat_confirmat",
++    botonNoDestino: "sac08_evacuacio_ma",
++  ),
++  "sac08_evacuacio_ma": PasoDiagnostico(
++    id: "sac08_evacuacio_ma",
++    preguntaOInstruccion:
++        "Retira tensió de portes costat andana des de l’armari del cotxe MA de capçalera. Anuncia al passatge que el desallotjament serà únicament pel primer cotxe. Desallotja per aquest cotxe i coordina canvi/retirada. En remodelats es pot desbloquejar una porta del costat/cotxe corresponent.\n\nFont: L4 Avaries tècniques, pàg. 28.",
++    esPregunta: false,
++    imagenPath: "manual/s2100/sac_08/selector-ma.png",
++  ),
++  "sac08_permissio": PasoDiagnostico(
++    id: "sac08_permissio",
++    preguntaOInstruccion:
++        "Passa tot per 0 i comprova de nou. Ara permet la permissió de portes?\n\nFont: L4 Avaries tècniques, pàg. 29.",
++    esPregunta: true,
++    botonSiDestino: "sac_resultat_confirmat",
++    botonNoDestino: "sac08_permissio_controla",
++  ),
++  "sac08_permissio_ok": PasoDiagnostico(
++    id: "sac08_permissio_ok",
++    preguntaOInstruccion:
++        "La controla del costat corresponent permet l’obertura/permissió?\n\nFont: L4 Avaries tècniques, pàg. 29.",
++    esPregunta: true,
++    botonSiDestino: "sac08_auxiliar",
++    botonNoDestino: "sac08_km0",
++  ),
++  "sac08_auxiliar": PasoDiagnostico(
++    id: "sac08_auxiliar",
++    preguntaOInstruccion:
++        "Problema de botonera: utilitza el sistema auxiliar de portes per autoritzar permissió i avalua/planifica canvi de motors amb Portacotxeres.\n\nFont: L4 Avaries tècniques, pàg. 29.",
++    esPregunta: false,
++  ),
++  "sac08_km0": PasoDiagnostico(
++    id: "sac08_km0",
++    preguntaOInstruccion:
++        "Probable avaria del relé km0. Amb CCM/Portacotxeres, valora reset de bateries o desallotjar retirant tensió de portes costat andana d’un cotxe.\n\nFont: L4 Avaries tècniques, pàg. 29.",
++    esPregunta: false,
++    opcions: [
++      OpcioSac("Reset de bateries acordat", "sac08_reset"),
++      OpcioSac(
++        "Desallotjar retirant tensió costat andana",
++        "sac08_evacuacio_cotxe",
++      ),
++      OpcioSac("Pendent d’instruccions", "sac_pendent"),
++    ],
++  ),
++  "sac08_evacuacio_cotxe": PasoDiagnostico(
++    id: "sac08_evacuacio_cotxe",
++    preguntaOInstruccion:
++        "Al cotxe identificat, retira tensió de les portes del costat andana mitjançant el selector i desallotja coordinat amb CCM. No és una recuperació del servei.\n\nFont: L4 Avaries tècniques, pàg. 29.",
++    esPregunta: false,
++    imatgesManual: imatgesManual2100["procedimiento_puertas_fallo"]!
++        .where((i) => i.path.contains("selector-"))
++        .toList(),
++  ),
++  "sac08_reset_ok": PasoDiagnostico(
++    id: "sac08_reset_ok",
++    preguntaOInstruccion:
++        "Després del reset es permet permissió i es comprova el funcionament de portes?\n\nFont: L4 Avaries tècniques, pàg. 29.",
++    esPregunta: true,
++    botonSiDestino: "sac_resultat_confirmat",
++    botonNoDestino: "sac08_km0",
++  ),
++  "sac09_ok": PasoDiagnostico(
++    id: "sac09_ok",
++    preguntaOInstruccion:
++        "Ha cessat la fuita després d’actuar sobre l’aixeta identificada?\n\nFont: L4 Avaries tècniques, pàg. 57.",
++    esPregunta: true,
++    botonSiDestino: "sac_resultat_confirmat",
++    botonNoDestino: "sac_pendent",
++  ),
++  "sac15_informat": PasoDiagnostico(
++    id: "sac15_informat",
++    preguntaOInstruccion:
++        "Informa CCM de l’anul·lació del fre de servei i mantén les limitacions de l’actuació realitzada. No es dona per recuperat el fre ni per autoritzada marxa normal.\n\nFont: L4 Avaries tècniques, pàg. 35.",
++    esPregunta: false,
++  ),
++  "sac13_bolet_ok": PasoDiagnostico(
++    id: "sac13_bolet_ok",
++    preguntaOInstruccion:
++        "S’ha alliberat l’estacionament de tots els cotxes?\n\nFont: L4 Avaries tècniques, pàg. 32.",
++    esPregunta: true,
++    botonSiDestino: "sac_resultat_confirmat",
++    botonNoDestino: "sac13_alternatives",
++  ),
++  "sac13_alternatives": PasoDiagnostico(
++    id: "sac13_alternatives",
++    preguntaOInstruccion:
++        "Possible problema de polsador. Coordina amb CCM l’alternativa aplicable: canvi de cabina quan es pot retrocedir, o electrovàlvules de tots els cotxes.\n\nFont: L4 Avaries tècniques, pàg. 32.",
++    esPregunta: false,
++    opcions: [
++      OpcioSac("Es pot canviar de cabina i retrocedir", "sac13_canvi_cabina"),
++      OpcioSac("Electrovàlvules de tots els cotxes", "sac13_b19_MA1"),
++      OpcioSac("No es pot determinar", "sac_pendent"),
++    ],
++  ),
++  "sac13_canvi_cabina": PasoDiagnostico(
++    id: "sac13_canvi_cabina",
++    preguntaOInstruccion:
++        "Amb la maniobra acordada, canvia de cabina i retira els estacionaments des d’allà.\n\nFont: L4 Avaries tècniques, pàg. 32.",
++    esPregunta: false,
++    botonSiDestino: "sac13_tots_final",
++  ),
++  "sac13_tots_final": PasoDiagnostico(
++    id: "sac13_tots_final",
++    preguntaOInstruccion:
++        "S’ha comprovat l’alliberament real de tots els estacionaments?\n\nFont: L4 Avaries tècniques, pàg. 32.",
++    esPregunta: true,
++    botonSiDestino: "sac_resultat_confirmat",
++    botonNoDestino: "sac_pendent",
++  ),
++  "sac16_ok": PasoDiagnostico(
++    id: "sac16_ok",
++    preguntaOInstruccion:
++        "S’ha normalitzat l’alarma després de reiniciar l’electrònica de fre?\n\nFont: L4 Avaries tècniques, pàg. 36.",
++    esPregunta: true,
++    botonSiDestino: "sac_resultat_confirmat",
++    botonNoDestino: "sac16_cofre_acord",
++  ),
++  "sac16_cofre_acord": PasoDiagnostico(
++    id: "sac16_cofre_acord",
++    preguntaOInstruccion:
++        "Portacotxeres acorda recuperar la cadena de tracció del cotxe motor afectat?\n\nFont: L4 Avaries tècniques, pàg. 36.",
++    esPregunta: true,
++    botonSiDestino: "sac16_recuperar",
++    botonNoDestino: "sac16_observar",
++  ),
++  "sac16_recuperar_ok": PasoDiagnostico(
++    id: "sac16_recuperar_ok",
++    preguntaOInstruccion:
++        "S’ha normalitzat l’alarma després de recuperar la cadena de tracció?\n\nFont: L4 Avaries tècniques, pàg. 36.",
++    esPregunta: true,
++    botonSiDestino: "sac_resultat_confirmat",
++    botonNoDestino: "sac16_observar",
++  ),
++  "sac19_13_cabina": PasoDiagnostico(
++    id: "sac19_13_cabina",
++    preguntaOInstruccion:
++        "Realitza el desfrenament des de la cabina acordada. Cal anul·lar el llaç de fre per poder desfrenar i iniciar la marxa; mantén aquesta condició i les instruccions CCM.\n\nFont: L4 Avaries tècniques, pàg. 40.",
++    esPregunta: false,
++    botonSiDestino: "sac19_13_cabina_ok",
++  ),
++  "sac19_13_cabina_ok": PasoDiagnostico(
++    id: "sac19_13_cabina_ok",
++    preguntaOInstruccion:
++        "S’ha pogut desfrenar des d’aquesta cabina?\n\nFont: L4 Avaries tècniques, pàg. 40.",
++    esPregunta: true,
++    botonSiDestino: "sac_resultat_confirmat",
++    botonNoDestino: "sac19_13_remolcada",
++  ),
++  "sac19_13_remolcada": PasoDiagnostico(
++    id: "sac19_13_remolcada",
++    preguntaOInstruccion:
++        "Si no es pot desfrenar des de l’altra cabina: B12 i REMOLCADA, amb anul·lació del llaç de fre. Coordina el procediment amb CCM. La remolcada continua essent necessària encara que les B12 alliberin el fre.\n\nFont: L4 Avaries tècniques, pàg. 40.",
++    esPregunta: false,
++    botonSiDestino: "sac19_13_b12",
++  ),
++  "sac22_marxa": PasoDiagnostico(
++    id: "sac22_marxa",
++    preguntaOInstruccion:
++        "No t’aturis al túnel per aquest motiu: continua fins a la següent estació i estaciona correctament a l’andana abans d’anar a rearmar. Si t’atures al túnel, pot obrir el llaç i no desfrenar fins al rearme. Pregunta el motiu i coordina els recursos necessaris amb CCM.\n\nFont: L4 Avaries tècniques, pàg. 43.",
++    esPregunta: false,
++    botonSiDestino: "sac22_estacio",
++  ),
++  "sac22_estacio": PasoDiagnostico(
++    id: "sac22_estacio",
++    preguntaOInstruccion:
++        "Amb el tren parat, identifica el tirador al DISPLAY 22 o pel pilot exterior taronja. Pregunta el motiu i demana recursos a CCM quan correspongui. Emporta’t claus i walkie, dirigeix-te al cotxe identificat i rearma el tirador. Si el tren és aturat al túnel, coordina l’actuació amb CCM.\n\nFont: L4 Avaries tècniques, pàg. 43.",
++    esPregunta: false,
++    botonSiDestino: "sac22_ok",
++    imatgesManual: imatgesManual2100["procedimiento_tirador"]!,
++  ),
++  "sac25_despres_iris": PasoDiagnostico(
++    id: "sac25_despres_iris",
++    preguntaOInstruccion:
++        "Si cal, utilitza controla: el tancament des d’allà és independent d’IRIS. Tot seguit prova la megafonia del tren.\n\nFont: L4 Avaries tècniques, pàg. 47.",
++    esPregunta: false,
++    opcions: [
++      OpcioSac("Cal utilitzar controla", "sac25_controla"),
++      OpcioSac("Provar la megafonia", "sac25_megafonia_ok"),
++    ],
++  ),
++  "sac25_megafonia_ok": PasoDiagnostico(
++    id: "sac25_megafonia_ok",
++    preguntaOInstruccion:
++        "Funciona la megafonia del tren?\n\nFont: L4 Avaries tècniques, pàg. 47.",
++    esPregunta: true,
++    botonSiDestino: "sac25_bip_ok",
++    botonNoDestino: "sac25_iris_ko",
++  ),
++  "sac25_bip_ok": PasoDiagnostico(
++    id: "sac25_bip_ok",
++    preguntaOInstruccion:
++        "També s’ha recuperat el bip-bip i el tancament de portes?\n\nFont: L4 Avaries tècniques, pàg. 47.",
++    esPregunta: true,
++    botonSiDestino: "sac_resultat_confirmat",
++    botonNoDestino: "sac25_canvi",
++  ),
++  "sac25_iris_ko": PasoDiagnostico(
++    id: "sac25_iris_ko",
++    preguntaOInstruccion:
++        "IRIS KO: també falla la megafonia. Desallotja i comunica la incidència al CCM.\n\nFont: L4 Avaries tècniques, pàg. 47.",
++    esPregunta: false,
++  ),
++  "sac25_canvi": PasoDiagnostico(
++    id: "sac25_canvi",
++    preguntaOInstruccion:
++        "Si únicament falla el bip-bip, es pot anar amb passatge a canvi de motors utilitzant el sistema auxiliar. Valora amb CCM desallotjar si provoca molt retard a la línia.\n\nFont: L4 Avaries tècniques, pàg. 47.",
++    esPregunta: false,
++  ),
++  "sac25_edp": PasoDiagnostico(
++    id: "sac25_edp",
++    preguntaOInstruccion:
++        "Quin equip EDP cal recuperar?\n\nFont: L4 Avaries tècniques, pàg. 48.",
++    esPregunta: false,
++    opcions: [
++      OpcioSac("MA1", "sac25_edp_ma1"),
++      OpcioSac("MA2", "sac25_edp_ma2"),
++      OpcioSac("No identificat", "sac_pendent"),
++    ],
++  ),
++  "sac25_edp_ma1": PasoDiagnostico(
++    id: "sac25_edp_ma1",
++    preguntaOInstruccion:
++        "Atura manualment l’equip de detecció de posició mantenint polsat fins que s’apagui ON. Torna a encendre’l polsant marxa.\n\nFont: L4 Avaries tècniques, pàg. 48.",
++    esPregunta: false,
++    botonSiDestino: "sac25_edp_ok",
++    imagenPath: "manual/s2100/sac_25/equip-posicio-ma1.png",
++  ),
++  "sac25_edp_ma2": PasoDiagnostico(
++    id: "sac25_edp_ma2",
++    preguntaOInstruccion:
++        "Tira el tèrmic EDP i deixa’l baixat 2/3 estacions. Recupera’l amb el tren parat/estacionat. La detecció automàtica es pot recuperar a Trinitat Nova, Urquinaona i La Pau.\n\nFont: L4 Avaries tècniques, pàg. 48.",
++    esPregunta: false,
++    botonSiDestino: "sac25_edp_ok",
++    imagenPath: "manual/s2100/sac_25/termic-edp-ma2.png",
++  ),
++  "sac25_edp_ok": PasoDiagnostico(
++    id: "sac25_edp_ok",
++    preguntaOInstruccion:
++        "Un cop recuperat l’equip, torna a anunciar correctament?\n\nFont: L4 Avaries tècniques, pàg. 48.",
++    esPregunta: true,
++    botonSiDestino: "sac_resultat_confirmat",
++    botonNoDestino: "sac_pendent",
++  ),
++  "sac26_mirall": PasoDiagnostico(
++    id: "sac26_mirall",
++    preguntaOInstruccion:
++        "El mirall es tanca aproximadament als 5 km/h?\n\nFont: L4 Avaries tècniques, pàg. 49.",
++    esPregunta: true,
++    botonSiDestino: "sac26_cesis",
++    botonNoDestino: "sac26_retirada",
++  ),
++  "sac26_cesis": PasoDiagnostico(
++    id: "sac26_cesis",
++    preguntaOInstruccion:
++        "L’avaria no sembla real. Tira/rearma el tèrmic CESIS per normalitzar l’alarma.\n\nFont: L4 Avaries tècniques, pàg. 49.",
++    esPregunta: false,
++    botonSiDestino: "sac26_ok",
++  ),
++  "sac26_ok": PasoDiagnostico(
++    id: "sac26_ok",
++    preguntaOInstruccion:
++        "S’ha normalitzat l’alarma?\n\nFont: L4 Avaries tècniques, pàg. 49.",
++    esPregunta: true,
++    botonSiDestino: "sac_resultat_confirmat",
++    botonNoDestino: "sac_pendent",
++  ),
++  "sac26_retirada": PasoDiagnostico(
++    id: "sac26_retirada",
++    preguntaOInstruccion:
++        "Possible fallada de detecció de velocitat 0: no es garanteixen les seguretats de portes lligades a tren parat. Desallotja i retira el tren.\n\nFont: L4 Avaries tècniques, pàg. 49.",
++    esPregunta: false,
++  ),
++  "sac27_display": PasoDiagnostico(
++    id: "sac27_display",
++    preguntaOInstruccion:
++        "Tira i rearma el tèrmic del DISPLAY.\n\nFont: L4 Avaries tècniques, pàg. 50.",
++    esPregunta: false,
++    botonSiDestino: "sac27_display_ok",
++  ),
++  "sac27_display_ok": PasoDiagnostico(
++    id: "sac27_display_ok",
++    preguntaOInstruccion:
++        "El DISPLAY torna a respondre correctament?\n\nFont: L4 Avaries tècniques, pàg. 50.",
++    esPregunta: true,
++    botonSiDestino: "sac_resultat_confirmat",
++    botonNoDestino: "sac_pendent",
++  ),
++  "sac27_traccio": PasoDiagnostico(
++    id: "sac27_traccio",
++    preguntaOInstruccion:
++        "Possible RIOM núm. 1. La fitxa indica provar anul·lació de llaç i prova de tracció, seguida de desallotjament i retirada. La fitxa no precisa aquí quin llaç: confirma la maniobra concreta amb CCM/Portacotxeres abans d’actuar. No es dona una anul·lació genèrica automàtica.\n\nFont: L4 Avaries tècniques, pàg. 50.",
++    esPregunta: false,
++    opcions: [
++      OpcioSac("Maniobra confirmada i prova realitzada", "sac27_retirada"),
++      OpcioSac("Pendent de concreció CCM", "sac_pendent"),
++    ],
++  ),
++  "sac27_riom": PasoDiagnostico(
++    id: "sac27_riom",
++    preguntaOInstruccion:
++        "Observa la tensió i comprova si el tren tracciona i desfrena. Comunica el resultat a CCM; la fitxa indica desallotjar i composició a retirada.\n\nFont: L4 Avaries tècniques, pàg. 50.",
++    esPregunta: false,
++    botonSiDestino: "sac27_retirada",
++  ),
++  "sac27_retirada": PasoDiagnostico(
++    id: "sac27_retirada",
++    preguntaOInstruccion:
++        "Desallotja i coordina composició a retirada. Una resposta a la prova no elimina aquesta conseqüència de la fitxa.\n\nFont: L4 Avaries tècniques, pàg. 50.",
++    esPregunta: false,
++  ),
++  "sac27_pma": PasoDiagnostico(
++    id: "sac27_pma",
++    preguntaOInstruccion:
++        "Possible desconnexió d’equips per RIOM: connecta mitjançant PMA. No substitueixis aquesta actuació per un reset de bateries.\n\nFont: L4 Avaries tècniques, pàg. 50.",
++    esPregunta: false,
++    botonSiDestino: "sac27_pma_ok",
++    imagenPath: "manual/s2100/connexio/bateries-pma.png",
++  ),
++  "sac27_pma_ok": PasoDiagnostico(
++    id: "sac27_pma_ok",
++    preguntaOInstruccion:
++        "S’han reconnectat els equips i comprovat el funcionament?\n\nFont: L4 Avaries tècniques, pàg. 50.",
++    esPregunta: true,
++    botonSiDestino: "sac_resultat_confirmat",
++    botonNoDestino: "sac_pendent",
++  ),
++
++  "sac03_ok": PasoDiagnostico(
++    id: "sac03_ok",
++    preguntaOInstruccion:
++        "S’han recuperat els equips i comprovat el funcionament després del rearme dels cofres?\n\nFont: L4 Avaries tècniques, pàg. 21.",
++    esPregunta: true,
++    botonSiDestino: "sac_resultat_confirmat",
++    botonNoDestino: "sac_pendent",
++  ),
++  "b12_resultat": PasoDiagnostico(
++    id: "b12_resultat",
++    preguntaOInstruccion:
++        "S’ha comprovat l’alliberament amb B12, mantenint l’anul·lació del llaç de fre i la coordinació CCM?",
++    esPregunta: true,
++    botonSiDestino: "b12_condicions",
++    botonNoDestino: "sac_pendent",
++  ),
++  "b12_condicions": PasoDiagnostico(
++    id: "b12_condicions",
++    preguntaOInstruccion:
++        "El cotxe continua sense fre pneumàtic. Mantén l’anul·lació del llaç de fre i les condicions acordades amb CCM; no és recuperació del fre ni marxa normal.\n\nFont: L4 Avaries tècniques, pàg. 35.",
++    esPregunta: false,
++  ),
++};
+--- /dev/null
++++ b/lib/data/sac2100_ux.dart
+@@ -0,0 +1,435 @@
++part of 's2100_data.dart';
++
++/// Presentation-only composition of the documented S2100 graph. A manoeuvre
++/// and its outcome share a screen; technical destinations remain explicit.
++/// This is applied only to S2100, after physical-car context is resolved.
++Map<String, PasoDiagnostico> simplificarUxSac2100(
++  Map<String, PasoDiagnostico> source,
++) {
++  final nodes = Map<String, PasoDiagnostico>.from(source);
++  final redundant = <String>{};
++
++  PasoDiagnostico choices(
++    PasoDiagnostico p,
++    List<OpcioSac> options, {
++    String? text,
++    List<ImatgePasManual>? images,
++  }) => PasoDiagnostico(
++    id: p.id,
++    preguntaOInstruccion: text ?? p.preguntaOInstruccion,
++    esPregunta: false,
++    opcions: options,
++    advertencia: p.advertencia,
++    imagenPath: p.imagenPath,
++    imatgesManual: images ?? p.imatgesManual,
++    separarTextoTrenStop: p.separarTextoTrenStop,
++  );
++
++  // Do not infer labels or collapse unrelated decisions automatically.
++  void merge(String action, String outcome, String yes, String no) {
++    final p = nodes[action]!;
++    final result = nodes[outcome]!;
++    assert(p.botonSiDestino == outcome && !p.esPregunta && p.opcions.isEmpty);
++    assert(
++      result.esPregunta &&
++          result.causaDescartadaAlSi == null &&
++          result.causaDescartadaAlNo == null,
++    );
++    nodes[action] = choices(p, [
++      OpcioSac(yes, result.botonSiDestino!),
++      OpcioSac(no, result.botonNoDestino!),
++    ], text: '${p.preguntaOInstruccion}\n\n${result.preguntaOInstruccion}');
++    redundant.add(outcome);
++  }
++
++  void nominal(String id, String yes, String no) {
++    final p = nodes[id]!;
++    assert(
++      p.esPregunta &&
++          p.causaDescartadaAlSi == null &&
++          p.causaDescartadaAlNo == null,
++    );
++    nodes[id] = choices(p, [
++      OpcioSac(yes, p.botonSiDestino!),
++      OpcioSac(no, p.botonNoDestino!),
++    ]);
++  }
++
++  // 07: one physical side check, then one recovery if required.
++  nodes['sac07'] = choices(
++    nodes['sac07']!,
++    const [
++      OpcioSac('Costat andana', 'sac07_andana'),
++      OpcioSac('Costat via', 'sac07_via'),
++    ],
++    text:
++        'SAC 07 · Comandament portes\n\nIdentifica la porta afectada.\nQuin costat és?\n\nFont: criteri operatiu confirmat.',
++  );
++  for (final id in ['sac07_andana', 'sac07_via']) {
++    merge(id, 'sac07_tensio', 'LA PORTA TÉ TENSIÓ', 'NO TÉ TENSIÓ');
++  }
++  merge(
++    'sac07_iris',
++    'sac07_recomprova',
++    'TENSIÓ RECUPERADA',
++    'CONTINUA SENSE TENSIÓ',
++  );
++
++  // 03: preparation is a real safety gate; rearm and outcome share a screen.
++  merge(
++    'sac03_tots',
++    'sac03_zero',
++    'PANTÒGRAFS BAIXATS I LÍNIA A 0 V',
++    'CONDICIONS NO CONFIRMADES',
++  );
++  merge('sac03_cofres', 'sac03_ok', 'RECUPERAT', 'CONTINUEN AÏLLATS');
++  merge('sac03_reset', 'sac03_reset_ok', 'RECUPERAT', 'NO RECUPERAT');
++
++  // 06: show both instruments and control next to the actual three outcomes.
++  final converter = nodes['sac06']!;
++  final command = nodes['sac06_con']!;
++  nodes['sac06'] = PasoDiagnostico(
++    id: 'sac06',
++    preguntaOInstruccion:
++        '${converter.preguntaOInstruccion}\n\n${command.preguntaOInstruccion}\n\nComprova el rearme i la recuperació del funcionament. Si apareix SAC 05, selecciona aquesta opció: el fusible no rearmarà.',
++    esPregunta: false,
++    imatgesManual: [
++      for (final image in imatgesManual2100['sac06_pendent']!)
++        ImatgePasManual(
++          image.path,
++          image.path.contains('instruments')
++              ? 'Instruments de bateria A / B'
++              : 'Comandament CONVERTIDOR P.M.M.',
++          image.pagina,
++          image.variant,
++        ),
++    ],
++    opcions: const [
++      OpcioSac('APAREIX SAC 05', 'sac05'),
++      OpcioSac('HA REARMAT', 'sac_resultat_confirmat'),
++      OpcioSac('NO REARMA', 'sac06_reset_acord'),
++    ],
++  );
++  redundant.addAll(['sac06_con', 'sac06_fusible', 'sac06_ok']);
++  merge(
++    'sac06_reset',
++    'sac06_reset_ok',
++    'CONVERTIDOR RECUPERAT',
++    'NO RECUPERAT',
++  );
++
++  // 08: keep the five scenarios separate; eliminate outcome-only screens.
++  for (final id in [
++    'sac08_controla',
++    ...cotxes2100.map((c) => 'sac08_objecte_$c'),
++  ]) {
++    merge(
++      id,
++      'sac08_tancament_ok',
++      'NORMALITZADA I RECONEGUDA',
++      'CONTINUA MARCANT',
++    );
++  }
++  final open = nodes['sac08_oberta']!;
++  nodes['sac08_oberta'] = choices(
++    open,
++    const [
++      OpcioSac('NORMALITZADA I RECONEGUDA', 'sac_resultat_confirmat'),
++      OpcioSac('CONTINUA MARCANT', 'sac08_persisteix'),
++      OpcioSac('HI HA UN OBJECTE', 'sac08_objecte'),
++    ],
++    text:
++        '${open.preguntaOInstruccion}\n\nComprova que la porta està tancada i reconeguda al SAC/DISPLAY.',
++  );
++  merge(
++    'sac08_permissio_controla',
++    'sac08_permissio_ok',
++    'PERMISSIÓ RECUPERADA',
++    'NO PERMET PERMISSIÓ',
++  );
++  merge(
++    'sac08_reset',
++    'sac08_reset_ok',
++    'PORTES RECUPERADES',
++    'NO RECUPERADES',
++  );
++  nominal('sac08_seleccio', 'PERMET PERMISSIÓ', 'NO PERMET PERMISSIÓ');
++  nominal(
++    'sac08_seleccio_zero',
++    'SELECCIÓ / PERMISSIÓ RECUPERADA',
++    'CONTINUA SENSE PERMISSIÓ',
++  );
++  nominal('sac08_permissio', 'PERMISSIÓ RECUPERADA', 'NO PERMET PERMISSIÓ');
++
++  merge('sac09', 'sac09_ok', 'FUITA RESOLTA', 'CONTINUA LA FUITA');
++  for (final c in cotxes2100) {
++    merge('sac12_$c', 'sac12_ok', 'PANTÒGRAF NORMALITZAT', 'NO NORMALITZA');
++  }
++
++  // 13: all-car B19 is a single physical round, not ten separate screens.
++  final ma = nodes['procedimiento_b19_ma']!;
++  final mb = nodes['procedimiento_b19_mb_r']!;
++  nodes['sac13_b19_tots'] = PasoDiagnostico(
++    id: 'sac13_b19_tots',
++    preguntaOInstruccion:
++        'Electrovàlvules de tots els cotxes: MA1 – MB1 – R – MB2 – MA2.\n\n${ma.preguntaOInstruccion}\n\n${mb.preguntaOInstruccion}\n\nEn acabar el recorregut, comprova l’alliberament real de TOTS els estacionaments.\n\nFont: L4 Avaries tècniques, pàg. 32.',
++    esPregunta: false,
++    advertencia: [
++      ma.advertencia,
++      mb.advertencia,
++    ].whereType<String>().toSet().join('\n'),
++    imatgesManual: [
++      ImatgePasManual(
++        ma.imagenPath!,
++        'B19 · MA1 / MA2',
++        32,
++        'S2100 · recurs existent',
++        const ['MA1', 'MA2'],
++      ),
++      ImatgePasManual(
++        mb.imagenPath!,
++        'B19 · MB1 / R / MB2',
++        32,
++        'S2100 · recurs existent',
++        const ['MB1', 'R', 'MB2'],
++      ),
++      ...ma.imatgesManual,
++      ...mb.imatgesManual,
++    ],
++    opcions: const [
++      OpcioSac('TOTS ALLIBERATS', 'sac_resultat_confirmat'),
++      OpcioSac('ALGUN CONTINUA APLICAT', 'sac_pendent'),
++    ],
++  );
++  final alternatives = nodes['sac13_alternatives']!;
++  nodes[alternatives.id] = choices(alternatives, [
++    for (final option in alternatives.opcions)
++      OpcioSac(
++        option.text,
++        option.desti == 'sac13_b19_MA1' ? 'sac13_b19_tots' : option.desti,
++      ),
++  ]);
++  redundant.addAll([
++    for (final c in cotxes2100) ...['sac13_b19_$c', 'sac13_b19_${c}_ok'],
++  ]);
++  for (final id in ['sac13_tots_cabina', 'sac13_un_cabina']) {
++    merge(
++      id,
++      id == 'sac13_tots_cabina' ? 'sac13_tots_ok' : 'sac13_un_ok',
++      'ESTACIONAMENT ALLIBERAT',
++      'CONTINUA APLICAT',
++    );
++  }
++  merge(
++    'sac13_tots_persisteix',
++    'sac13_bolet_ok',
++    'TOTS ALLIBERATS',
++    'CONTINUA APLICAT',
++  );
++  merge(
++    'sac13_canvi_cabina',
++    'sac13_tots_final',
++    'TOTS ALLIBERATS',
++    'ALGUN CONTINUA APLICAT',
++  );
++
++  // 14: explicit operational alternative, retaining car/cab routing.
++  for (final id
++      in nodes.keys.where((id) => id.startsWith('sac14_viable_')).toList()) {
++    final p = nodes[id]!;
++    nodes[id] = choices(
++      p,
++      [
++        OpcioSac('REARMAR 1F11', p.botonSiDestino!),
++        OpcioSac('ACTUACIÓ MECÀNICA B12', p.botonNoDestino!),
++      ],
++      text:
++          '${p.preguntaOInstruccion.split('\n\n').first}\n\nSelecciona l’actuació aplicable segons la ubicació i l’operativitat. Actua sobre 1F11 només si és viable; si correspon actuació mecànica, utilitza B12.',
++    );
++  }
++  for (final id
++      in nodes.keys
++          .where(
++            (id) =>
++                id == 'sac14_1f11' ||
++                RegExp(r'^sac14_(MA1|MB1|R|MB2|MA2)_(MA1|MA2)$').hasMatch(id),
++          )
++          .toList()) {
++    if (nodes[id]!.botonSiDestino == 'sac14_ok')
++      merge(id, 'sac14_ok', 'DESFRENAMENT RECUPERAT', 'NO RECUPERAT');
++  }
++  // B12 mechanical work and actual result stay together, preserving the warning.
++  for (final id
++      in nodes.keys
++          .where((id) => nodes[id]!.botonSiDestino == 'b12_resultat')
++          .toList()) {
++    merge(id, 'b12_resultat', 'ALLIBERAT AMB B12', 'CONTINUA FRENAT');
++  }
++
++  for (final c in cotxes2100) {
++    merge(
++      'sac16_continua_$c',
++      c == 'R' ? 'sac16_R_ok' : 'sac16_ok',
++      'ALARMA NORMALITZADA',
++      'CONTINUA L’ALARMA',
++    );
++  }
++  merge(
++    'sac16_recuperar',
++    'sac16_recuperar_ok',
++    'ALARMA NORMALITZADA',
++    'CONTINUA L’ALARMA',
++  );
++
++  // 19: never offer inapplicable trailer/MB choices for a MA-only thermal.
++  for (final id in ['sac19_13', 'sac19_13_b12']) {
++    final p = nodes[id]!;
++    nodes[id] = choices(
++      p,
++      p.opcions
++          .where((o) => ['MA1', 'MA2', 'No identificat'].contains(o.text))
++          .toList(),
++    );
++  }
++  for (final thermal in ['09', '11', '13']) {
++    for (final c in cotxes2100) {
++      final id = 'sac19_${thermal}_$c';
++      if (nodes.containsKey(id))
++        merge(
++          id,
++          'sac19_${thermal}_ok',
++          'HA REARMAT I NORMALITZAT',
++          'NO REARMA / NO NORMALITZA',
++        );
++    }
++  }
++  merge(
++    'sac19_13_cabina',
++    'sac19_13_cabina_ok',
++    'HA DESFRENAT',
++    'NO HA DESFRENAT',
++  );
++  for (final c in ['MA1', 'MA2']) {
++    merge(
++      'sac19_13_b12_$c',
++      'sac19_13_b12_ok',
++      'ALLIBERAT AMB B12',
++      'CONTINUA FRENAT',
++    );
++  }
++  merge('sac20', 'sac20_ok', 'HA REPOSAT', 'NO REPOSA');
++  merge(
++    'sac22_estacio',
++    'sac22_ok',
++    'TIRADOR REARMAT I RECUPERAT',
++    'NO RECUPERAT',
++  );
++  merge('sac23_remodelat', 'sac23_ok', 'HA REARMAT', 'NO REARMA');
++  merge(
++    'sac23_anullar',
++    'sac23_anullat_ok',
++    'RESOLT AMB TREN STOP ANUL·LAT',
++    'NO RESOLT',
++  );
++
++  // 25: auxiliary closing and PA testing are cumulative, never alternatives.
++  final iris = nodes['sac25_iris']!;
++  final controla = nodes['inicio_pupitre_fallo']!;
++  nodes['sac25_iris'] = choices(
++    iris,
++    const [
++      OpcioSac('BIP-BIP I MEGAFONIA OK', 'sac_resultat_confirmat'),
++      OpcioSac('NOMÉS FALLA EL BIP-BIP', 'sac25_canvi'),
++      OpcioSac('TAMBÉ FALLA LA MEGAFONIA', 'sac25_iris_ko'),
++    ],
++    text:
++        '${iris.preguntaOInstruccion}\n\nSi cal tancar portes, pots fer servir la controla: el tancament és independent d’IRIS.\n\n${controla.preguntaOInstruccion}\n\nComprova també la megafonia del tren i el tancament de portes. Selecciona el resultat conjunt; usar controla no substitueix la prova de megafonia.',
++    images: controla.imatgesManual,
++  );
++  redundant.addAll([
++    'sac25_despres_iris',
++    'sac25_controla',
++    'sac25_megafonia_ok',
++    'sac25_bip_ok',
++  ]);
++  for (final c in ['ma1', 'ma2'])
++    merge(
++      'sac25_edp_$c',
++      'sac25_edp_ok',
++      'ANUNCIS CORRECTES',
++      'CONTINUA LA FALLADA',
++    );
++
++  merge('sac26', 'sac26_mirall', 'ES TANCA A ~5 KM/H', 'NO ES TANCA');
++  merge('sac26_cesis', 'sac26_ok', 'ALARMA NORMALITZADA', 'CONTINUA L’ALARMA');
++  merge(
++    'sac27_display',
++    'sac27_display_ok',
++    'DISPLAY RECUPERAT',
++    'CONTINUA CONGELAT',
++  );
++  merge('sac27_pma', 'sac27_pma_ok', 'EQUIPS RECUPERATS', 'NO RECUPERATS');
++  final riom = nodes['sac27_riom']!;
++  nodes[riom.id] = choices(riom, const [
++    OpcioSac('TRACCIONA I DESFRENA · RETIRADA', 'sac27_retirada'),
++    OpcioSac('NO TRACCIONA O NO DESFRENA · INFORMAR CCM', 'sac27_retirada'),
++  ]);
++
++  // 01/02: only the unambiguous action -> outcome pairs. Recovery and
++  // repeated-inhibition decisions remain separate and unchanged.
++  merge(
++    'procedimiento_rearme_disyuntor',
++    'sac01_comprova',
++    'DISJUNTOR CONNECTAT',
++    'NO CONNECTA',
++  );
++  merge(
++    'sac01_reset',
++    'sac01_despres_reset',
++    'DISJUNTOR CONNECTAT',
++    'NO CONNECTA',
++  );
++  for (final c in cotxes2100)
++    merge('sac02_un_$c', 'sac02_un_ok', 'COTXE RECUPERAT', 'CONTINUA INHIBIT');
++  merge(
++    'sac02_recuperar',
++    'sac02_recuperar_ok',
++    'COTXE RECUPERAT',
++    'CONTINUA INHIBIT',
++  );
++  merge(
++    'sac02_selector_normalitzar',
++    'sac02_selector_ok',
++    'EQUIPS RECUPERATS',
++    'CONTINUEN INHIBITS',
++  );
++  final reset = nodes['sac02_reset']!;
++  final result = nodes['sac02_reset_resultat']!;
++  nodes[reset.id] = choices(
++    reset,
++    result.opcions,
++    text: '${reset.preguntaOInstruccion}\n\n${result.preguntaOInstruccion}',
++  );
++  redundant.add(result.id);
++
++  // Only remove screens whose incoming links disappeared. Shared diagnostic
++  // entry points retain their IDs and continue working from BAHASTE/PEDET.
++  bool referenced(String id) => nodes.values.any(
++    (p) =>
++        p.botonSiDestino == id ||
++        p.botonNoDestino == id ||
++        p.opcions.any((o) => o.desti == id),
++  );
++  var changed = true;
++  while (changed) {
++    changed = false;
++    for (final id in redundant.toList()) {
++      if (!referenced(id)) {
++        nodes.remove(id);
++        redundant.remove(id);
++        changed = true;
++      }
++    }
++  }
++  return nodes;
++}
+--- /dev/null
++++ b/lib/data/sac2100_operativa.dart
+@@ -0,0 +1,444 @@
++part of 's2100_data.dart';
++
++/// Hide audit metadata only at presentation time; original strings stay intact.
++String textOperatiu2100(String text) => text
++    .replaceAll(RegExp(r'^\s*Font:[^\n]*', multiLine: true), '')
++    .replaceAll(
++      RegExp(
++        r'(?:manual/[^\s]+|[\w-]+\.(?:png|jpe?g|webp))',
++        caseSensitive: false,
++      ),
++      '',
++    )
++    .replaceAll(RegExp(r'\n{3,}'), '\n\n')
++    .trim();
++
++/// Explicit local corrections requested after the UX review. Shared actions
++/// retain their pictures and technical metadata.
++Map<String, PasoDiagnostico> ajustarOperativaSac2100(
++  Map<String, PasoDiagnostico> source,
++) {
++  final n = Map<String, PasoDiagnostico>.from(source);
++  final aliases = <String, String>{};
++  void put(
++    String id,
++    String text, {
++    List<OpcioSac> options = const [],
++    PasoDiagnostico? visual,
++    String? warning,
++    List<ImatgePasManual>? images,
++  }) {
++    n[id] = PasoDiagnostico(
++      id: id,
++      preguntaOInstruccion: text,
++      esPregunta: false,
++      opcions: options,
++      advertencia: warning ?? visual?.advertencia,
++      imagenPath: visual?.imagenPath,
++      imatgesManual: images ?? visual?.imatgesManual ?? const [],
++    );
++  }
++
++  void choices(String id, List<OpcioSac> options, {String? text}) => put(
++    id,
++    text ?? n[id]!.preguntaOInstruccion,
++    options: options,
++    visual: n[id],
++  );
++  const done = 'sac_resolt';
++  put(done, 'Incidència resolta. Funcionament recuperat.');
++  // Normal recovery is distinct from an outcome leaving equipment annulled.
++  for (final p in source.values) {
++    if (p.id == 'sac23_anullar' ||
++        p.id == 'sac19_13_cabina' ||
++        p.id == 'sac13_b19_tots') {
++      continue;
++    }
++    // References from later SACs are left intact, per requested scope.
++    if (RegExp(r'^sac(20|21|23|25|26|27|28|29)').hasMatch(p.id)) continue;
++    if (p.opcions.any((o) => o.desti == 'sac_resultat_confirmat')) {
++      choices(p.id, [
++        for (final o in p.opcions)
++          OpcioSac(
++            o.text,
++            o.desti == 'sac_resultat_confirmat' ? done : o.desti,
++          ),
++      ]);
++    }
++  }
++  for (final id in ['procedimiento_rearme_disyuntor', 'sac01_reset']) {
++    choices(id, [
++      const OpcioSac('FUNCIONAMENT RECUPERAT', done),
++      OpcioSac(
++        "NO S’HA RECUPERAT",
++        id == 'sac01_reset' ? 'sac_pendent' : 'sac01_reset',
++      ),
++    ]);
++  }
++  aliases['sac01_recuperacio'] = done;
++
++  // 02: repetition is assessed before recovery, not after a successful rearm.
++  put(
++    'sac02_un',
++    'És la tercera inhibició del mateix cotxe?',
++    options: const [
++      OpcioSac('SÍ · TERCERA INHIBICIÓ', 'sac02_tres_inhibicions'),
++      OpcioSac('NO', 'sac02_zero'),
++    ],
++  );
++  final un = source['sac02_un_MA1']!;
++  put(
++    'sac02_zero',
++    'Passa tot per 0, inclosa la clau de govern. Comprova al DISPLAY si el cotxe continua inhibit.',
++    visual: un,
++    options: const [
++      OpcioSac('JA NO APAREIX INHIBIT', done),
++      OpcioSac('CONTINUA INHIBIT', 'sac02_seguiment'),
++    ],
++  );
++  choices('sac02_seguiment', const [
++    OpcioSac('RECUPERACIÓ ACORDADA AMB PORTACOTXERES', 'sac02_recuperar'),
++    OpcioSac('CONTINUAR AMB UN COTXE INHIBIT', 'sac02_continuitat'),
++  ]);
++  choices('sac02_recuperar', const [
++    OpcioSac('JA NO APAREIX INHIBIT', done),
++    OpcioSac('CONTINUA INHIBIT', 'sac02_continuitat'),
++  ]);
++  aliases['sac02_recuperat'] = done;
++  aliases['sac02_persisteix'] = 'sac02_continuitat';
++  for (final c in cotxes2100) {
++    aliases['sac02_un_$c'] = 'sac02_zero';
++  }
++
++  // 07: no IRIS reset in the door-without-tension branch.
++  for (final id in ['sac07_andana', 'sac07_via']) {
++    choices(id, const [
++      OpcioSac('LA PORTA TÉ TENSIÓ', 'sac07_normal'),
++      OpcioSac('PORTA SENSE TENSIÓ', 'sac07_sense_tensio'),
++    ]);
++  }
++  put(
++    'sac07_sense_tensio',
++    'No es pot garantir que la porta romangui tancada durant el trajecte.\n\nDesallotja el passatge i coordina amb CCM la retirada del tren.',
++  );
++  aliases['sac07_iris'] = 'sac07_sense_tensio';
++  put(
++    'sac08_persisteix',
++    'No es recuperen el tancament de portes i la tracció.\n\n1. Desallotja el passatge.\n2. Anul·la el llaç de portes.\n3. Coordina la retirada o el canvi amb CCM.',
++  );
++  // No image on this action until the user's annulment photograph exists.
++
++  // 12: connection first, valve only after failure; Display identification
++  // guides the physical visit, so an identical five-way selector adds nothing.
++  final pantoImages = imatgesManual2100['sac12']!
++      .where((i) => i.path == 'manual/s2100/sac_12/comandament-pantograf.png')
++      .toList();
++  assert(pantoImages.isNotEmpty);
++  put(
++    'sac12',
++    'SAC 12 · Fallada posició pantògraf\n\nProva la connexió del pantògraf a la posada en marxa.',
++    images: pantoImages,
++    options: const [
++      OpcioSac('PANTÒGRAF NORMALITZAT', done),
++      OpcioSac('NO NORMALITZA', 'sac12_aixeta'),
++    ],
++  );
++  put(
++    'sac12_aixeta',
++    'Identifica al DISPLAY 12 el cotxe afectat. Dirigeix-te al pantògraf afectat i verifica la seva aixeta.\n\nComprova el resultat.',
++    options: const [
++      OpcioSac('NORMALITZAT', done),
++      OpcioSac('CONTINUA SENSE NORMALITZAR', 'sac12_persisteix'),
++    ],
++  );
++  for (final c in cotxes2100) {
++    aliases['sac12_$c'] = 'sac12';
++  }
++
++  // 13: preserve normal B19/B17/sirgues; new functional confluence is separate.
++  choices('sac13', const [
++    OpcioSac('Tots els cotxes', 'sac13_tots_pressio'),
++    OpcioSac('Un cotxe', 'sac13_tren_frenat'),
++    OpcioSac('No queda clar l’abast', 'sac_pendent'),
++  ]);
++  put(
++    'sac13_tren_frenat',
++    'Amb un cotxe marcat amb fre d’estacionament, el tren també queda frenat / no desfrena?',
++    options: const [
++      OpcioSac('SÍ · EL TREN NO DESFRENA', 'sac13_electronica_zero'),
++      OpcioSac('NO · NOMÉS ESTACIONAMENT', 'sac13_un_pressio'),
++    ],
++  );
++  put(
++    'sac13_electronica_zero',
++    'Passa tot per 0, inclosa la clau de govern. Després comprova en mode de conducció i amb l’home mort polsat si persisteix el problema de frenat.',
++    options: const [
++      OpcioSac('FUNCIONAMENT RECUPERAT', done),
++      OpcioSac('CONTINUA SENSE DESFRENAR', 'sac13_electronica'),
++    ],
++  );
++  final thermalImages = [...imatgesManual2100['sac16_continua']!]
++      .where(
++        (i) => [
++          'manual/s2100/sac_19/armari-1f09.png',
++          'manual/s2100/sac_14/termic-1f11.png',
++        ].contains(i.path),
++      )
++      .toList();
++  assert(thermalImages.map((i) => i.path).toSet().length == 2);
++  put(
++    'sac13_electronica',
++    'Visualitza al DISPLAY el cotxe afectat. Actua sobre 1F09 i 1F11 del cotxe afectat i comprova el resultat.\n\nFont: L4 Avaries tècniques, pàg. 34.',
++    images: thermalImages,
++    options: const [
++      OpcioSac('NORMALITZAT', done),
++      OpcioSac('NO NORMALITZA', 'sac13_electronica_b19'),
++    ],
++  );
++  put(
++    'sac13_electronica_b19',
++    'Actua sobre l’electrovàlvula d’estacionament i, segons convingui, B12. Quin cotxe està afectat?',
++    options: [
++      for (final c in cotxes2100) OpcioSac(c, 'sac13_electro_b19_$c'),
++      const OpcioSac('No identificat', 'sac_pendent'),
++    ],
++  );
++  for (final c in cotxes2100) {
++    final p =
++        source[c == 'MA1' || c == 'MA2'
++            ? 'procedimiento_b19_ma'
++            : 'procedimiento_b19_mb_r']!;
++    put(
++      'sac13_electro_b19_$c',
++      'Cotxe: $c\n\n${p.preguntaOInstruccion}',
++      visual: p,
++      options: [
++        const OpcioSac('DESFRENAMENT RECUPERAT', 'sac13_electro_alliberat'),
++        OpcioSac('CAL ACTUAR AMB B12', 'sac14_b12_cotxe_$c'),
++      ],
++    );
++  }
++  put(
++    'sac13_electro_alliberat',
++    'Desfrenament recuperat després d’actuar sobre l’electrovàlvula d’estacionament. Comunica al CCM l’actuació realitzada i les condicions de continuïtat.',
++  );
++
++  // 14: physical location decides the route, never an undefined viability.
++  for (final c in cotxes2100) {
++    choices('sac14_cabina_$c', [
++      for (final cab in ['MA1', 'MA2']) OpcioSac(cab, 'sac14_${c}_$cab'),
++      const OpcioSac('No identificada', 'sac_pendent'),
++    ]);
++    for (final cab in ['MA1', 'MA2']) {
++      aliases['sac14_viable_${c}_$cab'] = 'sac14_${c}_$cab';
++      if (rutaFre2100(c, cab) == 'sac14_b12') {
++        aliases['sac14_${c}_$cab'] = 'sac14_b12_cotxe_$c';
++      }
++    }
++  }
++  // Existing B12 warnings already require the brake loop. Make the note exact.
++  for (final p in n.values.toList()) {
++    if (p.id.startsWith('sac14_b12_cotxe_')) {
++      choices(
++        p.id,
++        p.opcions,
++        text:
++            '${p.preguntaOInstruccion}\n\nEn cas de desfrenar els bogies mitjançant B12, cal anul·lar el llaç de fre per poder desfrenar el tren.',
++      );
++    }
++  }
++  put(
++    'sac15',
++    'Saps per què està anul·lat el fre de servei?',
++    options: const [
++      OpcioSac('SÍ · S’HA ANUL·LAT DURANT LA MANIOBRA', 'sac15_informat'),
++      OpcioSac('HI HA UNA FALLADA DE FRE PER RESOLDRE', 'sac14'),
++      OpcioSac('NO SE’N CONEIX LA CAUSA', 'sac_pendent'),
++    ],
++  );
++
++  // 16: no repeated car entry. Only the motor/trailer distinction is needed
++  // if physical recovery of a traction chain is subsequently considered.
++  final continuous = source['sac16_continua_MA1']!;
++  put(
++    'sac16_continua',
++    continuous.preguntaOInstruccion.replaceFirst('Cotxe: MA1\n\n', ''),
++    images: imatgesManual2100['sac16_continua']!
++        .where((i) => !i.path.contains('cofre-motor'))
++        .toList(),
++    options: const [
++      OpcioSac('ALARMA NORMALITZADA', done),
++      OpcioSac('CONTINUA L’ALARMA', 'sac16_tipus_recuperacio'),
++    ],
++  );
++  put(
++    'sac16_tipus_recuperacio',
++    'Si cal recuperar la cadena de tracció, confirma al DISPLAY si el cotxe afectat és motor. El remolc R no té cofre motor.',
++    options: const [
++      OpcioSac('COTXE MOTOR', 'sac16_cofre_acord'),
++      OpcioSac('REMOLC R', 'sac16_observar'),
++      OpcioSac('NO IDENTIFICAT', 'sac_pendent'),
++    ],
++  );
++  for (final c in cotxes2100) {
++    aliases['sac16_continua_$c'] = 'sac16_continua';
++  }
++
++  // 19: identical rearm, keep differing B19/B12 physical images downstream.
++  for (final thermal in ['09', '13']) {
++    final p = source['sac19_${thermal}_MA1']!;
++    put(
++      'sac19_$thermal',
++      thermal == '09'
++          ? 'Visualitza al DISPLAY el cotxe afectat i rearma 1F09. Comprova el resultat.'
++          : '1F13 és exclusiu dels cotxes MA. Dirigeix-te al MA indicat al DISPLAY i rearma 1F13. Comprova el resultat.',
++      visual: p,
++      options: [
++        const OpcioSac('HA REARMAT I NORMALITZAT', done),
++        OpcioSac('NO REARMA / NO NORMALITZA', 'sac19_${thermal}_pendent'),
++      ],
++    );
++    for (final c in cotxes2100) {
++      aliases['sac19_${thermal}_$c'] = 'sac19_$thermal';
++    }
++  }
++  final b12 = source['sac19_13_b12_MA1']!;
++  put(
++    'sac19_13_b12',
++    b12.preguntaOInstruccion.replaceFirst('Cotxe: MA1\n\n', ''),
++    visual: b12,
++    options: b12.opcions,
++  );
++  for (final c in ['MA1', 'MA2']) {
++    aliases['sac19_13_b12_$c'] = 'sac19_13_b12';
++  }
++  choices('sac19_13_cabina', const [
++    OpcioSac('HA DESFRENAT', 'sac19_13_cabina_final'),
++    OpcioSac('NO HA DESFRENAT', 'sac19_13_remolcada'),
++  ]);
++  put(
++    'sac19_13_cabina_final',
++    'Desfrenament des de la cabina contrària amb el llaç de fre anul·lat. Mantén aquesta condició i coordina la continuïtat amb CCM. No és marxa normal.',
++  );
++
++  // 22 and the unresolved brake-loop outcome share location-aware closure.
++  choices(
++    'sac22_marxa',
++    const [
++      OpcioSac('JA ESTACIONAT A L’ANDANA', 'sac22_estacio'),
++      OpcioSac('IMMOBILITZAT FORA D’ESTACIÓ', 'sac22_fora_rearme'),
++    ],
++    text:
++        'Quan sigui possible, no t’aturis fins a la següent estació. Un cop correctament estacionat, ves a rearmar el tirador amb claus i walkie. Coordina el cas amb CCM.',
++  );
++  choices('sac22_estacio', const [
++    OpcioSac('TIRADOR REARMAT I RECUPERAT', done),
++    OpcioSac('NO RECUPERAT', 'llac_estacio'),
++  ]);
++  put(
++    'sac22_fora_rearme',
++    'Tren immobilitzat fora d’estació: coordina amb CCM si es pot normalitzar el tirador. Identifica’l al DISPLAY i conserva les condicions d’accés segur indicades. Emporta’t claus i walkie.',
++    visual: source['sac22_estacio'],
++    options: const [
++      OpcioSac('TIRADOR REARMAT I RECUPERAT', done),
++      OpcioSac('NO ES POT NORMALITZAR', 'llac_fora_estacio'),
++    ],
++  );
++  final tirador = n['procedimiento_tirador']!;
++  choices(tirador.id, [
++    ...tirador.opcions.where((o) => o.desti != 'sac_pendent'),
++    const OpcioSac('IMMOBILITZAT FORA D’ESTACIÓ', 'sac22_fora_rearme'),
++    const OpcioSac('NO IDENTIFICAT', 'sac_pendent'),
++  ]);
++  put(
++    'llac_context',
++    'El problema no s’ha normalitzat. On és el tren?',
++    options: const [
++      OpcioSac('EN ESTACIÓ', 'llac_estacio'),
++      OpcioSac('IMMOBILITZAT FORA D’ESTACIÓ', 'llac_fora_estacio'),
++      OpcioSac('NO CONFIRMAT', 'sac_pendent'),
++    ],
++  );
++  put(
++    'llac_estacio',
++    'Coordina amb CCM. Desallotja el passatge. Si correspon segons les seves indicacions, anul·la el llaç de fre per continuar o retirar el tren. No continuïs amb un cotxe encara frenat.',
++  );
++  put(
++    'llac_fora_estacio',
++    'Coordina amb CCM. Si no es pot normalitzar, anul·la el llaç de fre segons les seves indicacions i comprova que el tren pot desfrenar. Només amb autorització operativa, arriba a la següent estació amb passatge. Un cop en estació, regularitza la situació o desallotja segons CCM.\n\nFont: criteri operatiu aportat per l’usuari, no cita literal del manual.',
++  );
++  choices(
++    'sac24',
++    [...source['sac24']!.opcions],
++    text:
++        'SAC24 indica que el llaç d’emergència està obert; no identifica una avaria única. Pot respondre a tirador, home mort, P7, bolet, pressió mínima, Tren Stop, tèrmics crítics o manca de mode de conducció.\n\nSelecciona la causa identificada. Sense causa concreta, continua pel diagnòstic NO DESFRENA.',
++  );
++  choices('fin_no_desfrena_llamar_ccm', const [
++    OpcioSac('CONTINUA SENSE NORMALITZAR · CONTEXT', 'llac_context'),
++  ]);
++
++  const panellAnullacions = ImatgePasManual(
++    'manual/s2100/compartits/panell-anullacions.jpg',
++    'Panell d’anul·lacions',
++    null, // User-supplied photograph, not a page of the manual.
++    'S2100 · fotografia aportada',
++  );
++  final passosPanell = <String>{
++    'sac08_persisteix',
++    'fin_freno_liberado',
++    'procedimiento_sirgas_accion',
++    'sac14_b12',
++    'procedimiento_b12_ma',
++    'procedimiento_b12_mb_r',
++    'b12_condicions',
++    'sac19_09_pendent',
++    'sac19_13_cabina',
++    'sac19_13_remolcada',
++    'sac19_13_remolcada_final',
++    'sac19_13_cabina_final',
++    'llac_estacio',
++    'llac_fora_estacio',
++    for (final c in cotxes2100) 'sac14_b12_cotxe_$c',
++    for (final c in cotxes2100) 'procedimiento_b12_esquema_$c',
++  };
++
++  // Retire superseded clones and redirect all incoming edges (including shared
++  // BAHASTE/PEDET entry points). No dangling or artificial old selector remains.
++  String target(String id) {
++    final seen = <String>{};
++    while (aliases.containsKey(id)) {
++      assert(seen.add(id));
++      id = aliases[id]!;
++    }
++    return id;
++  }
++
++  for (final p in n.values.toList()) {
++    if (aliases.containsKey(p.id)) {
++      n.remove(p.id);
++      continue;
++    }
++    n[p.id] = PasoDiagnostico(
++      id: p.id,
++      preguntaOInstruccion: p.preguntaOInstruccion,
++      esPregunta: p.esPregunta,
++      botonSiDestino: p.botonSiDestino == null
++          ? null
++          : target(p.botonSiDestino!),
++      botonNoDestino: p.botonNoDestino == null
++          ? null
++          : target(p.botonNoDestino!),
++      opcions: [for (final o in p.opcions) OpcioSac(o.text, target(o.desti))],
++      advertencia: p.advertencia,
++      imagenPath: p.imagenPath,
++      imatgesManual: [
++        ...p.imatgesManual,
++        if (passosPanell.contains(p.id)) panellAnullacions,
++      ],
++      causaDescartadaAlSi: p.causaDescartadaAlSi,
++      causaDescartadaAlNo: p.causaDescartadaAlNo,
++      separarTextoTrenStop: p.separarTextoTrenStop,
++    );
++  }
++  return n;
++}
+--- /dev/null
++++ b/lib/sac2100_screen.dart
+@@ -0,0 +1,127 @@
++import 'dart:math' as math;
++import 'package:flutter/material.dart';
++import 'data/s2100_data.dart';
++
++/// The fixed SAC panel fits at 1x; only this viewport handles pan and zoom.
++class Sac2100Screen extends StatelessWidget {
++  final ValueChanged<String> onSelect;
++  const Sac2100Screen({super.key, required this.onSelect});
++
++  @override
++  Widget build(BuildContext context) => Scaffold(
++    backgroundColor: const Color(0xFF100C0C),
++    appBar: AppBar(title: const Text('SAC / DISPLAY')),
++    body: SafeArea(
++      child: Padding(
++        padding: const EdgeInsets.all(12),
++        child: LayoutBuilder(
++          builder: (context, constraints) {
++            final width = math.max(constraints.maxWidth, 660.0);
++            final scale = MediaQuery.textScalerOf(context).scale(1);
++            final panelHeight = 5 * 190 * math.max(1.0, scale) + 16;
++            return Column(
++              crossAxisAlignment: CrossAxisAlignment.stretch,
++              children: [
++                const Text(
++                  'Selecciona el número encès al SAC',
++                  textAlign: TextAlign.center,
++                  style: TextStyle(fontSize: 18),
++                ),
++                const Padding(
++                  padding: EdgeInsets.symmetric(vertical: 8),
++                  child: Text(
++                    'Amplia amb dos dits i arrossega per moure el panell.',
++                    textAlign: TextAlign.center,
++                  ),
++                ),
++                Expanded(
++                  child: InteractiveViewer(
++                    key: const ValueKey('sac-zoom'),
++                    minScale: 1,
++                    maxScale: 4,
++                    panEnabled: true,
++                    scaleEnabled: true,
++                    child: SizedBox.expand(
++                      child: FittedBox(
++                        fit: BoxFit.contain,
++                        child: SizedBox(
++                          width: width,
++                          height: panelHeight.toDouble(),
++                          child: GridView.builder(
++                            shrinkWrap: true,
++                            physics: const NeverScrollableScrollPhysics(),
++                            itemCount: casellesSac2100.length,
++                            gridDelegate:
++                                SliverGridDelegateWithFixedCrossAxisCount(
++                                  crossAxisCount: 6,
++                                  mainAxisExtent: 190 * math.max(1.0, scale),
++                                  crossAxisSpacing: 4,
++                                  mainAxisSpacing: 4,
++                                ),
++                            itemBuilder: (context, index) {
++                              final cell = casellesSac2100[index];
++                              final enabled = cell.desti != null;
++                              return OutlinedButton(
++                                key: ValueKey('sac-${cell.numero}'),
++                                onPressed: enabled
++                                    ? () => onSelect(cell.desti!)
++                                    : null,
++                                style: OutlinedButton.styleFrom(
++                                  padding: const EdgeInsets.all(6),
++                                  backgroundColor: enabled
++                                      ? const Color(0xFF391410)
++                                      : const Color(0xFF181010),
++                                  foregroundColor: const Color(0xFFFFAD72),
++                                  side: BorderSide(
++                                    color: enabled
++                                        ? const Color(0xFF9C3A27)
++                                        : const Color(0xFF322222),
++                                  ),
++                                  shape: RoundedRectangleBorder(
++                                    borderRadius: BorderRadius.circular(3),
++                                  ),
++                                ),
++                                child: enabled
++                                    ? Column(
++                                        mainAxisAlignment:
++                                            MainAxisAlignment.center,
++                                        children: [
++                                          Text(
++                                            cell.text,
++                                            textAlign: TextAlign.center,
++                                            style: const TextStyle(
++                                              fontSize: 12,
++                                              fontWeight: FontWeight.w700,
++                                            ),
++                                          ),
++                                          const SizedBox(height: 10),
++                                          Text(
++                                            cell.numero.toString().padLeft(
++                                              2,
++                                              '0',
++                                            ),
++                                            style: const TextStyle(
++                                              fontSize: 24,
++                                              fontWeight: FontWeight.w900,
++                                            ),
++                                          ),
++                                        ],
++                                      )
++                                    : const SizedBox.shrink(),
++                              );
++                            },
++                          ),
++                        ),
++                      ),
++                    ),
++                  ),
++                ),
++              ],
++            );
++          },
++        ),
++      ),
++    ),
++  );
++}
++
+--- /dev/null
++++ b/lib/imatge_manual_protegida.dart
+@@ -0,0 +1,103 @@
++import 'dart:async';
++import 'dart:typed_data';
++import 'package:flutter/material.dart';
++import 'package:supabase_flutter/supabase_flutter.dart';
++
++const manualBucket = 'manual-incidencies-private';
++
++/// Download bytes with the current user's JWT: no public/signed URL, no disk
++/// cache and no service key. Storage RLS checks approval on each request.
++class ImatgeManualProtegida extends StatefulWidget {
++  final String path;
++  final bool fullScreen;
++  final Future<Uint8List> Function(String)? loader;
++  const ImatgeManualProtegida({super.key, required this.path,
++    this.fullScreen = false, this.loader});
++  @override
++  State<ImatgeManualProtegida> createState() => _ImatgeManualProtegidaState();
++}
++
++class _ImatgeManualProtegidaState extends State<ImatgeManualProtegida>
++    with WidgetsBindingObserver {
++  Uint8List? bytes;
++  bool failed = false;
++  int generation = 0;
++  StreamSubscription<AuthState>? subscription;
++  Timer? recheck;
++
++  @override
++  void initState() {
++    super.initState();
++    WidgetsBinding.instance.addObserver(this);
++    if (widget.loader == null) {
++      subscription = Supabase.instance.client.auth.onAuthStateChange.listen((_) => load());
++      recheck = Timer.periodic(const Duration(minutes: 1), (_) => load());
++    }
++    load();
++  }
++  void discard() {
++    final old = bytes;
++    bytes = null;
++    if(old != null) MemoryImage(old).evict();
++  }
++  Future<void> load() async {
++    final ticket = ++generation;
++    setState(() { discard(); failed = false; });
++    try {
++      if (!widget.path.startsWith('manual/s2100/') || widget.path.contains('..')) {
++        throw StateError('Invalid manual path');
++      }
++      Uint8List result;
++      if (widget.loader != null) {
++        result = await widget.loader!(widget.path);
++      } else {
++        final client = Supabase.instance.client;
++        if (client.auth.currentSession == null) throw StateError('No session');
++        result = await client.storage.from(manualBucket).download(widget.path);
++      }
++      if (mounted && generation == ticket) setState(() => bytes = result);
++    } catch (_) {
++      if (mounted && generation == ticket) setState(() { discard(); failed = true; });
++    }
++  }
++  @override
++  void didUpdateWidget(ImatgeManualProtegida old) {
++    super.didUpdateWidget(old);
++    if (old.path != widget.path) load();
++  }
++  @override
++  void didChangeAppLifecycleState(AppLifecycleState state) {
++    if (state == AppLifecycleState.resumed) load();
++    if (state == AppLifecycleState.paused || state == AppLifecycleState.hidden) {
++      generation++;
++      setState(discard);
++    }
++  }
++  @override
++  void dispose() {
++    generation++; subscription?.cancel(); recheck?.cancel();
++    WidgetsBinding.instance.removeObserver(this); discard(); super.dispose();
++  }
++  @override
++  Widget build(BuildContext context) {
++    if(failed) return Column(mainAxisSize: MainAxisSize.min, children: [
++      const Text('Imatge protegida no disponible. Comprova la sessió autoritzada i la connexió.', textAlign: TextAlign.center),
++      TextButton(onPressed: load, child: const Text('Torna-ho a provar')),
++    ]);
++    if(bytes == null) return const Center(child: Padding(
++      padding: EdgeInsets.all(16), child: CircularProgressIndicator()));
++    final image = Image.memory(bytes!, fit: BoxFit.contain,
++      errorBuilder: (_, __, ___) => const Text('No es pot mostrar la imatge.'));
++    if(widget.fullScreen) return InteractiveViewer(minScale: 1,maxScale: 6,
++      child: Center(child: image));
++    return Column(mainAxisSize: MainAxisSize.min, children: [
++      InkWell(onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => Scaffold(
++        backgroundColor: Colors.black,
++        appBar: AppBar(title: const Text('Imatge del manual')),
++        body: ImatgeManualProtegida(path: widget.path,fullScreen:true,loader:widget.loader),
++      ))), child: ConstrainedBox(constraints: const BoxConstraints(minHeight:80,minWidth:80,maxHeight:280),child:image)),
++      const Text('Toca per ampliar · Imatge del manual S2100',textAlign:TextAlign.center),
++    ]);
++  }
++}
++
