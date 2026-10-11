@@ -1,0 +1,110 @@
+--- a/lib/main.dart
++++ b/lib/main.dart
+@@ -776,8 +776,8 @@
+                           context,
+                           MaterialPageRoute(
+                             builder: (_) => DiagnosticoInteractivoScreen(
+-                              pasoInicialId: 'sac_bahaste_identificada',
+-                              sesion: _sesion('sac_bahaste_identificada'),
++                              pasoInicialId: 'pregunta_seta',
++                              sesion: _sesion('pregunta_seta'),
+                               volverInicio: _volverInicio,
+                               pasos: ramaNoDesfrenaS2100,
+                               causasPorRama: causasPorRama,
+@@ -804,8 +804,8 @@
+                           context,
+                           MaterialPageRoute(
+                             builder: (_) => DiagnosticoInteractivoScreen(
+-                              pasoInicialId: 'sac_pedet_identificada',
+-                              sesion: _sesion('sac_pedet_identificada'),
++                              pasoInicialId: 'inicio_no_tracciona',
++                              sesion: _sesion('inicio_no_tracciona'),
+                               volverInicio: _volverInicio,
+                               pasos: ramaNoDesfrenaS2100,
+                               causasPorRama: causasPorRama,
+--- a/lib/data/s2100_data.dart
++++ b/lib/data/s2100_data.dart
+@@ -52,9 +52,9 @@
+   "no_tracciona": [
+     "Portes obertes",
+     "Estacionaments aplicats",
++    "Disjuntor (Obert)",
+     "EED (Tirador verd fora de posició)",
+     "Tensió nul·la (0V)",
+-    "Disjuntor (Obert)",
+   ],
+   "modo_especial": ["Connexió del mode especial de conducció"],
+   "apertura_cierre_pupitre": [
+@@ -94,7 +94,7 @@
+         "Tens un avís de tirador d’alarma al pupitre de conducció?",
+     esPregunta: true,
+     botonSiDestino: "procedimiento_tirador",
+-    botonNoDestino: "pregunta_seta",
++    botonNoDestino: "pregunta_maniobra_estacionamiento",
+     causaDescartadaAlNo: "Tirador d’alarma actiu",
+   ),
+ 
+@@ -237,7 +237,7 @@
+         "(És una fallada molt habitual per pèrdua de codi en zones de maniobres o terminals de l’L4 com La Pau o Trinitat Nova).",
+     esPregunta: true,
+     botonSiDestino: "procedimiento_tren_stop_rearme",
+-    botonNoDestino: "pregunta_maniobra_estacionamiento",
++    botonNoDestino: "inicio_no_desfrena",
+     causaDescartadaAlNo: "STOP (Tren Stop activat)",
+   ),
+ 
+@@ -402,7 +402,7 @@
+     preguntaOInstruccion:
+         "L’estacionament està realment afluixat, després d’actuar DES?",
+     esPregunta: true,
+-    botonSiDestino: "pregunta_eed",
++    botonSiDestino: "pregunta_disyuntores_abierto",
+     botonNoDestino: "procedimiento_quitar_estacionamiento_cabina",
+     causaDescartadaAlSi: "Estacionaments aplicats",
+   ),
+@@ -444,7 +444,7 @@
+         "El voltímetre de línia indica tensió nul·la (0V) a cabina?",
+     esPregunta: true,
+     botonSiDestino: "procedimiento_tension_nula",
+-    botonNoDestino: "pregunta_disyuntores_abierto",
++    botonNoDestino: "procedimiento_ccm_final",
+     causaDescartadaAlNo: "Tensió nul·la (0V)",
+   ),
+ 
+@@ -468,7 +468,7 @@
+     preguntaOInstruccion: "S’ha obert el disjuntor per un dispar del Feeder?",
+     esPregunta: true,
+     botonSiDestino: "procedimiento_rearme_disyuntor",
+-    botonNoDestino: "procedimiento_ccm_final",
++    botonNoDestino: "pregunta_eed",
+     causaDescartadaAlNo: "Disjuntor (Obert)",
+   ),
+ 
+--- a/lib/data/sac2100_data.dart
++++ b/lib/data/sac2100_data.dart
+@@ -816,7 +816,7 @@
+     preguntaOInstruccion:
+         "S’ha afluixat realment l’estacionament?\n\nFont: L4 Avaries tècniques, pàg. 32–34.",
+     esPregunta: true,
+-    botonSiDestino: "pregunta_eed",
++    botonSiDestino: "pregunta_disyuntores_abierto",
+     botonNoDestino: "sac13",
+   ),
+   "sac_portes_reconegudes": PasoDiagnostico(
+--- a/lib/data/sac2100_operativa.dart
++++ b/lib/data/sac2100_operativa.dart
+@@ -146,6 +146,14 @@
+   put(
+     'sac12_aixeta',
+     'Identifica al DISPLAY 12 el cotxe afectat. Dirigeix-te al pantògraf afectat i verifica la seva aixeta.\n\nComprova el resultat.',
++    images: const [
++      ImatgePasManual(
++        'manual/s2100/sac_12/estado-pantografos-2100.jpg',
++        'DISPLAY 12 · Estat dels pantògrafs',
++        null,
++        'S2100 · Aixeta: vermell = tancada, verd = oberta. Pantògraf: vermell = amunt, verd = avall.',
++      ),
++    ],
+     options: const [
+       OpcioSac('NORMALITZAT', done),
+       OpcioSac('CONTINUA SENSE NORMALITZAR', 'sac12_persisteix'),

@@ -105,7 +105,8 @@ void main() {
       'manual/s2100/sac_12/comandament-pantograf.png',
     );
     expect(g['sac12_aixeta']!.preguntaOInstruccion, contains('DISPLAY 12'));
-    expect(g['sac12_aixeta']!.imatgesManual, isEmpty);
+    expect(g['sac12_aixeta']!.imatgesManual.single.path,
+        'manual/s2100/sac_12/estado-pantografos-2100.jpg');
     expect(g['sac12_aixeta']!.imagenPath, isNull);
     expect(edges('sac12_aixeta'), ['sac_resolt', 'sac12_persisteix']);
     for (final id in reach('sac12')) {

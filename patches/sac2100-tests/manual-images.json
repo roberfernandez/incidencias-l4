@@ -555,5 +555,12 @@
     "kind": "fotografía aportada, sin modificación",
     "source": "fotografía del panel aportada por el usuario",
     "sha256": "bb54812afe0c7db4352a36afd0cec446ded0ad1fde13f7cde6120e85eaff2a32"
+  },
+  {
+    "path": "manual/s2100/sac_12/estado-pantografos-2100.jpg",
+    "page": null,
+    "kind": "fotografía aportada, sin modificación",
+    "source": "Display 12 real aportado por el usuario",
+    "sha256": "1002761bab064f7ce1ea807f9c046835dbacdb74efab2113cadf587ca3fdc53a"
   }
 ]

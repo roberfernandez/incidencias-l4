@@ -13,7 +13,8 @@ void main() {
       for (final i in p.imatgesManual) {
         expect(paths, contains(i.path), reason: p.id);
         expect(i.path, startsWith('manual/s2100/'));
-        if (i.path.endsWith('/panell-anullacions.jpg')) {
+        if (i.path.endsWith('/panell-anullacions.jpg') ||
+            i.path.endsWith('/estado-pantografos-2100.jpg')) {
           expect(i.pagina, isNull);
         } else {
           expect(i.pagina, inInclusiveRange(2, 65));
