@@ -1,1 +1,7 @@
-{"app_name":"l4_incidencias","version":"1.0.0","build_number":"1","package_name":"l4_incidencias"}
+{
+  "app_name": "l4_incidencias",
+  "version": "1.0.0",
+  "build_number": "1",
+  "package_name": "l4_incidencias",
+  "revision": "s9000-manual-20261019"
+}
