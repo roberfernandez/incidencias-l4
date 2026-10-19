@@ -1,0 +1,568 @@
+--- a/lib/main.dart
++++ b/lib/main.dart
+@@ -1136,6 +1136,124 @@
+     );
+   }
+ 
++  void _abrirTermics(BuildContext context) {
++    Navigator.push(
++      context,
++      MaterialPageRoute(
++        builder: (_) => MenuS9000Screen(
++          volverInicio: _volverInicio,
++          titulo: 'TÈRMICS',
++          opciones: [
++            OpcionMenuS9000(
++              texto: 'TÈRMICS · IMATGE DE REFERÈNCIA',
++              color: Colors.blueGrey,
++              alPulsar: () => Navigator.push(
++                context,
++                MaterialPageRoute(
++                  builder: (_) => PantallaImagenCompleta(
++                    volverInicio: _volverInicio,
++                    imagenPath: 'assets/resolucion/termicos_9000.jpg',
++                  ),
++                ),
++              ),
++            ),
++            OpcionMenuS9000(
++              texto: 'TAULES DE TÈRMICS · MA / MB / R',
++              color: Colors.indigo,
++              alPulsar: () => _abrirPasoDirecto(
++                context,
++                pasoInicialId: 's9000_termics',
++                claveCausas: 'avaries_s9000',
++              ),
++            ),
++          ],
++        ),
++      ),
++    );
++  }
++
++  Widget _casellesConsulta(BuildContext context) {
++    OpcionMenuS9000 procediment(String text, Color color, String id) =>
++        OpcionMenuS9000(
++          texto: text,
++          color: color,
++          alPulsar: () => _abrirPasoDirecto(
++            context,
++            pasoInicialId: id,
++            claveCausas: 'avaries_s9000',
++          ),
++        );
++    final caselles = [
++      OpcionMenuS9000(
++        texto: 'MODES DE CONDUCCIÓ\n(especial / socors)',
++        color: Colors.teal[700]!,
++        alPulsar: () => _abrirMenuModos(context),
++      ),
++      OpcionMenuS9000(
++        texto: 'OPERATIVA BÀSICA\n(P.A. / reset / desconnexió)',
++        color: Colors.blue[800]!,
++        alPulsar: () => _abrirMenuOperativa(context),
++      ),
++      OpcionMenuS9000(
++        texto: 'TÈRMICS',
++        color: Colors.blueGrey[700]!,
++        alPulsar: () => _abrirTermics(context),
++      ),
++      OpcionMenuS9000(
++        texto: 'PICTOGRAMES',
++        color: const Color(0xFF8D6E63),
++        alPulsar: () => Navigator.push(
++          context,
++          MaterialPageRoute(
++            builder: (_) =>
++                PictogramasScreen(serie: '9000', volverInicio: _volverInicio),
++          ),
++        ),
++      ),
++      OpcionMenuS9000(
++        texto: 'CARRUSEL DE TRENS',
++        color: Colors.deepPurple[700]!,
++        alPulsar: () => Navigator.push(
++          context,
++          MaterialPageRoute(
++            builder: (_) => const CarruselTrenesScreen(serie: '9000'),
++          ),
++        ),
++      ),
++      procediment('EQUIPS I SERVEIS', Colors.indigo[700]!, 's9000_menu_0'),
++      procediment('PORTES', Colors.green[800]!, 's9000_menu_1'),
++      procediment('AIRE I FRENS', Colors.cyan[800]!, 's9000_menu_2'),
++      procediment(
++        'REMOLCADA I DESACOBLAMENT',
++        Colors.deepOrange[800]!,
++        's9000_menu_3',
++      ),
++      procediment(
++        'TREN STOP',
++        Colors.pink[800]!,
++        'procedimiento_tren_stop_s9000',
++      ),
++      procediment("TIRADOR D'ALARMA", Colors.red[900]!, 'inicio_tirador'),
++    ];
++    return LayoutBuilder(
++      builder: (context, constraints) => Wrap(
++        spacing: 10,
++        runSpacing: 10,
++        children: [
++          for (final casella in caselles)
++            SizedBox(
++              width: (constraints.maxWidth - 10) / 2,
++              child: BotonTriajeCompacto(
++                texto: casella.texto,
++                colorFondo: casella.color,
++                alPulsar: casella.alPulsar,
++              ),
++            ),
++        ],
++      ),
++    );
++  }
++
+   @override
+   Widget build(BuildContext context) {
+     return Scaffold(
+@@ -1210,94 +1328,7 @@
+               ),
+ 
+               const SizedBox(height: 14),
+-              SizedBox(
+-                width: double.infinity,
+-                child: BotonTriajeCompacto(
+-                  texto: 'AVARIES I PROCEDIMENTS',
+-                  colorFondo: Colors.deepOrange[800]!,
+-                  alPulsar: () => _abrirPasoDirecto(
+-                    context,
+-                    pasoInicialId: 's9000_menu_avaries',
+-                    claveCausas: 'avaries_s9000',
+-                  ),
+-                ),
+-              ),
+-              const SizedBox(height: 14),
+-
+-              Row(
+-                children: [
+-                  Expanded(
+-                    child: BotonTriajeCompacto(
+-                      texto: 'MODES DE CONDUCCIÓ\n(especial / socors)',
+-                      colorFondo: Colors.teal[700]!,
+-                      alPulsar: () => _abrirMenuModos(context),
+-                    ),
+-                  ),
+-
+-                  const SizedBox(width: 10),
+-
+-                  Expanded(
+-                    child: BotonTriajeCompacto(
+-                      texto: 'OPERATIVA BÀSICA\n(P.A. / reset / desconnexió)',
+-                      colorFondo: Colors.blue[800]!,
+-                      alPulsar: () => _abrirMenuOperativa(context),
+-                    ),
+-                  ),
+-                ],
+-              ),
+-
+-              const SizedBox(height: 10),
+-
+-              Row(
+-                children: [
+-                  Expanded(
+-                    child: BotonTriajeCompacto(
+-                      texto: 'TÈRMICS',
+-                      colorFondo: Colors.blueGrey[700]!,
+-                      alPulsar: () {
+-                        Navigator.push(
+-                          context,
+-                          MaterialPageRoute(
+-                            builder: (_) => PantallaImagenCompleta(
+-                              volverInicio: _volverInicio,
+-                              imagenPath: 'assets/resolucion/termicos_9000.jpg',
+-                            ),
+-                          ),
+-                        );
+-                      },
+-                    ),
+-                  ),
+-                  const SizedBox(width: 10),
+-                  Expanded(
+-                    child: BotonTriajeCompacto(
+-                      texto: 'PICTOGRAMES',
+-                      colorFondo: const Color(0xFF8D6E63),
+-                      alPulsar: () => Navigator.push(
+-                        context,
+-                        MaterialPageRoute(
+-                          builder: (_) => PictogramasScreen(
+-                            serie: '9000',
+-                            volverInicio: _volverInicio,
+-                          ),
+-                        ),
+-                      ),
+-                    ),
+-                  ),
+-                ],
+-              ),
+-
+-              const SizedBox(height: 16),
+-
+-              BotonCarruselTrenes(
+-                alPulsar: () {
+-                  Navigator.push(
+-                    context,
+-                    MaterialPageRoute(
+-                      builder: (_) => const CarruselTrenesScreen(serie: '9000'),
+-                    ),
+-                  );
+-                },
+-              ),
++              _casellesConsulta(context),
+             ],
+           ),
+         ),
+--- a/lib/data/s9000_data.dart
++++ b/lib/data/s9000_data.dart
+@@ -39,7 +39,6 @@
+   "Avaria DDU": "s9000_ddu",
+   "Cabina habilitada": "s9000_cabina",
+   "Avaria cadena de tracció (IOS86)": "s9000_traccio",
+-  "Avaries i procediments S9000": "s9000_menu_avaries",
+   // Rama No Desfrena
+   "Tirador d’alarma": "inicio_no_desfrena_s9000",
+   "Bolet d’emergència": "pregunta_seta_s9000",
+@@ -1149,6 +1148,7 @@
+       OpcioSac("Anunciador / termòmetres", "s9000_anunciador"),
+       OpcioSac("DDU", "s9000_ddu"),
+       OpcioSac("Cabina habilitada", "s9000_cabina"),
++      OpcioSac("Esquema equips", "s9000_esquema"),
+     ],
+   ),
+ 
+@@ -1181,324 +1181,11 @@
+ 
+   "s9000_menu_3": PasoDiagnostico(
+     id: "s9000_menu_3",
+-    preguntaOInstruccion: "Remolcada i consulta",
++    preguntaOInstruccion: "Remolcada i desacoblament",
+     esPregunta: false,
+     opcions: [
+       OpcioSac("Remolcada", "s9000_remolcada"),
+       OpcioSac("Desacoblament", "s9000_desacoblament"),
+-      OpcioSac("Esquema equips", "s9000_esquema"),
+-      OpcioSac("Taules de tèrmics", "s9000_termics"),
+-      OpcioSac("Tren Stop", "procedimiento_tren_stop_s9000"),
+-      OpcioSac("Tirador d’alarma", "inicio_tirador"),
+-    ],
+-  ),
+-
+-  "s9000_menu_avaries": PasoDiagnostico(
+-    id: "s9000_menu_avaries",
+-    preguntaOInstruccion: "Avaries i procediments S9000",
+-    esPregunta: false,
+-    opcions: [
+-      OpcioSac("Làmines originals del manual", "s9000_lamines"),
+-      OpcioSac("Equips i serveis", "s9000_menu_0"),
+-      OpcioSac("Portes", "s9000_menu_1"),
+-      OpcioSac("Aire i frens", "s9000_menu_2"),
+-      OpcioSac("Remolcada i consulta", "s9000_menu_3"),
+-    ],
+-  ),
+-
+-  "s9000_lamines": PasoDiagnostico(
+-    id: "s9000_lamines",
+-    preguntaOInstruccion: "Làmines originals del manual S9000",
+-    esPregunta: false,
+-    opcions: [
+-      OpcioSac("Pàgina 5", "s9000_lamina_5"),
+-      OpcioSac("Pàgina 67", "s9000_lamina_67"),
+-      OpcioSac("Pàgina 68", "s9000_lamina_68"),
+-      OpcioSac("Pàgina 69", "s9000_lamina_69"),
+-      OpcioSac("Pàgina 70", "s9000_lamina_70"),
+-      OpcioSac("Pàgina 71", "s9000_lamina_71"),
+-      OpcioSac("Pàgina 72", "s9000_lamina_72"),
+-      OpcioSac("Pàgina 73", "s9000_lamina_73"),
+-      OpcioSac("Pàgina 74", "s9000_lamina_74"),
+-      OpcioSac("Pàgina 76", "s9000_lamina_76"),
+-      OpcioSac("Pàgina 77", "s9000_lamina_77"),
+-      OpcioSac("Pàgina 78", "s9000_lamina_78"),
+-      OpcioSac("Pàgina 79", "s9000_lamina_79"),
+-      OpcioSac("Pàgina 80", "s9000_lamina_80"),
+-      OpcioSac("Pàgina 81", "s9000_lamina_81"),
+-      OpcioSac("Pàgina 82", "s9000_lamina_82"),
+-      OpcioSac("Pàgina 83", "s9000_lamina_83"),
+-      OpcioSac("Pàgina 84", "s9000_lamina_84"),
+-      OpcioSac("Pàgina 85", "s9000_lamina_85"),
+-      OpcioSac("Pàgina 86", "s9000_lamina_86"),
+-      OpcioSac("Pàgina 87", "s9000_lamina_87"),
+-      OpcioSac("Pàgina 88", "s9000_lamina_88"),
+-      OpcioSac("Pàgina 89", "s9000_lamina_89"),
+-      OpcioSac("Pàgina 90", "s9000_lamina_90"),
+-      OpcioSac("Pàgina 91", "s9000_lamina_91"),
+-      OpcioSac("Pàgina 92", "s9000_lamina_92"),
+-      OpcioSac("Pàgina 93", "s9000_lamina_93"),
+-      OpcioSac("Pàgina 94", "s9000_lamina_94"),
+-      OpcioSac("Pàgina 95", "s9000_lamina_95"),
+-      OpcioSac("Pàgina 96", "s9000_lamina_96"),
+-      OpcioSac("Pàgina 97", "s9000_lamina_97"),
+-      OpcioSac("Pàgina 98", "s9000_lamina_98"),
+-      OpcioSac("Pàgina 99", "s9000_lamina_99"),
+-      OpcioSac("Pàgina 100", "s9000_lamina_100"),
+-      OpcioSac("Pàgina 101", "s9000_lamina_101"),
+-      OpcioSac("Pàgina 102", "s9000_lamina_102"),
+-    ],
+-  ),
+-  "s9000_lamina_5": PasoDiagnostico(
+-    id: "s9000_lamina_5",
+-    preguntaOInstruccion:
+-        "Làmina original del manual, pàg. 5. Amplia la imatge per consultar-la.",
+-    esPregunta: false,
+-    imagenPath: "assets/resolucion/s9000_manual_p005.jpg",
+-  ),
+-  "s9000_lamina_67": PasoDiagnostico(
+-    id: "s9000_lamina_67",
+-    preguntaOInstruccion:
+-        "Làmina original del manual, pàg. 67. Amplia la imatge per consultar-la.",
+-    esPregunta: false,
+-    imagenPath: "assets/resolucion/s9000_manual_p067.jpg",
+-  ),
+-  "s9000_lamina_68": PasoDiagnostico(
+-    id: "s9000_lamina_68",
+-    preguntaOInstruccion:
+-        "Làmina original del manual, pàg. 68. Amplia la imatge per consultar-la.",
+-    esPregunta: false,
+-    imagenPath: "assets/resolucion/s9000_manual_p068.jpg",
+-  ),
+-  "s9000_lamina_69": PasoDiagnostico(
+-    id: "s9000_lamina_69",
+-    preguntaOInstruccion:
+-        "Làmina original del manual, pàg. 69. Amplia la imatge per consultar-la.",
+-    esPregunta: false,
+-    imagenPath: "assets/resolucion/s9000_manual_p069.jpg",
+-  ),
+-  "s9000_lamina_70": PasoDiagnostico(
+-    id: "s9000_lamina_70",
+-    preguntaOInstruccion:
+-        "Làmina original del manual, pàg. 70. Amplia la imatge per consultar-la.",
+-    esPregunta: false,
+-    imagenPath: "assets/resolucion/s9000_manual_p070.jpg",
+-  ),
+-  "s9000_lamina_71": PasoDiagnostico(
+-    id: "s9000_lamina_71",
+-    preguntaOInstruccion:
+-        "Làmina original del manual, pàg. 71. Amplia la imatge per consultar-la.",
+-    esPregunta: false,
+-    imagenPath: "assets/resolucion/s9000_manual_p071.jpg",
+-  ),
+-  "s9000_lamina_72": PasoDiagnostico(
+-    id: "s9000_lamina_72",
+-    preguntaOInstruccion:
+-        "Làmina original del manual, pàg. 72. Amplia la imatge per consultar-la.",
+-    esPregunta: false,
+-    imagenPath: "assets/resolucion/s9000_manual_p072.jpg",
+-  ),
+-  "s9000_lamina_73": PasoDiagnostico(
+-    id: "s9000_lamina_73",
+-    preguntaOInstruccion:
+-        "Làmina original del manual, pàg. 73. Amplia la imatge per consultar-la.",
+-    esPregunta: false,
+-    imagenPath: "assets/resolucion/s9000_manual_p073.jpg",
+-  ),
+-  "s9000_lamina_74": PasoDiagnostico(
+-    id: "s9000_lamina_74",
+-    preguntaOInstruccion:
+-        "Làmina original del manual, pàg. 74. Amplia la imatge per consultar-la.",
+-    esPregunta: false,
+-    imagenPath: "assets/resolucion/s9000_manual_p074.jpg",
+-  ),
+-  "s9000_lamina_76": PasoDiagnostico(
+-    id: "s9000_lamina_76",
+-    preguntaOInstruccion:
+-        "Làmina original del manual, pàg. 76. Amplia la imatge per consultar-la.",
+-    esPregunta: false,
+-    imagenPath: "assets/resolucion/s9000_manual_p076.jpg",
+-  ),
+-  "s9000_lamina_77": PasoDiagnostico(
+-    id: "s9000_lamina_77",
+-    preguntaOInstruccion:
+-        "Làmina original del manual, pàg. 77. Amplia la imatge per consultar-la.",
+-    esPregunta: false,
+-    imagenPath: "assets/resolucion/s9000_manual_p077.jpg",
+-  ),
+-  "s9000_lamina_78": PasoDiagnostico(
+-    id: "s9000_lamina_78",
+-    preguntaOInstruccion:
+-        "Làmina original del manual, pàg. 78. Amplia la imatge per consultar-la.",
+-    esPregunta: false,
+-    imagenPath: "assets/resolucion/s9000_manual_p078.jpg",
+-  ),
+-  "s9000_lamina_79": PasoDiagnostico(
+-    id: "s9000_lamina_79",
+-    preguntaOInstruccion:
+-        "Làmina original del manual, pàg. 79. Amplia la imatge per consultar-la.",
+-    esPregunta: false,
+-    imagenPath: "assets/resolucion/s9000_manual_p079.jpg",
+-  ),
+-  "s9000_lamina_80": PasoDiagnostico(
+-    id: "s9000_lamina_80",
+-    preguntaOInstruccion:
+-        "Làmina original del manual, pàg. 80. Amplia la imatge per consultar-la.",
+-    esPregunta: false,
+-    imagenPath: "assets/resolucion/s9000_manual_p080.jpg",
+-  ),
+-  "s9000_lamina_81": PasoDiagnostico(
+-    id: "s9000_lamina_81",
+-    preguntaOInstruccion:
+-        "Làmina original del manual, pàg. 81. Amplia la imatge per consultar-la.",
+-    esPregunta: false,
+-    imagenPath: "assets/resolucion/s9000_manual_p081.jpg",
+-  ),
+-  "s9000_lamina_82": PasoDiagnostico(
+-    id: "s9000_lamina_82",
+-    preguntaOInstruccion:
+-        "Làmina original del manual, pàg. 82. Amplia la imatge per consultar-la.",
+-    esPregunta: false,
+-    imagenPath: "assets/resolucion/s9000_manual_p082.jpg",
+-  ),
+-  "s9000_lamina_83": PasoDiagnostico(
+-    id: "s9000_lamina_83",
+-    preguntaOInstruccion:
+-        "Làmina original del manual, pàg. 83. Amplia la imatge per consultar-la.",
+-    esPregunta: false,
+-    imagenPath: "assets/resolucion/s9000_manual_p083.jpg",
+-  ),
+-  "s9000_lamina_84": PasoDiagnostico(
+-    id: "s9000_lamina_84",
+-    preguntaOInstruccion:
+-        "Làmina original del manual, pàg. 84. Amplia la imatge per consultar-la.",
+-    esPregunta: false,
+-    imagenPath: "assets/resolucion/s9000_manual_p084.jpg",
+-  ),
+-  "s9000_lamina_85": PasoDiagnostico(
+-    id: "s9000_lamina_85",
+-    preguntaOInstruccion:
+-        "Làmina original del manual, pàg. 85. Amplia la imatge per consultar-la.",
+-    esPregunta: false,
+-    imagenPath: "assets/resolucion/s9000_manual_p085.jpg",
+-  ),
+-  "s9000_lamina_86": PasoDiagnostico(
+-    id: "s9000_lamina_86",
+-    preguntaOInstruccion:
+-        "Làmina original del manual, pàg. 86. Amplia la imatge per consultar-la.",
+-    esPregunta: false,
+-    imagenPath: "assets/resolucion/s9000_manual_p086.jpg",
+-  ),
+-  "s9000_lamina_87": PasoDiagnostico(
+-    id: "s9000_lamina_87",
+-    preguntaOInstruccion:
+-        "Làmina original del manual, pàg. 87. Amplia la imatge per consultar-la.",
+-    esPregunta: false,
+-    imagenPath: "assets/resolucion/s9000_manual_p087.jpg",
+-  ),
+-  "s9000_lamina_88": PasoDiagnostico(
+-    id: "s9000_lamina_88",
+-    preguntaOInstruccion:
+-        "Làmina original del manual, pàg. 88. Amplia la imatge per consultar-la.",
+-    esPregunta: false,
+-    imagenPath: "assets/resolucion/s9000_manual_p088.jpg",
+-  ),
+-  "s9000_lamina_89": PasoDiagnostico(
+-    id: "s9000_lamina_89",
+-    preguntaOInstruccion:
+-        "Làmina original del manual, pàg. 89. Amplia la imatge per consultar-la.",
+-    esPregunta: false,
+-    imagenPath: "assets/resolucion/s9000_manual_p089.jpg",
+-  ),
+-  "s9000_lamina_90": PasoDiagnostico(
+-    id: "s9000_lamina_90",
+-    preguntaOInstruccion:
+-        "Làmina original del manual, pàg. 90. Amplia la imatge per consultar-la.",
+-    esPregunta: false,
+-    imagenPath: "assets/resolucion/s9000_manual_p090.jpg",
+-  ),
+-  "s9000_lamina_91": PasoDiagnostico(
+-    id: "s9000_lamina_91",
+-    preguntaOInstruccion:
+-        "Làmina original del manual, pàg. 91. Amplia la imatge per consultar-la.",
+-    esPregunta: false,
+-    imagenPath: "assets/resolucion/s9000_manual_p091.jpg",
+-  ),
+-  "s9000_lamina_92": PasoDiagnostico(
+-    id: "s9000_lamina_92",
+-    preguntaOInstruccion:
+-        "Làmina original del manual, pàg. 92. Amplia la imatge per consultar-la.",
+-    esPregunta: false,
+-    imagenPath: "assets/resolucion/s9000_manual_p092.jpg",
+-  ),
+-  "s9000_lamina_93": PasoDiagnostico(
+-    id: "s9000_lamina_93",
+-    preguntaOInstruccion:
+-        "Làmina original del manual, pàg. 93. Amplia la imatge per consultar-la.",
+-    esPregunta: false,
+-    imagenPath: "assets/resolucion/s9000_manual_p093.jpg",
+-  ),
+-  "s9000_lamina_94": PasoDiagnostico(
+-    id: "s9000_lamina_94",
+-    preguntaOInstruccion:
+-        "Làmina original del manual, pàg. 94. Amplia la imatge per consultar-la.",
+-    esPregunta: false,
+-    imagenPath: "assets/resolucion/s9000_manual_p094.jpg",
+-  ),
+-  "s9000_lamina_95": PasoDiagnostico(
+-    id: "s9000_lamina_95",
+-    preguntaOInstruccion:
+-        "Làmina original del manual, pàg. 95. Amplia la imatge per consultar-la.",
+-    esPregunta: false,
+-    imagenPath: "assets/resolucion/s9000_manual_p095.jpg",
+-  ),
+-  "s9000_lamina_96": PasoDiagnostico(
+-    id: "s9000_lamina_96",
+-    preguntaOInstruccion:
+-        "Làmina original del manual, pàg. 96. Amplia la imatge per consultar-la.",
+-    esPregunta: false,
+-    imagenPath: "assets/resolucion/s9000_manual_p096.jpg",
+-  ),
+-  "s9000_lamina_97": PasoDiagnostico(
+-    id: "s9000_lamina_97",
+-    preguntaOInstruccion:
+-        "Làmina original del manual, pàg. 97. Amplia la imatge per consultar-la.",
+-    esPregunta: false,
+-    imagenPath: "assets/resolucion/s9000_manual_p097.jpg",
+-  ),
+-  "s9000_lamina_98": PasoDiagnostico(
+-    id: "s9000_lamina_98",
+-    preguntaOInstruccion:
+-        "Làmina original del manual, pàg. 98. Amplia la imatge per consultar-la.",
+-    esPregunta: false,
+-    imagenPath: "assets/resolucion/s9000_manual_p098.jpg",
+-  ),
+-  "s9000_lamina_99": PasoDiagnostico(
+-    id: "s9000_lamina_99",
+-    preguntaOInstruccion:
+-        "Làmina original del manual, pàg. 99. Amplia la imatge per consultar-la.",
+-    esPregunta: false,
+-    imagenPath: "assets/resolucion/s9000_manual_p099.jpg",
+-  ),
+-  "s9000_lamina_100": PasoDiagnostico(
+-    id: "s9000_lamina_100",
+-    preguntaOInstruccion:
+-        "Làmina original del manual, pàg. 100. Amplia la imatge per consultar-la.",
+-    esPregunta: false,
+-    imagenPath: "assets/resolucion/s9000_manual_p100.jpg",
+-  ),
+-  "s9000_lamina_101": PasoDiagnostico(
+-    id: "s9000_lamina_101",
+-    preguntaOInstruccion:
+-        "Làmina original del manual, pàg. 101. Amplia la imatge per consultar-la.",
+-    esPregunta: false,
+-    imagenPath: "assets/resolucion/s9000_manual_p101.jpg",
+-  ),
+-  "s9000_lamina_102": PasoDiagnostico(
+-    id: "s9000_lamina_102",
+-    preguntaOInstruccion:
+-        "Làmina original del manual, pàg. 102. Amplia la imatge per consultar-la.",
+-    esPregunta: false,
+-    imagenPath: "assets/resolucion/s9000_manual_p102.jpg",
++    ],
+   ),
+ };

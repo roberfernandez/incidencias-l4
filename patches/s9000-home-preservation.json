@@ -1,0 +1,13 @@
+{
+  "baseline": "f43f676379bb37a712c690cfee28048f790dd285",
+  "changed_existing_nodes": [
+    "s9000_menu_0",
+    "s9000_menu_3"
+  ],
+  "new_diagnostic_nodes": 0,
+  "removed_menu_and_raw_page_nodes": 38,
+  "preserved_existing_nodes": 114,
+  "all_other_dart_sources_unchanged": true,
+  "shared_widgets_and_diagnostic_engine_unchanged": true,
+  "dependency_versions_unchanged": true
+}

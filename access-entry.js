@@ -26,7 +26,7 @@ async function initialize() {
       unavailable,
       start: () => {
         const script = document.createElement('script');
-        script.src = 'flutter_bootstrap.js?v=s9000-atp-pedet-20261019';
+        script.src = 'flutter_bootstrap.js?v=s9000-home-20261019';
         script.async = true;
         script.onerror = () => { gate.suspend(); unavailable(); };
         document.body.append(script);
