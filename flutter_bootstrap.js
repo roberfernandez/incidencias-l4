@@ -36,7 +36,7 @@ if (!window._flutter) {
 _flutter.buildConfig = {"engineRevision":"42d3d75a56efe1a2e9902f52dc8006099c45d937","builds":[{"compileTarget":"dart2js","renderer":"canvaskit","mainJsPath":"main.dart.js"}]};
 
 for (const build of _flutter.buildConfig.builds) {
-  if (build.mainJsPath) build.mainJsPath += '?v=s9000-correccio-20261019';
+  if (build.mainJsPath) build.mainJsPath += '?v=s9000-atp-pedet-20261019';
 }
 _flutter.loader.load({
   onEntrypointLoaded: async (engineInitializer) => {
