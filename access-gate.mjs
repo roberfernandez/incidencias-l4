@@ -3,17 +3,17 @@ export function createGate({ check, conceal, reveal, start, redirect, unavailabl
   let revision = 0;
   let started = false;
   function suspend() { ++revision; conceal(); }
-  async function verify() {
+  async function verify({ silent = false } = {}) {
     const current = ++revision;
-    conceal();
+    if (!silent || !started) conceal();
     try {
       const state = await check();
       if (current !== revision) return;
-      if (state !== 'approved') { redirect(); return; }
+      if (state !== 'approved') { if (silent && started) conceal(); redirect(); return; }
       if (!started) { start(); started = true; }
       reveal();
     } catch {
-      if (current === revision) unavailable();
+      if (current === revision) { if (silent && started) conceal(); unavailable(); }
     }
   }
   return { verify, suspend };

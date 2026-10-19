@@ -26,7 +26,7 @@ async function initialize() {
       unavailable,
       start: () => {
         const script = document.createElement('script');
-        script.src = 'flutter_bootstrap.js?v=s9000-manual-20261019';
+        script.src = 'flutter_bootstrap.js?v=s9000-correccio-20261019';
         script.async = true;
         script.onerror = () => { gate.suspend(); unavailable(); };
         document.body.append(script);
@@ -42,15 +42,12 @@ window.addEventListener('storage', event => {
 });
 window.addEventListener('pageshow', event => { if (event.persisted) gate?.verify(); });
 window.addEventListener('pagehide', () => gate?.suspend());
-document.addEventListener('visibilitychange', () => {
-  if (document.hidden) gate?.suspend();
-  else gate?.verify();
-});
+
 // Detect Flutter sign-out in this tab too; storage events only reach other tabs.
 setInterval(() => {
   if (!gate || document.hidden) return;
   const current = localStorage.getItem(sessionModule.SESSION_KEY);
   if (current !== sessionSnapshot) { sessionSnapshot = current; gate.verify(); }
 }, 1000);
-setInterval(() => { if (!document.hidden) gate?.verify(); }, 60000);
+setInterval(() => { if (!document.hidden) gate?.verify({ silent: true }); }, 3600000);
 initialize();

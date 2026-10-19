@@ -80,10 +80,10 @@ return J.nV(new Array(a),b)},
 ai4(a,b){if(a<0||a>4294967295)throw A.f(A.cY(a,0,4294967295,"length",null))
 return J.nV(new Array(a),b)},
 vK(a,b){if(a<0)throw A.f(A.bs("Length must be a non-negative integer: "+a,null))
-return A.b(new Array(a),b.i("J<0>"))},
+return A.b(new Array(a),b.i("I<0>"))},
 ai5(a,b){if(a<0)throw A.f(A.bs("Length must be a non-negative integer: "+a,null))
-return A.b(new Array(a),b.i("J<0>"))},
-nV(a,b){var s=A.b(a,b.i("J<0>"))
+return A.b(new Array(a),b.i("I<0>"))},
+nV(a,b){var s=A.b(a,b.i("I<0>"))
 s.$flags=1
 return s},
 b3q(a,b){return J.zj(a,b)},
@@ -101,7 +101,7 @@ py(a){if(typeof a=="number"){if(Math.floor(a)==a)return J.vL.prototype
 return J.C8.prototype}if(typeof a=="string")return J.m0.prototype
 if(a==null)return J.vM.prototype
 if(typeof a=="boolean")return J.C6.prototype
-if(Array.isArray(a))return J.J.prototype
+if(Array.isArray(a))return J.I.prototype
 if(typeof a!="object"){if(typeof a=="function")return J.fJ.prototype
 if(typeof a=="symbol")return J.qH.prototype
 if(typeof a=="bigint")return J.qG.prototype
@@ -110,7 +110,7 @@ return J.a8F(a)},
 bca(a){if(typeof a=="number")return J.nX.prototype
 if(typeof a=="string")return J.m0.prototype
 if(a==null)return a
-if(Array.isArray(a))return J.J.prototype
+if(Array.isArray(a))return J.I.prototype
 if(typeof a!="object"){if(typeof a=="function")return J.fJ.prototype
 if(typeof a=="symbol")return J.qH.prototype
 if(typeof a=="bigint")return J.qG.prototype
@@ -118,14 +118,14 @@ return a}if(a instanceof A.M)return a
 return J.a8F(a)},
 bn(a){if(typeof a=="string")return J.m0.prototype
 if(a==null)return a
-if(Array.isArray(a))return J.J.prototype
+if(Array.isArray(a))return J.I.prototype
 if(typeof a!="object"){if(typeof a=="function")return J.fJ.prototype
 if(typeof a=="symbol")return J.qH.prototype
 if(typeof a=="bigint")return J.qG.prototype
 return a}if(a instanceof A.M)return a
 return J.a8F(a)},
 cS(a){if(a==null)return a
-if(Array.isArray(a))return J.J.prototype
+if(Array.isArray(a))return J.I.prototype
 if(typeof a!="object"){if(typeof a=="function")return J.fJ.prototype
 if(typeof a=="symbol")return J.qH.prototype
 if(typeof a=="bigint")return J.qG.prototype
@@ -229,7 +229,7 @@ mQ:function mQ(){},
 fJ:function fJ(){},
 qG:function qG(){},
 qH:function qH(){},
-J:function J(a){this.$ti=a},
+I:function I(a){this.$ti=a},
 Rk:function Rk(){},
 aia:function aia(a){this.$ti=a},
 dc:function dc(a,b,c){var _=this
@@ -695,7 +695,7 @@ l=i.r
 l.toString
 h.tq(l)}}}if(a1.b.length!==0)a.push(a1)
 return new A.v_(a)},
-aRu(a,b){var s=b.i("J<0>")
+aRu(a,b){var s=b.i("I<0>")
 return new A.PJ(a,A.b([],s),A.b([],s),b.i("PJ<0>"))},
 b4v(a,b){var s=A.aRu(new A.amB(),t.vz),r=A.ch(v.G.document,"flt-scene")
 a.gh0().Q_(r)
@@ -840,7 +840,7 @@ s=new A.af3(a,A.aQ(s),A.aQ(s),b,r,B.b.a6h(b,new A.af4()),q,p,A.aQ(s))
 p=t.Te
 s.b=new A.a1b(s,A.aQ(p),A.r(t.N,p))
 return s},
-b8s(a,b,c){var s,r,q,p,o,n,m,l,k=A.b([],t.t),j=A.b([],c.i("J<0>"))
+b8s(a,b,c){var s,r,q,p,o,n,m,l,k=A.b([],t.t),j=A.b([],c.i("I<0>"))
 for(s=a.length,r=0,q=0,p=1,o=0;o<s;++o){n=a.charCodeAt(o)
 m=0
 if(65<=n&&n<91){l=b[q*26+(n-65)]
@@ -1125,7 +1125,7 @@ aPa(a){var s,r
 if("computedStyleMap" in a){s=a.computedStyleMap().get("font-size")
 r=s==null?null:s.value}else r=null
 return r==null?A.a8K(A.B2(v.G.window,a).getPropertyValue("font-size")):r},
-b08(){var s=t.s5,r=A.a0(new A.tB(v.G.document.querySelectorAll('[aria-modal="true"]'),s),s.i("I.E"))
+b08(){var s=t.s5,r=A.a0(new A.tB(v.G.document.querySelectorAll('[aria-modal="true"]'),s),s.i("H.E"))
 if(r.length===0)return null
 return B.b.gaJ(r)},
 aQo(a){var s=a===B.lL?"assertive":"polite",r=A.ch(v.G.document,"flt-announcement-"+s),q=r.style
@@ -1155,7 +1155,7 @@ for(r=i.length,q=0;p=i.length,q<p;i.length===r||(0,A.F)(i),++q){p=i[q].a.c.style
 p.setProperty("display","inline","")}for(q=0;q<i.length;i.length===p||(0,A.F)(i),++q){o=i[q]
 r=o.a
 n=r.c
-s.push(new A.a48(new A.H(n.offsetWidth,n.offsetHeight),r,o.b))}for(r=s.length,q=0;q<s.length;s.length===r||(0,A.F)(s),++q){m=s[q]
+s.push(new A.a48(new A.G(n.offsetWidth,n.offsetHeight),r,o.b))}for(r=s.length,q=0;q<s.length;s.length===r||(0,A.F)(s),++q){m=s[q]
 p=m.a
 l=p.a
 k=p.b
@@ -1172,7 +1172,7 @@ if(!r)r=s!=null?b+"\n":b
 else r=""
 if(s!=null)r+=s
 return r.length!==0?r.charCodeAt(0)==0?r:r:null},
-b9f(a,b){var s=t.Ri,r=new A.aG(new A.cn(A.b([a,b],t._m),s),new A.aJo(),s.i("aG<I.E>")).bK(0," ")
+b9f(a,b){var s=t.Ri,r=new A.aG(new A.cn(A.b([a,b],t._m),s),new A.aJo(),s.i("aG<H.E>")).bK(0," ")
 return r.length!==0?r:null},
 b5U(a){var s=new A.Wc(B.n7,a),r=A.rW(s.cS(),a)
 s.a!==$&&A.aS()
@@ -5327,7 +5327,7 @@ try{for(n=J.bM(a),m=t.P;n.v();){r=n.gT()
 q=i.b
 r.ec(new A.afD(i,q,f,b,h,g),s,m);++i.b}n=i.b
 if(n===0){n=f
-n.pz(A.b([],b.i("J<0>")))
+n.pz(A.b([],b.i("I<0>")))
 return n}i.a=A.bA(n,null,!1,b.i("0?"))}catch(l){p=A.a1(l)
 o=A.aE(l)
 if(i.b===0||g){n=f
@@ -6315,14 +6315,14 @@ throw a},
 bA(a,b,c,d){var s,r=c?J.vK(a,d):J.C5(a,d)
 if(a!==0&&b!=null)for(s=0;s<r.length;++s)r[s]=b
 return r},
-el(a,b,c){var s,r=A.b([],c.i("J<0>"))
+el(a,b,c){var s,r=A.b([],c.i("I<0>"))
 for(s=J.bM(a);s.v();)r.push(s.gT())
 if(b)return r
 r.$flags=1
 return r},
 a0(a,b){var s,r
-if(Array.isArray(a))return A.b(a.slice(0),b.i("J<0>"))
-s=A.b([],b.i("J<0>"))
+if(Array.isArray(a))return A.b(a.slice(0),b.i("I<0>"))
+s=A.b([],b.i("I<0>"))
 for(r=J.bM(a);r.v();)s.push(r.gT())
 return s},
 aSF(a,b,c,d){var s,r=c?J.vK(a,d):J.C5(a,d)
@@ -7277,7 +7277,7 @@ HB:function HB(a){this.a=a},
 eM:function eM(a,b,c){this.a=a
 this.b=b
 this.c=c},
-I:function I(){},
+H:function H(){},
 HP:function HP(a,b,c){this.a=a
 this.b=b
 this.$ti=c},
@@ -7417,11 +7417,11 @@ oe(a,b,c){if(b==null)if(a==null)return null
 else return a.ac(0,1-c)
 else if(a==null)return b.ac(0,c)
 else return new A.i(A.hQ(a.a,b.a,c),A.hQ(a.b,b.b,c))},
-b62(a,b){return new A.H(a,b)},
+b62(a,b){return new A.G(a,b)},
 asW(a,b,c){if(b==null)if(a==null)return null
 else return a.ac(0,1-c)
 else if(a==null)return b.ac(0,c)
-else return new A.H(A.hQ(a.a,b.a,c),A.hQ(a.b,b.b,c))},
+else return new A.G(A.hQ(a.a,b.a,c),A.hQ(a.b,b.b,c))},
 ou(a,b){var s=a.a,r=b*2/2,q=a.b
 return new A.u(s-r,q-r,s+r,q+r)},
 aTw(a,b,c){var s=a.a,r=c/2,q=a.b,p=b/2
@@ -7646,7 +7646,7 @@ o=B.un[q]
 n=o[0]
 m=B.un[q+1]
 return new A.am(s*n+p*m[0],1-1/(s*o[1]+p*m[1]))},
-a3Q(a,b,c,d){var s,r=b.a1(0,a),q=new A.H(Math.abs(c.a),Math.abs(c.b)),p=q.gfF(),o=p===0?B.kX:q.ed(0,p),n=r.a,m=Math.abs(n)/o.a,l=r.b,k=Math.abs(l)/o.b
+a3Q(a,b,c,d){var s,r=b.a1(0,a),q=new A.G(Math.abs(c.a),Math.abs(c.b)),p=q.gfF(),o=p===0?B.kX:q.ed(0,p),n=r.a,m=Math.abs(n)/o.a,l=r.b,k=Math.abs(l)/o.b
 n/=m
 l/=k
 n=isFinite(n)?n:d.a
@@ -7735,7 +7735,7 @@ aaS:function aaS(){},
 U5:function U5(){},
 i:function i(a,b){this.a=a
 this.b=b},
-H:function H(a,b){this.a=a
+G:function G(a,b){this.a=a
 this.b=b},
 u:function u(a,b,c,d){var _=this
 _.a=a
@@ -8376,7 +8376,7 @@ nR:function nR(a,b){this.a=a
 this.b=b},
 hX:function hX(a){this.a=a},
 KM:function KM(){},
-aUy(a,b){var s=new A.Ga(A.b([],b.i("J<mN<0>>")),A.b([],t.mz),b.i("Ga<0>"))
+aUy(a,b){var s=new A.Ga(A.b([],b.i("I<mN<0>>")),A.b([],t.mz),b.i("Ga<0>"))
 s.abg(a,b)
 return s},
 aUz(a,b,c){return new A.mN(a,b,c.i("mN<0>"))},
@@ -9021,7 +9021,7 @@ cQ:function cQ(a,b){this.a=a
 this.$ti=b},
 iN:function iN(){},
 Cl:function Cl(){},
-Da(a){return new A.bi(A.b([],a.i("J<0>")),a.i("bi<0>"))},
+Da(a){return new A.bi(A.b([],a.i("I<0>")),a.i("bi<0>"))},
 bi:function bi(a,b){var _=this
 _.a=a
 _.b=!1
@@ -9052,7 +9052,7 @@ _.e=c},
 DG:function DG(a){this.a=a
 this.b=0},
 b6e(a){var s=t.ZK
-s=A.a0(new A.cn(new A.fv(new A.aG(A.b(B.c.dv(a).split("\n"),t.s),new A.atg(),t.Hd),A.bd9(),t.C9),s),s.i("I.E"))
+s=A.a0(new A.cn(new A.fv(new A.aG(A.b(B.c.dv(a).split("\n"),t.s),new A.atg(),t.Hd),A.bd9(),t.C9),s),s.i("H.E"))
 return s},
 b6d(a){var s,r,q="<unknown>",p=$.aYP().mW(a)
 if(p==null)return null
@@ -13137,7 +13137,7 @@ if(b)return new A.aJA(a)
 return null},
 b9P(a,b,c,d){var s,r,q,p,o,n
 if(b){if(c!=null){s=c.$0()
-r=new A.H(s.c-s.a,s.d-s.b)}else r=a.gp()
+r=new A.G(s.c-s.a,s.d-s.b)}else r=a.gp()
 q=d.a1(0,B.j).gcP()
 p=d.a1(0,new A.i(0+r.a,0)).gcP()
 o=d.a1(0,new A.i(0,0+r.b)).gcP()
@@ -16901,35 +16901,35 @@ break
 case 1:q=c.a
 p=c.b
 o=b.a
-s=q/p>o/m?new A.H(o*p/m,p):new A.H(q,m*q/o)
+s=q/p>o/m?new A.G(o*p/m,p):new A.G(q,m*q/o)
 r=b
 break
 case 2:q=c.a
 p=c.b
 o=b.a
-r=q/p>o/m?new A.H(o,o*p/q):new A.H(m*q/p,m)
+r=q/p>o/m?new A.G(o,o*p/q):new A.G(m*q/p,m)
 s=c
 break
 case 3:q=c.a
 p=c.b
 o=b.a
-if(q/p>o/m){r=new A.H(o,o*p/q)
-s=c}else{s=new A.H(q,m*q/o)
+if(q/p>o/m){r=new A.G(o,o*p/q)
+s=c}else{s=new A.G(q,m*q/o)
 r=b}break
 case 4:q=c.a
 p=c.b
 o=b.a
-if(q/p>o/m){s=new A.H(o*p/m,p)
-r=b}else{r=new A.H(m*q/p,m)
+if(q/p>o/m){s=new A.G(o*p/m,p)
+r=b}else{r=new A.G(m*q/p,m)
 s=c}break
-case 5:r=new A.H(Math.min(b.a,c.a),Math.min(m,c.b))
+case 5:r=new A.G(Math.min(b.a,c.a),Math.min(m,c.b))
 s=r
 break
 case 6:n=b.a/m
 q=c.b
-s=m>q?new A.H(q*n,q):b
+s=m>q?new A.G(q*n,q):b
 m=c.a
-if(s.a>m)s=new A.H(m,m/n)
+if(s.a>m)s=new A.G(m,m/n)
 r=b
 break
 default:r=null
@@ -17022,7 +17022,7 @@ s=b4.a
 r=b4.c-s
 q=b4.b
 p=b4.d-q
-o=new A.H(r,p)
+o=new A.G(r,p)
 n=b0.b
 n===$&&A.a()
 n=n.a
@@ -17031,7 +17031,7 @@ n=J.aw(n.a.width())
 m=b0.b.a
 m===$&&A.a()
 m=J.aw(m.a.height())
-l=A.aON(a8,new A.H(n,m).ed(0,b6),o)
+l=A.aON(a8,new A.G(n,m).ed(0,b6),o)
 k=l.a.ac(0,b6)
 j=l.b
 if(b5!==B.cS&&j.k(0,o))b5=B.cS
@@ -18410,7 +18410,7 @@ _.dx=$},
 axd(a,b){var s
 switch(b.a){case 0:s=a
 break
-case 1:s=new A.H(a.b,a.a)
+case 1:s=new A.G(a.b,a.a)
 break
 default:s=null}return s},
 b7p(a,b,c){var s
@@ -18419,7 +18419,7 @@ break
 case 1:s=b.ga0I()
 break
 default:s=null}return s.bt(a)},
-b7o(a,b){return new A.H(a.a+b.a,Math.max(a.b,b.b))},
+b7o(a,b){return new A.G(a.a+b.a,Math.max(a.b,b.b))},
 aUR(a,b){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d=null
 A:{s=a==null
 if(s){r=b
@@ -18823,8 +18823,8 @@ a0=a4.gjD()
 a1=a4.gOF()
 s.aL(0,new A.alP(r,A.b4J(j,k,m,g,f,a4.gDt(),0,n,!1,a0,o,l,h,i,d,a,b,c,e,a4.gpu(),a1,p,q).c6(a4.gco()),s))
 q=A.l(r).i("be<1>")
-p=q.i("aG<I.E>")
-a2=A.a0(new A.aG(new A.be(r,q),new A.alQ(s),p),p.i("I.E"))
+p=q.i("aG<H.E>")
+a2=A.a0(new A.aG(new A.be(r,q),new A.alQ(s),p),p.i("H.E"))
 q=a4.gva()
 p=a4.gh5()
 o=a4.gbs()
@@ -19166,7 +19166,7 @@ b9C(a,b,c){if(a===b)return!0
 if(b==null)return!1
 return A.u8(A.aW7(a,c),A.aW7(b,c))},
 aW7(a,b){var s=A.l(a).i("i0<1,h7>")
-return A.dJ(new A.i0(a,new A.aJw(b),s),s.i("I.E"))},
+return A.dJ(new A.i0(a,new A.aJw(b),s),s.i("H.E"))},
 b80(a,b){var s=t.S
 s=new A.II(A.r(s,t.d_),A.aQ(s),b,A.r(s,t.R),A.dn(s),null,null,A.u7(),A.r(s,t.F))
 s.abl(a,b)
@@ -20421,7 +20421,7 @@ fS:function fS(){},
 aO9(a,b){var s
 switch(b.a){case 0:s=a
 break
-case 1:s=new A.H(a.b,a.a)
+case 1:s=new A.G(a.b,a.a)
 break
 default:s=null}return s},
 aUS(a,b,c){var s
@@ -20430,7 +20430,7 @@ break
 case 1:s=b.ga0I()
 break
 default:s=null}return s.bt(a)},
-axc(a,b){return new A.H(a.a+b.a,Math.max(a.b,b.b))},
+axc(a,b){return new A.G(a.a+b.a,Math.max(a.b,b.b))},
 b5t(a){return a.gp()},
 b5u(a,b){var s=b.b
 s.toString
@@ -20545,7 +20545,7 @@ if(m===0){n.toString
 o.push(n)
 n=null}}B.b.kB(o)
 s=t.IX
-s=A.a0(new A.fp(o,new A.aJl(),s),s.i("I.E"))
+s=A.a0(new A.fp(o,new A.aJl(),s),s.i("H.E"))
 return s},
 hD(){return new A.ea(A.r(t._S,t.HT),A.r(t.I7,t.M),B.kT,new A.dd("",B.b2),new A.dd("",B.b2),new A.dd("",B.b2),new A.dd("",B.b2),new A.dd("",B.b2),B.lB,B.B,B.d_,B.or,B.kS)},
 aJp(a,b,c,d){var s
@@ -20983,7 +20983,7 @@ aiy:function aiy(a,b,c){this.a=a
 this.b=b
 this.c=c},
 aiT(a){var s=A.l(a).i("fp<1,h>")
-return A.dJ(new A.fp(a,new A.aiU(),s),s.i("I.E"))},
+return A.dJ(new A.fp(a,new A.aiU(),s),s.i("H.E"))},
 aiz:function aiz(){},
 h:function h(a){this.a=a},
 aiU:function aiU(){},
@@ -21059,7 +21059,7 @@ o.a=null
 s=new A.ao2(o,a).$0()
 r=$.aPB().d
 q=A.l(r).i("be<1>")
-p=A.dJ(new A.be(r,q),q.i("I.E")).n(0,s.gl9())
+p=A.dJ(new A.be(r,q),q.i("H.E")).n(0,s.gl9())
 q=a.h(0,"type")
 q.toString
 A.bm(q)
@@ -23101,10 +23101,10 @@ aMD(a,b,c){var s=a.b
 return B.e.bE(Math.abs(b.b-s),Math.abs(c.b-s))},
 aMC(a,b,c){var s=a.a
 return B.e.bE(Math.abs(b.a-s),Math.abs(c.a-s))},
-aRq(a,b){var s=A.a0(b,b.$ti.i("I.E"))
+aRq(a,b){var s=A.a0(b,b.$ti.i("H.E"))
 A.ng(s,new A.acq(a),t.mx)
 return s},
-aRp(a,b){var s=A.a0(b,b.$ti.i("I.E"))
+aRp(a,b){var s=A.a0(b,b.$ti.i("H.E"))
 A.ng(s,new A.acp(a),t.mx)
 return s},
 aRr(a,b){var s=J.zl(b)
@@ -29717,7 +29717,7 @@ if(!B.b.n(B.b1,a)||!B.b.n(A.b(["MA1","MA2"],t.s),b))return null
 s=t.s
 return B.b.n(b==="MA1"?A.b(["MA1","MB1"],s):A.b(["MA2","MB2"],s),a)?"sac14_1f11":"sac14_b12"},
 u5(a,b,c,d,e){var s=e==null?a.b:e,r=d==null?a.d:d,q=a.y,p=A.a3(q).i("aG<1>")
-q=A.a0(new A.aG(q,new A.aKy(c),p),p.i("I.E"))
+q=A.a0(new A.aG(q,new A.aKy(c),p),p.i("H.E"))
 return new A.d1(b,"Cotxe: "+c+"\n\n"+s,a.c,r,a.e,a.f,a.r,a.w,a.x,q,!1,a.Q)},
 bbt(b5){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2="procedimiento_b19_ma",a3="procedimiento_b19_mb_r",a4=null,a5="sac_cotxe_incompatible",a6="inicio_pupitre_fallo",a7="sac_pendent",a8="sac19_13_b12_ok",a9="sac19_13_remolcada_final",b0="sac16_continua_R",b1="sac16_R_ok",b2=t.N,b3=A.m2(b5,b2,t.bg),b4=new A.aKx(b3)
 for(s=t.s,s=A.a5(["procedimiento_b12_esquema",A.b(["procedimiento_b12_ma","procedimiento_b12_mb_r"],s),"pregunta_b19_es_ma",A.b([a2,a3],s),"pregunta_b17_es_ma",A.b(["procedimiento_b17_ma","procedimiento_b17_mb_r"],s)],b2,t.yp),s=new A.d9(s,A.l(s).i("d9<1,2>")).gad(0);s.v();){r=s.d
@@ -29759,7 +29759,7 @@ b2.toString
 b3.m(0,b0,A.u5(b2,b0,"R",b1,a4))
 b3.m(0,b1,new A.d1(b1,"S\u2019ha normalitzat l\u2019alarma del cotxe R despr\xe9s de reiniciar l\u2019electr\xf2nica de fre?",!0,"sac_resultat_confirmat","sac16_observar",a4,a4,a4,a4,B.d,!1,B.f))
 return A.baY(A.bd7(b3))},
-G(a,b){return new A.aH(a,b)},
+J(a,b){return new A.aH(a,b)},
 m(a,b,c,d,e,f,g,h,i,j,k,l){return new A.d1(g,k,f,c,b,a,e,d,h,i,!1,j)},
 aXz(a){var s,r=A.bK("^\\s*Font:[^\\n]*",!0,!0,!1)
 r=A.dh(a,r,"")
@@ -29795,7 +29795,7 @@ b9.$2(a6,"No es pot garantir que la porta romangui tancada durant el trajecte.\n
 b8.m(0,"sac07_iris",a6)
 b9.$2(a7,"No es recuperen el tancament de portes i la tracci\xf3.\n\n1. Desallotja el passatge.\n2. Anul\xb7la el lla\xe7 de portes.\n3. Coordina la retirada o el canvi amb CCM.")
 s=t.ih
-q=s.i("I.E")
+q=s.i("H.E")
 i=A.a0(new A.aG(B.wz,new A.aK4(),s),q)
 b9.$4$images$options("sac12","SAC 12 \xb7 Fallada posici\xf3 pant\xf2graf\n\nProva la connexi\xf3 del pant\xf2graf a la posada en marxa.",i,B.WJ)
 b9.$4$images$options("sac12_aixeta","Identifica al DISPLAY 12 el cotxe afectat. Dirigeix-te al pant\xf2graf afectat i verifica la seva aixeta.\n\nComprova el resultat.",B.Zg,B.a1d)
@@ -29806,7 +29806,7 @@ b9.$3$options("sac13_electronica_zero","Passa tot per 0, inclosa la clau de gove
 p=t.iF
 o=A.a0(B.nC,p)
 n=A.a3(o).i("aG<1>")
-h=A.a0(new A.aG(o,new A.aK5(),n),n.i("I.E"))
+h=A.a0(new A.aG(o,new A.aK5(),n),n.i("H.E"))
 b9.$4$images$options("sac13_electronica","Visualitza al DISPLAY el cotxe afectat. Actua sobre 1F09 i 1F11 del cotxe afectat i comprova el resultat.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 34.",h,B.a1h)
 o=A.b([],r)
 for(m=0;m<5;++m){g=B.b1[m]
@@ -29824,7 +29824,7 @@ for(o=["MA1","MA2"],n="sac14_viable_"+g+"_",c=b0+g,e=0;e<2;++e){d=o[e]
 b=k+d
 b8.m(0,n+d,b)
 if(A.aPd(g,d)==="sac14_b12")b8.m(0,b,c)}}o=A.l(b7).i("bb<2>")
-n=o.i("I.E")
+n=o.i("H.E")
 k=A.a0(new A.bb(b7,o),n)
 c=k.length
 m=0
@@ -29919,7 +29919,7 @@ r.toString
 k=c7.h(0,"procedimiento_b19_mb_r")
 p=k.b
 n=t.Ri
-n=A.dJ(new A.cn(A.b([r.f,k.f],t._m),n),n.i("I.E")).bK(0,"\n")
+n=A.dJ(new A.cn(A.b([r.f,k.f],t._m),n),n.i("H.E")).bK(0,"\n")
 m=r.x
 m.toString
 j=k.x
@@ -29943,8 +29943,8 @@ for(r=[b3,"sac13_un_cabina"],s=0;s<2;++s){g=r[s]
 d0.$4(g,g===b3?"sac13_tots_ok":"sac13_un_ok","ESTACIONAMENT ALLIBERAT",b4)}d0.$4("sac13_tots_persisteix","sac13_bolet_ok",b5,b4)
 d0.$4("sac13_canvi_cabina","sac13_tots_final",b5,"ALGUN CONTINUA APLICAT")
 r=A.l(c7).i("be<1>")
-q=r.i("aG<I.E>")
-p=q.i("I.E")
+q=r.i("aG<H.E>")
+p=q.i("H.E")
 m=A.a0(new A.aG(new A.be(c7,r),new A.aLs(),q),p)
 j=m.length
 s=0
@@ -29969,7 +29969,7 @@ for(r=["sac19_13","sac19_13_b12"],s=0;s<2;++s){g=r[s]
 f=c7.h(0,g)
 q=f.Q
 p=A.a3(q).i("aG<1>")
-q=A.a0(new A.aG(q,new A.aLv(),p),p.i("I.E"))
+q=A.a0(new A.aG(q,new A.aLv(),p),p.i("H.E"))
 c7.m(0,g,c9.$2(f,q))}for(r=["09","11","13"],s=0;s<3;++s)for(q="sac19_"+r[s],p=q+"_",q+="_ok",b=0;b<5;++b){g=p+B.b1[b]
 if(c7.aD(g))d0.$4(g,q,"HA REARMAT I NORMALITZAT","NO REARMA / NO NORMALITZA")}d0.$4("sac19_13_cabina","sac19_13_cabina_ok","HA DESFRENAT","NO HA DESFRENAT")
 for(r=["MA1","MA2"],s=0;s<2;++s)d0.$4("sac19_13_b12_"+r[s],"sac19_13_b12_ok",b6,b7)
@@ -31284,8 +31284,8 @@ if(r.b+1!==q.b&&J.d(r.c,q.c))return!1}return!0},
 b37(a){var s,r,q=A.bcf(a,new A.agK(),t.UR,t.K)
 for(s=new A.cI(q,q.r,q.e);s.v();)J.LS(s.d,new A.agL())
 s=A.l(q).i("d9<1,2>")
-r=s.i("fp<I.E,k7>")
-s=A.a0(new A.fp(new A.d9(q,s),new A.agM(),r),r.i("I.E"))
+r=s.i("fp<H.E,k7>")
+s=A.a0(new A.fp(new A.d9(q,s),new A.agM(),r),r.i("H.E"))
 return s},
 b7G(a,b){var s=new A.aBH(a).$0()
 return new A.fT(s,!0,null)},
@@ -31844,7 +31844,7 @@ aSo(a,b,c){var s=null
 return c.a(A.b3r(a,b,s,s,s,s))},
 bde(){return new A.bZ(Date.now(),0,!1)},
 bcf(a,b,c,d){var s,r,q,p,o,n=A.r(d,c.i("T<0>"))
-for(s=c.i("J<0>"),r=0;r<1;++r){q=a[r]
+for(s=c.i("I<0>"),r=0;r<1;++r){q=a[r]
 p=b.$1(q)
 o=n.h(0,p)
 if(o==null){o=A.b([],s)
@@ -35073,7 +35073,7 @@ a.w=!1},
 P7(a){var s=a.d,r=s.a,q=s.b,p=a.e,o=a.f
 a.b=new A.u(r,q,r+p,q+o)
 q=this.b
-if(q!=null)q.aBp(a.c,new A.Be(s,new A.H(p,o),new A.r2(A.el(this.a.a,!0,t.CW))))},
+if(q!=null)q.aBp(a.c,new A.Be(s,new A.G(p,o),new A.r2(A.el(this.a.a,!0,t.CW))))},
 vb(a){var s=a.f,r=this.a.a
 r.push(A.aNh(s))
 a.b=A.Lw(s,this.oQ(a))
@@ -35693,7 +35693,7 @@ s.bc()
 s=p.gdT()
 r=s.b
 q=A.l(r).i("be<1>")
-r=A.a0(new A.be(r,q),q.i("I.E"))
+r=A.a0(new A.be(r,q),q.i("H.E"))
 B.b.aL(r,s.gavX())
 s.d.bf()
 s.e.bf()},
@@ -36351,7 +36351,7 @@ s=A.b([],t.xj)
 r=A.b([],t.k_)
 q=A.r(t.sT,t.E9)
 p=t.SF
-p=A.a0(new A.cn(f.a,p),p.i("I.E"))
+p=A.a0(new A.cn(f.a,p),p.i("H.E"))
 o=p.length
 n=0
 for(;n<p.length;p.length===o||(0,A.F)(p),++n){m=p[n]
@@ -36375,7 +36375,7 @@ d.toString
 p.arr(d)
 if(d.qn(p.x)){o=d.a
 n=t.SF
-m=n.i("I.E")
+m=n.i("H.E")
 l=0
 for(;;){k=A.a0(new A.cn(o,n),m)
 if(!(l<k.length))break
@@ -36386,7 +36386,7 @@ k.c=j[l].c
 k=A.a0(new A.cn(p.x.a,n),m)
 k[l].c=null;++l}}p.x=d
 o=t.SF
-d=A.a0(new A.cn(d.a,o),o.i("I.E"))
+d=A.a0(new A.cn(d.a,o),o.i("H.E"))
 o=A.a3(d).i("ae<1,ks>")
 i=A.a0(new A.ae(d,new A.ani(),o),o.i("aB.E"))
 d=p.c.d
@@ -36415,7 +36415,7 @@ if(s!=null)s.a.remove()
 this.d.G(0,a)
 this.f.G(0,a)},
 am6(a){var s,r,q,p,o,n,m,l=A.b([],t.EV),k=a.a,j=t.SF
-j=A.a0(new A.cn(k,j),j.i("I.E"))
+j=A.a0(new A.cn(k,j),j.i("H.E"))
 s=j.length
 if(s<=A.dR().gLo())return a
 r=s-A.dR().gLo()
@@ -36434,7 +36434,7 @@ arr(a){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d=this
 if(a.qn(d.x))return
 s=d.agg(d.x,a)
 r=A.a3(s).i("aG<1>")
-q=A.a0(new A.aG(s,new A.ang(),r),r.i("I.E"))
+q=A.a0(new A.aG(s,new A.ang(),r),r.i("H.E"))
 p=A.aXf(q)
 for(r=p.length,o=0;o<r;++o)p[o]=q[p[o]]
 for(n=d.b,o=0;o<d.x.a.length;++o){if(B.b.n(s,o))continue
@@ -36469,7 +36469,7 @@ if(p[r] instanceof A.dT)m.F(0,r)
 s=!0
 break}++r}if(!s)q.push(-1);++l}return q},
 l(){var s,r,q,p=this,o=p.e,n=A.l(o).i("be<1>")
-n=A.a0(new A.be(o,n),n.i("I.E"))
+n=A.a0(new A.be(o,n),n.i("H.E"))
 B.b.aL(n,p.ga0c())
 p.c=new A.Bf(A.r(t.sT,t.Cc),A.b([],t.y8))
 p.d.ab(0)
@@ -36478,7 +36478,7 @@ p.f.ab(0)
 B.b.ab(p.w)
 B.b.ab(p.r)
 o=t.SF
-o=A.a0(new A.cn(p.x.a,o),o.i("I.E"))
+o=A.a0(new A.cn(p.x.a,o),o.i("H.E"))
 n=o.length
 s=0
 for(;s<o.length;o.length===n||(0,A.F)(o),++s){r=o[s]
@@ -37559,7 +37559,7 @@ gDQ(){var s=this.b.a
 s===$&&A.a()
 return s}}
 A.F2.prototype={
-cV(a){var s,r=this,q=r.b.c.y,p=q==null?null:new A.H(q.c-q.a,q.d-q.b)
+cV(a){var s,r=this,q=r.b.c.y,p=q==null?null:new A.G(q.c-q.a,q.d-q.b)
 q=a===r.d
 s=!J.d(p,r.e)
 if(!q)r.c.textContent=a
@@ -38871,7 +38871,7 @@ if(i.c==null){h=h.y1.a
 h===$&&A.a()
 i.c=h
 i.b.append(h)}i.Tt()},
-lf(){var s,r,q=this,p=q.e,o=A.l(p).i("be<1>"),n=A.a0(new A.be(p,o),o.i("I.E")),m=n.length
+lf(){var s,r,q=this,p=q.e,o=A.l(p).i("be<1>"),n=A.a0(new A.be(p,o),o.i("H.E")),m=n.length
 for(s=0;s<m;++s){r=p.h(0,n[s])
 if(r!=null)q.w.push(r)}q.Tt()
 o=q.c
@@ -40323,7 +40323,7 @@ k(a,b){if(b==null)return!1
 return b instanceof A.lq&&b.a===this.a&&b.b===this.b},
 gB(a){return A.S(this.a,this.b,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a)},
 j(a){return"BitmapSize("+this.a+", "+this.b+")"},
-aCT(){return new A.H(this.a,this.b)}}
+aCT(){return new A.G(this.a,this.b)}}
 A.hz.prototype={
 ab0(){var s=this.a
 s.$flags&2&&A.aq(s)
@@ -40449,7 +40449,7 @@ return new A.dG(s,A.l(s).i("dG<1>"))},
 LD(){var s=$.ds(),r=s.d
 if(r==null)r=s.gd0()
 s=this.b
-return new A.H(s.clientWidth*r,s.clientHeight*r)},
+return new A.G(s.clientWidth*r,s.clientHeight*r)},
 a_p(a,b){return B.fJ}}
 A.abD.prototype={
 $1(a){this.a.e.F(0,null)},
@@ -40487,7 +40487,7 @@ m.toString
 q.b=m*l
 o=o.window.innerHeight
 o.toString
-p.b=o*l}return new A.H(q.bg(),p.bg())},
+p.b=o*l}return new A.G(q.bg(),p.bg())},
 a_p(a,b){var s,r,q=$.ds(),p=q.d
 if(p==null)p=q.gd0()
 q=v.G
@@ -42195,7 +42195,7 @@ j(a){return String(a)}}
 J.qH.prototype={
 gB(a){return 0},
 j(a){return String(a)}}
-J.J.prototype={
+J.I.prototype={
 ev(a,b){return new A.fn(a,A.a3(a).i("@<1>").bZ(b).i("fn<1,2>"))},
 F(a,b){a.$flags&1&&A.aq(a,29)
 a.push(b)},
@@ -42368,7 +42368,7 @@ return-1},
 geU(a){return A.c1(A.a3(a))},
 $ift:1,
 $iaM:1,
-$iI:1,
+$iH:1,
 $iT:1}
 J.Rk.prototype={
 aD7(a){var s,r,q
@@ -43613,7 +43613,7 @@ if(t.jW.b(d)){this.Xn(a,b,c,d,e)
 return}this.QC(a,b,c,d,e)},
 hE(a,b,c,d){return this.d_(a,b,c,d,0)},
 $iaM:1,
-$iI:1,
+$iH:1,
 $iT:1}
 A.id.prototype={
 m(a,b,c){a.$flags&2&&A.aq(a)
@@ -43624,7 +43624,7 @@ if(t.A3.b(d)){this.Xn(a,b,c,d,e)
 return}this.QC(a,b,c,d,e)},
 hE(a,b,c,d){return this.d_(a,b,c,d,0)},
 $iaM:1,
-$iI:1,
+$iH:1,
 $iT:1}
 A.CY.prototype={
 geU(a){return B.alj},
@@ -44040,7 +44040,7 @@ A.afD.prototype={
 $1(a){var s,r,q,p,o,n,m=this,l=m.a,k=--l.b,j=l.a
 if(j!=null){J.kg(j,m.b,a)
 if(J.d(k,0)){l=m.d
-s=A.b([],l.i("J<0>"))
+s=A.b([],l.i("I<0>"))
 for(q=j,p=q.length,o=0;o<q.length;q.length===p||(0,A.F)(q),++o){r=q[o]
 n=r
 if(n==null)n=l.a(n)
@@ -45228,7 +45228,7 @@ else for(s=J.bM(c);s.v();b=r){r=b+1
 this.m(a,b,s.gT())}},
 j(a){return A.nU(a,"[","]")},
 $iaM:1,
-$iI:1,
+$iH:1,
 $iT:1}
 A.bB.prototype={
 jt(a,b,c){var s=A.l(this)
@@ -45266,7 +45266,7 @@ return this.l7(0,b,s,s)},
 Zu(a){var s,r
 for(s=a.gad(a);s.v();){r=s.gT()
 this.m(0,r.a,r.b)}},
-fl(a,b){var s,r,q,p,o=this,n=A.l(o),m=A.b([],n.i("J<bB.K>"))
+fl(a,b){var s,r,q,p,o=this,n=A.l(o),m=A.b([],n.i("I<bB.K>"))
 for(s=o.gcI(),s=s.gad(s),n=n.i("bB.V");s.v();){r=s.gT()
 q=o.h(0,r)
 if(b.$2(r,q==null?n.a(q):q))m.push(r)}for(n=m.length,p=0;p<m.length;m.length===n||(0,A.F)(m),++p)o.G(0,m[p])},
@@ -45571,7 +45571,7 @@ A.e_(b,"index")
 s=this.gad(this)
 for(r=b;s.v();){if(r===0)return s.gT();--r}throw A.f(A.Rg(b,b-r,this,null,"index"))},
 $iaM:1,
-$iI:1,
+$iH:1,
 $ibu:1}
 A.yC.prototype={
 ev(a,b){return A.asy(this,this.gJl(),A.l(this).c,b)},
@@ -45678,7 +45678,7 @@ if(o===0)return p.d.d=q}p.GW(new A.he(q,a,p.$ti.i("he<1,2>")),o)
 return q},
 gag(a){return this.d==null},
 gcN(a){return this.d!=null},
-aL(a,b){var s,r=this.$ti,q=new A.tS(this,A.b([],r.i("J<he<1,2>>")),this.c,r.i("tS<1,2>"))
+aL(a,b){var s,r=this.$ti,q=new A.tS(this,A.b([],r.i("I<he<1,2>>")),this.c,r.i("tS<1,2>"))
 while(q.e=null,q.GQ()){s=q.gT()
 b.$2(s.a,s.b)}},
 gJ(a){return this.a},
@@ -45747,7 +45747,7 @@ A.n6.prototype={
 gJ(a){return this.a.a},
 gag(a){return this.a.a===0},
 gad(a){var s=this.a,r=this.$ti
-return new A.n7(s,A.b([],r.i("J<2>")),s.c,r.i("n7<1,2>"))},
+return new A.n7(s,A.b([],r.i("I<2>")),s.c,r.i("n7<1,2>"))},
 n(a,b){return this.a.kL(b)!=null},
 i8(a){var s=this.a,r=A.WU(s.e,null,this.$ti.c),q=s.d
 if(q!=null){r.d=r.HD(q)
@@ -45756,12 +45756,12 @@ A.tT.prototype={
 gJ(a){return this.a.a},
 gag(a){return this.a.a===0},
 gad(a){var s=this.a,r=this.$ti
-return new A.JX(s,A.b([],r.i("J<he<1,2>>")),s.c,r.i("JX<1,2>"))}}
+return new A.JX(s,A.b([],r.i("I<he<1,2>>")),s.c,r.i("JX<1,2>"))}}
 A.JS.prototype={
 gJ(a){return this.a.a},
 gag(a){return this.a.a===0},
 gad(a){var s=this.a,r=this.$ti
-return new A.tS(s,A.b([],r.i("J<he<1,2>>")),s.c,r.i("tS<1,2>"))}}
+return new A.tS(s,A.b([],r.i("I<he<1,2>>")),s.c,r.i("tS<1,2>"))}}
 A.n7.prototype={
 Iv(a){return a.a}}
 A.JX.prototype={
@@ -45780,7 +45780,7 @@ VC(a){return A.WU(new A.atd(this,a),this.f,a)},
 t4(){return this.VC(t.z)},
 ev(a,b){return A.asy(this,this.gaml(),this.$ti.c,b)},
 gad(a){var s=this.$ti
-return new A.n7(this,A.b([],s.i("J<hf<1>>")),this.c,s.i("n7<1,hf<1>>"))},
+return new A.n7(this,A.b([],s.i("I<hf<1>>")),this.c,s.i("n7<1,hf<1>>"))},
 gJ(a){return this.a},
 gag(a){return this.d==null},
 gcN(a){return this.d!=null},
@@ -45813,7 +45813,7 @@ for(s=a.length,r=0;r<a.length;a.length===s||(0,A.F)(a),++r)if(this.kL(a[r])!=nul
 lS(a){return this.Tr(0,a,!0)},
 hh(a){return this.Tr(0,a,!1)},
 Tr(a,b,c){var s,r,q,p,o,n,m,l=this
-for(s=l.$ti,r=s.i("hf<1>"),q=new A.n7(l,A.b([],s.i("J<hf<1>>")),l.c,s.i("n7<1,hf<1>>")),p=null,o=0;q.v();){n=q.gT()
+for(s=l.$ti,r=s.i("hf<1>"),q=new A.n7(l,A.b([],s.i("I<hf<1>>")),l.c,s.i("n7<1,hf<1>>")),p=null,o=0;q.v();){n=q.gT()
 if(b.n(0,n)===c){m=new A.hf(n,r)
 m.b=p;++o
 p=m}}s=A.WU(l.e,l.f,s.c)
@@ -46677,14 +46677,14 @@ $ibx:1,
 gqK(){return this.a},
 gzS(){return this.b},
 gd6(){return this.c}}
-A.I.prototype={
-ev(a,b){return A.lu(this,A.db(this).i("I.E"),b)},
+A.H.prototype={
+ev(a,b){return A.lu(this,A.db(this).i("H.E"),b)},
 awR(a,b){var s=this
-if(t.Ee.b(s))return A.b2U(s,b,A.db(s).i("I.E"))
-return new A.ql(s,b,A.db(s).i("ql<I.E>"))},
-eS(a,b,c){return A.o6(this,b,A.db(this).i("I.E"),c)},
+if(t.Ee.b(s))return A.b2U(s,b,A.db(s).i("H.E"))
+return new A.ql(s,b,A.db(s).i("ql<H.E>"))},
+eS(a,b,c){return A.o6(this,b,A.db(this).i("H.E"),c)},
 iW(a,b){return this.eS(0,b,t.z)},
-jH(a,b){return new A.aG(this,b,A.db(this).i("aG<I.E>"))},
+jH(a,b){return new A.aG(this,b,A.db(this).i("aG<H.E>"))},
 P8(a,b){return new A.cn(this,b.i("cn<0>"))},
 n(a,b){var s
 for(s=this.gad(this);s.v();)if(J.d(s.gT(),b))return!0
@@ -46712,20 +46712,20 @@ uq(a){return this.bK(0,"")},
 eL(a,b){var s
 for(s=this.gad(this);s.v();)if(b.$1(s.gT()))return!0
 return!1},
-f9(a,b){var s=A.db(this).i("I.E")
+f9(a,b){var s=A.db(this).i("H.E")
 if(b)s=A.a0(this,s)
 else{s=A.a0(this,s)
 s.$flags=1
 s=s}return s},
 ep(a){return this.f9(0,!0)},
-i8(a){return A.dJ(this,A.db(this).i("I.E"))},
+i8(a){return A.dJ(this,A.db(this).i("H.E"))},
 gJ(a){var s,r=this.gad(this)
 for(s=0;r.v();)++s
 return s},
 gag(a){return!this.gad(this).v()},
 gcN(a){return!this.gag(this)},
-m6(a,b){return A.aU9(this,b,A.db(this).i("I.E"))},
-j7(a,b){return A.aTZ(this,b,A.db(this).i("I.E"))},
+m6(a,b){return A.aU9(this,b,A.db(this).i("H.E"))},
+j7(a,b){return A.aTZ(this,b,A.db(this).i("H.E"))},
 gaa(a){var s=this.gad(this)
 if(!s.v())throw A.f(A.cc())
 return s.gT()},
@@ -47584,15 +47584,15 @@ k(a,b){if(b==null)return!1
 return b instanceof A.i&&b.a===this.a&&b.b===this.b},
 gB(a){return A.S(this.a,this.b,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a)},
 j(a){return"Offset("+B.e.al(this.a,1)+", "+B.e.al(this.b,1)+")"}}
-A.H.prototype={
+A.G.prototype={
 gag(a){return this.a<=0||this.b<=0},
 a1(a,b){var s=this
-if(b instanceof A.H)return new A.i(s.a-b.a,s.b-b.b)
-if(b instanceof A.i)return new A.H(s.a-b.a,s.b-b.b)
+if(b instanceof A.G)return new A.i(s.a-b.a,s.b-b.b)
+if(b instanceof A.i)return new A.G(s.a-b.a,s.b-b.b)
 throw A.f(A.bs(b,null))},
-Z(a,b){return new A.H(this.a+b.a,this.b+b.b)},
-ac(a,b){return new A.H(this.a*b,this.b*b)},
-ed(a,b){return new A.H(this.a/b,this.b/b)},
+Z(a,b){return new A.G(this.a+b.a,this.b+b.b)},
+ac(a,b){return new A.G(this.a*b,this.b*b)},
+ed(a,b){return new A.G(this.a/b,this.b/b)},
 gfF(){return Math.min(Math.abs(this.a),Math.abs(this.b))},
 kR(a){return new A.i(a.a+this.a/2,a.b+this.b/2)},
 CJ(a){return new A.i(a.a+this.a,a.b+this.b)},
@@ -47602,7 +47602,7 @@ s=s>=0&&s<this.b}else s=r
 else s=r
 return s},
 k(a,b){if(b==null)return!1
-return b instanceof A.H&&b.a===this.a&&b.b===this.b},
+return b instanceof A.G&&b.a===this.a&&b.b===this.b},
 gB(a){return A.S(this.a,this.b,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a)},
 j(a){return"Size("+B.e.al(this.a,1)+", "+B.e.al(this.b,1)+")"}}
 A.u.prototype={
@@ -48591,12 +48591,12 @@ aD(a){var s=this
 if(!s.Bc(a))return!1
 return s.c.aD(s.a.$1(s.$ti.i("c2.K").a(a)))},
 giR(){var s=this.c,r=A.l(s).i("d9<1,2>")
-return A.o6(new A.d9(s,r),new A.aaz(this),r.i("I.E"),this.$ti.i("bc<c2.K,c2.V>"))},
+return A.o6(new A.d9(s,r),new A.aaz(this),r.i("H.E"),this.$ti.i("bc<c2.K,c2.V>"))},
 aL(a,b){this.c.aL(0,new A.aaA(this,b))},
 gag(a){return this.c.a===0},
 gcN(a){return this.c.a!==0},
 gcI(){var s=this.c,r=A.l(s).i("bb<2>")
-return A.o6(new A.bb(s,r),new A.aaB(this),r.i("I.E"),this.$ti.i("c2.K"))},
+return A.o6(new A.bb(s,r),new A.aaB(this),r.i("H.E"),this.$ti.i("c2.K"))},
 gJ(a){return this.c.a},
 l7(a,b,c,d){return this.c.l7(0,new A.aaC(this,b,c,d),c,d)},
 iW(a,b){var s=t.z
@@ -48607,7 +48607,7 @@ if(!r.Bc(b))return null
 s=r.c.G(0,r.a.$1(r.$ti.i("c2.K").a(b)))
 return s==null?null:s.b},
 gia(){var s=this.c,r=A.l(s).i("bb<2>")
-return A.o6(new A.bb(s,r),new A.aaE(this),r.i("I.E"),this.$ti.i("c2.V"))},
+return A.o6(new A.bb(s,r),new A.aaE(this),r.i("H.E"),this.$ti.i("c2.V"))},
 j(a){return A.aj4(this)},
 Bc(a){return this.$ti.i("c2.K").b(a)},
 $iar:1}
@@ -49553,7 +49553,7 @@ q=p.jb(0,B.PW,B.QK)}q.c2(new A.ayy(this,r),t.H)},
 an2(a){this.X(new A.ayD(this,a))},
 M(b0){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3,a4,a5=this,a6=null,a7=a5.a,a8=a7.w==null,a9=!a8
 a7=a7.y
-s=a7==null?a6:new A.H(a7,a7)
+s=a7==null?a6:new A.G(a7,a7)
 r=A.v5(b0)
 q=r.gfk()
 a7=a5.a.e
@@ -50273,18 +50273,18 @@ a.ip(q,o)},
 fG(a){return!this.b.k(0,a.b)}}
 A.Pj.prototype={}
 A.abA.prototype={
-ve(a){return new A.H(12,a+12-1.5)},
+ve(a){return new A.G(12,a+12-1.5)},
 CL(a,b,c,d){var s,r,q,p=null,o=A.jp(p,p,p,new A.a0e(A.v5(a).gpd(),p),B.R)
-switch(b.a){case 0:return A.F1(o,new A.H(12,c+12-1.5))
+switch(b.a){case 0:return A.F1(o,new A.G(12,c+12-1.5))
 case 1:s=c+12-1.5
-r=A.F1(o,new A.H(12,s))
+r=A.F1(o,new A.G(12,s))
 q=new A.aN(new Float64Array(16))
 q.e6()
 q.dB(6,s/2,0,1)
 q.Fy(3.141592653589793)
 q.dB(-6,-s/2,0,1)
 return A.G5(p,r,p,q,!0)
-case 2:return A.F1(p,new A.H(12,c+12-1.5))}},
+case 2:return A.F1(p,new A.G(12,c+12-1.5))}},
 vd(a,b){var s=b+12-1.5
 switch(a.a){case 0:return new A.i(6,s)
 case 1:return new A.i(6,s-12+1.5)
@@ -50329,7 +50329,7 @@ q.cO(r.SH(t.k.a(A.t.prototype.ga_.call(r))),!0)
 s=q.b
 s.toString
 t.q.a(s).a=r.Sx(q.gp())
-r.fy=new A.H(q.gp().a,q.gp().b-7)},
+r.fy=new A.G(q.gp().a,q.gp().b-7)},
 adc(a,b){var s,r,q,p,o,n,m=this,l=A.cd($.a8().r)
 if(30>m.gp().a){l.aO(new A.et(b))
 return l}s=a.gp()
@@ -50560,7 +50560,7 @@ this.ah=a
 this.a4()},
 bM(){var s,r,q,p,o,n,m,l=this,k={}
 if(l.a7$==null){k=t.k.a(A.t.prototype.ga_.call(l))
-l.fy=new A.H(A.D(0,k.a,k.b),A.D(0,k.c,k.d))
+l.fy=new A.G(A.D(0,k.a,k.b),A.D(0,k.c,k.d))
 return}k.a=0
 l.bX(new A.aEU(k,l))
 s=t.k
@@ -50591,7 +50591,7 @@ m.e=!0}}else o.b=o.bg()-l.ah
 r=l.a9
 l.Y=r!==k.c
 l.a0=r>0
-l.fy=s.a(A.t.prototype.ga_.call(l)).bt(new A.H(o.bg(),k.a))},
+l.fy=s.a(A.t.prototype.ga_.call(l)).bt(new A.G(o.bg(),k.a))},
 b4(a,b){this.bX(new A.aET(this,b,a))},
 fa(a){if(!(a.b instanceof A.fR))a.b=new A.fR(null,null,B.j)},
 dd(a,b){var s,r,q=this.cw$
@@ -52353,7 +52353,7 @@ r.y=null
 r.wD(s)
 $.f7.u$.aBV(s.b)}r.Sl()},
 Sl(){var s=this.z,r=A.l(s).i("bb<2>")
-s=A.a0(new A.bb(s,r),r.i("I.E"))
+s=A.a0(new A.bb(s,r),r.i("H.E"))
 B.b.aL(s,this.gaoL())},
 XL(){var s=this.x
 if(s!=null){s.bc()
@@ -52655,7 +52655,7 @@ p=q.R8
 if(p.a===0){q.RG=1
 q.rx=0}else{q.RG=q.gtf()/q.gwz()
 s=A.l(p).i("bb<2>")
-q.rx=A.o6(new A.bb(p,s),new A.aqr(),s.i("I.E"),t.i).qU(0,new A.aqs())}if(q.CW===B.lx){if(q.ch!=null){p={}
+q.rx=A.o6(new A.bb(p,s),new A.aqr(),s.i("H.E"),t.i).qU(0,new A.aqs())}if(q.CW===B.lx){if(q.ch!=null){p={}
 r=q.p2.h(0,a).G8()
 p.a=r
 s=r.a
@@ -52704,7 +52704,7 @@ s=q.R8
 if(s.a===0){q.RG=1
 q.rx=0}else{q.RG=q.gtf()/q.gwz()
 r=A.l(s).i("bb<2>")
-q.rx=A.o6(new A.bb(s,r),new A.aqv(),r.i("I.E"),t.i).qU(0,new A.aqw())}}}},
+q.rx=A.o6(new A.bb(s,r),new A.aqv(),r.i("H.E"),t.i).qU(0,new A.aqw())}}}},
 fO(a){var s=this
 s.R8.G(0,a)
 s.ok.G(0,a)
@@ -53497,7 +53497,7 @@ $2(a,b){return this.$1$2(a,b,t.z)},
 $S:341}
 A.aHu.prototype={
 r2(a){return a.a3T(this.b)},
-ns(a){return new A.H(a.b,this.b)},
+ns(a){return new A.G(a.b,this.b)},
 r7(a,b){return new A.i(0,a.b-b.b)},
 kz(a){return this.b!==a.b}}
 A.a3J.prototype={}
@@ -53949,7 +53949,7 @@ d=k.y
 c=a0.a4b(B.F)
 b=k.c
 n=A.eP(!1,B.K,!0,a1,A.iJ(!1,a1,!0,A.vz(new A.aT(p,A.dk(k.dy,1,1),a1),new A.d8(a1,a1,a1,a1,a1,a4,a1,a1,a1)),a5,!0,e,i,a1,d,a1,q,h,g,c,a1,b,a1,a1,a1,a1,f,a1,a1),j,m,o,a1,l.go,a5,a1,n,B.kp)
-switch(k.fr.a){case 0:a=new A.H(48+a2,48+a3)
+switch(k.fr.a){case 0:a=new A.G(48+a2,48+a3)
 break
 case 1:a=B.R
 break
@@ -53980,7 +53980,7 @@ RZ(a,b){var s,r,q=this.q$
 if(q!=null){s=b.$2(q,a)
 q=s.a
 r=this.D
-return a.bt(new A.H(Math.max(q,r.a),Math.max(s.b,r.b)))}return B.R},
+return a.bt(new A.G(Math.max(q,r.a),Math.max(s.b,r.b)))}return B.R},
 cR(a){return this.RZ(a,A.f2())},
 dz(a,b){var s,r,q=this.q$
 if(q==null)return null
@@ -54207,7 +54207,7 @@ b2=A.aQu(A.iJ(!1,b9,b3!=null,b2,e.ju(f),a,b9,b6,B.E,b9,b9,new A.a2B(new A.axK(c6
 q=b8.a
 b1=q.at
 if(b1!=null)b2=A.aUt(b2,b1)
-switch(c.a){case 0:b7=new A.H(48+c2,48+a8)
+switch(c.a){case 0:b7=new A.G(48+c2,48+a8)
 break
 case 1:b7=B.R
 break
@@ -54367,7 +54367,7 @@ SB(a,b){var s,r,q=this.q$
 if(q!=null){s=b.$2(q,a)
 q=s.a
 r=this.D
-return a.bt(new A.H(Math.max(q,r.a),Math.max(s.b,r.b)))}return B.R},
+return a.bt(new A.G(Math.max(q,r.a),Math.max(s.b,r.b)))}return B.R},
 cR(a){return this.SB(a,A.f2())},
 dz(a,b){var s,r,q=this.q$
 if(q==null)return null
@@ -55563,15 +55563,15 @@ s=p.cp$.h(0,B.bt)
 s.toString
 r=b.$2(s,o)
 q=p.af.w?r.a:a
-return new A.H(q*p.ah.gt(),r.b)},
+return new A.G(q*p.ah.gt(),r.b)},
 alu(a,b){var s,r,q=this.c8
 if(q==null)q=A.hU(a,a)
 s=this.cp$.h(0,B.cH)
 s.toString
 r=b.$2(s,q)
 s=this.I
-if(s.gbi()===B.W)return new A.H(0,a)
-return new A.H(s.gt()*r.a,r.b)},
+if(s.gbi()===B.W)return new A.G(0,a)
+return new A.G(s.gt()*r.a,r.b)},
 cH(a,b){var s,r,q,p,o,n,m=this
 if(!m.gp().n(0,b))return!1
 s=m.af
@@ -55617,9 +55617,9 @@ l=l.gcl()
 m=f.af
 i=m.f
 h=new A.i(0,new A.i(i.a,i.b).ac(0,4).b/2)
-g=new A.H(c+d+r,p).Z(0,h)
+g=new A.G(c+d+r,p).Z(0,h)
 m=m.e
-return new A.ayf(a.bt(new A.H(g.a+m.gdO(),g.b+(m.gci()+m.gcl()))),g,p,o,j,new A.H(d,e+(q+l)),n,h)},
+return new A.ayf(a.bt(new A.G(g.a+m.gdO(),g.b+(m.gci()+m.gcl()))),g,p,o,j,new A.G(d,e+(q+l)),n,h)},
 bM(){var s,r,q,p,o,n,m,l,k,j=this,i=t.k,h=j.Hh(i.a(A.t.prototype.ga_.call(j)),A.ke()),g=h.b,f=g.a,e=new A.aER(j,h)
 switch(j.aU.a){case 0:s=h.d
 r=e.$2(s,f)
@@ -55697,7 +55697,7 @@ n.a=new A.i(s.a,s.b).Z(0,m)
 n=s.gdO()
 l=s.gci()
 s=s.gcl()
-j.fy=i.a(A.t.prototype.ga_.call(j)).bt(new A.H(f+n,g.b+(l+s)))},
+j.fy=i.a(A.t.prototype.ga_.call(j)).bt(new A.G(f+n,g.b+(l+s)))},
 gHR(){if(this.N.gbi()===B.ak)return B.n
 switch(this.af.d.a){case 1:var s=B.n
 break
@@ -57425,11 +57425,11 @@ bz(a){return 0},
 by(a){return 0},
 cR(a){var s,r=this.q$,q=a.a,p=a.b,o=a.c,n=a.d
 if(r!=null){s=r.an(B.S,B.eD,r.gcC())
-return new A.H(Math.max(q,Math.min(p,s.a)),Math.max(o,Math.min(n,s.b)))}else return new A.H(A.D(1/0,q,p),A.D(1/0,o,n))},
+return new A.G(Math.max(q,Math.min(p,s.a)),Math.max(o,Math.min(n,s.b)))}else return new A.G(A.D(1/0,q,p),A.D(1/0,o,n))},
 bM(){var s=this,r=t.k.a(A.t.prototype.ga_.call(s)),q=s.q$,p=r.a,o=r.b,n=r.c,m=r.d
 if(q!=null){q.cO(B.eD,!0)
-s.fy=new A.H(Math.max(p,Math.min(o,s.q$.gp().a)),Math.max(n,Math.min(m,s.q$.gp().b)))
-s.CB()}else s.fy=new A.H(A.D(1/0,p,o),A.D(1/0,n,m))}}
+s.fy=new A.G(Math.max(p,Math.min(o,s.q$.gp().a)),Math.max(n,Math.min(m,s.q$.gp().b)))
+s.CB()}else s.fy=new A.G(A.D(1/0,p,o),A.D(1/0,n,m))}}
 A.aA6.prototype={
 gw5(){var s,r=this,q=r.fx
 if(q===$){s=A.V(r.dx)
@@ -57523,8 +57523,8 @@ M(a){var s,r,q,p,o,n=this,m=null
 A.V(a)
 s=n.dy
 r=s==null
-q=r?m:new A.H(s.a,s.c)
-p=r?m:new A.H(s.b,s.d)
+q=r?m:new A.G(s.a,s.c)
+p=r?m:new A.G(s.b,s.d)
 o=A.vy(m,m,m,m,m,m,m,n.z,m,m,n.c,p,q,n.e,m,m,m)
 s=n.fr
 if(s!=null)o=s.bm(o)
@@ -57930,7 +57930,7 @@ $S:157}
 A.aCu.prototype={
 a_L(a,b,c,d,e,f,g,a0,a1,a2,a3){var s,r,q,p,o,n,m,l,k,j,i=null,h=a==null?B.au:a
 if(a0==null){if(a1!=null){s=a1.$0()
-r=new A.H(s.c-s.a,s.d-s.b)}else r=a2.gp()
+r=new A.G(s.c-s.a,s.d-s.b)}else r=a2.gp()
 s=Math.max(r.CJ(B.j).gcP(),new A.i(0+r.a,0).a1(0,new A.i(0,0+r.b)).gcP())/2}else s=a0
 h=new A.BZ(g,h,s,A.b9M(a2,c,a1),a3,b,e,d,a2,f)
 q=d.D
@@ -58118,7 +58118,7 @@ A.p6.prototype={
 L(){return"_HighlightType."+this.b}}
 A.I1.prototype={
 gaye(){var s=this.r,r=A.l(s).i("bb<2>")
-return!new A.aG(new A.bb(s,r),new A.aCs(),r.i("aG<I.E>")).gag(0)},
+return!new A.aG(new A.bb(s,r),new A.aCs(),r.i("aG<H.E>")).gag(0)},
 NH(a,b){var s,r=this.y,q=r.a,p=q.length
 if(b){r.b=!0
 q.push(a)}else r.G(0,a)
@@ -59092,7 +59092,7 @@ c8=c6.gJ1()?B.Jk:B.Jl
 c8=c8.a
 c5=c4+(c8<=0?Math.max(c4-c2,0):Math.max(c2+c3-c4,0))*c8}else c5=c2+c3*c0
 c8=d1?null:q.c
-return new A.aEZ(a3,c5,b7,q,new A.H(c7,b7+(c8==null?0:c8)))},
+return new A.aEZ(a3,c5,b7,q,new A.G(c7,b7+(c8==null?0:c8)))},
 bz(a){var s,r,q,p,o,n=this,m=n.cp$,l=m.h(0,B.bu),k=Math.max(A.ja(l,a),A.ja(m.h(0,B.bA),a))
 l=A.ja(m.h(0,B.bd),a)
 if(m.h(0,B.as)!=null)s=n.I?4:0
@@ -60255,7 +60255,7 @@ b1.toString
 b6.$2(b1,new A.i(g?l:j,d))
 if(!q&&!m){b1=g?0:a9-p.a
 b6.$2(s,new A.i(b1,a8.aU.KW(p.b,e,a8,!0)))}if(!o&&!k){b1=g?a9-n.a:0
-b6.$2(r,new A.i(b1,a8.aU.KW(n.b,e,a8,!1)))}}return new A.a4a(i,new A.H(a9,e),d)},
+b6.$2(r,new A.i(b1,a8.aU.KW(n.b,e,a8,!1)))}}return new A.a4a(i,new A.G(a9,e),d)},
 SC(a,b,c){return this.SD(a,b,c,null)},
 dz(a,b){var s=this.SC(A.hR(),A.f2(),a),r=this.cp$.h(0,B.c4)
 r.toString
@@ -61249,7 +61249,7 @@ j.d=B.oP
 j.b=B.bS
 if(l){k=e.d
 k=k!=null&&k>0.001}else k=!1
-if(k){i=new A.H(n,o).gfF()/2
+if(k){i=new A.G(n,o).gfF()/2
 h=r/i+m/i
 r=e.d
 r.toString
@@ -61877,7 +61877,7 @@ a=!0
 a=B.lU===a2.z
 if(a)break A
 break A}a=i.bg()
-if(!new A.H(a.c-a.a,a.d-a.b).k(0,B.R)&&a2.at&&c)a0=p!=null?Math.min(p,i.bg().b):i.bg().b
+if(!new A.G(a.c-a.a,a.d-a.b).k(0,B.R)&&a2.at&&c)a0=p!=null?Math.min(p,i.bg().b):i.bg().b
 else a0=a2.at?Math.min(m,a6-a2.r.d):m
 a1=b?(a4-d)/2:0
 a2.ix(B.fR,new A.i(a1,a0-k.b))}if(a2.b.h(0,B.ls)!=null){a2.fj(B.ls,a5.a3T(n.b))
@@ -63420,7 +63420,7 @@ r.toString
 s=s.a>r}else{r=s
 s=!0}if(s)s=q.q$.gp().a
 else{r.toString
-s=r}q.fy=p.bt(new A.H(s,q.q$.gp().b))
+s=r}q.fy=p.bt(new A.G(s,q.q$.gp().b))
 s=q.q$.b
 s.toString
 t.U.a(s)
@@ -63459,7 +63459,7 @@ this.a4()},
 sbQ(a){if(a===this.a9)return
 this.a9=a
 this.a4()},
-als(){var s,r=this,q={},p=t.k,o=r.a0?p.a(A.t.prototype.ga_.call(r)):A.aa8(new A.H(p.a(A.t.prototype.ga_.call(r)).b,44))
+als(){var s,r=this,q={},p=t.k,o=r.a0?p.a(A.t.prototype.ga_.call(r)):A.aa8(new A.G(p.a(A.t.prototype.ga_.call(r)).b,44))
 q.a=-1
 q.b=0
 r.bX(new A.aFv(q,r,o))
@@ -63496,7 +63496,7 @@ m.a(k).a=new A.i(l,0)
 k=n.fy
 l+=(k==null?A.Z(A.aF(i+A.B(n).j(0)+"#"+A.br(n))):k).a}if(q){g=g.b
 g.toString
-m.a(g).a=new A.i(l,0)}}return new A.H(h.b,h.a)},
+m.a(g).a=new A.i(l,0)}}return new A.G(h.b,h.a)},
 aoe(){var s,r,q=this,p={},o=q.a7$
 o.toString
 p.a=p.b=0
@@ -63512,7 +63512,7 @@ q.bX(new A.aFx(p,q,o))
 if(q.Y&&s.e){r=p.b
 s.a=new A.i(0,r)
 p.b=r+o.gp().b
-p.a=Math.max(p.a,o.gp().a)}return new A.H(p.a,p.b)},
+p.a=Math.max(p.a,o.gp().a)}return new A.G(p.a,p.b)},
 aoY(){var s,r=this,q={}
 if(!r.a0)return
 s=r.a7$
@@ -63522,7 +63522,7 @@ r.bX(new A.aFy(q,r,s))},
 bM(){var s,r=this
 r.u=-1
 if(r.a7$==null){s=t.k.a(A.t.prototype.ga_.call(r))
-r.fy=new A.H(A.D(0,s.a,s.b),A.D(0,s.c,s.d))
+r.fy=new A.G(A.D(0,s.a,s.b),A.D(0,s.c,s.d))
 return}r.als()
 r.fy=r.a0?r.aoe():r.aod()
 r.aoY()},
@@ -65769,7 +65769,7 @@ aCf(a){var s,r,q,p
 if(this.w)A.Z(A.aF(u.V))
 s=this.a
 if(s.length!==0){r=t.r7
-q=A.a0(new A.cn(new A.ae(s,new A.ahN(),A.a3(s).i("ae<1,~(vB)?>")),r),r.i("I.E"))
+q=A.a0(new A.cn(new A.ae(s,new A.ahN(),A.a3(s).i("ae<1,~(vB)?>")),r),r.i("H.E"))
 for(s=q.length,p=0;p<q.length;q.length===s||(0,A.F)(q),++p)q[p].$1(a)}}}
 A.ahM.prototype={
 $1(a){return a.c},
@@ -67138,7 +67138,7 @@ if(s!=null)q=r.a>=r.b&&r.c>=r.d
 else q=!0
 if(q){o.fc()
 o=p.cT
-p.fy=p.ME=o.a=o.b=new A.H(A.D(0,r.a,r.b),A.D(0,r.c,r.d))
+p.fy=p.ME=o.a=o.b=new A.G(A.D(0,r.a,r.b),A.D(0,r.c,r.d))
 p.ir=B.I3
 o=p.q$
 if(o!=null)o.fN(r)
@@ -67179,7 +67179,7 @@ if(p.gp().a<o.b.a||p.gp().b<o.b.b)p.fu=!0},
 cR(a){var s,r,q=this,p=q.q$
 if(p!=null)s=a.a>=a.b&&a.c>=a.d
 else s=!0
-if(s)return new A.H(A.D(0,a.a,a.b),A.D(0,a.c,a.d))
+if(s)return new A.G(A.D(0,a.a,a.b),A.D(0,a.c,a.d))
 r=p.an(B.S,a,p.gcC())
 switch(q.ir.a){case 0:return a.bt(r)
 case 1:if(!J.d(q.cT.b,r)){p=q.ME
@@ -67241,7 +67241,7 @@ n=o.d
 if(n==null)n=o.gd0()
 m=p.at
 if(m==null){m=p.ch.LD()
-p.at=m}m=A.aUI(p.Q,new A.H(m.a/n,m.b/n))
+p.at=m}m=A.aUI(p.Q,new A.G(m.a/n,m.b/n))
 p=m.a*n
 l=m.b*n
 k=m.c*n
@@ -67325,9 +67325,9 @@ a3T(a){return this.FB(a,null)},
 ga0I(){var s=this
 return new A.ad(s.c,s.d,s.a,s.b)},
 bt(a){var s=this
-return new A.H(A.D(a.a,s.a,s.b),A.D(a.b,s.c,s.d))},
+return new A.G(A.D(a.a,s.a,s.b),A.D(a.b,s.c,s.d))},
 tI(a){var s,r,q,p,o,n=this,m=n.a,l=n.b
-if(m>=l&&n.c>=n.d)return new A.H(A.D(0,m,l),A.D(0,n.c,n.d))
+if(m>=l&&n.c>=n.d)return new A.G(A.D(0,m,l),A.D(0,n.c,n.d))
 if(a.gag(0))return n.bt(a)
 s=a.a
 r=a.b
@@ -67338,9 +67338,9 @@ if(r>p){s=p*q
 r=p}if(s<m){r=m/q
 s=m}o=n.c
 if(r<o){s=o*q
-r=o}return new A.H(A.D(s,m,l),A.D(r,o,p))},
+r=o}return new A.G(A.D(s,m,l),A.D(r,o,p))},
 gatc(){var s=this
-return new A.H(A.D(1/0,s.a,s.b),A.D(1/0,s.c,s.d))},
+return new A.G(A.D(1/0,s.a,s.b),A.D(1/0,s.c,s.d))},
 ga2g(){var s=this
 return s.a>=s.b&&s.c>=s.d},
 ac(a,b){var s=this
@@ -67559,21 +67559,21 @@ if(A.B(a)!==A.B(s)||a.kz(s))this.a4()
 this.u=a},
 aI(a){this.a9u(a)},
 ao(){this.a9v()},
-bz(a){var s=A.fX(a,1/0),r=s.bt(new A.H(A.D(1/0,s.a,s.b),A.D(1/0,s.c,s.d))).a
+bz(a){var s=A.fX(a,1/0),r=s.bt(new A.G(A.D(1/0,s.a,s.b),A.D(1/0,s.c,s.d))).a
 if(isFinite(r))return r
 return 0},
-bx(a){var s=A.fX(a,1/0),r=s.bt(new A.H(A.D(1/0,s.a,s.b),A.D(1/0,s.c,s.d))).a
+bx(a){var s=A.fX(a,1/0),r=s.bt(new A.G(A.D(1/0,s.a,s.b),A.D(1/0,s.c,s.d))).a
 if(isFinite(r))return r
 return 0},
-by(a){var s=A.fX(1/0,a),r=s.bt(new A.H(A.D(1/0,s.a,s.b),A.D(1/0,s.c,s.d))).b
+by(a){var s=A.fX(1/0,a),r=s.bt(new A.G(A.D(1/0,s.a,s.b),A.D(1/0,s.c,s.d))).b
 if(isFinite(r))return r
 return 0},
-bw(a){var s=A.fX(1/0,a),r=s.bt(new A.H(A.D(1/0,s.a,s.b),A.D(1/0,s.c,s.d))).b
+bw(a){var s=A.fX(1/0,a),r=s.bt(new A.G(A.D(1/0,s.a,s.b),A.D(1/0,s.c,s.d))).b
 if(isFinite(r))return r
 return 0},
-cR(a){return a.bt(new A.H(A.D(1/0,a.a,a.b),A.D(1/0,a.c,a.d)))},
+cR(a){return a.bt(new A.G(A.D(1/0,a.a,a.b),A.D(1/0,a.c,a.d)))},
 bM(){var s=this,r=t.k.a(A.t.prototype.ga_.call(s))
-s.fy=r.bt(new A.H(A.D(1/0,r.a,r.b),A.D(1/0,r.c,r.d)))
+s.fy=r.bt(new A.G(A.D(1/0,r.a,r.b),A.D(1/0,r.c,r.d)))
 s.u.acA(s.gp(),s.a7$)},
 b4(a,b){this.q3(a,b)},
 dd(a,b){return this.xx(a,b)}}
@@ -68350,7 +68350,7 @@ if(o.i0)q=m
 else{r=o.gmE().b
 p=r.c
 r.a.c.gbP()
-q=A.D(p+(1+o.aj),n,m)}return new A.H(q,A.D(o.We(m),a.c,a.d))},
+q=A.D(p+(1+o.aj),n,m)}return new A.G(q,A.D(o.We(m),a.c,a.d))},
 dz(a,b){var s,r,q=this,p=a.b,o=q.rE(p,a.a),n=o.a,m=null,l=o.b
 m=l
 s=n
@@ -68383,9 +68383,9 @@ k=h.dY
 if(k==null)k=l
 k=A.D(e,s*k,m.dq().gbP()*l)
 e=k
-break A}h.fy=new A.H(f,A.D(e,g.c,g.d))
+break A}h.fy=new A.G(f,A.D(e,g.c,g.d))
 m=m.b
-j=new A.H(m.c+(1+h.aj),m.a.c.gbP())
+j=new A.G(m.c+(1+h.aj),m.a.c.gbP())
 i=A.ls(j)
 m=h.u
 if(m!=null)m.fN(i)
@@ -68490,10 +68490,10 @@ $2(a,b){var s=a==null?null:a.hX(new A.u(b.a,b.b,b.c,b.d))
 return s==null?new A.u(b.a,b.b,b.c,b.d):s},
 $S:317}
 A.aoP.prototype={
-$2(a,b){return new A.H(a.an(B.aK,1/0,a.gbU()),0)},
+$2(a,b){return new A.G(a.an(B.aK,1/0,a.gbU()),0)},
 $S:51}
 A.aoO.prototype={
-$2(a,b){return new A.H(a.an(B.ai,1/0,a.gbH()),0)},
+$2(a,b){return new A.G(a.an(B.ai,1/0,a.gbH()),0)},
 $S:51}
 A.a4j.prototype={
 gbr(){return t.CA.a(A.t.prototype.gbr.call(this))},
@@ -68514,7 +68514,7 @@ aI(a){this.es(a)
 this.u.a5(this.geC())},
 ao(){this.u.O(this.geC())
 this.ef()},
-cR(a){return new A.H(A.D(1/0,a.a,a.b),A.D(1/0,a.c,a.d))}}
+cR(a){return new A.G(A.D(1/0,a.a,a.b),A.D(1/0,a.c,a.d))}}
 A.ox.prototype={}
 A.K7.prototype={
 sEb(a){if(J.d(a,this.w))return
@@ -68866,9 +68866,9 @@ return h+(f==null?s:f)}g=k.b
 g.toString
 k=o.a(g).au$}return d},
 cR(a){return A.axd(this.AF(a,A.hR(),A.f2()).a,this.u)},
-AF(a3,a4,a5){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b=this,a=null,a0=b.Is(new A.H(A.D(1/0,a3.a,a3.b),A.D(1/0,a3.c,a3.d))),a1=isFinite(a0),a2=b.Hv(a3)
+AF(a3,a4,a5){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b=this,a=null,a0=b.Is(new A.G(A.D(1/0,a3.a,a3.b),A.D(1/0,a3.c,a3.d))),a1=isFinite(a0),a2=b.Hv(a3)
 if(b.gB9())A.Z(A.ju('To use CrossAxisAlignment.baseline, you must also specify which baseline to use using the "textBaseline" argument.'))
-s=new A.H(b.af*(b.cn$-1),0)
+s=new A.G(b.af*(b.cn$-1),0)
 r=b.a7$
 q=A.l(b).i("af.1")
 p=t.US
@@ -68883,7 +68883,7 @@ if(j==null)j=0
 k=j>0}else{j=a
 k=!1}if(k){l+=j
 if(m==null)m=r}else{s=A.axd(a5.$2(r,a2),b.u)
-s=new A.H(o.a+s.a,Math.max(o.b,s.b))
+s=new A.G(o.a+s.a,Math.max(o.b,s.b))
 n=A.aUR(n,a)
 o=s}k=r.b
 k.toString
@@ -68897,7 +68897,7 @@ if(j==null)j=0
 if(j===0)break A
 l-=j
 s=A.axd(a5.$2(r,b.Hu(r,a3,i*j)),b.u)
-s=new A.H(o.a+s.a,Math.max(o.b,s.b))
+s=new A.G(o.a+s.a,Math.max(o.b,s.b))
 n=A.aUR(n,a)
 o=s}k=r.b
 k.toString
@@ -68908,7 +68908,7 @@ g=a
 f=n.a
 h=n.b
 g=f
-s=new A.H(0,g+A.cA(h))
+s=new A.G(0,g+A.cA(h))
 p=s
 break B
 p=a}o=A.b7o(o,p)
@@ -68916,7 +68916,7 @@ e=b.a0
 C:{d=B.Q===e
 if(d&&a1){p=a0
 break C}if(d||B.ba===e){p=o.a
-break C}p=a}c=A.b7p(new A.H(p,o.b),a3,b.u)
+break C}p=a}c=A.b7p(new A.G(p,o.b),a3,b.u)
 q=q?a:n.a
 p=m==null?a:i
 return new A.aD_(c,c.a-o.a,q,p)},
@@ -68982,7 +68982,7 @@ $2(a,b){var s,r,q=this.a,p=q?b.b:b.d
 if(isFinite(p))s=p
 else s=q?a.an(B.ai,1/0,a.gbH()):a.an(B.bj,1/0,a.gcj())
 r=this.b
-return q?new A.H(s,r.$2(a,s)):new A.H(r.$2(a,s),s)},
+return q?new A.G(s,r.$2(a,s)):new A.G(r.$2(a,s),s)},
 $S:51}
 A.ap_.prototype={
 $2(a,b){return a.an(B.aK,b,a.gbU())},
@@ -69102,7 +69102,7 @@ soD(a){return},
 rY(a){var s,r,q=this,p=q.a8
 a=A.hU(q.ah,p).mO(a)
 p=q.a0
-if(p==null)return new A.H(A.D(0,a.a,a.b),A.D(0,a.c,a.d))
+if(p==null)return new A.G(A.D(0,a.a,a.b),A.D(0,a.c,a.d))
 p=p.b
 p===$&&A.a()
 p=p.a
@@ -69113,7 +69113,7 @@ r=q.a0.b
 r===$&&A.a()
 r=r.a
 r===$&&A.a()
-return a.tI(new A.H(p/s,J.aw(r.a.height())/q.I))},
+return a.tI(new A.G(p/s,J.aw(r.a.height())/q.I))},
 bz(a){var s=this.ah
 if(s==null)return 0
 return this.rY(A.fX(a,1/0)).a},
@@ -69211,7 +69211,7 @@ q.Q=q.as=null
 p.Vm(q)
 q.e.saN(null)}},
 iT(a,b,c){return!1},
-a0F(a,b){var s=A.b([],b.i("J<zH<0>>"))
+a0F(a,b){var s=A.b([],b.i("I<zH<0>>"))
 this.iT(new A.M4(s,b.i("M4<0>")),a,!0,b)
 return s.length===0?null:B.b.gaa(s).a},
 abJ(a){var s,r,q=this
@@ -69590,7 +69590,7 @@ Uq(a){var s,r
 A.b49(a)
 s=a.b
 r=A.l(s).i("be<1>")
-this.b.ax7(a.gkW(),a.d,A.o6(new A.be(s,r),new A.alR(),r.i("I.E"),t.Pb))},
+this.b.ax7(a.gkW(),a.d,A.o6(new A.be(s,r),new A.alR(),r.i("H.E"),t.Pb))},
 aDf(a,b){var s,r,q,p,o,n=this
 if(a.gcU()!==B.c2&&a.gcU()!==B.bo)return
 if(t.ks.b(a))return
@@ -69813,7 +69813,7 @@ a0P(){var s,r,q,p,o,n,m,l,k,j,i,h,g=this
 if(g.at==null)return
 try{n=g.ch
 m=A.l(n).i("aG<1>")
-l=A.a0(new A.aG(n,new A.an6(g),m),m.i("I.E"))
+l=A.a0(new A.aG(n,new A.an6(g),m),m.i("H.E"))
 B.b.fT(l,new A.an7())
 s=l
 n.ab(0)
@@ -70487,7 +70487,7 @@ Ko(){var s,r,q,p,o,n,m,l,k=this,j=k.at
 for(s=k.y,r=s.length,q=j.c,p=j.b,o=0;o<s.length;s.length===r||(0,A.F)(s),++o){n=s[o]
 n.at=A.aOq(n,k,q,p,null)
 n.dg()
-n.Ko()}for(s=k.z,r=t.b7,r=new A.kw(new A.cn(new A.fp(s,new A.aFh(),A.a3(s).i("fp<1,e2>")),r).gad(0),new A.aFi(),B.h0,r.i("kw<I.E,hd>")),s=j.a,m=t.ju;r.v();){l=r.d
+n.Ko()}for(s=k.z,r=t.b7,r=new A.kw(new A.cn(new A.fp(s,new A.aFh(),A.a3(s).i("fp<1,e2>")),r).gad(0),new A.aFi(),B.h0,r.i("kw<H.E,hd>")),s=j.a,m=t.ju;r.v();){l=r.d
 if(l==null)l=m.a(l)
 l.at=A.aOq(l,k,q,p,s)
 l.dg()
@@ -70539,7 +70539,7 @@ r=new A.cK(null,0,s,B.a5,r.x1,r.w,r.x2,r.x,B.kS,r.xr,r.aV,r.u,r.Y,r.a0,r.a9,r.a8
 r.aI(q)
 return r}return A.EP(null,q.grh())},
 am0(a6){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3,a4=this,a5=null
-for(s=a4.z,r=s.length,q=t.QF,p=t.y2,o=a4.Q,n=a4.w,m=t.wW,l=t.Hx,k=l.i("fp<I.E,dE>"),j=k.i("I.E"),i=a4.b,h=0;h<s.length;s.length===r||(0,A.F)(s),++h){g=s[h]
+for(s=a4.z,r=s.length,q=t.QF,p=t.y2,o=a4.Q,n=a4.w,m=t.wW,l=t.Hx,k=l.i("fp<H.E,dE>"),j=k.i("H.E"),i=a4.b,h=0;h<s.length;s.length===r||(0,A.F)(s),++h){g=s[h]
 f=A.b([],p)
 for(e=J.cS(g),d=e.gad(g),c=a5,b=c;d.v();){a=d.gT()
 if(a instanceof A.hd){if(a.gpg()){f.push(a)
@@ -70928,7 +70928,7 @@ r.j5(s.kn(q,A.f2(),A.hR()))
 q=s.I||s.N===B.b4?q:1/0
 r.iV(q,a.a)
 r=r.b
-return a.bt(new A.H(r.c,r.a.c.gbP()))},
+return a.bt(new A.G(r.c,r.a.c.gbP()))},
 h_(a){this.nN(t.k.a(A.t.prototype.ga_.call(this)))
 return this.u.b.a.np(B.t)},
 dz(a,b){var s=this,r=s.gt7(),q=a.b
@@ -70948,7 +70948,7 @@ h.a37(r)
 r=f.b
 q=r.c
 r=r.a.c.gbP()
-h.fy=s.bt(new A.H(q,r))
+h.fy=s.bt(new A.G(q,r))
 p=h.gp().b<r||f.b.a.c.ga03()
 o=h.gp().a<q
 if(o||p)switch(h.N.a){case 3:h.af=!1
@@ -71147,10 +71147,10 @@ s===$&&A.a()
 return s.c!==B.dw},
 $S:335}
 A.apc.prototype={
-$2(a,b){return new A.H(a.an(B.aK,1/0,a.gbU()),0)},
+$2(a,b){return new A.G(a.an(B.aK,1/0,a.gbU()),0)},
 $S:51}
 A.apb.prototype={
-$2(a,b){return new A.H(a.an(B.ai,1/0,a.gbH()),0)},
+$2(a,b){return new A.G(a.an(B.ai,1/0,a.gbH()),0)},
 $S:51}
 A.ape.prototype={
 $1(a){return a.y=a.z=null},
@@ -71860,7 +71860,7 @@ q.b=r
 r.w=q
 q=r.ch
 s=A.l(q).i("i0<1,cJ>")
-r.CW=A.dJ(new A.i0(q,new A.aE6(r),s),s.i("I.E"))
+r.CW=A.dJ(new A.i0(q,new A.aE6(r),s),s.i("H.E"))
 r.at=a},
 gaj1(){var s=this.at
 s===$&&A.a()
@@ -71907,7 +71907,7 @@ if(r.a!==a.a)s.bv()},
 gkA(){return!0},
 gkO(){return!0},
 gfw(){return!0},
-cR(a){return new A.H(A.D(1/0,a.a,a.b),A.D(1/0,a.c,a.d))},
+cR(a){return new A.G(A.D(1/0,a.a,a.b),A.D(1/0,a.c,a.d))},
 b4(a,b){var s=this.gp(),r=b.a,q=b.b
 s=new A.Uy(new A.u(r,q,r+s.a,q+s.b),this.u.a,A.r(t.S,t.M),A.ai())
 a.rp()
@@ -71979,7 +71979,7 @@ else r.cO(t.k.a(A.t.prototype.ga_.call(s)),!0)
 r=r==null?null:r.gp()
 s.fy=r==null?s.xg(t.k.a(A.t.prototype.ga_.call(s))):r
 return},
-xg(a){return new A.H(A.D(0,a.a,a.b),A.D(0,a.c,a.d))},
+xg(a){return new A.G(A.D(0,a.a,a.b),A.D(0,a.c,a.d))},
 dd(a,b){var s=this.q$
 s=s==null?null:s.cH(a,b)
 return s===!0},
@@ -72072,7 +72072,7 @@ return A.ap3(s.an(B.bj,a,s.gcj()),r.a2)},
 Sd(a,b){var s=b.a>=b.b?null:A.ap3(a.an(B.ai,b.d,a.gbH()),this.D)
 return b.FB(null,s)},
 wA(a,b){var s=this.q$
-return s==null?new A.H(A.D(0,a.a,a.b),A.D(0,a.c,a.d)):b.$2(s,this.Sd(s,a))},
+return s==null?new A.G(A.D(0,a.a,a.b),A.D(0,a.c,a.d)):b.$2(s,this.Sd(s,a))},
 cR(a){return this.wA(a,A.f2())},
 dz(a,b){var s=this.q$
 return s==null?null:s.eH(this.Sd(s,a),b)},
@@ -72486,7 +72486,7 @@ s.aT()},
 cR(a){var s,r=this.q$
 if(r!=null){s=r.an(B.S,B.eD,r.gcC())
 switch(this.a2.a){case 6:return a.bt(new A.ad(0,a.b,0,a.d).tI(s))
-case 1:case 2:case 0:case 4:case 3:case 5:return a.tI(s)}}else return new A.H(A.D(0,a.a,a.b),A.D(0,a.c,a.d))},
+case 1:case 2:case 0:case 4:case 3:case 5:return a.tI(s)}}else return new A.G(A.D(0,a.a,a.b),A.D(0,a.c,a.d))},
 dz(a,b){var s=this.q$
 return s==null?null:s.eH(B.eD,b)},
 bM(){var s,r,q=this,p=q.q$
@@ -72498,7 +72498,7 @@ q.fy=p.a(A.t.prototype.ga_.call(q)).bt(r)
 break
 case 1:case 2:case 0:case 4:case 3:case 5:q.fy=t.k.a(A.t.prototype.ga_.call(q)).tI(q.q$.gp())
 break}q.bF=q.bV=null}else{p=t.k.a(A.t.prototype.ga_.call(q))
-q.fy=new A.H(A.D(0,p.a,p.b),A.D(0,p.c,p.d))}},
+q.fy=new A.G(A.D(0,p.a,p.b),A.D(0,p.c,p.d))}},
 KA(){var s,r,q,p,o,n,m,l,k,j,i=this
 if(i.bF!=null)return
 s=i.q$
@@ -72579,7 +72579,7 @@ A.ap1.prototype={
 $2(a,b){return this.a.vG(a,b)},
 $S:14}
 A.Vh.prototype={
-xg(a){return new A.H(A.D(1/0,a.a,a.b),A.D(1/0,a.c,a.d))},
+xg(a){return new A.G(A.D(1/0,a.a,a.b),A.D(1/0,a.c,a.d))},
 l_(a,b){var s,r=this,q=null
 A:{s=q
 if(t.pY.b(a)){s=r.cL
@@ -72609,7 +72609,7 @@ aI(a){this.vJ(a)
 this.fu=!0},
 ao(){this.fu=!1
 this.pt()},
-xg(a){return new A.H(A.D(1/0,a.a,a.b),A.D(1/0,a.c,a.d))},
+xg(a){return new A.G(A.D(1/0,a.a,a.b),A.D(1/0,a.c,a.d))},
 $iiQ:1,
 gNZ(){return this.eO},
 gO_(){return this.d9}}
@@ -72644,7 +72644,7 @@ h_(a){if(this.D)return null
 return this.a9D(a)},
 gkA(){return this.D},
 dz(a,b){return this.D?null:this.a9E(a,b)},
-cR(a){if(this.D)return new A.H(A.D(0,a.a,a.b),A.D(0,a.c,a.d))
+cR(a){if(this.D)return new A.G(A.D(0,a.a,a.b),A.D(0,a.c,a.d))
 return this.a82(a)},
 qR(){this.a7T()},
 bM(){var s,r=this
@@ -73052,9 +73052,9 @@ bw(a){var s=this.gpH(),r=this.q$
 if(r!=null)return r.an(B.bj,Math.max(0,a-s.gdO()),r.gcj())+(s.gci()+s.gcl())
 return s.gci()+s.gcl()},
 cR(a){var s,r=this.gpH(),q=this.q$
-if(q==null)return a.bt(new A.H(r.gdO(),r.gci()+r.gcl()))
+if(q==null)return a.bt(new A.G(r.gdO(),r.gci()+r.gcl()))
 s=q.an(B.S,a.q4(r),q.gcC())
-return a.bt(new A.H(r.gdO()+s.a,r.gci()+r.gcl()+s.b))},
+return a.bt(new A.G(r.gdO()+s.a,r.gci()+r.gcl()+s.b))},
 dz(a,b){var s,r,q=this.q$
 if(q==null)return null
 s=this.gpH()
@@ -73062,13 +73062,13 @@ r=q.eH(a.q4(s),b)
 if(r==null)return null
 return r+s.b},
 bM(){var s,r=this,q=t.k.a(A.t.prototype.ga_.call(r)),p=r.gpH(),o=r.q$
-if(o==null){r.fy=q.bt(new A.H(p.gdO(),p.gci()+p.gcl()))
+if(o==null){r.fy=q.bt(new A.G(p.gdO(),p.gci()+p.gcl()))
 return}o.cO(q.q4(p),!0)
 o=r.q$
 s=o.b
 s.toString
 t.q.a(s).a=new A.i(p.a,p.b)
-r.fy=q.bt(new A.H(p.gdO()+o.gp().a,p.gci()+p.gcl()+r.q$.gp().b))}}
+r.fy=q.bt(new A.G(p.gdO()+o.gp().a,p.gci()+p.gcl()+r.q$.gp().b))}}
 A.UY.prototype={
 gFx(){var s=this,r=s.D
 return r==null?s.D=s.a2.ae(s.aj):r},
@@ -73108,8 +73108,8 @@ n=s.a*n}else n=1/0
 if(o){r=q.d9
 if(r==null)r=1
 r=s.b*r}else r=1/0
-return a.bt(new A.H(n,r))}n=p?0:1/0
-return a.bt(new A.H(n,o?0:1/0))},
+return a.bt(new A.G(n,r))}n=p?0:1/0
+return a.bt(new A.G(n,o?0:1/0))},
 bM(){var s,r,q=this,p=t.k.a(A.t.prototype.ga_.call(q)),o=q.cz!=null||p.b===1/0,n=q.d9!=null||p.d===1/0,m=q.q$
 if(m!=null){m.cO(new A.ad(0,p.b,0,p.d),!0)
 if(o){m=q.q$.gp()
@@ -73122,9 +73122,9 @@ r=q.d9
 if(r==null)r=1
 r=s.b*r
 s=r}else s=1/0
-q.fy=p.bt(new A.H(m,s))
+q.fy=p.bt(new A.G(m,s))
 q.CB()}else{m=o?0:1/0
-q.fy=p.bt(new A.H(m,n?0:1/0))}},
+q.fy=p.bt(new A.G(m,n?0:1/0))}},
 dz(a,b){var s,r,q,p,o,n,m,l,k,j,i,h=this,g=h.q$
 if(g==null)return null
 s=a.b
@@ -73143,10 +73143,10 @@ if(l){r=m?1:n
 r=o.a*r}else r=1/0
 if(j){if(k)s=1
 s=o.b*s}else s=1/0
-i=a.bt(new A.H(r,s))
+i=a.bt(new A.G(r,s))
 return p+h.gFx().jq(t.o.a(i.a1(0,o))).b}}
 A.asP.prototype={
-ns(a){return new A.H(A.D(1/0,a.a,a.b),A.D(1/0,a.c,a.d))},
+ns(a){return new A.G(A.D(1/0,a.a,a.b),A.D(1/0,a.c,a.d))},
 r2(a){return a},
 r7(a,b){return B.j}}
 A.DT.prototype={
@@ -73178,7 +73178,7 @@ q=this.D
 p=a.bt(q.ns(a))
 o=s.a
 n=s.b
-return r+q.r7(p,o>=n&&s.c>=s.d?new A.H(A.D(0,o,n),A.D(0,s.c,s.d)):m.an(B.S,s,m.gcC())).b},
+return r+q.r7(p,o>=n&&s.c>=s.d?new A.G(A.D(0,o,n),A.D(0,s.c,s.d)):m.an(B.S,s,m.gcC())).b},
 bM(){var s,r,q,p,o,n=this,m=t.k,l=m.a(A.t.prototype.ga_.call(n))
 n.fy=l.bt(n.D.ns(l))
 if(n.q$!=null){s=n.D.r2(m.a(A.t.prototype.ga_.call(n)))
@@ -73193,7 +73193,7 @@ m.toString
 t.q.a(m)
 p=n.D
 o=n.gp()
-m.a=p.r7(o,q&&s.c>=s.d?new A.H(A.D(0,l,r),A.D(0,s.c,s.d)):n.q$.gp())}}}
+m.a=p.r7(o,q&&s.c>=s.d?new A.G(A.D(0,l,r),A.D(0,s.c,s.d)):n.q$.gp())}}}
 A.Ji.prototype={
 aI(a){var s
 this.es(a)
@@ -73926,8 +73926,8 @@ r.SS(q);--s.a}while(s.b>0){q=r.cw$
 q.toString
 r.SS(q);--s.b}s=r.y2
 q=A.l(s).i("bb<2>")
-p=q.i("aG<I.E>")
-s=A.a0(new A.aG(new A.bb(s,q),new A.app(),p),p.i("I.E"))
+p=q.i("aG<H.E>")
+s=A.a0(new A.aG(new A.bb(s,q),new A.app(),p),p.i("H.E"))
 B.b.aL(s,r.y1.gaC0())},
 $S:181}
 A.app.prototype={
@@ -74167,7 +74167,7 @@ h_(a){return this.De(a)},
 dz(a,b){var s,r,q,p,o,n,m,l=this
 switch(l.a8.a){case 0:s=new A.ad(0,a.b,0,a.d)
 break
-case 1:s=A.ls(new A.H(A.D(1/0,a.a,a.b),A.D(1/0,a.c,a.d)))
+case 1:s=A.ls(new A.G(A.D(1/0,a.a,a.b),A.D(1/0,a.c,a.d)))
 break
 case 2:s=a
 break
@@ -74188,11 +74188,11 @@ q=A.D(1/0,s,r)
 p=a.c
 o=a.d
 n=A.D(1/0,p,o)
-return isFinite(q)&&isFinite(n)?new A.H(A.D(1/0,s,r),A.D(1/0,p,o)):new A.H(A.D(0,s,r),A.D(0,p,o))}m=a.a
+return isFinite(q)&&isFinite(n)?new A.G(A.D(1/0,s,r),A.D(1/0,p,o)):new A.G(A.D(0,s,r),A.D(0,p,o))}m=a.a
 l=a.c
 switch(this.a8.a){case 0:s=new A.ad(0,a.b,0,a.d)
 break
-case 1:s=A.ls(new A.H(A.D(1/0,m,a.b),A.D(1/0,l,a.d)))
+case 1:s=A.ls(new A.G(A.D(1/0,m,a.b),A.D(1/0,l,a.d)))
 break
 case 2:s=a
 break
@@ -74203,7 +74203,7 @@ r.a(q)
 if(!q.gqD()){g=b.$2(k,s)
 i=Math.max(i,g.a)
 j=Math.max(j,g.b)
-h=!0}k=q.au$}return h?new A.H(i,j):new A.H(A.D(1/0,m,a.b),A.D(1/0,l,a.d))},
+h=!0}k=q.au$}return h?new A.G(i,j):new A.G(A.D(1/0,m,a.b),A.D(1/0,l,a.d))},
 bM(){var s,r,q,p,o,n,m,l=this,k="RenderBox was not laid out: ",j=t.k.a(A.t.prototype.ga_.call(l))
 l.u=!1
 l.fy=l.XE(j,A.ke())
@@ -74303,7 +74303,7 @@ r=s.q$
 if(r!=null)r.cO(s.ga_(),q)
 if(q&&s.q$!=null)r=s.q$.gp()
 else{r=s.ga_()
-r=new A.H(A.D(0,r.a,r.b),A.D(0,r.c,r.d))}s.dy=r},
+r=new A.G(A.D(0,r.a,r.b),A.D(0,r.c,r.d))}s.dy=r},
 gfw(){return!0},
 b4(a,b){var s=this.q$
 if(s!=null)a.dA(s,b)},
@@ -74622,7 +74622,7 @@ sbo(a){if(a==this.ek)return
 this.ek=a
 this.a4()},
 gkA(){return!0},
-cR(a){return new A.H(A.D(1/0,a.a,a.b),A.D(1/0,a.c,a.d))},
+cR(a){return new A.G(A.D(1/0,a.a,a.b),A.D(1/0,a.c,a.d))},
 bM(){var s,r,q,p,o,n,m,l,k,j,i,h=this
 switch(A.bg(h.u).a){case 1:h.a0.o3(h.gp().b)
 break
@@ -74748,9 +74748,9 @@ default:r=null}return r}}
 A.Vm.prototype={
 fa(a){if(!(a.b instanceof A.mB))a.b=new A.mB(null,null)},
 bM(){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d=this,c=null,b=t.k.a(A.t.prototype.ga_.call(d))
-if(d.a7$==null){switch(A.bg(d.u).a){case 1:s=new A.H(b.b,b.c)
+if(d.a7$==null){switch(A.bg(d.u).a){case 1:s=new A.G(b.b,b.c)
 break
-case 0:s=new A.H(b.a,b.d)
+case 0:s=new A.G(b.a,b.d)
 break
 default:s=c}d.fy=s
 d.a0.o3(0)
@@ -74787,9 +74787,9 @@ f=d.is
 f===$&&A.a()
 e=h.o2(0,Math.max(0,f-j))
 if(g&&e){k=j
-break}k=j}}switch(A.bg(d.u).a){case 1:s=new A.H(A.D(q,s,n),A.D(k,m,l))
+break}k=j}}switch(A.bg(d.u).a){case 1:s=new A.G(A.D(q,s,n),A.D(k,m,l))
 break
-case 0:s=new A.H(A.D(k,s,n),A.D(q,m,l))
+case 0:s=new A.G(A.D(k,s,n),A.D(q,m,l))
 break
 default:s=c}d.fy=s},
 H4(a,b,c){var s,r,q,p,o,n=this
@@ -74907,7 +74907,7 @@ default:s=null}return s}}
 A.Jr.prototype={
 aD6(a,b,c,d,e){var s=this,r=s.a
 if(r.a+b.a+d-e>1e-10)return new A.Jr(b,a)
-else{s.a=A.axc(r,A.axc(b,new A.H(d,0)));++s.b
+else{s.a=A.axc(r,A.axc(b,new A.G(d,0)));++s.b
 if(c)s.c=a
 return null}}}
 A.l3.prototype={}
@@ -75044,13 +75044,13 @@ e=n.b
 e.toString
 n=s.a(e).au$}l+=j
 m=Math.max(m,k)
-switch(d.u.a){case 0:s=new A.H(m,l)
+switch(d.u.a){case 0:s=new A.G(m,l)
 break
-case 1:s=new A.H(l,m)
+case 1:s=new A.G(l,m)
 break
 default:s=c}return a.bt(s)},
 bM(){var s,r,q,p,o,n,m,l,k=this,j=t.k.a(A.t.prototype.ga_.call(k))
-if(k.a7$==null){k.fy=new A.H(A.D(0,j.a,j.b),A.D(0,j.c,j.d))
+if(k.a7$==null){k.fy=new A.G(A.D(0,j.a,j.b),A.D(0,j.c,j.d))
 k.af=!1
 return}s=k.SA(j,A.ke())
 r=s.a
@@ -75064,7 +75064,7 @@ k.fy=A.aO9(m,n)
 n=m.a-o.a
 l=m.b-o.b
 k.af=n<0||l<0
-k.Wc(q,new A.H(n,l),m,A.bdz(),A.bdy())},
+k.Wc(q,new A.G(n,l),m,A.bdz(),A.bdy())},
 SA(a0,a1){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c=this,b=null,a="Pattern matching error"
 switch(c.u.a){case 0:s=a0.b
 s=new A.am(new A.ad(0,s,0,1/0),s)
@@ -75091,17 +75091,17 @@ e=f?new A.Jr(g,j):i.aD6(j,g,m,l,q)
 if(e!=null){k.push(e)
 if(f)f=b
 else{f=i.a
-g=new A.H(f.b,f.a)
+g=new A.G(f.b,f.a)
 f=g}if(f==null)f=B.R
-g=new A.H(h.a+f.a,Math.max(h.b,f.b))
+g=new A.G(h.a+f.a,Math.max(h.b,f.b))
 h=g
 i=e}f=j.b
 f.toString
 j=s.a(f).au$}s=c.a8
 f=k.length
 d=i.a
-h=A.axc(h,A.axc(new A.H(s*(f-1),0),new A.H(d.b,d.a)))
-return new A.am(new A.H(h.b,h.a),k)},
+h=A.axc(h,A.axc(new A.G(s*(f-1),0),new A.G(d.b,d.a)))
+return new A.am(new A.G(h.b,h.a),k)},
 Wc(b3,b4,b5,b6,b7){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3,a4,a5=this,a6=null,a7=a5.a0,a8=Math.max(0,b4.b),a9=a5.gRM(),b0=a9.a,b1=a6,b2=a9.b
 b1=b2
 s=a5.ah
@@ -75864,7 +75864,7 @@ n.push(m)
 m=null}}B.b.kB(n)
 if(r===B.aj){s=t.o_
 n=A.a0(new A.c5(n,s),s.i("aB.E"))}s=A.a3(n).i("fp<1,cK>")
-s=A.a0(new A.fp(n,new A.aGq(),s),s.i("I.E"))
+s=A.a0(new A.fp(n,new A.aGq(),s),s.i("H.E"))
 return s},
 a6n(){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3=this.c,a4=a3.length
 if(a4<=1)return a3
@@ -75948,7 +75948,7 @@ if(b.a===0)return
 s=A.aQ(t.S)
 r=t.QF
 q=A.b([],r)
-for(p=c.f,o=c.e,n=c.d,m=A.l(b).i("aG<1>"),l=m.i("I.E");b.a!==0;){k=A.a0(new A.aG(b,new A.ask(c),m),l)
+for(p=c.f,o=c.e,n=c.d,m=A.l(b).i("aG<1>"),l=m.i("H.E");b.a!==0;){k=A.a0(new A.aG(b,new A.ask(c),m),l)
 b.ab(0)
 n.ab(0)
 B.b.fT(k,new A.asl())
@@ -76697,7 +76697,7 @@ adE(a){return B.nn},
 adH(a0){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e=this,d=null,c=a0.c,b=c.gl9(),a=c.gNF()
 c=e.b.a
 s=A.l(c).i("be<1>")
-r=A.dJ(new A.be(c,s),s.i("I.E"))
+r=A.dJ(new A.be(c,s),s.i("H.E"))
 q=A.b([],t.K0)
 p=c.h(0,b)
 o=$.eb.rx$
@@ -76708,7 +76708,7 @@ if(a0 instanceof A.ot)if(p==null){l=new A.m1(b,a,n,o,!1)
 r.F(0,b)}else l=A.aSt(n,m,p,b,o)
 else if(p==null)l=d
 else{l=A.aSu(m,p,b,!1,o)
-r.G(0,b)}for(s=e.c.d,k=A.l(s).i("be<1>"),j=k.i("I.E"),i=r.hh(A.dJ(new A.be(s,k),j)),i=i.gad(i),h=e.e;i.v();){g=i.gT()
+r.G(0,b)}for(s=e.c.d,k=A.l(s).i("be<1>"),j=k.i("H.E"),i=r.hh(A.dJ(new A.be(s,k),j)),i=i.gad(i),h=e.e;i.v();){g=i.gT()
 if(g.k(0,b))q.push(new A.qJ(g,a,d,o,!0))
 else{f=c.h(0,g)
 f.toString
@@ -77431,8 +77431,8 @@ return}s.Ts(a)
 s.t1()},
 Ts(a){this.f.m(0,a.e,a)
 this.gwB().m(0,a.e,a.a)},
-Zj(a,b){var s=this.f,r=this.r,q=A.l(r).i("bb<2>"),p=new A.bb(s,A.l(s).i("bb<2>")).awR(0,new A.fp(new A.bb(r,q),new A.apT(),q.i("fp<I.E,e1>")))
-if(b){s=A.a0(p,A.l(p).i("I.E"))
+Zj(a,b){var s=this.f,r=this.r,q=A.l(r).i("bb<2>"),p=new A.bb(s,A.l(s).i("bb<2>")).awR(0,new A.fp(new A.bb(r,q),new A.apT(),q.i("fp<H.E,e1>")))
+if(b){s=A.a0(p,A.l(p).i("H.E"))
 s.$flags=1
 p=s}J.zk(p,a)},
 Zi(a){return this.Zj(a,!1)},
@@ -77830,8 +77830,8 @@ m=n.$ti.i("ae<aW.E,R>")
 o=A.a0(new A.ae(n,new A.auv(),m),m.i("aB.E"))
 n=p.f
 m=A.l(n).i("be<1>")
-l=m.i("fv<I.E,T<@>>")
-n=A.a0(new A.fv(new A.aG(new A.be(n,m),new A.auw(p,o),m.i("aG<I.E>")),new A.aux(p),l),l.i("I.E"))
+l=m.i("fv<H.E,T<@>>")
+n=A.a0(new A.fv(new A.aG(new A.be(n,m),new A.auw(p,o),m.i("aG<H.E>")),new A.aux(p),l),l.i("H.E"))
 q=n
 s=1
 break A
@@ -77895,7 +77895,7 @@ case"TextInputClient.showAutocorrectionPromptRect":l.r.a68(A.ed(m.h(o,1)),A.ed(m
 break
 case"TextInputClient.showToolbar":l.r.j6()
 break
-case"TextInputClient.insertTextPlaceholder":l.r.ayu(new A.H(A.eD(m.h(o,1)),A.eD(m.h(o,2))))
+case"TextInputClient.insertTextPlaceholder":l.r.ayu(new A.G(A.eD(m.h(o,1)),A.eD(m.h(o,2))))
 break
 case"TextInputClient.removeTextPlaceholder":l.r.a3y()
 break
@@ -78219,7 +78219,7 @@ this.Rk()},
 tk(a){var s=this.e5
 a=A.hU(this.i1,s).mO(a)
 s=this.bF
-return a.tI(new A.H(s.naturalWidth,s.naturalHeight))},
+return a.tI(new A.G(s.naturalWidth,s.naturalHeight))},
 bz(a){var s=this.i1
 if(s==null)return 0
 return this.tk(A.fX(a,1/0)).a},
@@ -78237,7 +78237,7 @@ if(d.q$==null)return
 s=d.bF
 r=s.naturalWidth
 s=s.naturalHeight
-q=new A.H(r,s)
+q=new A.G(r,s)
 p=d.hj
 o=A.aON(p,q,d.gp())
 n=o.a
@@ -78355,7 +78355,7 @@ A.GC.prototype={
 aM(){this.ba()
 this.Yl()},
 agH(a){this.X(new A.awn(this))},
-Yl(){var s,r=this,q=r.a.d,p=A.l(q).i("bb<2>"),o=A.dJ(new A.bb(q,p),p.i("I.E")),n=r.d.hh(o)
+Yl(){var s,r=this,q=r.a.d,p=A.l(q).i("bb<2>"),o=A.dJ(new A.bb(q,p),p.i("H.E")),n=r.d.hh(o)
 p=r.d
 p.toString
 s=o.hh(p)
@@ -78670,7 +78670,7 @@ r=r==null?null:r.c
 q=o.f
 q.toString
 p=A.a3(q).i("aG<1>")
-p=A.dJ(new A.aG(q,new A.awQ(o),p),p.i("I.E"))
+p=A.dJ(new A.aG(q,new A.awQ(o),p),p.i("H.E"))
 q=A.a0(p,A.l(p).c)
 return s.az7(r,q)}}
 A.awO.prototype={
@@ -81732,7 +81732,7 @@ if(p>=0&&p<=g.c.a.a.length){o=A.b([],t.s6)
 g=i.a
 n=g.c.a.a.length-i.u
 if(g.k2!==1){o.push(B.apB)
-o.push(new A.tR(new A.H(i.gaA().gp().a,0),B.ap,B.fp,h,h))}else o.push(B.apA)
+o.push(new A.tR(new A.G(i.gaA().gp().a,0),B.ap,B.fp,h,h))}else o.push(B.apA)
 g=i.fr
 g===$&&A.a()
 p=A.b([A.dO(h,h,h,h,h,h,h,h,h,h,B.c.a3(i.a.c.a.a,0,n))],t.VO)
@@ -83187,7 +83187,7 @@ $2(a,b){return B.e.bE(a.b.b,b.b.b)},
 $S:203}
 A.aon.prototype={
 $2(a,b){var s=a.b,r=A.a3(b).i("aG<1>")
-s=A.a0(new A.aG(b,new A.aoo(new A.u(-1/0,s.b,1/0,s.d)),r),r.i("I.E"))
+s=A.a0(new A.aG(b,new A.aoo(new A.u(-1/0,s.b,1/0,s.d)),r),r.i("H.E"))
 return s},
 $S:442}
 A.aoo.prototype={
@@ -84605,8 +84605,8 @@ A.vn(this)
 if(o.a.get(this).cy.a)return
 o=this.b
 s=A.l(o).i("bb<2>")
-r=s.i("aG<I.E>")
-o=A.a0(new A.aG(new A.bb(o,s),new A.agC(),r),r.i("I.E"))
+r=s.i("aG<H.E>")
+o=A.a0(new A.aG(new A.bb(o,s),new A.agC(),r),r.i("H.E"))
 o.$flags=1
 q=o
 for(o=q.length,p=0;p<q.length;q.length===o||(0,A.F)(q),++p)q[p].Um(B.W)},
@@ -85841,7 +85841,7 @@ bM(){var s,r=this,q=t.k.a(A.t.prototype.ga_.call(r))
 r.a3S()
 s=r.q$
 if(s!=null){s.cO(q,!0)
-r.fy=q.bt(r.q$.gp())}else r.fy=new A.H(A.D(1/0,q.a,q.b),A.D(1/0,q.c,q.d))},
+r.fy=q.bt(r.q$.gp())}else r.fy=new A.G(A.D(1/0,q.a,q.b),A.D(1/0,q.c,q.d))},
 h_(a){var s=this.q$
 s=s==null?null:s.kx(a)
 return s==null?this.A0(a):s},
@@ -86112,7 +86112,7 @@ n=c?0:r
 return s.av5(m.q0(0,p,n,o),q)},
 aC6(a){return this.a3B(a,!1,!1,!1)},
 aC1(a){var s,r,q,p,o,n,m,l,k,j,i,h=this,g=a.c,f=a.a,e=a.d,d=a.b,c=h.a
-if(new A.H(g-f,e-d).k(0,c)&&new A.i(f,d).k(0,B.j))return h
+if(new A.G(g-f,e-d).k(0,c)&&new A.i(f,d).k(0,B.j))return h
 s=c.a-g
 r=c.b-e
 g=h.r
@@ -86132,7 +86132,7 @@ k=Math.max(0,l.c-s)
 l=Math.max(0,l.d-r)
 j=h.cy
 i=A.a3(j).i("aG<1>")
-j=A.a0(new A.aG(j,new A.alq(a),i),i.i("I.E"))
+j=A.a0(new A.aG(j,new A.alq(a),i),i.i("H.E"))
 return h.av8(j,new A.ap(e,c,q,g),new A.ap(f,d,k,l),new A.ap(o,n,m,p))},
 k(a,b){var s=this
 if(b==null)return!1
@@ -86630,7 +86630,7 @@ o.a.toString
 B.o5.jz("selectSingleEntryHistory",t.H)
 $.eb.c9$.a5(o.gWq())
 o.e.a5(o.gUA())},
-aoD(){var s=this.e,r=A.jA(new A.aG(s,A.iu(),A.l(s).i("aG<I.E>")))
+aoD(){var s=this.e,r=A.jA(new A.aG(s,A.iu(),A.l(s).i("aG<H.E>")))
 if(r!=null)r.w=$.eb.c9$.a},
 hw(a,b){var s,r,q,p,o,n,m,l=this
 l.jF(l.at,"id")
@@ -87296,7 +87296,7 @@ if(c!=null){if(l==null){d=c+i
 l=d}k=A.uw(k,c+(j-f))}i+=f+b.a0
 h+=g.a}return h+b.u*(b.cn$-1)>a0?l:k},
 cR(a){var s,r,q,p,o,n,m,l,k,j=this,i=j.a7$
-if(i==null)return new A.H(A.D(0,a.a,a.b),A.D(0,a.c,a.d))
+if(i==null)return new A.G(A.D(0,a.a,a.b),A.D(0,a.c,a.d))
 s=a.b
 r=new A.ad(0,s,0,a.d)
 for(q=A.l(j).i("af.1"),p=0,o=0,n=0;i!=null;){m=i.gcC()
@@ -87308,11 +87308,11 @@ n+=m+j.a0
 m=i.b
 m.toString
 i=q.a(m).au$}k=p+j.u*(j.cn$-1)
-if(k>s)return a.bt(new A.H(s,n-j.a0))
-else return a.bt(new A.H(j.Y==null?k:s,o))},
+if(k>s)return a.bt(new A.G(s,n-j.a0))
+else return a.bt(new A.G(j.Y==null?k:s,o))},
 bM(){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3=this,a4="RenderBox was not laid out: ",a5={},a6=a5.a=a3.a7$
 if(a6==null){s=t.k.a(A.t.prototype.ga_.call(a3))
-a3.fy=new A.H(A.D(0,s.a,s.b),A.D(0,s.c,s.d))
+a3.fy=new A.G(A.D(0,s.a,s.b),A.D(0,s.c,s.d))
 return}s=t.k
 r=s.a(A.t.prototype.ga_.call(a3))
 q=new A.ad(0,r.b,0,r.d)
@@ -87363,11 +87363,11 @@ p=g.fy
 if(p==null)p=A.Z(A.aF(a4+A.B(g).j(0)+"#"+A.br(g)))
 h+=p.b+a3.a0
 a6=i.$0()
-a5.a=a6}a3.fy=s.a(A.t.prototype.ga_.call(a3)).bt(new A.H(s.a(A.t.prototype.ga_.call(a3)).b,h-a3.a0))}else{a6=a3.a7$
+a5.a=a6}a3.fy=s.a(A.t.prototype.ga_.call(a3)).bt(new A.G(s.a(A.t.prototype.ga_.call(a3)).b,h-a3.a0))}else{a6=a3.a7$
 a5.a=a6
 d=a6.gp().a
 c=a3.Y==null?j:s.a(A.t.prototype.ga_.call(a3)).b
-a3.fy=s.a(A.t.prototype.ga_.call(a3)).bt(new A.H(c,n))
+a3.fy=s.a(A.t.prototype.ga_.call(a3)).bt(new A.G(c,n))
 b=A.bR()
 a=a3.u
 switch(a3.Y){case null:case void 0:b.b=k?a3.gp().a-d:0
@@ -87698,14 +87698,14 @@ bx(a){return A.rE(this.grU(),new A.aFF(a))},
 by(a){return A.rE(this.grU(),new A.aFG(a))},
 bw(a){return A.rE(this.grU(),new A.aFE(a))},
 dz(a,b){var s,r,q,p,o=a.a,n=a.b,m=A.D(1/0,o,n),l=a.c,k=a.d,j=A.D(1/0,l,k)
-if(isFinite(m)&&isFinite(j))s=new A.H(A.D(1/0,o,n),A.D(1/0,l,k))
+if(isFinite(m)&&isFinite(j))s=new A.G(A.D(1/0,o,n),A.D(1/0,l,k))
 else{o=this.I6()
 s=o.an(B.S,a,o.gcC())}r=A.ls(s)
 q=this.gJS()
 for(o=new A.n8(this.mt().a()),p=null;o.v();)p=A.uw(p,A.aVo(o.b,s,r,q,b))
 return p},
 cR(a){var s=a.a,r=a.b,q=A.D(1/0,s,r),p=a.c,o=a.d,n=A.D(1/0,p,o)
-if(isFinite(q)&&isFinite(n))return new A.H(A.D(1/0,s,r),A.D(1/0,p,o))
+if(isFinite(q)&&isFinite(n))return new A.G(A.D(1/0,s,r),A.D(1/0,p,o))
 s=this.I6()
 return s.an(B.S,a,s.gcC())},
 mt(){return new A.kb(this.ad1(),t.bm)},
@@ -87774,7 +87774,7 @@ gkA(){return!1},
 bM(){var s,r,q=this,p=t.k,o=p.a(A.t.prototype.ga_.call(q)),n=A.D(1/0,o.a,o.b)
 o=A.D(1/0,o.c,o.d)
 if(isFinite(n)&&isFinite(o)){p=p.a(A.t.prototype.ga_.call(q))
-q.fy=new A.H(A.D(1/0,p.a,p.b),A.D(1/0,p.c,p.d))
+q.fy=new A.G(A.D(1/0,p.a,p.b),A.D(1/0,p.c,p.d))
 s=null}else{s=q.I6()
 q.ah=!0
 q.fj(s,p.a(A.t.prototype.ga_.call(q)))
@@ -87995,7 +87995,7 @@ a4(){this.aj=!0
 this.nx()},
 dz(a,b){var s=this.q$
 if(s==null)return null
-return A.aVo(s,new A.H(A.D(1/0,a.a,a.b),A.D(1/0,a.c,a.d)),a,this.gv_().gJS(),b)},
+return A.aVo(s,new A.G(A.D(1/0,a.a,a.b),A.D(1/0,a.c,a.d)),a,this.gv_().gJS(),b)},
 T8(a,b){var s=this,r=s.aj||!t.k.a(A.t.prototype.ga_.call(s)).k(0,b)
 s.ca=!0
 s.QW(b,!1)
@@ -88006,7 +88006,7 @@ s.toString
 this.T8(s,a)},
 fN(a){return this.cO(a,!1)},
 qR(){var s=t.k.a(A.t.prototype.ga_.call(this))
-this.fy=new A.H(A.D(1/0,s.a,s.b),A.D(1/0,s.c,s.d))},
+this.fy=new A.G(A.D(1/0,s.a,s.b),A.D(1/0,s.c,s.d))},
 bM(){var s,r=this
 if(r.ca){r.aj=!1
 return}s=r.q$
@@ -88045,7 +88045,7 @@ n=A.D(1/0,p,o)
 m=q.c
 l=q.d
 k=A.D(1/0,m,l)
-s.T8(this,A.ls(isFinite(n)&&isFinite(k)?new A.H(A.D(1/0,p,o),A.D(1/0,m,l)):r.gp()))}}}
+s.T8(this,A.ls(isFinite(n)&&isFinite(k)?new A.G(A.D(1/0,p,o),A.D(1/0,m,l)):r.gp()))}}}
 A.yi.prototype={
 b2(a){var s=new A.J9(null,!0,null,new A.aP(),A.ai())
 s.b_()
@@ -88061,7 +88061,7 @@ A:{if(r instanceof A.lb){s=r.gv_()
 break A}s=A.Z(A.ju(A.j(r)+" of "+this.j(0)+" is not a _RenderDeferredLayoutBox"))}return s},
 gkA(){return!0},
 qR(){var s=t.k.a(A.t.prototype.ga_.call(this))
-return this.fy=new A.H(A.D(1/0,s.a,s.b),A.D(1/0,s.c,s.d))},
+return this.fy=new A.G(A.D(1/0,s.a,s.b),A.D(1/0,s.c,s.d))},
 dL(a,b){var s,r=a.b
 r.toString
 s=t.q.a(r).a
@@ -88368,7 +88368,7 @@ case 3:s=a.a
 J.aw(s.save())
 a.a3N(1.5707963267948966)
 a.vp(1,-1)
-c.b4(a,new A.H(b.b,b.a))
+c.b4(a,new A.G(b.b,b.a))
 s.restore()
 break
 case 1:s=a.a
@@ -88376,7 +88376,7 @@ J.aw(s.save())
 r=b.a
 s.translate(r,0)
 a.a3N(1.5707963267948966)
-c.b4(a,new A.H(b.b,r))
+c.b4(a,new A.G(b.b,r))
 s.restore()
 break}},
 b4(a,b){var s=this,r=s.d
@@ -89009,7 +89009,7 @@ this.JW(this.a.f)},
 aor(a){var s,r,q,p
 this.y.F(0,a.gkW())
 s=A.a3($.rx).i("aG<1>")
-r=A.a0(new A.aG($.rx,new A.aoh(),s),s.i("I.E"))
+r=A.a0(new A.aG($.rx,new A.aoh(),s),s.i("H.E"))
 for(s=r.length,q=0;p=r.length,q<p;r.length===s||(0,A.F)(r),++q)r[q].JV()
 this.X_(p!==0?B.L:this.a.e)},
 aos(a){var s=this.y
@@ -91203,7 +91203,7 @@ X9(a){var s,r,q,p=$.eb.c8$
 p===$&&A.a()
 p=p.a
 s=A.l(p).i("bb<2>")
-r=A.dJ(new A.bb(p,s),s.i("I.E"))
+r=A.dJ(new A.bb(p,s),s.i("H.E"))
 p=this.w
 p===$&&A.a()
 p=p.gF3()
@@ -91719,7 +91719,7 @@ b=n.a
 l=n.b
 k=c.a.c
 j=p.Jo(new A.i(b+m.a,l+m.b),A.bg(k))
-i=j+p.aqn(new A.H(n.c-b,n.d-l),A.bg(k))
+i=j+p.aqn(new A.G(n.c-b,n.d-l),A.bg(k))
 l=p.d
 h=p.Jo(new A.i(l.a,l.b),A.bg(k))
 g=p.Jo(new A.i(l.c,l.d),A.bg(k))
@@ -91910,12 +91910,12 @@ g.gJT()
 switch(g.gJT().a){case 0:s=g.f
 r=g.db
 r===$&&A.a()
-q=new A.H(s,r)
+q=new A.G(s,r)
 r=g.x
 s+=2*r
 p=g.dx.d
 p.toString
-o=new A.H(s,p-g.gfX())
+o=new A.G(s,p-g.gfX())
 n=r+g.CW.a
 m=g.cy
 m===$&&A.a()
@@ -91929,11 +91929,11 @@ break
 case 1:s=g.f
 r=g.db
 r===$&&A.a()
-q=new A.H(s,r)
+q=new A.G(s,r)
 r=g.x
 p=g.dx.d
 p.toString
-o=new A.H(s+2*r,p-g.gfX())
+o=new A.G(s+2*r,p-g.gfX())
 n=b.a-s-r-g.CW.c
 s=g.cy
 s===$&&A.a()
@@ -91947,13 +91947,13 @@ break
 case 2:s=g.db
 s===$&&A.a()
 r=g.f
-q=new A.H(s,r)
+q=new A.G(s,r)
 s=g.dx.d
 s.toString
 p=g.gfX()
 m=g.x
 r+=2*m
-o=new A.H(s-p,r)
+o=new A.G(s-p,r)
 p=g.cy
 p===$&&A.a()
 h=m+g.CW.b
@@ -91967,12 +91967,12 @@ break
 case 3:s=g.db
 s===$&&A.a()
 r=g.f
-q=new A.H(s,r)
+q=new A.G(s,r)
 s=g.dx.d
 s.toString
 p=g.gfX()
 m=g.x
-o=new A.H(s-p,r+2*m)
+o=new A.G(s-p,r+2*m)
 p=g.cy
 p===$&&A.a()
 h=b.b-r-m-g.CW.d
@@ -92713,7 +92713,7 @@ h=A.b([],t.AO)
 g=c.gay2()?new A.u(0,0,0+c.ga_t().a,0+c.ga_t().b):b
 for(f=c.d;f<=c.c;++f){e=c.b[f].gt().d
 a=new A.ae(e,new A.am4(c,f,g),A.a3(e).i("ae<1,u>")).A_(0,new A.am5())
-d=A.a0(a,a.$ti.i("I.E"))
+d=A.a0(a,a.$ti.i("H.E"))
 B.b.P(h,d)}return new A.oE(m,i,!s.k(0,l)?B.oo:s.c,h,!0)},
 Rz(a,b){var s=b>a
 for(;;){if(!(a!==b&&this.b[a].gt().c!==B.oo))break
@@ -93125,7 +93125,7 @@ q=a instanceof A.vO
 p=t.eo
 o=b.a
 n=A.l(o).i("bb<2>")
-m=n.i("I.E")
+m=n.i("H.E")
 l=0
 for(;l<e.length;e.length===s||(0,A.F)(e),++l){k=e[l]
 j=k.a
@@ -93313,10 +93313,10 @@ bw(a){var s=this.q$
 s=s==null?null:s.an(B.bj,a,s.gcj())
 return s==null?0:s},
 cR(a){var s=this.q$
-if(s==null)return new A.H(A.D(0,a.a,a.b),A.D(0,a.c,a.d))
+if(s==null)return new A.G(A.D(0,a.a,a.b),A.D(0,a.c,a.d))
 return a.bt(s.an(B.S,this.TW(a),s.gcC()))},
 bM(){var s,r,q=this,p=t.k.a(A.t.prototype.ga_.call(q)),o=q.q$
-if(o==null)q.fy=new A.H(A.D(0,p.a,p.b),A.D(0,p.c,p.d))
+if(o==null)q.fy=new A.G(A.D(0,p.a,p.b),A.D(0,p.c,p.d))
 else{o.cO(q.TW(p),!0)
 q.fy=p.bt(q.q$.gp())}o=q.Y.at
 if(o!=null)if(o>q.gBj()){o=q.Y
@@ -93508,7 +93508,7 @@ q=t.M0.a(i)
 p=new A.at8(a1,a,s,q,r)
 i=a.p2
 h=i.$ti.i("n6<1,he<1,2>>")
-h=A.a0(new A.n6(i,h),h.i("I.E"))
+h=A.a0(new A.n6(i,h),h.i("H.E"))
 g=h.length
 f=t.MR
 e=a.p1
@@ -93584,8 +93584,8 @@ kj(a,b){this.ga6().GC(0,t.x.a(a),this.p3)},
 kq(a,b,c){this.ga6().yu(t.x.a(a),this.p3)},
 le(a,b){this.ga6().G(0,t.x.a(a))},
 bX(a){var s=this.p2,r=s.$ti.i("tT<1,2>")
-r=A.lu(new A.tT(s,r),r.i("I.E"),t.Q)
-s=A.a0(r,A.l(r).i("I.E"))
+r=A.lu(new A.tT(s,r),r.i("H.E"),t.Q)
+s=A.a0(r,A.l(r).i("H.E"))
 B.b.aL(s,a)}}
 A.at8.prototype={
 $1(a){var s,r,q,p,o=this,n=o.b
@@ -94891,7 +94891,7 @@ aAJ(){var s,r=$.eb.c8$
 r===$&&A.a()
 r=r.a
 s=A.l(r).i("bb<2>")
-s=A.dJ(new A.bb(r,s),s.i("I.E")).lS(A.cu([B.dt,B.e7],t.bd))
+s=A.dJ(new A.bb(r,s),s.i("H.E")).lS(A.cu([B.dt,B.e7],t.bd))
 this.d=s.gcN(s)},
 aAH(){this.d=!1},
 aAF(a){var s,r,q=this,p=q.a,o=p.a.aV
@@ -95503,7 +95503,7 @@ gCP(){return this.e},
 CQ(a,b){return this.gCP().$2(a,b)}}
 A.xm.prototype={
 ai(){var s=this.$ti
-return new A.xn(new A.a6Q(A.b([],s.i("J<1>")),s.i("a6Q<1>")),s.i("xn<1>"))}}
+return new A.xn(new A.a6Q(A.b([],s.i("I<1>")),s.i("a6Q<1>")),s.i("xn<1>"))}}
 A.xn.prototype={
 gaqT(){var s=this.e
 s===$&&A.a()
@@ -101511,9 +101511,9 @@ case 7:m=a4
 i=m
 h=i.width
 g=i.height
-f=new A.H(h,g)
+f=new A.G(h,g)
 e=Math.max(1,1)
-if(e>1)f=new A.H(B.e.iG(h,e),B.e.iG(g,e))
+if(e>1)f=new A.G(B.e.iG(h,e),B.e.iG(g,e))
 h=v.G
 d=h.document.createElement("canvas")
 d.width=B.e.dF(f.a)
@@ -102836,7 +102836,7 @@ if(!J.d(s==null?h:s.h(0,"libro"),"DESCONOCIDO_NAVIDAD")){s=i.d
 s===$&&A.a()
 s=A.b4(s)===2026&&A.bd(s)===12&&A.c9(s)>=24
 g=s}}s=J.a96(i.e,new A.aBP(i))
-r=A.a0(s,s.$ti.i("I.E"))
+r=A.a0(s,s.$ti.i("H.E"))
 s=t.p
 q=A.fW(A.b([A.fH(h,h,B.rX,h,h,new A.aBQ(a),h,h,"Tornar a l\u2019inici")],s),h,h,h,h,B.ak0)
 p=i.gau3()
@@ -103581,7 +103581,7 @@ r=r.h(0,"incidencias")
 s=B.c.dv(J.c8(r==null?"":r))
 if(s.length===0)return A.b([],t.s)
 r=new A.ae(A.b(s.split("\n"),t.s),new A.aAr(),t.a4).A_(0,new A.aAs())
-r=A.a0(r,r.$ti.i("I.E"))
+r=A.a0(r,r.$ti.i("H.E"))
 return r},
 pv(){var s=0,r=A.A(t.H),q,p=2,o=[],n=[],m=this,l,k,j,i,h,g,f,e,d
 var $async$pv=A.w(function(a,b){if(a===1){o.push(b)
@@ -105039,7 +105039,7 @@ n=l.j(0)}else if(q.j0(m)>0){o=!q.oE(m)
 n=m}else{if(!(m.length!==0&&q.LH(m[0])))if(p)n+=q.grd()
 n+=m}p=q.yw(m)}return n.charCodeAt(0)==0?n:n},
 zT(a,b){var s=A.Uo(b,this.a),r=s.d,q=A.a3(r).i("aG<1>")
-r=A.a0(new A.aG(r,new A.abs(),q),q.i("I.E"))
+r=A.a0(new A.aG(r,new A.abs(),q),q.i("H.E"))
 s.d=r
 q=s.b
 if(q!=null)B.b.oA(r,0,q)
@@ -106065,7 +106065,7 @@ break
 case 1:return A.y(q,r)}})
 return A.z($async$pf,r)},
 agr(a,b){var s=A.b9J(b)
-return new A.aG(s,new A.asD(a),s.$ti.i("aG<I.E>"))}}
+return new A.aG(s,new A.asD(a),s.$ti.i("aG<H.E>"))}}
 A.asD.prototype={
 $1(a){return B.c.bB(a,this.a)},
 $S:15}
@@ -108100,7 +108100,7 @@ s=A.bY.prototype
 s.a6T=s.ax3
 s=A.yE.prototype
 s.a9Z=s.bf
-s=A.I.prototype
+s=A.H.prototype
 s.A_=s.jH
 s=A.M.prototype
 s.mn=s.k
@@ -108683,7 +108683,7 @@ o(i=A.lJ.prototype,"gdX","l",0)
 m(i,"gagX","agY",643)
 o(A.vk.prototype,"gdX","l",0)
 s(J,"ba0","b3q",98)
-n(J.J.prototype,"guP","G",28)
+n(J.I.prototype,"guP","G",28)
 n(A.k5.prototype,"glG","n",28)
 p(A,"bak","b50",70)
 n(A.f5.prototype,"glG","n",28)
@@ -108742,7 +108742,7 @@ s(A,"aWP","b17",681)
 r(A,"bby","b74",20)
 p(A,"bbz","b8G",682)
 s(A,"aWQ","baT",683)
-n(A.I.prototype,"glG","n",28)
+n(A.H.prototype,"glG","n",28)
 q(A,"aXg",2,null,["$1$2","$2"],["aP8",function(a,b){return A.aP8(a,b,t.Ci)}],684,0)
 q(A,"zd",3,null,["$3"],["asW"],685,0)
 q(A,"ze",3,null,["$3"],["a_"],686,0)
@@ -109462,7 +109462,7 @@ q(A,"hR",3,null,["$3"],["b0M"],222,0)
 q(A,"aL4",3,null,["$3"],["b0L"],222,0)
 s(A,"bdu","bbK",481)})();(function inheritance(){var s=hunkHelpers.mixin,r=hunkHelpers.mixinHard,q=hunkHelpers.inherit,p=hunkHelpers.inheritMany
 q(A.M,null)
-p(A.M,[A.LZ,A.a9u,A.nw,A.a9G,A.MY,A.RR,A.MZ,A.Wt,A.rA,A.Ge,A.qm,A.asX,A.Vz,A.QO,A.lx,A.ahK,A.N0,A.MX,A.MJ,A.ama,A.j5,A.Nt,A.kl,A.uM,A.N3,A.uN,A.ly,A.Eb,A.asN,A.atM,A.Ah,A.uO,A.Ai,A.N2,A.Ag,A.ab_,A.An,A.Ap,A.aA2,A.vj,A.A6,A.v_,A.nx,A.PJ,A.ao1,A.xw,A.ks,A.Vj,A.mH,A.aeJ,A.acu,A.aqF,A.QS,A.ahb,A.QR,A.QQ,A.PP,A.B1,A.tA,A.I,A.PO,A.af3,A.a6R,A.a1b,A.vr,A.qn,A.BE,A.cD,A.zM,A.qq,A.afo,A.QK,A.Wm,A.um,A.Ra,A.aIG,A.aBs,A.Rr,A.ky,A.ain,A.eO,A.aiC,A.aiD,A.aiE,A.afj,A.No,A.Rz,A.CW,A.f9,A.cs,A.Nu,A.M7,A.M8,A.hi,A.lo,A.nj,A.et,A.ul,A.LY,A.pU,A.qM,A.abp,A.alN,A.aag,A.mb,A.Bo,A.U3,A.r6,A.w9,A.U2,A.ana,A.avs,A.Dn,A.amc,A.a9A,A.XN,A.ank,A.Uw,A.xt,A.Be,A.iS,A.wG,A.Bf,A.anm,A.aqb,A.anq,A.N7,A.any,A.RJ,A.axf,A.aIH,A.lc,A.xE,A.yo,A.aBv,A.anr,A.aNx,A.ao3,A.a97,A.EL,A.hC,A.pE,A.aiA,A.Bh,A.Wh,A.Wf,A.rY,A.aec,A.aed,A.asc,A.as8,A.a0B,A.aW,A.iP,A.ai6,A.ai8,A.ati,A.atm,A.avP,A.UT,A.qO,A.vl,A.aaa,A.Nn,A.adY,A.adZ,A.FC,A.adU,A.Ml,A.xd,A.js,A.ahW,A.auh,A.aua,A.ahd,A.adE,A.acW,A.RO,A.lq,A.hz,A.PG,A.PK,A.acB,A.abF,A.aft,A.Qg,A.ag1,A.pJ,A.a9p,A.avG,A.auA,A.aGT,A.k4,A.qN,A.Xo,A.auE,A.amT,A.Gj,A.Gm,A.iD,A.bC,A.Gl,A.XS,A.avJ,A.x5,A.auM,A.aD0,A.lJ,A.XP,A.xu,A.aN8,J.C2,A.Em,J.dc,A.MT,A.bB,A.asv,A.bj,A.o7,A.oY,A.kw,A.Xa,A.Wu,A.Wv,A.PV,A.Qi,A.l2,A.Bt,A.XE,A.fz,A.n5,A.Cu,A.v1,A.p9,A.ii,A.C7,A.av5,A.U0,A.Bk,A.JY,A.aiM,A.e8,A.cI,A.RF,A.nY,A.yb,A.xA,A.x2,A.a5K,A.a_C,A.aCm,A.a6W,A.jS,A.a1y,A.Ki,A.aGK,A.Cq,A.Ke,A.GH,A.a_h,A.I9,A.n8,A.dt,A.dq,A.io,A.p0,A.FX,A.xH,A.j9,A.ag,A.a_g,A.X_,A.tU,A.a5O,A.a_i,A.K1,A.ZT,A.a0E,A.azC,A.yn,A.xS,A.a5H,A.aJ3,A.y0,A.hK,A.aD2,A.pa,A.y8,A.iO,A.a2o,A.a6V,A.Ho,A.a0O,A.a2e,A.a6X,A.JU,A.pk,A.ka,A.jZ,A.Ni,A.bY,A.aan,A.GJ,A.a_m,A.MW,A.a5r,A.aCU,A.ayp,A.aGJ,A.a72,A.yO,A.tY,A.bZ,A.b1,A.Uc,A.Ff,A.HB,A.eM,A.bc,A.bt,A.K3,A.Fg,A.aq7,A.cx,A.Kt,A.avb,A.jc,A.Bl,A.oK,A.U_,A.aCO,A.aEs,A.aCP,A.PY,A.ayd,A.K_,A.mX,A.aaQ,A.U5,A.u,A.aJ,A.yp,A.hw,A.n,A.Cv,A.aN3,A.ta,A.oL,A.kE,A.nK,A.o4,A.oI,A.xv,A.iV,A.ol,A.a3P,A.aEr,A.aOj,A.IO,A.aEo,A.d3,A.EN,A.ast,A.ht,A.kA,A.nL,A.tb,A.FH,A.eC,A.ao,A.oi,A.aau,A.BG,A.Qv,A.a9K,A.aaf,A.aah,A.QI,A.ann,A.au7,A.anc,A.MQ,A.MP,A.AS,A.Fj,A.jn,A.pI,A.c2,A.Pv,A.C4,A.Cn,A.pn,A.ya,A.m4,A.AQ,A.QJ,A.ZL,A.q7,A.acc,A.agu,A.aj,A.asO,A.a_8,A.zE,A.Dk,A.zC,A.zB,A.pG,A.nm,A.ay,A.mN,A.a24,A.a0G,A.a5E,A.a09,A.auI,A.a1R,A.em,A.Pu,A.H5,A.a0y,A.ME,A.a4p,A.a0h,A.Kc,A.r4,A.a0k,A.a0i,A.e7,A.a1l,A.Mx,A.fZ,A.aDD,A.ac,A.iG,A.fu,A.iN,A.Dl,A.aIl,A.avO,A.DG,A.jY,A.ce,A.d6,A.vu,A.xZ,A.afG,A.aFJ,A.BI,A.a0Q,A.a0S,A.a0T,A.a0R,A.a3i,A.er,A.ZO,A.a_P,A.a_Z,A.a_U,A.a_S,A.a_T,A.a_R,A.a_V,A.a02,A.Jm,A.a00,A.a01,A.a0_,A.a_X,A.a_Y,A.a_W,A.a_Q,A.a1v,A.vb,A.i6,A.yL,A.lV,A.a2m,A.a2l,A.a2k,A.na,A.aOh,A.Ds,A.RD,A.a04,A.yG,A.anu,A.anx,A.eR,A.tN,A.a4X,A.a4Y,A.a4W,A.a2d,A.a5W,A.a61,A.Fx,A.a5X,A.a6_,A.a5Z,A.a60,A.a5Y,A.K4,A.a_M,A.afJ,A.h8,A.oX,A.IK,A.h9,A.ZR,A.VW,A.asP,A.a_b,A.mZ,A.a_l,A.a2p,A.a_r,A.a_s,A.a_t,A.a_v,A.a_w,A.a2C,A.a_x,A.at2,A.a_A,A.a_B,A.a_D,A.bJ,A.a_G,A.ayf,A.a_I,A.a_L,A.a0m,A.MN,A.a0r,A.a4R,A.a0I,A.a0N,A.a0U,A.a0V,A.a13,A.n_,A.a19,A.a1e,A.azs,A.a1j,A.aeG,A.ael,A.aek,A.aeF,A.a1Q,A.kG,A.vJ,A.ci,A.Qe,A.a0v,A.aEZ,A.iL,A.a1Z,A.a2g,A.Pw,A.TF,A.a2z,A.a2x,A.a2y,A.a2I,A.a2J,A.a2K,A.a2U,A.TE,A.kM,A.a3_,A.yR,A.a3G,A.a3K,A.a3R,A.aqj,A.VK,A.lA,A.alV,A.ZS,A.Eo,A.a52,A.a53,A.a54,A.a55,A.a5v,A.a5D,A.a5N,A.a5V,A.a63,A.Xp,A.a69,A.a6i,A.a6k,A.aMq,A.y2,A.a1c,A.a76,A.a6m,A.a6o,A.a6r,A.a6N,A.f8,A.a1S,A.ts,A.hj,A.Xf,A.Um,A.zW,A.a_q,A.Qb,A.ab2,A.QE,A.v8,A.a0x,A.GM,A.axj,A.de,A.ayq,A.agn,A.ahm,A.a_z,A.a34,A.vC,A.kh,A.kR,A.w8,A.hu,A.fI,A.a1T,A.vF,A.LV,A.m_,A.a3O,A.a5L,A.wg,A.hG,A.aHa,A.a67,A.Ib,A.FK,A.il,A.ip,A.xG,A.a6h,A.ate,A.ayv,A.aDR,A.aIo,A.G_,A.Ec,A.a35,A.cN,A.azV,A.axh,A.aP,A.dD,A.abX,A.te,A.avp,A.aD_,A.ahr,A.zH,A.M4,A.a2a,A.Ry,A.Ci,A.a2D,A.a7v,A.aO,A.Vd,A.dV,A.af,A.wx,A.Wd,A.JL,A.aGj,A.e2,A.a5g,A.dE,A.V9,A.a7V,A.aE5,A.eT,A.DN,A.eV,A.W6,A.ar2,A.a5b,A.a5c,A.WC,A.a5y,A.apl,A.at3,A.at4,A.jB,A.apr,A.Gh,A.oB,A.Jr,A.xY,A.an_,A.kT,A.xi,A.tj,A.FS,A.EM,A.asb,A.uG,A.MU,A.dd,A.a5e,A.a5h,A.mW,A.k9,A.n9,A.ea,A.a5i,A.as9,A.Md,A.tu,A.no,A.us,A.aa3,A.ES,A.atS,A.aae,A.uT,A.a27,A.agt,A.Cf,A.Rq,A.aiy,A.a28,A.jH,A.wh,A.CP,A.atz,A.ai7,A.ai9,A.atj,A.atn,A.alO,A.CQ,A.nq,A.m8,A.ano,A.ri,A.oq,A.wp,A.ac0,A.a3S,A.a3T,A.ao5,A.dx,A.e1,A.x6,A.WT,A.a9F,A.a5U,A.a65,A.td,A.a2G,A.aGU,A.k_,A.Xm,A.wt,A.d_,A.auJ,A.aug,A.rV,A.aui,A.Xl,A.FI,A.a7x,A.a5P,A.fq,A.XA,A.ava,A.avM,A.a22,A.ZQ,A.yk,A.p2,A.a_e,A.iA,A.TZ,A.np,A.cR,A.XZ,A.dI,A.Ns,A.PM,A.G1,A.hL,A.rN,A.aG8,A.a_k,A.aeT,A.a1p,A.a1n,A.a1E,A.xV,A.a1u,A.xR,A.a0K,A.acd,A.a7C,A.a7B,A.a1U,A.MK,A.aak,A.D8,A.aDE,A.aq_,A.nO,A.qt,A.asa,A.aBC,A.n1,A.r3,A.bV,A.MR,A.eo,A.ym,A.PA,A.m3,A.auC,A.qS,A.vZ,A.CL,A.a70,A.jR,A.aq4,A.Xx,A.pf,A.a4I,A.of,A.pi,A.amJ,A.JZ,A.Ui,A.a1i,A.alz,A.ane,A.Do,A.xj,A.ig,A.oC,A.RL,A.VV,A.aqN,A.aIT,A.at0,A.VZ,A.hI,A.XQ,A.W4,A.W1,A.acU,A.a5s,A.a7k,A.a5n,A.a5q,A.fy,A.j0,A.Hk,A.Fb,A.h1,A.Xq,A.W5,A.k0,A.FP,A.fx,A.dF,A.FU,A.a_O,A.xo,A.a6Q,A.a_a,A.a2c,A.Ia,A.bv,A.a7a,A.aZ,A.Qw,A.Qx,A.Qy,A.afu,A.Qp,A.BH,A.QA,A.ag3,A.ag4,A.ag5,A.ag6,A.ag7,A.aGr,A.ag8,A.agh,A.agi,A.agj,A.M5,A.fl,A.hl,A.XH,A.zP,A.ur,A.Q6,A.agk,A.aie,A.lQ,A.wO,A.XG,A.mS,A.zm,A.nv,A.Mu,A.Mv,A.a9V,A.w4,A.CN,A.ahG,A.ahs,A.v6,A.od,A.Pn,A.e6,A.l7,A.ams,A.U1,A.amt,A.X3,A.xp,A.RN,A.bI,A.aH,A.d1,A.cF,A.kL,A.rZ,A.jE,A.aiR,A.vV,A.B7,A.ej,A.ho,A.ff,A.aav,A.i5,A.avy,A.tk,A.aif,A.au5,A.alE,A.abo,A.atB,A.amZ,A.Up,A.anN,A.aFK,A.Jl,A.bP,A.oo,A.alA,A.aoz,A.UU,A.apX,A.Wi,A.wQ,A.anS,A.ag0,A.atb,A.WO,A.wY,A.agF,A.fT,A.k7,A.jX,A.WR,A.aeu,A.atq,A.ats,A.Q8,A.x0,A.WZ,A.a1D,A.WY,A.atA,A.abt,A.aoq,A.X7,A.anO,A.a9N,A.atr,A.afv,A.auY,A.anb,A.Vu,A.VC,A.aiQ,A.X5,A.a5M,A.qX,A.aN,A.Dy,A.mp,A.bX,A.mT,A.aMK,A.Hz,A.aa4,A.Gk,A.avT])
+p(A.M,[A.LZ,A.a9u,A.nw,A.a9G,A.MY,A.RR,A.MZ,A.Wt,A.rA,A.Ge,A.qm,A.asX,A.Vz,A.QO,A.lx,A.ahK,A.N0,A.MX,A.MJ,A.ama,A.j5,A.Nt,A.kl,A.uM,A.N3,A.uN,A.ly,A.Eb,A.asN,A.atM,A.Ah,A.uO,A.Ai,A.N2,A.Ag,A.ab_,A.An,A.Ap,A.aA2,A.vj,A.A6,A.v_,A.nx,A.PJ,A.ao1,A.xw,A.ks,A.Vj,A.mH,A.aeJ,A.acu,A.aqF,A.QS,A.ahb,A.QR,A.QQ,A.PP,A.B1,A.tA,A.H,A.PO,A.af3,A.a6R,A.a1b,A.vr,A.qn,A.BE,A.cD,A.zM,A.qq,A.afo,A.QK,A.Wm,A.um,A.Ra,A.aIG,A.aBs,A.Rr,A.ky,A.ain,A.eO,A.aiC,A.aiD,A.aiE,A.afj,A.No,A.Rz,A.CW,A.f9,A.cs,A.Nu,A.M7,A.M8,A.hi,A.lo,A.nj,A.et,A.ul,A.LY,A.pU,A.qM,A.abp,A.alN,A.aag,A.mb,A.Bo,A.U3,A.r6,A.w9,A.U2,A.ana,A.avs,A.Dn,A.amc,A.a9A,A.XN,A.ank,A.Uw,A.xt,A.Be,A.iS,A.wG,A.Bf,A.anm,A.aqb,A.anq,A.N7,A.any,A.RJ,A.axf,A.aIH,A.lc,A.xE,A.yo,A.aBv,A.anr,A.aNx,A.ao3,A.a97,A.EL,A.hC,A.pE,A.aiA,A.Bh,A.Wh,A.Wf,A.rY,A.aec,A.aed,A.asc,A.as8,A.a0B,A.aW,A.iP,A.ai6,A.ai8,A.ati,A.atm,A.avP,A.UT,A.qO,A.vl,A.aaa,A.Nn,A.adY,A.adZ,A.FC,A.adU,A.Ml,A.xd,A.js,A.ahW,A.auh,A.aua,A.ahd,A.adE,A.acW,A.RO,A.lq,A.hz,A.PG,A.PK,A.acB,A.abF,A.aft,A.Qg,A.ag1,A.pJ,A.a9p,A.avG,A.auA,A.aGT,A.k4,A.qN,A.Xo,A.auE,A.amT,A.Gj,A.Gm,A.iD,A.bC,A.Gl,A.XS,A.avJ,A.x5,A.auM,A.aD0,A.lJ,A.XP,A.xu,A.aN8,J.C2,A.Em,J.dc,A.MT,A.bB,A.asv,A.bj,A.o7,A.oY,A.kw,A.Xa,A.Wu,A.Wv,A.PV,A.Qi,A.l2,A.Bt,A.XE,A.fz,A.n5,A.Cu,A.v1,A.p9,A.ii,A.C7,A.av5,A.U0,A.Bk,A.JY,A.aiM,A.e8,A.cI,A.RF,A.nY,A.yb,A.xA,A.x2,A.a5K,A.a_C,A.aCm,A.a6W,A.jS,A.a1y,A.Ki,A.aGK,A.Cq,A.Ke,A.GH,A.a_h,A.I9,A.n8,A.dt,A.dq,A.io,A.p0,A.FX,A.xH,A.j9,A.ag,A.a_g,A.X_,A.tU,A.a5O,A.a_i,A.K1,A.ZT,A.a0E,A.azC,A.yn,A.xS,A.a5H,A.aJ3,A.y0,A.hK,A.aD2,A.pa,A.y8,A.iO,A.a2o,A.a6V,A.Ho,A.a0O,A.a2e,A.a6X,A.JU,A.pk,A.ka,A.jZ,A.Ni,A.bY,A.aan,A.GJ,A.a_m,A.MW,A.a5r,A.aCU,A.ayp,A.aGJ,A.a72,A.yO,A.tY,A.bZ,A.b1,A.Uc,A.Ff,A.HB,A.eM,A.bc,A.bt,A.K3,A.Fg,A.aq7,A.cx,A.Kt,A.avb,A.jc,A.Bl,A.oK,A.U_,A.aCO,A.aEs,A.aCP,A.PY,A.ayd,A.K_,A.mX,A.aaQ,A.U5,A.u,A.aJ,A.yp,A.hw,A.n,A.Cv,A.aN3,A.ta,A.oL,A.kE,A.nK,A.o4,A.oI,A.xv,A.iV,A.ol,A.a3P,A.aEr,A.aOj,A.IO,A.aEo,A.d3,A.EN,A.ast,A.ht,A.kA,A.nL,A.tb,A.FH,A.eC,A.ao,A.oi,A.aau,A.BG,A.Qv,A.a9K,A.aaf,A.aah,A.QI,A.ann,A.au7,A.anc,A.MQ,A.MP,A.AS,A.Fj,A.jn,A.pI,A.c2,A.Pv,A.C4,A.Cn,A.pn,A.ya,A.m4,A.AQ,A.QJ,A.ZL,A.q7,A.acc,A.agu,A.aj,A.asO,A.a_8,A.zE,A.Dk,A.zC,A.zB,A.pG,A.nm,A.ay,A.mN,A.a24,A.a0G,A.a5E,A.a09,A.auI,A.a1R,A.em,A.Pu,A.H5,A.a0y,A.ME,A.a4p,A.a0h,A.Kc,A.r4,A.a0k,A.a0i,A.e7,A.a1l,A.Mx,A.fZ,A.aDD,A.ac,A.iG,A.fu,A.iN,A.Dl,A.aIl,A.avO,A.DG,A.jY,A.ce,A.d6,A.vu,A.xZ,A.afG,A.aFJ,A.BI,A.a0Q,A.a0S,A.a0T,A.a0R,A.a3i,A.er,A.ZO,A.a_P,A.a_Z,A.a_U,A.a_S,A.a_T,A.a_R,A.a_V,A.a02,A.Jm,A.a00,A.a01,A.a0_,A.a_X,A.a_Y,A.a_W,A.a_Q,A.a1v,A.vb,A.i6,A.yL,A.lV,A.a2m,A.a2l,A.a2k,A.na,A.aOh,A.Ds,A.RD,A.a04,A.yG,A.anu,A.anx,A.eR,A.tN,A.a4X,A.a4Y,A.a4W,A.a2d,A.a5W,A.a61,A.Fx,A.a5X,A.a6_,A.a5Z,A.a60,A.a5Y,A.K4,A.a_M,A.afJ,A.h8,A.oX,A.IK,A.h9,A.ZR,A.VW,A.asP,A.a_b,A.mZ,A.a_l,A.a2p,A.a_r,A.a_s,A.a_t,A.a_v,A.a_w,A.a2C,A.a_x,A.at2,A.a_A,A.a_B,A.a_D,A.bJ,A.a_G,A.ayf,A.a_I,A.a_L,A.a0m,A.MN,A.a0r,A.a4R,A.a0I,A.a0N,A.a0U,A.a0V,A.a13,A.n_,A.a19,A.a1e,A.azs,A.a1j,A.aeG,A.ael,A.aek,A.aeF,A.a1Q,A.kG,A.vJ,A.ci,A.Qe,A.a0v,A.aEZ,A.iL,A.a1Z,A.a2g,A.Pw,A.TF,A.a2z,A.a2x,A.a2y,A.a2I,A.a2J,A.a2K,A.a2U,A.TE,A.kM,A.a3_,A.yR,A.a3G,A.a3K,A.a3R,A.aqj,A.VK,A.lA,A.alV,A.ZS,A.Eo,A.a52,A.a53,A.a54,A.a55,A.a5v,A.a5D,A.a5N,A.a5V,A.a63,A.Xp,A.a69,A.a6i,A.a6k,A.aMq,A.y2,A.a1c,A.a76,A.a6m,A.a6o,A.a6r,A.a6N,A.f8,A.a1S,A.ts,A.hj,A.Xf,A.Um,A.zW,A.a_q,A.Qb,A.ab2,A.QE,A.v8,A.a0x,A.GM,A.axj,A.de,A.ayq,A.agn,A.ahm,A.a_z,A.a34,A.vC,A.kh,A.kR,A.w8,A.hu,A.fI,A.a1T,A.vF,A.LV,A.m_,A.a3O,A.a5L,A.wg,A.hG,A.aHa,A.a67,A.Ib,A.FK,A.il,A.ip,A.xG,A.a6h,A.ate,A.ayv,A.aDR,A.aIo,A.G_,A.Ec,A.a35,A.cN,A.azV,A.axh,A.aP,A.dD,A.abX,A.te,A.avp,A.aD_,A.ahr,A.zH,A.M4,A.a2a,A.Ry,A.Ci,A.a2D,A.a7v,A.aO,A.Vd,A.dV,A.af,A.wx,A.Wd,A.JL,A.aGj,A.e2,A.a5g,A.dE,A.V9,A.a7V,A.aE5,A.eT,A.DN,A.eV,A.W6,A.ar2,A.a5b,A.a5c,A.WC,A.a5y,A.apl,A.at3,A.at4,A.jB,A.apr,A.Gh,A.oB,A.Jr,A.xY,A.an_,A.kT,A.xi,A.tj,A.FS,A.EM,A.asb,A.uG,A.MU,A.dd,A.a5e,A.a5h,A.mW,A.k9,A.n9,A.ea,A.a5i,A.as9,A.Md,A.tu,A.no,A.us,A.aa3,A.ES,A.atS,A.aae,A.uT,A.a27,A.agt,A.Cf,A.Rq,A.aiy,A.a28,A.jH,A.wh,A.CP,A.atz,A.ai7,A.ai9,A.atj,A.atn,A.alO,A.CQ,A.nq,A.m8,A.ano,A.ri,A.oq,A.wp,A.ac0,A.a3S,A.a3T,A.ao5,A.dx,A.e1,A.x6,A.WT,A.a9F,A.a5U,A.a65,A.td,A.a2G,A.aGU,A.k_,A.Xm,A.wt,A.d_,A.auJ,A.aug,A.rV,A.aui,A.Xl,A.FI,A.a7x,A.a5P,A.fq,A.XA,A.ava,A.avM,A.a22,A.ZQ,A.yk,A.p2,A.a_e,A.iA,A.TZ,A.np,A.cR,A.XZ,A.dI,A.Ns,A.PM,A.G1,A.hL,A.rN,A.aG8,A.a_k,A.aeT,A.a1p,A.a1n,A.a1E,A.xV,A.a1u,A.xR,A.a0K,A.acd,A.a7C,A.a7B,A.a1U,A.MK,A.aak,A.D8,A.aDE,A.aq_,A.nO,A.qt,A.asa,A.aBC,A.n1,A.r3,A.bV,A.MR,A.eo,A.ym,A.PA,A.m3,A.auC,A.qS,A.vZ,A.CL,A.a70,A.jR,A.aq4,A.Xx,A.pf,A.a4I,A.of,A.pi,A.amJ,A.JZ,A.Ui,A.a1i,A.alz,A.ane,A.Do,A.xj,A.ig,A.oC,A.RL,A.VV,A.aqN,A.aIT,A.at0,A.VZ,A.hI,A.XQ,A.W4,A.W1,A.acU,A.a5s,A.a7k,A.a5n,A.a5q,A.fy,A.j0,A.Hk,A.Fb,A.h1,A.Xq,A.W5,A.k0,A.FP,A.fx,A.dF,A.FU,A.a_O,A.xo,A.a6Q,A.a_a,A.a2c,A.Ia,A.bv,A.a7a,A.aZ,A.Qw,A.Qx,A.Qy,A.afu,A.Qp,A.BH,A.QA,A.ag3,A.ag4,A.ag5,A.ag6,A.ag7,A.aGr,A.ag8,A.agh,A.agi,A.agj,A.M5,A.fl,A.hl,A.XH,A.zP,A.ur,A.Q6,A.agk,A.aie,A.lQ,A.wO,A.XG,A.mS,A.zm,A.nv,A.Mu,A.Mv,A.a9V,A.w4,A.CN,A.ahG,A.ahs,A.v6,A.od,A.Pn,A.e6,A.l7,A.ams,A.U1,A.amt,A.X3,A.xp,A.RN,A.bI,A.aH,A.d1,A.cF,A.kL,A.rZ,A.jE,A.aiR,A.vV,A.B7,A.ej,A.ho,A.ff,A.aav,A.i5,A.avy,A.tk,A.aif,A.au5,A.alE,A.abo,A.atB,A.amZ,A.Up,A.anN,A.aFK,A.Jl,A.bP,A.oo,A.alA,A.aoz,A.UU,A.apX,A.Wi,A.wQ,A.anS,A.ag0,A.atb,A.WO,A.wY,A.agF,A.fT,A.k7,A.jX,A.WR,A.aeu,A.atq,A.ats,A.Q8,A.x0,A.WZ,A.a1D,A.WY,A.atA,A.abt,A.aoq,A.X7,A.anO,A.a9N,A.atr,A.afv,A.auY,A.anb,A.Vu,A.VC,A.aiQ,A.X5,A.a5M,A.qX,A.aN,A.Dy,A.mp,A.bX,A.mT,A.aMK,A.Hz,A.aa4,A.Gk,A.avT])
 p(A.nw,[A.Ng,A.a9z,A.a9v,A.a9w,A.a9x,A.aaV,A.aJk,A.aaW,A.at_,A.aaY,A.ayo,A.ayn,A.aJx,A.aaZ,A.aaH,A.aaI,A.aJm,A.abd,A.abe,A.ab9,A.aba,A.abb,A.abc,A.aaK,A.acz,A.aKB,A.acC,A.aLk,A.acD,A.azU,A.acA,A.acy,A.Nh,A.aK_,A.aLo,A.aLn,A.af4,A.af6,A.aKK,A.aKL,A.aKM,A.aKJ,A.afl,A.ah4,A.ah5,A.aeI,A.aeK,A.aeH,A.abG,A.aJG,A.aJH,A.aJI,A.aJJ,A.aJK,A.aJL,A.aJM,A.aJN,A.aij,A.aik,A.ail,A.aim,A.ait,A.aix,A.aLd,A.alX,A.asR,A.asS,A.ae8,A.ae7,A.ae3,A.ae4,A.ae5,A.ae0,A.ae6,A.ae_,A.aeb,A.ae1,A.axm,A.axl,A.axn,A.avu,A.avv,A.avw,A.avx,A.ani,A.anj,A.ang,A.aqc,A.axg,A.aII,A.aEb,A.aEe,A.aEf,A.aEg,A.aEh,A.aEi,A.aEj,A.ao7,A.a9b,A.a9c,A.ars,A.art,A.aJo,A.arC,A.ary,A.arJ,A.arO,A.arP,A.arI,A.aee,A.ac8,A.alH,A.au3,A.arW,A.arX,A.arY,A.adV,A.adW,A.ac3,A.ac4,A.ac5,A.ahj,A.ahh,A.aeC,A.ahe,A.acX,A.aKl,A.abD,A.avF,A.avt,A.aaO,A.aaL,A.Ri,A.Xe,A.aic,A.aKW,A.aKY,A.aGL,A.awY,A.awX,A.aJe,A.aJd,A.aGM,A.aGO,A.aGN,A.afD,A.afy,A.aBf,A.aBm,A.aBp,A.atv,A.atu,A.aFR,A.aFQ,A.aBz,A.ayZ,A.aD1,A.aj3,A.aCS,A.abU,A.abV,A.aIs,A.aIz,A.aL3,A.aLh,A.aLi,A.aKD,A.aih,A.aHy,A.aHB,A.aHz,A.aHx,A.aKj,A.aaj,A.agx,A.agv,A.aaw,A.asU,A.aaz,A.aaB,A.aaE,A.ai3,A.avR,A.avS,A.ayz,A.ayy,A.ayF,A.ayx,A.ayw,A.ayK,A.ayL,A.ayN,A.ayW,A.ayX,A.aEU,A.aEV,A.aET,A.aEW,A.aEX,A.abB,A.amo,A.ayY,A.aeN,A.aeO,A.aeP,A.aKE,A.agy,A.atg,A.atN,A.aBr,A.ans,A.ant,A.anz,A.aqr,A.aqv,A.a9S,A.a9T,A.a9U,A.abg,A.abh,A.abi,A.acP,A.acQ,A.acR,A.adR,A.adS,A.adT,A.a9l,A.a9m,A.a9n,A.aD8,A.alf,A.axU,A.axV,A.axW,A.axv,A.axw,A.axx,A.axI,A.axM,A.axN,A.axO,A.axP,A.axQ,A.axR,A.axS,A.axy,A.axz,A.axK,A.axt,A.axL,A.axs,A.axA,A.axB,A.axC,A.axD,A.axE,A.axF,A.axG,A.axH,A.axJ,A.azl,A.azm,A.azn,A.azg,A.azh,A.azk,A.azf,A.azi,A.aJ0,A.aJ1,A.aJ2,A.aIW,A.aIX,A.aJ_,A.aIV,A.aIY,A.aEy,A.aEw,A.ayi,A.aLp,A.az1,A.az0,A.az2,A.az4,A.az6,A.az5,A.az7,A.az3,A.acb,A.azX,A.azZ,A.aA0,A.azY,A.aA_,A.aAA,A.aAC,A.aAE,A.aAB,A.aAD,A.aC0,A.aC1,A.aAG,A.aAH,A.aAI,A.aAJ,A.aAK,A.aAL,A.aDN,A.aDO,A.aDP,A.aDQ,A.aCs,A.aCp,A.aCx,A.aBA,A.aF2,A.aF_,A.aCK,A.aCE,A.aCB,A.aCz,A.aCG,A.aCH,A.aCI,A.aCF,A.aCC,A.aCD,A.aCA,A.aiO,A.aFb,A.auD,A.aDp,A.aD9,A.aDa,A.aDb,A.aDc,A.alj,A.aDJ,A.aDL,A.aDK,A.aDM,A.aJ6,A.aJ7,A.aA7,A.aA8,A.aes,A.aet,A.avW,A.avU,A.avV,A.amR,A.anR,A.aym,A.aoG,A.aqg,A.aBJ,A.aDi,A.aDf,A.aDh,A.aDg,A.aDe,A.aGy,A.aGA,A.aGB,A.aGD,A.aGQ,A.aGS,A.aGR,A.aH8,A.aH9,A.aJR,A.aud,A.aue,A.aFv,A.aFw,A.aFx,A.aFy,A.aFA,A.aFB,A.awR,A.auO,A.auU,A.amj,A.amk,A.aB1,A.aB4,A.ayt,A.ays,A.ayu,A.ab3,A.ab4,A.ab5,A.aJX,A.aJF,A.aiL,A.axY,A.ahF,A.ahA,A.apM,A.apN,A.apP,A.a9I,A.ahM,A.ahN,A.ahV,A.ahU,A.aGu,A.aGv,A.aGw,A.auH,A.auG,A.auF,A.afs,A.apF,A.apB,A.aa9,A.aoM,A.aoR,A.aoQ,A.aoV,A.aoU,A.alR,A.alQ,A.an6,A.ap6,A.ap7,A.ap8,A.ap4,A.aoJ,A.aGk,A.aFk,A.aFl,A.aFm,A.aFn,A.aFo,A.aFp,A.aFe,A.aFc,A.aFd,A.aFh,A.aFi,A.aFf,A.aFg,A.aFj,A.apd,A.apf,A.ape,A.aJw,A.aE6,A.apm,A.apo,A.apq,A.app,A.apk,A.apj,A.apv,A.apt,A.apu,A.aps,A.apy,A.apx,A.apA,A.aqz,A.aqy,A.auT,A.ash,A.asi,A.ase,A.aGq,A.aGp,A.aGn,A.aGo,A.aJl,A.ask,A.asn,A.asj,A.as_,A.as5,A.as3,A.as1,A.as4,A.as2,A.as6,A.as7,A.aas,A.an9,A.a9M,A.awW,A.asx,A.azp,A.aiU,A.aa2,A.alD,A.apU,A.apV,A.apT,A.aeA,A.auc,A.auv,A.auw,A.aux,A.aE4,A.atU,A.ah3,A.ah1,A.ahO,A.aJC,A.a9g,A.a9j,A.a9h,A.a9i,A.a9k,A.aB_,A.aAX,A.aAV,A.aAW,A.aAZ,A.awO,A.awP,A.awQ,A.aIJ,A.aIK,A.aB8,A.ax6,A.axb,A.aIn,A.aIm,A.ab8,A.aIO,A.aIQ,A.aIR,A.aIN,A.abq,A.ac2,A.acw,A.acx,A.adw,A.ad4,A.adx,A.adz,A.adA,A.ad5,A.ady,A.ad9,A.ad3,A.adj,A.adc,A.adi,A.adf,A.ade,A.adg,A.aG9,A.aDX,A.aeW,A.aeV,A.aJz,A.af_,A.af1,A.af0,A.aEJ,A.ace,A.acf,A.acg,A.ach,A.acj,A.ack,A.acm,A.acn,A.aci,A.aEG,A.aEH,A.aEE,A.aoo,A.aff,A.afi,A.afc,A.afb,A.aCk,A.adL,A.adJ,A.adI,A.adM,A.adO,A.adG,A.adF,A.adK,A.adH,A.amY,A.alW,A.afO,A.afT,A.afV,A.afX,A.afZ,A.afQ,A.afS,A.azu,A.azv,A.azw,A.azz,A.azA,A.azB,A.agE,A.agC,A.agB,A.ahk,A.aC7,A.ahR,A.ahQ,A.ahP,A.awr,A.aws,A.awt,A.awu,A.awv,A.aww,A.awx,A.awy,A.awB,A.awG,A.awH,A.awI,A.awJ,A.awK,A.awL,A.awA,A.awz,A.awC,A.awD,A.awE,A.awF,A.ahT,A.aJO,A.aJP,A.aJQ,A.aD6,A.aD7,A.aj_,A.aj1,A.alq,A.als,A.alr,A.aq6,A.aq5,A.ami,A.aFV,A.aFT,A.aFX,A.amf,A.amh,A.ame,A.amg,A.amH,A.aFH,A.aFF,A.aFG,A.aFE,A.amI,A.aFC,A.aF5,A.aF6,A.aF9,A.amP,A.aDY,A.aE9,A.aJv,A.aoh,A.aFM,A.aG0,A.aFZ,A.av4,A.av1,A.av0,A.aDx,A.aDw,A.aDt,A.alK,A.aqJ,A.aqK,A.aqL,A.aqM,A.aqP,A.aqQ,A.aqR,A.aqZ,A.aqW,A.aqY,A.aGa,A.aob,A.aof,A.aog,A.ato,A.atp,A.am3,A.am4,A.am5,A.am_,A.am0,A.am1,A.am2,A.at8,A.aGP,A.aGe,A.aGf,A.aDW,A.ar7,A.ar5,A.ar6,A.ar8,A.ar4,A.ar3,A.aGh,A.auK,A.aHg,A.aHi,A.aHk,A.aHm,A.aHo,A.av9,A.aJZ,A.avA,A.avK,A.aBu,A.afw,A.aKS,A.aKR,A.agl,A.agg,A.agf,A.agd,A.agc,A.ag9,A.aeq,A.aem,A.aeo,A.avj,A.avk,A.avl,A.avm,A.zU,A.aad,A.aJg,A.aap,A.alw,A.aKI,A.ahw,A.ahv,A.ahx,A.ahy,A.ahH,A.ahI,A.ahJ,A.abK,A.hp,A.abN,A.abR,A.abS,A.az_,A.amw,A.amv,A.aLC,A.aLD,A.aLE,A.awa,A.avY,A.avZ,A.aw_,A.avX,A.aw4,A.aKy,A.aKs,A.aKt,A.aKu,A.aKr,A.aKw,A.aLe,A.aLf,A.aLg,A.aK8,A.aK2,A.aK3,A.aK4,A.aK5,A.aK6,A.aK7,A.aK9,A.aLq,A.aLw,A.aLx,A.aLr,A.aLs,A.aLt,A.aLu,A.aLv,A.aLy,A.aLA,A.aLz,A.aBO,A.aBP,A.aBR,A.aBS,A.aBN,A.aBT,A.aBM,A.aCf,A.aCg,A.aCd,A.aCc,A.aKh,A.aKa,A.arc,A.arb,A.ara,A.ar9,A.aHD,A.aHN,A.aHM,A.aHL,A.aHF,A.aHE,A.aHK,A.aHJ,A.aHI,A.aHH,A.aHG,A.aI8,A.aHX,A.aI6,A.aI_,A.aI5,A.aIb,A.aIa,A.aI9,A.ay5,A.ay7,A.aAr,A.aAs,A.aAc,A.aAo,A.aAj,A.aAt,A.aAy,A.aAx,A.aE2,A.aE1,A.azN,A.azO,A.avD,A.avE,A.avB,A.aj7,A.aj8,A.ajo,A.ajp,A.ajn,A.al0,A.al1,A.akX,A.akY,A.akL,A.akM,A.akT,A.akU,A.akR,A.akS,A.akV,A.akW,A.akN,A.akO,A.akP,A.akQ,A.ak_,A.ak0,A.akZ,A.al_,A.ajY,A.ajZ,A.ajl,A.ajm,A.ajg,A.ajh,A.ajf,A.akh,A.aki,A.akf,A.akg,A.akJ,A.akK,A.akv,A.akw,A.aks,A.akt,A.aku,A.ajI,A.ajJ,A.ajH,A.akj,A.akk,A.akl,A.ajx,A.ajy,A.ajw,A.ajj,A.ajk,A.aji,A.akG,A.akH,A.akI,A.ajW,A.ajX,A.ajV,A.akx,A.aky,A.akz,A.ajL,A.ajM,A.ajK,A.alb,A.alc,A.ald,A.akd,A.ake,A.akc,A.al2,A.al3,A.al4,A.ak2,A.ak3,A.ak1,A.ajc,A.ajd,A.aje,A.aju,A.ajv,A.ajt,A.aj9,A.aja,A.ajb,A.ajr,A.ajs,A.ajq,A.akp,A.akq,A.akr,A.akm,A.akn,A.ako,A.ajE,A.ajG,A.ajD,A.ajF,A.ajA,A.ajC,A.ajz,A.ajB,A.akD,A.akE,A.akF,A.akA,A.akB,A.akC,A.ajS,A.ajU,A.ajR,A.ajT,A.ajO,A.ajQ,A.ajN,A.ajP,A.al8,A.al9,A.ala,A.al5,A.al6,A.al7,A.ak9,A.akb,A.ak8,A.aka,A.ak5,A.ak7,A.ak4,A.ak6,A.abr,A.abs,A.aK0,A.anB,A.anC,A.anD,A.anF,A.anI,A.anL,A.anK,A.anM,A.anJ,A.anP,A.aot,A.aow,A.aox,A.aor,A.apY,A.asD,A.aJy,A.agH,A.agG,A.agI,A.agK,A.agM,A.agJ,A.ah_,A.aez,A.aex,A.aBy,A.atF,A.apI,A.atK,A.atI,A.atJ,A.atD,A.atC,A.aA4,A.aA5,A.ah8,A.ah9,A.aha,A.ah6])
 p(A.Ng,[A.a9y,A.asY,A.asZ,A.aaJ,A.ab0,A.am7,A.amA,A.amB,A.af5,A.aA9,A.afm,A.afn,A.aL0,A.aeL,A.aJi,A.aiu,A.aiv,A.aiw,A.aip,A.aiq,A.air,A.afp,A.afq,A.amS,A.aiJ,A.aiI,A.ae9,A.aea,A.aL2,A.anl,A.anf,A.aEc,A.aEd,A.aBw,A.ao4,A.ao6,A.a98,A.a99,A.a9a,A.arK,A.aq3,A.arN,A.arH,A.aeh,A.aeg,A.aef,A.alI,A.arZ,A.ahi,A.aub,A.aeR,A.aeS,A.aJD,A.avH,A.adX,A.aaN,A.aLc,A.anY,A.awZ,A.ax_,A.aHt,A.aHs,A.aJc,A.ax1,A.ax2,A.ax4,A.ax5,A.ax3,A.ax0,A.afC,A.afB,A.aBa,A.aBi,A.aBh,A.aBe,A.aBc,A.aBb,A.aBl,A.aBk,A.aBj,A.aBo,A.atw,A.att,A.aGF,A.aGE,A.awp,A.axr,A.axq,A.aE3,A.aDB,A.aJj,A.aFP,A.aJW,A.aID,A.aIC,A.Pq,A.aaR,A.aaS,A.aKk,A.aai,A.agw,A.asT,A.aaD,A.ayB,A.ayC,A.ayA,A.ayD,A.ayE,A.ayH,A.ayI,A.ayR,A.ayQ,A.ayP,A.abx,A.abw,A.aby,A.abz,A.ayO,A.ayV,A.ayT,A.ayU,A.ayS,A.aeM,A.aa5,A.aaP,A.afI,A.afH,A.afL,A.afM,A.af9,A.af7,A.af8,A.aiY,A.aiX,A.aiW,A.acH,A.acM,A.acN,A.acI,A.acJ,A.acK,A.acL,A.anw,A.anU,A.aqt,A.aqu,A.aqp,A.aqq,A.atX,A.atY,A.au_,A.au0,A.au1,A.atZ,A.aa0,A.aa1,A.a9Z,A.aa_,A.a9X,A.a9Y,A.a9W,A.afK,A.avn,A.avo,A.awm,A.a9t,A.awU,A.ale,A.axX,A.axT,A.axu,A.ay_,A.ay0,A.ay1,A.axZ,A.ay2,A.aDA,A.aDz,A.aDy,A.azj,A.aIZ,A.aED,A.aEC,A.aEu,A.aEt,A.aEv,A.aEz,A.aEA,A.aEB,A.aza,A.az9,A.az8,A.azb,A.azd,A.aJB,A.aJA,A.aCo,A.aCr,A.aCt,A.aCn,A.aCq,A.aCw,A.aBB,A.aF0,A.aCJ,A.aHd,A.aHc,A.aHe,A.alh,A.ali,A.aEl,A.aEm,A.aEk,A.aoD,A.aoB,A.aoC,A.aoE,A.aoF,A.aqh,A.aqi,A.aqd,A.aqe,A.aqf,A.aAM,A.aql,A.aqk,A.aDo,A.aDn,A.aDm,A.aDk,A.aDl,A.aDj,A.aGz,A.aGV,A.aGX,A.aGW,A.aGY,A.aH0,A.aH1,A.aH2,A.aH3,A.aH4,A.aH5,A.aH_,A.aGZ,A.aHq,A.aHp,A.auP,A.auR,A.aml,A.amm,A.aho,A.ahn,A.aD4,A.ahC,A.ahD,A.apK,A.alY,A.aHb,A.aoK,A.apD,A.apE,A.azW,A.axi,A.aCN,A.aoN,A.aiF,A.aiG,A.alU,A.alT,A.alS,A.amW,A.amV,A.amU,A.ap5,A.ap9,A.apa,A.apn,A.aqB,A.aqC,A.aqD,A.aqE,A.aar,A.asw,A.ao2,A.apR,A.apS,A.apQ,A.atR,A.atP,A.auy,A.auz,A.awn,A.aAY,A.aAT,A.aAU,A.aAS,A.awN,A.aB7,A.aB6,A.axa,A.ax8,A.ax9,A.ax7,A.aIP,A.avL,A.aq0,A.aq1,A.azR,A.azS,A.ad0,A.adk,A.adl,A.adm,A.adn,A.ado,A.adp,A.adq,A.adr,A.ads,A.adt,A.adu,A.adv,A.ada,A.ad1,A.ad2,A.acY,A.ad_,A.adB,A.adC,A.adD,A.ad6,A.ad7,A.ad8,A.adb,A.aAO,A.aAP,A.aAQ,A.aAR,A.afg,A.afh,A.afe,A.afd,A.afa,A.aal,A.abl,A.abm,A.afN,A.afP,A.afU,A.afW,A.afY,A.ag_,A.afR,A.azy,A.azx,A.aBG,A.aBF,A.aBE,A.aCb,A.aC3,A.aC6,A.aC5,A.aC9,A.aCa,A.a9r,A.aCL,A.aCX,A.aCY,A.aCZ,A.aD5,A.aDq,A.alJ,A.aFW,A.aFU,A.aFS,A.amd,A.aFq,A.aDS,A.amN,A.amM,A.amO,A.amL,A.amK,A.aDT,A.aDV,A.aDU,A.aBx,A.aGG,A.aGH,A.aE7,A.aoi,A.aFL,A.apW,A.aG3,A.aG4,A.aG2,A.aFY,A.aG1,A.aG_,A.av2,A.av3,A.aDr,A.alM,A.alL,A.aqI,A.aGi,A.aqO,A.aqV,A.aqX,A.aoe,A.aoc,A.aod,A.ao8,A.ao9,A.aoa,A.asI,A.asK,A.asL,A.asM,A.asV,A.at6,A.at7,A.at5,A.at9,A.atV,A.aGg,A.aHf,A.aHh,A.aHj,A.aHl,A.aHn,A.awM,A.aJY,A.aIF,A.aBt,A.aDd,A.aIS,A.aKQ,A.age,A.agb,A.aen,A.aep,A.aac,A.aJT,A.aJU,A.alv,A.ahz,A.amx,A.awb,A.awc,A.awd,A.aw5,A.aw6,A.aw7,A.aw8,A.aw9,A.awe,A.awf,A.awg,A.awh,A.awi,A.awj,A.awk,A.awl,A.aw2,A.aw1,A.aw3,A.aw0,A.aBU,A.aBY,A.aBW,A.aBX,A.aBZ,A.aBQ,A.aBL,A.aBK,A.aCh,A.aCi,A.aCj,A.aCe,A.aKg,A.aKc,A.aKd,A.aKe,A.aKb,A.ard,A.are,A.arf,A.aHC,A.aHO,A.aHP,A.aHQ,A.aHR,A.aHS,A.aHT,A.aHU,A.aHV,A.aHW,A.aI7,A.aHY,A.aHZ,A.aI0,A.aI1,A.aI2,A.aI3,A.aI4,A.aIc,A.aId,A.aIe,A.aIf,A.aIg,A.aIh,A.aIi,A.aIj,A.aIk,A.ay6,A.aya,A.ay8,A.aAf,A.aAg,A.aAa,A.aAb,A.aAd,A.aAe,A.aAm,A.aAn,A.aAp,A.aAq,A.aAh,A.aAi,A.aAk,A.aAl,A.aAv,A.aAu,A.aAw,A.aAz,A.aDF,A.aDG,A.aDH,A.aDI,A.aE0,A.azD,A.azE,A.azG,A.azH,A.azI,A.azJ,A.azK,A.azL,A.avC,A.aE_,A.aq8,A.aiS,A.aig,A.anE,A.aos,A.aou,A.aov,A.aoy,A.apZ,A.agZ,A.agN,A.agU,A.agV,A.agW,A.agX,A.agS,A.agT,A.agO,A.agP,A.agQ,A.agR,A.agY,A.aBH,A.aev,A.aey,A.aew,A.agq,A.agp,A.a9P,A.a9Q,A.a9R,A.apG,A.apH,A.ah7,A.aL9,A.aL8])
 p(A.MZ,[A.Ab,A.uJ,A.N1,A.N5,A.uI])
@@ -109486,7 +109486,7 @@ q(A.rB,A.ks)
 p(A.mH,[A.U4,A.U7])
 q(A.PZ,A.acu)
 p(A.Nh,[A.aKA,A.aL_,A.abI,A.abH,A.ais,A.aio,A.ae2,A.anh,A.atl,A.aLm,A.ahf,A.abE,A.auB,A.ayc,A.aaM,A.abn,A.aib,A.aKX,A.aJf,A.aK1,A.afE,A.afz,A.aBg,A.aBn,A.aBq,A.awq,A.aFO,A.aiN,A.aj5,A.atd,A.aCV,A.amq,A.aIx,A.ave,A.avd,A.aIw,A.aIv,A.aax,A.aay,A.aaA,A.aaC,A.abv,A.aEY,A.aES,A.anv,A.aqs,A.aqw,A.aj6,A.aF7,A.aF8,A.aEx,A.aEM,A.aEQ,A.aER,A.aEN,A.aEO,A.aEP,A.azc,A.aJ8,A.aF4,A.aF3,A.aF1,A.aFa,A.aJ4,A.aJ5,A.aEn,A.ayl,A.aEL,A.aoH,A.aqn,A.aqm,A.aG6,A.aH6,A.aH7,A.aJb,A.aHr,A.aFz,A.auN,A.auW,A.aB2,A.aB3,A.aB5,A.ayr,A.ahp,A.ahE,A.ahB,A.apO,A.apL,A.a9J,A.amD,A.alZ,A.apC,A.aoL,A.aoS,A.aoP,A.aoO,A.aoW,A.ap_,A.aoY,A.aoZ,A.aoX,A.alP,A.an4,A.an3,A.an5,A.an7,A.ap2,A.apc,A.apb,A.apg,A.aph,A.apw,A.aoT,A.ap1,A.ap0,A.api,A.apz,A.aqA,A.asg,A.aGm,A.asl,A.asm,A.aso,A.as0,A.aat,A.azq,A.atk,A.ah2,A.aIL,A.aIM,A.aB9,A.acZ,A.add,A.adh,A.act,A.acq,A.acp,A.acr,A.acs,A.acl,A.aco,A.aEI,A.aEF,A.aom,A.aon,A.aB0,A.adN,A.agD,A.aBD,A.agA,A.aC4,A.aC8,A.aBI,A.aDC,A.aFD,A.aGI,A.aDZ,A.aE8,A.aJ9,A.aJa,A.aDv,A.aDu,A.aDs,A.aqS,A.aGd,A.aGb,A.aGc,A.aqU,A.asJ,A.asQ,A.aFu,A.aFt,A.aoj,A.aFs,A.aFr,A.aL5,A.afx,A.aga,A.zT,A.am9,A.alx,A.abO,A.abP,A.abQ,A.aKx,A.aKv,A.aBV,A.aKf,A.aly,A.ayb,A.ay9,A.azF,A.azM,A.aqa,A.aq9,A.au6,A.anG,A.anH,A.agL,A.atG,A.aLl,A.atE])
-p(A.I,[A.tB,A.r2,A.k5,A.aM,A.fv,A.aG,A.fp,A.t9,A.mz,A.F3,A.ql,A.cn,A.tJ,A.ZU,A.a5J,A.kb,A.qP,A.B3,A.fe,A.bi,A.eN,A.a7q])
+p(A.H,[A.tB,A.r2,A.k5,A.aM,A.fv,A.aG,A.fp,A.t9,A.mz,A.F3,A.ql,A.cn,A.tJ,A.ZU,A.a5J,A.kb,A.qP,A.B3,A.fe,A.bi,A.eN,A.a7q])
 p(A.cD,[A.fG,A.jD,A.mO,A.Rl,A.XD,A.VI,A.a16,A.Cb,A.pH,A.hk,A.TY,A.Gf,A.XC,A.fP,A.Np,A.a1m])
 p(A.fG,[A.Qj,A.BC,A.BD])
 p(A.eO,[A.Av,A.kN,A.Uz])
@@ -109524,10 +109524,10 @@ p(A.we,[A.rh,A.tf])
 p(A.x5,[A.MV,A.VF])
 p(A.lJ,[A.a15,A.vk])
 p(J.C2,[J.C6,J.vM,J.C9,J.qG,J.qH,J.nX,J.m0])
-p(J.C9,[J.nZ,J.J,A.w5,A.D0])
+p(J.C9,[J.nZ,J.I,A.w5,A.D0])
 p(J.nZ,[J.Uv,J.mQ,J.fJ])
 q(J.Rk,A.Em)
-q(J.aia,J.J)
+q(J.aia,J.I)
 p(J.nX,[J.vL,J.C8])
 p(A.k5,[A.pR,A.KQ,A.lw,A.lv])
 q(A.Hx,A.pR)
@@ -109605,7 +109605,7 @@ q(A.a8l,A.a72)
 q(A.a73,A.a8l)
 p(A.hk,[A.wr,A.BT])
 q(A.a0n,A.Kt)
-p(A.U5,[A.i,A.H])
+p(A.U5,[A.i,A.G])
 p(A.yp,[A.jN,A.rw])
 p(A.anc,[A.a9D,A.aht,A.asE,A.avg])
 p(A.a9D,[A.a9B,A.a9C,A.a9E])
@@ -109790,7 +109790,7 @@ p(A.ZP,[A.Mn,A.Ne,A.PR,A.PW])
 q(A.ui,A.ZR)
 q(A.alg,A.VW)
 p(A.asP,[A.aHu,A.PC,A.aHw,A.Xs])
-q(A.a3J,A.H)
+q(A.a3J,A.G)
 p(A.UY,[A.a4e,A.IY,A.DO,A.E3])
 q(A.nn,A.a_b)
 q(A.awT,A.nn)
@@ -110323,7 +110323,7 @@ s(A.Iu,A.Bt)
 s(A.l4,A.a_i)
 s(A.yF,A.a5O)
 s(A.JT,A.bB)
-s(A.JV,A.I)
+s(A.JV,A.H)
 s(A.JW,A.ii)
 s(A.Kp,A.a6V)
 s(A.Kq,A.a6X)
@@ -110689,14 +110689,14 @@ s(A.a7a,A.ac)
 s(A.ZN,A.zm)
 s(A.a7s,A.cR)
 s(A.a5M,A.cR)})()
-var v={G:typeof self!="undefined"?self:globalThis,typeUniverse:{eC:new Map(),tR:{},eT:{},tPV:{},sEA:[]},mangledGlobalNames:{o:"int",R:"double",dy:"num",k:"String",N:"bool",bt:"Null",T:"List",M:"Object",ar:"Map",aL:"JSObject"},mangledNames:{},types:["~()","R(R)","~(aL)","R(ej)","tk(ej)","~(b1)","n(bu<co>)","~(iz)","a6<~>()","B7(ej)","~(o)","~(M?)","~(N)","~(md,i)","N(ns,i)","N(k)","bt()","~(bp)","~(t)","e(Q)","k(k)","bt(aL)","ff(ej)","~(vg)","~(bq)","bt(M,c6)","n?(bu<co>)","N(dg)","N(M?)","T<e7>()","bt(~)","~(dj?)","~(eV)","~(x8)","aI<R>(@)","N(bp)","bt(@)","~(k)","N(ky)","~(@)","~(dM<M?>,~())","~(i_)","N(h2)","R(C)","~(hr)","N(mb)","k()","o(o)","o(dg,dg)","q6(Q)","N(bI)","H(C,ad)","~(ea)","N(ar<k,@>)","~(~())","p(bu<co>)","~(on)","N(cK)","R(C,R)","~(Xu)","N(hv)","~(bZ)","N(ir)","e(Q,e?)","N(eV)","k(@)","~(mj)","N()","~(om)","N(o)","o()","hG()","bV(Q)","~(M,c6)","bJ<n?>?(eL?)","~(x9)","k(o)","o(t,t)","ev(@)","~(M,c6?)","aL(M?)","bJ<n?>?(bN?)","N(aH)","~(Fs)","k(a7)","e(Q)?(ui?)","~(r3)","bt(M)","a6<iX>(mR{body:M?,encoding:lI?,headers:ar<k,k>?})","i(i)","n(n)","~(qo)","a6<@>(jH)","~({curve:h_,descendant:t?,duration:b1,rect:u?})","~(ji)","@(@)","~(R)","o(cK,cK)","o(@,@)","a6<~>(jH)","eC(eC)","b0(bu<co>)","N(qk)","~(M[c6?])","a6<@>()","bu<0^>()<M?>","~(M?,M?)","N(ey)","lH(@)","~(fL)","N(fT)","~(k?)","N(M?,M?)","N(rM)","dz(Q,bH<R>,e?)","aL()","aN(R)","~(k,k)","~(hF)","bt(N)","R(bu<co>)","o(M?)","hF()","~(ur)","R()","me(Q)","nk(Q)","N(hw)","dK(bu<co>)","bJ<H?>?(bN?)","aL?(o)","~(hu,N)","a6<k?>()","R?(+(ad,oP))","bt(k)","hw()","aRw()","~(xv)","a6<~>(~)","T<aL>()","~(T<aL>,aL)","n?(n?)","k(M?)","R(tN)","R(R,R)","Ds?()","~(h2)","~(qs)","bJ<R?>?(bN?)","N(rY)","e(Q,bu<co>,e?)?(bN?)","e(Q,o)","0^?(0^?(eL?))<M?>","0^?(bJ<0^>?(eL?),bu<co>)<M?>","n?(eL?)","bJ<dp?>?(eL?)","k?(k)","u()","~(nJ)","e2(ea)","uG(T<ea>)","~(C?)","pr(Q,bH<R>,e?)","ps(Q,bH<R>,e?)","a6<N>()","k(R,R,k)","N(i6<an>)","f4(Q,R,e?)","a6<fr>()","~(vB)","a6<eK>(kE{getTargetSize:ta(o,o)?})","fr()","~(fI)","@(k)","~(aNI)","u(aN,u)","ad(C)","N(t)","~(ld)","+boundaryEnd,boundaryStart(ao,ao)(ao)","N(ns)","~(mA)","R({from!R,to!R})","~(i,C)","H(C)","~(T<nK>)","~(oI)","~(cK)","N(M,cK)","T<cK>(k9)","a6<dj?>(dj?)","~(e1)","ar<M?,M?>()","aL(o{params:M?})","N(oc)","kH(dg,iM)","a6<~>(@)","N(acv)","~([b1?])","ao(ao,N,hG)","@()","ey(ey)","~(k,@)","o(es,es)","N(i3<@>)","jF()","~(jF)","im()","~(im)","i7()","~(i7)","jM()","~(jM)","aI<@>?(aI<@>?,@,aI<@>(@))","nl(@)","a6<T<ar<k,@>>>(bZ)","lE(@)","C(o)","h9(bq)","M?(M?)","~(lG)","N(eV,R)","R?(C,ad,oP)","mX()","~(Fv)","~(vX)","~(Ct)","~(vW)","~(Fu)","~(Fw)","~(Ft)","N(@)","N(bx)","o(k)","k(qT)","~(M?,k,k)","aL([aL?])","k(k,k)","~(k,k,k)","pT(k)","a6<o>()","rZ()","N(d2<@>)","rf(Q)","nu(Q)","r_(Q)","e(Q,e,vB?)","cL(Q,M,c6?)","a6<aL>([aL?])","k(k?)","bt(@,@)","~([ba?])","e?(Q,bH<R>,bH<R>,N,e?)","R(C,ad)","e(Q,nD)","o(eV,eV)","N(k?)","o(k?)","N(nP?)","w2(Q,e?)","lm(Q,e?)","ar<~(bq),aN?>()","N(bu<co>)","~(jq)","~(~(bq),aN?)","~(h6,iZ?)","qF(Q,e?)","oH(Q,e?)","tp(i3<k>)","ti(@)","nn()","j4()","bc<M,l0<@>>(M,l0<@>)","N(bc<M,l0<@>>)","i(xj)","kC(Q,bH<R>)","r0()","bt(fr)","uM()","r8()","uL(r9)","a6<eK>(kE{allowUpscaling:N,cacheHeight:o?,cacheWidth:o?})","tw()","de(de,ci)","ci(ci)","N(ci)","k(ci)","N(R)","n(R)","y9()","~(hu?,N)","a6<~>(M,c6?)","~(o,N(ky))","a6<eK>(kE{allowUpscaling:N?,cacheHeight:o?,cacheWidth:o?})","ta(o,o)","bt(a9L)","~(dT,o)","~(hu)","~(M,c6?)?(fI)","~(vB)?(fI)","~(eK)","@(@,k)","Uk(e4)","u(e4)","re(e4)","N(o,N)","nL?()","~(aL,T<iV>)","o_(o_)","~({allowPlatformDefault:N})","lV(i,o)","H()","R?()","H(ad)","ny(dI)","~(h6)","N(m_)","u(u?,eC)","bc<o,k>(bc<k,k>)","va(dI)","dK(iQ)","~(iQ,aN)","N(iQ)","bt(~())","q0(dI)","uK(r7)","bt(@,c6)","~(T<e2>{isMergeUp:N})","ea?(e2)","o(aL)","T<e2>(T<e2>)","T<hd>(hd)","bu<dE>?(e2)","bu<dE>(bu<dE>)","w_(u?,u?)","N(ld)","xE()","+boundaryEnd,boundaryStart(ao,ao)(ao,k)","cJ(aer<cJ>)","mL?(md,i)","N(wU{crossAxisPosition!R,mainAxisPosition!R})","hy<0^>(jR,e(Q))<M?>","rB()","N(C)","yo()","~(o,@)","N(cO)","R(mZ)","fY(e)","0^?(0^?(bN?))<M?>","~(o,xY)","0^?(bJ<0^>?(bN?))<M?>","~(T<ea>)","n?()","bp(o)","ag<@>?()","cK(n9)","bJ<p?>?(bN?)","~(mb)","o(cK)","cK(o)","~(M)","~(d3,~(M?))","a6<k>()","dj(dj?)","a6<tu>(k)","no(ar<M?,M?>)","dq<iN>()","a6<k?>(k?)","~(T<M?>)","a6<~>(dj?,~(dj?))","a6<ar<k,@>>(@)","~(mq)","bu<h>(h)","kj(M?)","DD()","~(ma)","bJ<de?>?(bN?)","N(o,o)","T<e1>()","T<e1>(T<e1>)","R(dy)","T<@>(k)","T<dy>(rV)","ar<k,@>(fq)","wi(Q,ri)","tG(Do)","a6<~>(bq)","bJ<b0?>?(bN?)","~(@,c6)","qn(@)","~(bk<ba>)","~(@,@)","~(p2)","e(p2)","N(e)","bJ<dp?>?(bN?)","d2<@>?(jR)","d2<@>(jR)","dK?(bu<co>)","qR(Q,e?)","N(vN)","vr(@)","uQ(Q)","dK?(bN?)","a6<N>(jH)","nA(Q)","a6<~>(iz)","bZ()","u(acv)","~(ez)","n?(bN?)","mU?(bN?)","qU?(bN?)","~(oU)","~(jQ)","~(mx)","~(eU)","~(aej)","~(j6)","M?(hq)","d_(d_,td)","~(Fn,@)","xe(Q)","~(mm)","~(d_)","N(d_?,d_)","d_(d_)","uZ(Q,fS)","b1?(bN?)","~([dg?])","N?(bN?)","N(Cf)","~(xV)","N(xR)","0&()","N(mM)","bu<iH>(es)","hj?(bN?)","T<iH>(Q)","u(es)","o(la,la)","T<es>(es,I<es>)","N(es)","vJ?(bN?)","kq<bp>(bp)","bp?(bp)","M?(o,bp?)","jr()","~(jr)","T<kN>()","~(@,M?)","~(kJ)","~(kP)","~(hY)","~(Rx)","rA?(kj,k,k)","vm(k)","jU()","~(jU)","~(ml)","~(ms)","~(j1,M)","rt(Q,e?)","~(n1)","e(Q,bH<R>,vx,Q,Q)","N(n1)","jG(Q,e?)","qB(Q)","bt(J<M?>,aL)","xt()","ks(dT)","qE(Q,e?)","pN(@)","qY(@)","tg(@)","pL(@)","~(Es)","~(Et)","~(wF)","ar<k,k>(ar<k,k>,k)","b7c(k,ar<k,k>)","a6<@>(ym)","ar<h7,@>(T<@>)","ar<h7,@>(ar<h7,@>)","bt(ar<h7,@>)","jG(Q)","N(M)","N(d2<@>?)","a6<bt>(@)","N(of)","0&(k,o?)","~(k,k?)","ir(d2<@>)","bc<k?,T<M>>(@,@)","C?()","yi(Q)","tQ()","i(H,R)","~(ad)","uR(Q,e?)","tr(Q,fS)","~(H,i)","e(Q,+(H,aN,H))","N(mr)","bt(e1?)","~(dM<M?>)","ce<N>(N)","N(pd)","oA(Q,e?)","lm(Q)","kC(Q,e?)","qA(bq)","vY(bq)","~(k,aL)","~(o,o,o)","pP()","e(Q,fS)","bt(T<~>)","qp()","vo(Q,ad)","~(i)","~(k,M?)","~(hZ)","p7()","~(js?,xd?)","lf()","~(lf)","~(mk)","an1(an2)","u(u)","N(u)","~(wR,ba)","T<p_>()","ba?()","Q?()","bk<ba>?()","yD(Q,fS)","~(C)","bp?()","fq(h1)","pj(Q)","~({allowPlatformDefault!N})","a6<bt>()","e(Q,bH<R>,bH<R>)","R(@)","b0?(bu<co>)","k(d6)","u()?(C)","~(ba?)","xZ()","kY()","~(kY)","kZ()","~(kZ)","jw()","~(jw)","~(oW)","~(ov)","tX(Q,mg)","ce<a9>()","ce<a7>()","~(k,v6)","ce<aa>()","a6<~>(k,dj?,~(dj?)?)","a6<~>([aL?])","~(ar<@,@>)","~(ol)","a6<hl>()","n(p6)","~(ar<k,@>)","N(hT)","bt(hl)","uY<hl>?()","bZ(k)","N(jt)","jt()","N(kx)","kx()","mS(@)","lQ(@)","ar<k,@>(mS)","ar<k,@>(lQ)","a6<iX>(mR{headers:ar<k,k>?})","fJ()","N(k,k)","k?(k?)","bt(k,k[M?])","~(TQ<T<o>>)","~(T<o>)","CN()","oH(Q)","hJ(aL)","bZ(o)","UV()","bZ(o,o,o,o,o,o,o,N)","N(l7)","xO(k,e6)","xN(k,e6)","xM(k,e6)","k?(od)","k(od)","R?(o)","~(lA)","a6<oK>(k,ar<k,k>)","~(j5<aL>)","~(k,k(k))","k(k,n)","N(dE)","~(k,k{images:T<bI>?,options:T<aH>,visual:d1?,warning:k?})","~(k,T<aH>{text:k?})","bt(fJ,fJ)","d1(d1,T<aH>{images:T<bI>?,text:k?})","~(k,k,k,k)","N(d1)","a6<T<ar<k,@>>>()","o(ar<k,@>,ar<k,@>)","T<ea>()","b39?()","aX(Q,M,c6?)","rJ(Q)","t6(Q)","nk(Q,~(~()))","qy(Q)","tm(Q)","tn(Q)","fY(Q,M,c6?)","pJ(aL)","a6<+(k,fG?)>()","a6<oV>(aL)","wD(Q)","n?(n?,n?,n?[n?])","tj({from:R?})","Y?(Q,qS,cy<m3>)","N(i9)","ux(Q,o)","r5(Q)","e(Q,iA<T<ar<k,@>>>)","uC(Q,o)","qe(Q)","~(xB)","rd(Q)","o(k4,k4)","~(H?)","a6<~>([vE])","cr(Q,M,c6?)","o(k,k)","~(N,M?)","b6(Q,e,o?,N)","uX(Q,ad)","rb(Q,o)","vV()","bt(M?)","a6<aL>()","t_(@)","~(~)","o(i5,i5)","N(iV)","a6<iX>()","c6(c6)","0&(M,c6)","a6<0&>(M)","0&(@)","N(aop)","~(aop)","M(ar<k,@>)","ar<k,@>(M)","k?()","o(k7)","~(Fx)","M(k7)","M(fT)","o(fT,fT)","T<k7>(bc<M,T<fT>>)","mF()","w4()","CV()","a6<t7>()","er?(iV)","N(k,T<k>)","k(R)","o(cg<@>,cg<@>)","T<k>()","T<k>(k,T<k>)","0^(0^,0^)<dy>","H?(H?,H?,R)","R?(dy?,dy?,R)","n?(n?,n?,R)","kC(Q,bH<R>,e?)","e(Q,i,i,e)","~(c4{forceReport:N})","e7(k)","jY?(k)","R(R,R,R)","e(Q,bH<R>,bH<R>,e)","e(Q,bH<R>,bH<R>,N,e?)","~(C,i)","e(Q,bH<R>)","N?(N?,N?,R)","kM?(fQ)","e(Q,e)","dp?(dp?,dp?,R)","de?(de?,de?,R)","p?(p?,p?,R)","o(K5<@>,K5<@>)","N({priority!o,scheduler!kT})","T<iN>(k)","e(e,bH<R>)","e(e?,T<e>)","~(dg{alignment:R?,alignmentPolicy:rO?,curve:h_?,duration:b1?})","o(bp,bp)","d8(d8?,d8?,R)","e?(Q,qS,cy<m3>)","T<d2<@>>(jJ,k)","o(e,o)","e(Q,n4,oq?,oq?)","mK(Q,e?)","~(yG)","b1(o)","aL(o)","~(k?{wrapWidth:o?})","N(og)","pq()","~(dE)"],interceptorsByTag:null,leafTags:null,arrayRti:Symbol("$ti"),rttc:{"2;":(a,b)=>c=>c instanceof A.am&&a.b(c.a)&&b.b(c.b),"2;boundaryEnd,boundaryStart":(a,b)=>c=>c instanceof A.a4_&&a.b(c.a)&&b.b(c.b),"2;causaDescartadaAqui,pasoId":(a,b)=>c=>c instanceof A.a40&&a.b(c.a)&&b.b(c.b),"2;end,start":(a,b)=>c=>c instanceof A.a41&&a.b(c.a)&&b.b(c.b),"2;endGlyphHeight,startGlyphHeight":(a,b)=>c=>c instanceof A.IS&&a.b(c.a)&&b.b(c.b),"2;key,value":(a,b)=>c=>c instanceof A.a42&&a.b(c.a)&&b.b(c.b),"2;localPosition,paragraph":(a,b)=>c=>c instanceof A.a43&&a.b(c.a)&&b.b(c.b),"2;representation,targetSize":(a,b)=>c=>c instanceof A.a44&&a.b(c.a)&&b.b(c.b),"3;":(a,b,c)=>d=>d instanceof A.hN&&a.b(d.a)&&b.b(d.b)&&c.b(d.c),"3;ascent,bottomHeight,subtextHeight":(a,b,c)=>d=>d instanceof A.a45&&a.b(d.a)&&b.b(d.b)&&c.b(d.c),"3;breaks,graphemes,words":(a,b,c)=>d=>d instanceof A.a46&&a.b(d.a)&&b.b(d.b)&&c.b(d.c),"3;close,onMessage,postMessage":(a,b,c)=>d=>d instanceof A.a47&&a.b(d.a)&&b.b(d.b)&&c.b(d.c),"3;completer,recorder,scene":(a,b,c)=>d=>d instanceof A.IT&&a.b(d.a)&&b.b(d.b)&&c.b(d.c),"3;data,event,timeStamp":(a,b,c)=>d=>d instanceof A.IU&&a.b(d.a)&&b.b(d.b)&&c.b(d.c),"3;domSize,representation,targetSize":(a,b,c)=>d=>d instanceof A.a48&&a.b(d.a)&&b.b(d.b)&&c.b(d.c),"3;large,medium,small":(a,b,c)=>d=>d instanceof A.a49&&a.b(d.a)&&b.b(d.b)&&c.b(d.c),"3;textConstraints,tileSize,titleY":(a,b,c)=>d=>d instanceof A.a4a&&a.b(d.a)&&b.b(d.b)&&c.b(d.c),"4;domBlurListener,domFocusListener,element,semanticsNodeId":a=>b=>b instanceof A.IV&&A.aXl(a,b.a),"4;queue,started,target,timer":a=>b=>b instanceof A.IW&&A.aXl(a,b.a)}}
-A.b8z(v.typeUniverse,JSON.parse('{"fJ":"nZ","Uv":"nZ","mQ":"nZ","bfi":"w5","Af":{"eK":[]},"lx":{"aSb":[]},"Ac":{"eK":[]},"uM":{"re":[]},"uN":{"an1":[]},"uK":{"amC":[]},"uL":{"Dd":[],"ks":[]},"r7":{"A6":["aL"]},"r9":{"A6":["aL"]},"dT":{"nx":[]},"lz":{"nx":[]},"r0":{"xw":[]},"r8":{"xw":[]},"rB":{"ks":[]},"Dd":{"ks":[]},"fG":{"cD":[]},"aTP":{"eO":[]},"kN":{"eO":[]},"aiB":{"an2":[]},"aRw":{"re":[]},"FD":{"k4":[]},"wf":{"k4":[]},"lJ":{"aeQ":[]},"MY":{"Rx":[]},"MZ":{"hx":[]},"Ab":{"hx":[]},"uJ":{"hx":[]},"N1":{"hx":[]},"N5":{"hx":[]},"uI":{"hx":[]},"N4":{"eK":[]},"N0":{"hx":[]},"Ad":{"hx":[]},"GY":{"hx":[]},"H_":{"hx":[]},"GZ":{"hx":[]},"MX":{"eK":[]},"kl":{"Uk":[]},"ly":{"aiB":[],"an2":[]},"Ag":{"o_":[]},"vj":{"hx":[]},"U4":{"mH":["amC","r7"],"mH.C":"amC"},"U7":{"mH":["Dd","r9"],"mH.C":"Dd"},"QS":{"aS9":[]},"QR":{"bx":[]},"QQ":{"bx":[]},"tB":{"I":["1"],"I.E":"1"},"Qj":{"fG":[],"cD":[]},"BC":{"fG":[],"cD":[]},"BD":{"fG":[],"cD":[]},"QO":{"eK":[]},"QM":{"eK":[]},"Wm":{"afk":[]},"MJ":{"eK":[]},"um":{"afk":[]},"Vz":{"eK":[]},"Ra":{"bx":[]},"Av":{"eO":[]},"VE":{"eO":[]},"Mq":{"eO":[],"aQC":[]},"N8":{"eO":[],"aQV":[]},"Nc":{"eO":[],"aQX":[]},"Na":{"eO":[],"aQW":[]},"U9":{"eO":[],"aT6":[]},"G6":{"eO":[],"aNZ":[]},"Db":{"eO":[],"aNZ":[],"aT4":[]},"Rb":{"eO":[],"aSc":[]},"Uz":{"eO":[]},"f9":{"dL":[]},"cs":{"dL":[]},"Nu":{"dL":[]},"M7":{"dL":[]},"M8":{"dL":[]},"hi":{"dL":[]},"lo":{"dL":[]},"nj":{"dL":[]},"et":{"dL":[]},"ul":{"dL":[]},"LY":{"dL":[]},"pU":{"dL":[]},"qM":{"re":[],"aQZ":[]},"r2":{"I":["iS"],"I.E":"iS"},"Dm":{"wG":[]},"Dq":{"wG":[]},"W3":{"hC":[]},"A9":{"hC":[]},"uB":{"hC":[]},"Q4":{"hC":[]},"qj":{"hC":[]},"Rt":{"hC":[]},"o3":{"hC":[]},"Vy":{"hC":[]},"Wc":{"oG":[]},"W9":{"oG":[]},"W8":{"oG":[]},"rI":{"hC":[]},"Wh":{"aNI":[]},"Xd":{"hC":[]},"yM":{"aW":["1"],"T":["1"],"aM":["1"],"I":["1"]},"a21":{"yM":["o"],"aW":["o"],"T":["o"],"aM":["o"],"I":["o"]},"Gb":{"yM":["o"],"aW":["o"],"T":["o"],"aM":["o"],"I":["o"],"aW.E":"o","I.E":"o"},"vl":{"o_":[]},"PU":{"k4":[]},"oQ":{"qN":[]},"rg":{"qN":[]},"Bd":{"oQ":[],"qN":[]},"rh":{"we":[]},"tf":{"we":[]},"MV":{"x5":[]},"VF":{"x5":[]},"a15":{"lJ":[],"aeQ":[]},"vk":{"lJ":[],"aeQ":[]},"J":{"T":["1"],"aM":["1"],"aL":[],"I":["1"],"ft":["1"],"I.E":"1"},"C6":{"N":[],"cP":[]},"vM":{"bt":[],"cP":[]},"C9":{"aL":[]},"nZ":{"aL":[]},"Rk":{"Em":[]},"aia":{"J":["1"],"T":["1"],"aM":["1"],"aL":[],"I":["1"],"ft":["1"],"I.E":"1"},"nX":{"R":[],"dy":[],"cg":["dy"]},"vL":{"R":[],"o":[],"dy":[],"cg":["dy"],"cP":[]},"C8":{"R":[],"dy":[],"cg":["dy"],"cP":[]},"m0":{"k":[],"cg":["k"],"ft":["@"],"cP":[]},"k5":{"I":["2"]},"pR":{"k5":["1","2"],"I":["2"],"I.E":"2"},"Hx":{"pR":["1","2"],"k5":["1","2"],"aM":["2"],"I":["2"],"I.E":"2"},"GV":{"aW":["2"],"T":["2"],"k5":["1","2"],"aM":["2"],"I":["2"]},"fn":{"GV":["1","2"],"aW":["2"],"T":["2"],"k5":["1","2"],"aM":["2"],"I":["2"],"aW.E":"2","I.E":"2"},"lw":{"bu":["2"],"k5":["1","2"],"aM":["2"],"I":["2"],"I.E":"2"},"pS":{"bB":["3","4"],"ar":["3","4"],"bB.V":"4","bB.K":"3"},"lv":{"k5":["1","2"],"aM":["2"],"I":["2"],"I.E":"2"},"jD":{"cD":[]},"hn":{"aW":["o"],"T":["o"],"aM":["o"],"I":["o"],"aW.E":"o","I.E":"o"},"aM":{"I":["1"]},"aB":{"aM":["1"],"I":["1"]},"ij":{"aB":["1"],"aM":["1"],"I":["1"],"I.E":"1","aB.E":"1"},"fv":{"I":["2"],"I.E":"2"},"i0":{"fv":["1","2"],"aM":["2"],"I":["2"],"I.E":"2"},"ae":{"aB":["2"],"aM":["2"],"I":["2"],"I.E":"2","aB.E":"2"},"aG":{"I":["1"],"I.E":"1"},"fp":{"I":["2"],"I.E":"2"},"t9":{"I":["1"],"I.E":"1"},"Ba":{"t9":["1"],"aM":["1"],"I":["1"],"I.E":"1"},"mz":{"I":["1"],"I.E":"1"},"vi":{"mz":["1"],"aM":["1"],"I":["1"],"I.E":"1"},"F3":{"I":["1"],"I.E":"1"},"i1":{"aM":["1"],"I":["1"],"I.E":"1"},"ql":{"I":["1"],"I.E":"1"},"cn":{"I":["1"],"I.E":"1"},"xq":{"aW":["1"],"T":["1"],"aM":["1"],"I":["1"]},"c5":{"aB":["1"],"aM":["1"],"I":["1"],"I.E":"1","aB.E":"1"},"fz":{"Fn":[]},"pX":{"k2":["1","2"],"ar":["1","2"]},"v1":{"ar":["1","2"]},"a4":{"v1":["1","2"],"ar":["1","2"]},"tJ":{"I":["1"],"I.E":"1"},"cl":{"v1":["1","2"],"ar":["1","2"]},"As":{"ii":["1"],"bu":["1"],"aM":["1"],"I":["1"]},"f5":{"ii":["1"],"bu":["1"],"aM":["1"],"I":["1"],"I.E":"1"},"ex":{"ii":["1"],"bu":["1"],"aM":["1"],"I":["1"],"I.E":"1"},"Ri":{"jx":[]},"nQ":{"jx":[]},"D9":{"mO":[],"cD":[]},"Rl":{"cD":[]},"XD":{"cD":[]},"U0":{"bx":[]},"JY":{"c6":[]},"nw":{"jx":[]},"Ng":{"jx":[]},"Nh":{"jx":[]},"Xe":{"jx":[]},"WX":{"jx":[]},"uz":{"jx":[]},"VI":{"cD":[]},"fK":{"bB":["1","2"],"ar":["1","2"],"bB.V":"2","bB.K":"1"},"be":{"aM":["1"],"I":["1"],"I.E":"1"},"bb":{"aM":["1"],"I":["1"],"I.E":"1"},"d9":{"aM":["bc<1,2>"],"I":["bc<1,2>"],"I.E":"bc<1,2>"},"Ca":{"fK":["1","2"],"bB":["1","2"],"ar":["1","2"],"bB.V":"2","bB.K":"1"},"qI":{"fK":["1","2"],"bB":["1","2"],"ar":["1","2"],"bB.V":"2","bB.K":"1"},"nY":{"UV":[]},"yb":{"UW":[],"qT":[]},"ZU":{"I":["UW"],"I.E":"UW"},"x2":{"qT":[]},"a5J":{"I":["qT"],"I.E":"qT"},"ma":{"id":[],"oV":[],"aW":["o"],"T":["o"],"i8":["o"],"aM":["o"],"aL":[],"dP":[],"ft":["o"],"I":["o"],"cP":[],"aW.E":"o","I.E":"o"},"w5":{"aL":[],"kj":[],"cP":[]},"oa":{"aL":[],"kj":[],"cP":[]},"D0":{"aL":[],"dP":[]},"a6W":{"kj":[]},"CX":{"dj":[],"aL":[],"dP":[],"cP":[]},"w6":{"i8":["1"],"aL":[],"dP":[],"ft":["1"]},"ob":{"aW":["R"],"T":["R"],"i8":["R"],"aM":["R"],"aL":[],"dP":[],"ft":["R"],"I":["R"]},"id":{"aW":["o"],"T":["o"],"i8":["o"],"aM":["o"],"aL":[],"dP":[],"ft":["o"],"I":["o"]},"CY":{"ob":[],"aeD":[],"aW":["R"],"T":["R"],"i8":["R"],"aM":["R"],"aL":[],"dP":[],"ft":["R"],"I":["R"],"cP":[],"aW.E":"R","I.E":"R"},"CZ":{"ob":[],"aeE":[],"aW":["R"],"T":["R"],"i8":["R"],"aM":["R"],"aL":[],"dP":[],"ft":["R"],"I":["R"],"cP":[],"aW.E":"R","I.E":"R"},"TS":{"id":[],"ahY":[],"aW":["o"],"T":["o"],"i8":["o"],"aM":["o"],"aL":[],"dP":[],"ft":["o"],"I":["o"],"cP":[],"aW.E":"o","I.E":"o"},"D_":{"id":[],"ahZ":[],"aW":["o"],"T":["o"],"i8":["o"],"aM":["o"],"aL":[],"dP":[],"ft":["o"],"I":["o"],"cP":[],"aW.E":"o","I.E":"o"},"TT":{"id":[],"ai_":[],"aW":["o"],"T":["o"],"i8":["o"],"aM":["o"],"aL":[],"dP":[],"ft":["o"],"I":["o"],"cP":[],"aW.E":"o","I.E":"o"},"D1":{"id":[],"av7":[],"aW":["o"],"T":["o"],"i8":["o"],"aM":["o"],"aL":[],"dP":[],"ft":["o"],"I":["o"],"cP":[],"aW.E":"o","I.E":"o"},"D2":{"id":[],"xl":[],"aW":["o"],"T":["o"],"i8":["o"],"aM":["o"],"aL":[],"dP":[],"ft":["o"],"I":["o"],"cP":[],"aW.E":"o","I.E":"o"},"D3":{"id":[],"av8":[],"aW":["o"],"T":["o"],"i8":["o"],"aM":["o"],"aL":[],"dP":[],"ft":["o"],"I":["o"],"cP":[],"aW.E":"o","I.E":"o"},"Ki":{"h7":[]},"a16":{"cD":[]},"Kj":{"mO":[],"cD":[]},"ag":{"a6":["1"]},"io":{"mG":["1"]},"Ke":{"Xu":[]},"GH":{"uY":["1"]},"kb":{"I":["1"],"I.E":"1"},"dt":{"cD":[]},"dG":{"dQ":["1"],"dq":["1"],"dq.T":"1"},"tv":{"io":["1"],"mG":["1"]},"le":{"p0":["1"]},"j7":{"p0":["1"]},"FX":{"bx":[]},"xH":{"uY":["1"]},"bf":{"xH":["1"],"uY":["1"]},"Fh":{"dq":["1"]},"l4":{"tU":["1"]},"yF":{"tU":["1"]},"dQ":{"dq":["1"],"dq.T":"1"},"tx":{"io":["1"],"mG":["1"]},"K0":{"dq":["1"]},"xS":{"mG":["1"]},"Hy":{"dq":["1"],"dq.T":"1"},"tL":{"dq":["1"],"dq.T":"1"},"ye":{"l4":["1"],"tU":["1"],"TQ":["1"]},"HM":{"dq":["2"]},"xX":{"io":["2"],"mG":["2"]},"Ig":{"dq":["2"],"dq.T":"2"},"n0":{"bB":["1","2"],"ar":["1","2"],"bB.V":"2","bB.K":"1"},"p8":{"n0":["1","2"],"bB":["1","2"],"ar":["1","2"],"bB.V":"2","bB.K":"1"},"He":{"n0":["1","2"],"bB":["1","2"],"ar":["1","2"],"bB.V":"2","bB.K":"1"},"tF":{"aM":["1"],"I":["1"],"I.E":"1"},"Id":{"fK":["1","2"],"bB":["1","2"],"ar":["1","2"],"bB.V":"2","bB.K":"1"},"l8":{"yC":["1"],"ii":["1"],"bu":["1"],"aM":["1"],"I":["1"],"I.E":"1"},"hM":{"yC":["1"],"ii":["1"],"b3D":["1"],"bu":["1"],"aM":["1"],"I":["1"],"I.E":"1"},"qP":{"I":["1"],"I.E":"1"},"aW":{"T":["1"],"aM":["1"],"I":["1"]},"bB":{"ar":["1","2"]},"If":{"aM":["2"],"I":["2"],"I.E":"2"},"Cu":{"ar":["1","2"]},"k2":{"ar":["1","2"]},"Hn":{"Ho":["1"],"aRD":["1"]},"Hp":{"Ho":["1"]},"B3":{"aM":["1"],"I":["1"],"I.E":"1"},"Co":{"aB":["1"],"aM":["1"],"I":["1"],"I.E":"1","aB.E":"1"},"ii":{"bu":["1"],"aM":["1"],"I":["1"]},"yC":{"ii":["1"],"bu":["1"],"aM":["1"],"I":["1"]},"xr":{"ii":["1"],"bu":["1"],"aM":["1"],"I":["1"],"I.E":"1"},"Fc":{"bB":["1","2"],"pk":["1","he<1,2>"],"ar":["1","2"],"bB.V":"2","bB.K":"1","pk.K":"1"},"n6":{"aM":["1"],"I":["1"],"I.E":"1"},"tT":{"aM":["2"],"I":["2"],"I.E":"2"},"JS":{"aM":["bc<1,2>"],"I":["bc<1,2>"],"I.E":"bc<1,2>"},"n7":{"ka":["1","2","1"],"ka.T":"1"},"JX":{"ka":["1","he<1,2>","2"],"ka.T":"2"},"tS":{"ka":["1","he<1,2>","bc<1,2>"],"ka.T":"bc<1,2>"},"wZ":{"ii":["1"],"bu":["1"],"aM":["1"],"pk":["1","hf<1>"],"I":["1"],"I.E":"1","pk.K":"1"},"a25":{"bB":["k","@"],"ar":["k","@"],"bB.V":"@","bB.K":"k"},"a26":{"aB":["k"],"aM":["k"],"I":["k"],"I.E":"k","aB.E":"k"},"y6":{"jZ":[]},"M9":{"lI":[]},"a6T":{"bY":["k","T<o>"]},"Mb":{"bY":["k","T<o>"],"bY.S":"k","bY.T":"T<o>"},"a6U":{"jZ":[]},"a6S":{"bY":["T<o>","k"]},"Ma":{"bY":["T<o>","k"],"bY.S":"T<o>","bY.T":"k"},"zS":{"bY":["T<o>","k"],"bY.S":"T<o>","bY.T":"k"},"Mt":{"bY":["k","T<o>"],"bY.S":"k","bY.T":"T<o>"},"a_n":{"jZ":[]},"HN":{"bY":["1","3"],"bY.S":"1","bY.T":"3"},"Cb":{"cD":[]},"Rm":{"cD":[]},"Ro":{"bY":["M?","k"],"bY.S":"M?","bY.T":"k"},"Rn":{"bY":["k","M?"],"bY.S":"k","bY.T":"M?"},"Ru":{"lI":[]},"Rw":{"bY":["k","T<o>"],"bY.S":"k","bY.T":"T<o>"},"Rv":{"bY":["T<o>","k"],"bY.S":"T<o>","bY.T":"k"},"yE":{"jZ":[]},"tV":{"jZ":[]},"XJ":{"lI":[]},"XL":{"bY":["k","T<o>"],"bY.S":"k","bY.T":"T<o>"},"a73":{"jZ":[]},"XK":{"bY":["T<o>","k"],"bY.S":"T<o>","bY.T":"k"},"bZ":{"cg":["bZ"]},"R":{"dy":[],"cg":["dy"]},"b1":{"cg":["b1"]},"o":{"dy":[],"cg":["dy"]},"T":{"aM":["1"],"I":["1"]},"dy":{"cg":["dy"]},"UW":{"qT":[]},"bu":{"aM":["1"],"I":["1"]},"k":{"cg":["k"]},"pH":{"cD":[]},"mO":{"cD":[]},"hk":{"cD":[]},"wr":{"cD":[]},"BT":{"cD":[]},"TY":{"cD":[]},"Gf":{"cD":[]},"XC":{"cD":[]},"fP":{"cD":[]},"Np":{"cD":[]},"Uc":{"cD":[]},"Ff":{"cD":[]},"HB":{"bx":[]},"eM":{"bx":[]},"HP":{"aB":["1"],"aM":["1"],"I":["1"],"I.E":"1","aB.E":"1"},"K3":{"c6":[]},"Kt":{"mR":[]},"jc":{"mR":[]},"a0n":{"mR":[]},"U_":{"bx":[]},"dj":{"dP":[]},"ai_":{"T":["o"],"aM":["o"],"dP":[],"I":["o"]},"oV":{"T":["o"],"aM":["o"],"dP":[],"I":["o"]},"av8":{"T":["o"],"aM":["o"],"dP":[],"I":["o"]},"ahY":{"T":["o"],"aM":["o"],"dP":[],"I":["o"]},"av7":{"T":["o"],"aM":["o"],"dP":[],"I":["o"]},"ahZ":{"T":["o"],"aM":["o"],"dP":[],"I":["o"]},"xl":{"T":["o"],"aM":["o"],"dP":[],"I":["o"]},"aeD":{"T":["R"],"aM":["R"],"dP":[],"I":["R"]},"aeE":{"T":["R"],"aM":["R"],"dP":[],"I":["R"]},"jN":{"yp":["jN"]},"rw":{"yp":["rw"]},"fe":{"I":["k"],"I.E":"k"},"c2":{"ar":["2","3"]},"xs":{"pn":["1","I<1>"],"pn.E":"1"},"wP":{"pn":["1","bu<1>"],"pn.E":"1"},"QH":{"bY":["T<o>","q7"]},"a5j":{"bY":["T<o>","q7"],"bY.S":"T<o>","bY.T":"q7"},"bH":{"aj":[]},"uo":{"bH":["R"],"aj":[]},"ZV":{"bH":["R"],"aj":[]},"ZW":{"bH":["R"],"aj":[]},"zp":{"bH":["1"],"aj":[]},"rv":{"bH":["R"],"aj":[]},"hB":{"bH":["R"],"aj":[]},"AK":{"bH":["R"],"aj":[]},"tl":{"bH":["R"],"aj":[]},"v0":{"bH":["1"],"aj":[]},"zD":{"bH":["1"],"aj":[]},"Ic":{"h_":[]},"En":{"h_":[]},"dX":{"h_":[]},"FR":{"h_":[]},"f6":{"h_":[]},"FQ":{"h_":[]},"nG":{"h_":[]},"a0u":{"h_":[]},"aI":{"ay":["1"],"ay.T":"1","aI.T":"1"},"ev":{"aI":["n?"],"ay":["n?"],"ay.T":"n?","aI.T":"n?"},"aA":{"bH":["1"],"aj":[]},"hb":{"ay":["1"],"ay.T":"1"},"Eh":{"aI":["1"],"ay":["1"],"ay.T":"1","aI.T":"1"},"Wr":{"aI":["H?"],"ay":["H?"],"ay.T":"H?","aI.T":"H?"},"DH":{"aI":["u?"],"ay":["u?"],"ay.T":"u?","aI.T":"u?"},"nR":{"aI":["o"],"ay":["o"],"ay.T":"o","aI.T":"o"},"hX":{"ay":["R"],"ay.T":"R"},"Ga":{"ay":["1"],"ay.T":"1"},"Aw":{"Y":[],"e":[]},"a06":{"X":["Aw"]},"a05":{"aj":[]},"Ax":{"Y":[],"e":[]},"H6":{"X":["Ax"]},"cW":{"n":[]},"a08":{"k0":[]},"Nv":{"aC":[],"e":[]},"q0":{"Y":[],"e":[]},"H7":{"X":["q0"]},"Nw":{"d8":[]},"b1r":{"b9":[],"aU":[],"e":[]},"a0b":{"em":["a9"],"em.T":"a9"},"Pu":{"a9":[]},"AH":{"Y":[],"e":[]},"H9":{"X":["AH"]},"Ph":{"aC":[],"e":[]},"AG":{"Y":[],"e":[]},"xK":{"Y":[],"e":[]},"a0c":{"X":["AG"]},"xL":{"X":["xK<1>"]},"k6":{"iF":[]},"v3":{"Y":[],"e":[]},"H8":{"kQ":["v3"],"X":["v3"]},"a0e":{"aj":[]},"Pj":{"k0":[]},"Hb":{"Y":[],"e":[]},"Pk":{"aC":[],"e":[]},"a0g":{"b6":[],"as":[],"e":[]},"a4h":{"C":[],"aO":["C"],"t":[],"an":[]},"Hc":{"X":["Hb"]},"a2b":{"aj":[]},"a4O":{"aj":[]},"a07":{"aj":[]},"Hd":{"as":[],"e":[]},"a0f":{"b8":[],"bp":[],"Q":[]},"tO":{"dD":["C","fR"],"C":[],"af":["C","fR"],"t":[],"an":[],"af.1":"fR","dD.1":"fR","af.0":"C"},"ny":{"Y":[],"e":[]},"Ha":{"X":["ny"]},"a2h":{"aj":[]},"BV":{"cH":[],"b9":[],"aU":[],"e":[]},"AJ":{"aC":[],"e":[]},"p4":{"e7":[]},"vm":{"p4":[],"e7":[]},"Q1":{"p4":[],"e7":[]},"Q0":{"p4":[],"e7":[]},"qg":{"pH":[],"cD":[]},"PE":{"e7":[]},"a1k":{"e7":[]},"fZ":{"aj":[]},"cy":{"aj":[]},"pb":{"aj":[]},"kq":{"e7":[]},"AU":{"e7":[]},"PD":{"e7":[]},"AV":{"e7":[]},"RM":{"fu":[]},"l1":{"fu":[]},"cQ":{"fu":[],"cQ.T":"1"},"Cl":{"iN":[]},"bi":{"I":["1"],"I.E":"1"},"eN":{"I":["1"],"I.E":"1"},"ce":{"a6":["1"]},"Bx":{"c4":[]},"er":{"bq":[]},"mk":{"bq":[]},"om":{"bq":[]},"on":{"bq":[]},"mj":{"bq":[]},"mm":{"bq":[]},"fL":{"bq":[]},"ml":{"bq":[]},"ZO":{"bq":[]},"a6B":{"bq":[]},"rj":{"bq":[]},"a6x":{"rj":[],"bq":[]},"rp":{"bq":[]},"a6I":{"rp":[],"bq":[]},"a6D":{"mk":[],"bq":[]},"a6A":{"om":[],"bq":[]},"a6C":{"on":[],"bq":[]},"a6z":{"mj":[],"bq":[]},"rm":{"bq":[]},"a6E":{"rm":[],"bq":[]},"a6M":{"mm":[],"bq":[]},"rr":{"fL":[],"bq":[]},"a6K":{"rr":[],"fL":[],"bq":[]},"rs":{"fL":[],"bq":[]},"a6L":{"rs":[],"fL":[],"bq":[]},"rq":{"fL":[],"bq":[]},"a6J":{"rq":[],"fL":[],"bq":[]},"a6G":{"ml":[],"bq":[]},"ro":{"bq":[]},"a6H":{"ro":[],"bq":[]},"rn":{"bq":[]},"a6F":{"rn":[],"bq":[]},"rk":{"bq":[]},"a6y":{"rk":[],"bq":[]},"jw":{"cJ":[],"d7":[],"d6":[]},"Ik":{"yL":[]},"yh":{"yL":[]},"jF":{"cJ":[],"d7":[],"d6":[]},"hZ":{"cJ":[],"d7":[],"d6":[]},"im":{"hZ":[],"cJ":[],"d7":[],"d6":[]},"i7":{"hZ":[],"cJ":[],"d7":[],"d6":[]},"jM":{"hZ":[],"cJ":[],"d7":[],"d6":[]},"jr":{"d7":[],"d6":[]},"d7":{"d6":[]},"cJ":{"d7":[],"d6":[]},"wm":{"cJ":[],"d7":[],"d6":[]},"jU":{"cJ":[],"d7":[],"d6":[]},"hF":{"cJ":[],"d7":[],"d6":[]},"Mw":{"cJ":[],"d7":[],"d6":[]},"kY":{"cJ":[],"d7":[],"d6":[]},"kZ":{"cJ":[],"d7":[],"d6":[]},"zV":{"cJ":[],"d7":[],"d6":[]},"tw":{"d6":[]},"a_M":{"vu":[]},"qA":{"h9":[]},"vY":{"h9":[]},"ZP":{"aC":[],"e":[]},"tt":{"aC":[],"e":[]},"Mo":{"aC":[],"e":[]},"Mn":{"aC":[],"e":[]},"Nf":{"aC":[],"e":[]},"Ne":{"aC":[],"e":[]},"PS":{"aC":[],"e":[]},"PR":{"aC":[],"e":[]},"PX":{"aC":[],"e":[]},"PW":{"aC":[],"e":[]},"b09":{"cH":[],"b9":[],"aU":[],"e":[]},"LX":{"aC":[],"e":[]},"Cx":{"Y":[],"e":[]},"Ih":{"X":["Cx"]},"zI":{"Y":[],"e":[]},"a3J":{"H":[]},"GG":{"X":["zI"]},"a_c":{"b6":[],"as":[],"e":[]},"a4e":{"C":[],"aO":["C"],"t":[],"an":[]},"b0k":{"cH":[],"b9":[],"aU":[],"e":[]},"w_":{"aI":["u?"],"ay":["u?"],"ay.T":"u?","aI.T":"u?"},"CH":{"aI":["i"],"ay":["i"],"ay.T":"i","aI.T":"i"},"b3Q":{"cH":[],"b9":[],"aU":[],"e":[]},"DE":{"Y":[],"e":[]},"a3U":{"X":["DE"]},"a2_":{"b6":[],"as":[],"e":[]},"J6":{"C":[],"aO":["C"],"t":[],"an":[]},"A5":{"Y":[],"e":[]},"GP":{"X":["A5"]},"a2B":{"dK":[],"bJ":["dK"]},"a20":{"b6":[],"as":[],"e":[]},"J7":{"C":[],"aO":["C"],"t":[],"an":[]},"pP":{"Y":[],"e":[]},"Hg":{"Y":[],"e":[]},"Ip":{"Y":[],"e":[]},"HJ":{"b9":[],"aU":[],"e":[]},"Hi":{"Y":[],"e":[]},"Hh":{"Y":[],"e":[]},"Gy":{"Y":[],"e":[]},"GS":{"X":["pP"]},"a0q":{"X":["Hg"]},"Iq":{"X":["Ip"]},"a0s":{"X":["Hi"]},"a0t":{"X":["Hh"]},"KJ":{"X":["Gy"]},"uC":{"aC":[],"e":[]},"b0F":{"b9":[],"aU":[],"e":[]},"DC":{"Y":[],"e":[]},"IP":{"X":["DC"]},"a1V":{"bJ":["n?"]},"a_F":{"b6":[],"as":[],"e":[]},"a4f":{"C":[],"aO":["C"],"t":[],"an":[]},"a_H":{"fy":["l6","C"],"as":[],"e":[],"fy.0":"l6","fy.1":"C"},"IZ":{"C":[],"j0":["l6","C"],"t":[],"an":[]},"b0O":{"cH":[],"b9":[],"aU":[],"e":[]},"pT":{"aC":[],"e":[]},"ia":{"km":["o"],"n":[],"km.T":"o"},"o8":{"km":["o"],"n":[],"km.T":"o"},"QB":{"MN":["bZ"]},"AP":{"Y":[],"e":[]},"Hf":{"X":["AP"]},"a4F":{"b5":["ko"],"dM":["ko"],"aj":[],"b5.T":"ko"},"a4E":{"b5":["jk"],"dM":["jk"],"aj":[],"b5.T":"jk"},"a0p":{"aC":[],"e":[]},"b1A":{"cH":[],"b9":[],"aU":[],"e":[]},"a0o":{"eL":[]},"a0F":{"k0":[]},"PB":{"aC":[],"e":[]},"va":{"aC":[],"e":[]},"nk":{"aC":[],"e":[]},"PF":{"aC":[],"e":[]},"AW":{"eQ":["1"],"eZ":["1"],"d2":["1"]},"b1T":{"cH":[],"b9":[],"aU":[],"e":[]},"ve":{"aC":[],"e":[]},"XM":{"aC":[],"e":[]},"b2_":{"cH":[],"b9":[],"aU":[],"e":[]},"Bb":{"Y":[],"e":[]},"a14":{"aC":[],"e":[]},"a12":{"bN":[]},"b2r":{"cH":[],"b9":[],"aU":[],"e":[]},"Bp":{"Y":[],"e":[]},"a1f":{"aC":[],"e":[]},"a1d":{"bN":[]},"b2F":{"cH":[],"b9":[],"aU":[],"e":[]},"Bu":{"b9":[],"aU":[],"e":[]},"vp":{"aC":[],"e":[]},"a11":{"dK":[],"bJ":["dK"]},"a_E":{"b6":[],"as":[],"e":[]},"IY":{"C":[],"aO":["C"],"t":[],"an":[]},"GF":{"bH":["1"],"aj":[]},"b2I":{"cH":[],"b9":[],"aU":[],"e":[]},"JF":{"Y":[],"e":[]},"BP":{"aC":[],"e":[]},"a57":{"X":["JF"]},"a1P":{"Y":[],"e":[]},"a1O":{"bN":[]},"a1g":{"bN":[]},"a1h":{"bN":[]},"a2W":{"bN":[]},"BQ":{"cH":[],"b9":[],"aU":[],"e":[]},"qE":{"Y":[],"e":[]},"I3":{"X":["qE"]},"BY":{"kG":[]},"nP":{"nS":[],"kG":[]},"BZ":{"nS":[],"kG":[]},"C_":{"nS":[],"kG":[]},"nS":{"kG":[]},"IG":{"b9":[],"aU":[],"e":[]},"I2":{"Y":[],"e":[]},"vH":{"aC":[],"e":[]},"I1":{"X":["I2"],"aOi":[]},"Rh":{"aC":[],"e":[]},"iK":{"ci":[]},"k1":{"iK":[],"ci":[]},"iT":{"iK":[],"ci":[]},"C0":{"Y":[],"e":[]},"I6":{"X":["C0"]},"GO":{"Y":[],"e":[]},"HU":{"Y":[],"e":[]},"qF":{"Y":[],"e":[]},"b3m":{"cH":[],"b9":[],"aU":[],"e":[]},"I4":{"aj":[]},"I5":{"aI":["iK"],"ay":["iK"],"ay.T":"iK","aI.T":"iK"},"a1Y":{"aj":[]},"a_p":{"X":["GO"]},"HV":{"X":["HU"]},"J1":{"C":[],"j0":["fg","C"],"t":[],"an":[]},"a0z":{"fy":["fg","C"],"as":[],"e":[],"fy.0":"fg","fy.1":"C"},"I7":{"X":["qF"]},"RH":{"aC":[],"e":[]},"a1W":{"bJ":["n?"]},"a2f":{"fy":["k8","C"],"as":[],"e":[],"fy.0":"k8","fy.1":"C"},"Jb":{"C":[],"j0":["k8","C"],"t":[],"an":[]},"b3G":{"cH":[],"b9":[],"aU":[],"e":[]},"FJ":{"Y":[],"e":[]},"K8":{"X":["FJ"]},"RP":{"aC":[],"e":[]},"Cw":{"Y":[],"e":[]},"J5":{"C":[],"aO":["C"],"t":[],"an":[]},"t_":{"aI":["ci?"],"ay":["ci?"],"ay.T":"ci?","aI.T":"ci?"},"Ii":{"Y":[],"e":[]},"a2u":{"X":["Cw"]},"a1X":{"b6":[],"as":[],"e":[]},"a2q":{"X":["Ii"]},"JM":{"aC":[],"e":[]},"JN":{"aj":[]},"a2r":{"em":["a7"],"em.T":"a7"},"Pw":{"a7":[]},"rb":{"Y":[],"e":[]},"a2V":{"aC":[],"e":[]},"a2T":{"bN":[]},"b4x":{"cH":[],"b9":[],"aU":[],"e":[]},"hy":{"TE":["1"],"Dh":["1"],"eQ":["1"],"eZ":["1"],"d2":["1"]},"pr":{"Y":[],"e":[]},"ps":{"Y":[],"e":[]},"yl":{"Y":[],"e":[]},"a7j":{"aC":[],"e":[]},"a7h":{"X":["pr"]},"a7i":{"X":["ps"]},"a1a":{"aC":[],"e":[]},"ZM":{"kM":[]},"Pi":{"kM":[]},"IF":{"X":["yl<1>"]},"KK":{"aj":[]},"KL":{"aj":[]},"IM":{"Y":[],"e":[]},"IN":{"Y":[],"e":[]},"UD":{"kM":[]},"a3H":{"X":["IM"],"cR":[]},"a3I":{"X":["IN"]},"kk":{"Y":[],"e":[]},"UK":{"Y":[],"e":[]},"xF":{"aj":[]},"GX":{"X":["kk"]},"a4b":{"aj":[]},"DK":{"Y":[],"e":[]},"a4c":{"X":["kk"]},"b55":{"cH":[],"b9":[],"aU":[],"e":[]},"DI":{"Y":[],"e":[]},"DJ":{"X":["DI"]},"Ep":{"Y":[],"e":[]},"Js":{"b9":[],"aU":[],"e":[]},"HE":{"Y":[],"e":[]},"rJ":{"Y":[],"e":[]},"Er":{"X":["rJ"],"cR":[]},"b8l":{"Y":[],"e":[]},"Eq":{"X":["Ep"]},"a4T":{"aj":[]},"GN":{"ad":[],"lA":[]},"a_o":{"aC":[],"e":[]},"HF":{"X":["HE"]},"a0L":{"bk":["hq"],"bk.T":"hq"},"a4U":{"b9":[],"aU":[],"e":[]},"a1H":{"aC":[],"e":[]},"yc":{"Y":[],"e":[]},"W2":{"aC":[],"e":[]},"a2t":{"kQ":["yc"],"X":["yc"]},"b5J":{"cH":[],"b9":[],"aU":[],"e":[]},"jW":{"Y":[],"e":[]},"JR":{"X":["jW"]},"b67":{"cH":[],"b9":[],"aU":[],"e":[]},"FA":{"Y":[],"e":[]},"a64":{"aC":[],"e":[]},"a62":{"bN":[]},"b6t":{"cH":[],"b9":[],"aU":[],"e":[]},"FF":{"Y":[],"e":[]},"K6":{"X":["FF"]},"FG":{"lS":["k"],"Y":[],"e":[],"lS.T":"k"},"yH":{"i3":["k"],"X":["lS<k>"]},"TG":{"k0":[]},"a68":{"aj":[]},"b6D":{"cH":[],"b9":[],"aU":[],"e":[]},"Kb":{"Y":[],"e":[]},"Xr":{"aC":[],"e":[]},"a6e":{"X":["Kb"]},"a6f":{"b6":[],"as":[],"e":[]},"a6g":{"C":[],"aO":["C"],"t":[],"an":[]},"a6b":{"fa":[],"as":[],"e":[]},"a6c":{"b8":[],"bp":[],"Q":[]},"a4A":{"C":[],"af":["C","fR"],"t":[],"an":[],"af.1":"fR","af.0":"C"},"a6a":{"aC":[],"e":[]},"a6d":{"aC":[],"e":[]},"Xt":{"aC":[],"e":[]},"th":{"aC":[],"e":[]},"I0":{"cH":[],"b9":[],"aU":[],"e":[]},"ti":{"aI":["j4"],"ay":["j4"],"ay.T":"j4","aI.T":"j4"},"zz":{"Y":[],"e":[]},"a_4":{"X":["zz"]},"G2":{"Y":[],"e":[]},"G3":{"X":["G2"]},"a6p":{"aC":[],"e":[]},"b6X":{"cH":[],"b9":[],"aU":[],"e":[]},"w7":{"f8":["aNl"],"f8.T":"aNl"},"a1w":{"fr":[]},"ts":{"hu":[]},"eu":{"hj":[]},"fD":{"hj":[]},"Im":{"hj":[]},"a5S":{"aj":[]},"dp":{"ci":[]},"j8":{"ci":[]},"MD":{"ci":[]},"e3":{"ci":[]},"fm":{"ci":[]},"du":{"iF":[]},"e4":{"oL":[]},"e5":{"dp":[],"ci":[]},"km":{"n":[]},"GM":{"v8":[]},"ap":{"de":[]},"cX":{"de":[]},"pc":{"de":[]},"aNl":{"f8":["aNl"]},"m7":{"f8":["m7"],"f8.T":"m7"},"Gz":{"fr":[]},"Me":{"f8":["kh"]},"Ed":{"f8":["kR"],"f8.T":"kR"},"a17":{"fr":[]},"w8":{"bx":[]},"up":{"f8":["kh"],"f8.T":"kh"},"U6":{"fr":[]},"CT":{"fr":[]},"Uu":{"ey":[]},"cZ":{"dp":[],"ci":[]},"kS":{"dp":[],"ci":[]},"yw":{"fh":["cZ"],"dp":[],"ci":[],"fh.T":"cZ"},"yx":{"fh":["kS"],"dp":[],"ci":[],"fh.T":"kS"},"fh":{"dp":[],"ci":[]},"fO":{"iF":[]},"h3":{"dp":[],"ci":[]},"fU":{"dp":[],"ci":[]},"fV":{"dp":[],"ci":[]},"xz":{"hG":[]},"a71":{"hG":[]},"a6Z":{"il":[]},"ip":{"il":[]},"xG":{"il":[]},"eY":{"ey":[],"iQ":[],"an":[]},"DO":{"C":[],"aO":["C"],"t":[],"an":[]},"GL":{"aj":[]},"a0A":{"mg":[]},"a4K":{"rF":[],"aO":["C"],"t":[],"an":[]},"ad":{"lA":[]},"ns":{"lV":[]},"C":{"t":[],"an":[]},"nr":{"i6":["C"]},"fE":{"cN":[]},"Au":{"fE":[],"dV":["1"],"cN":[]},"iR":{"fE":[],"dV":["C"],"cN":[]},"DR":{"dD":["C","iR"],"C":[],"af":["C","iR"],"t":[],"an":[],"af.1":"iR","dD.1":"iR","af.0":"C"},"Pm":{"aj":[]},"DS":{"C":[],"aO":["C"],"t":[],"an":[]},"ox":{"aj":[]},"rD":{"C":[],"af":["C","j3"],"t":[],"an":[],"af.1":"j3","af.0":"C"},"a4j":{"C":[],"t":[],"an":[]},"K7":{"ox":[],"aj":[]},"GT":{"ox":[],"aj":[]},"xI":{"ox":[],"aj":[]},"DU":{"C":[],"t":[],"an":[]},"hs":{"fE":[],"dV":["C"],"cN":[]},"DW":{"dD":["C","hs"],"C":[],"af":["C","hs"],"t":[],"an":[],"af.1":"hs","dD.1":"hs","af.0":"C"},"DY":{"C":[],"t":[],"an":[]},"fo":{"ez":[]},"uS":{"fo":[],"ez":[]},"Al":{"fo":[],"ez":[]},"mL":{"jK":[],"fo":[],"ez":[]},"Ua":{"jK":[],"fo":[],"ez":[]},"Ck":{"fo":[],"ez":[]},"zG":{"fo":[],"ez":[]},"Ut":{"ez":[]},"Uy":{"ez":[]},"jK":{"fo":[],"ez":[]},"Am":{"fo":[],"ez":[]},"BS":{"jK":[],"fo":[],"ez":[]},"zQ":{"fo":[],"ez":[]},"BB":{"fo":[],"ez":[]},"TN":{"aj":[]},"t":{"an":[]},"dV":{"cN":[]},"hd":{"e2":[]},"I_":{"e2":[]},"mh":{"dE":[]},"j3":{"dV":["C"],"cN":[]},"ld":{"eV":[],"aj":[]},"a7_":{"il":[]},"oy":{"C":[],"af":["C","j3"],"t":[],"an":[],"af.1":"j3","af.0":"C"},"II":{"cJ":[],"d7":[],"d6":[]},"UA":{"C":[],"t":[],"iQ":[],"an":[]},"oM":{"aj":[]},"DL":{"C":[],"aO":["C"],"t":[],"an":[]},"ms":{"C":[],"aO":["C"],"t":[],"an":[]},"Vi":{"C":[],"aO":["C"],"t":[],"an":[]},"E4":{"C":[],"aO":["C"],"t":[],"an":[]},"rC":{"C":[],"aO":["C"],"t":[],"an":[]},"Vb":{"C":[],"aO":["C"],"t":[],"an":[]},"DZ":{"C":[],"aO":["C"],"t":[],"an":[]},"Ve":{"C":[],"aO":["C"],"t":[],"an":[]},"UZ":{"C":[],"aO":["C"],"t":[],"an":[]},"V_":{"C":[],"aO":["C"],"t":[],"an":[]},"AL":{"aj":[]},"yr":{"C":[],"aO":["C"],"t":[],"an":[]},"V3":{"C":[],"aO":["C"],"t":[],"an":[]},"V2":{"C":[],"aO":["C"],"t":[],"an":[]},"V1":{"C":[],"aO":["C"],"t":[],"an":[]},"Jd":{"C":[],"aO":["C"],"t":[],"an":[]},"Vf":{"C":[],"aO":["C"],"t":[],"an":[]},"Vg":{"C":[],"aO":["C"],"t":[],"an":[]},"V4":{"C":[],"aO":["C"],"t":[],"an":[]},"Vs":{"C":[],"aO":["C"],"t":[],"an":[]},"DV":{"C":[],"aO":["C"],"t":[],"an":[]},"V7":{"C":[],"aO":["C"],"t":[],"an":[]},"Vh":{"C":[],"aO":["C"],"t":[],"an":[]},"E0":{"C":[],"aO":["C"],"t":[],"iQ":[],"an":[]},"Vk":{"C":[],"aO":["C"],"t":[],"an":[]},"DX":{"C":[],"aO":["C"],"t":[],"an":[]},"E1":{"C":[],"aO":["C"],"t":[],"an":[]},"E_":{"C":[],"aO":["C"],"t":[],"an":[]},"Vl":{"C":[],"aO":["C"],"t":[],"an":[]},"V0":{"C":[],"aO":["C"],"t":[],"an":[]},"Vc":{"C":[],"aO":["C"],"t":[],"an":[]},"V5":{"C":[],"aO":["C"],"t":[],"an":[]},"V8":{"C":[],"aO":["C"],"t":[],"an":[]},"Va":{"C":[],"aO":["C"],"t":[],"an":[]},"V6":{"C":[],"aO":["C"],"t":[],"an":[]},"DP":{"C":[],"aO":["C"],"t":[],"an":[]},"eV":{"aj":[]},"oz":{"C":[],"aO":["C"],"t":[],"an":[]},"E2":{"C":[],"aO":["C"],"t":[],"an":[]},"UY":{"C":[],"aO":["C"],"t":[],"an":[]},"E3":{"C":[],"aO":["C"],"t":[],"an":[]},"DT":{"C":[],"aO":["C"],"t":[],"an":[]},"mA":{"lA":[]},"wU":{"lV":[]},"mB":{"mC":[],"dV":["cO"],"cN":[]},"mE":{"oN":[],"dV":["cO"],"cN":[]},"cO":{"t":[],"an":[]},"WB":{"i6":["cO"]},"mC":{"cN":[]},"oN":{"cN":[]},"Vn":{"mt":[],"cO":[],"af":["C","fc"],"t":[],"an":[],"af.1":"fc","af.0":"C"},"Vo":{"mt":[],"cO":[],"af":["C","fc"],"t":[],"an":[]},"wT":{"fc":[],"mC":[],"dV":["C"],"jB":[],"cN":[]},"Vp":{"mt":[],"cO":[],"af":["C","fc"],"t":[],"an":[],"af.1":"fc","af.0":"C"},"Vq":{"mt":[],"cO":[],"af":["C","fc"],"t":[],"an":[],"af.1":"fc","af.0":"C"},"jB":{"cN":[]},"fc":{"mC":[],"dV":["C"],"jB":[],"cN":[]},"mt":{"cO":[],"af":["C","fc"],"t":[],"an":[]},"E5":{"cO":[],"aO":["cO"],"t":[],"an":[]},"Vr":{"cO":[],"aO":["cO"],"t":[],"an":[]},"fd":{"fE":[],"dV":["C"],"cN":[]},"E6":{"dD":["C","fd"],"C":[],"af":["C","fd"],"t":[],"an":[],"af.1":"fd","dD.1":"fd","af.0":"C"},"nl":{"aI":["hj?"],"ay":["hj?"],"ay.T":"hj?","aI.T":"hj?"},"rF":{"aO":["C"],"t":[],"an":[]},"wA":{"jb":["1"],"C":[],"af":["cO","1"],"DM":[],"t":[],"an":[]},"E8":{"jb":["mE"],"C":[],"af":["cO","mE"],"DM":[],"t":[],"an":[],"af.1":"mE","jb.0":"mE","af.0":"cO"},"Vm":{"jb":["mB"],"C":[],"af":["cO","mB"],"DM":[],"t":[],"an":[],"af.1":"mB","jb.0":"mB","af.0":"cO"},"fS":{"aj":[]},"l3":{"fE":[],"dV":["C"],"cN":[]},"Ea":{"dD":["C","l3"],"C":[],"af":["C","l3"],"t":[],"an":[],"af.1":"l3","dD.1":"l3","af.0":"C"},"tj":{"a6":["~"]},"FS":{"bx":[]},"mW":{"cg":["mW"]},"k9":{"cg":["k9"]},"n9":{"cg":["n9"]},"wN":{"cg":["wN"]},"a5f":{"e7":[]},"EQ":{"aj":[]},"ra":{"cg":["wN"]},"tu":{"a9L":[]},"m1":{"iM":[]},"qJ":{"iM":[]},"vO":{"iM":[]},"wh":{"bx":[]},"CP":{"bx":[]},"a0D":{"dK":[]},"a5T":{"CQ":[]},"oO":{"dK":[]},"ot":{"mq":[]},"wv":{"mq":[]},"Eg":{"aj":[]},"uE":{"hG":[]},"vQ":{"hG":[]},"oh":{"hG":[]},"q8":{"hG":[]},"Xi":{"oR":[]},"Xh":{"oR":[]},"Xj":{"oR":[]},"xc":{"oR":[]},"Q9":{"td":[]},"a36":{"FI":[]},"QV":{"fq":[]},"QW":{"fq":[]},"QZ":{"fq":[]},"R0":{"fq":[]},"QY":{"fq":[]},"R_":{"fq":[]},"R1":{"fq":[]},"QX":{"fq":[]},"tG":{"ri":[]},"Rd":{"aC":[],"e":[]},"US":{"b6":[],"as":[],"e":[]},"E9":{"C":[],"aO":["C"],"t":[],"an":[]},"lm":{"Y":[],"e":[]},"GB":{"b9":[],"aU":[],"e":[]},"qk":{"Y":[],"e":[]},"aO1":{"ba":[]},"b22":{"ba":[]},"b21":{"ba":[]},"uk":{"ba":[]},"uA":{"ba":[]},"hq":{"ba":[]},"mn":{"ba":[]},"cV":{"bk":["1"]},"cM":{"bk":["1"],"bk.T":"1"},"GC":{"X":["lm"]},"HI":{"X":["qk"]},"XR":{"bk":["aO1"],"bk.T":"aO1"},"B_":{"bk":["ba"],"bk.T":"ba"},"PI":{"bk":["hq"]},"UJ":{"cV":["mn"],"bk":["mn"],"bk.T":"mn","cV.T":"mn"},"IC":{"cV":["1"],"yk":["1"],"bk":["1"],"bk.T":"1","cV.T":"1"},"ID":{"cV":["1"],"yk":["1"],"bk":["1"],"bk.T":"1","cV.T":"1"},"H4":{"bk":["1"],"bk.T":"1"},"zx":{"Y":[],"e":[]},"a_3":{"X":["zx"]},"a_2":{"b6":[],"as":[],"e":[]},"zy":{"Y":[],"e":[]},"GE":{"X":["zy"]},"zF":{"b6":[],"as":[],"e":[]},"Gn":{"Y":[],"e":[]},"KB":{"X":["Gn"],"cR":[]},"M6":{"cR":[]},"vt":{"Y":[],"e":[]},"HO":{"X":["vt<1>"]},"ut":{"Y":[],"e":[]},"GI":{"X":["ut"]},"Cd":{"aj":[]},"a2O":{"aC":[],"e":[]},"iH":{"b9":[],"aU":[],"e":[]},"uR":{"b6":[],"as":[],"e":[]},"uQ":{"b6":[],"as":[],"e":[]},"mK":{"b6":[],"as":[],"e":[]},"uZ":{"b6":[],"as":[],"e":[]},"f4":{"b6":[],"as":[],"e":[]},"fY":{"b6":[],"as":[],"e":[]},"Cj":{"eA":["iR"],"aU":[],"e":[],"eA.T":"iR"},"cL":{"b6":[],"as":[],"e":[]},"rt":{"eA":["fd"],"aU":[],"e":[],"eA.T":"fd"},"vo":{"fa":[],"as":[],"e":[]},"uX":{"fa":[],"as":[],"e":[]},"b1J":{"b9":[],"aU":[],"e":[]},"kC":{"b6":[],"as":[],"e":[]},"oH":{"b6":[],"as":[],"e":[]},"t6":{"Y":[],"e":[]},"a6O":{"hv":[],"bp":[],"Q":[]},"a6P":{"b9":[],"aU":[],"e":[]},"U8":{"b6":[],"as":[],"e":[]},"Mp":{"b6":[],"as":[],"e":[]},"AN":{"b6":[],"as":[],"e":[]},"N9":{"b6":[],"as":[],"e":[]},"Ur":{"b6":[],"as":[],"e":[]},"Us":{"b6":[],"as":[],"e":[]},"Nm":{"b6":[],"as":[],"e":[]},"Qa":{"b6":[],"as":[],"e":[]},"Qm":{"b6":[],"as":[],"e":[]},"aT":{"b6":[],"as":[],"e":[]},"lC":{"b6":[],"as":[],"e":[]},"AM":{"fa":[],"as":[],"e":[]},"dU":{"b6":[],"as":[],"e":[]},"RE":{"b6":[],"as":[],"e":[]},"Dc":{"b6":[],"as":[],"e":[]},"a2S":{"b8":[],"bp":[],"Q":[]},"Rj":{"b6":[],"as":[],"e":[]},"WE":{"b6":[],"as":[],"e":[]},"a5d":{"b6":[],"as":[],"e":[]},"WV":{"fa":[],"as":[],"e":[]},"UB":{"aC":[],"e":[]},"wC":{"fa":[],"as":[],"e":[]},"h0":{"eA":["hs"],"aU":[],"e":[],"eA.T":"hs"},"nE":{"eA":["hs"],"aU":[],"e":[],"eA.T":"hs"},"ZJ":{"fa":[],"as":[],"e":[]},"VD":{"fa":[],"as":[],"e":[]},"UN":{"as":[],"e":[]},"RK":{"b6":[],"as":[],"e":[]},"CR":{"b6":[],"as":[],"e":[]},"iW":{"b6":[],"as":[],"e":[]},"LU":{"b6":[],"as":[],"e":[]},"TM":{"b6":[],"as":[],"e":[]},"TL":{"b6":[],"as":[],"e":[]},"My":{"b6":[],"as":[],"e":[]},"lK":{"b6":[],"as":[],"e":[]},"BU":{"b6":[],"as":[],"e":[]},"jC":{"aC":[],"e":[]},"eJ":{"aC":[],"e":[]},"a5F":{"X":["t6"]},"Nk":{"b6":[],"as":[],"e":[]},"J_":{"C":[],"aO":["C"],"t":[],"an":[]},"Ek":{"e":[]},"Ei":{"bp":[],"Q":[]},"Y_":{"kT":[],"an":[]},"Pr":{"b6":[],"as":[],"e":[]},"Nr":{"aC":[],"e":[]},"a0w":{"aj":[]},"nA":{"cH":[],"b9":[],"aU":[],"e":[]},"a2P":{"aC":[],"e":[]},"Py":{"aC":[],"e":[]},"AZ":{"Y":[],"e":[]},"Hm":{"X":["AZ"]},"PL":{"aC":[],"e":[]},"nB":{"Y":[],"e":[]},"Hs":{"X":["nB"]},"vh":{"Y":[],"e":[]},"nD":{"X":["vh"],"cR":[]},"Jw":{"Y":[],"e":[]},"tR":{"mV":[],"ey":[]},"a_N":{"b6":[],"as":[],"e":[]},"a4g":{"C":[],"aO":["C"],"t":[],"an":[]},"j2":{"cy":["d_"],"aj":[]},"Ht":{"fa":[],"as":[],"e":[]},"a4Z":{"X":["Jw"],"aTJ":[]},"a_K":{"hG":[]},"mY":{"cV":["1"],"bk":["1"],"bk.T":"1","cV.T":"1"},"Kr":{"cV":["1"],"bk":["1"],"bk.T":"1","cV.T":"1"},"Ks":{"cV":["1"],"bk":["1"],"bk.T":"1","cV.T":"1"},"Ky":{"cM":["1"],"bk":["1"],"bk.T":"1"},"a56":{"cV":["my"],"bk":["my"],"bk.T":"my","cV.T":"my"},"a03":{"cV":["kn"],"bk":["kn"],"bk.T":"kn","cV.T":"kn"},"a33":{"cV":["mf"],"bk":["mf"],"bk.T":"mf","cV.T":"mf"},"a77":{"cy":["uU"],"aj":[],"cR":[]},"a1_":{"cV":["kt"],"bk":["kt"],"bk.T":"kt","cV.T":"kt"},"a10":{"cV":["ku"],"bk":["ku"],"bk.T":"ku","cV.T":"ku"},"dg":{"aj":[]},"lR":{"dg":[],"aj":[]},"a_d":{"cR":[]},"By":{"aj":[]},"qh":{"Y":[],"e":[]},"HG":{"kF":["dg"],"b9":[],"aU":[],"e":[],"kF.T":"dg"},"xU":{"X":["qh"]},"Bz":{"Y":[],"e":[]},"a1s":{"Y":[],"e":[]},"a1r":{"X":["qh"]},"BA":{"Y":[],"e":[]},"aNB":{"ba":[]},"kJ":{"ba":[]},"kP":{"ba":[]},"hY":{"ba":[]},"HH":{"dg":[],"aj":[]},"a1t":{"X":["BA"]},"Vw":{"bk":["aNB"],"bk.T":"aNB"},"TX":{"bk":["kJ"],"bk.T":"kJ"},"UF":{"bk":["kP"],"bk.T":"kP"},"AY":{"bk":["hY"],"bk.T":"hY"},"qp":{"Y":[],"e":[]},"BF":{"X":["qp"]},"HL":{"b9":[],"aU":[],"e":[]},"lS":{"Y":[],"e":[]},"i3":{"X":["lS<1>"]},"jy":{"fu":[]},"bF":{"jy":["1"],"fu":[]},"Y":{"e":[]},"b6":{"as":[],"e":[]},"bp":{"Q":[]},"j1":{"bp":[],"Q":[]},"oj":{"bp":[],"Q":[]},"hv":{"bp":[],"Q":[]},"qu":{"jy":["1"],"fu":[]},"aC":{"e":[]},"aU":{"e":[]},"eA":{"aU":[],"e":[]},"b9":{"aU":[],"e":[]},"as":{"e":[]},"RC":{"as":[],"e":[]},"fa":{"as":[],"e":[]},"Q2":{"as":[],"e":[]},"Aq":{"bp":[],"Q":[]},"WW":{"bp":[],"Q":[]},"Dx":{"bp":[],"Q":[]},"b8":{"bp":[],"Q":[]},"RB":{"b8":[],"bp":[],"Q":[]},"EZ":{"b8":[],"bp":[],"Q":[]},"ic":{"b8":[],"bp":[],"Q":[]},"Vt":{"b8":[],"bp":[],"Q":[]},"a2N":{"bp":[],"Q":[]},"a2Q":{"e":[]},"jO":{"Y":[],"e":[]},"wu":{"X":["jO"]},"cz":{"qt":["1"]},"Qt":{"aC":[],"e":[]},"a1A":{"b6":[],"as":[],"e":[]},"qw":{"Y":[],"e":[]},"y1":{"X":["qw"]},"BN":{"r3":[]},"cr":{"aC":[],"e":[]},"qB":{"cH":[],"b9":[],"aU":[],"e":[]},"qC":{"Y":[],"e":[]},"HY":{"X":["qC"],"cR":[]},"pN":{"aI":["ad"],"ay":["ad"],"ay.T":"ad","aI.T":"ad"},"lE":{"aI":["iF"],"ay":["iF"],"ay.T":"iF","aI.T":"iF"},"lH":{"aI":["de"],"ay":["de"],"ay.T":"de","aI.T":"de"},"pL":{"aI":["cU?"],"ay":["cU?"],"ay.T":"cU?","aI.T":"cU?"},"qY":{"aI":["aN"],"ay":["aN"],"ay.T":"aN","aI.T":"aN"},"tg":{"aI":["p"],"ay":["p"],"ay.T":"p","aI.T":"p"},"zq":{"Y":[],"e":[]},"zu":{"Y":[],"e":[]},"zw":{"Y":[],"e":[]},"zt":{"Y":[],"e":[]},"zr":{"Y":[],"e":[]},"zv":{"Y":[],"e":[]},"B9":{"aI":["ap"],"ay":["ap"],"ay.T":"ap","aI.T":"ap"},"Rf":{"Y":[],"e":[]},"vG":{"X":["1"]},"un":{"X":["1"]},"ZX":{"X":["zq"]},"a__":{"X":["zu"]},"a_1":{"X":["zw"]},"ZZ":{"X":["zt"]},"ZY":{"X":["zr"]},"a_0":{"X":["zv"]},"iI":{"b9":[],"aU":[],"e":[]},"BW":{"hv":[],"bp":[],"Q":[]},"kF":{"b9":[],"aU":[],"e":[]},"y4":{"hv":[],"bp":[],"Q":[]},"cH":{"b9":[],"aU":[],"e":[]},"p1":{"aC":[],"e":[]},"C1":{"Y":[],"e":[]},"I8":{"X":["C1"]},"a23":{"aC":[],"e":[]},"Xw":{"cy":["aN"],"aj":[]},"ix":{"as":[],"e":[]},"At":{"ix":["1"],"as":[],"e":[]},"y7":{"b8":[],"bp":[],"Q":[]},"RA":{"ix":["ad"],"as":[],"e":[],"ix.0":"ad"},"J8":{"eo":["ad","C"],"C":[],"aO":["C"],"t":[],"an":[],"eo.0":"ad"},"Ie":{"b9":[],"aU":[],"e":[]},"qR":{"Y":[],"e":[]},"vU":{"aj":[],"cR":[]},"a7d":{"em":["aa"],"em.T":"aa"},"PA":{"aa":[]},"a2j":{"X":["qR"]},"aSI":{"b9":[],"aU":[],"e":[]},"UQ":{"aC":[],"e":[]},"a2L":{"aj":[]},"a2n":{"b6":[],"as":[],"e":[]},"a4o":{"C":[],"aO":["C"],"t":[],"an":[]},"jG":{"iI":["dr"],"b9":[],"aU":[],"e":[],"iI.T":"dr"},"Il":{"Y":[],"e":[]},"a2w":{"X":["Il"],"cR":[]},"a70":{"il":[]},"Fq":{"il":[]},"w2":{"aC":[],"e":[]},"xC":{"cJ":[],"d7":[],"d6":[]},"M1":{"Y":[],"e":[]},"a_9":{"qt":["xC"]},"a2A":{"aC":[],"e":[]},"TV":{"aC":[],"e":[]},"aT9":{"jR":[]},"qx":{"b9":[],"aU":[],"e":[]},"D7":{"Y":[],"e":[]},"jJ":{"X":["D7"]},"yg":{"pf":[]},"yf":{"pf":[]},"Iv":{"pf":[]},"Iw":{"pf":[]},"a1F":{"I":["ir"],"aj":[],"I.E":"ir"},"a1G":{"dM":["ar<k?,T<M>>?"],"aj":[]},"dC":{"aU":[],"e":[]},"Iz":{"bp":[],"Q":[]},"l9":{"fE":[],"dV":["C"],"cN":[]},"Ud":{"fa":[],"as":[],"e":[]},"yu":{"dD":["C","l9"],"C":[],"af":["C","l9"],"t":[],"an":[],"af.1":"l9","dD.1":"l9","af.0":"C"},"of":{"aj":[]},"n3":{"Y":[],"e":[]},"IB":{"X":["n3"]},"wa":{"Y":[],"e":[]},"Dg":{"X":["wa"]},"tP":{"C":[],"af":["C","fd"],"t":[],"an":[],"af.1":"fd","af.0":"C"},"Df":{"Y":[],"e":[]},"pg":{"iO":["pg"],"iO.E":"pg"},"tQ":{"b9":[],"aU":[],"e":[]},"lb":{"C":[],"aO":["C"],"t":[],"an":[],"iO":["lb"],"iO.E":"lb"},"Ja":{"C":[],"aO":["C"],"t":[],"an":[]},"yi":{"ix":["+(H,aN,H)"],"as":[],"e":[],"ix.0":"+(H,aN,H)"},"Kd":{"fa":[],"as":[],"e":[]},"a6j":{"b8":[],"bp":[],"Q":[]},"yK":{"fd":[],"fE":[],"dV":["C"],"cN":[]},"a2Y":{"X":["Df"]},"yj":{"as":[],"e":[]},"a2X":{"b8":[],"bp":[],"Q":[]},"a0C":{"b6":[],"as":[],"e":[]},"J9":{"eo":["+(H,aN,H)","C"],"C":[],"aO":["C"],"t":[],"an":[],"eo.0":"+(H,aN,H)"},"BK":{"Y":[],"e":[]},"Fi":{"Y":[],"e":[]},"og":{"hI":[]},"HS":{"X":["BK"]},"HR":{"aj":[]},"a1C":{"aj":[]},"K2":{"X":["Fi"]},"a5I":{"aj":[]},"aTb":{"cQ":["1"],"fu":[]},"wd":{"aC":[],"e":[]},"Dj":{"Y":[],"e":[]},"Uh":{"aj":[]},"ph":{"kU":[],"wc":[],"fS":[],"aj":[]},"a30":{"X":["Dj"]},"Dh":{"eQ":["1"],"eZ":["1"],"d2":["1"]},"Dp":{"Y":[],"e":[]},"wi":{"as":[],"e":[]},"QN":{"aC":[],"e":[]},"IJ":{"X":["Dp"]},"a38":{"C":[],"aO":["C"],"t":[],"an":[]},"a37":{"b6":[],"as":[],"e":[]},"wk":{"Y":[],"e":[]},"IL":{"X":["wk<1>"],"aNv":["1"]},"wn":{"b9":[],"aU":[],"e":[]},"DF":{"Y":[],"e":[]},"mr":{"X":["DF"]},"a18":{"b6":[],"as":[],"e":[]},"a4l":{"C":[],"aO":["C"],"t":[],"iQ":[],"an":[]},"oA":{"Y":[],"e":[]},"tp":{"b9":[],"aU":[],"e":[]},"Ej":{"Y":[],"e":[]},"dM":{"aj":[]},"a4J":{"X":["oA"]},"Jp":{"X":["Ej"]},"b5":{"dM":["1"],"aj":[]},"iq":{"b5":["1"],"dM":["1"],"aj":[]},"Jn":{"iq":["1"],"b5":["1"],"dM":["1"],"aj":[]},"Ef":{"iq":["1"],"b5":["1"],"dM":["1"],"aj":[],"b5.T":"1","iq.T":"1"},"rH":{"iq":["N"],"b5":["N"],"dM":["N"],"aj":[],"b5.T":"N","iq.T":"N"},"VB":{"iq":["k?"],"b5":["k?"],"dM":["k?"],"aj":[],"b5.T":"k?","iq.T":"k?"},"VA":{"b5":["bZ?"],"dM":["bZ?"],"aj":[],"b5.T":"bZ?"},"VH":{"Y":[],"e":[]},"bdJ":{"bgq":["a6<N>"]},"yy":{"X":["VH<1>"]},"a4S":{"b9":[],"aU":[],"e":[]},"a4G":{"b5":["oC?"],"dM":["oC?"],"aj":[],"b5.T":"oC?"},"Io":{"iI":["pd"],"b9":[],"aU":[],"e":[],"iI.T":"pd"},"yd":{"Y":[],"e":[]},"pe":{"X":["yd<1>"]},"wb":{"d2":["1"]},"eZ":{"d2":["1"]},"a0M":{"bk":["hq"],"bk.T":"hq"},"eQ":{"eZ":["1"],"d2":["1"]},"Du":{"eQ":["1"],"eZ":["1"],"d2":["1"]},"ws":{"eQ":["1"],"eZ":["1"],"d2":["1"]},"VJ":{"aC":[],"e":[]},"wH":{"f8":["1"],"f8.T":"1"},"Ew":{"b9":[],"aU":[],"e":[]},"rL":{"aj":[]},"yB":{"Y":[],"e":[]},"yz":{"cQ":["fu"],"fu":[],"cQ.T":"fu"},"JJ":{"X":["yB"]},"h2":{"i9":[],"hI":[]},"rQ":{"h2":[],"i9":[],"hI":[]},"jV":{"h2":[],"i9":[],"hI":[]},"jL":{"h2":[],"i9":[],"hI":[]},"iY":{"h2":[],"i9":[],"hI":[]},"XI":{"h2":[],"i9":[],"hI":[]},"Jy":{"b9":[],"aU":[],"e":[]},"n2":{"iO":["n2"],"iO.E":"n2"},"Ez":{"Y":[],"e":[]},"W_":{"X":["Ez"]},"kU":{"fS":[],"aj":[]},"rM":{"hI":[]},"rP":{"kU":[],"fS":[],"aj":[]},"W0":{"aC":[],"e":[]},"MF":{"aC":[],"e":[]},"Cp":{"aC":[],"e":[]},"BM":{"aC":[],"e":[]},"EA":{"Y":[],"e":[]},"JA":{"b9":[],"aU":[],"e":[]},"rR":{"X":["EA"]},"JC":{"Y":[],"e":[]},"a51":{"X":["JC"]},"JB":{"aj":[]},"a50":{"b6":[],"as":[],"e":[]},"Jh":{"C":[],"aO":["C"],"t":[],"an":[]},"a4H":{"b5":["R?"],"dM":["R?"],"aj":[],"b5.T":"R?"},"eU":{"ba":[]},"Ev":{"cV":["eU"],"bk":["eU"],"bk.T":"eU","cV.T":"eU"},"ww":{"Y":[],"e":[]},"lf":{"hF":[],"cJ":[],"d7":[],"d6":[]},"pq":{"im":[],"hZ":[],"cJ":[],"d7":[],"d6":[]},"p7":{"i7":[],"hZ":[],"cJ":[],"d7":[],"d6":[]},"wJ":{"aj":[]},"kQ":{"X":["1"]},"b5Q":{"Y":[],"e":[]},"x_":{"aj":[]},"w3":{"aj":[]},"rS":{"Y":[],"e":[]},"wL":{"b9":[],"aU":[],"e":[]},"a5a":{"eV":[],"X":["rS"],"aj":[]},"W4":{"aj":[]},"EU":{"Y":[],"e":[]},"a5l":{"X":["EU"]},"a5m":{"iI":["M"],"b9":[],"aU":[],"e":[],"iI.T":"M"},"al":{"wR":[]},"t0":{"Y":[],"e":[]},"EV":{"Y":[],"e":[]},"wS":{"aj":[]},"JP":{"X":["t0"]},"EW":{"aj":[]},"JO":{"X":["EV"]},"a5p":{"b9":[],"aU":[],"e":[]},"yD":{"b6":[],"as":[],"e":[]},"Wl":{"aC":[],"e":[]},"a5u":{"b8":[],"bp":[],"Q":[]},"Jj":{"C":[],"aO":["C"],"DM":[],"t":[],"an":[]},"Wo":{"i9":[]},"Wp":{"b6":[],"as":[],"e":[]},"a4t":{"C":[],"aO":["C"],"t":[],"an":[]},"WF":{"as":[],"e":[]},"mD":{"as":[],"e":[]},"WD":{"mD":[],"as":[],"e":[]},"Wz":{"mD":[],"as":[],"e":[]},"wV":{"b8":[],"bp":[],"Q":[]},"Cc":{"eA":["jB"],"aU":[],"e":[],"eA.T":"jB"},"Wx":{"aC":[],"e":[]},"a5w":{"mD":[],"as":[],"e":[]},"a5x":{"b6":[],"as":[],"e":[]},"a4v":{"cO":[],"aO":["cO"],"t":[],"an":[]},"F7":{"fy":["1","2"],"as":[],"e":[]},"F8":{"b8":[],"bp":[],"Q":[]},"F9":{"aj":[]},"WL":{"b6":[],"as":[],"e":[]},"yv":{"C":[],"aO":["C"],"t":[],"an":[]},"WK":{"aj":[]},"Hk":{"aj":[]},"WS":{"aC":[],"e":[]},"X1":{"aC":[],"e":[]},"Fo":{"Y":[],"e":[]},"a5R":{"X":["Fo"]},"QT":{"h1":[]},"QU":{"h1":[]},"R4":{"h1":[]},"R6":{"h1":[]},"R3":{"h1":[]},"R5":{"h1":[]},"R7":{"h1":[]},"R2":{"h1":[]},"E7":{"C":[],"aO":["C"],"t":[],"an":[]},"wz":{"C":[],"aO":["C"],"t":[],"an":[]},"xe":{"b6":[],"as":[],"e":[]},"Xc":{"b6":[],"as":[],"e":[]},"a0W":{"d6":[]},"Fy":{"b6":[],"as":[],"e":[]},"v9":{"cH":[],"b9":[],"aU":[],"e":[]},"b1M":{"cH":[],"b9":[],"aU":[],"e":[]},"aX":{"aC":[],"e":[]},"JG":{"Y":[],"e":[]},"a2R":{"aC":[],"e":[]},"a59":{"X":["JG"]},"a4N":{"aC":[],"e":[]},"a58":{"aj":[]},"B0":{"ba":[]},"q3":{"ba":[]},"q5":{"ba":[]},"q4":{"ba":[]},"AX":{"ba":[]},"lL":{"ba":[]},"lO":{"ba":[]},"qd":{"ba":[]},"qa":{"ba":[]},"qb":{"ba":[]},"i2":{"ba":[]},"nF":{"ba":[]},"lP":{"ba":[]},"lN":{"ba":[]},"qc":{"ba":[]},"lM":{"ba":[]},"mx":{"ba":[]},"aej":{"ba":[]},"my":{"ba":[]},"kn":{"ba":[]},"mf":{"ba":[]},"ov":{"ba":[]},"jQ":{"ba":[]},"oW":{"ba":[]},"j6":{"ba":[]},"oU":{"ba":[]},"kt":{"ba":[]},"ku":{"ba":[]},"PH":{"ba":[]},"fR":{"fE":[],"dV":["C"],"cN":[]},"pj":{"Y":[],"e":[]},"JH":{"Y":[],"e":[]},"FM":{"Y":[],"e":[]},"JK":{"X":["pj"]},"JI":{"X":["JH"]},"Ka":{"X":["FM"]},"Ao":{"cy":["uU"],"aj":[],"cR":[]},"FT":{"Y":[],"e":[]},"Hw":{"b9":[],"aU":[],"e":[]},"a6l":{"X":["FT"]},"a_O":{"aj":[]},"FY":{"Y":[],"e":[]},"a6n":{"X":["FY"]},"zA":{"Y":[],"e":[]},"dz":{"b6":[],"as":[],"e":[]},"GD":{"X":["zA"]},"Ww":{"Y":[],"e":[]},"CJ":{"Y":[],"e":[]},"VL":{"Y":[],"e":[]},"VG":{"Y":[],"e":[]},"Wq":{"Y":[],"e":[]},"Ps":{"Y":[],"e":[]},"o2":{"Y":[],"e":[]},"M0":{"Y":[],"e":[]},"xm":{"Y":[],"e":[]},"xn":{"X":["xm<1>"]},"Gc":{"cy":["xo"],"aj":[]},"tq":{"Y":[],"e":[]},"yP":{"X":["tq<1>"]},"Gg":{"Y":[],"e":[]},"tX":{"b9":[],"aU":[],"e":[]},"IH":{"b9":[],"aU":[],"e":[]},"Kx":{"X":["Gg"],"cR":[]},"UR":{"aC":[],"e":[]},"IR":{"as":[],"e":[]},"a3V":{"b8":[],"bp":[],"Q":[]},"Hl":{"jy":["1"],"fu":[]},"tr":{"fa":[],"as":[],"e":[]},"a75":{"b8":[],"bp":[],"Q":[]},"Wk":{"fa":[],"as":[],"e":[]},"b8P":{"b9":[],"aU":[],"e":[]},"mV":{"ey":[]},"a78":{"eA":["j3"],"aU":[],"e":[],"eA.T":"j3"},"a_j":{"b6":[],"as":[],"e":[]},"Jg":{"C":[],"aO":["C"],"t":[],"an":[]},"co":{"XX":[]},"a_a":{"XX":[]},"XU":{"n":[],"bJ":["n"]},"yQ":{"n":[],"bJ":["n"]},"XV":{"dK":[],"bJ":["dK"]},"Kz":{"dK":[],"bJ":["dK"]},"XT":{"b0":[],"bJ":["b0?"]},"a2c":{"bJ":["b0?"]},"je":{"b0":[],"bJ":["b0?"]},"XW":{"p":[],"bJ":["p"]},"a7b":{"p":[],"bJ":["p"]},"Ia":{"bJ":["1?"]},"bv":{"bJ":["1"]},"fA":{"bJ":["1"]},"aZ":{"bJ":["1"]},"XY":{"cy":["bu<co>"],"aj":[]},"Gw":{"Y":[],"e":[]},"a7f":{"X":["Gw"]},"Qw":{"a9":[]},"a1B":{"em":["a9"],"em.T":"a9"},"Nx":{"a9":[]},"Ny":{"a9":[]},"Nz":{"a9":[]},"NA":{"a9":[]},"NB":{"a9":[]},"NC":{"a9":[]},"ND":{"a9":[]},"NE":{"a9":[]},"NF":{"a9":[]},"NG":{"a9":[]},"NH":{"a9":[]},"NI":{"a9":[]},"NJ":{"a9":[]},"NK":{"a9":[]},"Ay":{"a9":[]},"NL":{"a9":[]},"NM":{"a9":[]},"Az":{"a9":[]},"NN":{"a9":[]},"NO":{"a9":[]},"NP":{"a9":[]},"NQ":{"a9":[]},"NR":{"a9":[]},"NS":{"a9":[]},"NT":{"a9":[]},"NU":{"a9":[]},"AA":{"a9":[]},"NV":{"a9":[]},"NW":{"a9":[]},"NX":{"a9":[]},"NY":{"a9":[]},"NZ":{"a9":[]},"O_":{"a9":[]},"O0":{"a9":[]},"O1":{"a9":[]},"O2":{"a9":[]},"O3":{"a9":[]},"O4":{"a9":[]},"O5":{"a9":[]},"O6":{"a9":[]},"O7":{"a9":[]},"O8":{"a9":[]},"O9":{"a9":[]},"Oa":{"a9":[]},"Ob":{"a9":[]},"Oc":{"a9":[]},"Od":{"a9":[]},"Oe":{"a9":[]},"Of":{"a9":[]},"Og":{"a9":[]},"Oh":{"a9":[]},"Oi":{"a9":[]},"AB":{"a9":[]},"Oj":{"a9":[]},"Ok":{"a9":[]},"Ol":{"a9":[]},"Om":{"a9":[]},"On":{"a9":[]},"Oo":{"a9":[]},"Op":{"a9":[]},"Oq":{"a9":[]},"Or":{"a9":[]},"Os":{"a9":[]},"Ot":{"a9":[]},"Ou":{"a9":[]},"Ov":{"a9":[]},"Ow":{"a9":[]},"Ox":{"a9":[]},"Oy":{"a9":[]},"Oz":{"a9":[]},"OA":{"a9":[]},"OB":{"a9":[]},"OC":{"a9":[]},"OD":{"a9":[]},"OE":{"a9":[]},"OF":{"a9":[]},"OG":{"a9":[]},"OH":{"a9":[]},"OI":{"a9":[]},"OJ":{"a9":[]},"OK":{"a9":[]},"OL":{"a9":[]},"OM":{"a9":[]},"ON":{"a9":[]},"OO":{"a9":[]},"OP":{"a9":[]},"OQ":{"a9":[]},"OR":{"a9":[]},"OS":{"a9":[]},"AC":{"a9":[]},"OT":{"a9":[]},"OU":{"a9":[]},"OV":{"a9":[]},"OW":{"a9":[]},"OX":{"a9":[]},"OY":{"a9":[]},"OZ":{"a9":[]},"AD":{"a9":[]},"P_":{"a9":[]},"P0":{"a9":[]},"P1":{"a9":[]},"P2":{"a9":[]},"P3":{"a9":[]},"P4":{"a9":[]},"P5":{"a9":[]},"P6":{"a9":[]},"P7":{"a9":[]},"P8":{"a9":[]},"P9":{"a9":[]},"Pa":{"a9":[]},"Pb":{"a9":[]},"Pc":{"a9":[]},"AE":{"a9":[]},"Pd":{"a9":[]},"AF":{"a9":[]},"Pe":{"a9":[]},"Pf":{"a9":[]},"Pg":{"a9":[]},"RT":{"a7":[]},"RU":{"a7":[]},"RV":{"a7":[]},"RW":{"a7":[]},"RX":{"a7":[]},"RY":{"a7":[]},"RZ":{"a7":[]},"S_":{"a7":[]},"S0":{"a7":[]},"S1":{"a7":[]},"S2":{"a7":[]},"S3":{"a7":[]},"S4":{"a7":[]},"S5":{"a7":[]},"Cz":{"a7":[]},"S6":{"a7":[]},"S7":{"a7":[]},"CA":{"a7":[]},"S8":{"a7":[]},"S9":{"a7":[]},"Sa":{"a7":[]},"Sb":{"a7":[]},"Sc":{"a7":[]},"Sd":{"a7":[]},"Se":{"a7":[]},"Sf":{"a7":[]},"CB":{"a7":[]},"Sg":{"a7":[]},"Sh":{"a7":[]},"Si":{"a7":[]},"Sj":{"a7":[]},"Sk":{"a7":[]},"Sl":{"a7":[]},"Sm":{"a7":[]},"Sn":{"a7":[]},"So":{"a7":[]},"Sp":{"a7":[]},"Sq":{"a7":[]},"Sr":{"a7":[]},"Ss":{"a7":[]},"St":{"a7":[]},"Su":{"a7":[]},"Sv":{"a7":[]},"Sw":{"a7":[]},"Sx":{"a7":[]},"Sy":{"a7":[]},"Sz":{"a7":[]},"SA":{"a7":[]},"SB":{"a7":[]},"SC":{"a7":[]},"SD":{"a7":[]},"SE":{"a7":[]},"CC":{"a7":[]},"SF":{"a7":[]},"SG":{"a7":[]},"SH":{"a7":[]},"SI":{"a7":[]},"SJ":{"a7":[]},"SK":{"a7":[]},"SL":{"a7":[]},"SM":{"a7":[]},"SN":{"a7":[]},"SO":{"a7":[]},"SP":{"a7":[]},"SQ":{"a7":[]},"SR":{"a7":[]},"SS":{"a7":[]},"ST":{"a7":[]},"SU":{"a7":[]},"SV":{"a7":[]},"SW":{"a7":[]},"SX":{"a7":[]},"SY":{"a7":[]},"SZ":{"a7":[]},"T_":{"a7":[]},"T0":{"a7":[]},"T1":{"a7":[]},"T2":{"a7":[]},"T3":{"a7":[]},"T4":{"a7":[]},"T5":{"a7":[]},"T6":{"a7":[]},"T7":{"a7":[]},"T8":{"a7":[]},"T9":{"a7":[]},"Ta":{"a7":[]},"Tb":{"a7":[]},"Tc":{"a7":[]},"Td":{"a7":[]},"Te":{"a7":[]},"CD":{"a7":[]},"Tf":{"a7":[]},"Tg":{"a7":[]},"Th":{"a7":[]},"Ti":{"a7":[]},"Tj":{"a7":[]},"Tk":{"a7":[]},"Tl":{"a7":[]},"CE":{"a7":[]},"Tm":{"a7":[]},"Tn":{"a7":[]},"To":{"a7":[]},"Tp":{"a7":[]},"Tq":{"a7":[]},"Tr":{"a7":[]},"Ts":{"a7":[]},"Tt":{"a7":[]},"Tu":{"a7":[]},"Tv":{"a7":[]},"Tw":{"a7":[]},"Tx":{"a7":[]},"Ty":{"a7":[]},"Tz":{"a7":[]},"CF":{"a7":[]},"TA":{"a7":[]},"CG":{"a7":[]},"TB":{"a7":[]},"TC":{"a7":[]},"TD":{"a7":[]},"Y0":{"aa":[]},"Y1":{"aa":[]},"Y2":{"aa":[]},"Y3":{"aa":[]},"Y4":{"aa":[]},"Y5":{"aa":[]},"Y6":{"aa":[]},"Y7":{"aa":[]},"Y8":{"aa":[]},"Y9":{"aa":[]},"Ya":{"aa":[]},"Yb":{"aa":[]},"Yc":{"aa":[]},"Go":{"aa":[]},"Yd":{"aa":[]},"Ye":{"aa":[]},"Gp":{"aa":[]},"Yf":{"aa":[]},"Yg":{"aa":[]},"Yh":{"aa":[]},"Yi":{"aa":[]},"Yj":{"aa":[]},"Yk":{"aa":[]},"Yl":{"aa":[]},"Ym":{"aa":[]},"Gq":{"aa":[]},"Yn":{"aa":[]},"Yo":{"aa":[]},"Yp":{"aa":[]},"Yq":{"aa":[]},"Yr":{"aa":[]},"Ys":{"aa":[]},"Yt":{"aa":[]},"Yu":{"aa":[]},"Yv":{"aa":[]},"Yw":{"aa":[]},"Yx":{"aa":[]},"Yy":{"aa":[]},"Yz":{"aa":[]},"YA":{"aa":[]},"YB":{"aa":[]},"YC":{"aa":[]},"YD":{"aa":[]},"YE":{"aa":[]},"YF":{"aa":[]},"YG":{"aa":[]},"YH":{"aa":[]},"YI":{"aa":[]},"YJ":{"aa":[]},"YK":{"aa":[]},"YL":{"aa":[]},"Gr":{"aa":[]},"YM":{"aa":[]},"YN":{"aa":[]},"YO":{"aa":[]},"YP":{"aa":[]},"YQ":{"aa":[]},"YR":{"aa":[]},"YS":{"aa":[]},"YT":{"aa":[]},"YU":{"aa":[]},"YV":{"aa":[]},"YW":{"aa":[]},"YX":{"aa":[]},"YY":{"aa":[]},"YZ":{"aa":[]},"Z_":{"aa":[]},"Z0":{"aa":[]},"Z1":{"aa":[]},"Z2":{"aa":[]},"Z3":{"aa":[]},"Z4":{"aa":[]},"Z5":{"aa":[]},"Z6":{"aa":[]},"Z7":{"aa":[]},"Z8":{"aa":[]},"Z9":{"aa":[]},"Za":{"aa":[]},"Zb":{"aa":[]},"Zc":{"aa":[]},"Zd":{"aa":[]},"Ze":{"aa":[]},"Zf":{"aa":[]},"Zg":{"aa":[]},"Zh":{"aa":[]},"Zi":{"aa":[]},"Zj":{"aa":[]},"Zk":{"aa":[]},"Gs":{"aa":[]},"Zl":{"aa":[]},"Zm":{"aa":[]},"Zn":{"aa":[]},"Zo":{"aa":[]},"Zp":{"aa":[]},"Zq":{"aa":[]},"Zr":{"aa":[]},"Gt":{"aa":[]},"Zs":{"aa":[]},"Zt":{"aa":[]},"Zu":{"aa":[]},"Zv":{"aa":[]},"Zw":{"aa":[]},"Zx":{"aa":[]},"Zy":{"aa":[]},"Zz":{"aa":[]},"ZA":{"aa":[]},"ZB":{"aa":[]},"ZC":{"aa":[]},"ZD":{"aa":[]},"ZE":{"aa":[]},"Gu":{"aa":[]},"ZF":{"aa":[]},"Gv":{"aa":[]},"ZG":{"aa":[]},"ZH":{"aa":[]},"ZI":{"aa":[]},"Qx":{"a7":[]},"a2s":{"em":["a7"],"em.T":"a7"},"Qy":{"aa":[]},"a7e":{"em":["aa"],"em.T":"aa"},"BH":{"bx":[]},"Qq":{"bx":[]},"Qs":{"bx":[]},"Qr":{"bx":[]},"fl":{"bx":[]},"Mh":{"bx":[]},"Mi":{"bx":[]},"uq":{"bx":[]},"zN":{"bx":[]},"Mj":{"bx":[]},"Mk":{"bx":[]},"zO":{"bx":[]},"rG":{"bx":[]},"lt":{"dq":["T<o>"],"dq.T":"T<o>"},"nv":{"bx":[]},"LT":{"zm":[]},"X0":{"t7":[]},"A8":{"c2":["k","k","1"],"ar":["k","1"],"c2.K":"k","c2.V":"1","c2.C":"k"},"xM":{"l7":[]},"xO":{"l7":[]},"xN":{"l7":[]},"RN":{"bx":[]},"zn":{"Y":[],"e":[]},"GA":{"X":["zn"]},"qy":{"Y":[],"e":[]},"HX":{"X":["qy"]},"Xy":{"aC":[],"e":[]},"TO":{"aC":[],"e":[]},"qD":{"Y":[],"e":[]},"HZ":{"X":["qD"],"cR":[]},"ux":{"aC":[],"e":[]},"tm":{"Y":[],"e":[]},"tn":{"Y":[],"e":[]},"r_":{"aC":[],"e":[]},"nu":{"Y":[],"e":[]},"qe":{"Y":[],"e":[]},"r5":{"Y":[],"e":[]},"rd":{"Y":[],"e":[]},"q6":{"Y":[],"e":[]},"rf":{"aC":[],"e":[]},"me":{"Y":[],"e":[]},"Rs":{"aC":[],"e":[]},"W7":{"aC":[],"e":[]},"EK":{"aC":[],"e":[]},"MC":{"aC":[],"e":[]},"iB":{"aC":[],"e":[]},"zY":{"aC":[],"e":[]},"Kg":{"X":["tm"]},"Kh":{"X":["tn"]},"GU":{"X":["nu"]},"HC":{"X":["qe"]},"IA":{"X":["r5"]},"a32":{"X":["rd"]},"pM":{"aC":[],"e":[]},"a0H":{"X":["q6"]},"xx":{"aC":[],"e":[]},"a31":{"X":["me"]},"wD":{"aC":[],"e":[]},"jE":{"cg":["jE"]},"VM":{"ej":[]},"VN":{"ej":[]},"VO":{"ej":[]},"VP":{"ej":[]},"VQ":{"ej":[]},"VR":{"ej":[]},"VS":{"ej":[]},"VT":{"ej":[]},"VU":{"ej":[]},"Up":{"bx":[]},"bP":{"a6":["1"],"bP.T":"1","bP.R":"3","bP.S":"2"},"Dv":{"ru":["1"],"jP":["1","1","1"],"bP":["1","1","1"],"a6":["1"],"bP.T":"1","bP.R":"1","bP.S":"1"},"op":{"jP":["1","1","1"],"bP":["1","1","1"],"a6":["1"]},"UC":{"jP":["@","@","@"],"bP":["@","@","@"],"a6":["@"],"bP.T":"@","bP.R":"@","bP.S":"@"},"ru":{"jP":["1","1","1"],"bP":["1","1","1"],"a6":["1"],"bP.T":"1","bP.R":"1","bP.S":"1"},"jP":{"bP":["1","2","3"],"a6":["1"],"bP.T":"1","bP.R":"3","bP.S":"2"},"oo":{"bx":[]},"Q7":{"jX":[],"cg":["jX"]},"xT":{"mF":[],"cg":["WP"]},"jX":{"cg":["jX"]},"WO":{"jX":[],"cg":["jX"]},"WP":{"cg":["WP"]},"WQ":{"cg":["WP"]},"WR":{"bx":[]},"wX":{"eM":[],"bx":[]},"wY":{"cg":["WP"]},"mF":{"cg":["WP"]},"x0":{"bx":[]},"X2":{"eM":[],"bx":[]},"X8":{"op":["@"],"jP":["@","@","@"],"bP":["@","@","@"],"a6":["@"],"bP.T":"@","bP.R":"@","bP.S":"@","op.T":"@"},"X6":{"cR":[]},"p5":{"dq":["1"],"dq.T":"1"},"Hz":{"mG":["1"]},"Gk":{"bx":[]},"b3P":{"Y":[],"e":[]},"b2e":{"Y":[],"e":[]},"b2f":{"X":["b2e"]},"b8q":{"b9":[],"aU":[],"e":[]},"b7n":{"b9":[],"aU":[],"e":[]},"b3A":{"ri":[]}}'))
+var v={G:typeof self!="undefined"?self:globalThis,typeUniverse:{eC:new Map(),tR:{},eT:{},tPV:{},sEA:[]},mangledGlobalNames:{o:"int",R:"double",dy:"num",k:"String",N:"bool",bt:"Null",T:"List",M:"Object",ar:"Map",aL:"JSObject"},mangledNames:{},types:["~()","R(R)","~(aL)","R(ej)","tk(ej)","~(b1)","n(bu<co>)","~(iz)","a6<~>()","B7(ej)","~(o)","~(M?)","~(N)","~(md,i)","N(ns,i)","N(k)","bt()","~(bp)","~(t)","e(Q)","k(k)","bt(aL)","ff(ej)","~(vg)","~(bq)","bt(M,c6)","n?(bu<co>)","N(dg)","N(M?)","T<e7>()","bt(~)","~(dj?)","~(eV)","~(x8)","aI<R>(@)","N(bp)","bt(@)","~(k)","N(ky)","~(@)","~(dM<M?>,~())","~(i_)","N(h2)","R(C)","~(hr)","N(mb)","k()","o(o)","o(dg,dg)","q6(Q)","N(bI)","G(C,ad)","~(ea)","N(ar<k,@>)","~(~())","p(bu<co>)","~(on)","N(cK)","R(C,R)","~(Xu)","N(hv)","~(bZ)","N(ir)","e(Q,e?)","N(eV)","k(@)","~(mj)","N()","~(om)","N(o)","o()","hG()","bV(Q)","~(M,c6)","bJ<n?>?(eL?)","~(x9)","k(o)","o(t,t)","ev(@)","~(M,c6?)","aL(M?)","bJ<n?>?(bN?)","N(aH)","~(Fs)","k(a7)","e(Q)?(ui?)","~(r3)","bt(M)","a6<iX>(mR{body:M?,encoding:lI?,headers:ar<k,k>?})","i(i)","n(n)","~(qo)","a6<@>(jH)","~({curve:h_,descendant:t?,duration:b1,rect:u?})","~(ji)","@(@)","~(R)","o(cK,cK)","o(@,@)","a6<~>(jH)","eC(eC)","b0(bu<co>)","N(qk)","~(M[c6?])","a6<@>()","bu<0^>()<M?>","~(M?,M?)","N(ey)","lH(@)","~(fL)","N(fT)","~(k?)","N(M?,M?)","N(rM)","dz(Q,bH<R>,e?)","aL()","aN(R)","~(k,k)","~(hF)","bt(N)","R(bu<co>)","o(M?)","hF()","~(ur)","R()","me(Q)","nk(Q)","N(hw)","dK(bu<co>)","bJ<G?>?(bN?)","aL?(o)","~(hu,N)","a6<k?>()","R?(+(ad,oP))","bt(k)","hw()","aRw()","~(xv)","a6<~>(~)","T<aL>()","~(T<aL>,aL)","n?(n?)","k(M?)","R(tN)","R(R,R)","Ds?()","~(h2)","~(qs)","bJ<R?>?(bN?)","N(rY)","e(Q,bu<co>,e?)?(bN?)","e(Q,o)","0^?(0^?(eL?))<M?>","0^?(bJ<0^>?(eL?),bu<co>)<M?>","n?(eL?)","bJ<dp?>?(eL?)","k?(k)","u()","~(nJ)","e2(ea)","uG(T<ea>)","~(C?)","pr(Q,bH<R>,e?)","ps(Q,bH<R>,e?)","a6<N>()","k(R,R,k)","N(i6<an>)","f4(Q,R,e?)","a6<fr>()","~(vB)","a6<eK>(kE{getTargetSize:ta(o,o)?})","fr()","~(fI)","@(k)","~(aNI)","u(aN,u)","ad(C)","N(t)","~(ld)","+boundaryEnd,boundaryStart(ao,ao)(ao)","N(ns)","~(mA)","R({from!R,to!R})","~(i,C)","G(C)","~(T<nK>)","~(oI)","~(cK)","N(M,cK)","T<cK>(k9)","a6<dj?>(dj?)","~(e1)","ar<M?,M?>()","aL(o{params:M?})","N(oc)","kH(dg,iM)","a6<~>(@)","N(acv)","~([b1?])","ao(ao,N,hG)","@()","ey(ey)","~(k,@)","o(es,es)","N(i3<@>)","jF()","~(jF)","im()","~(im)","i7()","~(i7)","jM()","~(jM)","aI<@>?(aI<@>?,@,aI<@>(@))","nl(@)","a6<T<ar<k,@>>>(bZ)","lE(@)","C(o)","h9(bq)","M?(M?)","~(lG)","N(eV,R)","R?(C,ad,oP)","mX()","~(Fv)","~(vX)","~(Ct)","~(vW)","~(Fu)","~(Fw)","~(Ft)","N(@)","N(bx)","o(k)","k(qT)","~(M?,k,k)","aL([aL?])","k(k,k)","~(k,k,k)","pT(k)","a6<o>()","rZ()","N(d2<@>)","rf(Q)","nu(Q)","r_(Q)","e(Q,e,vB?)","cL(Q,M,c6?)","a6<aL>([aL?])","k(k?)","bt(@,@)","~([ba?])","e?(Q,bH<R>,bH<R>,N,e?)","R(C,ad)","e(Q,nD)","o(eV,eV)","N(k?)","o(k?)","N(nP?)","w2(Q,e?)","lm(Q,e?)","ar<~(bq),aN?>()","N(bu<co>)","~(jq)","~(~(bq),aN?)","~(h6,iZ?)","qF(Q,e?)","oH(Q,e?)","tp(i3<k>)","ti(@)","nn()","j4()","bc<M,l0<@>>(M,l0<@>)","N(bc<M,l0<@>>)","i(xj)","kC(Q,bH<R>)","r0()","bt(fr)","uM()","r8()","uL(r9)","a6<eK>(kE{allowUpscaling:N,cacheHeight:o?,cacheWidth:o?})","tw()","de(de,ci)","ci(ci)","N(ci)","k(ci)","N(R)","n(R)","y9()","~(hu?,N)","a6<~>(M,c6?)","~(o,N(ky))","a6<eK>(kE{allowUpscaling:N?,cacheHeight:o?,cacheWidth:o?})","ta(o,o)","bt(a9L)","~(dT,o)","~(hu)","~(M,c6?)?(fI)","~(vB)?(fI)","~(eK)","@(@,k)","Uk(e4)","u(e4)","re(e4)","N(o,N)","nL?()","~(aL,T<iV>)","o_(o_)","~({allowPlatformDefault:N})","lV(i,o)","G()","R?()","G(ad)","ny(dI)","~(h6)","N(m_)","u(u?,eC)","bc<o,k>(bc<k,k>)","va(dI)","dK(iQ)","~(iQ,aN)","N(iQ)","bt(~())","q0(dI)","uK(r7)","bt(@,c6)","~(T<e2>{isMergeUp:N})","ea?(e2)","o(aL)","T<e2>(T<e2>)","T<hd>(hd)","bu<dE>?(e2)","bu<dE>(bu<dE>)","w_(u?,u?)","N(ld)","xE()","+boundaryEnd,boundaryStart(ao,ao)(ao,k)","cJ(aer<cJ>)","mL?(md,i)","N(wU{crossAxisPosition!R,mainAxisPosition!R})","hy<0^>(jR,e(Q))<M?>","rB()","N(C)","yo()","~(o,@)","N(cO)","R(mZ)","fY(e)","0^?(0^?(bN?))<M?>","~(o,xY)","0^?(bJ<0^>?(bN?))<M?>","~(T<ea>)","n?()","bp(o)","ag<@>?()","cK(n9)","bJ<p?>?(bN?)","~(mb)","o(cK)","cK(o)","~(M)","~(d3,~(M?))","a6<k>()","dj(dj?)","a6<tu>(k)","no(ar<M?,M?>)","dq<iN>()","a6<k?>(k?)","~(T<M?>)","a6<~>(dj?,~(dj?))","a6<ar<k,@>>(@)","~(mq)","bu<h>(h)","kj(M?)","DD()","~(ma)","bJ<de?>?(bN?)","N(o,o)","T<e1>()","T<e1>(T<e1>)","R(dy)","T<@>(k)","T<dy>(rV)","ar<k,@>(fq)","wi(Q,ri)","tG(Do)","a6<~>(bq)","bJ<b0?>?(bN?)","~(@,c6)","qn(@)","~(bk<ba>)","~(@,@)","~(p2)","e(p2)","N(e)","bJ<dp?>?(bN?)","d2<@>?(jR)","d2<@>(jR)","dK?(bu<co>)","qR(Q,e?)","N(vN)","vr(@)","uQ(Q)","dK?(bN?)","a6<N>(jH)","nA(Q)","a6<~>(iz)","bZ()","u(acv)","~(ez)","n?(bN?)","mU?(bN?)","qU?(bN?)","~(oU)","~(jQ)","~(mx)","~(eU)","~(aej)","~(j6)","M?(hq)","d_(d_,td)","~(Fn,@)","xe(Q)","~(mm)","~(d_)","N(d_?,d_)","d_(d_)","uZ(Q,fS)","b1?(bN?)","~([dg?])","N?(bN?)","N(Cf)","~(xV)","N(xR)","0&()","N(mM)","bu<iH>(es)","hj?(bN?)","T<iH>(Q)","u(es)","o(la,la)","T<es>(es,H<es>)","N(es)","vJ?(bN?)","kq<bp>(bp)","bp?(bp)","M?(o,bp?)","jr()","~(jr)","T<kN>()","~(@,M?)","~(kJ)","~(kP)","~(hY)","~(Rx)","rA?(kj,k,k)","vm(k)","jU()","~(jU)","~(ml)","~(ms)","~(j1,M)","rt(Q,e?)","~(n1)","e(Q,bH<R>,vx,Q,Q)","N(n1)","jG(Q,e?)","qB(Q)","bt(I<M?>,aL)","xt()","ks(dT)","qE(Q,e?)","pN(@)","qY(@)","tg(@)","pL(@)","~(Es)","~(Et)","~(wF)","ar<k,k>(ar<k,k>,k)","b7c(k,ar<k,k>)","a6<@>(ym)","ar<h7,@>(T<@>)","ar<h7,@>(ar<h7,@>)","bt(ar<h7,@>)","jG(Q)","N(M)","N(d2<@>?)","a6<bt>(@)","N(of)","0&(k,o?)","~(k,k?)","ir(d2<@>)","bc<k?,T<M>>(@,@)","C?()","yi(Q)","tQ()","i(G,R)","~(ad)","uR(Q,e?)","tr(Q,fS)","~(G,i)","e(Q,+(G,aN,G))","N(mr)","bt(e1?)","~(dM<M?>)","ce<N>(N)","N(pd)","oA(Q,e?)","lm(Q)","kC(Q,e?)","qA(bq)","vY(bq)","~(k,aL)","~(o,o,o)","pP()","e(Q,fS)","bt(T<~>)","qp()","vo(Q,ad)","~(i)","~(k,M?)","~(hZ)","p7()","~(js?,xd?)","lf()","~(lf)","~(mk)","an1(an2)","u(u)","N(u)","~(wR,ba)","T<p_>()","ba?()","Q?()","bk<ba>?()","yD(Q,fS)","~(C)","bp?()","fq(h1)","pj(Q)","~({allowPlatformDefault!N})","a6<bt>()","e(Q,bH<R>,bH<R>)","R(@)","b0?(bu<co>)","k(d6)","u()?(C)","~(ba?)","xZ()","kY()","~(kY)","kZ()","~(kZ)","jw()","~(jw)","~(oW)","~(ov)","tX(Q,mg)","ce<a9>()","ce<a7>()","~(k,v6)","ce<aa>()","a6<~>(k,dj?,~(dj?)?)","a6<~>([aL?])","~(ar<@,@>)","~(ol)","a6<hl>()","n(p6)","~(ar<k,@>)","N(hT)","bt(hl)","uY<hl>?()","bZ(k)","N(jt)","jt()","N(kx)","kx()","mS(@)","lQ(@)","ar<k,@>(mS)","ar<k,@>(lQ)","a6<iX>(mR{headers:ar<k,k>?})","fJ()","N(k,k)","k?(k?)","bt(k,k[M?])","~(TQ<T<o>>)","~(T<o>)","CN()","oH(Q)","hJ(aL)","bZ(o)","UV()","bZ(o,o,o,o,o,o,o,N)","N(l7)","xO(k,e6)","xN(k,e6)","xM(k,e6)","k?(od)","k(od)","R?(o)","~(lA)","a6<oK>(k,ar<k,k>)","~(j5<aL>)","~(k,k(k))","k(k,n)","N(dE)","~(k,k{images:T<bI>?,options:T<aH>,visual:d1?,warning:k?})","~(k,T<aH>{text:k?})","bt(fJ,fJ)","d1(d1,T<aH>{images:T<bI>?,text:k?})","~(k,k,k,k)","N(d1)","a6<T<ar<k,@>>>()","o(ar<k,@>,ar<k,@>)","T<ea>()","b39?()","aX(Q,M,c6?)","rJ(Q)","t6(Q)","nk(Q,~(~()))","qy(Q)","tm(Q)","tn(Q)","fY(Q,M,c6?)","pJ(aL)","a6<+(k,fG?)>()","a6<oV>(aL)","wD(Q)","n?(n?,n?,n?[n?])","tj({from:R?})","Y?(Q,qS,cy<m3>)","N(i9)","ux(Q,o)","r5(Q)","e(Q,iA<T<ar<k,@>>>)","uC(Q,o)","qe(Q)","~(xB)","rd(Q)","o(k4,k4)","~(G?)","a6<~>([vE])","cr(Q,M,c6?)","o(k,k)","~(N,M?)","b6(Q,e,o?,N)","uX(Q,ad)","rb(Q,o)","vV()","bt(M?)","a6<aL>()","t_(@)","~(~)","o(i5,i5)","N(iV)","a6<iX>()","c6(c6)","0&(M,c6)","a6<0&>(M)","0&(@)","N(aop)","~(aop)","M(ar<k,@>)","ar<k,@>(M)","k?()","o(k7)","~(Fx)","M(k7)","M(fT)","o(fT,fT)","T<k7>(bc<M,T<fT>>)","mF()","w4()","CV()","a6<t7>()","er?(iV)","N(k,T<k>)","k(R)","o(cg<@>,cg<@>)","T<k>()","T<k>(k,T<k>)","0^(0^,0^)<dy>","G?(G?,G?,R)","R?(dy?,dy?,R)","n?(n?,n?,R)","kC(Q,bH<R>,e?)","e(Q,i,i,e)","~(c4{forceReport:N})","e7(k)","jY?(k)","R(R,R,R)","e(Q,bH<R>,bH<R>,e)","e(Q,bH<R>,bH<R>,N,e?)","~(C,i)","e(Q,bH<R>)","N?(N?,N?,R)","kM?(fQ)","e(Q,e)","dp?(dp?,dp?,R)","de?(de?,de?,R)","p?(p?,p?,R)","o(K5<@>,K5<@>)","N({priority!o,scheduler!kT})","T<iN>(k)","e(e,bH<R>)","e(e?,T<e>)","~(dg{alignment:R?,alignmentPolicy:rO?,curve:h_?,duration:b1?})","o(bp,bp)","d8(d8?,d8?,R)","e?(Q,qS,cy<m3>)","T<d2<@>>(jJ,k)","o(e,o)","e(Q,n4,oq?,oq?)","mK(Q,e?)","~(yG)","b1(o)","aL(o)","~(k?{wrapWidth:o?})","N(og)","pq()","~(dE)"],interceptorsByTag:null,leafTags:null,arrayRti:Symbol("$ti"),rttc:{"2;":(a,b)=>c=>c instanceof A.am&&a.b(c.a)&&b.b(c.b),"2;boundaryEnd,boundaryStart":(a,b)=>c=>c instanceof A.a4_&&a.b(c.a)&&b.b(c.b),"2;causaDescartadaAqui,pasoId":(a,b)=>c=>c instanceof A.a40&&a.b(c.a)&&b.b(c.b),"2;end,start":(a,b)=>c=>c instanceof A.a41&&a.b(c.a)&&b.b(c.b),"2;endGlyphHeight,startGlyphHeight":(a,b)=>c=>c instanceof A.IS&&a.b(c.a)&&b.b(c.b),"2;key,value":(a,b)=>c=>c instanceof A.a42&&a.b(c.a)&&b.b(c.b),"2;localPosition,paragraph":(a,b)=>c=>c instanceof A.a43&&a.b(c.a)&&b.b(c.b),"2;representation,targetSize":(a,b)=>c=>c instanceof A.a44&&a.b(c.a)&&b.b(c.b),"3;":(a,b,c)=>d=>d instanceof A.hN&&a.b(d.a)&&b.b(d.b)&&c.b(d.c),"3;ascent,bottomHeight,subtextHeight":(a,b,c)=>d=>d instanceof A.a45&&a.b(d.a)&&b.b(d.b)&&c.b(d.c),"3;breaks,graphemes,words":(a,b,c)=>d=>d instanceof A.a46&&a.b(d.a)&&b.b(d.b)&&c.b(d.c),"3;close,onMessage,postMessage":(a,b,c)=>d=>d instanceof A.a47&&a.b(d.a)&&b.b(d.b)&&c.b(d.c),"3;completer,recorder,scene":(a,b,c)=>d=>d instanceof A.IT&&a.b(d.a)&&b.b(d.b)&&c.b(d.c),"3;data,event,timeStamp":(a,b,c)=>d=>d instanceof A.IU&&a.b(d.a)&&b.b(d.b)&&c.b(d.c),"3;domSize,representation,targetSize":(a,b,c)=>d=>d instanceof A.a48&&a.b(d.a)&&b.b(d.b)&&c.b(d.c),"3;large,medium,small":(a,b,c)=>d=>d instanceof A.a49&&a.b(d.a)&&b.b(d.b)&&c.b(d.c),"3;textConstraints,tileSize,titleY":(a,b,c)=>d=>d instanceof A.a4a&&a.b(d.a)&&b.b(d.b)&&c.b(d.c),"4;domBlurListener,domFocusListener,element,semanticsNodeId":a=>b=>b instanceof A.IV&&A.aXl(a,b.a),"4;queue,started,target,timer":a=>b=>b instanceof A.IW&&A.aXl(a,b.a)}}
+A.b8z(v.typeUniverse,JSON.parse('{"fJ":"nZ","Uv":"nZ","mQ":"nZ","bfi":"w5","Af":{"eK":[]},"lx":{"aSb":[]},"Ac":{"eK":[]},"uM":{"re":[]},"uN":{"an1":[]},"uK":{"amC":[]},"uL":{"Dd":[],"ks":[]},"r7":{"A6":["aL"]},"r9":{"A6":["aL"]},"dT":{"nx":[]},"lz":{"nx":[]},"r0":{"xw":[]},"r8":{"xw":[]},"rB":{"ks":[]},"Dd":{"ks":[]},"fG":{"cD":[]},"aTP":{"eO":[]},"kN":{"eO":[]},"aiB":{"an2":[]},"aRw":{"re":[]},"FD":{"k4":[]},"wf":{"k4":[]},"lJ":{"aeQ":[]},"MY":{"Rx":[]},"MZ":{"hx":[]},"Ab":{"hx":[]},"uJ":{"hx":[]},"N1":{"hx":[]},"N5":{"hx":[]},"uI":{"hx":[]},"N4":{"eK":[]},"N0":{"hx":[]},"Ad":{"hx":[]},"GY":{"hx":[]},"H_":{"hx":[]},"GZ":{"hx":[]},"MX":{"eK":[]},"kl":{"Uk":[]},"ly":{"aiB":[],"an2":[]},"Ag":{"o_":[]},"vj":{"hx":[]},"U4":{"mH":["amC","r7"],"mH.C":"amC"},"U7":{"mH":["Dd","r9"],"mH.C":"Dd"},"QS":{"aS9":[]},"QR":{"bx":[]},"QQ":{"bx":[]},"tB":{"H":["1"],"H.E":"1"},"Qj":{"fG":[],"cD":[]},"BC":{"fG":[],"cD":[]},"BD":{"fG":[],"cD":[]},"QO":{"eK":[]},"QM":{"eK":[]},"Wm":{"afk":[]},"MJ":{"eK":[]},"um":{"afk":[]},"Vz":{"eK":[]},"Ra":{"bx":[]},"Av":{"eO":[]},"VE":{"eO":[]},"Mq":{"eO":[],"aQC":[]},"N8":{"eO":[],"aQV":[]},"Nc":{"eO":[],"aQX":[]},"Na":{"eO":[],"aQW":[]},"U9":{"eO":[],"aT6":[]},"G6":{"eO":[],"aNZ":[]},"Db":{"eO":[],"aNZ":[],"aT4":[]},"Rb":{"eO":[],"aSc":[]},"Uz":{"eO":[]},"f9":{"dL":[]},"cs":{"dL":[]},"Nu":{"dL":[]},"M7":{"dL":[]},"M8":{"dL":[]},"hi":{"dL":[]},"lo":{"dL":[]},"nj":{"dL":[]},"et":{"dL":[]},"ul":{"dL":[]},"LY":{"dL":[]},"pU":{"dL":[]},"qM":{"re":[],"aQZ":[]},"r2":{"H":["iS"],"H.E":"iS"},"Dm":{"wG":[]},"Dq":{"wG":[]},"W3":{"hC":[]},"A9":{"hC":[]},"uB":{"hC":[]},"Q4":{"hC":[]},"qj":{"hC":[]},"Rt":{"hC":[]},"o3":{"hC":[]},"Vy":{"hC":[]},"Wc":{"oG":[]},"W9":{"oG":[]},"W8":{"oG":[]},"rI":{"hC":[]},"Wh":{"aNI":[]},"Xd":{"hC":[]},"yM":{"aW":["1"],"T":["1"],"aM":["1"],"H":["1"]},"a21":{"yM":["o"],"aW":["o"],"T":["o"],"aM":["o"],"H":["o"]},"Gb":{"yM":["o"],"aW":["o"],"T":["o"],"aM":["o"],"H":["o"],"aW.E":"o","H.E":"o"},"vl":{"o_":[]},"PU":{"k4":[]},"oQ":{"qN":[]},"rg":{"qN":[]},"Bd":{"oQ":[],"qN":[]},"rh":{"we":[]},"tf":{"we":[]},"MV":{"x5":[]},"VF":{"x5":[]},"a15":{"lJ":[],"aeQ":[]},"vk":{"lJ":[],"aeQ":[]},"I":{"T":["1"],"aM":["1"],"aL":[],"H":["1"],"ft":["1"],"H.E":"1"},"C6":{"N":[],"cP":[]},"vM":{"bt":[],"cP":[]},"C9":{"aL":[]},"nZ":{"aL":[]},"Rk":{"Em":[]},"aia":{"I":["1"],"T":["1"],"aM":["1"],"aL":[],"H":["1"],"ft":["1"],"H.E":"1"},"nX":{"R":[],"dy":[],"cg":["dy"]},"vL":{"R":[],"o":[],"dy":[],"cg":["dy"],"cP":[]},"C8":{"R":[],"dy":[],"cg":["dy"],"cP":[]},"m0":{"k":[],"cg":["k"],"ft":["@"],"cP":[]},"k5":{"H":["2"]},"pR":{"k5":["1","2"],"H":["2"],"H.E":"2"},"Hx":{"pR":["1","2"],"k5":["1","2"],"aM":["2"],"H":["2"],"H.E":"2"},"GV":{"aW":["2"],"T":["2"],"k5":["1","2"],"aM":["2"],"H":["2"]},"fn":{"GV":["1","2"],"aW":["2"],"T":["2"],"k5":["1","2"],"aM":["2"],"H":["2"],"aW.E":"2","H.E":"2"},"lw":{"bu":["2"],"k5":["1","2"],"aM":["2"],"H":["2"],"H.E":"2"},"pS":{"bB":["3","4"],"ar":["3","4"],"bB.V":"4","bB.K":"3"},"lv":{"k5":["1","2"],"aM":["2"],"H":["2"],"H.E":"2"},"jD":{"cD":[]},"hn":{"aW":["o"],"T":["o"],"aM":["o"],"H":["o"],"aW.E":"o","H.E":"o"},"aM":{"H":["1"]},"aB":{"aM":["1"],"H":["1"]},"ij":{"aB":["1"],"aM":["1"],"H":["1"],"H.E":"1","aB.E":"1"},"fv":{"H":["2"],"H.E":"2"},"i0":{"fv":["1","2"],"aM":["2"],"H":["2"],"H.E":"2"},"ae":{"aB":["2"],"aM":["2"],"H":["2"],"H.E":"2","aB.E":"2"},"aG":{"H":["1"],"H.E":"1"},"fp":{"H":["2"],"H.E":"2"},"t9":{"H":["1"],"H.E":"1"},"Ba":{"t9":["1"],"aM":["1"],"H":["1"],"H.E":"1"},"mz":{"H":["1"],"H.E":"1"},"vi":{"mz":["1"],"aM":["1"],"H":["1"],"H.E":"1"},"F3":{"H":["1"],"H.E":"1"},"i1":{"aM":["1"],"H":["1"],"H.E":"1"},"ql":{"H":["1"],"H.E":"1"},"cn":{"H":["1"],"H.E":"1"},"xq":{"aW":["1"],"T":["1"],"aM":["1"],"H":["1"]},"c5":{"aB":["1"],"aM":["1"],"H":["1"],"H.E":"1","aB.E":"1"},"fz":{"Fn":[]},"pX":{"k2":["1","2"],"ar":["1","2"]},"v1":{"ar":["1","2"]},"a4":{"v1":["1","2"],"ar":["1","2"]},"tJ":{"H":["1"],"H.E":"1"},"cl":{"v1":["1","2"],"ar":["1","2"]},"As":{"ii":["1"],"bu":["1"],"aM":["1"],"H":["1"]},"f5":{"ii":["1"],"bu":["1"],"aM":["1"],"H":["1"],"H.E":"1"},"ex":{"ii":["1"],"bu":["1"],"aM":["1"],"H":["1"],"H.E":"1"},"Ri":{"jx":[]},"nQ":{"jx":[]},"D9":{"mO":[],"cD":[]},"Rl":{"cD":[]},"XD":{"cD":[]},"U0":{"bx":[]},"JY":{"c6":[]},"nw":{"jx":[]},"Ng":{"jx":[]},"Nh":{"jx":[]},"Xe":{"jx":[]},"WX":{"jx":[]},"uz":{"jx":[]},"VI":{"cD":[]},"fK":{"bB":["1","2"],"ar":["1","2"],"bB.V":"2","bB.K":"1"},"be":{"aM":["1"],"H":["1"],"H.E":"1"},"bb":{"aM":["1"],"H":["1"],"H.E":"1"},"d9":{"aM":["bc<1,2>"],"H":["bc<1,2>"],"H.E":"bc<1,2>"},"Ca":{"fK":["1","2"],"bB":["1","2"],"ar":["1","2"],"bB.V":"2","bB.K":"1"},"qI":{"fK":["1","2"],"bB":["1","2"],"ar":["1","2"],"bB.V":"2","bB.K":"1"},"nY":{"UV":[]},"yb":{"UW":[],"qT":[]},"ZU":{"H":["UW"],"H.E":"UW"},"x2":{"qT":[]},"a5J":{"H":["qT"],"H.E":"qT"},"ma":{"id":[],"oV":[],"aW":["o"],"T":["o"],"i8":["o"],"aM":["o"],"aL":[],"dP":[],"ft":["o"],"H":["o"],"cP":[],"aW.E":"o","H.E":"o"},"w5":{"aL":[],"kj":[],"cP":[]},"oa":{"aL":[],"kj":[],"cP":[]},"D0":{"aL":[],"dP":[]},"a6W":{"kj":[]},"CX":{"dj":[],"aL":[],"dP":[],"cP":[]},"w6":{"i8":["1"],"aL":[],"dP":[],"ft":["1"]},"ob":{"aW":["R"],"T":["R"],"i8":["R"],"aM":["R"],"aL":[],"dP":[],"ft":["R"],"H":["R"]},"id":{"aW":["o"],"T":["o"],"i8":["o"],"aM":["o"],"aL":[],"dP":[],"ft":["o"],"H":["o"]},"CY":{"ob":[],"aeD":[],"aW":["R"],"T":["R"],"i8":["R"],"aM":["R"],"aL":[],"dP":[],"ft":["R"],"H":["R"],"cP":[],"aW.E":"R","H.E":"R"},"CZ":{"ob":[],"aeE":[],"aW":["R"],"T":["R"],"i8":["R"],"aM":["R"],"aL":[],"dP":[],"ft":["R"],"H":["R"],"cP":[],"aW.E":"R","H.E":"R"},"TS":{"id":[],"ahY":[],"aW":["o"],"T":["o"],"i8":["o"],"aM":["o"],"aL":[],"dP":[],"ft":["o"],"H":["o"],"cP":[],"aW.E":"o","H.E":"o"},"D_":{"id":[],"ahZ":[],"aW":["o"],"T":["o"],"i8":["o"],"aM":["o"],"aL":[],"dP":[],"ft":["o"],"H":["o"],"cP":[],"aW.E":"o","H.E":"o"},"TT":{"id":[],"ai_":[],"aW":["o"],"T":["o"],"i8":["o"],"aM":["o"],"aL":[],"dP":[],"ft":["o"],"H":["o"],"cP":[],"aW.E":"o","H.E":"o"},"D1":{"id":[],"av7":[],"aW":["o"],"T":["o"],"i8":["o"],"aM":["o"],"aL":[],"dP":[],"ft":["o"],"H":["o"],"cP":[],"aW.E":"o","H.E":"o"},"D2":{"id":[],"xl":[],"aW":["o"],"T":["o"],"i8":["o"],"aM":["o"],"aL":[],"dP":[],"ft":["o"],"H":["o"],"cP":[],"aW.E":"o","H.E":"o"},"D3":{"id":[],"av8":[],"aW":["o"],"T":["o"],"i8":["o"],"aM":["o"],"aL":[],"dP":[],"ft":["o"],"H":["o"],"cP":[],"aW.E":"o","H.E":"o"},"Ki":{"h7":[]},"a16":{"cD":[]},"Kj":{"mO":[],"cD":[]},"ag":{"a6":["1"]},"io":{"mG":["1"]},"Ke":{"Xu":[]},"GH":{"uY":["1"]},"kb":{"H":["1"],"H.E":"1"},"dt":{"cD":[]},"dG":{"dQ":["1"],"dq":["1"],"dq.T":"1"},"tv":{"io":["1"],"mG":["1"]},"le":{"p0":["1"]},"j7":{"p0":["1"]},"FX":{"bx":[]},"xH":{"uY":["1"]},"bf":{"xH":["1"],"uY":["1"]},"Fh":{"dq":["1"]},"l4":{"tU":["1"]},"yF":{"tU":["1"]},"dQ":{"dq":["1"],"dq.T":"1"},"tx":{"io":["1"],"mG":["1"]},"K0":{"dq":["1"]},"xS":{"mG":["1"]},"Hy":{"dq":["1"],"dq.T":"1"},"tL":{"dq":["1"],"dq.T":"1"},"ye":{"l4":["1"],"tU":["1"],"TQ":["1"]},"HM":{"dq":["2"]},"xX":{"io":["2"],"mG":["2"]},"Ig":{"dq":["2"],"dq.T":"2"},"n0":{"bB":["1","2"],"ar":["1","2"],"bB.V":"2","bB.K":"1"},"p8":{"n0":["1","2"],"bB":["1","2"],"ar":["1","2"],"bB.V":"2","bB.K":"1"},"He":{"n0":["1","2"],"bB":["1","2"],"ar":["1","2"],"bB.V":"2","bB.K":"1"},"tF":{"aM":["1"],"H":["1"],"H.E":"1"},"Id":{"fK":["1","2"],"bB":["1","2"],"ar":["1","2"],"bB.V":"2","bB.K":"1"},"l8":{"yC":["1"],"ii":["1"],"bu":["1"],"aM":["1"],"H":["1"],"H.E":"1"},"hM":{"yC":["1"],"ii":["1"],"b3D":["1"],"bu":["1"],"aM":["1"],"H":["1"],"H.E":"1"},"qP":{"H":["1"],"H.E":"1"},"aW":{"T":["1"],"aM":["1"],"H":["1"]},"bB":{"ar":["1","2"]},"If":{"aM":["2"],"H":["2"],"H.E":"2"},"Cu":{"ar":["1","2"]},"k2":{"ar":["1","2"]},"Hn":{"Ho":["1"],"aRD":["1"]},"Hp":{"Ho":["1"]},"B3":{"aM":["1"],"H":["1"],"H.E":"1"},"Co":{"aB":["1"],"aM":["1"],"H":["1"],"H.E":"1","aB.E":"1"},"ii":{"bu":["1"],"aM":["1"],"H":["1"]},"yC":{"ii":["1"],"bu":["1"],"aM":["1"],"H":["1"]},"xr":{"ii":["1"],"bu":["1"],"aM":["1"],"H":["1"],"H.E":"1"},"Fc":{"bB":["1","2"],"pk":["1","he<1,2>"],"ar":["1","2"],"bB.V":"2","bB.K":"1","pk.K":"1"},"n6":{"aM":["1"],"H":["1"],"H.E":"1"},"tT":{"aM":["2"],"H":["2"],"H.E":"2"},"JS":{"aM":["bc<1,2>"],"H":["bc<1,2>"],"H.E":"bc<1,2>"},"n7":{"ka":["1","2","1"],"ka.T":"1"},"JX":{"ka":["1","he<1,2>","2"],"ka.T":"2"},"tS":{"ka":["1","he<1,2>","bc<1,2>"],"ka.T":"bc<1,2>"},"wZ":{"ii":["1"],"bu":["1"],"aM":["1"],"pk":["1","hf<1>"],"H":["1"],"H.E":"1","pk.K":"1"},"a25":{"bB":["k","@"],"ar":["k","@"],"bB.V":"@","bB.K":"k"},"a26":{"aB":["k"],"aM":["k"],"H":["k"],"H.E":"k","aB.E":"k"},"y6":{"jZ":[]},"M9":{"lI":[]},"a6T":{"bY":["k","T<o>"]},"Mb":{"bY":["k","T<o>"],"bY.S":"k","bY.T":"T<o>"},"a6U":{"jZ":[]},"a6S":{"bY":["T<o>","k"]},"Ma":{"bY":["T<o>","k"],"bY.S":"T<o>","bY.T":"k"},"zS":{"bY":["T<o>","k"],"bY.S":"T<o>","bY.T":"k"},"Mt":{"bY":["k","T<o>"],"bY.S":"k","bY.T":"T<o>"},"a_n":{"jZ":[]},"HN":{"bY":["1","3"],"bY.S":"1","bY.T":"3"},"Cb":{"cD":[]},"Rm":{"cD":[]},"Ro":{"bY":["M?","k"],"bY.S":"M?","bY.T":"k"},"Rn":{"bY":["k","M?"],"bY.S":"k","bY.T":"M?"},"Ru":{"lI":[]},"Rw":{"bY":["k","T<o>"],"bY.S":"k","bY.T":"T<o>"},"Rv":{"bY":["T<o>","k"],"bY.S":"T<o>","bY.T":"k"},"yE":{"jZ":[]},"tV":{"jZ":[]},"XJ":{"lI":[]},"XL":{"bY":["k","T<o>"],"bY.S":"k","bY.T":"T<o>"},"a73":{"jZ":[]},"XK":{"bY":["T<o>","k"],"bY.S":"T<o>","bY.T":"k"},"bZ":{"cg":["bZ"]},"R":{"dy":[],"cg":["dy"]},"b1":{"cg":["b1"]},"o":{"dy":[],"cg":["dy"]},"T":{"aM":["1"],"H":["1"]},"dy":{"cg":["dy"]},"UW":{"qT":[]},"bu":{"aM":["1"],"H":["1"]},"k":{"cg":["k"]},"pH":{"cD":[]},"mO":{"cD":[]},"hk":{"cD":[]},"wr":{"cD":[]},"BT":{"cD":[]},"TY":{"cD":[]},"Gf":{"cD":[]},"XC":{"cD":[]},"fP":{"cD":[]},"Np":{"cD":[]},"Uc":{"cD":[]},"Ff":{"cD":[]},"HB":{"bx":[]},"eM":{"bx":[]},"HP":{"aB":["1"],"aM":["1"],"H":["1"],"H.E":"1","aB.E":"1"},"K3":{"c6":[]},"Kt":{"mR":[]},"jc":{"mR":[]},"a0n":{"mR":[]},"U_":{"bx":[]},"dj":{"dP":[]},"ai_":{"T":["o"],"aM":["o"],"dP":[],"H":["o"]},"oV":{"T":["o"],"aM":["o"],"dP":[],"H":["o"]},"av8":{"T":["o"],"aM":["o"],"dP":[],"H":["o"]},"ahY":{"T":["o"],"aM":["o"],"dP":[],"H":["o"]},"av7":{"T":["o"],"aM":["o"],"dP":[],"H":["o"]},"ahZ":{"T":["o"],"aM":["o"],"dP":[],"H":["o"]},"xl":{"T":["o"],"aM":["o"],"dP":[],"H":["o"]},"aeD":{"T":["R"],"aM":["R"],"dP":[],"H":["R"]},"aeE":{"T":["R"],"aM":["R"],"dP":[],"H":["R"]},"jN":{"yp":["jN"]},"rw":{"yp":["rw"]},"fe":{"H":["k"],"H.E":"k"},"c2":{"ar":["2","3"]},"xs":{"pn":["1","H<1>"],"pn.E":"1"},"wP":{"pn":["1","bu<1>"],"pn.E":"1"},"QH":{"bY":["T<o>","q7"]},"a5j":{"bY":["T<o>","q7"],"bY.S":"T<o>","bY.T":"q7"},"bH":{"aj":[]},"uo":{"bH":["R"],"aj":[]},"ZV":{"bH":["R"],"aj":[]},"ZW":{"bH":["R"],"aj":[]},"zp":{"bH":["1"],"aj":[]},"rv":{"bH":["R"],"aj":[]},"hB":{"bH":["R"],"aj":[]},"AK":{"bH":["R"],"aj":[]},"tl":{"bH":["R"],"aj":[]},"v0":{"bH":["1"],"aj":[]},"zD":{"bH":["1"],"aj":[]},"Ic":{"h_":[]},"En":{"h_":[]},"dX":{"h_":[]},"FR":{"h_":[]},"f6":{"h_":[]},"FQ":{"h_":[]},"nG":{"h_":[]},"a0u":{"h_":[]},"aI":{"ay":["1"],"ay.T":"1","aI.T":"1"},"ev":{"aI":["n?"],"ay":["n?"],"ay.T":"n?","aI.T":"n?"},"aA":{"bH":["1"],"aj":[]},"hb":{"ay":["1"],"ay.T":"1"},"Eh":{"aI":["1"],"ay":["1"],"ay.T":"1","aI.T":"1"},"Wr":{"aI":["G?"],"ay":["G?"],"ay.T":"G?","aI.T":"G?"},"DH":{"aI":["u?"],"ay":["u?"],"ay.T":"u?","aI.T":"u?"},"nR":{"aI":["o"],"ay":["o"],"ay.T":"o","aI.T":"o"},"hX":{"ay":["R"],"ay.T":"R"},"Ga":{"ay":["1"],"ay.T":"1"},"Aw":{"Y":[],"e":[]},"a06":{"X":["Aw"]},"a05":{"aj":[]},"Ax":{"Y":[],"e":[]},"H6":{"X":["Ax"]},"cW":{"n":[]},"a08":{"k0":[]},"Nv":{"aC":[],"e":[]},"q0":{"Y":[],"e":[]},"H7":{"X":["q0"]},"Nw":{"d8":[]},"b1r":{"b9":[],"aU":[],"e":[]},"a0b":{"em":["a9"],"em.T":"a9"},"Pu":{"a9":[]},"AH":{"Y":[],"e":[]},"H9":{"X":["AH"]},"Ph":{"aC":[],"e":[]},"AG":{"Y":[],"e":[]},"xK":{"Y":[],"e":[]},"a0c":{"X":["AG"]},"xL":{"X":["xK<1>"]},"k6":{"iF":[]},"v3":{"Y":[],"e":[]},"H8":{"kQ":["v3"],"X":["v3"]},"a0e":{"aj":[]},"Pj":{"k0":[]},"Hb":{"Y":[],"e":[]},"Pk":{"aC":[],"e":[]},"a0g":{"b6":[],"as":[],"e":[]},"a4h":{"C":[],"aO":["C"],"t":[],"an":[]},"Hc":{"X":["Hb"]},"a2b":{"aj":[]},"a4O":{"aj":[]},"a07":{"aj":[]},"Hd":{"as":[],"e":[]},"a0f":{"b8":[],"bp":[],"Q":[]},"tO":{"dD":["C","fR"],"C":[],"af":["C","fR"],"t":[],"an":[],"af.1":"fR","dD.1":"fR","af.0":"C"},"ny":{"Y":[],"e":[]},"Ha":{"X":["ny"]},"a2h":{"aj":[]},"BV":{"cH":[],"b9":[],"aU":[],"e":[]},"AJ":{"aC":[],"e":[]},"p4":{"e7":[]},"vm":{"p4":[],"e7":[]},"Q1":{"p4":[],"e7":[]},"Q0":{"p4":[],"e7":[]},"qg":{"pH":[],"cD":[]},"PE":{"e7":[]},"a1k":{"e7":[]},"fZ":{"aj":[]},"cy":{"aj":[]},"pb":{"aj":[]},"kq":{"e7":[]},"AU":{"e7":[]},"PD":{"e7":[]},"AV":{"e7":[]},"RM":{"fu":[]},"l1":{"fu":[]},"cQ":{"fu":[],"cQ.T":"1"},"Cl":{"iN":[]},"bi":{"H":["1"],"H.E":"1"},"eN":{"H":["1"],"H.E":"1"},"ce":{"a6":["1"]},"Bx":{"c4":[]},"er":{"bq":[]},"mk":{"bq":[]},"om":{"bq":[]},"on":{"bq":[]},"mj":{"bq":[]},"mm":{"bq":[]},"fL":{"bq":[]},"ml":{"bq":[]},"ZO":{"bq":[]},"a6B":{"bq":[]},"rj":{"bq":[]},"a6x":{"rj":[],"bq":[]},"rp":{"bq":[]},"a6I":{"rp":[],"bq":[]},"a6D":{"mk":[],"bq":[]},"a6A":{"om":[],"bq":[]},"a6C":{"on":[],"bq":[]},"a6z":{"mj":[],"bq":[]},"rm":{"bq":[]},"a6E":{"rm":[],"bq":[]},"a6M":{"mm":[],"bq":[]},"rr":{"fL":[],"bq":[]},"a6K":{"rr":[],"fL":[],"bq":[]},"rs":{"fL":[],"bq":[]},"a6L":{"rs":[],"fL":[],"bq":[]},"rq":{"fL":[],"bq":[]},"a6J":{"rq":[],"fL":[],"bq":[]},"a6G":{"ml":[],"bq":[]},"ro":{"bq":[]},"a6H":{"ro":[],"bq":[]},"rn":{"bq":[]},"a6F":{"rn":[],"bq":[]},"rk":{"bq":[]},"a6y":{"rk":[],"bq":[]},"jw":{"cJ":[],"d7":[],"d6":[]},"Ik":{"yL":[]},"yh":{"yL":[]},"jF":{"cJ":[],"d7":[],"d6":[]},"hZ":{"cJ":[],"d7":[],"d6":[]},"im":{"hZ":[],"cJ":[],"d7":[],"d6":[]},"i7":{"hZ":[],"cJ":[],"d7":[],"d6":[]},"jM":{"hZ":[],"cJ":[],"d7":[],"d6":[]},"jr":{"d7":[],"d6":[]},"d7":{"d6":[]},"cJ":{"d7":[],"d6":[]},"wm":{"cJ":[],"d7":[],"d6":[]},"jU":{"cJ":[],"d7":[],"d6":[]},"hF":{"cJ":[],"d7":[],"d6":[]},"Mw":{"cJ":[],"d7":[],"d6":[]},"kY":{"cJ":[],"d7":[],"d6":[]},"kZ":{"cJ":[],"d7":[],"d6":[]},"zV":{"cJ":[],"d7":[],"d6":[]},"tw":{"d6":[]},"a_M":{"vu":[]},"qA":{"h9":[]},"vY":{"h9":[]},"ZP":{"aC":[],"e":[]},"tt":{"aC":[],"e":[]},"Mo":{"aC":[],"e":[]},"Mn":{"aC":[],"e":[]},"Nf":{"aC":[],"e":[]},"Ne":{"aC":[],"e":[]},"PS":{"aC":[],"e":[]},"PR":{"aC":[],"e":[]},"PX":{"aC":[],"e":[]},"PW":{"aC":[],"e":[]},"b09":{"cH":[],"b9":[],"aU":[],"e":[]},"LX":{"aC":[],"e":[]},"Cx":{"Y":[],"e":[]},"Ih":{"X":["Cx"]},"zI":{"Y":[],"e":[]},"a3J":{"G":[]},"GG":{"X":["zI"]},"a_c":{"b6":[],"as":[],"e":[]},"a4e":{"C":[],"aO":["C"],"t":[],"an":[]},"b0k":{"cH":[],"b9":[],"aU":[],"e":[]},"w_":{"aI":["u?"],"ay":["u?"],"ay.T":"u?","aI.T":"u?"},"CH":{"aI":["i"],"ay":["i"],"ay.T":"i","aI.T":"i"},"b3Q":{"cH":[],"b9":[],"aU":[],"e":[]},"DE":{"Y":[],"e":[]},"a3U":{"X":["DE"]},"a2_":{"b6":[],"as":[],"e":[]},"J6":{"C":[],"aO":["C"],"t":[],"an":[]},"A5":{"Y":[],"e":[]},"GP":{"X":["A5"]},"a2B":{"dK":[],"bJ":["dK"]},"a20":{"b6":[],"as":[],"e":[]},"J7":{"C":[],"aO":["C"],"t":[],"an":[]},"pP":{"Y":[],"e":[]},"Hg":{"Y":[],"e":[]},"Ip":{"Y":[],"e":[]},"HJ":{"b9":[],"aU":[],"e":[]},"Hi":{"Y":[],"e":[]},"Hh":{"Y":[],"e":[]},"Gy":{"Y":[],"e":[]},"GS":{"X":["pP"]},"a0q":{"X":["Hg"]},"Iq":{"X":["Ip"]},"a0s":{"X":["Hi"]},"a0t":{"X":["Hh"]},"KJ":{"X":["Gy"]},"uC":{"aC":[],"e":[]},"b0F":{"b9":[],"aU":[],"e":[]},"DC":{"Y":[],"e":[]},"IP":{"X":["DC"]},"a1V":{"bJ":["n?"]},"a_F":{"b6":[],"as":[],"e":[]},"a4f":{"C":[],"aO":["C"],"t":[],"an":[]},"a_H":{"fy":["l6","C"],"as":[],"e":[],"fy.0":"l6","fy.1":"C"},"IZ":{"C":[],"j0":["l6","C"],"t":[],"an":[]},"b0O":{"cH":[],"b9":[],"aU":[],"e":[]},"pT":{"aC":[],"e":[]},"ia":{"km":["o"],"n":[],"km.T":"o"},"o8":{"km":["o"],"n":[],"km.T":"o"},"QB":{"MN":["bZ"]},"AP":{"Y":[],"e":[]},"Hf":{"X":["AP"]},"a4F":{"b5":["ko"],"dM":["ko"],"aj":[],"b5.T":"ko"},"a4E":{"b5":["jk"],"dM":["jk"],"aj":[],"b5.T":"jk"},"a0p":{"aC":[],"e":[]},"b1A":{"cH":[],"b9":[],"aU":[],"e":[]},"a0o":{"eL":[]},"a0F":{"k0":[]},"PB":{"aC":[],"e":[]},"va":{"aC":[],"e":[]},"nk":{"aC":[],"e":[]},"PF":{"aC":[],"e":[]},"AW":{"eQ":["1"],"eZ":["1"],"d2":["1"]},"b1T":{"cH":[],"b9":[],"aU":[],"e":[]},"ve":{"aC":[],"e":[]},"XM":{"aC":[],"e":[]},"b2_":{"cH":[],"b9":[],"aU":[],"e":[]},"Bb":{"Y":[],"e":[]},"a14":{"aC":[],"e":[]},"a12":{"bN":[]},"b2r":{"cH":[],"b9":[],"aU":[],"e":[]},"Bp":{"Y":[],"e":[]},"a1f":{"aC":[],"e":[]},"a1d":{"bN":[]},"b2F":{"cH":[],"b9":[],"aU":[],"e":[]},"Bu":{"b9":[],"aU":[],"e":[]},"vp":{"aC":[],"e":[]},"a11":{"dK":[],"bJ":["dK"]},"a_E":{"b6":[],"as":[],"e":[]},"IY":{"C":[],"aO":["C"],"t":[],"an":[]},"GF":{"bH":["1"],"aj":[]},"b2I":{"cH":[],"b9":[],"aU":[],"e":[]},"JF":{"Y":[],"e":[]},"BP":{"aC":[],"e":[]},"a57":{"X":["JF"]},"a1P":{"Y":[],"e":[]},"a1O":{"bN":[]},"a1g":{"bN":[]},"a1h":{"bN":[]},"a2W":{"bN":[]},"BQ":{"cH":[],"b9":[],"aU":[],"e":[]},"qE":{"Y":[],"e":[]},"I3":{"X":["qE"]},"BY":{"kG":[]},"nP":{"nS":[],"kG":[]},"BZ":{"nS":[],"kG":[]},"C_":{"nS":[],"kG":[]},"nS":{"kG":[]},"IG":{"b9":[],"aU":[],"e":[]},"I2":{"Y":[],"e":[]},"vH":{"aC":[],"e":[]},"I1":{"X":["I2"],"aOi":[]},"Rh":{"aC":[],"e":[]},"iK":{"ci":[]},"k1":{"iK":[],"ci":[]},"iT":{"iK":[],"ci":[]},"C0":{"Y":[],"e":[]},"I6":{"X":["C0"]},"GO":{"Y":[],"e":[]},"HU":{"Y":[],"e":[]},"qF":{"Y":[],"e":[]},"b3m":{"cH":[],"b9":[],"aU":[],"e":[]},"I4":{"aj":[]},"I5":{"aI":["iK"],"ay":["iK"],"ay.T":"iK","aI.T":"iK"},"a1Y":{"aj":[]},"a_p":{"X":["GO"]},"HV":{"X":["HU"]},"J1":{"C":[],"j0":["fg","C"],"t":[],"an":[]},"a0z":{"fy":["fg","C"],"as":[],"e":[],"fy.0":"fg","fy.1":"C"},"I7":{"X":["qF"]},"RH":{"aC":[],"e":[]},"a1W":{"bJ":["n?"]},"a2f":{"fy":["k8","C"],"as":[],"e":[],"fy.0":"k8","fy.1":"C"},"Jb":{"C":[],"j0":["k8","C"],"t":[],"an":[]},"b3G":{"cH":[],"b9":[],"aU":[],"e":[]},"FJ":{"Y":[],"e":[]},"K8":{"X":["FJ"]},"RP":{"aC":[],"e":[]},"Cw":{"Y":[],"e":[]},"J5":{"C":[],"aO":["C"],"t":[],"an":[]},"t_":{"aI":["ci?"],"ay":["ci?"],"ay.T":"ci?","aI.T":"ci?"},"Ii":{"Y":[],"e":[]},"a2u":{"X":["Cw"]},"a1X":{"b6":[],"as":[],"e":[]},"a2q":{"X":["Ii"]},"JM":{"aC":[],"e":[]},"JN":{"aj":[]},"a2r":{"em":["a7"],"em.T":"a7"},"Pw":{"a7":[]},"rb":{"Y":[],"e":[]},"a2V":{"aC":[],"e":[]},"a2T":{"bN":[]},"b4x":{"cH":[],"b9":[],"aU":[],"e":[]},"hy":{"TE":["1"],"Dh":["1"],"eQ":["1"],"eZ":["1"],"d2":["1"]},"pr":{"Y":[],"e":[]},"ps":{"Y":[],"e":[]},"yl":{"Y":[],"e":[]},"a7j":{"aC":[],"e":[]},"a7h":{"X":["pr"]},"a7i":{"X":["ps"]},"a1a":{"aC":[],"e":[]},"ZM":{"kM":[]},"Pi":{"kM":[]},"IF":{"X":["yl<1>"]},"KK":{"aj":[]},"KL":{"aj":[]},"IM":{"Y":[],"e":[]},"IN":{"Y":[],"e":[]},"UD":{"kM":[]},"a3H":{"X":["IM"],"cR":[]},"a3I":{"X":["IN"]},"kk":{"Y":[],"e":[]},"UK":{"Y":[],"e":[]},"xF":{"aj":[]},"GX":{"X":["kk"]},"a4b":{"aj":[]},"DK":{"Y":[],"e":[]},"a4c":{"X":["kk"]},"b55":{"cH":[],"b9":[],"aU":[],"e":[]},"DI":{"Y":[],"e":[]},"DJ":{"X":["DI"]},"Ep":{"Y":[],"e":[]},"Js":{"b9":[],"aU":[],"e":[]},"HE":{"Y":[],"e":[]},"rJ":{"Y":[],"e":[]},"Er":{"X":["rJ"],"cR":[]},"b8l":{"Y":[],"e":[]},"Eq":{"X":["Ep"]},"a4T":{"aj":[]},"GN":{"ad":[],"lA":[]},"a_o":{"aC":[],"e":[]},"HF":{"X":["HE"]},"a0L":{"bk":["hq"],"bk.T":"hq"},"a4U":{"b9":[],"aU":[],"e":[]},"a1H":{"aC":[],"e":[]},"yc":{"Y":[],"e":[]},"W2":{"aC":[],"e":[]},"a2t":{"kQ":["yc"],"X":["yc"]},"b5J":{"cH":[],"b9":[],"aU":[],"e":[]},"jW":{"Y":[],"e":[]},"JR":{"X":["jW"]},"b67":{"cH":[],"b9":[],"aU":[],"e":[]},"FA":{"Y":[],"e":[]},"a64":{"aC":[],"e":[]},"a62":{"bN":[]},"b6t":{"cH":[],"b9":[],"aU":[],"e":[]},"FF":{"Y":[],"e":[]},"K6":{"X":["FF"]},"FG":{"lS":["k"],"Y":[],"e":[],"lS.T":"k"},"yH":{"i3":["k"],"X":["lS<k>"]},"TG":{"k0":[]},"a68":{"aj":[]},"b6D":{"cH":[],"b9":[],"aU":[],"e":[]},"Kb":{"Y":[],"e":[]},"Xr":{"aC":[],"e":[]},"a6e":{"X":["Kb"]},"a6f":{"b6":[],"as":[],"e":[]},"a6g":{"C":[],"aO":["C"],"t":[],"an":[]},"a6b":{"fa":[],"as":[],"e":[]},"a6c":{"b8":[],"bp":[],"Q":[]},"a4A":{"C":[],"af":["C","fR"],"t":[],"an":[],"af.1":"fR","af.0":"C"},"a6a":{"aC":[],"e":[]},"a6d":{"aC":[],"e":[]},"Xt":{"aC":[],"e":[]},"th":{"aC":[],"e":[]},"I0":{"cH":[],"b9":[],"aU":[],"e":[]},"ti":{"aI":["j4"],"ay":["j4"],"ay.T":"j4","aI.T":"j4"},"zz":{"Y":[],"e":[]},"a_4":{"X":["zz"]},"G2":{"Y":[],"e":[]},"G3":{"X":["G2"]},"a6p":{"aC":[],"e":[]},"b6X":{"cH":[],"b9":[],"aU":[],"e":[]},"w7":{"f8":["aNl"],"f8.T":"aNl"},"a1w":{"fr":[]},"ts":{"hu":[]},"eu":{"hj":[]},"fD":{"hj":[]},"Im":{"hj":[]},"a5S":{"aj":[]},"dp":{"ci":[]},"j8":{"ci":[]},"MD":{"ci":[]},"e3":{"ci":[]},"fm":{"ci":[]},"du":{"iF":[]},"e4":{"oL":[]},"e5":{"dp":[],"ci":[]},"km":{"n":[]},"GM":{"v8":[]},"ap":{"de":[]},"cX":{"de":[]},"pc":{"de":[]},"aNl":{"f8":["aNl"]},"m7":{"f8":["m7"],"f8.T":"m7"},"Gz":{"fr":[]},"Me":{"f8":["kh"]},"Ed":{"f8":["kR"],"f8.T":"kR"},"a17":{"fr":[]},"w8":{"bx":[]},"up":{"f8":["kh"],"f8.T":"kh"},"U6":{"fr":[]},"CT":{"fr":[]},"Uu":{"ey":[]},"cZ":{"dp":[],"ci":[]},"kS":{"dp":[],"ci":[]},"yw":{"fh":["cZ"],"dp":[],"ci":[],"fh.T":"cZ"},"yx":{"fh":["kS"],"dp":[],"ci":[],"fh.T":"kS"},"fh":{"dp":[],"ci":[]},"fO":{"iF":[]},"h3":{"dp":[],"ci":[]},"fU":{"dp":[],"ci":[]},"fV":{"dp":[],"ci":[]},"xz":{"hG":[]},"a71":{"hG":[]},"a6Z":{"il":[]},"ip":{"il":[]},"xG":{"il":[]},"eY":{"ey":[],"iQ":[],"an":[]},"DO":{"C":[],"aO":["C"],"t":[],"an":[]},"GL":{"aj":[]},"a0A":{"mg":[]},"a4K":{"rF":[],"aO":["C"],"t":[],"an":[]},"ad":{"lA":[]},"ns":{"lV":[]},"C":{"t":[],"an":[]},"nr":{"i6":["C"]},"fE":{"cN":[]},"Au":{"fE":[],"dV":["1"],"cN":[]},"iR":{"fE":[],"dV":["C"],"cN":[]},"DR":{"dD":["C","iR"],"C":[],"af":["C","iR"],"t":[],"an":[],"af.1":"iR","dD.1":"iR","af.0":"C"},"Pm":{"aj":[]},"DS":{"C":[],"aO":["C"],"t":[],"an":[]},"ox":{"aj":[]},"rD":{"C":[],"af":["C","j3"],"t":[],"an":[],"af.1":"j3","af.0":"C"},"a4j":{"C":[],"t":[],"an":[]},"K7":{"ox":[],"aj":[]},"GT":{"ox":[],"aj":[]},"xI":{"ox":[],"aj":[]},"DU":{"C":[],"t":[],"an":[]},"hs":{"fE":[],"dV":["C"],"cN":[]},"DW":{"dD":["C","hs"],"C":[],"af":["C","hs"],"t":[],"an":[],"af.1":"hs","dD.1":"hs","af.0":"C"},"DY":{"C":[],"t":[],"an":[]},"fo":{"ez":[]},"uS":{"fo":[],"ez":[]},"Al":{"fo":[],"ez":[]},"mL":{"jK":[],"fo":[],"ez":[]},"Ua":{"jK":[],"fo":[],"ez":[]},"Ck":{"fo":[],"ez":[]},"zG":{"fo":[],"ez":[]},"Ut":{"ez":[]},"Uy":{"ez":[]},"jK":{"fo":[],"ez":[]},"Am":{"fo":[],"ez":[]},"BS":{"jK":[],"fo":[],"ez":[]},"zQ":{"fo":[],"ez":[]},"BB":{"fo":[],"ez":[]},"TN":{"aj":[]},"t":{"an":[]},"dV":{"cN":[]},"hd":{"e2":[]},"I_":{"e2":[]},"mh":{"dE":[]},"j3":{"dV":["C"],"cN":[]},"ld":{"eV":[],"aj":[]},"a7_":{"il":[]},"oy":{"C":[],"af":["C","j3"],"t":[],"an":[],"af.1":"j3","af.0":"C"},"II":{"cJ":[],"d7":[],"d6":[]},"UA":{"C":[],"t":[],"iQ":[],"an":[]},"oM":{"aj":[]},"DL":{"C":[],"aO":["C"],"t":[],"an":[]},"ms":{"C":[],"aO":["C"],"t":[],"an":[]},"Vi":{"C":[],"aO":["C"],"t":[],"an":[]},"E4":{"C":[],"aO":["C"],"t":[],"an":[]},"rC":{"C":[],"aO":["C"],"t":[],"an":[]},"Vb":{"C":[],"aO":["C"],"t":[],"an":[]},"DZ":{"C":[],"aO":["C"],"t":[],"an":[]},"Ve":{"C":[],"aO":["C"],"t":[],"an":[]},"UZ":{"C":[],"aO":["C"],"t":[],"an":[]},"V_":{"C":[],"aO":["C"],"t":[],"an":[]},"AL":{"aj":[]},"yr":{"C":[],"aO":["C"],"t":[],"an":[]},"V3":{"C":[],"aO":["C"],"t":[],"an":[]},"V2":{"C":[],"aO":["C"],"t":[],"an":[]},"V1":{"C":[],"aO":["C"],"t":[],"an":[]},"Jd":{"C":[],"aO":["C"],"t":[],"an":[]},"Vf":{"C":[],"aO":["C"],"t":[],"an":[]},"Vg":{"C":[],"aO":["C"],"t":[],"an":[]},"V4":{"C":[],"aO":["C"],"t":[],"an":[]},"Vs":{"C":[],"aO":["C"],"t":[],"an":[]},"DV":{"C":[],"aO":["C"],"t":[],"an":[]},"V7":{"C":[],"aO":["C"],"t":[],"an":[]},"Vh":{"C":[],"aO":["C"],"t":[],"an":[]},"E0":{"C":[],"aO":["C"],"t":[],"iQ":[],"an":[]},"Vk":{"C":[],"aO":["C"],"t":[],"an":[]},"DX":{"C":[],"aO":["C"],"t":[],"an":[]},"E1":{"C":[],"aO":["C"],"t":[],"an":[]},"E_":{"C":[],"aO":["C"],"t":[],"an":[]},"Vl":{"C":[],"aO":["C"],"t":[],"an":[]},"V0":{"C":[],"aO":["C"],"t":[],"an":[]},"Vc":{"C":[],"aO":["C"],"t":[],"an":[]},"V5":{"C":[],"aO":["C"],"t":[],"an":[]},"V8":{"C":[],"aO":["C"],"t":[],"an":[]},"Va":{"C":[],"aO":["C"],"t":[],"an":[]},"V6":{"C":[],"aO":["C"],"t":[],"an":[]},"DP":{"C":[],"aO":["C"],"t":[],"an":[]},"eV":{"aj":[]},"oz":{"C":[],"aO":["C"],"t":[],"an":[]},"E2":{"C":[],"aO":["C"],"t":[],"an":[]},"UY":{"C":[],"aO":["C"],"t":[],"an":[]},"E3":{"C":[],"aO":["C"],"t":[],"an":[]},"DT":{"C":[],"aO":["C"],"t":[],"an":[]},"mA":{"lA":[]},"wU":{"lV":[]},"mB":{"mC":[],"dV":["cO"],"cN":[]},"mE":{"oN":[],"dV":["cO"],"cN":[]},"cO":{"t":[],"an":[]},"WB":{"i6":["cO"]},"mC":{"cN":[]},"oN":{"cN":[]},"Vn":{"mt":[],"cO":[],"af":["C","fc"],"t":[],"an":[],"af.1":"fc","af.0":"C"},"Vo":{"mt":[],"cO":[],"af":["C","fc"],"t":[],"an":[]},"wT":{"fc":[],"mC":[],"dV":["C"],"jB":[],"cN":[]},"Vp":{"mt":[],"cO":[],"af":["C","fc"],"t":[],"an":[],"af.1":"fc","af.0":"C"},"Vq":{"mt":[],"cO":[],"af":["C","fc"],"t":[],"an":[],"af.1":"fc","af.0":"C"},"jB":{"cN":[]},"fc":{"mC":[],"dV":["C"],"jB":[],"cN":[]},"mt":{"cO":[],"af":["C","fc"],"t":[],"an":[]},"E5":{"cO":[],"aO":["cO"],"t":[],"an":[]},"Vr":{"cO":[],"aO":["cO"],"t":[],"an":[]},"fd":{"fE":[],"dV":["C"],"cN":[]},"E6":{"dD":["C","fd"],"C":[],"af":["C","fd"],"t":[],"an":[],"af.1":"fd","dD.1":"fd","af.0":"C"},"nl":{"aI":["hj?"],"ay":["hj?"],"ay.T":"hj?","aI.T":"hj?"},"rF":{"aO":["C"],"t":[],"an":[]},"wA":{"jb":["1"],"C":[],"af":["cO","1"],"DM":[],"t":[],"an":[]},"E8":{"jb":["mE"],"C":[],"af":["cO","mE"],"DM":[],"t":[],"an":[],"af.1":"mE","jb.0":"mE","af.0":"cO"},"Vm":{"jb":["mB"],"C":[],"af":["cO","mB"],"DM":[],"t":[],"an":[],"af.1":"mB","jb.0":"mB","af.0":"cO"},"fS":{"aj":[]},"l3":{"fE":[],"dV":["C"],"cN":[]},"Ea":{"dD":["C","l3"],"C":[],"af":["C","l3"],"t":[],"an":[],"af.1":"l3","dD.1":"l3","af.0":"C"},"tj":{"a6":["~"]},"FS":{"bx":[]},"mW":{"cg":["mW"]},"k9":{"cg":["k9"]},"n9":{"cg":["n9"]},"wN":{"cg":["wN"]},"a5f":{"e7":[]},"EQ":{"aj":[]},"ra":{"cg":["wN"]},"tu":{"a9L":[]},"m1":{"iM":[]},"qJ":{"iM":[]},"vO":{"iM":[]},"wh":{"bx":[]},"CP":{"bx":[]},"a0D":{"dK":[]},"a5T":{"CQ":[]},"oO":{"dK":[]},"ot":{"mq":[]},"wv":{"mq":[]},"Eg":{"aj":[]},"uE":{"hG":[]},"vQ":{"hG":[]},"oh":{"hG":[]},"q8":{"hG":[]},"Xi":{"oR":[]},"Xh":{"oR":[]},"Xj":{"oR":[]},"xc":{"oR":[]},"Q9":{"td":[]},"a36":{"FI":[]},"QV":{"fq":[]},"QW":{"fq":[]},"QZ":{"fq":[]},"R0":{"fq":[]},"QY":{"fq":[]},"R_":{"fq":[]},"R1":{"fq":[]},"QX":{"fq":[]},"tG":{"ri":[]},"Rd":{"aC":[],"e":[]},"US":{"b6":[],"as":[],"e":[]},"E9":{"C":[],"aO":["C"],"t":[],"an":[]},"lm":{"Y":[],"e":[]},"GB":{"b9":[],"aU":[],"e":[]},"qk":{"Y":[],"e":[]},"aO1":{"ba":[]},"b22":{"ba":[]},"b21":{"ba":[]},"uk":{"ba":[]},"uA":{"ba":[]},"hq":{"ba":[]},"mn":{"ba":[]},"cV":{"bk":["1"]},"cM":{"bk":["1"],"bk.T":"1"},"GC":{"X":["lm"]},"HI":{"X":["qk"]},"XR":{"bk":["aO1"],"bk.T":"aO1"},"B_":{"bk":["ba"],"bk.T":"ba"},"PI":{"bk":["hq"]},"UJ":{"cV":["mn"],"bk":["mn"],"bk.T":"mn","cV.T":"mn"},"IC":{"cV":["1"],"yk":["1"],"bk":["1"],"bk.T":"1","cV.T":"1"},"ID":{"cV":["1"],"yk":["1"],"bk":["1"],"bk.T":"1","cV.T":"1"},"H4":{"bk":["1"],"bk.T":"1"},"zx":{"Y":[],"e":[]},"a_3":{"X":["zx"]},"a_2":{"b6":[],"as":[],"e":[]},"zy":{"Y":[],"e":[]},"GE":{"X":["zy"]},"zF":{"b6":[],"as":[],"e":[]},"Gn":{"Y":[],"e":[]},"KB":{"X":["Gn"],"cR":[]},"M6":{"cR":[]},"vt":{"Y":[],"e":[]},"HO":{"X":["vt<1>"]},"ut":{"Y":[],"e":[]},"GI":{"X":["ut"]},"Cd":{"aj":[]},"a2O":{"aC":[],"e":[]},"iH":{"b9":[],"aU":[],"e":[]},"uR":{"b6":[],"as":[],"e":[]},"uQ":{"b6":[],"as":[],"e":[]},"mK":{"b6":[],"as":[],"e":[]},"uZ":{"b6":[],"as":[],"e":[]},"f4":{"b6":[],"as":[],"e":[]},"fY":{"b6":[],"as":[],"e":[]},"Cj":{"eA":["iR"],"aU":[],"e":[],"eA.T":"iR"},"cL":{"b6":[],"as":[],"e":[]},"rt":{"eA":["fd"],"aU":[],"e":[],"eA.T":"fd"},"vo":{"fa":[],"as":[],"e":[]},"uX":{"fa":[],"as":[],"e":[]},"b1J":{"b9":[],"aU":[],"e":[]},"kC":{"b6":[],"as":[],"e":[]},"oH":{"b6":[],"as":[],"e":[]},"t6":{"Y":[],"e":[]},"a6O":{"hv":[],"bp":[],"Q":[]},"a6P":{"b9":[],"aU":[],"e":[]},"U8":{"b6":[],"as":[],"e":[]},"Mp":{"b6":[],"as":[],"e":[]},"AN":{"b6":[],"as":[],"e":[]},"N9":{"b6":[],"as":[],"e":[]},"Ur":{"b6":[],"as":[],"e":[]},"Us":{"b6":[],"as":[],"e":[]},"Nm":{"b6":[],"as":[],"e":[]},"Qa":{"b6":[],"as":[],"e":[]},"Qm":{"b6":[],"as":[],"e":[]},"aT":{"b6":[],"as":[],"e":[]},"lC":{"b6":[],"as":[],"e":[]},"AM":{"fa":[],"as":[],"e":[]},"dU":{"b6":[],"as":[],"e":[]},"RE":{"b6":[],"as":[],"e":[]},"Dc":{"b6":[],"as":[],"e":[]},"a2S":{"b8":[],"bp":[],"Q":[]},"Rj":{"b6":[],"as":[],"e":[]},"WE":{"b6":[],"as":[],"e":[]},"a5d":{"b6":[],"as":[],"e":[]},"WV":{"fa":[],"as":[],"e":[]},"UB":{"aC":[],"e":[]},"wC":{"fa":[],"as":[],"e":[]},"h0":{"eA":["hs"],"aU":[],"e":[],"eA.T":"hs"},"nE":{"eA":["hs"],"aU":[],"e":[],"eA.T":"hs"},"ZJ":{"fa":[],"as":[],"e":[]},"VD":{"fa":[],"as":[],"e":[]},"UN":{"as":[],"e":[]},"RK":{"b6":[],"as":[],"e":[]},"CR":{"b6":[],"as":[],"e":[]},"iW":{"b6":[],"as":[],"e":[]},"LU":{"b6":[],"as":[],"e":[]},"TM":{"b6":[],"as":[],"e":[]},"TL":{"b6":[],"as":[],"e":[]},"My":{"b6":[],"as":[],"e":[]},"lK":{"b6":[],"as":[],"e":[]},"BU":{"b6":[],"as":[],"e":[]},"jC":{"aC":[],"e":[]},"eJ":{"aC":[],"e":[]},"a5F":{"X":["t6"]},"Nk":{"b6":[],"as":[],"e":[]},"J_":{"C":[],"aO":["C"],"t":[],"an":[]},"Ek":{"e":[]},"Ei":{"bp":[],"Q":[]},"Y_":{"kT":[],"an":[]},"Pr":{"b6":[],"as":[],"e":[]},"Nr":{"aC":[],"e":[]},"a0w":{"aj":[]},"nA":{"cH":[],"b9":[],"aU":[],"e":[]},"a2P":{"aC":[],"e":[]},"Py":{"aC":[],"e":[]},"AZ":{"Y":[],"e":[]},"Hm":{"X":["AZ"]},"PL":{"aC":[],"e":[]},"nB":{"Y":[],"e":[]},"Hs":{"X":["nB"]},"vh":{"Y":[],"e":[]},"nD":{"X":["vh"],"cR":[]},"Jw":{"Y":[],"e":[]},"tR":{"mV":[],"ey":[]},"a_N":{"b6":[],"as":[],"e":[]},"a4g":{"C":[],"aO":["C"],"t":[],"an":[]},"j2":{"cy":["d_"],"aj":[]},"Ht":{"fa":[],"as":[],"e":[]},"a4Z":{"X":["Jw"],"aTJ":[]},"a_K":{"hG":[]},"mY":{"cV":["1"],"bk":["1"],"bk.T":"1","cV.T":"1"},"Kr":{"cV":["1"],"bk":["1"],"bk.T":"1","cV.T":"1"},"Ks":{"cV":["1"],"bk":["1"],"bk.T":"1","cV.T":"1"},"Ky":{"cM":["1"],"bk":["1"],"bk.T":"1"},"a56":{"cV":["my"],"bk":["my"],"bk.T":"my","cV.T":"my"},"a03":{"cV":["kn"],"bk":["kn"],"bk.T":"kn","cV.T":"kn"},"a33":{"cV":["mf"],"bk":["mf"],"bk.T":"mf","cV.T":"mf"},"a77":{"cy":["uU"],"aj":[],"cR":[]},"a1_":{"cV":["kt"],"bk":["kt"],"bk.T":"kt","cV.T":"kt"},"a10":{"cV":["ku"],"bk":["ku"],"bk.T":"ku","cV.T":"ku"},"dg":{"aj":[]},"lR":{"dg":[],"aj":[]},"a_d":{"cR":[]},"By":{"aj":[]},"qh":{"Y":[],"e":[]},"HG":{"kF":["dg"],"b9":[],"aU":[],"e":[],"kF.T":"dg"},"xU":{"X":["qh"]},"Bz":{"Y":[],"e":[]},"a1s":{"Y":[],"e":[]},"a1r":{"X":["qh"]},"BA":{"Y":[],"e":[]},"aNB":{"ba":[]},"kJ":{"ba":[]},"kP":{"ba":[]},"hY":{"ba":[]},"HH":{"dg":[],"aj":[]},"a1t":{"X":["BA"]},"Vw":{"bk":["aNB"],"bk.T":"aNB"},"TX":{"bk":["kJ"],"bk.T":"kJ"},"UF":{"bk":["kP"],"bk.T":"kP"},"AY":{"bk":["hY"],"bk.T":"hY"},"qp":{"Y":[],"e":[]},"BF":{"X":["qp"]},"HL":{"b9":[],"aU":[],"e":[]},"lS":{"Y":[],"e":[]},"i3":{"X":["lS<1>"]},"jy":{"fu":[]},"bF":{"jy":["1"],"fu":[]},"Y":{"e":[]},"b6":{"as":[],"e":[]},"bp":{"Q":[]},"j1":{"bp":[],"Q":[]},"oj":{"bp":[],"Q":[]},"hv":{"bp":[],"Q":[]},"qu":{"jy":["1"],"fu":[]},"aC":{"e":[]},"aU":{"e":[]},"eA":{"aU":[],"e":[]},"b9":{"aU":[],"e":[]},"as":{"e":[]},"RC":{"as":[],"e":[]},"fa":{"as":[],"e":[]},"Q2":{"as":[],"e":[]},"Aq":{"bp":[],"Q":[]},"WW":{"bp":[],"Q":[]},"Dx":{"bp":[],"Q":[]},"b8":{"bp":[],"Q":[]},"RB":{"b8":[],"bp":[],"Q":[]},"EZ":{"b8":[],"bp":[],"Q":[]},"ic":{"b8":[],"bp":[],"Q":[]},"Vt":{"b8":[],"bp":[],"Q":[]},"a2N":{"bp":[],"Q":[]},"a2Q":{"e":[]},"jO":{"Y":[],"e":[]},"wu":{"X":["jO"]},"cz":{"qt":["1"]},"Qt":{"aC":[],"e":[]},"a1A":{"b6":[],"as":[],"e":[]},"qw":{"Y":[],"e":[]},"y1":{"X":["qw"]},"BN":{"r3":[]},"cr":{"aC":[],"e":[]},"qB":{"cH":[],"b9":[],"aU":[],"e":[]},"qC":{"Y":[],"e":[]},"HY":{"X":["qC"],"cR":[]},"pN":{"aI":["ad"],"ay":["ad"],"ay.T":"ad","aI.T":"ad"},"lE":{"aI":["iF"],"ay":["iF"],"ay.T":"iF","aI.T":"iF"},"lH":{"aI":["de"],"ay":["de"],"ay.T":"de","aI.T":"de"},"pL":{"aI":["cU?"],"ay":["cU?"],"ay.T":"cU?","aI.T":"cU?"},"qY":{"aI":["aN"],"ay":["aN"],"ay.T":"aN","aI.T":"aN"},"tg":{"aI":["p"],"ay":["p"],"ay.T":"p","aI.T":"p"},"zq":{"Y":[],"e":[]},"zu":{"Y":[],"e":[]},"zw":{"Y":[],"e":[]},"zt":{"Y":[],"e":[]},"zr":{"Y":[],"e":[]},"zv":{"Y":[],"e":[]},"B9":{"aI":["ap"],"ay":["ap"],"ay.T":"ap","aI.T":"ap"},"Rf":{"Y":[],"e":[]},"vG":{"X":["1"]},"un":{"X":["1"]},"ZX":{"X":["zq"]},"a__":{"X":["zu"]},"a_1":{"X":["zw"]},"ZZ":{"X":["zt"]},"ZY":{"X":["zr"]},"a_0":{"X":["zv"]},"iI":{"b9":[],"aU":[],"e":[]},"BW":{"hv":[],"bp":[],"Q":[]},"kF":{"b9":[],"aU":[],"e":[]},"y4":{"hv":[],"bp":[],"Q":[]},"cH":{"b9":[],"aU":[],"e":[]},"p1":{"aC":[],"e":[]},"C1":{"Y":[],"e":[]},"I8":{"X":["C1"]},"a23":{"aC":[],"e":[]},"Xw":{"cy":["aN"],"aj":[]},"ix":{"as":[],"e":[]},"At":{"ix":["1"],"as":[],"e":[]},"y7":{"b8":[],"bp":[],"Q":[]},"RA":{"ix":["ad"],"as":[],"e":[],"ix.0":"ad"},"J8":{"eo":["ad","C"],"C":[],"aO":["C"],"t":[],"an":[],"eo.0":"ad"},"Ie":{"b9":[],"aU":[],"e":[]},"qR":{"Y":[],"e":[]},"vU":{"aj":[],"cR":[]},"a7d":{"em":["aa"],"em.T":"aa"},"PA":{"aa":[]},"a2j":{"X":["qR"]},"aSI":{"b9":[],"aU":[],"e":[]},"UQ":{"aC":[],"e":[]},"a2L":{"aj":[]},"a2n":{"b6":[],"as":[],"e":[]},"a4o":{"C":[],"aO":["C"],"t":[],"an":[]},"jG":{"iI":["dr"],"b9":[],"aU":[],"e":[],"iI.T":"dr"},"Il":{"Y":[],"e":[]},"a2w":{"X":["Il"],"cR":[]},"a70":{"il":[]},"Fq":{"il":[]},"w2":{"aC":[],"e":[]},"xC":{"cJ":[],"d7":[],"d6":[]},"M1":{"Y":[],"e":[]},"a_9":{"qt":["xC"]},"a2A":{"aC":[],"e":[]},"TV":{"aC":[],"e":[]},"aT9":{"jR":[]},"qx":{"b9":[],"aU":[],"e":[]},"D7":{"Y":[],"e":[]},"jJ":{"X":["D7"]},"yg":{"pf":[]},"yf":{"pf":[]},"Iv":{"pf":[]},"Iw":{"pf":[]},"a1F":{"H":["ir"],"aj":[],"H.E":"ir"},"a1G":{"dM":["ar<k?,T<M>>?"],"aj":[]},"dC":{"aU":[],"e":[]},"Iz":{"bp":[],"Q":[]},"l9":{"fE":[],"dV":["C"],"cN":[]},"Ud":{"fa":[],"as":[],"e":[]},"yu":{"dD":["C","l9"],"C":[],"af":["C","l9"],"t":[],"an":[],"af.1":"l9","dD.1":"l9","af.0":"C"},"of":{"aj":[]},"n3":{"Y":[],"e":[]},"IB":{"X":["n3"]},"wa":{"Y":[],"e":[]},"Dg":{"X":["wa"]},"tP":{"C":[],"af":["C","fd"],"t":[],"an":[],"af.1":"fd","af.0":"C"},"Df":{"Y":[],"e":[]},"pg":{"iO":["pg"],"iO.E":"pg"},"tQ":{"b9":[],"aU":[],"e":[]},"lb":{"C":[],"aO":["C"],"t":[],"an":[],"iO":["lb"],"iO.E":"lb"},"Ja":{"C":[],"aO":["C"],"t":[],"an":[]},"yi":{"ix":["+(G,aN,G)"],"as":[],"e":[],"ix.0":"+(G,aN,G)"},"Kd":{"fa":[],"as":[],"e":[]},"a6j":{"b8":[],"bp":[],"Q":[]},"yK":{"fd":[],"fE":[],"dV":["C"],"cN":[]},"a2Y":{"X":["Df"]},"yj":{"as":[],"e":[]},"a2X":{"b8":[],"bp":[],"Q":[]},"a0C":{"b6":[],"as":[],"e":[]},"J9":{"eo":["+(G,aN,G)","C"],"C":[],"aO":["C"],"t":[],"an":[],"eo.0":"+(G,aN,G)"},"BK":{"Y":[],"e":[]},"Fi":{"Y":[],"e":[]},"og":{"hI":[]},"HS":{"X":["BK"]},"HR":{"aj":[]},"a1C":{"aj":[]},"K2":{"X":["Fi"]},"a5I":{"aj":[]},"aTb":{"cQ":["1"],"fu":[]},"wd":{"aC":[],"e":[]},"Dj":{"Y":[],"e":[]},"Uh":{"aj":[]},"ph":{"kU":[],"wc":[],"fS":[],"aj":[]},"a30":{"X":["Dj"]},"Dh":{"eQ":["1"],"eZ":["1"],"d2":["1"]},"Dp":{"Y":[],"e":[]},"wi":{"as":[],"e":[]},"QN":{"aC":[],"e":[]},"IJ":{"X":["Dp"]},"a38":{"C":[],"aO":["C"],"t":[],"an":[]},"a37":{"b6":[],"as":[],"e":[]},"wk":{"Y":[],"e":[]},"IL":{"X":["wk<1>"],"aNv":["1"]},"wn":{"b9":[],"aU":[],"e":[]},"DF":{"Y":[],"e":[]},"mr":{"X":["DF"]},"a18":{"b6":[],"as":[],"e":[]},"a4l":{"C":[],"aO":["C"],"t":[],"iQ":[],"an":[]},"oA":{"Y":[],"e":[]},"tp":{"b9":[],"aU":[],"e":[]},"Ej":{"Y":[],"e":[]},"dM":{"aj":[]},"a4J":{"X":["oA"]},"Jp":{"X":["Ej"]},"b5":{"dM":["1"],"aj":[]},"iq":{"b5":["1"],"dM":["1"],"aj":[]},"Jn":{"iq":["1"],"b5":["1"],"dM":["1"],"aj":[]},"Ef":{"iq":["1"],"b5":["1"],"dM":["1"],"aj":[],"b5.T":"1","iq.T":"1"},"rH":{"iq":["N"],"b5":["N"],"dM":["N"],"aj":[],"b5.T":"N","iq.T":"N"},"VB":{"iq":["k?"],"b5":["k?"],"dM":["k?"],"aj":[],"b5.T":"k?","iq.T":"k?"},"VA":{"b5":["bZ?"],"dM":["bZ?"],"aj":[],"b5.T":"bZ?"},"VH":{"Y":[],"e":[]},"bdJ":{"bgq":["a6<N>"]},"yy":{"X":["VH<1>"]},"a4S":{"b9":[],"aU":[],"e":[]},"a4G":{"b5":["oC?"],"dM":["oC?"],"aj":[],"b5.T":"oC?"},"Io":{"iI":["pd"],"b9":[],"aU":[],"e":[],"iI.T":"pd"},"yd":{"Y":[],"e":[]},"pe":{"X":["yd<1>"]},"wb":{"d2":["1"]},"eZ":{"d2":["1"]},"a0M":{"bk":["hq"],"bk.T":"hq"},"eQ":{"eZ":["1"],"d2":["1"]},"Du":{"eQ":["1"],"eZ":["1"],"d2":["1"]},"ws":{"eQ":["1"],"eZ":["1"],"d2":["1"]},"VJ":{"aC":[],"e":[]},"wH":{"f8":["1"],"f8.T":"1"},"Ew":{"b9":[],"aU":[],"e":[]},"rL":{"aj":[]},"yB":{"Y":[],"e":[]},"yz":{"cQ":["fu"],"fu":[],"cQ.T":"fu"},"JJ":{"X":["yB"]},"h2":{"i9":[],"hI":[]},"rQ":{"h2":[],"i9":[],"hI":[]},"jV":{"h2":[],"i9":[],"hI":[]},"jL":{"h2":[],"i9":[],"hI":[]},"iY":{"h2":[],"i9":[],"hI":[]},"XI":{"h2":[],"i9":[],"hI":[]},"Jy":{"b9":[],"aU":[],"e":[]},"n2":{"iO":["n2"],"iO.E":"n2"},"Ez":{"Y":[],"e":[]},"W_":{"X":["Ez"]},"kU":{"fS":[],"aj":[]},"rM":{"hI":[]},"rP":{"kU":[],"fS":[],"aj":[]},"W0":{"aC":[],"e":[]},"MF":{"aC":[],"e":[]},"Cp":{"aC":[],"e":[]},"BM":{"aC":[],"e":[]},"EA":{"Y":[],"e":[]},"JA":{"b9":[],"aU":[],"e":[]},"rR":{"X":["EA"]},"JC":{"Y":[],"e":[]},"a51":{"X":["JC"]},"JB":{"aj":[]},"a50":{"b6":[],"as":[],"e":[]},"Jh":{"C":[],"aO":["C"],"t":[],"an":[]},"a4H":{"b5":["R?"],"dM":["R?"],"aj":[],"b5.T":"R?"},"eU":{"ba":[]},"Ev":{"cV":["eU"],"bk":["eU"],"bk.T":"eU","cV.T":"eU"},"ww":{"Y":[],"e":[]},"lf":{"hF":[],"cJ":[],"d7":[],"d6":[]},"pq":{"im":[],"hZ":[],"cJ":[],"d7":[],"d6":[]},"p7":{"i7":[],"hZ":[],"cJ":[],"d7":[],"d6":[]},"wJ":{"aj":[]},"kQ":{"X":["1"]},"b5Q":{"Y":[],"e":[]},"x_":{"aj":[]},"w3":{"aj":[]},"rS":{"Y":[],"e":[]},"wL":{"b9":[],"aU":[],"e":[]},"a5a":{"eV":[],"X":["rS"],"aj":[]},"W4":{"aj":[]},"EU":{"Y":[],"e":[]},"a5l":{"X":["EU"]},"a5m":{"iI":["M"],"b9":[],"aU":[],"e":[],"iI.T":"M"},"al":{"wR":[]},"t0":{"Y":[],"e":[]},"EV":{"Y":[],"e":[]},"wS":{"aj":[]},"JP":{"X":["t0"]},"EW":{"aj":[]},"JO":{"X":["EV"]},"a5p":{"b9":[],"aU":[],"e":[]},"yD":{"b6":[],"as":[],"e":[]},"Wl":{"aC":[],"e":[]},"a5u":{"b8":[],"bp":[],"Q":[]},"Jj":{"C":[],"aO":["C"],"DM":[],"t":[],"an":[]},"Wo":{"i9":[]},"Wp":{"b6":[],"as":[],"e":[]},"a4t":{"C":[],"aO":["C"],"t":[],"an":[]},"WF":{"as":[],"e":[]},"mD":{"as":[],"e":[]},"WD":{"mD":[],"as":[],"e":[]},"Wz":{"mD":[],"as":[],"e":[]},"wV":{"b8":[],"bp":[],"Q":[]},"Cc":{"eA":["jB"],"aU":[],"e":[],"eA.T":"jB"},"Wx":{"aC":[],"e":[]},"a5w":{"mD":[],"as":[],"e":[]},"a5x":{"b6":[],"as":[],"e":[]},"a4v":{"cO":[],"aO":["cO"],"t":[],"an":[]},"F7":{"fy":["1","2"],"as":[],"e":[]},"F8":{"b8":[],"bp":[],"Q":[]},"F9":{"aj":[]},"WL":{"b6":[],"as":[],"e":[]},"yv":{"C":[],"aO":["C"],"t":[],"an":[]},"WK":{"aj":[]},"Hk":{"aj":[]},"WS":{"aC":[],"e":[]},"X1":{"aC":[],"e":[]},"Fo":{"Y":[],"e":[]},"a5R":{"X":["Fo"]},"QT":{"h1":[]},"QU":{"h1":[]},"R4":{"h1":[]},"R6":{"h1":[]},"R3":{"h1":[]},"R5":{"h1":[]},"R7":{"h1":[]},"R2":{"h1":[]},"E7":{"C":[],"aO":["C"],"t":[],"an":[]},"wz":{"C":[],"aO":["C"],"t":[],"an":[]},"xe":{"b6":[],"as":[],"e":[]},"Xc":{"b6":[],"as":[],"e":[]},"a0W":{"d6":[]},"Fy":{"b6":[],"as":[],"e":[]},"v9":{"cH":[],"b9":[],"aU":[],"e":[]},"b1M":{"cH":[],"b9":[],"aU":[],"e":[]},"aX":{"aC":[],"e":[]},"JG":{"Y":[],"e":[]},"a2R":{"aC":[],"e":[]},"a59":{"X":["JG"]},"a4N":{"aC":[],"e":[]},"a58":{"aj":[]},"B0":{"ba":[]},"q3":{"ba":[]},"q5":{"ba":[]},"q4":{"ba":[]},"AX":{"ba":[]},"lL":{"ba":[]},"lO":{"ba":[]},"qd":{"ba":[]},"qa":{"ba":[]},"qb":{"ba":[]},"i2":{"ba":[]},"nF":{"ba":[]},"lP":{"ba":[]},"lN":{"ba":[]},"qc":{"ba":[]},"lM":{"ba":[]},"mx":{"ba":[]},"aej":{"ba":[]},"my":{"ba":[]},"kn":{"ba":[]},"mf":{"ba":[]},"ov":{"ba":[]},"jQ":{"ba":[]},"oW":{"ba":[]},"j6":{"ba":[]},"oU":{"ba":[]},"kt":{"ba":[]},"ku":{"ba":[]},"PH":{"ba":[]},"fR":{"fE":[],"dV":["C"],"cN":[]},"pj":{"Y":[],"e":[]},"JH":{"Y":[],"e":[]},"FM":{"Y":[],"e":[]},"JK":{"X":["pj"]},"JI":{"X":["JH"]},"Ka":{"X":["FM"]},"Ao":{"cy":["uU"],"aj":[],"cR":[]},"FT":{"Y":[],"e":[]},"Hw":{"b9":[],"aU":[],"e":[]},"a6l":{"X":["FT"]},"a_O":{"aj":[]},"FY":{"Y":[],"e":[]},"a6n":{"X":["FY"]},"zA":{"Y":[],"e":[]},"dz":{"b6":[],"as":[],"e":[]},"GD":{"X":["zA"]},"Ww":{"Y":[],"e":[]},"CJ":{"Y":[],"e":[]},"VL":{"Y":[],"e":[]},"VG":{"Y":[],"e":[]},"Wq":{"Y":[],"e":[]},"Ps":{"Y":[],"e":[]},"o2":{"Y":[],"e":[]},"M0":{"Y":[],"e":[]},"xm":{"Y":[],"e":[]},"xn":{"X":["xm<1>"]},"Gc":{"cy":["xo"],"aj":[]},"tq":{"Y":[],"e":[]},"yP":{"X":["tq<1>"]},"Gg":{"Y":[],"e":[]},"tX":{"b9":[],"aU":[],"e":[]},"IH":{"b9":[],"aU":[],"e":[]},"Kx":{"X":["Gg"],"cR":[]},"UR":{"aC":[],"e":[]},"IR":{"as":[],"e":[]},"a3V":{"b8":[],"bp":[],"Q":[]},"Hl":{"jy":["1"],"fu":[]},"tr":{"fa":[],"as":[],"e":[]},"a75":{"b8":[],"bp":[],"Q":[]},"Wk":{"fa":[],"as":[],"e":[]},"b8P":{"b9":[],"aU":[],"e":[]},"mV":{"ey":[]},"a78":{"eA":["j3"],"aU":[],"e":[],"eA.T":"j3"},"a_j":{"b6":[],"as":[],"e":[]},"Jg":{"C":[],"aO":["C"],"t":[],"an":[]},"co":{"XX":[]},"a_a":{"XX":[]},"XU":{"n":[],"bJ":["n"]},"yQ":{"n":[],"bJ":["n"]},"XV":{"dK":[],"bJ":["dK"]},"Kz":{"dK":[],"bJ":["dK"]},"XT":{"b0":[],"bJ":["b0?"]},"a2c":{"bJ":["b0?"]},"je":{"b0":[],"bJ":["b0?"]},"XW":{"p":[],"bJ":["p"]},"a7b":{"p":[],"bJ":["p"]},"Ia":{"bJ":["1?"]},"bv":{"bJ":["1"]},"fA":{"bJ":["1"]},"aZ":{"bJ":["1"]},"XY":{"cy":["bu<co>"],"aj":[]},"Gw":{"Y":[],"e":[]},"a7f":{"X":["Gw"]},"Qw":{"a9":[]},"a1B":{"em":["a9"],"em.T":"a9"},"Nx":{"a9":[]},"Ny":{"a9":[]},"Nz":{"a9":[]},"NA":{"a9":[]},"NB":{"a9":[]},"NC":{"a9":[]},"ND":{"a9":[]},"NE":{"a9":[]},"NF":{"a9":[]},"NG":{"a9":[]},"NH":{"a9":[]},"NI":{"a9":[]},"NJ":{"a9":[]},"NK":{"a9":[]},"Ay":{"a9":[]},"NL":{"a9":[]},"NM":{"a9":[]},"Az":{"a9":[]},"NN":{"a9":[]},"NO":{"a9":[]},"NP":{"a9":[]},"NQ":{"a9":[]},"NR":{"a9":[]},"NS":{"a9":[]},"NT":{"a9":[]},"NU":{"a9":[]},"AA":{"a9":[]},"NV":{"a9":[]},"NW":{"a9":[]},"NX":{"a9":[]},"NY":{"a9":[]},"NZ":{"a9":[]},"O_":{"a9":[]},"O0":{"a9":[]},"O1":{"a9":[]},"O2":{"a9":[]},"O3":{"a9":[]},"O4":{"a9":[]},"O5":{"a9":[]},"O6":{"a9":[]},"O7":{"a9":[]},"O8":{"a9":[]},"O9":{"a9":[]},"Oa":{"a9":[]},"Ob":{"a9":[]},"Oc":{"a9":[]},"Od":{"a9":[]},"Oe":{"a9":[]},"Of":{"a9":[]},"Og":{"a9":[]},"Oh":{"a9":[]},"Oi":{"a9":[]},"AB":{"a9":[]},"Oj":{"a9":[]},"Ok":{"a9":[]},"Ol":{"a9":[]},"Om":{"a9":[]},"On":{"a9":[]},"Oo":{"a9":[]},"Op":{"a9":[]},"Oq":{"a9":[]},"Or":{"a9":[]},"Os":{"a9":[]},"Ot":{"a9":[]},"Ou":{"a9":[]},"Ov":{"a9":[]},"Ow":{"a9":[]},"Ox":{"a9":[]},"Oy":{"a9":[]},"Oz":{"a9":[]},"OA":{"a9":[]},"OB":{"a9":[]},"OC":{"a9":[]},"OD":{"a9":[]},"OE":{"a9":[]},"OF":{"a9":[]},"OG":{"a9":[]},"OH":{"a9":[]},"OI":{"a9":[]},"OJ":{"a9":[]},"OK":{"a9":[]},"OL":{"a9":[]},"OM":{"a9":[]},"ON":{"a9":[]},"OO":{"a9":[]},"OP":{"a9":[]},"OQ":{"a9":[]},"OR":{"a9":[]},"OS":{"a9":[]},"AC":{"a9":[]},"OT":{"a9":[]},"OU":{"a9":[]},"OV":{"a9":[]},"OW":{"a9":[]},"OX":{"a9":[]},"OY":{"a9":[]},"OZ":{"a9":[]},"AD":{"a9":[]},"P_":{"a9":[]},"P0":{"a9":[]},"P1":{"a9":[]},"P2":{"a9":[]},"P3":{"a9":[]},"P4":{"a9":[]},"P5":{"a9":[]},"P6":{"a9":[]},"P7":{"a9":[]},"P8":{"a9":[]},"P9":{"a9":[]},"Pa":{"a9":[]},"Pb":{"a9":[]},"Pc":{"a9":[]},"AE":{"a9":[]},"Pd":{"a9":[]},"AF":{"a9":[]},"Pe":{"a9":[]},"Pf":{"a9":[]},"Pg":{"a9":[]},"RT":{"a7":[]},"RU":{"a7":[]},"RV":{"a7":[]},"RW":{"a7":[]},"RX":{"a7":[]},"RY":{"a7":[]},"RZ":{"a7":[]},"S_":{"a7":[]},"S0":{"a7":[]},"S1":{"a7":[]},"S2":{"a7":[]},"S3":{"a7":[]},"S4":{"a7":[]},"S5":{"a7":[]},"Cz":{"a7":[]},"S6":{"a7":[]},"S7":{"a7":[]},"CA":{"a7":[]},"S8":{"a7":[]},"S9":{"a7":[]},"Sa":{"a7":[]},"Sb":{"a7":[]},"Sc":{"a7":[]},"Sd":{"a7":[]},"Se":{"a7":[]},"Sf":{"a7":[]},"CB":{"a7":[]},"Sg":{"a7":[]},"Sh":{"a7":[]},"Si":{"a7":[]},"Sj":{"a7":[]},"Sk":{"a7":[]},"Sl":{"a7":[]},"Sm":{"a7":[]},"Sn":{"a7":[]},"So":{"a7":[]},"Sp":{"a7":[]},"Sq":{"a7":[]},"Sr":{"a7":[]},"Ss":{"a7":[]},"St":{"a7":[]},"Su":{"a7":[]},"Sv":{"a7":[]},"Sw":{"a7":[]},"Sx":{"a7":[]},"Sy":{"a7":[]},"Sz":{"a7":[]},"SA":{"a7":[]},"SB":{"a7":[]},"SC":{"a7":[]},"SD":{"a7":[]},"SE":{"a7":[]},"CC":{"a7":[]},"SF":{"a7":[]},"SG":{"a7":[]},"SH":{"a7":[]},"SI":{"a7":[]},"SJ":{"a7":[]},"SK":{"a7":[]},"SL":{"a7":[]},"SM":{"a7":[]},"SN":{"a7":[]},"SO":{"a7":[]},"SP":{"a7":[]},"SQ":{"a7":[]},"SR":{"a7":[]},"SS":{"a7":[]},"ST":{"a7":[]},"SU":{"a7":[]},"SV":{"a7":[]},"SW":{"a7":[]},"SX":{"a7":[]},"SY":{"a7":[]},"SZ":{"a7":[]},"T_":{"a7":[]},"T0":{"a7":[]},"T1":{"a7":[]},"T2":{"a7":[]},"T3":{"a7":[]},"T4":{"a7":[]},"T5":{"a7":[]},"T6":{"a7":[]},"T7":{"a7":[]},"T8":{"a7":[]},"T9":{"a7":[]},"Ta":{"a7":[]},"Tb":{"a7":[]},"Tc":{"a7":[]},"Td":{"a7":[]},"Te":{"a7":[]},"CD":{"a7":[]},"Tf":{"a7":[]},"Tg":{"a7":[]},"Th":{"a7":[]},"Ti":{"a7":[]},"Tj":{"a7":[]},"Tk":{"a7":[]},"Tl":{"a7":[]},"CE":{"a7":[]},"Tm":{"a7":[]},"Tn":{"a7":[]},"To":{"a7":[]},"Tp":{"a7":[]},"Tq":{"a7":[]},"Tr":{"a7":[]},"Ts":{"a7":[]},"Tt":{"a7":[]},"Tu":{"a7":[]},"Tv":{"a7":[]},"Tw":{"a7":[]},"Tx":{"a7":[]},"Ty":{"a7":[]},"Tz":{"a7":[]},"CF":{"a7":[]},"TA":{"a7":[]},"CG":{"a7":[]},"TB":{"a7":[]},"TC":{"a7":[]},"TD":{"a7":[]},"Y0":{"aa":[]},"Y1":{"aa":[]},"Y2":{"aa":[]},"Y3":{"aa":[]},"Y4":{"aa":[]},"Y5":{"aa":[]},"Y6":{"aa":[]},"Y7":{"aa":[]},"Y8":{"aa":[]},"Y9":{"aa":[]},"Ya":{"aa":[]},"Yb":{"aa":[]},"Yc":{"aa":[]},"Go":{"aa":[]},"Yd":{"aa":[]},"Ye":{"aa":[]},"Gp":{"aa":[]},"Yf":{"aa":[]},"Yg":{"aa":[]},"Yh":{"aa":[]},"Yi":{"aa":[]},"Yj":{"aa":[]},"Yk":{"aa":[]},"Yl":{"aa":[]},"Ym":{"aa":[]},"Gq":{"aa":[]},"Yn":{"aa":[]},"Yo":{"aa":[]},"Yp":{"aa":[]},"Yq":{"aa":[]},"Yr":{"aa":[]},"Ys":{"aa":[]},"Yt":{"aa":[]},"Yu":{"aa":[]},"Yv":{"aa":[]},"Yw":{"aa":[]},"Yx":{"aa":[]},"Yy":{"aa":[]},"Yz":{"aa":[]},"YA":{"aa":[]},"YB":{"aa":[]},"YC":{"aa":[]},"YD":{"aa":[]},"YE":{"aa":[]},"YF":{"aa":[]},"YG":{"aa":[]},"YH":{"aa":[]},"YI":{"aa":[]},"YJ":{"aa":[]},"YK":{"aa":[]},"YL":{"aa":[]},"Gr":{"aa":[]},"YM":{"aa":[]},"YN":{"aa":[]},"YO":{"aa":[]},"YP":{"aa":[]},"YQ":{"aa":[]},"YR":{"aa":[]},"YS":{"aa":[]},"YT":{"aa":[]},"YU":{"aa":[]},"YV":{"aa":[]},"YW":{"aa":[]},"YX":{"aa":[]},"YY":{"aa":[]},"YZ":{"aa":[]},"Z_":{"aa":[]},"Z0":{"aa":[]},"Z1":{"aa":[]},"Z2":{"aa":[]},"Z3":{"aa":[]},"Z4":{"aa":[]},"Z5":{"aa":[]},"Z6":{"aa":[]},"Z7":{"aa":[]},"Z8":{"aa":[]},"Z9":{"aa":[]},"Za":{"aa":[]},"Zb":{"aa":[]},"Zc":{"aa":[]},"Zd":{"aa":[]},"Ze":{"aa":[]},"Zf":{"aa":[]},"Zg":{"aa":[]},"Zh":{"aa":[]},"Zi":{"aa":[]},"Zj":{"aa":[]},"Zk":{"aa":[]},"Gs":{"aa":[]},"Zl":{"aa":[]},"Zm":{"aa":[]},"Zn":{"aa":[]},"Zo":{"aa":[]},"Zp":{"aa":[]},"Zq":{"aa":[]},"Zr":{"aa":[]},"Gt":{"aa":[]},"Zs":{"aa":[]},"Zt":{"aa":[]},"Zu":{"aa":[]},"Zv":{"aa":[]},"Zw":{"aa":[]},"Zx":{"aa":[]},"Zy":{"aa":[]},"Zz":{"aa":[]},"ZA":{"aa":[]},"ZB":{"aa":[]},"ZC":{"aa":[]},"ZD":{"aa":[]},"ZE":{"aa":[]},"Gu":{"aa":[]},"ZF":{"aa":[]},"Gv":{"aa":[]},"ZG":{"aa":[]},"ZH":{"aa":[]},"ZI":{"aa":[]},"Qx":{"a7":[]},"a2s":{"em":["a7"],"em.T":"a7"},"Qy":{"aa":[]},"a7e":{"em":["aa"],"em.T":"aa"},"BH":{"bx":[]},"Qq":{"bx":[]},"Qs":{"bx":[]},"Qr":{"bx":[]},"fl":{"bx":[]},"Mh":{"bx":[]},"Mi":{"bx":[]},"uq":{"bx":[]},"zN":{"bx":[]},"Mj":{"bx":[]},"Mk":{"bx":[]},"zO":{"bx":[]},"rG":{"bx":[]},"lt":{"dq":["T<o>"],"dq.T":"T<o>"},"nv":{"bx":[]},"LT":{"zm":[]},"X0":{"t7":[]},"A8":{"c2":["k","k","1"],"ar":["k","1"],"c2.K":"k","c2.V":"1","c2.C":"k"},"xM":{"l7":[]},"xO":{"l7":[]},"xN":{"l7":[]},"RN":{"bx":[]},"zn":{"Y":[],"e":[]},"GA":{"X":["zn"]},"qy":{"Y":[],"e":[]},"HX":{"X":["qy"]},"Xy":{"aC":[],"e":[]},"TO":{"aC":[],"e":[]},"qD":{"Y":[],"e":[]},"HZ":{"X":["qD"],"cR":[]},"ux":{"aC":[],"e":[]},"tm":{"Y":[],"e":[]},"tn":{"Y":[],"e":[]},"r_":{"aC":[],"e":[]},"nu":{"Y":[],"e":[]},"qe":{"Y":[],"e":[]},"r5":{"Y":[],"e":[]},"rd":{"Y":[],"e":[]},"q6":{"Y":[],"e":[]},"rf":{"aC":[],"e":[]},"me":{"Y":[],"e":[]},"Rs":{"aC":[],"e":[]},"W7":{"aC":[],"e":[]},"EK":{"aC":[],"e":[]},"MC":{"aC":[],"e":[]},"iB":{"aC":[],"e":[]},"zY":{"aC":[],"e":[]},"Kg":{"X":["tm"]},"Kh":{"X":["tn"]},"GU":{"X":["nu"]},"HC":{"X":["qe"]},"IA":{"X":["r5"]},"a32":{"X":["rd"]},"pM":{"aC":[],"e":[]},"a0H":{"X":["q6"]},"xx":{"aC":[],"e":[]},"a31":{"X":["me"]},"wD":{"aC":[],"e":[]},"jE":{"cg":["jE"]},"VM":{"ej":[]},"VN":{"ej":[]},"VO":{"ej":[]},"VP":{"ej":[]},"VQ":{"ej":[]},"VR":{"ej":[]},"VS":{"ej":[]},"VT":{"ej":[]},"VU":{"ej":[]},"Up":{"bx":[]},"bP":{"a6":["1"],"bP.T":"1","bP.R":"3","bP.S":"2"},"Dv":{"ru":["1"],"jP":["1","1","1"],"bP":["1","1","1"],"a6":["1"],"bP.T":"1","bP.R":"1","bP.S":"1"},"op":{"jP":["1","1","1"],"bP":["1","1","1"],"a6":["1"]},"UC":{"jP":["@","@","@"],"bP":["@","@","@"],"a6":["@"],"bP.T":"@","bP.R":"@","bP.S":"@"},"ru":{"jP":["1","1","1"],"bP":["1","1","1"],"a6":["1"],"bP.T":"1","bP.R":"1","bP.S":"1"},"jP":{"bP":["1","2","3"],"a6":["1"],"bP.T":"1","bP.R":"3","bP.S":"2"},"oo":{"bx":[]},"Q7":{"jX":[],"cg":["jX"]},"xT":{"mF":[],"cg":["WP"]},"jX":{"cg":["jX"]},"WO":{"jX":[],"cg":["jX"]},"WP":{"cg":["WP"]},"WQ":{"cg":["WP"]},"WR":{"bx":[]},"wX":{"eM":[],"bx":[]},"wY":{"cg":["WP"]},"mF":{"cg":["WP"]},"x0":{"bx":[]},"X2":{"eM":[],"bx":[]},"X8":{"op":["@"],"jP":["@","@","@"],"bP":["@","@","@"],"a6":["@"],"bP.T":"@","bP.R":"@","bP.S":"@","op.T":"@"},"X6":{"cR":[]},"p5":{"dq":["1"],"dq.T":"1"},"Hz":{"mG":["1"]},"Gk":{"bx":[]},"b3P":{"Y":[],"e":[]},"b2e":{"Y":[],"e":[]},"b2f":{"X":["b2e"]},"b8q":{"b9":[],"aU":[],"e":[]},"b7n":{"b9":[],"aU":[],"e":[]},"b3A":{"ri":[]}}'))
 A.b8y(v.typeUniverse,JSON.parse('{"Rz":1,"oY":1,"Wu":1,"Wv":1,"PV":1,"Qi":1,"Bt":1,"XE":1,"xq":1,"KQ":2,"As":1,"e8":1,"cI":1,"w6":1,"mG":1,"TQ":1,"io":1,"n8":1,"Fh":1,"X_":2,"a5O":1,"a_i":1,"tx":1,"K1":1,"ZT":1,"a5G":1,"K0":1,"a0E":1,"tz":1,"yn":1,"xS":1,"a5H":1,"HM":2,"xX":2,"a6V":2,"Cu":2,"a6X":1,"JU":2,"JT":2,"JV":1,"JW":1,"Kp":2,"Kq":1,"MW":1,"Ni":2,"yE":1,"cg":1,"tY":1,"Bl":1,"AS":1,"Pv":1,"zE":1,"v0":1,"H0":1,"H1":1,"H2":1,"Dk":1,"KM":1,"H5":1,"cy":1,"kq":1,"AU":1,"Dl":2,"TF":1,"Ij":1,"yR":1,"Au":1,"H3":1,"Ry":1,"dV":1,"eT":1,"DN":1,"AL":1,"yr":1,"Jd":1,"wA":1,"K5":1,"L5":1,"L6":1,"np":1,"PM":1,"xW":1,"vG":1,"un":1,"y3":1,"At":1,"Xx":1,"Pz":1,"aTb":1,"dM":1,"ig":1,"Jn":1,"yS":1,"aNv":1,"wb":1,"RL":1,"Du":1,"ws":1,"tK":1,"yq":1,"F7":2,"JQ":2,"fx":1,"dF":1,"Kk":1,"xp":1,"a1D":1,"WZ":1,"Hz":1,"aer":1}'))
 var u={S:"\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\u03f6\x00\u0404\u03f4 \u03f4\u03f6\u01f6\u01f6\u03f6\u03fc\u01f4\u03ff\u03ff\u0584\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u05d4\u01f4\x00\u01f4\x00\u0504\u05c4\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u0400\x00\u0400\u0200\u03f7\u0200\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u03ff\u0200\u0200\u0200\u03f7\x00",t:"\x01\x01)==\xb5\x8d\x15)QeyQQ\xc9===\xf1\xf0\x00\x01)==\xb5\x8d\x15)QeyQQ\xc9===\xf1\xf0\x01\x01)==\xb5\x8d\x15(QeyQQ\xc9===\xf1\xf0\x01\x01(<<\xb4\x8c\x15(PdxPP\xc8<<<\xf1\xf0\x01\x01)==\xb5\x8d\x15(PeyQQ\xc9===\xf1\xf0\x01\x01)==\xb5\x8d\x15(PdyPQ\xc9===\xf1\xf0\x01\x01)==\xb5\x8d\x15(QdxPP\xc9===\xf1\xf0\x01\x01)==\xb5\x8d\x15(QeyQQ\xc9\u011a==\xf1\xf0\xf0\xf0\xf0\xf0\xf0\xdc\xf0\xf0\xf0\xf0\xf0\xf0\xf0\xf0\xf0\xf0\xf0\xf0\xf0\xf0\x01\x01)==\u0156\x8d\x15(QeyQQ\xc9===\xf1\xf0\x01\x01)==\xb5\x8d\x15(QeyQQ\xc9\u012e\u012e\u0142\xf1\xf0\x01\x01)==\xa1\x8d\x15(QeyQQ\xc9===\xf1\xf0\x00\x00(<<\xb4\x8c\x14(PdxPP\xc8<<<\xf0\xf0\x01\x01)==\xb5\x8d\x15)QeyQQ\xc9===\xf0\xf0??)\u0118=\xb5\x8c?)QeyQQ\xc9=\u0118\u0118?\xf0??)==\xb5\x8d?)QeyQQ\xc9\u012c\u012c\u0140?\xf0??)==\xb5\x8d?)QeyQQ\xc8\u0140\u0140\u0140?\xf0\xdc\xdc\xdc\xdc\xdc\u0168\xdc\xdc\xdc\xdc\xdc\xdc\xdc\xdc\xdc\xdc\xdc\xdc\xdc\x00\xa1\xa1\xa1\xa1\xa1\u0154\xa1\xa1\xa1\xa1\xa1\xa1\xa1\xa1\xa1\xa1\xa1\xa1\xa1\x00",v:"\r\ncontent-type: text/plain; charset=utf-8\r\ncontent-transfer-encoding: binary",e:"\x10\x10\b\x04\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x04\x04\x10\x10\x10\x10\x10\x02\x02\x02\x04\x04\x10\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x02\x01\x01\x01\x01\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x02\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x02\x02\x02\x02\x02\x02\x02\x10\x10\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x02\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x02\x0e\x02\x02\x02\x0e\x0e\x0e\x0e\x02\x02\x10\x02\x10\x04\x10\x04\x04\x02\x10\x10\x10\x02\x10\x10\x10\x10\x02\x02\x02\x02\x02\x02\x02\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x04\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x10\x10\x10\x10\x06\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x06\x02\x02\x06\x02\x02\x02\x02\x06\x02\x06\x02\x02\x02\x02\x06\x06\x06\x02\x06\x02\x02\x02\x02\x02\x02\x02\x02\x04\x10\x10\x10\x10\x02\x02\x04\x04\x02\x02\x04\x04\x11\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x02\x02\x02\x02\x0e\x0e\x02\x0e\x10\x04\x04\x04\x04\x02\x10\x10\x10\x02\x10\x10\x10\x11\x02\x02\x02\x02\x02\x02\x02\x10\x10\x02\x0e\x0e\x0e\x02\x02\x02\x02\x02\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x0e\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x10\x10\x04\x10\x10\x10\x10\x10\x10\x02\x10\x10\x04\x04\x10\x10\x02\x10\x02\x02\x10\x10\x10\x10\x10\x10\x10\x10\x04\x04\x04\x04\x04\x04\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x02\x02\x10\x10\x02\x10\x10\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x04\x10\x10\x10\x10\x10\x10\x10\x04\x04\x04\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x02\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x02\x02\x10\x02\x10\x10\x10\x02\x10\x10\x02\x02\x02\x02\x02\x10\x10\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x10\x02\x02\x02\x02\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x04\x04\x10\x02\x02\x02\x02\x04\x10\x10\x10\x10\x10\x10\x10\x10\x04\x04\x04\x04\x11\x04\x04\x02\x10\x10\x10\x10\x10\x10\x10\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\f\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\f\r\r\r\r\r\r\r\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\x02\x02\x02\x02\x04\x10\x10\x10\x10\x02\x04\x04\x04\x02\x04\x04\x04\x11\b\x02\x02\x02\x02\x02\x02\x02\x02\x10\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x04\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x10\x01\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x10\x02\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x02\x10\x10\x02\x02\x02\x02\x02\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x02\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x02\x02\x10\x10\x10\x10\x10\x10\x10\x02\x10\x10\x02\x10\x10\x10\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x10\x10\x10\x02\x02\x02\x10\x10\x10\x10\x10\x10\x01\x01\x01\x01\x01\x01\x01\x01\x10\x10\x10\x10\x10\x10\x10\x10\x02\x02\x10\x10\x10\x10\x10\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x06\x06\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x06\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x06\x02\x02\x02\x02\x02\x02\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x0e\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x02\x02\x02\x02\x06\x06\x06\x02\x02\x02\x02\x02\x10\x04\x04\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x02\x04\x10\x10\x10\x10\x10\x10\x10\x02\x02\x02\x02\x02\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\x02\x02\x02\x04\x04\x10\x04\x04\x10\x04\x04\x02\x04\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x06\x02\x02\x02\x02\x06\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x06\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x06\x06\x06\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x06\x06\x02\x02\x02\x10\x04\x04\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x02\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x02\x0e\x0e\x02\x0e\x0e\x0e\x0e\x0e\x02\x02\x10\x02\x10\x10\x04\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x02\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x02\x0e\x0e\x02\x0e\x0e\x0e\x0e\x0e\x02\x02\x10\x02\x04\x04\x10\x10\x10\x10\x02\x02\x04\x04\x02\x02\x04\x04\x11\x02\x02\x02\x02\x02\x02\x02\x10\x10\x10\x02\x02\x02\x02\x0e\x0e\x02\x0e\n\n\n\n\n\n\n\x02\x02\x02\x02\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\x10\x10\b\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x02\x02\x02\x02\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x10\x10\x10\x02\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x04\x10\x10\x10\x10\x10\x10\x10\x02\x10\x10\x10\x10\x10\x10\x04\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x02\x04\x10\x10\x10\x10\x10\x10\x10\x04\x10\x10\x04\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x10\x10\x10\x10\x02\x02\x02\x10\x02\x10\x10\x02\x10\x10\x10\x10\x10\x10\x10\b\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x04\x04\x04\x04\x04\x02\x10\x10\x02\x04\x04\x10\x04\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x04\x04\x04\x04\x04\x02\x04\x04\x02\x02\x10\x10\x10\x10\b\x04\b\x04\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x04\x04\x04\x10\x10\x10\x10\x02\x02\x10\x10\x04\x04\x04\x04\x10\x02\x02\x02\x04\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x06\x06\x06\x06\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x06\x06\x06\x06\x06\x06\x06\x06\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x06\x06\x06\x06\x06\x06\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x06\x06\x06\x06\x06\x06\x06\x06\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x02\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x02\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x06\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x06\x02\x02\x06\x06\x06\x06\x06\x06\x06\x06\x06\x02\x06\x06\x06\x06\x02\x02\x02\x02\x02\x02\x02\x02\x02\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x02\x02\x02\x02\x02\x02\x02\x02\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x07\x01\x01\x00\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x02\x02\x02\x02\x04\x04\x10\x10\x04\x02\x02\x02\x02\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x04\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x10\x10\x10\x10\x10\b\x02\x10\x10\x10\x10\x02\x10\x10\x10\x02\x10\x10\x10\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x04\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x04\x10\x04\x10\x10\x10\x10\x10\x10\x10\x02\x02\x02\x02\x10\x02\x02\x02\x02\x02\x02\x10\x02\x02\x04\x10\x10\x02\x02\x02\x02\x02\x02\x10\x04\x10\x10\x04\x04\x04\x10\x04\x10\x10\x10\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x01\x03\x0f\x01\x01\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x02\x02\x02\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x10\x10\x10\x10\x04\x04\x10\x10\x04\x04\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x01\x01\x01\x01\x01\x01\x01\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x06\x02\x02\x02\x01\x06\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x02\x10\x10\x10\x02\x02\x10\x10\x02\x02\x02\x02\x02\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x0e\x0e\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x02\x04\x10\x10\x02\x02\x02\x02\x02\x02\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x02\x02\x02\x02\x10\x04\x04\x10\x10\x10\x02\x10\x02\x04\x04\x04\x04\x04\x04\x04\x10\x04\x04\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x02\x02\x04\x10\x10\x10\x10\x04\x04\x10\x10\x10\x10\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x10\x10\x10\x04\x10\x10\x10\x10\x10\x10\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x04\x04\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x04\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x04\x04\x04\x10\x10\x10\x10\x10\x10\x10\x10\x10\x04\x10\x02\b\b\x02\x02\x02\x02\x02\x10\x10\x10\x10\x02\x04\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x04\x04\x04\x10\x10\x10\x10\x10\x10\x10\x10\x04\x04\x10\x04\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x04\x10\x04\x04\x10\x10\x10\x10\x10\x10\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x10\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x04\x04\x04\x10\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x10\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x04\x04\x04\x10\x10\x10\x10\x10\x10\x10\x10\x10\x04\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x10\x10\x10\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\b\b\x02\x02\x02\x02\x02\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x02\x02\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x04\x04\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x10\x10\x02\x10\x04\x04\x02\x02\x02\x04\x04\x04\x02\x04\x04\x04\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x02\x02\x02\x02\x02\x02\x02\x02\x10\x04\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x04\x04\x10\x10\x10\x10\x04\x04\x10\x10\x04\x04\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x02\x10\x04\x10\x04\x04\x04\x04\x02\x02\x04\x04\x02\x02\x04\x04\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x04\x04\x02\x02\x10\x10\x10\x10\x10\x10\x10\x02\x02\x02\x10\x10\x10\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x04\x04\x10\x10\x10\x10\x10\x10\x02\x10\x02\x02\x10\x02\x10\x10\x10\x04\x02\x04\x04\x10\x10\x10\b\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x04\x04\x10\x10\x02\x02\x02\x02\x10\x10\x02\x02\x10\x10\x10\x02\x02\x02\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\b\x02\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x10\x10\x10\x10\x10\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x10\x10\x10\x10\x10\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x02\x02\x02\x10\x02\x02\x02\x02\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x04\x04\x04\x04\x10\x10\x04\x04\x04\x02\x02\x02\x02\x04\x04\x10\x04\x04\x04\x04\x04\x04\x10\x10\x10\x02\x02\x02\x02\x10\x10\x10\x04\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x10\x04\x10\x02\x04\x04\x10\x04\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x02\x02\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x10\x04\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x04\x04\x04\x10\x10\x10\x10\x04\x04\x10\x10\x02\x02\b\x02\x02\x02\x02\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\b\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x10\x02\x02\x02\x02\x02\x02\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x04\x04\x10\x10\x10\x10\x02\x02\x04\x04\x04\x04\x10\x10\x04\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x04\x10\x02\x02\x10\x10\x10\x10\x04\x10\x10\x10\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x04\x04\x04\x10\x10\x10\x10\x10\x10\x10\x10\x04\x04\x10\x10\x10\x04\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x04\x04\x10\x10\x10\x10\x10\x10\x04\x10\x04\x04\x10\x04\x10\x10\x04\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x04\x04\x04\x10\x10\x10\x04\x04\x10\x10\x10\x10\x02\x02\x02\x02\x02\x02\x10\x02\x02\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x04\x04\x04\x10\x10\x10\x10\x10\x10\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x06\x06\x06\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x06\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x06\x06\x06\x06\x06\x06\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x06\x06\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x06\x02\x02\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\x05\b\b\b\b\b\b\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x02\x01\x02\x02\x02\x10\x10\x02\x10\x10\x02\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x06\x02\x06\x02\x02\x02\x02\x02\x02\x06\x06\x06\x06\x06\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x10\x10\x02\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x10\x10\x10\x10\x04\b\x10\x10\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x10\x10\x10\x10\x04\x04\x10\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\b\b\b\b\b\b\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x04\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\n\x02\x02\x02\n\n\n\n\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x02\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x02\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x02\x02\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x06\x02\x06\x02\x06\x02\x02\x02\x02\x02\x02\x06\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x06\x06\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x02\x10\x02\x10\x02\x02\x02\x02\x04\x04\x04\x04\x04\x04\x04\x04\x10\x10\x10\x10\x10\x10\x10\x10\x04\x04\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x10\x10\x10\x10\x10\x10\x10\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x10\x02\x04\x10\x10\x10\x10\x10\x10\x10\x10\x10\x02\x02\x02\x04\x10\x10\x10\x10\x10\x02\x10\x10\x04\x02\x04\x04\x11\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x04\x04\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x04\x10\x10\x04\x04\x02\x02\x02\x02\x02\x04\x10\x02\x02\x02\x02\x02\x02\x02\x02\x02",U:"\x15\x01)))\xb5\x8d\x01=Qeyey\xc9)))\xf1\xf0\x15\x01)))\xb5\x8d\x00=Qeyey\xc9)))\xf1\xf0\x15\x01)((\xb5\x8d\x01=Qeyey\xc9(((\xf1\xf0\x15\x01(((\xb4\x8c\x01<Pdxdx\xc8(((\xf1\xf0\x15\x01)((\xb5\x8d\x01=Pdydx\xc9(((\xf1\xf0\x15\x01)((\xb5\x8d\x01=Qdxey\xc9(((\xf1\xf0\x15\x01)((\xb5\x8d\x01=Qexey\xc9(((\xf1\xf0\x15\x01)\x8c(\xb5\x8d\x01=Qeyey\xc9\xa0\x8c\x8c\xf1\xf0\x15\x01)((\xb5\x8c\x01=Qeyey\xc9(((\xf1\xf0\x15\x01)(((\x8d\x01=Qeyey\xc9(((\xf1\xf0\x15\x01)((\xb5\x8d\x01=Qeyey\xc9\xc8\xc8\xdc\xf1\xf0\x15\x01)((\xb5\x8d\x01=Qeyey\xc8\xdc\xdc\xdc\xf1\xf0\x14\x00(((\xb4\x8c\x00<Pdxdx\xc8(((\xf0\xf0\x15\x01)))\xb5\x8d\x01=Qeyey\xc9)))\xf0\xf0\x15\x01(\u01b8(\u01e0\x8d\x01<Pdxdx\xc8\u012c\u0140\u0154\xf0\xf0\x15\x01)((\xb5\u011a\x01=Qeyey\u012e\u0190\u0190\u01a4\xf1\xf0\x15\x01)\u01b8(\xb5\x8d\x01=Qeyey\u012e\u0168\u0140\u0154\xf1\xf0\x15\x01)\u01b8(\xb5\x8d\x01=Qeyey\u0142\u017c\u0154\u0154\xf1\xf0\x15\x01)((\xb5\u011a\x01=Qeyey\xc9\u0190\u0190\u01a4\xf1\xf0\x15\x01)((\xb5\u011a\x01=Qeyey\u0142\u01a4\u01a4\u01a4\xf1\xf0\x15\x01)((\xb5\x8d\x01=Qeyey\u012e\u0190\u0190\u01a4\xf1\xf0\x15\x01)((\xb5\x8d\x01=Qeyey\u0142\u01a4\u01a4\u01a4\xf1\xf0\x15\x01)\u01b8(\xb5\x8d\x01=Qeyey\xc9\u01cc\u01b8\u01b8\xf1\xf0\x15\x01)((\xb5\u011a\x01=Qeyey\xc9(((\xf1\xf0\x15\x01)((\u0156\x8d\x01=Qeyey\xc9(((\xf1\xf0",D:" must not be greater than the number of characters in the file, ",r:'"recorder" must not already be associated with another Canvas.',T:"% of the way to being a CircleBorder that is ",Z:"(?:manual/[^\\s]+|[\\w-]+\\.(?:png|jpe?g|webp))",z:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/",f:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_",q:"Called rasterize() with a different number of canvases and pictures.",A:"Cannot extract a file path from a URI with a fragment component",B:"Cannot extract a file path from a URI with a query component",Q:"Cannot extract a non-Windows file path from a file URI with an authority",c:"Cannot fire new event. Controller is already firing an event",w:"Error handler must accept one Object or one Object and a StackTrace as arguments, and return a value of the returned future's type",p:"Failed to convert text image bitmap to an SkImage.",G:"Fallada dels comandaments del pupitre principal",i:"S2100 remodelat \xb7 nom\xe9s en aquesta variant",R:"S2100 \xb7 variant no diferenciada a la fitxa",V:"Stream has been disposed.\nAn ImageStream is considered disposed once at least one listener has been added and subsequently all listeners have been removed and no handles are outstanding from the keepAlive method.\nTo resolve this error, maintain at least one listener on the stream, or create an ImageStreamCompleterHandle from the keepAlive method, or create a new stream for the image.",F:"SystemChrome.setApplicationSwitcherDescription",s:"TextInputClient.updateEditingStateWithDeltas",m:"TextInputClient.updateEditingStateWithTag",n:"The error handler of Future.then must return a value of the returned future's type",u:"There was a problem trying to load FontManifest.json",J:"by a synchronously-called image error listener",k:"manual/s2100/sac_06/comandament-convertidor.png",l:"manual/s2100/sac_06/instruments-bateria.png",M:"manual/s2100/sac_12/comandament-pantograf.png",E:"max must be in range 0 < max \u2264 2^32, was ",j:"\u1132\u166c\u166c\u206f\u11c0\u13fb\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u1bff\u1bff\u1bff\u1c36\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u1aee\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u1fb5\u059c\u266d\u166c\u264e\u166c\u0a70\u175c\u166c\u166c\u1310\u033a\u1ebd\u0a6b\u2302\u166c\u166c\u22fc\u166c\u1ef8\u269d\u132f\u03b8\u166c\u1be8\u166c\u0a71\u0915\u1f5a\u1f6f\u04a2\u0202\u086b\u021a\u029a\u1427\u1518\u0147\u1eab\u13b9\u089f\u08b6\u2a91\u02d8\u086b\u0882\u08d5\u0789\u176a\u251c\u1d6c\u166c\u0365\u037c\u02ba\u22af\u07bf\u07c3\u0238\u024b\u1d39\u1d4e\u054a\u22af\u07bf\u166c\u1456\u2a9f\u166c\u07ce\u2a61\u166c\u166c\u2a71\u1ae9\u166c\u0466\u2a2e\u166c\u133e\u05b5\u0932\u1766\u166c\u166c\u0304\u1e94\u1ece\u1443\u166c\u166c\u166c\u07ee\u07ee\u07ee\u0506\u0506\u051e\u0526\u0526\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u196b\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u1798\u1657\u046c\u046c\u166c\u0348\u146f\u166c\u0578\u166c\u166c\u166c\u22ac\u1763\u166c\u166c\u166c\u1f3a\u166c\u166c\u166c\u166c\u166c\u166c\u0482\u166c\u1364\u0322\u166c\u0a6b\u1fc6\u166c\u1359\u1f1f\u270e\u1ee3\u200e\u148e\u166c\u1394\u166c\u2a48\u166c\u166c\u166c\u166c\u0588\u137a\u166c\u166c\u166c\u166c\u166c\u166c\u1bff\u1bff\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u13a9\u13e8\u2574\u12b0\u166c\u166c\u0a6b\u1c35\u166c\u076b\u166c\u166c\u25a6\u2a23\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u0747\u2575\u166c\u166c\u2575\u166c\u256e\u07a0\u166c\u166c\u166c\u166c\u166c\u166c\u257b\u166c\u166c\u166c\u166c\u166c\u166c\u0757\u255d\u0c6d\u0d76\u28f0\u28f0\u28f0\u29ea\u28f0\u28f0\u28f0\u2a04\u2a19\u027a\u2693\u2546\u0832\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u074d\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u084c\u166c\u081e\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u165a\u166c\u166c\u166c\u174d\u166c\u166c\u166c\u1bff\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u0261\u166c\u166c\u0465\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u2676\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u26a4\u196a\u166c\u166c\u046e\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u1f13\u12dd\u166c\u166c\u14de\u12ea\u1306\u02f2\u166c\u2a62\u0563\u07f1\u200d\u1d8e\u198c\u1767\u166c\u13d0\u1d80\u1750\u166c\u140b\u176b\u2ab4\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u080e\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04d2\u04d6\u04da\u04c2\u04c6\u04ca\u04ce\u04f6\u08f5\u052a\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u174e\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u1c36\u1c36\u166c\u166c\u166c\u166c\u166c\u206f\u166c\u166c\u166c\u166c\u196a\u166c\u166c\u12c0\u166c\u166f\u168c\u1912\u166c\u166c\u166c\u166c\u166c\u166c\u0399\u166c\u166c\u1786\u2206\u22bc\u1f8e\u1499\u245b\u1daa\u2387\u20b4\u1569\u2197\u19e6\u0b88\u26b7\u166c\u09e9\u0ab8\u1c46\x00\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u205e\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u1868\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u1898\u1ac1\u166c\u2754\u166c\u0114\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166cc\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u1bff\u166c\u0661\u1627\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u0918\u166c\u166c\u166c\u166c\u166c\u05c6\u1ac1\u16be\u166c\u1af8\u21c3\u166c\u166c\u1a21\u1aad\u166c\u166c\u166c\u166c\u166c\u166c\u28f0\u254e\u0d89\u0f41\u28f0\u0efb\u0e39\u27e0\u0c7c\u28a9\u28f0\u166c\u28f0\u28f0\u28f0\u28f2\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u1140\u103c\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u11c0\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c\u166c"}
 var t=(function rtii(){var s=A.av
-return{S6:s("@<XX>"),yd:s("zm"),vH:s("b09"),od:s("bk<ba>"),gj:s("b0c<M>"),pC:s("hj"),ZU:s("zp<n>"),so:s("bH<i>"),C:s("bH<R>"),Bs:s("bH<n?>"),ph:s("zF<kX>"),qH:s("b0k"),s1:s("zJ"),vp:s("pH"),S7:s("zM"),jo:s("a9L"),Ak:s("no"),W8:s("hl"),en:s("zP"),FB:s("ur"),M1:s("Ml"),Al:s("nq<M?>"),m3:s("cU"),k:s("ad"),q:s("fE"),pI:s("kj"),V4:s("dj"),wY:s("cM<uk>"),nz:s("cM<uA>"),Nv:s("cM<hY>"),OY:s("cM<hq>"),vr:s("cM<aej>"),_M:s("cM<kJ>"),Dd:s("cM<kP>"),fN:s("cM<ov>"),Tx:s("cM<jQ>"),fn:s("cM<eU>"),j5:s("cM<oU>"),_n:s("cM<oW>"),ZQ:s("cM<j6>"),Od:s("MP<@>"),Ew:s("MQ<@>"),Am:s("b0F"),WG:s("A8<k>"),d0:s("fn<d2<@>?,d2<@>>"),aL:s("b0O"),Lh:s("Ac"),XY:s("lx"),PO:s("Af"),m6:s("Ah"),Bn:s("uN"),S3:s("Ai"),BQ:s("uO"),nR:s("Ak"),Hz:s("hn"),hP:s("eK"),G:s("n"),IC:s("ev"),b8:s("cg<@>"),QK:s("uY<hl>"),Ss:s("dT"),id:s("nx"),qO:s("pX<Fn,@>"),w:s("a4<k,k>"),eL:s("a4<k,o>"),fF:s("f5<k>"),Nq:s("lA"),vn:s("Av"),pU:s("af<t,dV<t>>"),ho:s("a9"),H5:s("b1r"),HY:s("hX"),ip:s("AN"),I7:s("bdS"),Rf:s("b1A"),fs:s("v6"),CG:s("bZ"),Hw:s("iF"),u5:s("v8"),l4:s("b1J"),Uf:s("nA"),XP:s("b1M"),yS:s("v9"),Je:s("be7"),EX:s("e7"),jh:s("b1T"),I:s("iH"),ra:s("be8"),xm:s("hq"),Jj:s("b2_"),YH:s("PO<aL>"),uL:s("i_"),zk:s("vg"),Tu:s("b1"),ML:s("ej"),A0:s("de"),Zi:s("kt"),Rz:s("ku"),Ee:s("aM<@>"),Q:s("bp"),dq:s("b2r"),GB:s("Be"),lz:s("lJ"),Lt:s("cD"),VI:s("bx"),IX:s("fp<k9,cK>"),bh:s("qa"),oB:s("qb"),_w:s("lL"),HH:s("lM"),OO:s("i2"),cP:s("lN"),b6:s("qc"),P9:s("lO"),eI:s("qd"),wB:s("lQ"),Ie:s("Bo"),Q9:s("b2F"),US:s("hs"),N8:s("Bu"),s4:s("aeD"),OE:s("aeE"),RO:s("b2I"),Kw:s("aeQ"),mx:s("dg"),l5:s("lR"),zq:s("vr"),ia:s("qm"),VW:s("qn"),FK:s("fG"),jU:s("BE"),c4:s("kA"),gx:s("i3<@>"),bE:s("eM"),Uy:s("afk"),_8:s("jx"),lI:s("Qp"),PN:s("vt<T<ar<k,@>>>"),Z9:s("a6<oK>"),wF:s("a6<N>"),Ev:s("a6<N>()"),L0:s("a6<@>"),T8:s("a6<dj?>"),uz:s("a6<~>"),Fp:s("cl<wR,ba>"),J:s("cl<o,n>"),Lu:s("ex<kO>"),MA:s("ex<fQ>"),Ih:s("ex<o>"),R:s("vu"),cD:s("d7"),uA:s("cz<jr>"),C1:s("cz<jw>"),Uv:s("cz<i7>"),jn:s("cz<jF>"),YC:s("cz<jM>"),lG:s("cz<jU>"),hg:s("cz<kY>"),Qm:s("cz<kZ>"),UN:s("cz<hF>"),ok:s("cz<im>"),lh:s("cz<p7>"),Bk:s("cz<lf>"),Pw:s("cz<pq>"),xR:s("qt<d7>"),yi:s("jy<X<Y>>"),TX:s("qu<jJ>"),bT:s("qu<X<Y>>"),rQ:s("bel"),GF:s("eN<kH(iM)>"),PD:s("eN<~()>"),op:s("eN<~(nJ)>"),bq:s("i5"),G7:s("QJ<K5<@>>"),rA:s("qw"),mS:s("qx"),AL:s("i6<an>"),Fn:s("lV"),zE:s("an"),Lk:s("aS9"),g5:s("BQ"),Oh:s("qB"),lu:s("aSb"),OX:s("hu"),Di:s("fr"),dW:s("fI"),iF:s("bI"),SG:s("kE"),Bc:s("nO<bp?>"),ri:s("BV"),IS:s("hv"),og:s("cH"),WB:s("b9"),U1:s("iK"),lA:s("b3m"),JZ:s("ahY"),XO:s("ahZ"),pT:s("ai_"),gD:s("nR"),W:s("ba"),nQ:s("nS"),Ya:s("vJ"),K9:s("C4<@>"),JY:s("I<@>"),VG:s("I<M?>"),lY:s("J<b0c<M>>"),QP:s("J<ji>"),NS:s("J<dd>"),tM:s("J<pJ>"),sq:s("J<e4>"),gb:s("J<kj>"),AT:s("J<uO>"),s8:s("J<aQZ>"),t_:s("J<n>"),EV:s("J<nx>"),KV:s("J<fo>"),ZD:s("J<dI>"),E:s("J<e7>"),vl:s("J<iH>"),Up:s("J<PP>"),lX:s("J<bp>"),LE:s("J<PZ>"),XS:s("J<Bo>"),bp:s("J<dg>"),z8:s("J<qn>"),Pt:s("J<fG>"),uf:s("J<kA>"),no:s("J<nK>"),r8:s("J<jx>"),wQ:s("J<a6<qm>>"),LD:s("J<a6<T<ar<k,@>>>>"),Rh:s("J<a6<+(k,fG?)>>"),mo:s("J<a6<~>>"),iQ:s("J<d6>"),DU:s("J<i5>"),om:s("J<i6<an>>"),kr:s("J<h1>"),XZ:s("J<fI>"),u:s("J<bI>"),Fa:s("J<hv>"),fJ:s("J<cH>"),VB:s("J<kG>"),VO:s("J<ey>"),O_:s("J<m_>"),O:s("J<aL>"),K0:s("J<iM>"),CE:s("J<kH>"),k5:s("J<eO>"),k_:s("J<Rx>"),HU:s("J<hx>"),xj:s("J<aiB>"),s9:s("J<Cj>"),Y4:s("J<iN>"),MH:s("J<qN>"),_f:s("J<qO>"),ER:s("J<o_>"),X_:s("J<T<ea>>"),fQ:s("J<T<e2>>"),zg:s("J<T<R>>"),Eo:s("J<aj>"),H8:s("J<RJ>"),ss:s("J<o4>"),a9:s("J<em<@>>"),IO:s("J<em<M?>>"),eo:s("J<h>"),H7:s("J<ar<k,@>>"),Xr:s("J<aN>"),yt:s("J<w4>"),YE:s("J<iS>"),tc:s("J<r3>"),Qg:s("J<mb>"),jl:s("J<M>"),Rd:s("J<amC>"),sF:s("J<Dd>"),d:s("J<aH>"),oq:s("J<kL>"),wi:s("J<of>"),g8:s("J<aTb<@>>"),zY:s("J<we>"),OM:s("J<oj<cN>>"),H9:s("J<dL>"),RR:s("J<kN>"),tg:s("J<wf>"),tZ:s("J<wg>"),D9:s("J<iV>"),Y2:s("J<bq>"),RW:s("J<wp>"),Io:s("J<aop>"),L7:s("J<+representation,targetSize(F2,H)>"),Wy:s("J<+(k,k)>"),Co:s("J<+(k,Ge)>"),jK:s("J<+causaDescartadaAqui,pasoId(k?,k)>"),lN:s("J<+data,event,timeStamp(T<iV>,aL,b1)>"),Nt:s("J<+domSize,representation,targetSize(H,F2,H)>"),AO:s("J<u>"),Pc:s("J<rA>"),Ik:s("J<C>"),xT:s("J<ox>"),TT:s("J<t>"),Ry:s("J<cO>"),QT:s("J<e1>"),y8:s("J<wG>"),ZP:s("J<kU>"),D1:s("J<eV>"),u1:s("J<rV>"),JO:s("J<hC>"),q1:s("J<ea>"),QF:s("J<cK>"),o4:s("J<Wf>"),Qo:s("J<rY>"),Ay:s("J<aTP>"),kO:s("J<oL>"),N_:s("J<ci>"),Gl:s("J<mG<~>>"),s:s("J<k>"),oU:s("J<b6k>"),PL:s("J<x5>"),bt:s("J<x6>"),Lx:s("J<eC>"),bG:s("J<FD>"),sD:s("J<oR>"),VS:s("J<td>"),zs:s("J<Xo>"),AS:s("J<te>"),Ne:s("J<eY>"),FO:s("J<l0<l0<@>>>"),x0:s("J<mN<R>>"),LX:s("J<Ge>"),Uu:s("J<k4>"),p:s("J<e>"),GA:s("J<cR>"),FQ:s("J<hJ>"),Na:s("J<p_>"),SW:s("J<a_k>"),TV:s("J<mW>"),ob:s("J<l7>"),Kj:s("J<xR>"),_Y:s("J<fT>"),mz:s("J<a24>"),Kx:s("J<k7>"),zj:s("J<n3>"),IR:s("J<aOi>"),m4:s("J<ym>"),jE:s("J<la>"),qi:s("J<es>"),y2:s("J<hd>"),uD:s("J<ir>"),M6:s("J<Jr>"),s6:s("J<tR>"),lb:s("J<ld>"),g9:s("J<e2>"),YK:s("J<k9>"),Z4:s("J<b8l>"),cR:s("J<yL>"),NM:s("J<n9>"),HZ:s("J<N>"),n:s("J<R>"),ee:s("J<@>"),t:s("J<o>"),L:s("J<h?>"),ef:s("J<M?>"),iG:s("J<C?>"),ny:s("J<d2<@>?>"),Fi:s("J<ci?>"),_m:s("J<k?>"),Z:s("J<o?>"),a0:s("J<dy>"),Zt:s("J<a6<N>()>"),iL:s("J<dq<iN>()>"),xf:s("J<l7(k,e6)>"),sA:s("J<N(iM)>"),qj:s("J<~()>"),SM:s("J<~(M,c6?)>"),e:s("J<~(bk<ba>)>"),c:s("J<~(iz)>"),LY:s("J<~(ji)>"),j1:s("J<~(b1)>"),s2:s("J<~(qs)>"),Jh:s("J<~(T<nK>)>"),hh:s("J<~(oI)>"),ha:s("ft<@>"),bz:s("vM"),m:s("aL"),lT:s("fJ"),dC:s("i8<@>"),Hf:s("fK<Fn,@>"),Cl:s("jB"),D2:s("fu"),XU:s("kH(iM)"),SQ:s("vP"),Dj:s("qK"),jk:s("bF<b2f>"),NE:s("bF<nD>"),am:s("bF<BF>"),ku:s("bF<Dg>"),LZ:s("bF<wu>"),cF:s("bF<mr>"),B:s("bF<X<Y>>"),af:s("bF<IB>"),E9:s("Rx"),Cc:s("aiB"),gN:s("qM"),rf:s("Ck"),hz:s("iN"),JB:s("iO<@>"),y4:s("qP<n2>"),oM:s("qP<pg>"),wO:s("Cn<@>"),NH:s("b3G"),Rk:s("T<no>"),Ch:s("T<jx>"),Lc:s("T<aL>"),qC:s("T<iN>"),b5:s("T<ar<k,@>>"),UX:s("T<M>"),gm:s("T<kN>"),d_:s("T<bq>"),jQ:s("T<wp>"),I1:s("T<e1>"),lD:s("T<ea>"),xc:s("T<cK>"),yp:s("T<k>"),JF:s("T<p_>"),rg:s("T<e2>"),j:s("T<@>"),Cm:s("T<o>"),Dn:s("T<M?>"),I_:s("aj"),da:s("o4"),JW:s("vV"),bd:s("h"),bS:s("aSI"),tO:s("bc<i,ao>"),mT:s("bc<k,k>"),UH:s("bc<ao,oF>"),DC:s("bc<o,i>"),q9:s("bc<o,k>"),sw:s("bc<M,l0<@>>"),qE:s("bc<k?,T<M>>"),Dx:s("m4<@,@>"),kY:s("ar<wR,ba>"),nf:s("ar<k,M>"),GU:s("ar<k,k>"),a:s("ar<k,@>"),_P:s("ar<k,o>"),e3:s("ar<h7,@>"),f:s("ar<@,@>"),xE:s("ar<k,M?>"),pE:s("ar<M?,M?>"),rr:s("ar<~(bq),aN?>"),C9:s("fv<k,jY?>"),fD:s("ae<k,pT>"),a4:s("ae<k,k>"),Gf:s("ae<k,@>"),rB:s("ae<n9,cK>"),qn:s("ae<o,cK>"),gn:s("ae<o,k>"),Tr:s("ae<fQ,kM?>"),iB:s("b3Q"),v:s("a7"),i1:s("qU"),xV:s("aN"),l:s("jG"),xS:s("ib"),Pb:s("dK"),ZA:s("CQ"),_h:s("iQ"),Wz:s("iR"),Lb:s("fa"),Es:s("r0"),CW:s("iS"),hA:s("oa"),jW:s("ob"),A3:s("id"),u9:s("ma"),uK:s("jJ"),I6:s("0&"),Jc:s("dC<vN>"),Tm:s("dC<i9>"),w3:s("dC<oc>"),eq:s("dC<og>"),ji:s("dC<rM>"),WA:s("dC<h2>"),Te:s("mb"),P:s("bt"),K:s("M"),xA:s("M(o)"),_a:s("M(o{params:M?})"),yw:s("bi<aOi>"),g:s("bi<~(bk<ba>)>"),jc:s("bi<~(iz)>"),Xx:s("bi<~(oI)>"),pw:s("r8"),o:s("i"),gY:s("jK"),qt:s("cJ"),Fj:s("Dd"),ZY:s("aH"),BR:s("b4x"),Ms:s("of"),B9:s("wc"),Mf:s("wd"),sd:s("aT9<M?>"),Q2:s("Uk"),Fw:s("eA<jB>"),IL:s("eA<cN>"),bg:s("d1"),ke:s("re"),Ud:s("dL"),v3:s("v"),sT:s("kN"),sv:s("mg"),mX:s("rh"),qa:s("bfn"),ge:s("rj"),Ko:s("rk"),F:s("kO"),pY:s("mj"),qL:s("bq"),GG:s("bft"),XA:s("mk"),n2:s("rm"),WQ:s("rn"),w5:s("ml"),DB:s("ro"),PB:s("rp"),RH:s("rq"),Mj:s("rr"),xb:s("rs"),ks:s("fL"),oN:s("mm"),f9:s("aNv<M?>"),bb:s("wn"),C0:s("b55"),yH:s("aU"),jV:s("ww"),pK:s("bfA"),Rp:s("+()"),BZ:s("+(k,fG?)"),Yr:s("+(tH,R)"),mi:s("+(M?,M?)"),YT:s("u"),nP:s("DK"),Qz:s("UW"),CZ:s("DL"),NW:s("DM"),x:s("C"),vz:s("rB"),DW:s("rD"),f1:s("DX"),kQ:s("E_"),I9:s("t"),F5:s("as"),GM:s("aO<t>"),Wx:s("ms"),nl:s("cO"),kl:s("mt"),Cn:s("wz"),dw:s("E7"),Ju:s("rF"),E1:s("E8"),UM:s("jQ"),Wd:s("iX"),dZ:s("Ef<o>"),yb:s("dM<M?>"),z4:s("e1"),k2:s("Eh<u?>"),hF:s("c5<nx>"),MV:s("c5<n3>"),o_:s("c5<k9>"),ad:s("Ek"),oj:s("wB"),pO:s("d2<@>(Q,M?)"),nY:s("Eo<b3P,beu>"),BL:s("Eo<jW,kV>"),Np:s("Er"),JE:s("wH<M>"),Cy:s("Ew"),gt:s("kU"),Lm:s("rR"),sm:s("wJ"),NF:s("b5J"),qd:s("bfJ"),NU:s("bfK"),hI:s("bfL"),x9:s("eV"),mb:s("EG"),Wu:s("wL"),iN:s("oG"),_S:s("d3"),VP:s("ea"),bu:s("cK"),UF:s("rY"),g3:s("dE"),HS:s("oK"),tm:s("rZ"),n5:s("wP<@>"),hi:s("bu<wz>"),p7:s("bu<cK>"),Ro:s("bu<@>"),uy:s("aTP"),RY:s("ci"),jH:s("oM"),cZ:s("wQ"),Vz:s("wR"),yE:s("bfR"),Mp:s("b6"),FW:s("H"),Vr:s("Wt"),Ws:s("F3<k>"),r:s("mA"),h5:s("wT"),Xp:s("mC"),Gt:s("wV"),D:s("fc"),M0:s("mD"),jB:s("oN"),fO:s("b67"),y3:s("jX"),Bb:s("mF"),Qv:s("fd"),Km:s("c6"),MF:s("j1"),d1:s("Y"),Iz:s("aC"),LQ:s("WY<M?>"),kj:s("t7"),N:s("k"),Vc:s("b6k"),NC:s("jZ"),jr:s("k(k,k)"),_k:s("X5"),WT:s("ce<kh>"),u4:s("ce<a9>"),re:s("ce<ar<h7,@>>"),az:s("ce<a7>"),Q6:s("ce<m7>"),Ow:s("ce<w7>"),hS:s("ce<kR>"),E8:s("ce<aa>"),d9:s("ce<N>"),hr:s("ce<e1?>"),b9:s("ce<~>"),ZC:s("oO"),ev:s("kX"),NJ:s("oQ"),if:s("b6t"),mr:s("FG"),iy:s("FK"),ot:s("j3"),tp:s("il"),qY:s("k0"),bZ:s("b6D"),fm:s("tf"),E6:s("eY"),em:s("p"),nH:s("th"),we:s("j4"),ZM:s("ti"),ZF:s("l0<l0<@>>"),zo:s("l0<@>"),qe:s("Xu"),U:s("fR"),U2:s("b6X"),zW:s("cP"),Ns:s("mN<R>"),Ni:s("aI<i>"),Y:s("aI<R>"),A:s("h7"),ns:s("mO"),e2:s("dP"),w7:s("av7"),rd:s("xl"),Po:s("av8"),H3:s("oV"),pm:s("xm<d_>"),Pj:s("j5<aL>"),kk:s("mQ"),lQ:s("tp"),G5:s("k2<k,k>"),N2:s("xs<@>"),gU:s("j6"),Xu:s("mR"),cr:s("mS"),Zu:s("XH"),tJ:s("cQ<bZ>"),V1:s("cQ<M>"),A9:s("cQ<t5>"),kK:s("cQ<k>"),f3:s("cQ<o>"),Ll:s("cQ<fu?>"),j3:s("tq<R>"),GY:s("h9"),JH:s("xt"),Dg:s("tr"),rS:s("hI"),X3:s("mU"),v6:s("Gj"),Vu:s("Gm"),ih:s("aG<bI>"),Hd:s("aG<k>"),SF:s("cn<dT>"),FI:s("cn<bq>"),t5:s("cn<ea>"),Hx:s("cn<bu<dE>>"),ZK:s("cn<jY>"),Ri:s("cn<k>"),ow:s("cn<p4>"),b7:s("cn<hd>"),kE:s("cn<~(M,c6?)>"),r7:s("cn<~(vB)>"),Pi:s("l2<lR>"),Zw:s("l2<hd>"),l7:s("e"),a7:s("mV"),EK:s("co"),JI:s("fA<R>"),GC:s("fA<n?>"),ZX:s("fA<dK?>"),z_:s("aZ<b0>"),De:s("aZ<n>"),mD:s("aZ<de>"),li:s("aZ<dp>"),W7:s("aZ<H>"),uE:s("aZ<p>"),XR:s("aZ<R>"),rc:s("aZ<n?>"),RP:s("aZ<p?>"),Ag:s("XX"),QN:s("e(Q,bu<co>,e?)"),X5:s("cR"),Uh:s("aa"),Qy:s("l3"),rx:s("hJ"),L1:s("GB"),JX:s("p_"),CL:s("tu"),_9:s("j7<ry>"),Tv:s("j7<H?>"),h8:s("bf<kh>"),qs:s("bf<hl>"),m_:s("bf<aL>"),jT:s("bf<T<hJ>>"),BJ:s("bf<kR>"),Iy:s("bf<wQ>"),D5:s("bf<kV>"),gI:s("bf<oV>"),na:s("bf<hJ>"),zh:s("bf<@>"),yB:s("bf<dj?>"),oe:s("bf<M?>"),EZ:s("bf<e1?>"),h:s("bf<~>"),BY:s("b7n"),ZW:s("xE"),B6:s("GR"),me:s("p2"),Wb:s("l6"),EG:s("tw"),bY:s("Hd"),TC:s("ty"),uC:s("fg"),dA:s("mY<q3>"),Fb:s("mY<q4>"),Uz:s("mY<q5>"),Q8:s("Hl<X<Y>>"),UJ:s("a0K"),rM:s("tA<aL>"),s5:s("tB<aL>"),l3:s("Hw"),Sc:s("p5<aL>"),Eh:s("HG"),fk:s("xV"),ni:s("HJ"),Jp:s("HL"),h1:s("xY"),Lv:s("ag<kh>"),lc:s("ag<hl>"),XC:s("ag<aL>"),G4:s("ag<T<hJ>>"),Xa:s("ag<kR>"),cN:s("ag<wQ>"),dH:s("ag<kV>"),aP:s("ag<oV>"),lL:s("ag<hJ>"),tq:s("ag<N>"),LR:s("ag<@>"),wJ:s("ag<o>"),gg:s("ag<dj?>"),xF:s("ag<M?>"),X6:s("ag<e1?>"),V:s("ag<~>"),cK:s("xZ"),Qu:s("n1"),U3:s("y1"),UR:s("fT"),R9:s("p6"),Fy:s("p8<M?,M?>"),Nr:s("I0"),cA:s("k8"),Sx:s("n2"),pt:s("y9"),Gk:s("Ie"),PJ:s("ya"),Fe:s("Io"),xg:s("a2D"),pA:s("tL<T<o>>"),Tp:s("pf"),pi:s("l9"),Vl:s("pg"),yI:s("n3"),eU:s("yj"),gQ:s("ph"),sZ:s("IG"),j4:s("a34"),Li:s("IH"),oh:s("tN"),bR:s("IR"),h7:s("la"),zP:s("es"),rj:s("J_"),l0:s("tO"),Lj:s("lb"),zd:s("J5"),SN:s("Ja"),ju:s("hd"),Eg:s("yu"),xL:s("yv"),im:s("tP"),pR:s("tQ"),Ez:s("ir"),Pu:s("Js"),p9:s("Jy"),jF:s("JA"),vC:s("e2"),kS:s("a5r<M?>"),S8:s("K_"),mm:s("le<o>"),bm:s("kb<C>"),dQ:s("kb<lb>"),HE:s("yG"),S0:s("yH"),f2:s("Kd"),i9:s("yK"),tH:s("b8q"),Wp:s("Ks<AX>"),_l:s("tX"),ps:s("b8P"),px:s("Ky<mx>"),GD:s("bv<b0>"),mN:s("bv<n>"),Dm:s("bv<N>"),N5:s("bv<R>"),jY:s("bv<b0?>"),b:s("bv<n?>"),DH:s("a7c"),y:s("N"),i:s("R"),z:s("@"),C_:s("@(M)"),Hg:s("@(M,c6)"),S:s("o"),VA:s("nl?"),tX:s("aQC?"),m2:s("zQ?"),Vx:s("e3?"),sa:s("fm?"),eJ:s("pL?"),oI:s("b0?"),YY:s("pN?"),CD:s("dj?"),L5:s("aQV?"),JG:s("Al?"),cW:s("aQW?"),eG:s("Am?"),e4:s("aQX?"),EM:s("uS?"),VC:s("uT?"),_:s("n?"),YJ:s("ev?"),Q0:s("bZ?"),xG:s("lE?"),V2:s("iH?"),pc:s("de?"),Om:s("lH?"),Dv:s("bp?"),e8:s("vk?"),pk:s("dg?"),RC:s("BB?"),U5:s("fG?"),uZ:s("a6<bt>?"),_I:s("qx?"),GK:s("i7?"),lF:s("d8?"),C6:s("aSc?"),Pr:s("nP?"),Ef:s("iK?"),NX:s("aL?"),LO:s("fu?"),kc:s("T<@>?"),wh:s("T<M?>?"),y6:s("h?"),qA:s("jF?"),nA:s("ar<k,@>?"),Xw:s("ar<@,@>?"),J1:s("ar<M?,M?>?"),iD:s("aN?"),ka:s("qY?"),WV:s("dK?"),AH:s("oa?"),X:s("M?"),Ff:s("aT4?"),dJ:s("jK?"),Zr:s("aT6?"),KX:s("dp?"),uR:s("jM?"),xO:s("oj<jB>?"),aA:s("C?"),xP:s("C?(C)"),CA:s("rD?"),c_:s("b8?"),ym:s("ms?"),IT:s("cO?"),_N:s("rR?"),Ei:s("cK?"),uY:s("wO?"),wW:s("bu<dE>?"),Sy:s("ci?"),TZ:s("t_?"),pg:s("fO?"),tW:s("H?"),MR:s("fc?"),lE:s("j1?"),T:s("k?"),zm:s("hF?"),p8:s("p?"),Dh:s("tg?"),qf:s("aNZ?"),zV:s("mL?"),ir:s("aI<R>?"),nc:s("oV?"),KJ:s("mR?"),Wn:s("im?"),BM:s("Gl?"),Vv:s("hJ?"),Xk:s("fT?"),av:s("IK?"),Kp:s("lb?"),tC:s("K5<@>?"),X7:s("N?"),PM:s("R?"),bo:s("o?"),R7:s("dy?"),Nw:s("~()?"),Ci:s("dy"),H:s("~"),M:s("~()"),CF:s("~(M,c6?)"),zv:s("~(b1)"),Su:s("~(nJ)"),xt:s("~(T<nK>)"),lO:s("~(M)"),hK:s("~(M,c6)"),Ld:s("~(bq)"),iS:s("~(mq)"),HT:s("~(M?)")}})();(function constants(){var s=hunkHelpers.makeConstList
+return{S6:s("@<XX>"),yd:s("zm"),vH:s("b09"),od:s("bk<ba>"),gj:s("b0c<M>"),pC:s("hj"),ZU:s("zp<n>"),so:s("bH<i>"),C:s("bH<R>"),Bs:s("bH<n?>"),ph:s("zF<kX>"),qH:s("b0k"),s1:s("zJ"),vp:s("pH"),S7:s("zM"),jo:s("a9L"),Ak:s("no"),W8:s("hl"),en:s("zP"),FB:s("ur"),M1:s("Ml"),Al:s("nq<M?>"),m3:s("cU"),k:s("ad"),q:s("fE"),pI:s("kj"),V4:s("dj"),wY:s("cM<uk>"),nz:s("cM<uA>"),Nv:s("cM<hY>"),OY:s("cM<hq>"),vr:s("cM<aej>"),_M:s("cM<kJ>"),Dd:s("cM<kP>"),fN:s("cM<ov>"),Tx:s("cM<jQ>"),fn:s("cM<eU>"),j5:s("cM<oU>"),_n:s("cM<oW>"),ZQ:s("cM<j6>"),Od:s("MP<@>"),Ew:s("MQ<@>"),Am:s("b0F"),WG:s("A8<k>"),d0:s("fn<d2<@>?,d2<@>>"),aL:s("b0O"),Lh:s("Ac"),XY:s("lx"),PO:s("Af"),m6:s("Ah"),Bn:s("uN"),S3:s("Ai"),BQ:s("uO"),nR:s("Ak"),Hz:s("hn"),hP:s("eK"),G:s("n"),IC:s("ev"),b8:s("cg<@>"),QK:s("uY<hl>"),Ss:s("dT"),id:s("nx"),qO:s("pX<Fn,@>"),w:s("a4<k,k>"),eL:s("a4<k,o>"),fF:s("f5<k>"),Nq:s("lA"),vn:s("Av"),pU:s("af<t,dV<t>>"),ho:s("a9"),H5:s("b1r"),HY:s("hX"),ip:s("AN"),I7:s("bdS"),Rf:s("b1A"),fs:s("v6"),CG:s("bZ"),Hw:s("iF"),u5:s("v8"),l4:s("b1J"),Uf:s("nA"),XP:s("b1M"),yS:s("v9"),Je:s("be7"),EX:s("e7"),jh:s("b1T"),I:s("iH"),ra:s("be8"),xm:s("hq"),Jj:s("b2_"),YH:s("PO<aL>"),uL:s("i_"),zk:s("vg"),Tu:s("b1"),ML:s("ej"),A0:s("de"),Zi:s("kt"),Rz:s("ku"),Ee:s("aM<@>"),Q:s("bp"),dq:s("b2r"),GB:s("Be"),lz:s("lJ"),Lt:s("cD"),VI:s("bx"),IX:s("fp<k9,cK>"),bh:s("qa"),oB:s("qb"),_w:s("lL"),HH:s("lM"),OO:s("i2"),cP:s("lN"),b6:s("qc"),P9:s("lO"),eI:s("qd"),wB:s("lQ"),Ie:s("Bo"),Q9:s("b2F"),US:s("hs"),N8:s("Bu"),s4:s("aeD"),OE:s("aeE"),RO:s("b2I"),Kw:s("aeQ"),mx:s("dg"),l5:s("lR"),zq:s("vr"),ia:s("qm"),VW:s("qn"),FK:s("fG"),jU:s("BE"),c4:s("kA"),gx:s("i3<@>"),bE:s("eM"),Uy:s("afk"),_8:s("jx"),lI:s("Qp"),PN:s("vt<T<ar<k,@>>>"),Z9:s("a6<oK>"),wF:s("a6<N>"),Ev:s("a6<N>()"),L0:s("a6<@>"),T8:s("a6<dj?>"),uz:s("a6<~>"),Fp:s("cl<wR,ba>"),J:s("cl<o,n>"),Lu:s("ex<kO>"),MA:s("ex<fQ>"),Ih:s("ex<o>"),R:s("vu"),cD:s("d7"),uA:s("cz<jr>"),C1:s("cz<jw>"),Uv:s("cz<i7>"),jn:s("cz<jF>"),YC:s("cz<jM>"),lG:s("cz<jU>"),hg:s("cz<kY>"),Qm:s("cz<kZ>"),UN:s("cz<hF>"),ok:s("cz<im>"),lh:s("cz<p7>"),Bk:s("cz<lf>"),Pw:s("cz<pq>"),xR:s("qt<d7>"),yi:s("jy<X<Y>>"),TX:s("qu<jJ>"),bT:s("qu<X<Y>>"),rQ:s("bel"),GF:s("eN<kH(iM)>"),PD:s("eN<~()>"),op:s("eN<~(nJ)>"),bq:s("i5"),G7:s("QJ<K5<@>>"),rA:s("qw"),mS:s("qx"),AL:s("i6<an>"),Fn:s("lV"),zE:s("an"),Lk:s("aS9"),g5:s("BQ"),Oh:s("qB"),lu:s("aSb"),OX:s("hu"),Di:s("fr"),dW:s("fI"),iF:s("bI"),SG:s("kE"),Bc:s("nO<bp?>"),ri:s("BV"),IS:s("hv"),og:s("cH"),WB:s("b9"),U1:s("iK"),lA:s("b3m"),JZ:s("ahY"),XO:s("ahZ"),pT:s("ai_"),gD:s("nR"),W:s("ba"),nQ:s("nS"),Ya:s("vJ"),K9:s("C4<@>"),JY:s("H<@>"),VG:s("H<M?>"),lY:s("I<b0c<M>>"),QP:s("I<ji>"),NS:s("I<dd>"),tM:s("I<pJ>"),sq:s("I<e4>"),gb:s("I<kj>"),AT:s("I<uO>"),s8:s("I<aQZ>"),t_:s("I<n>"),EV:s("I<nx>"),KV:s("I<fo>"),ZD:s("I<dI>"),E:s("I<e7>"),vl:s("I<iH>"),Up:s("I<PP>"),lX:s("I<bp>"),LE:s("I<PZ>"),XS:s("I<Bo>"),bp:s("I<dg>"),z8:s("I<qn>"),Pt:s("I<fG>"),uf:s("I<kA>"),no:s("I<nK>"),r8:s("I<jx>"),wQ:s("I<a6<qm>>"),LD:s("I<a6<T<ar<k,@>>>>"),Rh:s("I<a6<+(k,fG?)>>"),mo:s("I<a6<~>>"),iQ:s("I<d6>"),DU:s("I<i5>"),om:s("I<i6<an>>"),kr:s("I<h1>"),XZ:s("I<fI>"),u:s("I<bI>"),Fa:s("I<hv>"),fJ:s("I<cH>"),VB:s("I<kG>"),VO:s("I<ey>"),O_:s("I<m_>"),O:s("I<aL>"),K0:s("I<iM>"),CE:s("I<kH>"),k5:s("I<eO>"),k_:s("I<Rx>"),HU:s("I<hx>"),xj:s("I<aiB>"),s9:s("I<Cj>"),Y4:s("I<iN>"),MH:s("I<qN>"),_f:s("I<qO>"),ER:s("I<o_>"),X_:s("I<T<ea>>"),fQ:s("I<T<e2>>"),zg:s("I<T<R>>"),Eo:s("I<aj>"),H8:s("I<RJ>"),ss:s("I<o4>"),a9:s("I<em<@>>"),IO:s("I<em<M?>>"),eo:s("I<h>"),H7:s("I<ar<k,@>>"),Xr:s("I<aN>"),yt:s("I<w4>"),YE:s("I<iS>"),tc:s("I<r3>"),Qg:s("I<mb>"),jl:s("I<M>"),Rd:s("I<amC>"),sF:s("I<Dd>"),d:s("I<aH>"),oq:s("I<kL>"),wi:s("I<of>"),g8:s("I<aTb<@>>"),zY:s("I<we>"),OM:s("I<oj<cN>>"),H9:s("I<dL>"),RR:s("I<kN>"),tg:s("I<wf>"),tZ:s("I<wg>"),D9:s("I<iV>"),Y2:s("I<bq>"),RW:s("I<wp>"),Io:s("I<aop>"),L7:s("I<+representation,targetSize(F2,G)>"),Wy:s("I<+(k,k)>"),Co:s("I<+(k,Ge)>"),jK:s("I<+causaDescartadaAqui,pasoId(k?,k)>"),lN:s("I<+data,event,timeStamp(T<iV>,aL,b1)>"),Nt:s("I<+domSize,representation,targetSize(G,F2,G)>"),AO:s("I<u>"),Pc:s("I<rA>"),Ik:s("I<C>"),xT:s("I<ox>"),TT:s("I<t>"),Ry:s("I<cO>"),QT:s("I<e1>"),y8:s("I<wG>"),ZP:s("I<kU>"),D1:s("I<eV>"),u1:s("I<rV>"),JO:s("I<hC>"),q1:s("I<ea>"),QF:s("I<cK>"),o4:s("I<Wf>"),Qo:s("I<rY>"),Ay:s("I<aTP>"),kO:s("I<oL>"),N_:s("I<ci>"),Gl:s("I<mG<~>>"),s:s("I<k>"),oU:s("I<b6k>"),PL:s("I<x5>"),bt:s("I<x6>"),Lx:s("I<eC>"),bG:s("I<FD>"),sD:s("I<oR>"),VS:s("I<td>"),zs:s("I<Xo>"),AS:s("I<te>"),Ne:s("I<eY>"),FO:s("I<l0<l0<@>>>"),x0:s("I<mN<R>>"),LX:s("I<Ge>"),Uu:s("I<k4>"),p:s("I<e>"),GA:s("I<cR>"),FQ:s("I<hJ>"),Na:s("I<p_>"),SW:s("I<a_k>"),TV:s("I<mW>"),ob:s("I<l7>"),Kj:s("I<xR>"),_Y:s("I<fT>"),mz:s("I<a24>"),Kx:s("I<k7>"),zj:s("I<n3>"),IR:s("I<aOi>"),m4:s("I<ym>"),jE:s("I<la>"),qi:s("I<es>"),y2:s("I<hd>"),uD:s("I<ir>"),M6:s("I<Jr>"),s6:s("I<tR>"),lb:s("I<ld>"),g9:s("I<e2>"),YK:s("I<k9>"),Z4:s("I<b8l>"),cR:s("I<yL>"),NM:s("I<n9>"),HZ:s("I<N>"),n:s("I<R>"),ee:s("I<@>"),t:s("I<o>"),L:s("I<h?>"),ef:s("I<M?>"),iG:s("I<C?>"),ny:s("I<d2<@>?>"),Fi:s("I<ci?>"),_m:s("I<k?>"),Z:s("I<o?>"),a0:s("I<dy>"),Zt:s("I<a6<N>()>"),iL:s("I<dq<iN>()>"),xf:s("I<l7(k,e6)>"),sA:s("I<N(iM)>"),qj:s("I<~()>"),SM:s("I<~(M,c6?)>"),e:s("I<~(bk<ba>)>"),c:s("I<~(iz)>"),LY:s("I<~(ji)>"),j1:s("I<~(b1)>"),s2:s("I<~(qs)>"),Jh:s("I<~(T<nK>)>"),hh:s("I<~(oI)>"),ha:s("ft<@>"),bz:s("vM"),m:s("aL"),lT:s("fJ"),dC:s("i8<@>"),Hf:s("fK<Fn,@>"),Cl:s("jB"),D2:s("fu"),XU:s("kH(iM)"),SQ:s("vP"),Dj:s("qK"),jk:s("bF<b2f>"),NE:s("bF<nD>"),am:s("bF<BF>"),ku:s("bF<Dg>"),LZ:s("bF<wu>"),cF:s("bF<mr>"),B:s("bF<X<Y>>"),af:s("bF<IB>"),E9:s("Rx"),Cc:s("aiB"),gN:s("qM"),rf:s("Ck"),hz:s("iN"),JB:s("iO<@>"),y4:s("qP<n2>"),oM:s("qP<pg>"),wO:s("Cn<@>"),NH:s("b3G"),Rk:s("T<no>"),Ch:s("T<jx>"),Lc:s("T<aL>"),qC:s("T<iN>"),b5:s("T<ar<k,@>>"),UX:s("T<M>"),gm:s("T<kN>"),d_:s("T<bq>"),jQ:s("T<wp>"),I1:s("T<e1>"),lD:s("T<ea>"),xc:s("T<cK>"),yp:s("T<k>"),JF:s("T<p_>"),rg:s("T<e2>"),j:s("T<@>"),Cm:s("T<o>"),Dn:s("T<M?>"),I_:s("aj"),da:s("o4"),JW:s("vV"),bd:s("h"),bS:s("aSI"),tO:s("bc<i,ao>"),mT:s("bc<k,k>"),UH:s("bc<ao,oF>"),DC:s("bc<o,i>"),q9:s("bc<o,k>"),sw:s("bc<M,l0<@>>"),qE:s("bc<k?,T<M>>"),Dx:s("m4<@,@>"),kY:s("ar<wR,ba>"),nf:s("ar<k,M>"),GU:s("ar<k,k>"),a:s("ar<k,@>"),_P:s("ar<k,o>"),e3:s("ar<h7,@>"),f:s("ar<@,@>"),xE:s("ar<k,M?>"),pE:s("ar<M?,M?>"),rr:s("ar<~(bq),aN?>"),C9:s("fv<k,jY?>"),fD:s("ae<k,pT>"),a4:s("ae<k,k>"),Gf:s("ae<k,@>"),rB:s("ae<n9,cK>"),qn:s("ae<o,cK>"),gn:s("ae<o,k>"),Tr:s("ae<fQ,kM?>"),iB:s("b3Q"),v:s("a7"),i1:s("qU"),xV:s("aN"),l:s("jG"),xS:s("ib"),Pb:s("dK"),ZA:s("CQ"),_h:s("iQ"),Wz:s("iR"),Lb:s("fa"),Es:s("r0"),CW:s("iS"),hA:s("oa"),jW:s("ob"),A3:s("id"),u9:s("ma"),uK:s("jJ"),I6:s("0&"),Jc:s("dC<vN>"),Tm:s("dC<i9>"),w3:s("dC<oc>"),eq:s("dC<og>"),ji:s("dC<rM>"),WA:s("dC<h2>"),Te:s("mb"),P:s("bt"),K:s("M"),xA:s("M(o)"),_a:s("M(o{params:M?})"),yw:s("bi<aOi>"),g:s("bi<~(bk<ba>)>"),jc:s("bi<~(iz)>"),Xx:s("bi<~(oI)>"),pw:s("r8"),o:s("i"),gY:s("jK"),qt:s("cJ"),Fj:s("Dd"),ZY:s("aH"),BR:s("b4x"),Ms:s("of"),B9:s("wc"),Mf:s("wd"),sd:s("aT9<M?>"),Q2:s("Uk"),Fw:s("eA<jB>"),IL:s("eA<cN>"),bg:s("d1"),ke:s("re"),Ud:s("dL"),v3:s("v"),sT:s("kN"),sv:s("mg"),mX:s("rh"),qa:s("bfn"),ge:s("rj"),Ko:s("rk"),F:s("kO"),pY:s("mj"),qL:s("bq"),GG:s("bft"),XA:s("mk"),n2:s("rm"),WQ:s("rn"),w5:s("ml"),DB:s("ro"),PB:s("rp"),RH:s("rq"),Mj:s("rr"),xb:s("rs"),ks:s("fL"),oN:s("mm"),f9:s("aNv<M?>"),bb:s("wn"),C0:s("b55"),yH:s("aU"),jV:s("ww"),pK:s("bfA"),Rp:s("+()"),BZ:s("+(k,fG?)"),Yr:s("+(tH,R)"),mi:s("+(M?,M?)"),YT:s("u"),nP:s("DK"),Qz:s("UW"),CZ:s("DL"),NW:s("DM"),x:s("C"),vz:s("rB"),DW:s("rD"),f1:s("DX"),kQ:s("E_"),I9:s("t"),F5:s("as"),GM:s("aO<t>"),Wx:s("ms"),nl:s("cO"),kl:s("mt"),Cn:s("wz"),dw:s("E7"),Ju:s("rF"),E1:s("E8"),UM:s("jQ"),Wd:s("iX"),dZ:s("Ef<o>"),yb:s("dM<M?>"),z4:s("e1"),k2:s("Eh<u?>"),hF:s("c5<nx>"),MV:s("c5<n3>"),o_:s("c5<k9>"),ad:s("Ek"),oj:s("wB"),pO:s("d2<@>(Q,M?)"),nY:s("Eo<b3P,beu>"),BL:s("Eo<jW,kV>"),Np:s("Er"),JE:s("wH<M>"),Cy:s("Ew"),gt:s("kU"),Lm:s("rR"),sm:s("wJ"),NF:s("b5J"),qd:s("bfJ"),NU:s("bfK"),hI:s("bfL"),x9:s("eV"),mb:s("EG"),Wu:s("wL"),iN:s("oG"),_S:s("d3"),VP:s("ea"),bu:s("cK"),UF:s("rY"),g3:s("dE"),HS:s("oK"),tm:s("rZ"),n5:s("wP<@>"),hi:s("bu<wz>"),p7:s("bu<cK>"),Ro:s("bu<@>"),uy:s("aTP"),RY:s("ci"),jH:s("oM"),cZ:s("wQ"),Vz:s("wR"),yE:s("bfR"),Mp:s("b6"),FW:s("G"),Vr:s("Wt"),Ws:s("F3<k>"),r:s("mA"),h5:s("wT"),Xp:s("mC"),Gt:s("wV"),D:s("fc"),M0:s("mD"),jB:s("oN"),fO:s("b67"),y3:s("jX"),Bb:s("mF"),Qv:s("fd"),Km:s("c6"),MF:s("j1"),d1:s("Y"),Iz:s("aC"),LQ:s("WY<M?>"),kj:s("t7"),N:s("k"),Vc:s("b6k"),NC:s("jZ"),jr:s("k(k,k)"),_k:s("X5"),WT:s("ce<kh>"),u4:s("ce<a9>"),re:s("ce<ar<h7,@>>"),az:s("ce<a7>"),Q6:s("ce<m7>"),Ow:s("ce<w7>"),hS:s("ce<kR>"),E8:s("ce<aa>"),d9:s("ce<N>"),hr:s("ce<e1?>"),b9:s("ce<~>"),ZC:s("oO"),ev:s("kX"),NJ:s("oQ"),if:s("b6t"),mr:s("FG"),iy:s("FK"),ot:s("j3"),tp:s("il"),qY:s("k0"),bZ:s("b6D"),fm:s("tf"),E6:s("eY"),em:s("p"),nH:s("th"),we:s("j4"),ZM:s("ti"),ZF:s("l0<l0<@>>"),zo:s("l0<@>"),qe:s("Xu"),U:s("fR"),U2:s("b6X"),zW:s("cP"),Ns:s("mN<R>"),Ni:s("aI<i>"),Y:s("aI<R>"),A:s("h7"),ns:s("mO"),e2:s("dP"),w7:s("av7"),rd:s("xl"),Po:s("av8"),H3:s("oV"),pm:s("xm<d_>"),Pj:s("j5<aL>"),kk:s("mQ"),lQ:s("tp"),G5:s("k2<k,k>"),N2:s("xs<@>"),gU:s("j6"),Xu:s("mR"),cr:s("mS"),Zu:s("XH"),tJ:s("cQ<bZ>"),V1:s("cQ<M>"),A9:s("cQ<t5>"),kK:s("cQ<k>"),f3:s("cQ<o>"),Ll:s("cQ<fu?>"),j3:s("tq<R>"),GY:s("h9"),JH:s("xt"),Dg:s("tr"),rS:s("hI"),X3:s("mU"),v6:s("Gj"),Vu:s("Gm"),ih:s("aG<bI>"),Hd:s("aG<k>"),SF:s("cn<dT>"),FI:s("cn<bq>"),t5:s("cn<ea>"),Hx:s("cn<bu<dE>>"),ZK:s("cn<jY>"),Ri:s("cn<k>"),ow:s("cn<p4>"),b7:s("cn<hd>"),kE:s("cn<~(M,c6?)>"),r7:s("cn<~(vB)>"),Pi:s("l2<lR>"),Zw:s("l2<hd>"),l7:s("e"),a7:s("mV"),EK:s("co"),JI:s("fA<R>"),GC:s("fA<n?>"),ZX:s("fA<dK?>"),z_:s("aZ<b0>"),De:s("aZ<n>"),mD:s("aZ<de>"),li:s("aZ<dp>"),W7:s("aZ<G>"),uE:s("aZ<p>"),XR:s("aZ<R>"),rc:s("aZ<n?>"),RP:s("aZ<p?>"),Ag:s("XX"),QN:s("e(Q,bu<co>,e?)"),X5:s("cR"),Uh:s("aa"),Qy:s("l3"),rx:s("hJ"),L1:s("GB"),JX:s("p_"),CL:s("tu"),_9:s("j7<ry>"),Tv:s("j7<G?>"),h8:s("bf<kh>"),qs:s("bf<hl>"),m_:s("bf<aL>"),jT:s("bf<T<hJ>>"),BJ:s("bf<kR>"),Iy:s("bf<wQ>"),D5:s("bf<kV>"),gI:s("bf<oV>"),na:s("bf<hJ>"),zh:s("bf<@>"),yB:s("bf<dj?>"),oe:s("bf<M?>"),EZ:s("bf<e1?>"),h:s("bf<~>"),BY:s("b7n"),ZW:s("xE"),B6:s("GR"),me:s("p2"),Wb:s("l6"),EG:s("tw"),bY:s("Hd"),TC:s("ty"),uC:s("fg"),dA:s("mY<q3>"),Fb:s("mY<q4>"),Uz:s("mY<q5>"),Q8:s("Hl<X<Y>>"),UJ:s("a0K"),rM:s("tA<aL>"),s5:s("tB<aL>"),l3:s("Hw"),Sc:s("p5<aL>"),Eh:s("HG"),fk:s("xV"),ni:s("HJ"),Jp:s("HL"),h1:s("xY"),Lv:s("ag<kh>"),lc:s("ag<hl>"),XC:s("ag<aL>"),G4:s("ag<T<hJ>>"),Xa:s("ag<kR>"),cN:s("ag<wQ>"),dH:s("ag<kV>"),aP:s("ag<oV>"),lL:s("ag<hJ>"),tq:s("ag<N>"),LR:s("ag<@>"),wJ:s("ag<o>"),gg:s("ag<dj?>"),xF:s("ag<M?>"),X6:s("ag<e1?>"),V:s("ag<~>"),cK:s("xZ"),Qu:s("n1"),U3:s("y1"),UR:s("fT"),R9:s("p6"),Fy:s("p8<M?,M?>"),Nr:s("I0"),cA:s("k8"),Sx:s("n2"),pt:s("y9"),Gk:s("Ie"),PJ:s("ya"),Fe:s("Io"),xg:s("a2D"),pA:s("tL<T<o>>"),Tp:s("pf"),pi:s("l9"),Vl:s("pg"),yI:s("n3"),eU:s("yj"),gQ:s("ph"),sZ:s("IG"),j4:s("a34"),Li:s("IH"),oh:s("tN"),bR:s("IR"),h7:s("la"),zP:s("es"),rj:s("J_"),l0:s("tO"),Lj:s("lb"),zd:s("J5"),SN:s("Ja"),ju:s("hd"),Eg:s("yu"),xL:s("yv"),im:s("tP"),pR:s("tQ"),Ez:s("ir"),Pu:s("Js"),p9:s("Jy"),jF:s("JA"),vC:s("e2"),kS:s("a5r<M?>"),S8:s("K_"),mm:s("le<o>"),bm:s("kb<C>"),dQ:s("kb<lb>"),HE:s("yG"),S0:s("yH"),f2:s("Kd"),i9:s("yK"),tH:s("b8q"),Wp:s("Ks<AX>"),_l:s("tX"),ps:s("b8P"),px:s("Ky<mx>"),GD:s("bv<b0>"),mN:s("bv<n>"),Dm:s("bv<N>"),N5:s("bv<R>"),jY:s("bv<b0?>"),b:s("bv<n?>"),DH:s("a7c"),y:s("N"),i:s("R"),z:s("@"),C_:s("@(M)"),Hg:s("@(M,c6)"),S:s("o"),VA:s("nl?"),tX:s("aQC?"),m2:s("zQ?"),Vx:s("e3?"),sa:s("fm?"),eJ:s("pL?"),oI:s("b0?"),YY:s("pN?"),CD:s("dj?"),L5:s("aQV?"),JG:s("Al?"),cW:s("aQW?"),eG:s("Am?"),e4:s("aQX?"),EM:s("uS?"),VC:s("uT?"),_:s("n?"),YJ:s("ev?"),Q0:s("bZ?"),xG:s("lE?"),V2:s("iH?"),pc:s("de?"),Om:s("lH?"),Dv:s("bp?"),e8:s("vk?"),pk:s("dg?"),RC:s("BB?"),U5:s("fG?"),uZ:s("a6<bt>?"),_I:s("qx?"),GK:s("i7?"),lF:s("d8?"),C6:s("aSc?"),Pr:s("nP?"),Ef:s("iK?"),NX:s("aL?"),LO:s("fu?"),kc:s("T<@>?"),wh:s("T<M?>?"),y6:s("h?"),qA:s("jF?"),nA:s("ar<k,@>?"),Xw:s("ar<@,@>?"),J1:s("ar<M?,M?>?"),iD:s("aN?"),ka:s("qY?"),WV:s("dK?"),AH:s("oa?"),X:s("M?"),Ff:s("aT4?"),dJ:s("jK?"),Zr:s("aT6?"),KX:s("dp?"),uR:s("jM?"),xO:s("oj<jB>?"),aA:s("C?"),xP:s("C?(C)"),CA:s("rD?"),c_:s("b8?"),ym:s("ms?"),IT:s("cO?"),_N:s("rR?"),Ei:s("cK?"),uY:s("wO?"),wW:s("bu<dE>?"),Sy:s("ci?"),TZ:s("t_?"),pg:s("fO?"),tW:s("G?"),MR:s("fc?"),lE:s("j1?"),T:s("k?"),zm:s("hF?"),p8:s("p?"),Dh:s("tg?"),qf:s("aNZ?"),zV:s("mL?"),ir:s("aI<R>?"),nc:s("oV?"),KJ:s("mR?"),Wn:s("im?"),BM:s("Gl?"),Vv:s("hJ?"),Xk:s("fT?"),av:s("IK?"),Kp:s("lb?"),tC:s("K5<@>?"),X7:s("N?"),PM:s("R?"),bo:s("o?"),R7:s("dy?"),Nw:s("~()?"),Ci:s("dy"),H:s("~"),M:s("~()"),CF:s("~(M,c6?)"),zv:s("~(b1)"),Su:s("~(nJ)"),xt:s("~(T<nK>)"),lO:s("~(M)"),hK:s("~(M,c6)"),Ld:s("~(bq)"),iS:s("~(mq)"),HT:s("~(M?)")}})();(function constants(){var s=hunkHelpers.makeConstList
 B.U0=J.C2.prototype
-B.b=J.J.prototype
+B.b=J.I.prototype
 B.dZ=J.C6.prototype
 B.i=J.vL.prototype
 B.ta=J.vM.prototype
@@ -111112,7 +111112,7 @@ B.Mf=new A.avf()
 B.a0=new A.XJ()
 B.aV=new A.XL()
 B.fJ=new A.XP(0,0,0,0)
-B.a0S=s([],A.av("J<acv>"))
+B.a0S=s([],A.av("I<acv>"))
 B.apQ=new A.avs()
 B.h2=new A.ZV()
 B.dO=new A.ZW()
@@ -111640,7 +111640,7 @@ B.cQ=new A.qf(0,"none")
 B.RN=new A.qf(1,"low")
 B.bZ=new A.qf(2,"medium")
 B.dW=new A.qf(3,"high")
-B.R=new A.H(0,0)
+B.R=new A.G(0,0)
 B.RO=new A.Qb(B.R,B.R)
 B.cd=new A.Qd(1,"loose")
 B.J5=new A.cL(null,38,null,null)
@@ -111987,7 +111987,7 @@ B.VX=s([66,77],t.Z)
 B.T7=new A.nN(4,"bmp")
 B.Tg=new A.kD(B.T7,!1,6,"bmp")
 B.T_=new A.lZ(B.VX,B.Tg,5,"bmp")
-B.Vw=s([B.T3,B.T2,B.T1,B.T4,B.T0,B.T_],A.av("J<lZ>"))
+B.Vw=s([B.T3,B.T2,B.T1,B.T4,B.T0,B.T_],A.av("I<lZ>"))
 B.Vy=s(["zzzz HH:mm:ss","z HH:mm:ss","H:mm:ss","H:mm"],t.s)
 B.tQ=s(["jan","feb","mar","apr","mai","jun","jul","aug","sep","okt","nov","des"],t.s)
 B.tR=s(["\u0ea7\u0eb1\u0e99\u0ead\u0eb2\u0e97\u0eb4\u0e94","\u0ea7\u0eb1\u0e99\u0e88\u0eb1\u0e99","\u0ea7\u0eb1\u0e99\u0ead\u0eb1\u0e87\u0e84\u0eb2\u0e99","\u0ea7\u0eb1\u0e99\u0e9e\u0eb8\u0e94","\u0ea7\u0eb1\u0e99\u0e9e\u0eb0\u0eab\u0eb1\u0e94","\u0ea7\u0eb1\u0e99\u0eaa\u0eb8\u0e81","\u0ea7\u0eb1\u0e99\u0ec0\u0eaa\u0ebb\u0eb2"],t.s)
@@ -111996,7 +111996,7 @@ B.tS=s(["S","P","A","T","K","P","\u0160"],t.s)
 B.tT=s(["\u062c\u0646\u0648\u0631\u064a","\u0641\u0628\u0631\u0648\u0631\u064a","\u0645\u0627\u0631\u0686","\u0627\u067e\u0631\u06cc\u0644","\u0645\u06cd","\u062c\u0648\u0646","\u062c\u0648\u0644\u0627\u06cc","\u0627\u06ab\u0633\u062a","\u0633\u06d0\u067e\u062a\u0645\u0628\u0631","\u0627\u06a9\u062a\u0648\u0628\u0631","\u0646\u0648\u0645\u0628\u0631","\u062f\u0633\u0645\u0628\u0631"],t.s)
 B.pr=new A.Jq(0,"named")
 B.Kh=new A.Jq(1,"anonymous")
-B.VH=s([B.pr,B.Kh],A.av("J<Jq>"))
+B.VH=s([B.pr,B.Kh],A.av("I<Jq>"))
 B.VI=s(["EEEE, d 'de' MMMM 'de' y","d 'de' MMMM 'de' y","d 'de' MMM 'de' y","dd/MM/y"],t.s)
 B.VJ=s(["Ion","Chwef","Maw","Ebr","Mai","Meh","Gorff","Awst","Medi","Hyd","Tach","Rhag"],t.s)
 B.av=s(["January","February","March","April","May","June","July","August","September","October","November","December"],t.s)
@@ -112084,14 +112084,14 @@ B.aoU=new A.hL(0.8875,0.25)
 B.aoS=new A.hL(0.925,0.5)
 B.aoM=new A.hL(0.9625,0.75)
 B.aoN=new A.hL(1,1)
-B.Wm=s([B.aoL,B.aoQ,B.aoT,B.aoV,B.aoR,B.aoP,B.aoO,B.aoU,B.aoS,B.aoM,B.aoN],A.av("J<hL>"))
+B.Wm=s([B.aoL,B.aoQ,B.aoT,B.aoV,B.aoR,B.aoP,B.aoO,B.aoU,B.aoS,B.aoM,B.aoN],A.av("I<hL>"))
 B.dx=new A.mI(0,"left")
 B.fB=new A.mI(1,"right")
 B.af=new A.mI(2,"center")
 B.ih=new A.mI(3,"justify")
 B.ax=new A.mI(4,"start")
 B.l1=new A.mI(5,"end")
-B.Wn=s([B.dx,B.fB,B.af,B.ih,B.ax,B.l1],A.av("J<mI>"))
+B.Wn=s([B.dx,B.fB,B.af,B.ih,B.ax,B.l1],A.av("I<mI>"))
 B.a3=s(["{1} {0}","{1} {0}","{1} {0}","{1} {0}"],t.s)
 B.uk=s(["n","p","u","s","\u0161","p","s"],t.s)
 B.Wo=s(["I \u10d9\u10d5\u10d0\u10e0\u10e2\u10d0\u10da\u10d8","II \u10d9\u10d5\u10d0\u10e0\u10e2\u10d0\u10da\u10d8","III \u10d9\u10d5\u10d0\u10e0\u10e2\u10d0\u10da\u10d8","IV \u10d9\u10d5\u10d0\u10e0\u10e2\u10d0\u10da\u10d8"],t.s)
@@ -112135,7 +112135,7 @@ B.WE=s(["y- MMMM d- EEEE","y- MMMM d","y- MMM d","dd-MM-yy"],t.s)
 B.ut=s(["\u0e44\u0e15\u0e23\u0e21\u0e32\u0e2a 1","\u0e44\u0e15\u0e23\u0e21\u0e32\u0e2a 2","\u0e44\u0e15\u0e23\u0e21\u0e32\u0e2a 3","\u0e44\u0e15\u0e23\u0e21\u0e32\u0e2a 4"],t.s)
 B.WF=s(["\u0c15\u0c4d\u0c30\u0c40\u0c38\u0c4d\u0c24\u0c41 \u0c2a\u0c42\u0c30\u0c4d\u0c35\u0c02","\u0c15\u0c4d\u0c30\u0c40\u0c38\u0c4d\u0c24\u0c41 \u0c36\u0c15\u0c02"],t.s)
 B.WG=s(["\u043f\u0440\u0435\u0434 \u043d\u0430\u0448\u0430\u0442\u0430 \u0435\u0440\u0430","\u043e\u0434 \u043d\u0430\u0448\u0430\u0442\u0430 \u0435\u0440\u0430"],t.s)
-B.WH=s([B.lK,B.lL],A.av("J<zL>"))
+B.WH=s([B.lK,B.lL],A.av("I<zL>"))
 B.WI=s(["\u0411\u0456\u0437\u0434\u0456\u04a3 \u0437\u0430\u043c\u0430\u043d\u044b\u043c\u044b\u0437\u0493\u0430 \u0434\u0435\u0439\u0456\u043d","\u0431\u0456\u0437\u0434\u0456\u04a3 \u0437\u0430\u043c\u0430\u043d\u044b\u043c\u044b\u0437"],t.s)
 B.uu=s(["\u0ab0\u0ab5\u0abf\u0ab5\u0abe\u0ab0","\u0ab8\u0acb\u0aae\u0ab5\u0abe\u0ab0","\u0aae\u0a82\u0a97\u0ab3\u0ab5\u0abe\u0ab0","\u0aac\u0ac1\u0aa7\u0ab5\u0abe\u0ab0","\u0a97\u0ac1\u0ab0\u0ac1\u0ab5\u0abe\u0ab0","\u0ab6\u0ac1\u0a95\u0acd\u0ab0\u0ab5\u0abe\u0ab0","\u0ab6\u0aa8\u0abf\u0ab5\u0abe\u0ab0"],t.s)
 B.a9a=new A.aH("PANT\xd2GRAF NORMALITZAT","sac_resolt")
@@ -112173,7 +112173,7 @@ B.MI=new A.cF(27,"Avaria Agate Link","sac27")
 B.MX=new A.cF(28,"Abs\xe8ncia d\u2019enllumenat","sac28_pendent")
 B.MU=new A.cF(29,"Unitat seccionada","sac29_pendent")
 B.N7=new A.cF(30,"",null)
-B.WM=s([B.MP,B.N6,B.MH,B.N2,B.N0,B.MV,B.N_,B.N3,B.MK,B.MZ,B.MF,B.MW,B.MO,B.MS,B.N4,B.MY,B.N1,B.MQ,B.MN,B.MG,B.MT,B.MM,B.MJ,B.N5,B.ML,B.MR,B.MI,B.MX,B.MU,B.N7],A.av("J<cF>"))
+B.WM=s([B.MP,B.N6,B.MH,B.N2,B.N0,B.MV,B.N_,B.N3,B.MK,B.MZ,B.MF,B.MW,B.MO,B.MS,B.N4,B.MY,B.N1,B.MQ,B.MN,B.MG,B.MT,B.MM,B.MJ,B.N5,B.ML,B.MR,B.MI,B.MX,B.MU,B.N7],A.av("I<cF>"))
 B.WN=s(["sv\u0113tdiena","pirmdiena","otrdiena","tre\u0161diena","ceturtdiena","piektdiena","sestdiena"],t.s)
 B.WO=s(["janu\xe1r","febru\xe1r","marec","apr\xedl","m\xe1j","j\xfan","j\xfal","august","september","okt\xf3ber","november","december"],t.s)
 B.bg=s(["BC","AD"],t.s)
@@ -112277,7 +112277,7 @@ B.uT=s(["\u0e21\u0e01\u0e23\u0e32\u0e04\u0e21","\u0e01\u0e38\u0e21\u0e20\u0e32\u
 B.bN=new A.l6(0,"label")
 B.bt=new A.l6(1,"avatar")
 B.cH=new A.l6(2,"deleteIcon")
-B.XD=s([B.bN,B.bt,B.cH],A.av("J<l6>"))
+B.XD=s([B.bN,B.bt,B.cH],A.av("I<l6>"))
 B.XE=s(["\u05dc\u05e4\u05e0\u05d9 \u05d4\u05e1\u05e4\u05d9\u05e8\u05d4","\u05dc\u05e1\u05e4\u05d9\u05e8\u05d4"],t.s)
 B.XF=s(["I \u10d9\u10d5.","II \u10d9\u10d5.","III \u10d9\u10d5.","IV \u10d9\u10d5."],t.s)
 B.uU=s(["janv.","f\xe9vr.","mars","avr.","mai","juin","juil.","ao\xfbt","sept.","oct.","nov.","d\xe9c."],t.s)
@@ -112331,7 +112331,7 @@ B.Y1=s(["\u17a2\u17b6\u1791\u17b7\u178f\u17d2\u1799","\u1785\u1793\u17d2\u1791",
 B.Y2=s(["{1}\u060c \u0633\u0627\u0639\u062a {0}","{1}\u060c \u0633\u0627\u0639\u062a {0}","{1}\u060c\u200f {0}","{1}\u060c\u200f {0}"],t.s)
 B.Y3=s(["\u0ca4\u0ccd\u0cb0\u0cc8 1","\u0ca4\u0ccd\u0cb0\u0cc8 2","\u0ca4\u0ccd\u0cb0\u0cc8 3","\u0ca4\u0ccd\u0cb0\u0cc8 4"],t.s)
 B.Kt=new A.hT("",6,"userDeleted")
-B.v7=s([B.ez,B.fX,B.dI,B.eA,B.fY,B.pC,B.Kt,B.pB],A.av("J<hT>"))
+B.v7=s([B.ez,B.fX,B.dI,B.eA,B.fY,B.pC,B.Kt,B.pB],A.av("I<hT>"))
 B.Y4=s(["p\u0159ed na\u0161\xedm letopo\u010dtem","na\u0161eho letopo\u010dtu"],t.s)
 B.Y5=s(["X","F","M","A","M","X","X","A","S","O","N","D"],t.s)
 B.Y6=s(["ikota yesi-1","ikota yesi-2","ikota yesi-3","ikota yesi-4"],t.s)
@@ -112394,7 +112394,7 @@ B.bi=new A.fg(7,"suffixIcon")
 B.cn=new A.fg(8,"helperError")
 B.co=new A.fg(9,"counter")
 B.dD=new A.fg(10,"container")
-B.Yy=s([B.bd,B.bu,B.aA,B.bA,B.bB,B.bC,B.as,B.bi,B.cn,B.co,B.dD],A.av("J<fg>"))
+B.Yy=s([B.bd,B.bu,B.aA,B.bA,B.bB,B.bC,B.as,B.bi,B.cn,B.co,B.dD],A.av("I<fg>"))
 B.vj=s(["s\xf6n","m\xe5n","tis","ons","tors","fre","l\xf6r"],t.s)
 B.jH=s(["a.C.","d.C."],t.s)
 B.Yz=s(["\u0d1e","\u0d24\u0d3f","\u0d1a\u0d4a","\u0d2c\u0d41","\u0d35\u0d4d\u0d2f\u0d3e","\u0d35\u0d46","\u0d36"],t.s)
@@ -112422,7 +112422,7 @@ B.aoC=new A.n_(3,0.08)
 B.aoD=new A.n_(6,0.11)
 B.aoB=new A.n_(8,0.12)
 B.aoA=new A.n_(12,0.14)
-B.vq=s([B.aoz,B.aoE,B.aoC,B.aoD,B.aoB,B.aoA],A.av("J<n_>"))
+B.vq=s([B.aoz,B.aoE,B.aoC,B.aoD,B.aoB,B.aoA],A.av("I<n_>"))
 B.YK=s(["HH:mm:ss, zzzz","HH:mm:ss z","HH:mm:ss","HH:mm"],t.s)
 B.jI=s(["\u041d\u044f","\u0414\u0430","\u041c\u044f","\u041b\u0445","\u041f\u04af","\u0411\u0430","\u0411\u044f"],t.s)
 B.YL=s(["EEEE, y. 'gada' d. MMMM","y. 'gada' d. MMMM","y. 'gada' d. MMM","dd.MM.yy"],t.s)
@@ -112570,7 +112570,7 @@ B.wc=s(["\u5468\u65e5","\u5468\u4e00","\u5468\u4e8c","\u5468\u4e09","\u5468\u56d
 B.wd=s(["\u0570\u0576\u057e","\u0583\u057f\u057e","\u0574\u0580\u057f","\u0561\u057a\u0580","\u0574\u0575\u057d","\u0570\u0576\u057d","\u0570\u056c\u057d","\u0585\u0563\u057d","\u057d\u0565\u057a","\u0570\u0578\u056f","\u0576\u0578\u0575","\u0564\u0565\u056f"],t.s)
 B.Jd=new A.Fl(0,"left")
 B.Je=new A.Fl(1,"right")
-B.a_0=s([B.Jd,B.Je],A.av("J<Fl>"))
+B.a_0=s([B.Jd,B.Je],A.av("I<Fl>"))
 B.cy=s(["T1","T2","T3","T4"],t.s)
 B.a_1=s(["EEEE, d MMMM y","d MMMM y","d MMM y","dd/MM/yy"],t.s)
 B.we=s(["jan.","feb.","mar.","apr.","maj","jun.","jul.","aug.","sep.","okt.","nov.","dec."],t.s)
@@ -112580,13 +112580,13 @@ B.a_3=s(["\u0a88\u0ab8\u0ab5\u0ac0\u0ab8\u0aa8 \u0aaa\u0ac2\u0ab0\u0acd\u0ab5\u0
 B.a_4=s(["TO","TK"],t.s)
 B.wg=s(["Sondag","Maandag","Dinsdag","Woensdag","Donderdag","Vrydag","Saterdag"],t.s)
 B.ar=new A.Fz(0,"upstream")
-B.a_6=s([B.ar,B.m],A.av("J<Fz>"))
+B.a_6=s([B.ar,B.m],A.av("I<Fz>"))
 B.aj=new A.FE(0,"rtl")
 B.l=new A.FE(1,"ltr")
-B.nu=s([B.aj,B.l],A.av("J<FE>"))
+B.nu=s([B.aj,B.l],A.av("I<FE>"))
 B.RH=new A.kx(0,"verified")
 B.RI=new A.kx(1,"unverified")
-B.a_7=s([B.RH,B.RI,B.rB],A.av("J<kx>"))
+B.a_7=s([B.RH,B.RI,B.rB],A.av("I<kx>"))
 B.a_8=s(["\u1014\u1036\u1014\u1000\u103a","\u100a\u1014\u1031"],t.s)
 B.a_9=s(["h:mm:ss\u202fa zzzz","h:mm:ss\u202fa z","h:mm:ss\u202fa","h:mm\u202fa"],t.s)
 B.wh=s(["\u0b9c","\u0baa\u0bbf","\u0bae\u0bbe","\u0b8f","\u0bae\u0bc7","\u0b9c\u0bc2","\u0b9c\u0bc2","\u0b86","\u0b9a\u0bc6","\u0b85","\u0ba8","\u0b9f\u0bbf"],t.s)
@@ -112626,7 +112626,7 @@ B.dE=new A.k8(0,"leading")
 B.c4=new A.k8(1,"title")
 B.dF=new A.k8(2,"subtitle")
 B.fQ=new A.k8(3,"trailing")
-B.a_u=s([B.dE,B.c4,B.dF,B.fQ],A.av("J<k8>"))
+B.a_u=s([B.dE,B.c4,B.dF,B.fQ],A.av("I<k8>"))
 B.a_v=s(["\u0644\u0647 \u0645\u06cc\u0644\u0627\u062f \u0648\u0693\u0627\u0646\u062f\u06d0","\u0645."],t.s)
 B.a_w=s(["I kw.","II kw.","III kw.","IV kw."],t.s)
 B.a_x=s(["\u0399\u03b1\u03bd","\u03a6\u03b5\u03b2","\u039c\u03ac\u03c1","\u0391\u03c0\u03c1","\u039c\u03ac\u03b9","\u0399\u03bf\u03cd\u03bd","\u0399\u03bf\u03cd\u03bb","\u0391\u03cd\u03b3","\u03a3\u03b5\u03c0","\u039f\u03ba\u03c4","\u039d\u03bf\u03ad","\u0394\u03b5\u03ba"],t.s)
@@ -112639,12 +112639,12 @@ B.f7=s(["v. Chr.","n. Chr."],t.s)
 B.My=new A.pQ(0,"auto")
 B.Mz=new A.pQ(1,"full")
 B.MA=new A.pQ(2,"chromium")
-B.a_C=s([B.My,B.Mz,B.MA,B.dd],A.av("J<pQ>"))
+B.a_C=s([B.My,B.Mz,B.MA,B.dd],A.av("I<pQ>"))
 B.a_D=s(["dom.","luns","mar.","m\xe9r.","xov.","ven.","s\xe1b."],t.s)
 B.wu=s(["zondag","maandag","dinsdag","woensdag","donderdag","vrijdag","zaterdag"],t.s)
 B.a_E=s(["\u0bae\u0bc1\u0bb1\u0bcd\u0baa\u0b95\u0bb2\u0bcd","\u0baa\u0bbf\u0bb1\u0bcd\u0baa\u0b95\u0bb2\u0bcd"],t.s)
 B.a_F=s(["Kuartal ke-1","Kuartal ke-2","Kuartal ke-3","Kuartal ke-4"],t.s)
-B.a_G=s([B.dR,B.df,B.hk,B.dS],A.av("J<ko>"))
+B.a_G=s([B.dR,B.df,B.hk,B.dS],A.av("I<ko>"))
 B.wv=s(["\u043d\u044f\u0434\u0437\u0435\u043b\u044f","\u043f\u0430\u043d\u044f\u0434\u0437\u0435\u043b\u0430\u043a","\u0430\u045e\u0442\u043e\u0440\u0430\u043a","\u0441\u0435\u0440\u0430\u0434\u0430","\u0447\u0430\u0446\u0432\u0435\u0440","\u043f\u044f\u0442\u043d\u0456\u0446\u0430","\u0441\u0443\u0431\u043e\u0442\u0430"],t.s)
 B.a_H=s(["Yan","Fev","Mar","Apr","May","Iyn","Iyl","Avg","Sen","Okt","Noy","Dek"],t.s)
 B.ww=s(["\u0432\u0441","\u043f\u043d","\u0432\u0442","\u0441\u0440","\u0447\u0442","\u043f\u0442","\u0441\u0431"],t.s)
@@ -112677,7 +112677,7 @@ B.a9k=new A.aH("Costat via","sac07_via")
 B.a_V=s([B.a9K,B.a9k],t.d)
 B.jQ=s(["a. C.","d. C."],t.s)
 B.bK=new A.fQ(1,"fuchsia")
-B.a_W=s([B.aq,B.bK,B.X,B.bL,B.bb,B.bM],A.av("J<fQ>"))
+B.a_W=s([B.aq,B.bK,B.X,B.bL,B.bb,B.bM],A.av("I<fQ>"))
 B.a_X=s(["1-ci kvartal","2-ci kvartal","3-c\xfc kvartal","4-c\xfc kvartal"],t.s)
 B.a_Y=s(["\u0644\u0647 \u0645\u06cc\u0644\u0627\u062f \u0685\u062e\u0647 \u0648\u0693\u0627\u0646\u062f\u06d0","\u0644\u0647 \u0645\u06cc\u0644\u0627\u062f \u0685\u062e\u0647 \u0648\u0631\u0648\u0633\u062a\u0647"],t.s)
 B.a_Z=s(["EEEE, d MMMM y","d MMMM y","d MMM y","d/MM/yy"],t.s)
@@ -112692,7 +112692,7 @@ B.K0=new A.xJ(1,"topRight")
 B.K1=new A.xJ(2,"bottomLeft")
 B.aov=new A.mZ(B.K0,B.K1)
 B.aow=new A.mZ(B.K1,B.K0)
-B.a01=s([B.aou,B.aox,B.aov,B.aow],A.av("J<mZ>"))
+B.a01=s([B.aou,B.aox,B.aov,B.aow],A.av("I<mZ>"))
 B.wH=s(["GN","FB","M\xc7","AB","MG","JN","JL","AG","ST","OC","NV","DS"],t.s)
 B.a9y=new A.aH("CONTINUA INHIBIT","sac02_seguiment")
 B.a02=s([B.Em,B.a9y],t.d)
@@ -112728,7 +112728,7 @@ B.aby=new A.am(0.63903989,0.07759639)
 B.abc=new A.am(0.66416338,0.0734653)
 B.ab9=new A.am(0.68675338,0.06974996)
 B.abq=new A.am(0.70678034,0.06529512)
-B.wQ=s([B.abw,B.abv,B.abg,B.abj,B.abs,B.ab8,B.abd,B.abh,B.abb,B.abp,B.aby,B.abc,B.ab9,B.abq],A.av("J<+(R,R)>"))
+B.wQ=s([B.abw,B.abv,B.abg,B.abj,B.abs,B.ab8,B.abd,B.abh,B.abb,B.abp,B.aby,B.abc,B.ab9,B.abq],A.av("I<+(R,R)>"))
 B.a0a=s(["aC","dC"],t.s)
 B.wR=s(["\u0644\u0648\u0645\u0693\u06cd \u0631\u0628\u0639\u0647","\u06f2\u0645\u0647 \u0631\u0628\u0639\u0647","\u06f3\u0645\u0647 \u0631\u0628\u0639\u0647","\u06f4\u0645\u0647 \u0631\u0628\u0639\u0647"],t.s)
 B.a0b=s(["Die","H\xebn","Mar","M\xebr","Enj","Pre","Sht"],t.s)
@@ -112775,7 +112775,7 @@ B.x1=s(["Y","D","S","C","P","J","S"],t.s)
 B.Li=new A.uk()
 B.i_=new A.VY(1,"page")
 B.kK=new A.eU(B.aY,B.i_)
-B.a0A=s([B.Li,B.kK],A.av("J<ba>"))
+B.a0A=s([B.Li,B.kK],A.av("I<ba>"))
 B.nm=new A.bI("manual/s2100/sac_21/manometre-tdp.png","Man\xf2metre: pressi\xf3 real",u.R,42,B.I)
 B.jS=s([B.nm],t.u)
 B.x2=s(["\u05d9\u05e0\u05d5\u05d0\u05e8","\u05e4\u05d1\u05e8\u05d5\u05d0\u05e8","\u05de\u05e8\u05e5","\u05d0\u05e4\u05e8\u05d9\u05dc","\u05de\u05d0\u05d9","\u05d9\u05d5\u05e0\u05d9","\u05d9\u05d5\u05dc\u05d9","\u05d0\u05d5\u05d2\u05d5\u05e1\u05d8","\u05e1\u05e4\u05d8\u05de\u05d1\u05e8","\u05d0\u05d5\u05e7\u05d8\u05d5\u05d1\u05e8","\u05e0\u05d5\u05d1\u05de\u05d1\u05e8","\u05d3\u05e6\u05de\u05d1\u05e8"],t.s)
@@ -112801,7 +112801,7 @@ B.a0L=s(["\u043f\u0440\u0432\u043e \u0442\u0440\u043e\u043c\u0435\u0441\u0435\u0
 B.a0M=s(["EEEE, d. MMMM y","d. MMMM y","d. MMM y","dd.MM.yy"],t.s)
 B.x7=s(["S","M","\xde","M","F","F","L"],t.s)
 B.a0V=s([],t.QP)
-B.x9=s([],A.av("J<bdR>"))
+B.x9=s([],A.av("I<bdR>"))
 B.a11=s([],t.E)
 B.d=s([],t.u)
 B.a0Y=s([],t.fJ)
@@ -112811,7 +112811,7 @@ B.a0P=s([],t.tc)
 B.jV=s([],t.jl)
 B.f=s([],t.d)
 B.a0R=s([],t.wi)
-B.a0Q=s([],A.av("J<aT9<@>>"))
+B.a0Q=s([],A.av("I<aT9<@>>"))
 B.ny=s([],t.AO)
 B.a0T=s([],t.D1)
 B.nz=s([],t.QF)
@@ -113033,7 +113033,7 @@ B.a2H=s(["\u042f\u043d\u0432\u0430\u0440\u044c","\u0424\u0435\u0432\u0440\u0430\
 B.a2I=s(["Krisztus el\u0151tt","id\u0151sz\xe1m\xedt\xe1sunk szerint"],t.s)
 B.k3=s(["Sonntag","Montag","Dienstag","Mittwoch","Donnerstag","Freitag","Samstag"],t.s)
 B.a2J=s(["\u0907. \u0938. \u092a\u0942.","\u0907. \u0938."],t.s)
-B.a2K=s([B.eB,B.fZ,B.pE,B.iw,B.pF],A.av("J<jk>"))
+B.a2K=s([B.eB,B.fZ,B.pE,B.iw,B.pF],A.av("I<jk>"))
 B.a2L=s(["Roimh Chr\xedost","Anno Domini"],t.s)
 B.yd=s(["\u4e00\u6708","\u4e8c\u6708","\u4e09\u6708","\u56db\u6708","\u4e94\u6708","\u516d\u6708","\u4e03\u6708","\u516b\u6708","\u4e5d\u6708","\u5341\u6708","\u5341\u4e00\u6708","\u5341\u4e8c\u6708"],t.s)
 B.a2M=s(["EEEE, dd MMMM y","d MMMM y","d MMM y","dd/MM/yy"],t.s)
@@ -113091,7 +113091,7 @@ B.nY=new A.ib(5,"numLockModifier")
 B.nZ=new A.ib(6,"scrollLockModifier")
 B.o_=new A.ib(7,"functionModifier")
 B.Eb=new A.ib(8,"symbolModifier")
-B.yr=s([B.fd,B.fe,B.ff,B.fg,B.nX,B.nY,B.nZ,B.o_,B.Eb],A.av("J<ib>"))
+B.yr=s([B.fd,B.fe,B.ff,B.fg,B.nX,B.nY,B.nZ,B.o_,B.Eb],A.av("I<ib>"))
 B.ys=s(["E","P","M","A","M","Hun","Hul","Ago","Set","Okt","Nob","Dis"],t.s)
 B.a3h=s([B.t3],t.u)
 B.a3i=s(["Kabla ya Kristo","Baada ya Kristo"],t.s)
@@ -113147,7 +113147,7 @@ B.ds=s(["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septi
 B.RJ=new A.jt(0,"totp")
 B.RK=new A.jt(1,"phone")
 B.RL=new A.jt(2,"webauthn")
-B.a3E=s([B.RJ,B.RK,B.RL,B.rC],A.av("J<jt>"))
+B.a3E=s([B.RJ,B.RK,B.RL,B.rC],A.av("I<jt>"))
 B.a3F=s(["\u0ec4\u0e95\u0ea3\u0ea1\u0eb2\u0e94 1","\u0ec4\u0e95\u0ea3\u0ea1\u0eb2\u0e94 2","\u0ec4\u0e95\u0ea3\u0ea1\u0eb2\u0e94 3","\u0ec4\u0e95\u0ea3\u0ea1\u0eb2\u0e94 4"],t.s)
 B.a3G=s(["pointerdown","pointermove","pointerleave","pointerup","pointercancel","touchstart","touchend","touchmove","touchcancel","mousedown","mousemove","mouseleave","mouseup","wheel"],t.s)
 B.yK=s(["\u0436\u0435\u043a.","\u0434\u04af\u0439.","\u0448\u0435\u0439\u0448.","\u0448\u0430\u0440\u0448.","\u0431\u0435\u0439\u0448.","\u0436\u0443\u043c\u0430","\u0438\u0448\u043c."],t.s)
@@ -113180,7 +113180,7 @@ B.RU=new A.ht(200)
 B.RV=new A.ht(300)
 B.x=new A.ht(400)
 B.ao=new A.ht(500)
-B.a3T=s([B.nf,B.RU,B.RV,B.x,B.ao,B.ng,B.bE,B.dX,B.cv],A.av("J<ht>"))
+B.a3T=s([B.nf,B.RU,B.RV,B.x,B.ao,B.ng,B.bE,B.dX,B.cv],A.av("I<ht>"))
 B.a3U=s(["1. fj\xf3r\xf0ungur","2. fj\xf3r\xf0ungur","3. fj\xf3r\xf0ungur","4. fj\xf3r\xf0ungur"],t.s)
 B.a3V=s(["\u044f\u043d\u0432\u0430\u0440\u044f","\u0444\u0435\u0432\u0440\u0430\u043b\u044f","\u043c\u0430\u0440\u0442\u0430","\u0430\u043f\u0440\u0435\u043b\u044f","\u043c\u0430\u044f","\u0438\u044e\u043d\u044f","\u0438\u044e\u043b\u044f","\u0430\u0432\u0433\u0443\u0441\u0442\u0430","\u0441\u0435\u043d\u0442\u044f\u0431\u0440\u044f","\u043e\u043a\u0442\u044f\u0431\u0440\u044f","\u043d\u043e\u044f\u0431\u0440\u044f","\u0434\u0435\u043a\u0430\u0431\u0440\u044f"],t.s)
 B.yT=s(["jan","feb","mar","apr","m\xe1j","j\xfan","j\xfal","aug","sep","okt","nov","dec"],t.s)
@@ -114751,26 +114751,26 @@ B.oJ=new A.al(B.hF,!1,!0,!1,!1,B.r)
 B.adw=new A.al(B.ec,!0,!0,!1,!1,B.bH)
 B.adx=new A.al(B.hB,!1,!1,!1,!0,B.r)
 B.ady=new A.al(B.e8,!0,!1,!1,!1,B.bI)
-B.adz=new A.H(0,52)
-B.adA=new A.H(1e5,1e5)
-B.J_=new A.H(10,10)
-B.kX=new A.H(1,1)
-B.J0=new A.H(1,-1)
-B.adC=new A.H(22,22)
-B.adD=new A.H(328,270)
-B.adE=new A.H(330,270)
-B.adF=new A.H(330,518)
-B.adG=new A.H(360,568)
-B.adI=new A.H(41,41)
-B.adJ=new A.H(48,36)
-B.adK=new A.H(48,48)
-B.adL=new A.H(496,160)
-B.adM=new A.H(496,346)
-B.adO=new A.H(80,47.5)
-B.J1=new A.H(-1,1)
-B.J2=new A.H(-1,-1)
-B.adP=new A.H(77.37,37.9)
-B.adR=new A.H(1/0,52)
+B.adz=new A.G(0,52)
+B.adA=new A.G(1e5,1e5)
+B.J_=new A.G(10,10)
+B.kX=new A.G(1,1)
+B.J0=new A.G(1,-1)
+B.adC=new A.G(22,22)
+B.adD=new A.G(328,270)
+B.adE=new A.G(330,270)
+B.adF=new A.G(330,518)
+B.adG=new A.G(360,568)
+B.adI=new A.G(41,41)
+B.adJ=new A.G(48,36)
+B.adK=new A.G(48,48)
+B.adL=new A.G(496,160)
+B.adM=new A.G(496,346)
+B.adO=new A.G(80,47.5)
+B.J1=new A.G(-1,1)
+B.J2=new A.G(-1,-1)
+B.adP=new A.G(77.37,37.9)
+B.adR=new A.G(1/0,52)
 B.ap=new A.cL(0,0,null,null)
 B.adS=new A.cL(108,null,null,null)
 B.fw=new A.cL(10,null,null,null)
@@ -115433,12 +115433,12 @@ B.amr=new A.aZ(B.iG,t.li)
 B.la=new A.aZ(24,t.XR)
 B.bs=new A.aZ(B.E,t.De)
 B.ams=new A.aZ(B.E,t.rc)
-B.adQ=new A.H(1/0,1/0)
+B.adQ=new A.G(1/0,1/0)
 B.dA=new A.aZ(B.adQ,t.W7)
 B.lb=new A.aZ(B.j7,t.mD)
-B.adH=new A.H(40,40)
+B.adH=new A.G(40,40)
 B.lc=new A.aZ(B.adH,t.W7)
-B.adN=new A.H(64,40)
+B.adN=new A.G(64,40)
 B.ld=new A.aZ(B.adN,t.W7)
 B.d9=new A.aZ(B.Ja,t.li)
 B.JX=new A.co(3,"dragged")
@@ -115710,7 +115710,7 @@ B.ir=new A.yA(0,"ready")
 B.is=new A.yA(1,"possible")
 B.Ki=new A.yA(2,"accepted")
 B.lx=new A.yA(3,"started")
-B.adB=new A.H(100,0)
+B.adB=new A.G(100,0)
 B.apA=new A.tR(B.adB,B.ap,B.fp,null,null)
 B.apB=new A.tR(B.R,B.ap,B.fp,null,null)
 B.ew=new A.K3("")
@@ -115769,7 +115769,7 @@ $.aXp=null
 $.aKH=null
 $.aL1=null
 $.aP2=null
-$.aEK=A.b([],A.av("J<T<M>?>"))
+$.aEK=A.b([],A.av("I<T<M>?>"))
 $.yV=null
 $.Lp=null
 $.Lq=null
@@ -115782,7 +115782,7 @@ $.aWm=A.r(t.C_,t.lT)
 $.ik=null
 $.jv=A.bb2()
 $.aMO=0
-$.b2Q=A.b([],A.av("J<bfS>"))
+$.b2Q=A.b([],A.av("I<bfS>"))
 $.aSC=null
 $.a8q=0
 $.aJs=null
@@ -115810,7 +115810,7 @@ $.aVr=1
 $.aNs=-9007199254740992
 $.aOm=!0
 $.aOl=!1
-$.rx=A.b([],A.av("J<mr>"))
+$.rx=A.b([],A.av("I<mr>"))
 $.b7F=A.r(t.da,A.av("a6<a9>"))
 $.b7T=A.r(t.da,A.av("a6<a7>"))
 $.aVX=!1
@@ -115822,8 +115822,8 @@ $.aRk=A.r(t.N,t.y)
 $.b1y=A.r(t.N,A.av("UV"))
 $.aKo=function(){var s="Estacionaments aplicats",r=t.s
 return A.a5(["no_desfrena",A.b(["Bolet de cabina / Selector","ATP (sense codis)","Home mort","Aire (Baixa pressi\xf3 TDP -8)","STOP (Tren Stop activat)","Tirador d\u2019alarma actiu",s],r),"no_tracciona",A.b(["Portes obertes",s,"Disjuntor (Obert)","EED (Tirador verd fora de posici\xf3)","Tensi\xf3 nul\xb7la (0V)"],r),"modo_especial",A.b(["Connexi\xf3 del mode especial de conducci\xf3"],r),"apertura_cierre_pupitre",A.b([u.G],r)],t.N,t.yp)}()
-$.aWN=function(){var s="Cabina habilitada",r="Estacionaments aplicats",q=t.s
-return A.a5(["no_desfrena",A.b(["Fre de servei bloquejat","Govern / selector de marxa","Avaria DDU",s,"Bolet / Manipulador en 7","ATP (sense codis)","Home mort","Aire (Baixa pressi\xf3 TDP)","STOP (Tren Stop activat)","Tirador d\u2019alarma",r],q),"no_tracciona",A.b(["Avaria cadena de tracci\xf3 (IOS86)",s,"Portes obertes",r,"EED (Tirador verd fora de posici\xf3)","Tensi\xf3 nul\xb7la (0V)","Disjuntor (Obert)"],q),"modos_conduccion",A.b(["Connexi\xf3 del mode especial","Connexi\xf3 del mode socors"],q),"avaries_s9000",A.b([],q),"operativa_basica",A.b(["Posada en marxa (P.A.)","Reset de bateries (final de l\xednia)","Desconnexi\xf3 (portes tancades)","Desconnexi\xf3 (portes obertes)","Introduir n\xfamero de tren"],q)],t.N,t.yp)}()
+$.aWN=function(){var s="Estacionaments aplicats",r=t.s
+return A.a5(["no_desfrena",A.b(["Bolet d\u2019emerg\xe8ncia","ATP (sense codis)","Home mort","Aire (Baixa pressi\xf3 TDP)","STOP (Tren Stop activat)","Tirador d\u2019alarma",s],r),"no_tracciona",A.b(["Portes obertes",s,"EED (Tirador verd fora de posici\xf3)","Tensi\xf3 nul\xb7la (0V)","Disjuntor (Obert)"],r),"modos_conduccion",A.b(["Connexi\xf3 del mode especial","Connexi\xf3 del mode socors"],r),"avaries_s9000",A.b([],r),"operativa_basica",A.b(["Posada en marxa (P.A.)","Reset de bateries (final de l\xednia)","Desconnexi\xf3 (portes tancades)","Desconnexi\xf3 (portes obertes)","Introduir n\xfamero de tren"],r)],t.N,t.yp)}()
 $.aSH=0
 $.b3L=A.r(t.N,t.JW)
 $.aVW=null
@@ -115899,7 +115899,7 @@ return A.b95(q,"createPolicy","flutter-engine",{createScriptURL:A.f0(new A.aK_()
 r($,"biv","b_A",()=>A.O(A.Lm(A.lk(),"window"),"FinalizationRegistry")!=null)
 s($,"bhi","aZL",()=>B.an.cX(A.a5(["type","fontsChange"],t.N,t.z)))
 r($,"b2Z","aXZ",()=>A.vs())
-r($,"bem","aLJ",()=>new A.QK(A.b([],A.av("J<~(N)>")),A.b94(A.O(A.lk(),"window"),"matchMedia","(forced-colors: active)")))
+r($,"bem","aLJ",()=>new A.QK(A.b([],A.av("I<~(N)>")),A.b94(A.O(A.lk(),"window"),"matchMedia","(forced-colors: active)")))
 s($,"bh6","aZE",()=>A.b10("ftyp"))
 s($,"bhr","aPS",()=>8589934852)
 s($,"bhs","aZS",()=>8589934853)
@@ -115960,7 +115960,7 @@ return A.ee(q)})
 s($,"biU","aQc",()=>A.b28(A.aKz(0,0)))
 s($,"bdT","Lx",()=>A.bcb("_$dart_dartClosure"))
 s($,"biZ","b_N",()=>B.aW.i6(new A.aLc()))
-s($,"bi1","b_g",()=>A.b([new J.Rk()],A.av("J<Em>")))
+s($,"bi1","b_g",()=>A.b([new J.Rk()],A.av("I<Em>")))
 s($,"bg4","aYU",()=>A.mP(A.av6({
 toString:function(){return"$receiver$"}})))
 s($,"bg5","aYV",()=>A.mP(A.av6({$method$:null,
@@ -116092,7 +116092,7 @@ s($,"beq","aY2",()=>A.a5([4294967562,B.no,4294967564,B.Ul,4294967556,B.Um],t.S,t
 s($,"bes","aY3",()=>{var q=t.bd
 return A.a5([B.nM,A.cu([B.dt,B.e7],q),B.nO,A.cu([B.hJ,B.kl],q),B.nN,A.cu([B.hI,B.kk],q),B.nL,A.cu([B.hH,B.kj],q)],q,A.av("bu<h>"))})
 s($,"bj2","b_O",()=>new A.ano())
-s($,"bfy","aPB",()=>new A.ao5(A.b([],A.av("J<~(mq)>")),A.r(t.v3,t.bd)))
+s($,"bfy","aPB",()=>new A.ao5(A.b([],A.av("I<~(mq)>")),A.r(t.v3,t.bd)))
 s($,"bfx","aYE",()=>{var q=t.v3
 return A.a5([B.apa,A.cu([B.fm],q),B.apb,A.cu([B.fo],q),B.apc,A.cu([B.fm,B.fo],q),B.ap9,A.cu([B.fm],q),B.ap6,A.cu([B.fl],q),B.ap7,A.cu([B.hW],q),B.ap8,A.cu([B.fl,B.hW],q),B.ap5,A.cu([B.fl],q),B.ap2,A.cu([B.fk],q),B.ap3,A.cu([B.hV],q),B.ap4,A.cu([B.fk,B.hV],q),B.ap1,A.cu([B.fk],q),B.ape,A.cu([B.fn],q),B.apf,A.cu([B.hX],q),B.apg,A.cu([B.fn,B.hX],q),B.apd,A.cu([B.fn],q),B.aph,A.cu([B.eg],q),B.api,A.cu([B.kw],q),B.apj,A.cu([B.kv],q),B.apk,A.cu([B.hU],q)],A.av("dx"),A.av("bu<v>"))})
 s($,"bfw","aPA",()=>A.a5([B.fm,B.hI,B.fo,B.kk,B.fl,B.dt,B.hW,B.e7,B.fk,B.hH,B.hV,B.kj,B.fn,B.hJ,B.hX,B.kl,B.eg,B.hD,B.kw,B.kh,B.kv,B.ki],t.v3,t.bd))
@@ -116311,7 +116311,7 @@ return A.a5(["af",A.ah(d,g,q,"ZAR",k,p,i,l,"af",h,o,e,j,m,f,n),"am",A.ah(d,g,c,"
 r($,"b9i","a8X",()=>A.aUC("initializeDateFormatting(<locale>)",$.b_H()))
 r($,"bbL","a91",()=>A.aUC("initializeDateFormatting(<locale>)",B.a6q))
 s($,"bit","LN",()=>48)
-s($,"bdU","aXO",()=>A.b([A.bK("^'(?:[^']|'')*'",!0,!1,!1),A.bK("^(?:G+|y+|M+|k+|S+|E+|a+|h+|K+|H+|c+|L+|Q+|d+|D+|m+|s+|v+|z+|Z+)",!0,!1,!1),A.bK("^[^'GyMkSEahKHcLQdDmsvzZ]+",!0,!1,!1)],A.av("J<UV>")))
+s($,"bdU","aXO",()=>A.b([A.bK("^'(?:[^']|'')*'",!0,!1,!1),A.bK("^(?:G+|y+|M+|k+|S+|E+|a+|h+|K+|H+|c+|L+|Q+|d+|D+|m+|s+|v+|z+|Z+)",!0,!1,!1),A.bK("^[^'GyMkSEahKHcLQdDmsvzZ]+",!0,!1,!1)],A.av("I<UV>")))
 s($,"bgz","aZe",()=>A.bK("''",!0,!1,!1))
 s($,"bfl","aLM",()=>A.z9(2,52))
 s($,"bfk","aYz",()=>B.e.lF(A.Lt($.aLM())/A.Lt(10)))
@@ -116323,14 +116323,14 @@ return A.a5(["Tirador d\u2019alarma actiu","inicio_no_desfrena","Bolet de cabina
 s($,"bj6","uc",()=>{var q,p="inicio_no_desfrena",o="procedimiento_tirador",n="pregunta_maniobra_estacionamiento",m=null,l="No identificat",k="sac_pendent",j="pregunta_seta",i="procedimiento_seta",h="pregunta_modo_atp",g="pregunta_hom_muerto",f="atp_reset_tbs",e="atp_normalitzat",d="atp_m25",c="atp_recuperat",b="procedimiento_modo_especial",a="inicio_modo_especial",a0="No circular amb passatge en Mode Especial.",a1="pregunta_tdp",a2="procedimiento_hom_muerto_error",a3="pregunta_tren_stop_iris",a4="procedimiento_b12_esquema",a5="procedimiento_b12_ma",a6="procedimiento_b12_mb_r",a7="b12_resultat",a8="\u26a0\ufe0f RECORDA: En tancar l\u2019aixeta B12, el cotxe es queda COMPLETAMENT sense fre pneum\xe0tic. Cal anul\xb7lar el lla\xe7 de fre. Coordina l\u2019actuaci\xf3 amb el CCM.",a9="procedimiento_tren_stop_rearme",b0="fin_no_desfrena_llamar_ccm",b1="Estacionaments aplicats",b2="pregunta_b19_es_ma",b3="procedimiento_b19_ma",b4="procedimiento_b19_mb_r",b5="pregunta_confirma_b19",b6="fin_freno_liberado",b7="pregunta_b17_es_ma",b8="procedimiento_b17_ma",b9="procedimiento_b17_mb_r",c0="procedimiento_sirgas_accion",c1="procedimiento_ccm_final",c2="inicio_no_tracciona",c3="procedimiento_puertas_fallo",c4="pregunta_estacionamiento",c5="pregunta_disyuntores_abierto",c6="procedimiento_quitar_estacionamiento_cabina",c7="pregunta_eed",c8="procedimiento_eed_rearmar",c9="pregunta_tension",d0="procedimiento_tension_nula",d1="procedimiento_rearme_disyuntor",d2="procedimiento_modo_especial_llave",d3="EL PILOT PARPELLEJA",d4="me_establert",d5="NO PARPELLEJA",d6="me_repetir",d7="me_testera_contraria",d8="me_retorn",d9="me_no_establert",e0="inicio_pupitre_fallo",e1=A.r(t.N,t.bg)
 e1.m(0,p,A.m(m,n,o,"Tirador d\u2019alarma actiu",m,!0,p,m,B.d,B.f,"Tens un av\xeds de tirador d\u2019alarma al pupitre de conducci\xf3?",!1))
 q=t.d
-e1.m(0,o,A.m(m,m,m,m,m,!1,o,m,B.d,A.b([A.G("En marxa","sac22_marxa"),A.G("En estaci\xf3 / tren parat","sac22_estacio"),A.G(l,k)],q),"SAC 22 \xb7 Tirador d\u2019alarma\n\nEn quina situaci\xf3 s\u2019ha accionat?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 43.",!1))
+e1.m(0,o,A.m(m,m,m,m,m,!1,o,m,B.d,A.b([A.J("En marxa","sac22_marxa"),A.J("En estaci\xf3 / tren parat","sac22_estacio"),A.J(l,k)],q),"SAC 22 \xb7 Tirador d\u2019alarma\n\nEn quina situaci\xf3 s\u2019ha accionat?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 43.",!1))
 e1.m(0,j,A.m(m,h,i,"Bolet de cabina / Selector",m,!0,j,m,B.nq,B.f,"El bolet d\u2019emerg\xe8ncia est\xe0 activat o el selector de marxes \xe9s a zero?",!1))
 e1.m(0,i,A.m(m,m,m,m,m,!1,i,m,B.nq,B.f,"1. Gira el bolet d\u2019emerg\xe8ncia per rearmar-lo (desactivar-lo).\n2. Assegura\u2019t que el selector de marxes no sigui a la posici\xf3 zero.\n3. Comprova si el tren ja desfrena.",!1))
 e1.m(0,h,A.m(m,f,g,m,"ATP (sense codis)",!0,h,m,B.d,B.f,"Tens el mode ATP seleccionat correctament i respon?",!1))
-e1.m(0,f,A.m(m,m,m,m,m,!1,f,m,B.d,A.b([A.G("S\u2019HA NORMALITZAT",e),A.G("NO ES NORMALITZA",d)],q),"P\xe8rdua de codis ATP\n\nFes RESET TBS durant 2\u20133 s.\n\nS\u2019ha normalitzat?",!1))
-e1.m(0,e,A.m(m,m,m,m,m,!1,e,m,B.d,A.b([A.G("RECUPERAT",c),A.G("CONTINUA SENSE DESFRENAR",g)],q),"Comprova la recuperaci\xf3 del funcionament. Si el tren continua sense desfrenar, continua la comprovaci\xf3 de causes.",!1))
+e1.m(0,f,A.m(m,m,m,m,m,!1,f,m,B.d,A.b([A.J("S\u2019HA NORMALITZAT",e),A.J("NO ES NORMALITZA",d)],q),"P\xe8rdua de codis ATP\n\nFes RESET TBS durant 2\u20133 s.\n\nS\u2019ha normalitzat?",!1))
+e1.m(0,e,A.m(m,m,m,m,m,!1,e,m,B.d,A.b([A.J("RECUPERAT",c),A.J("CONTINUA SENSE DESFRENAR",g)],q),"Comprova la recuperaci\xf3 del funcionament. Si el tren continua sense desfrenar, continua la comprovaci\xf3 de causes.",!1))
 e1.m(0,c,A.m(m,m,m,m,m,!1,c,m,B.d,B.f,"Funcionament recuperat. Comunica el resultat al CCM.",!1))
-e1.m(0,d,A.m(m,m,m,m,m,!1,d,m,B.d,A.b([A.G("M+25 SELECCIONAT",e),A.G("NO ES POT SELECCIONAR M+25",b)],q),"Selecciona M+25 i comprova el resultat.\n\nHas pogut seleccionar M+25?",!1))
+e1.m(0,d,A.m(m,m,m,m,m,!1,d,m,B.d,A.b([A.J("M+25 SELECCIONAT",e),A.J("NO ES POT SELECCIONAR M+25",b)],q),"Selecciona M+25 i comprova el resultat.\n\nHas pogut seleccionar M+25?",!1))
 e1.m(0,b,A.m(a0,m,a,m,m,!1,b,m,B.d,B.f,"No es pot seleccionar M+25: desallotja el tren abans d\u2019entrar en Mode Especial. Coordina l\u2019actuaci\xf3 amb el CCM.",!1))
 e1.m(0,g,A.m(m,a2,a1,m,"Home mort",!0,g,m,B.d,B.f,"Est\xe0s prement correctament l\u2019home mort al manipulador i el tren continua sense desfrenar?",!1))
 e1.m(0,a2,A.m(m,m,m,m,m,!1,a2,m,B.d,B.f,"Assegura\u2019t de mantenir premut el dispositiu de seguretat del manipulador de manera constant i torna-ho a provar.",!1))
@@ -116339,7 +116339,7 @@ e1.m(0,a4,A.m(m,a6,a5,m,m,!0,a4,"manual/s2100/sac_14/grifos-b12.jpg",B.d,B.f,"An
 e1.m(0,a5,A.m(a8,m,a7,m,m,!1,a5,"manual/s2100/sac_14/b12-2.jpg",B.d,B.f,"Ubicaci\xf3 al MA1 / MA2:\n\nUn es troba sota els seients del passatge i l\u2019altre \xe9s a l\u2019armari del costat del passad\xeds d\u2019intercirculaci\xf3 entre cotxes.\n\nUn cop tancats, comprova des del pupitre si el tren ja desfrena.",!1))
 e1.m(0,a6,A.m(a8,m,a7,m,m,!1,a6,"manual/s2100/sac_14/b12.jpg",B.d,B.f,"Ubicaci\xf3 als MB1 / R / MB2:\n\nTotes dues aixetes es troben sota els seients del passatge; aixeca les tapes del cofre amb la clau de quadradet.\n\nUn cop tancats, comprova des del pupitre si el tren ja desfrena.",!1))
 e1.m(0,a3,A.m(m,p,a9,"STOP (Tren Stop activat)",m,!0,a3,m,B.d,B.f,"Tens un av\xeds al display IRIS de tren deslocalitzat per Tren Stop?\n\n(\xc9s una fallada molt habitual per p\xe8rdua de codi en zones de maniobres o terminals de l\u2019L4 com La Pau o Trinitat Nova).",!1))
-e1.m(0,a9,A.m(m,m,m,m,m,!1,a9,m,B.d,A.b([A.G("2100 original","sac23_original"),A.G("2100 remodelat","sac23_remodelat"),A.G(l,k)],q),"SAC 23 \xb7 Confirma variant. No abaixis cap t\xe8rmic gen\xe8ric.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 44, 64.",!1))
+e1.m(0,a9,A.m(m,m,m,m,m,!1,a9,m,B.d,A.b([A.J("2100 original","sac23_original"),A.J("2100 remodelat","sac23_remodelat"),A.J(l,k)],q),"SAC 23 \xb7 Confirma variant. No abaixis cap t\xe8rmic gen\xe8ric.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 44, 64.",!1))
 e1.m(0,n,A.m(m,b0,"sac13",b1,m,!0,n,m,B.d,B.f,"El fre d\u2019estacionament est\xe0 aplicat en algun dels cotxes i no el pots treure des del pupitre?",!1))
 e1.m(0,b0,A.m(m,m,m,m,m,!1,b0,m,B.d,B.f,"No s\u2019ha identificat cap de les causes habituals de fallada de desfrenament.\n\nTruca al CCM per sol\xb7licitar assist\xe8ncia de taller o instruccions addicionals.",!1))
 e1.m(0,b2,A.m(m,b4,b3,m,m,!0,b2,m,B.d,B.f,"A\xefllament per ELECTROV\xc0LVULA B19 (\ud83d\udfe5 Quadrat vermell):\n\nEl cotxe afectat que a\xefllar\xe0s \xe9s un cotxe MA (amb cabina)?",!1))
@@ -116352,32 +116352,32 @@ e1.m(0,b9,A.m(m,m,c0,m,m,!1,b9,"manual/s2100/sac_13/b17-mb-remolque.jpg",B.d,B.f
 e1.m(0,c0,A.m("B17/sirgues: desallotjament i lla\xe7 de portes per traccionar segons la fitxa. No \xe9s marxa normal.",c1,b6,m,b1,!0,c0,"manual/s2100/sac_13/sirgas.jpg",B.d,B.f,"Pas 2: Estirar les SIRGUES (exterior del bogi - \ud83d\udfe5 Quadrat vermell):\n\n1. Coordina amb CCM qualsevol acc\xe9s a la via abans de baixar.\n2. Localitza a l\u2019exterior el pictograma de la balan\xe7a al lateral.\n3. Estira amb for\xe7a la sirga cap amunt en tot el seu recorregut per alliberar mec\xe0nicament la molla.\n4. Puja a la cabina i comprova-ho al SAC.\n\nHas comprovat l\u2019alliberament real del fre?",!1))
 e1.m(0,b6,A.m(m,m,m,m,m,!1,b6,m,B.d,B.f,"Has confirmat l\u2019alliberament de l\u2019estacionament comprovat. Revisa actuacions i condicions amb CCM: B17/sirgues requereix desallotjament i lla\xe7 de portes; el cas 1F09 tamb\xe9 t\xe9 aquestes condicions. No equival a marxa normal.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 33, 38.",!1))
 e1.m(0,c2,A.m(m,c3,"sac_portes_reconegudes",m,m,!0,c2,m,B.d,B.f,"Tens les portes tancades f\xedsicament a tot el tren?",!1))
-e1.m(0,c3,A.m(m,m,m,m,m,!1,c3,m,B.d,A.b([A.G("Les portes no tanquen","sac08_no_tanquen"),A.G("SAC marca porta oberta / no tracciona","sac08_oberta"),A.G("Porta bloquejada per objecte","sac08_objecte"),A.G("No es pot seleccionar costat","sac08_seleccio"),A.G("No permet permissi\xf3 de portes","sac08_permissio"),A.G(l,k)],q),"SAC 08 \xb7 Porta oberta / avaria de portes\n\nQuin \xe9s el s\xedmptoma?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 24\u201329.",!1))
+e1.m(0,c3,A.m(m,m,m,m,m,!1,c3,m,B.d,A.b([A.J("Les portes no tanquen","sac08_no_tanquen"),A.J("SAC marca porta oberta / no tracciona","sac08_oberta"),A.J("Porta bloquejada per objecte","sac08_objecte"),A.J("No es pot seleccionar costat","sac08_seleccio"),A.J("No permet permissi\xf3 de portes","sac08_permissio"),A.J(l,k)],q),"SAC 08 \xb7 Porta oberta / avaria de portes\n\nQuin \xe9s el s\xedmptoma?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 24\u201329.",!1))
 e1.m(0,c4,A.m(m,c6,c5,m,b1,!0,c4,m,B.d,B.f,"L\u2019estacionament est\xe0 realment afluixat, despr\xe9s d\u2019actuar DES?",!1))
 e1.m(0,c6,A.m(m,m,"sac_des_comprova",m,m,!1,c6,m,B.Xs,B.f,"Afluixament des de cabina:\n\n1. Prem fermament el polsador 'DES' al panell de comandaments.\n2. Comprova si l\u2019indicador d\u2019aplicat s\u2019apaga.\n3. Si continua bloquejat, prem CONTINUAR per comprovar el resultat i identificar l\u2019abast al SAC 13.",!1))
 e1.m(0,c7,A.m(m,c9,c8,"EED (Tirador verd fora de posici\xf3)",m,!0,c7,m,B.d,B.f,"Tens algun tirador verd de desbloqueig d\u2019emerg\xe8ncia de portes (EED) fora de posici\xf3?",!1))
 e1.m(0,c8,A.m(m,m,m,m,m,!1,c8,m,B.d,B.f,"Normalitza o rearma el tirador verd (EED) afectat al cotxe corresponent.\n\nComprova a cabina que el pilot de portes s\u2019apaga i el tren torna a traccionar.",!1))
 e1.m(0,c9,A.m(m,c1,d0,"Tensi\xf3 nul\xb7la (0V)",m,!0,c9,m,B.d,B.f,"El volt\xedmetre de l\xednia indica tensi\xf3 nul\xb7la (0V) a cabina?",!1))
-e1.m(0,d0,A.m(m,m,m,m,m,!1,d0,m,B.d,A.b([A.G("Caiguda externa confirmada","sac04_externa"),A.G("Caiguda negada i tren a final","sac04_terminal"),A.G("No confirmat",k)],q),"SAC 04 \xb7 Contrasta amb CCM/operadors d\u2019energia si hi ha hagut caiguda de tensi\xf3. 0 V tamb\xe9 pot correspondre a desconnexi\xf3 involunt\xe0ria.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 22.",!1))
+e1.m(0,d0,A.m(m,m,m,m,m,!1,d0,m,B.d,A.b([A.J("Caiguda externa confirmada","sac04_externa"),A.J("Caiguda negada i tren a final","sac04_terminal"),A.J("No confirmat",k)],q),"SAC 04 \xb7 Contrasta amb CCM/operadors d\u2019energia si hi ha hagut caiguda de tensi\xf3. 0 V tamb\xe9 pot correspondre a desconnexi\xf3 involunt\xe0ria.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 22.",!1))
 e1.m(0,c5,A.m(m,c7,d1,"Disjuntor (Obert)",m,!0,c5,m,B.d,B.f,"S\u2019ha obert el disjuntor per un dispar del Feeder?",!1))
 e1.m(0,d1,A.m(m,m,"sac01_comprova",m,m,!1,d1,m,B.a2z,B.f,"SAC 01 \xb7 Disjuntor\n\nDes de la cabina habilitada per conduir, preferiblement amb el tren estacionat:\n1. Posa el manipulador M/F a 0.\n2. Polsa CON DISJUNTOR.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 16.",!1))
 e1.m(0,c1,A.m(m,m,m,m,m,!1,c1,m,B.d,B.f,"Si tot l\u2019anterior \xe9s correcte, truca directament al CCM per sol\xb7licitar assist\xe8ncia de taller o tracci\xf3 avan\xe7ada.",!1))
 e1.m(0,a,A.m(m,m,d2,m,m,!1,a,"manual/s2100/compartits/preparacio-pupitre.jpg",B.XW,B.f,"Mode Especial: cal autoritzaci\xf3 del CCM i tren sense passatge.\n\nPas 1: Preparaci\xf3 del pupitre\n\n1. Situa el manipulador M/F en posici\xf3 0.\n2. Posa el selector de marxes a 0.\n3. Gira la clau de govern a 0.",!1))
-e1.m(0,d2,A.m("Cal autoritzaci\xf3 del CCM. No circular amb passatge en Mode Especial.",m,m,m,m,!1,d2,m,B.a1H,A.b([A.G(d3,d4),A.G(d5,d6)],q),"Amb M/F, selector i clau de govern ja a 0, desconnecta l\u2019equip ATC amb la clau M.E.\n\nEl pilot M.E. parpelleja?",!1))
-e1.m(0,d6,A.m(m,m,m,m,m,!1,d6,m,B.d,A.b([A.G(d3,d4),A.G(d5,d7)],q),"Repeteix l\u2019operaci\xf3: posa M/F, selector i clau de govern a 0 abans de desconnectar ATC amb la clau M.E.\n\nEl pilot M.E. parpelleja?",!1))
-e1.m(0,d7,A.m(m,m,m,m,m,!1,d7,m,B.d,A.b([A.G(d3,d8),A.G(d5,d9)],q),"Fes l\u2019operaci\xf3 a la testera contr\xe0ria: primer M/F, selector i clau de govern a 0; despr\xe9s desconnecta ATC amb la clau M.E.\n\nEl pilot M.E. parpelleja?",!1))
-e1.m(0,d8,A.m(m,m,m,m,m,!1,d8,m,B.d,A.b([A.G(d3,d4),A.G(d5,d9)],q),"Un cop establert el Mode Especial a la testera contr\xe0ria, torna a la cabina de conducci\xf3 segons el procediment. Comprova que el pilot M.E. parpelleja abans de continuar.",!1))
+e1.m(0,d2,A.m("Cal autoritzaci\xf3 del CCM. No circular amb passatge en Mode Especial.",m,m,m,m,!1,d2,m,B.a1H,A.b([A.J(d3,d4),A.J(d5,d6)],q),"Amb M/F, selector i clau de govern ja a 0, desconnecta l\u2019equip ATC amb la clau M.E.\n\nEl pilot M.E. parpelleja?",!1))
+e1.m(0,d6,A.m(m,m,m,m,m,!1,d6,m,B.d,A.b([A.J(d3,d4),A.J(d5,d7)],q),"Repeteix l\u2019operaci\xf3: posa M/F, selector i clau de govern a 0 abans de desconnectar ATC amb la clau M.E.\n\nEl pilot M.E. parpelleja?",!1))
+e1.m(0,d7,A.m(m,m,m,m,m,!1,d7,m,B.d,A.b([A.J(d3,d8),A.J(d5,d9)],q),"Fes l\u2019operaci\xf3 a la testera contr\xe0ria: primer M/F, selector i clau de govern a 0; despr\xe9s desconnecta ATC amb la clau M.E.\n\nEl pilot M.E. parpelleja?",!1))
+e1.m(0,d8,A.m(m,m,m,m,m,!1,d8,m,B.d,A.b([A.J(d3,d4),A.J(d5,d9)],q),"Un cop establert el Mode Especial a la testera contr\xe0ria, torna a la cabina de conducci\xf3 segons el procediment. Comprova que el pilot M.E. parpelleja abans de continuar.",!1))
 e1.m(0,d9,A.m(m,m,m,m,m,!1,d9,m,B.d,B.f,"Mode Especial no establert. No inici\xefs la marxa; comunica el resultat al CCM i segueix les seves instruccions.",!1))
 e1.m(0,d4,A.m(a0,m,m,m,m,!1,d4,m,B.d,B.f,"Amb el pilot M.E. parpellejant, connecta la clau de govern, posa el selector endavant i prem el bot\xf3 verd DES. Coordina la circulaci\xf3 amb el CCM. Velocitat m\xe0xima: 25 km/h, sense passatge.",!1))
 e1.m(0,e0,A.m(m,m,"sac07_ok",m,m,!1,e0,"manual/s2100/compartits/controla-existent.jpg",B.ZD,B.f,"Costat d\u2019andana seleccionat. Prem el cl\xe0xon de la controla abans de tancar.\n\nSoluci\xf3 amb CONTROLAS AUXILIARS:\n\nSi el tren no obre o tanca portes des dels comandaments del pupitre principal, utilitza la botonera lateral.\n\n1. Introdueix la clau de cap\xe7alera al bomb\xed lateral.\n2. Obre la tapa met\xe0l\xb7lica per alliberar els polsadors auxiliars.\n3. Executa l\u2019obertura, el bip-bip o el tancament local des de la controla.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 25.",!1))
 e1.P(0,$.b_P())
 return A.bbt(e1)})
 s($,"bj5","b_P",()=>{var q="sac05",p=null,o="sac06_con",n="sac09_ok",m="sac14",l="sac15_informat",k="sac_pendent",j="sac17_pendent",i="sac18_pendent",h="sac25_iris",g="sac25_edp",f="No identificat",e="sac26_mirall",d="sac27_display",c="sac27_traccio",b="sac27_riom",a="sac27_pma",a0="sac28_pendent",a1="sac29_pendent",a2="sac_resultat_confirmat",a3="sac_identificada",a4="procedimiento_rearme_disyuntor",a5="sac03",a6="procedimiento_puertas_fallo",a7="13 \xb7 Fre estacionament",a8="sac13",a9="sac19",b0="20 \xb7 T\xe8rmic compressor",b1="sac20",b2="21 \xb7 Avaria compressor",b3="sac21",b4="procedimiento_tirador",b5="procedimiento_tren_stop_rearme",b6="sac_bahaste_identificada",b7="El SAC o el DISPLAY identifica una avaria concreta?",b8="inicio_no_desfrena",b9="sac_pedet_identificada",c0="sac01_recuperacio",c1="sac01_reset",c2="sac01_despres_reset",c3="sac02_un",c4="sac02_tots",c5="sac02_un_ok",c6="sac02_recuperat",c7="sac02_seguiment",c8="sac02_recuperar",c9="sac02_tres_inhibicions",d0="sac02_continuitat",d1="sac02_recuperar_ok",d2="sac02_persisteix",d3="sac02_selector",d4="sac02_reset",d5="sac02_selector_normalitzar",d6="sac02_selector_ok",d7="sac02_reset_resultat",d8="sac02_sense_passatge",d9="Un cotxe",e0="sac03_un",e1="sac03_dos",e2="Tots els cotxes",e3="sac03_tots",e4="sac03_reset_acord",e5="sac03_continuitat",e6="sac03_zero",e7="sac04_ok",e8="sac22_ok",e9="sac08_persisteix",f0="sac12_ok",f1="sac12_persisteix",f2="sac13_tots_pressio",f3="sac13_un_pressio",f4="La pressi\xf3 de canonada general \xe9s superior a 7 kg/cm\xb2?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 32\u201333.",f5="sac13_tots_cabina",f6="sac_aire",f7="manual/s2100/sac_13/des-con-des.png",f8="Repeteix DES. Si continua aplicat, prova CON i despr\xe9s DES. Comprova l\u2019alliberament.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 32\u201333.",f9="sac13_tots_ok",g0="S\u2019ha alliberat realment l\u2019estacionament i resolt el s\xedmptoma?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 32\u201333.",g1="sac13_tots_persisteix",g2="sac13_un_cabina",g3="sac13_un_ok",g4="pregunta_b19_es_ma",g5="sac13_bolet_ok",g6="manual/s2100/sac_14/termic-1f11.png",g7="sac14_ok",g8="sac16_observar",g9="sac16_continua",h0="sac16_ok",h1="sac19_09",h2="sac19_13",h3="sac19_09_ok",h4="sac19_09_pendent",h5="sac19_11",h6="sac19_11_ok",h7="sac19_11_pendent",h8="sac19_13_ok",h9="sac19_13_pendent",i0="sac19_13_cabina",i1="sac19_13_remolcada",i2="sac20_ok",i3="sac20_verificar",i4="manual/s2100/sac_21/manometre-tdp.png",i5="sac21_intermitent",i6="sac21_fixa",i7="sac23_ok",i8="sac23_anullar",i9="sac23_anullat_ok",j0="sac_aire_pendent",j1="sac_des_comprova",j2="sac_portes_reconegudes",j3="sac03_cofres",j4="sac03_ok",j5="sac06_fusible",j6="sac06_ok",j7="sac06_reset_acord",j8="sac06_retirada",j9="sac07_andana",k0="sac07_via",k1="sac07_tensio",k2="sac07_normal",k3="sac07_recomprova",k4="sac08_no_tanquen",k5="sac08_tancament_ok",k6="sac08_objecte",k7="sac08_bombeta",k8="sac08_seleccio_zero",k9="sac08_evacuacio_ma",l0="sac08_permissio_ok",l1="sac08_auxiliar",l2="sac08_km0",l3="sac08_evacuacio_cotxe",l4="sac13_alternatives",l5="sac13_canvi_cabina",l6="sac13_tots_final",l7="sac16_cofre_acord",l8="sac16_recuperar_ok",l9="sac19_13_cabina_ok",m0="sac22_estacio",m1="sac25_despres_iris",m2="sac25_megafonia_ok",m3="sac25_bip_ok",m4="sac25_iris_ko",m5="sac25_canvi",m6="sac25_edp_ma1",m7="sac25_edp_ma2",m8="sac25_edp_ok",m9="sac26_cesis",n0="sac26_retirada",n1="sac26_ok",n2="sac27_display_ok",n3="sac27_retirada",n4="sac27_pma_ok",n5="b12_condicions",n6=t.d
-return A.a5(["sac05",A.m(p,p,p,p,p,!1,q,p,B.d,B.f,"SAC 05 \xb7 Fusible convertidor\n\nEl fusible s\u2019ha fos: el convertidor NO rearmar\xe0. Retira el tren al m\xe9s aviat possible. Circular amb un \xfanic convertidor \xe9s cr\xedtic en S2100: desallotja al moment. Desconnecta llums, aire condicionat i megafonia i coordina la retirada amb CCM/Portacotxeres.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 23.",!1),"sac06",A.m(p,p,o,p,p,!1,"sac06",u.l,B.d,B.f,"SAC 06 \xb7 Fallada convertidor\n\nComprova degradaci\xf3 d\u2019aire condicionat / enllumenat, amper\xedmetre de bateria a desc\xe0rrega (A) i volt\xedmetre de bateria inferior a 87 V (B) a la unitat afectada.\n\nAmb un \xfanic convertidor, desallotja al moment i coordina retirada al m\xe9s aviat possible. Desconnecta llums, aire condicionat i megafonia.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 23.",!1),"sac09",A.m(p,p,n,p,p,!1,"sac09",p,B.d,B.f,"SAC 09 \xb7 Miralls retrovisors\n\nAmb fuita al quadre pneum\xe0tic de cabina pot faltar aire per obrir el mirall. Identifica i gira l\u2019aixeta corresponent del quadre pneum\xe0tic. No \xe9s la prova de velocitat del SAC 26.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 57.",!1),"sac15",A.m(p,p,p,p,p,!1,"sac15",p,B.d,A.b([A.G("Hi ha una fallada de fre pneum\xe0tic per resoldre",m),A.G("L\u2019anul\xb7laci\xf3 ja s\u2019ha realitzat \xb7 informar CCM",l),A.G("No es coneix la causa de l\u2019anul\xb7laci\xf3",k)],n6),"SAC 15 \xb7 Anul\xb7laci\xf3 fre de servei\n\nEl fre de servei \xe9s el fre pneum\xe0tic. L\u2019av\xeds informa que est\xe0 anul\xb7lat; no ordena tornar-lo a anul\xb7lar. Conserva les condicions d\u2019a\xefllament i lla\xe7 de fre de la maniobra realitzada.\n\nFont: criteri operatiu confirmat; actuaci\xf3 B12 a la p\xe0g. 35.",!1),"sac17_pendent",A.m(p,p,p,p,p,!1,j,p,B.d,B.f,"SAC 17 \xb7 Suspensi\xf3 pneum\xe0tica\n\nProcediment pendent d\u2019incorporar. Identifica el cotxe i la informaci\xf3 del DISPLAY i comunica el cas al CCM/Portacotxeres. No s\u2019assigna una maniobra autom\xe0tica.",!1),"sac18_pendent",A.m(p,p,p,p,p,!1,i,p,B.d,B.f,"SAC 18 \xb7 Aire condicionat\n\nProcediment pendent d\u2019incorporar. Identifica el cotxe i la informaci\xf3 del DISPLAY i comunica el cas al CCM/Portacotxeres. No s\u2019assigna una maniobra autom\xe0tica.",!1),"sac25",A.m(p,p,p,p,p,!1,"sac25",p,B.d,A.b([A.G("No funciona el bip-bip de portes",h),A.G("No anuncia correctament les estacions",g),A.G(f,k)],n6),"SAC 25 \xb7 Avaria megafonia\n\nQuin s\xedmptoma presenta?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 46\u201348.",!1),"sac26",A.m(p,p,e,p,p,!1,"sac26",p,B.d,B.f,"SAC 26 \xb7 Avaria caixa negra\n\nProva de miralls: estacionat a l\u2019andana i amb selecci\xf3 de portes, inicia la marxa amb el mirall obert. Aproximadament a 5 km/h s\u2019ha de tancar.\n\nLa prova comprova que el tren reconeix que ja no est\xe0 a velocitat 0; no \xe9s la fuita pneum\xe0tica del SAC 09.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 49.",!1),"sac27",A.m(p,p,p,p,p,!1,"sac27",p,B.d,A.b([A.G("DISPLAY congelat",d),A.G("El tren no tracciona",c),A.G("DISPLAY marca p\xe8rdua RIOM",b),A.G("RIOM afecta PMA / equips desconnectats",a),A.G(f,k)],n6),"SAC 27 \xb7 Avaria Agate Link\n\nQuin comportament addicional observes? No es fa reset de bateries de manera habitual: una RIOM afectada pot influir en la PMA.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 50.",!1),"sac28_pendent",A.m(p,p,p,p,p,!1,a0,p,B.d,B.f,"SAC 28 \xb7 Abs\xe8ncia d\u2019enllumenat\n\nProcediment pendent d\u2019incorporar. Identifica el cotxe i la informaci\xf3 del DISPLAY i comunica el cas al CCM/Portacotxeres. No s\u2019assigna una maniobra autom\xe0tica.",!1),"sac29_pendent",A.m(p,p,p,p,p,!1,a1,p,B.d,B.f,"SAC 29 \xb7 Unitat seccionada\n\nProcediment pendent d\u2019incorporar. Identifica el cotxe i la informaci\xf3 del DISPLAY i comunica el cas al CCM/Portacotxeres. No s\u2019assigna una maniobra autom\xe0tica.",!1),"sac_pendent",A.m(p,p,p,p,p,!1,k,p,B.d,B.f,"No s\u2019ha confirmat la resoluci\xf3. Conserva les condicions de les actuacions realitzades i comunica al CCM/Portacotxeres els avisos i el cotxe identificat. No es dona autoritzaci\xf3 de marxa.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 3\u20135.",!1),a2,A.m(p,p,p,p,p,!1,a2,p,B.d,B.f,"Has confirmat la resoluci\xf3 del s\xedmptoma comprovat. Aix\xf2 no normalitza els a\xefllaments ni elimina les condicions operatives: comunica les actuacions al CCM. No equival a una autoritzaci\xf3 de marxa normal.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 3\u20135.",!1),a3,A.m(p,p,p,p,p,!1,a3,p,B.d,A.b([A.G("01 \xb7 Disjuntor",a4),A.G("02 \xb7 Equip tracci\xf3 inhibit","sac02"),A.G("03 \xb7 Equip tracci\xf3 a\xefllat",a5),A.G("04 \xb7 Tensi\xf3 nul\xb7la","procedimiento_tension_nula"),A.G("05 \xb7 Fusible convertidor",q),A.G("06 \xb7 Falt\xe0 convertidor","sac06"),A.G("07 \xb7 Comandament portes","sac07"),A.G("08 \xb7 Porta oberta",a6),A.G("09 \xb7 Miralls retrovisor","sac09"),A.G("12 \xb7 Fallada pant\xf2graf","sac12"),A.G(a7,a8),A.G("14 \xb7 Fallada fre pneum\xe0tic",m),A.G("15 \xb7 Anul\xb7laci\xf3 fre de servei","sac15"),A.G("16 \xb7 (Anomalia) antipatinatge / antibloqueig","sac16"),A.G("17 \xb7 Suspensi\xf3 pneum\xe0tica",j),A.G("18 \xb7 Aire condicionat",i),A.G("19 \xb7 T\xe8rmics",a9),A.G(b0,b1),A.G(b2,b3),A.G("22 \xb7 Tirador alarma accionat",b4),A.G("23 \xb7 Equip tren-stop",b5),A.G("24 \xb7 Lla\xe7 d\u2019emerg\xe8ncia","sac24"),A.G("25 \xb7 Avaria megafonia","sac25"),A.G("26 \xb7 Avaria caixa negra","sac26"),A.G("27 \xb7 Avaria Agate Link","sac27"),A.G("28 \xb7 Abs\xe8ncia d\u2019enllumenat",a0),A.G("29 \xb7 Unitat seccionada",a1)],n6),"Selecciona l\u2019alarma concreta que veus al SAC. No la dedueixis \xfanicament del s\xedmptoma.",!1),b6,A.m(p,b8,a3,p,p,!0,b6,p,B.d,B.f,b7,!1),b9,A.m(p,"inicio_no_tracciona",a3,p,p,!0,b9,p,B.d,B.f,b7,!1),"sac01_comprova",A.m(p,c1,c0,p,p,!0,"sac01_comprova",p,B.d,B.f,"S\u2019ha connectat el disjuntor?",!1),c0,A.m(p,k,a2,p,p,!0,c0,p,B.d,B.f,"Comprova el DISPLAY i la recuperaci\xf3 de la tracci\xf3. S\u2019ha recuperat el funcionament?",!1),"sac01_reset",A.m(p,p,c2,p,p,!1,c1,p,B.nB,B.f,"Reset de bateries, coordinat amb Portacotxeres; preferiblement a final de l\xednia o via de maniobra pel risc de no reconnectar.\n\n1. DES P.M.A. i espera la desconnexi\xf3 dels equips.\n2. DES Bateria.\n3. CON Bateria.\n4. CON P.M.A. i espera la connexi\xf3 dels equips.\n5. Amb clau de govern, comprova al DISPLAY la connexi\xf3 dels equips. Si algun resta desconnectat, connecta l\u2019element individualment d\u2019acord amb Portacotxeres.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 15\u201316.",!1),c2,A.m(p,k,c0,p,p,!0,c2,p,B.d,B.f,"Despr\xe9s del reset de bateries, s\u2019ha connectat el disjuntor?",!1),"sac02",A.m(p,p,p,p,p,!1,"sac02",p,B.d,A.b([A.G("Un cotxe inhibit",c3),A.G("Tots els cotxes inhibits",c4),A.G(f,k)],n6),"SAC 02 \xb7 Equip tracci\xf3 inhibit\n\nQuin abast mostra el DISPLAY?",!1),"sac02_un",A.m(p,p,c5,p,p,!1,c3,p,B.a45,B.f,"Passa tot per 0, incloent govern.\n\nAmb un \xfanic cotxe inhibit, el tren pot continuar amb passatge; cal avisar Portacotxeres. No extrapolar a diversos cotxes.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 18.",!1),"sac02_un_ok",A.m(p,c7,c6,p,p,!0,c5,p,B.d,B.f,"El cotxe ha deixat d\u2019apar\xe8ixer inhibit despr\xe9s de passar tot per 0?",!1),"sac02_seguiment",A.m(p,p,p,p,p,!1,c7,p,B.d,A.b([A.G("Portacotxeres acorda recuperar la cadena",c8),A.G("La inhibici\xf3 es repeteix 3 vegades",c9),A.G("No es decideix recuperar / pendent d\u2019acord",d0)],n6),"Amb un \xfanic cotxe inhibit, el tren pot continuar amb passatge i cal avisar Portacotxeres. La recuperaci\xf3 de la cadena es fa d\u2019acord amb aquest personal, habitualment per ells.\n\nSi la inhibici\xf3 repetitiva s\u2019ha produ\xeft 3 vegades, correspon a\xefllar la cadena de tracci\xf3 afectada.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 18.",!1),"sac02_recuperar",A.m(p,p,d1,p,p,!1,c8,p,B.a3h,B.f,"Recuperaci\xf3 de la cadena de tracci\xf3 del cotxe identificat, d\u2019acord amb Portacotxeres:\n\n1. Baixa 1F17 (A.C. cofre motor tracci\xf3).\n2. Polsa 1F12 vermell (alimentaci\xf3 equip fre).\n3. Polsa 1F12 verd (alimentaci\xf3 equip fre).\n4. Puja 1F17.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 18.",!1),d1,A.m(p,d2,c6,p,p,!0,d1,p,B.d,B.f,"El cotxe ha deixat d\u2019apar\xe8ixer inhibit?",!1),"sac02_recuperat",A.m(p,a2,c9,p,p,!0,c6,p,B.d,B.f,"El cotxe ja no apareix inhibit. La inhibici\xf3 s\u2019ha repetit 3 vegades?",!1),d2,A.m(p,d0,c9,p,p,!0,d2,p,B.d,B.f,"El cotxe continua inhibit. La inhibici\xf3 s\u2019ha repetit 3 vegades?",!1),c9,A.m(p,p,p,p,p,!1,c9,p,B.d,B.f,"La inhibici\xf3 repetitiva 3 vegades comporta a\xefllar la cadena de tracci\xf3 afectada. Coordina l\u2019actuaci\xf3 amb Portacotxeres. No \xe9s un a\xefllament autom\xe0tic d\u2019una semiunitat.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 18.",!1),d0,A.m(p,p,p,p,p,!1,d0,p,B.d,B.f,"Amb un \xfanic cotxe inhibit, el manual permet continuar amb passatge i avisar Portacotxeres. Mant\xe9n registrada la incid\xe8ncia: no s\u2019ha confirmat recuperaci\xf3. Si arriba a 3 inhibicions repetitives, correspon a\xefllar la cadena afectada d\u2019acord amb Portacotxeres.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 18.",!1),"sac02_tots",A.m(p,p,p,p,p,!1,c4,p,B.XZ,A.b([A.G("SAC 01 \xb7 Disjuntor",a4),A.G("SAC 13 \xb7 Fre estacionament",a8),A.G("Cap dels anteriors \xb7 revisar selector",d3)],n6),"Tots els cotxes inhibits. Si apareix SAC 01, resol primer el disjuntor. Si apareix SAC 13, revisa el fre d\u2019estacionament i la causa corresponent.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 19.",!1),"sac02_selector",A.m(p,d5,d4,p,p,!0,d3,p,B.d,B.f,"El selector de marxa \xe9s en una posici\xf3 diferent de 0?",!1),d5,A.m(p,p,d6,p,p,!1,d5,p,B.d,B.f,"Revisa i situa el selector de marxa en una posici\xf3 diferent de 0.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 19.",!1),d6,A.m(p,d4,a2,p,p,!0,d6,p,B.d,B.f,"S\u2019han recuperat els equips despr\xe9s de revisar el selector?",!1),"sac02_reset",A.m(p,p,d7,p,p,!1,d4,p,B.nB,B.f,"Reset de bateries, coordinat amb Portacotxeres; preferiblement a final de l\xednia o via de maniobra pel risc de no reconnectar.\n\n1. DES P.M.A. i espera la desconnexi\xf3 dels equips.\n2. DES Bateria.\n3. CON Bateria.\n4. CON P.M.A. i espera la connexi\xf3 dels equips.\n5. Amb clau de govern, comprova al DISPLAY la connexi\xf3 dels equips. Si algun resta desconnectat, connecta l\u2019element individualment d\u2019acord amb Portacotxeres.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 15\u201316.\n\nSi despr\xe9s de les proves resten dos o tres equips inhibits, continuar sense passatge, coordinat amb CCM/Portacotxeres (p\xe0g. 19).",!1),d7,A.m(p,p,p,p,p,!1,d7,p,B.d,A.b([A.G("Tots recuperats i funcionament comprovat",a2),A.G("Resta un cotxe inhibit",c3),A.G("Resten dos o tres equips inhibits",d8),A.G("Un altre resultat / no identificat",k)],n6),"Quin estat mostra ara el DISPLAY?",!1),d8,A.m(p,p,p,p,p,!1,d8,p,B.d,B.f,"Despr\xe9s de les proves resten dos o tres equips inhibits: continuar SENSE PASSATGE segons el manual, coordinat amb CCM/Portacotxeres. No es considera recuperaci\xf3 confirmada.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 19.",!1),"sac03",A.m(p,p,p,p,p,!1,a5,p,B.d,A.b([A.G(d9,e0),A.G("Dos cotxes",e1),A.G(e2,e3),A.G(f,k)],n6),"SAC 03 \xb7 A\xefllat no \xe9s inhibit. Quin abast mostra el DISPLAY?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 20\u201321.",!1),"sac03_un",A.m(p,p,p,p,p,!1,e0,p,B.Zy,A.b([A.G("Valorar reset en terminal amb Portacotxeres",e4),A.G("Apareix un segon cotxe a\xefllat",e1),A.G("Continu\xeftat amb un \xfanic cotxe motor a\xefllat",e5)],n6),"El DISPLAY identifica un cotxe motor en vermell: avaria important de la cadena de tracci\xf3. Amb un sol cotxe motor a\xefllat es pot continuar amb passatge; avisa Portacotxeres. Habitualment es va a canvi de motors a Trinitat Nova per normalitzar el cofre ONIX. Si apareix un segon cotxe a\xefllat, desallotjar i anar a canvi.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 20.",!1),"sac03_dos",A.m(p,p,p,p,p,!1,e1,p,B.d,B.f,"Quan s\u2019a\xeflla un segon cotxe, el manual recomana desallotjar i anar a canvi. Coordina amb CCM/Portacotxeres.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 20.",!1),"sac03_tots",A.m(p,p,e6,p,p,!1,e3,p,B.b.m6(B.ti,1).ep(0),B.f,"Tots els cotxes apareixen a\xefllats al DISPLAY. Pot passar durant la posada en marxa si es mou el selector sense prou pressi\xf3 TDP.\n\nDesconnecta PMA per baixar pant\xf2grafs i comprova el volt\xedmetre de l\xednia.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 21.",!1),"sac04_externa",A.m(p,p,e7,p,p,!1,"sac04_externa",p,B.d,B.f,"Espera normalitzaci\xf3. Si algun equip no recupera, la fitxa preveu connexi\xf3 manual a P.M.M., coordinada amb CCM/Portacotxeres.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 22.",!1),"sac04_terminal",A.m(p,p,e7,p,p,!1,"sac04_terminal",p,B.nB,B.f,"Possible desconnexi\xf3 involunt\xe0ria en treure govern: reconnecta mitjan\xe7ant PMA d\u2019acord amb CCM/Portacotxeres.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 22.",!1),"sac04_ok",A.m(p,k,a2,p,p,!0,e7,p,B.d,B.f,"S\u2019ha resolt el s\xedmptoma despr\xe9s de l\u2019actuaci\xf3?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 22.",!1),"sac07_ok",A.m(p,k,a2,p,p,!0,"sac07_ok",p,B.d,B.f,"S\u2019ha resolt el s\xedmptoma despr\xe9s de l\u2019actuaci\xf3?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 25.",!1),"sac22_ok",A.m(p,k,a2,p,p,!0,e8,p,B.d,B.f,"S\u2019ha resolt el s\xedmptoma despr\xe9s de l\u2019actuaci\xf3?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 43.",!1),e9,A.m(p,p,p,p,p,!1,e9,p,B.d,B.f,"Si continua marcant portes, el manual indica desallotjar, anul\xb7lar lla\xe7 de portes i canvi/retirada amb CCM. No es dona una sortida de marxa normal.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 26.",!1),"sac12",A.m(p,p,f0,p,p,!1,"sac12",p,B.wz,B.f,"SAC 12 \xb7 Identifica el cotxe al DISPLAY. Comprova connexi\xf3 del pant\xf2graf a posada en marxa i la seva aixeta. Quan sigui possible, verifica visualment la posici\xf3.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 30.",!1),"sac12_ok",A.m(p,f1,a2,p,p,!0,f0,p,B.d,B.f,"S\u2019ha resolt el s\xedmptoma despr\xe9s de l\u2019actuaci\xf3?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 30.",!1),f1,A.m(p,p,p,p,p,!1,f1,p,B.d,B.f,"Comprova amb CCM/Portacotxeres que cada semiunitat est\xe0 alimentada almenys per un pant\xf2graf. No pressuposis una avaria externa de caten\xe0ria.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 30.",!1),"sac13",A.m(p,p,p,p,p,!1,a8,p,B.d,A.b([A.G(e2,f2),A.G(d9,f3),A.G("No queda clar l\u2019abast",k)],n6),"SAC 13 \xb7 Identifica al DISPLAY l\u2019abast de l\u2019avaria.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 32\u201334.",!1),f2,A.m(p,f6,f5,p,p,!0,f2,p,B.a3c,B.f,f4,!1),f5,A.m(p,p,f9,p,p,!1,f5,f7,B.d,B.f,f8,!1),"sac13_tots_ok",A.m(p,g1,a2,p,p,!0,f9,p,B.d,B.f,g0,!1),f3,A.m(p,f6,g2,p,p,!0,f3,p,B.a1P,B.f,f4,!1),"sac13_un_cabina",A.m(p,p,g3,p,p,!1,g2,f7,B.d,B.f,f8,!1),"sac13_un_ok",A.m(p,g4,a2,p,p,!0,g3,p,B.d,B.f,g0,!1),g1,A.m(p,p,g5,p,p,!1,g1,p,B.nq,B.f,"Revisa el bolet d\u2019emerg\xe8ncia de la cabina habilitada i rearma\u2019l si est\xe0 activat. Comprova de nou l\u2019estacionament.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 32.",!1),"sac14",A.m(p,p,p,p,p,!1,m,p,B.d,B.f,"SAC 14 \xb7 Localitza al DISPLAY el cotxe amb fallada de fre pneum\xe0tic.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 35.",!1),"sac14_1f11",A.m(p,p,g7,p,p,!1,"sac14_1f11",g6,B.d,B.f,"Al cotxe identificat, la fitxa preveu tirar el t\xe8rmic 1F11. Coordina l\u2019actuaci\xf3 i comprova el resultat.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 35.",!1),"sac14_b12",A.m(p,p,"procedimiento_b12_esquema",p,p,!1,"sac14_b12",p,B.d,B.f,"Amb el cotxe identificat i coordinaci\xf3 CCM, utilitza les B12. El cotxe queda sense fre pneum\xe0tic; aquest sup\xf2sit requereix anul\xb7lar el lla\xe7 de fre per desfrenar.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 35.",!1),"sac14_ok",A.m(p,k,a2,p,p,!0,g7,p,B.d,B.f,"S\u2019ha resolt el s\xedmptoma despr\xe9s de l\u2019actuaci\xf3?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 35.",!1),"sac16",A.m(p,p,p,p,p,!1,"sac16",p,B.d,A.b([A.G("Intermitent",g8),A.G("Cont\xednua",g9),A.G(f,k)],n6),"SAC 16 \xb7 L\u2019alarma \xe9s intermitent o cont\xednua?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 36.",!1),"sac16_observar",A.m(p,p,p,p,p,!1,g8,p,B.d,B.f,"Mant\xe9n en observaci\xf3 i avisa Portacotxeres.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 36.",!1),"sac16_continua",A.m(p,p,h0,p,p,!1,g9,p,B.b.jH(B.nC,new A.aLe()).ep(0),B.f,"Identifica el cotxe al DISPLAY. No \xe9s una incid\xe8ncia cr\xedtica: preferiblement a final de l\xednia, reinicia l\u2019electr\xf2nica de fre amb els t\xe8rmics aplicables 1F09 / 1F11 / 1F13 (aquest \xfaltim exclusiu MA). No actu\xefs sobre elements que no corresponguin al cotxe.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 36.",!1),"sac19",A.m(p,p,p,p,p,!1,a9,p,B.d,A.b([A.G("1F09 identificat \xb7 19 + 13",h1),A.G("1F13 identificat al DISPLAY",h2),A.G("T\xe8rmic compressor \xb7 SAC 20",b1),A.G(f,k)],n6),"SAC 19 / DISPLAY \xb7 Identifica t\xe8rmic, cotxe i combinaci\xf3 d\u2019avisos. La combinaci\xf3 sola no substitueix la identificaci\xf3.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 37\u201341.",!1),"sac19_09",A.m(p,p,h3,p,p,!1,h1,"manual/s2100/sac_19/armari-1f09.png",B.d,B.f,"Confirma cotxe i 1F09. Prova de rearmar el t\xe8rmic identificat.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 38.",!1),"sac19_09_ok",A.m(p,h4,a2,p,p,!0,h3,p,B.d,B.f,"S\u2019ha resolt el s\xedmptoma despr\xe9s de l\u2019actuaci\xf3?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 38.",!1),"sac19_11",A.m(p,p,h6,p,p,!1,h5,g6,B.d,B.f,"Confirma cotxe i 1F11. Prova de rearmar el t\xe8rmic identificat.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 39.",!1),"sac19_11_ok",A.m(p,h7,a2,p,p,!0,h6,p,B.d,B.f,"S\u2019ha resolt el s\xedmptoma despr\xe9s de l\u2019actuaci\xf3?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 39.",!1),"sac19_13",A.m(p,p,h8,p,p,!1,h2,"manual/s2100/sac_19/armari-1f13.png",B.d,B.f,"Confirma cotxe i 1F13 (exclusiu MA1 / MA2). Prova de rearmar el t\xe8rmic identificat.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 40.",!1),"sac19_13_ok",A.m(p,h9,a2,p,p,!0,h8,p,B.d,B.f,"S\u2019ha resolt el s\xedmptoma despr\xe9s de l\u2019actuaci\xf3?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 40.",!1),h4,A.m(p,p,g4,p,p,!1,h4,p,B.d,B.f,"Si 1F09 no rearma: desallotjar i alliberar estacionament mec\xe0nicament. Reutilitza B19 i, si no entra aire, B17/sirgues. El SAC pot mantenir l\u2019av\xeds malgrat alliberament real. Cal lla\xe7 de portes per traccionar, coordinat amb CCM.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 38.",!1),h7,A.m(p,p,p,p,p,!1,h7,p,B.d,B.f,"No anul\xb7lis el lla\xe7 sense localitzar el cotxe: podria continuar frenat. Comunica DISPLAY i resultat a CCM/Portacotxeres. Sense informaci\xf3 del DISPLAY cal diagn\xf2stic de causes, no atribuir-ho autom\xe0ticament a 1F11.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 39.",!1),h9,A.m(p,i1,i0,p,p,!0,h9,p,B.d,B.f,"Si 1F13 no rearma, el tren queda frenat per emerg\xe8ncia. \xc9s possible desfrenar des de cabina contr\xe0ria, d\u2019acord amb CCM?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 40.",!1),"sac20",A.m(p,p,i2,p,p,!1,b1,"manual/s2100/sac_20/rearme-compressor.png",B.d,B.f,"SAC 20 \xb7 Visualitza el compressor afectat al DISPLAY. A l\u2019armari de t\xe8rmics de qualsevol testera, prem \xabrearme t\xe8rmic compressor\xbb; la reposici\xf3 \xe9s independent del compressor afectat.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 41.",!1),"sac20_ok",A.m(p,i3,a2,p,p,!0,i2,p,B.d,B.f,"Ha reposat i has comprovat el funcionament correcte?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 41.",!1),"sac20_verificar",A.m(p,p,p,p,p,!1,i3,i4,B.d,B.f,"Si no reposa, comprova funcionament real dels compressors observant l\u2019evoluci\xf3 de TDP: pot haver-hi fallada de comunicaci\xf3. Contacta Portacotxeres i valora la situaci\xf3; no assumeixis compressor aturat nom\xe9s per l\u2019av\xeds.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 41.",!1),"sac21",A.m(p,p,p,p,p,!1,b3,i4,B.d,A.b([A.G("Puntual / intermitent",i5),A.G("Fixa durant tota la c\xe0rrega",i6),A.G("No puc determinar-ho",k)],n6),"SAC 21 \xb7 Comprova pressi\xf3 real de canonada general (\xf2ptima 8\u201311 kg/cm\xb2 segons fitxa) i evoluci\xf3 de l\u2019alarma durant la c\xe0rrega.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 42.",!1),i5,A.m(p,p,p,p,p,!1,i5,p,B.jS,B.f,"Pot apar\xe8ixer amb pressi\xf3 insuficient i normalitzar en arribar a la desitjada. Monitoritza l\u2019agulla del man\xf2metre i parla amb Portacotxeres. No s\u2019ha confirmat recuperaci\xf3 nom\xe9s per seleccionar aquest cas.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 42.",!1),"sac21_fixa",A.m(p,p,p,p,p,!1,i6,p,B.d,B.f,"Compressor que no treballa o manca de pressi\xf3. Parla amb Portacotxeres i valora retirada/canvi. El manual contempla un sol compressor fins a retirar, vigilant pressi\xf3; no \xe9s autoritzaci\xf3 autom\xe0tica de continu\xeftat.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 42.",!1),"sac23_original",A.m(p,p,p,p,p,!1,"sac23_original",p,B.d,B.f,"La fitxa indica que al 2100 original no afecta la conducci\xf3. Si persisteix el s\xedmptoma, cal identificar una altra causa; no aplicar la seq\xfc\xe8ncia del remodelat.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 44.",!1),"sac23_remodelat",A.m(p,p,i7,p,p,!1,"sac23_remodelat","manual/s2100/sac_23/remodelat-armari-tren-stop.png",B.X4,B.f,"Rearma amb TR de l\u2019IRIS o amb el polsador verd de rearme a la part inferior de l\u2019armari. El pilot tamb\xe9 pot indicar IRIS sense alimentaci\xf3.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 44, 64.",!1),"sac23_ok",A.m(p,i8,a2,p,p,!0,i7,p,B.d,B.f,"S\u2019ha resolt el s\xedmptoma despr\xe9s de l\u2019actuaci\xf3?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 44, 64.",!1),"sac23_anullar",A.m("Tren Stop anul\xb7lat: conserva aquesta condici\xf3 i les indicacions del CCM.",p,i9,p,p,!1,i8,"manual/s2100/sac_23/remodelat-rearme-anullacio.png",B.d,B.f,"Si no rearma, la fitxa identifica el polsador vermell d\u2019anul\xb7laci\xf3 Tren Stop. Confirma l\u2019element i coordina amb CCM; no \xe9s un t\xe8rmic gen\xe8ric.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 44, 64.",!1),i9,A.m(p,k,a2,p,p,!0,i9,p,B.d,B.f,"S\u2019ha resolt el s\xedmptoma mantenint registrada l\u2019anul\xb7laci\xf3 de Tren Stop?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 44, 64.",!1),"sac24",A.m(p,p,p,p,p,!1,"sac24",p,B.d,A.b([A.G(a7,a8),A.G("14 \xb7 fre pneum\xe0tic",m),A.G("19 \xb7 T\xe8rmic identificat",a9),A.G("1F11 caigut identificat al DISPLAY",h5),A.G("22 \xb7 tirador",b4),A.G("23 \xb7 Tren Stop",b5),A.G("Una altra alarma concreta",a3),A.G("24 sol \xb7 diagnosticar causa",b8)],n6),"SAC 24 \xb7 El lla\xe7 obert no identifica per si sol la causa. Pot ser tirador, home mort, punt 7, bolet, pressi\xf3 m\xednima, Tren Stop, t\xe8rmics o abs\xe8ncia de mode. Prioritza la causa concreta al DISPLAY. Si no normalitza, el manual indica desallotjar i anul\xb7lar lla\xe7 de fre quan correspongui, amb CCM i sense deixar un cotxe frenat.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 45.",!1),"sac_aire",A.m(p,p,p,p,p,!1,f6,p,B.jS,A.b([A.G(b0,b1),A.G(b2,b3),A.G("Cap alarma concreta / possible fuita",j0)],n6),"TDP baixa no implica fallada de fre pneum\xe0tic. Hi ha alarma de compressor identificada?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 41\u201342, 45.",!1),j0,A.m(p,p,p,p,p,!1,j0,p,B.jS,B.f,"Comprova evoluci\xf3 de la pressi\xf3 i possibles fuites. Comunica dades reals a CCM/Portacotxeres. No passar a B12 nom\xe9s perqu\xe8 hi hagi poca pressi\xf3.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 41\u201342, 45, 53\u201355.",!1),j1,A.m(p,a8,"pregunta_disyuntores_abierto",p,p,!0,j1,p,B.d,B.f,"S\u2019ha afluixat realment l\u2019estacionament?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 32\u201334.",!1),j2,A.m(p,a6,"pregunta_estacionamiento",p,"Portes obertes",!0,j2,p,B.d,B.f,"Amb portes f\xedsicament tancades, el SAC/DISPLAY tamb\xe9 les reconeix tancades?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 26.",!1),e5,A.m(p,p,p,p,p,!1,e5,p,B.d,B.f,"Continua amb passatge nom\xe9s en el sup\xf2sit d\u2019un \xfanic cotxe motor a\xefllat, amb av\xeds i seguiment de Portacotxeres. Acorda el canvi de motors / normalitzaci\xf3 ONIX. No s\u2019ha confirmat recuperaci\xf3.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 20.",!1),e4,A.m(p,e5,"sac03_reset",p,p,!0,e4,p,B.d,B.f,"Sou en terminal i Portacotxeres acorda fer el reset de bateries?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 20.",!1),"sac03_reset_ok",A.m(p,a5,a2,p,p,!0,"sac03_reset_ok",p,B.d,B.f,"Despr\xe9s del reset, s\u2019ha recuperat l\u2019equip i comprovat el funcionament?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 20.",!1),"sac03_zero",A.m(p,k,j3,p,p,!0,e6,p,B.d,B.f,"Els pant\xf2grafs estan baixats i el volt\xedmetre de l\xednia marca 0?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 21.",!1),"sac03_cofres",A.m(p,p,j4,p,p,!1,j3,p,B.b.j7(B.ti,1).ep(0),B.f,"Amb les condicions anteriors confirmades, rearma els cofres de tracci\xf3 de tots els cotxes, coordinat amb Portacotxeres.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 21.",!1),"sac06_con",A.m(p,p,j5,p,p,!1,o,u.k,B.d,B.f,"Intenta connectar CONVERTIDOR des de la P.M.M.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 23.",!1),"sac06_fusible",A.m(p,j6,q,p,p,!0,j5,p,B.d,B.f,"S\u2019il\xb7lumina SAC 05 \xb7 Fusible convertidor?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 23.",!1),"sac06_ok",A.m(p,j7,a2,p,p,!0,j6,p,B.d,B.f,"Ha rearmat el convertidor i s\u2019ha comprovat la recuperaci\xf3?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 23.",!1),j7,A.m(p,j8,"sac06_reset",p,p,!0,j7,p,B.d,B.f,"Sense SAC 05, Portacotxeres acorda provar un reset incloent bateries?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 23.",!1),"sac06_reset_ok",A.m(p,j8,a2,p,p,!0,"sac06_reset_ok",p,B.d,B.f,"Despr\xe9s del reset, s\u2019ha recuperat el convertidor?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 23.",!1),"sac06_retirada",A.m(p,p,p,p,p,!1,j8,p,B.d,B.f,"Amb un \xfanic convertidor: desallotja al moment, desconnecta llums, aire condicionat i megafonia. Retira al m\xe9s aviat possible amb CCM/Portacotxeres; situaci\xf3 cr\xedtica en S2100.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 23.",!1),"sac07",A.m(p,k0,j9,p,p,!0,"sac07",p,B.d,B.f,"SAC 07 \xb7 Comandament portes\n\nIdentifica la porta afectada. \xc9s costat andana?\n\nFont: criteri operatiu confirmat per l\u2019usuari; no \xe9s el procediment de controla.",!1),"sac07_andana",A.m(p,p,k1,p,p,!1,j9,p,B.d,B.f,"A la seg\xfcent estaci\xf3, comprova si el passatge obre aquesta porta. Aix\xf2 permet comprovar si t\xe9 tensi\xf3.\n\nFont: criteri operatiu confirmat.",!1),"sac07_via",A.m(p,p,k1,p,p,!1,k0,p,B.d,B.f,"Amb el tren correctament estacionat, despla\xe7a\u2019t a la porta afectada del costat via i acciona el comandament per comprovar si t\xe9 tensi\xf3.\n\nFont: criteri operatiu confirmat.",!1),"sac07_tensio",A.m(p,"sac07_iris",k2,p,p,!0,k1,p,B.d,B.f,"La porta disposa de tensi\xf3?",!1),"sac07_normal",A.m(p,p,p,p,p,!1,k2,p,B.d,B.f,"Amb tensi\xf3 comprovada, continua la marxa normal. Habitualment desapareix l\u2019av\xeds de comandament.\n\nFont: criteri operatiu confirmat.",!1),k3,A.m(p,a6,k2,p,p,!0,k3,p,B.d,B.f,"Despr\xe9s de rearmar IRIS, la porta disposa de tensi\xf3?",!1),k4,A.m(p,p,p,p,p,!1,k4,p,B.d,A.b([A.G("Utilitzar controla","sac08_controla"),A.G("No funciona el bip-bip",h)],n6),"Pot fallar el bip-bip o el polsador de tancament. Utilitza la controla amb el costat seleccionat, clau de cap\xe7alera d\u2019andana i cl\xe0xon abans de tancar.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 25.",!1),k5,A.m(p,e9,a2,p,p,!0,k5,p,B.d,B.f,"Les portes han tancat i el SAC/DISPLAY les reconeix tancades?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 25.",!1),"sac08_oberta",A.m(p,p,p,p,p,!1,"sac08_oberta","manual/s2100/sac_08/pilot-exterior.png",B.d,A.b([A.G("Comprovar el tancament",k5),A.G("Hi ha un objecte",k6)],n6),"Localitza la porta al DISPLAY o pel pilot exterior blanc; revisa tamb\xe9 la porta de testera. Dona permissi\xf3, agafa claus i walkie, despla\xe7a\u2019t a la porta i obre-la per comprovar obstacles. Torna a cabina i tanca. Si hi ha un objecte, aplica les condicions del procediment d\u2019obstrucci\xf3 abans de retirar-lo.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 26.",!1),"sac08_objecte",A.m(p,p,k5,p,p,!1,k6,p,B.b.jH(B.uI,new A.aLf()).ep(0),B.f,"Identifica el cotxe i el costat de la porta bloquejada. Retira tensi\xf3 al costat/cotxe mitjan\xe7ant el selector, retira l\u2019objecte, restitueix tensi\xf3 i tanca.\n\nLa fitxa tamb\xe9 contempla retirar l\u2019objecte amb permissi\xf3 de portes seleccionada. En S2100 remodelat, la manipulaci\xf3 s\u2019ha de fer amb ABS\xc8NCIA DE TENSI\xd3.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 27, 64.",!1),"sac08_seleccio",A.m(p,k8,k7,p,p,!0,"sac08_seleccio",p,B.d,B.f,"Prova la seq\xfc\xe8ncia normal d\u2019obertura. Encara que el pilot groc no s\u2019encengui, permet autoritzar permissi\xf3?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 28.",!1),"sac08_bombeta",A.m(p,p,p,p,p,!1,k7,p,B.d,B.f,"Continua la marxa amb normalitat i comunica a Portacotxeres que la bombeta de selecci\xf3 est\xe0 fosa.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 28.",!1),k8,A.m(p,k9,a2,p,p,!0,k8,p,B.d,B.f,"Passa tot per 0 i comprova de nou. Ara permet la selecci\xf3/permissi\xf3?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 28.",!1),k9,A.m(p,p,p,p,p,!1,k9,"manual/s2100/sac_08/selector-ma.png",B.d,B.f,"Retira tensi\xf3 de portes costat andana des de l\u2019armari del cotxe MA de cap\xe7alera. Anuncia al passatge que el desallotjament ser\xe0 \xfanicament pel primer cotxe. Desallotja per aquest cotxe i coordina canvi/retirada. En remodelats es pot desbloquejar una porta del costat/cotxe corresponent.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 28.",!1),"sac08_permissio",A.m(p,"sac08_permissio_controla",a2,p,p,!0,"sac08_permissio",p,B.d,B.f,"Passa tot per 0 i comprova de nou. Ara permet la permissi\xf3 de portes?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 29.",!1),l0,A.m(p,l2,l1,p,p,!0,l0,p,B.d,B.f,"La controla del costat corresponent permet l\u2019obertura/permissi\xf3?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 29.",!1),"sac08_auxiliar",A.m(p,p,p,p,p,!1,l1,p,B.d,B.f,"Problema de botonera: utilitza el sistema auxiliar de portes per autoritzar permissi\xf3 i avalua/planifica canvi de motors amb Portacotxeres.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 29.",!1),"sac08_km0",A.m(p,p,p,p,p,!1,l2,p,B.d,A.b([A.G("Reset de bateries acordat","sac08_reset"),A.G("Desallotjar retirant tensi\xf3 costat andana",l3),A.G("Pendent d\u2019instruccions",k)],n6),"Probable avaria del rel\xe9 km0. Amb CCM/Portacotxeres, valora reset de bateries o desallotjar retirant tensi\xf3 de portes costat andana d\u2019un cotxe.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 29.",!1),l3,A.m(p,p,p,p,p,!1,l3,p,B.b.jH(B.uI,new A.aLg()).ep(0),B.f,"Al cotxe identificat, retira tensi\xf3 de les portes del costat andana mitjan\xe7ant el selector i desallotja coordinat amb CCM. No \xe9s una recuperaci\xf3 del servei.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 29.",!1),"sac08_reset_ok",A.m(p,l2,a2,p,p,!0,"sac08_reset_ok",p,B.d,B.f,"Despr\xe9s del reset es permet permissi\xf3 i es comprova el funcionament de portes?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 29.",!1),"sac09_ok",A.m(p,k,a2,p,p,!0,n,p,B.d,B.f,"Ha cessat la fuita despr\xe9s d\u2019actuar sobre l\u2019aixeta identificada?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 57.",!1),"sac15_informat",A.m(p,p,p,p,p,!1,l,p,B.d,B.f,"Informa CCM de l\u2019anul\xb7laci\xf3 del fre de servei i mant\xe9n les limitacions de l\u2019actuaci\xf3 realitzada. No es dona per recuperat el fre ni per autoritzada marxa normal.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 35.",!1),"sac13_bolet_ok",A.m(p,l4,a2,p,p,!0,g5,p,B.d,B.f,"S\u2019ha alliberat l\u2019estacionament de tots els cotxes?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 32.",!1),l4,A.m(p,p,p,p,p,!1,l4,p,B.d,A.b([A.G("Es pot canviar de cabina i retrocedir",l5),A.G("Electrov\xe0lvules de tots els cotxes","sac13_b19_MA1"),A.G("No es pot determinar",k)],n6),"Possible problema de polsador. Coordina amb CCM l\u2019alternativa aplicable: canvi de cabina quan es pot retrocedir, o electrov\xe0lvules de tots els cotxes.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 32.",!1),l5,A.m(p,p,l6,p,p,!1,l5,p,B.d,B.f,"Amb la maniobra acordada, canvia de cabina i retira els estacionaments des d\u2019all\xe0.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 32.",!1),l6,A.m(p,k,a2,p,p,!0,l6,p,B.d,B.f,"S\u2019ha comprovat l\u2019alliberament real de tots els estacionaments?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 32.",!1),"sac16_ok",A.m(p,l7,a2,p,p,!0,h0,p,B.d,B.f,"S\u2019ha normalitzat l\u2019alarma despr\xe9s de reiniciar l\u2019electr\xf2nica de fre?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 36.",!1),l7,A.m(p,g8,"sac16_recuperar",p,p,!0,l7,p,B.d,B.f,"Portacotxeres acorda recuperar la cadena de tracci\xf3 del cotxe motor afectat?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 36.",!1),l8,A.m(p,g8,a2,p,p,!0,l8,p,B.d,B.f,"S\u2019ha normalitzat l\u2019alarma despr\xe9s de recuperar la cadena de tracci\xf3?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 36.",!1),"sac19_13_cabina",A.m(p,p,l9,p,p,!1,i0,p,B.d,B.f,"Realitza el desfrenament des de la cabina acordada. Cal anul\xb7lar el lla\xe7 de fre per poder desfrenar i iniciar la marxa; mant\xe9n aquesta condici\xf3 i les instruccions CCM.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 40.",!1),l9,A.m(p,i1,a2,p,p,!0,l9,p,B.d,B.f,"S\u2019ha pogut desfrenar des d\u2019aquesta cabina?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 40.",!1),i1,A.m(p,p,"sac19_13_b12",p,p,!1,i1,p,B.d,B.f,"Si no es pot desfrenar des de l\u2019altra cabina: B12 i REMOLCADA, amb anul\xb7laci\xf3 del lla\xe7 de fre. Coordina el procediment amb CCM. La remolcada continua essent necess\xe0ria encara que les B12 alliberin el fre.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 40.",!1),"sac22_marxa",A.m(p,p,m0,p,p,!1,"sac22_marxa",p,B.d,B.f,"No t\u2019aturis al t\xfanel per aquest motiu: continua fins a la seg\xfcent estaci\xf3 i estaciona correctament a l\u2019andana abans d\u2019anar a rearmar. Si t\u2019atures al t\xfanel, pot obrir el lla\xe7 i no desfrenar fins al rearme. Pregunta el motiu i coordina els recursos necessaris amb CCM.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 43.",!1),"sac22_estacio",A.m(p,p,e8,p,p,!1,m0,p,B.XT,B.f,"Amb el tren parat, identifica el tirador al DISPLAY 22 o pel pilot exterior taronja. Pregunta el motiu i demana recursos a CCM quan correspongui. Emporta\u2019t claus i walkie, dirigeix-te al cotxe identificat i rearma el tirador. Si el tren \xe9s aturat al t\xfanel, coordina l\u2019actuaci\xf3 amb CCM.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 43.",!1),m1,A.m(p,p,p,p,p,!1,m1,p,B.d,A.b([A.G("Cal utilitzar controla","sac25_controla"),A.G("Provar la megafonia",m2)],n6),"Si cal, utilitza controla: el tancament des d\u2019all\xe0 \xe9s independent d\u2019IRIS. Tot seguit prova la megafonia del tren.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 47.",!1),m2,A.m(p,m4,m3,p,p,!0,m2,p,B.d,B.f,"Funciona la megafonia del tren?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 47.",!1),"sac25_bip_ok",A.m(p,m5,a2,p,p,!0,m3,p,B.d,B.f,"Tamb\xe9 s\u2019ha recuperat el bip-bip i el tancament de portes?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 47.",!1),"sac25_iris_ko",A.m(p,p,p,p,p,!1,m4,p,B.d,B.f,"IRIS KO: tamb\xe9 falla la megafonia. Desallotja i comunica la incid\xe8ncia al CCM.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 47.",!1),"sac25_canvi",A.m(p,p,p,p,p,!1,m5,p,B.d,B.f,"Si \xfanicament falla el bip-bip, es pot anar amb passatge a canvi de motors utilitzant el sistema auxiliar. Valora amb CCM desallotjar si provoca molt retard a la l\xednia.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 47.",!1),"sac25_edp",A.m(p,p,p,p,p,!1,g,p,B.d,A.b([A.G("MA1",m6),A.G("MA2",m7),A.G(f,k)],n6),"Quin equip EDP cal recuperar?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 48.",!1),"sac25_edp_ma1",A.m(p,p,m8,p,p,!1,m6,"manual/s2100/sac_25/equip-posicio-ma1.png",B.d,B.f,"Atura manualment l\u2019equip de detecci\xf3 de posici\xf3 mantenint polsat fins que s\u2019apagui ON. Torna a encendre\u2019l polsant marxa.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 48.",!1),"sac25_edp_ma2",A.m(p,p,m8,p,p,!1,m7,"manual/s2100/sac_25/termic-edp-ma2.png",B.d,B.f,"Tira el t\xe8rmic EDP i deixa\u2019l baixat 2/3 estacions. Recupera\u2019l amb el tren parat/estacionat. La detecci\xf3 autom\xe0tica es pot recuperar a Trinitat Nova, Urquinaona i La Pau.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 48.",!1),"sac25_edp_ok",A.m(p,k,a2,p,p,!0,m8,p,B.d,B.f,"Un cop recuperat l\u2019equip, torna a anunciar correctament?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 48.",!1),"sac26_mirall",A.m(p,n0,m9,p,p,!0,e,p,B.d,B.f,"El mirall es tanca aproximadament als 5 km/h?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 49.",!1),"sac26_cesis",A.m(p,p,n1,p,p,!1,m9,p,B.d,B.f,"L\u2019avaria no sembla real. Tira/rearma el t\xe8rmic CESIS per normalitzar l\u2019alarma.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 49.",!1),"sac26_ok",A.m(p,k,a2,p,p,!0,n1,p,B.d,B.f,"S\u2019ha normalitzat l\u2019alarma?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 49.",!1),"sac26_retirada",A.m(p,p,p,p,p,!1,n0,p,B.d,B.f,"Possible fallada de detecci\xf3 de velocitat 0: no es garanteixen les seguretats de portes lligades a tren parat. Desallotja i retira el tren.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 49.",!1),"sac27_display",A.m(p,p,n2,p,p,!1,d,p,B.d,B.f,"Tira i rearma el t\xe8rmic del DISPLAY.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 50.",!1),n2,A.m(p,k,a2,p,p,!0,n2,p,B.d,B.f,"El DISPLAY torna a respondre correctament?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 50.",!1),"sac27_traccio",A.m(p,p,p,p,p,!1,c,p,B.d,A.b([A.G("Maniobra confirmada i prova realitzada",n3),A.G("Pendent de concreci\xf3 CCM",k)],n6),"Possible RIOM n\xfam. 1. La fitxa indica provar anul\xb7laci\xf3 de lla\xe7 i prova de tracci\xf3, seguida de desallotjament i retirada. La fitxa no precisa aqu\xed quin lla\xe7: confirma la maniobra concreta amb CCM/Portacotxeres abans d\u2019actuar. No es dona una anul\xb7laci\xf3 gen\xe8rica autom\xe0tica.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 50.",!1),"sac27_riom",A.m(p,p,n3,p,p,!1,b,p,B.d,B.f,"Observa la tensi\xf3 i comprova si el tren tracciona i desfrena. Comunica el resultat a CCM; la fitxa indica desallotjar i composici\xf3 a retirada.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 50.",!1),"sac27_retirada",A.m(p,p,p,p,p,!1,n3,p,B.d,B.f,"Desallotja i coordina composici\xf3 a retirada. Una resposta a la prova no elimina aquesta conseq\xfc\xe8ncia de la fitxa.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 50.",!1),"sac27_pma",A.m(p,p,n4,p,p,!1,a,"manual/s2100/connexio/bateries-pma.png",B.d,B.f,"Possible desconnexi\xf3 d\u2019equips per RIOM: connecta mitjan\xe7ant PMA. No substitueixis aquesta actuaci\xf3 per un reset de bateries.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 50.",!1),"sac27_pma_ok",A.m(p,k,a2,p,p,!0,n4,p,B.d,B.f,"S\u2019han reconnectat els equips i comprovat el funcionament?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 50.",!1),"sac03_ok",A.m(p,k,a2,p,p,!0,j4,p,B.d,B.f,"S\u2019han recuperat els equips i comprovat el funcionament despr\xe9s del rearme dels cofres?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 21.",!1),"b12_resultat",A.m(p,k,n5,p,p,!0,"b12_resultat",p,B.d,B.f,"S\u2019ha comprovat l\u2019alliberament amb B12, mantenint l\u2019anul\xb7laci\xf3 del lla\xe7 de fre i la coordinaci\xf3 CCM?",!1),"b12_condicions",A.m(p,p,p,p,p,!1,n5,p,B.d,B.f,"El cotxe continua sense fre pneum\xe0tic. Mant\xe9n l\u2019anul\xb7laci\xf3 del lla\xe7 de fre i les condicions acordades amb CCM; no \xe9s recuperaci\xf3 del fre ni marxa normal.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 35.",!1)],t.N,t.bg)})
+return A.a5(["sac05",A.m(p,p,p,p,p,!1,q,p,B.d,B.f,"SAC 05 \xb7 Fusible convertidor\n\nEl fusible s\u2019ha fos: el convertidor NO rearmar\xe0. Retira el tren al m\xe9s aviat possible. Circular amb un \xfanic convertidor \xe9s cr\xedtic en S2100: desallotja al moment. Desconnecta llums, aire condicionat i megafonia i coordina la retirada amb CCM/Portacotxeres.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 23.",!1),"sac06",A.m(p,p,o,p,p,!1,"sac06",u.l,B.d,B.f,"SAC 06 \xb7 Fallada convertidor\n\nComprova degradaci\xf3 d\u2019aire condicionat / enllumenat, amper\xedmetre de bateria a desc\xe0rrega (A) i volt\xedmetre de bateria inferior a 87 V (B) a la unitat afectada.\n\nAmb un \xfanic convertidor, desallotja al moment i coordina retirada al m\xe9s aviat possible. Desconnecta llums, aire condicionat i megafonia.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 23.",!1),"sac09",A.m(p,p,n,p,p,!1,"sac09",p,B.d,B.f,"SAC 09 \xb7 Miralls retrovisors\n\nAmb fuita al quadre pneum\xe0tic de cabina pot faltar aire per obrir el mirall. Identifica i gira l\u2019aixeta corresponent del quadre pneum\xe0tic. No \xe9s la prova de velocitat del SAC 26.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 57.",!1),"sac15",A.m(p,p,p,p,p,!1,"sac15",p,B.d,A.b([A.J("Hi ha una fallada de fre pneum\xe0tic per resoldre",m),A.J("L\u2019anul\xb7laci\xf3 ja s\u2019ha realitzat \xb7 informar CCM",l),A.J("No es coneix la causa de l\u2019anul\xb7laci\xf3",k)],n6),"SAC 15 \xb7 Anul\xb7laci\xf3 fre de servei\n\nEl fre de servei \xe9s el fre pneum\xe0tic. L\u2019av\xeds informa que est\xe0 anul\xb7lat; no ordena tornar-lo a anul\xb7lar. Conserva les condicions d\u2019a\xefllament i lla\xe7 de fre de la maniobra realitzada.\n\nFont: criteri operatiu confirmat; actuaci\xf3 B12 a la p\xe0g. 35.",!1),"sac17_pendent",A.m(p,p,p,p,p,!1,j,p,B.d,B.f,"SAC 17 \xb7 Suspensi\xf3 pneum\xe0tica\n\nProcediment pendent d\u2019incorporar. Identifica el cotxe i la informaci\xf3 del DISPLAY i comunica el cas al CCM/Portacotxeres. No s\u2019assigna una maniobra autom\xe0tica.",!1),"sac18_pendent",A.m(p,p,p,p,p,!1,i,p,B.d,B.f,"SAC 18 \xb7 Aire condicionat\n\nProcediment pendent d\u2019incorporar. Identifica el cotxe i la informaci\xf3 del DISPLAY i comunica el cas al CCM/Portacotxeres. No s\u2019assigna una maniobra autom\xe0tica.",!1),"sac25",A.m(p,p,p,p,p,!1,"sac25",p,B.d,A.b([A.J("No funciona el bip-bip de portes",h),A.J("No anuncia correctament les estacions",g),A.J(f,k)],n6),"SAC 25 \xb7 Avaria megafonia\n\nQuin s\xedmptoma presenta?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 46\u201348.",!1),"sac26",A.m(p,p,e,p,p,!1,"sac26",p,B.d,B.f,"SAC 26 \xb7 Avaria caixa negra\n\nProva de miralls: estacionat a l\u2019andana i amb selecci\xf3 de portes, inicia la marxa amb el mirall obert. Aproximadament a 5 km/h s\u2019ha de tancar.\n\nLa prova comprova que el tren reconeix que ja no est\xe0 a velocitat 0; no \xe9s la fuita pneum\xe0tica del SAC 09.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 49.",!1),"sac27",A.m(p,p,p,p,p,!1,"sac27",p,B.d,A.b([A.J("DISPLAY congelat",d),A.J("El tren no tracciona",c),A.J("DISPLAY marca p\xe8rdua RIOM",b),A.J("RIOM afecta PMA / equips desconnectats",a),A.J(f,k)],n6),"SAC 27 \xb7 Avaria Agate Link\n\nQuin comportament addicional observes? No es fa reset de bateries de manera habitual: una RIOM afectada pot influir en la PMA.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 50.",!1),"sac28_pendent",A.m(p,p,p,p,p,!1,a0,p,B.d,B.f,"SAC 28 \xb7 Abs\xe8ncia d\u2019enllumenat\n\nProcediment pendent d\u2019incorporar. Identifica el cotxe i la informaci\xf3 del DISPLAY i comunica el cas al CCM/Portacotxeres. No s\u2019assigna una maniobra autom\xe0tica.",!1),"sac29_pendent",A.m(p,p,p,p,p,!1,a1,p,B.d,B.f,"SAC 29 \xb7 Unitat seccionada\n\nProcediment pendent d\u2019incorporar. Identifica el cotxe i la informaci\xf3 del DISPLAY i comunica el cas al CCM/Portacotxeres. No s\u2019assigna una maniobra autom\xe0tica.",!1),"sac_pendent",A.m(p,p,p,p,p,!1,k,p,B.d,B.f,"No s\u2019ha confirmat la resoluci\xf3. Conserva les condicions de les actuacions realitzades i comunica al CCM/Portacotxeres els avisos i el cotxe identificat. No es dona autoritzaci\xf3 de marxa.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 3\u20135.",!1),a2,A.m(p,p,p,p,p,!1,a2,p,B.d,B.f,"Has confirmat la resoluci\xf3 del s\xedmptoma comprovat. Aix\xf2 no normalitza els a\xefllaments ni elimina les condicions operatives: comunica les actuacions al CCM. No equival a una autoritzaci\xf3 de marxa normal.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 3\u20135.",!1),a3,A.m(p,p,p,p,p,!1,a3,p,B.d,A.b([A.J("01 \xb7 Disjuntor",a4),A.J("02 \xb7 Equip tracci\xf3 inhibit","sac02"),A.J("03 \xb7 Equip tracci\xf3 a\xefllat",a5),A.J("04 \xb7 Tensi\xf3 nul\xb7la","procedimiento_tension_nula"),A.J("05 \xb7 Fusible convertidor",q),A.J("06 \xb7 Falt\xe0 convertidor","sac06"),A.J("07 \xb7 Comandament portes","sac07"),A.J("08 \xb7 Porta oberta",a6),A.J("09 \xb7 Miralls retrovisor","sac09"),A.J("12 \xb7 Fallada pant\xf2graf","sac12"),A.J(a7,a8),A.J("14 \xb7 Fallada fre pneum\xe0tic",m),A.J("15 \xb7 Anul\xb7laci\xf3 fre de servei","sac15"),A.J("16 \xb7 (Anomalia) antipatinatge / antibloqueig","sac16"),A.J("17 \xb7 Suspensi\xf3 pneum\xe0tica",j),A.J("18 \xb7 Aire condicionat",i),A.J("19 \xb7 T\xe8rmics",a9),A.J(b0,b1),A.J(b2,b3),A.J("22 \xb7 Tirador alarma accionat",b4),A.J("23 \xb7 Equip tren-stop",b5),A.J("24 \xb7 Lla\xe7 d\u2019emerg\xe8ncia","sac24"),A.J("25 \xb7 Avaria megafonia","sac25"),A.J("26 \xb7 Avaria caixa negra","sac26"),A.J("27 \xb7 Avaria Agate Link","sac27"),A.J("28 \xb7 Abs\xe8ncia d\u2019enllumenat",a0),A.J("29 \xb7 Unitat seccionada",a1)],n6),"Selecciona l\u2019alarma concreta que veus al SAC. No la dedueixis \xfanicament del s\xedmptoma.",!1),b6,A.m(p,b8,a3,p,p,!0,b6,p,B.d,B.f,b7,!1),b9,A.m(p,"inicio_no_tracciona",a3,p,p,!0,b9,p,B.d,B.f,b7,!1),"sac01_comprova",A.m(p,c1,c0,p,p,!0,"sac01_comprova",p,B.d,B.f,"S\u2019ha connectat el disjuntor?",!1),c0,A.m(p,k,a2,p,p,!0,c0,p,B.d,B.f,"Comprova el DISPLAY i la recuperaci\xf3 de la tracci\xf3. S\u2019ha recuperat el funcionament?",!1),"sac01_reset",A.m(p,p,c2,p,p,!1,c1,p,B.nB,B.f,"Reset de bateries, coordinat amb Portacotxeres; preferiblement a final de l\xednia o via de maniobra pel risc de no reconnectar.\n\n1. DES P.M.A. i espera la desconnexi\xf3 dels equips.\n2. DES Bateria.\n3. CON Bateria.\n4. CON P.M.A. i espera la connexi\xf3 dels equips.\n5. Amb clau de govern, comprova al DISPLAY la connexi\xf3 dels equips. Si algun resta desconnectat, connecta l\u2019element individualment d\u2019acord amb Portacotxeres.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 15\u201316.",!1),c2,A.m(p,k,c0,p,p,!0,c2,p,B.d,B.f,"Despr\xe9s del reset de bateries, s\u2019ha connectat el disjuntor?",!1),"sac02",A.m(p,p,p,p,p,!1,"sac02",p,B.d,A.b([A.J("Un cotxe inhibit",c3),A.J("Tots els cotxes inhibits",c4),A.J(f,k)],n6),"SAC 02 \xb7 Equip tracci\xf3 inhibit\n\nQuin abast mostra el DISPLAY?",!1),"sac02_un",A.m(p,p,c5,p,p,!1,c3,p,B.a45,B.f,"Passa tot per 0, incloent govern.\n\nAmb un \xfanic cotxe inhibit, el tren pot continuar amb passatge; cal avisar Portacotxeres. No extrapolar a diversos cotxes.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 18.",!1),"sac02_un_ok",A.m(p,c7,c6,p,p,!0,c5,p,B.d,B.f,"El cotxe ha deixat d\u2019apar\xe8ixer inhibit despr\xe9s de passar tot per 0?",!1),"sac02_seguiment",A.m(p,p,p,p,p,!1,c7,p,B.d,A.b([A.J("Portacotxeres acorda recuperar la cadena",c8),A.J("La inhibici\xf3 es repeteix 3 vegades",c9),A.J("No es decideix recuperar / pendent d\u2019acord",d0)],n6),"Amb un \xfanic cotxe inhibit, el tren pot continuar amb passatge i cal avisar Portacotxeres. La recuperaci\xf3 de la cadena es fa d\u2019acord amb aquest personal, habitualment per ells.\n\nSi la inhibici\xf3 repetitiva s\u2019ha produ\xeft 3 vegades, correspon a\xefllar la cadena de tracci\xf3 afectada.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 18.",!1),"sac02_recuperar",A.m(p,p,d1,p,p,!1,c8,p,B.a3h,B.f,"Recuperaci\xf3 de la cadena de tracci\xf3 del cotxe identificat, d\u2019acord amb Portacotxeres:\n\n1. Baixa 1F17 (A.C. cofre motor tracci\xf3).\n2. Polsa 1F12 vermell (alimentaci\xf3 equip fre).\n3. Polsa 1F12 verd (alimentaci\xf3 equip fre).\n4. Puja 1F17.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 18.",!1),d1,A.m(p,d2,c6,p,p,!0,d1,p,B.d,B.f,"El cotxe ha deixat d\u2019apar\xe8ixer inhibit?",!1),"sac02_recuperat",A.m(p,a2,c9,p,p,!0,c6,p,B.d,B.f,"El cotxe ja no apareix inhibit. La inhibici\xf3 s\u2019ha repetit 3 vegades?",!1),d2,A.m(p,d0,c9,p,p,!0,d2,p,B.d,B.f,"El cotxe continua inhibit. La inhibici\xf3 s\u2019ha repetit 3 vegades?",!1),c9,A.m(p,p,p,p,p,!1,c9,p,B.d,B.f,"La inhibici\xf3 repetitiva 3 vegades comporta a\xefllar la cadena de tracci\xf3 afectada. Coordina l\u2019actuaci\xf3 amb Portacotxeres. No \xe9s un a\xefllament autom\xe0tic d\u2019una semiunitat.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 18.",!1),d0,A.m(p,p,p,p,p,!1,d0,p,B.d,B.f,"Amb un \xfanic cotxe inhibit, el manual permet continuar amb passatge i avisar Portacotxeres. Mant\xe9n registrada la incid\xe8ncia: no s\u2019ha confirmat recuperaci\xf3. Si arriba a 3 inhibicions repetitives, correspon a\xefllar la cadena afectada d\u2019acord amb Portacotxeres.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 18.",!1),"sac02_tots",A.m(p,p,p,p,p,!1,c4,p,B.XZ,A.b([A.J("SAC 01 \xb7 Disjuntor",a4),A.J("SAC 13 \xb7 Fre estacionament",a8),A.J("Cap dels anteriors \xb7 revisar selector",d3)],n6),"Tots els cotxes inhibits. Si apareix SAC 01, resol primer el disjuntor. Si apareix SAC 13, revisa el fre d\u2019estacionament i la causa corresponent.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 19.",!1),"sac02_selector",A.m(p,d5,d4,p,p,!0,d3,p,B.d,B.f,"El selector de marxa \xe9s en una posici\xf3 diferent de 0?",!1),d5,A.m(p,p,d6,p,p,!1,d5,p,B.d,B.f,"Revisa i situa el selector de marxa en una posici\xf3 diferent de 0.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 19.",!1),d6,A.m(p,d4,a2,p,p,!0,d6,p,B.d,B.f,"S\u2019han recuperat els equips despr\xe9s de revisar el selector?",!1),"sac02_reset",A.m(p,p,d7,p,p,!1,d4,p,B.nB,B.f,"Reset de bateries, coordinat amb Portacotxeres; preferiblement a final de l\xednia o via de maniobra pel risc de no reconnectar.\n\n1. DES P.M.A. i espera la desconnexi\xf3 dels equips.\n2. DES Bateria.\n3. CON Bateria.\n4. CON P.M.A. i espera la connexi\xf3 dels equips.\n5. Amb clau de govern, comprova al DISPLAY la connexi\xf3 dels equips. Si algun resta desconnectat, connecta l\u2019element individualment d\u2019acord amb Portacotxeres.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 15\u201316.\n\nSi despr\xe9s de les proves resten dos o tres equips inhibits, continuar sense passatge, coordinat amb CCM/Portacotxeres (p\xe0g. 19).",!1),d7,A.m(p,p,p,p,p,!1,d7,p,B.d,A.b([A.J("Tots recuperats i funcionament comprovat",a2),A.J("Resta un cotxe inhibit",c3),A.J("Resten dos o tres equips inhibits",d8),A.J("Un altre resultat / no identificat",k)],n6),"Quin estat mostra ara el DISPLAY?",!1),d8,A.m(p,p,p,p,p,!1,d8,p,B.d,B.f,"Despr\xe9s de les proves resten dos o tres equips inhibits: continuar SENSE PASSATGE segons el manual, coordinat amb CCM/Portacotxeres. No es considera recuperaci\xf3 confirmada.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 19.",!1),"sac03",A.m(p,p,p,p,p,!1,a5,p,B.d,A.b([A.J(d9,e0),A.J("Dos cotxes",e1),A.J(e2,e3),A.J(f,k)],n6),"SAC 03 \xb7 A\xefllat no \xe9s inhibit. Quin abast mostra el DISPLAY?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 20\u201321.",!1),"sac03_un",A.m(p,p,p,p,p,!1,e0,p,B.Zy,A.b([A.J("Valorar reset en terminal amb Portacotxeres",e4),A.J("Apareix un segon cotxe a\xefllat",e1),A.J("Continu\xeftat amb un \xfanic cotxe motor a\xefllat",e5)],n6),"El DISPLAY identifica un cotxe motor en vermell: avaria important de la cadena de tracci\xf3. Amb un sol cotxe motor a\xefllat es pot continuar amb passatge; avisa Portacotxeres. Habitualment es va a canvi de motors a Trinitat Nova per normalitzar el cofre ONIX. Si apareix un segon cotxe a\xefllat, desallotjar i anar a canvi.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 20.",!1),"sac03_dos",A.m(p,p,p,p,p,!1,e1,p,B.d,B.f,"Quan s\u2019a\xeflla un segon cotxe, el manual recomana desallotjar i anar a canvi. Coordina amb CCM/Portacotxeres.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 20.",!1),"sac03_tots",A.m(p,p,e6,p,p,!1,e3,p,B.b.m6(B.ti,1).ep(0),B.f,"Tots els cotxes apareixen a\xefllats al DISPLAY. Pot passar durant la posada en marxa si es mou el selector sense prou pressi\xf3 TDP.\n\nDesconnecta PMA per baixar pant\xf2grafs i comprova el volt\xedmetre de l\xednia.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 21.",!1),"sac04_externa",A.m(p,p,e7,p,p,!1,"sac04_externa",p,B.d,B.f,"Espera normalitzaci\xf3. Si algun equip no recupera, la fitxa preveu connexi\xf3 manual a P.M.M., coordinada amb CCM/Portacotxeres.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 22.",!1),"sac04_terminal",A.m(p,p,e7,p,p,!1,"sac04_terminal",p,B.nB,B.f,"Possible desconnexi\xf3 involunt\xe0ria en treure govern: reconnecta mitjan\xe7ant PMA d\u2019acord amb CCM/Portacotxeres.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 22.",!1),"sac04_ok",A.m(p,k,a2,p,p,!0,e7,p,B.d,B.f,"S\u2019ha resolt el s\xedmptoma despr\xe9s de l\u2019actuaci\xf3?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 22.",!1),"sac07_ok",A.m(p,k,a2,p,p,!0,"sac07_ok",p,B.d,B.f,"S\u2019ha resolt el s\xedmptoma despr\xe9s de l\u2019actuaci\xf3?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 25.",!1),"sac22_ok",A.m(p,k,a2,p,p,!0,e8,p,B.d,B.f,"S\u2019ha resolt el s\xedmptoma despr\xe9s de l\u2019actuaci\xf3?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 43.",!1),e9,A.m(p,p,p,p,p,!1,e9,p,B.d,B.f,"Si continua marcant portes, el manual indica desallotjar, anul\xb7lar lla\xe7 de portes i canvi/retirada amb CCM. No es dona una sortida de marxa normal.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 26.",!1),"sac12",A.m(p,p,f0,p,p,!1,"sac12",p,B.wz,B.f,"SAC 12 \xb7 Identifica el cotxe al DISPLAY. Comprova connexi\xf3 del pant\xf2graf a posada en marxa i la seva aixeta. Quan sigui possible, verifica visualment la posici\xf3.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 30.",!1),"sac12_ok",A.m(p,f1,a2,p,p,!0,f0,p,B.d,B.f,"S\u2019ha resolt el s\xedmptoma despr\xe9s de l\u2019actuaci\xf3?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 30.",!1),f1,A.m(p,p,p,p,p,!1,f1,p,B.d,B.f,"Comprova amb CCM/Portacotxeres que cada semiunitat est\xe0 alimentada almenys per un pant\xf2graf. No pressuposis una avaria externa de caten\xe0ria.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 30.",!1),"sac13",A.m(p,p,p,p,p,!1,a8,p,B.d,A.b([A.J(e2,f2),A.J(d9,f3),A.J("No queda clar l\u2019abast",k)],n6),"SAC 13 \xb7 Identifica al DISPLAY l\u2019abast de l\u2019avaria.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 32\u201334.",!1),f2,A.m(p,f6,f5,p,p,!0,f2,p,B.a3c,B.f,f4,!1),f5,A.m(p,p,f9,p,p,!1,f5,f7,B.d,B.f,f8,!1),"sac13_tots_ok",A.m(p,g1,a2,p,p,!0,f9,p,B.d,B.f,g0,!1),f3,A.m(p,f6,g2,p,p,!0,f3,p,B.a1P,B.f,f4,!1),"sac13_un_cabina",A.m(p,p,g3,p,p,!1,g2,f7,B.d,B.f,f8,!1),"sac13_un_ok",A.m(p,g4,a2,p,p,!0,g3,p,B.d,B.f,g0,!1),g1,A.m(p,p,g5,p,p,!1,g1,p,B.nq,B.f,"Revisa el bolet d\u2019emerg\xe8ncia de la cabina habilitada i rearma\u2019l si est\xe0 activat. Comprova de nou l\u2019estacionament.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 32.",!1),"sac14",A.m(p,p,p,p,p,!1,m,p,B.d,B.f,"SAC 14 \xb7 Localitza al DISPLAY el cotxe amb fallada de fre pneum\xe0tic.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 35.",!1),"sac14_1f11",A.m(p,p,g7,p,p,!1,"sac14_1f11",g6,B.d,B.f,"Al cotxe identificat, la fitxa preveu tirar el t\xe8rmic 1F11. Coordina l\u2019actuaci\xf3 i comprova el resultat.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 35.",!1),"sac14_b12",A.m(p,p,"procedimiento_b12_esquema",p,p,!1,"sac14_b12",p,B.d,B.f,"Amb el cotxe identificat i coordinaci\xf3 CCM, utilitza les B12. El cotxe queda sense fre pneum\xe0tic; aquest sup\xf2sit requereix anul\xb7lar el lla\xe7 de fre per desfrenar.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 35.",!1),"sac14_ok",A.m(p,k,a2,p,p,!0,g7,p,B.d,B.f,"S\u2019ha resolt el s\xedmptoma despr\xe9s de l\u2019actuaci\xf3?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 35.",!1),"sac16",A.m(p,p,p,p,p,!1,"sac16",p,B.d,A.b([A.J("Intermitent",g8),A.J("Cont\xednua",g9),A.J(f,k)],n6),"SAC 16 \xb7 L\u2019alarma \xe9s intermitent o cont\xednua?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 36.",!1),"sac16_observar",A.m(p,p,p,p,p,!1,g8,p,B.d,B.f,"Mant\xe9n en observaci\xf3 i avisa Portacotxeres.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 36.",!1),"sac16_continua",A.m(p,p,h0,p,p,!1,g9,p,B.b.jH(B.nC,new A.aLe()).ep(0),B.f,"Identifica el cotxe al DISPLAY. No \xe9s una incid\xe8ncia cr\xedtica: preferiblement a final de l\xednia, reinicia l\u2019electr\xf2nica de fre amb els t\xe8rmics aplicables 1F09 / 1F11 / 1F13 (aquest \xfaltim exclusiu MA). No actu\xefs sobre elements que no corresponguin al cotxe.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 36.",!1),"sac19",A.m(p,p,p,p,p,!1,a9,p,B.d,A.b([A.J("1F09 identificat \xb7 19 + 13",h1),A.J("1F13 identificat al DISPLAY",h2),A.J("T\xe8rmic compressor \xb7 SAC 20",b1),A.J(f,k)],n6),"SAC 19 / DISPLAY \xb7 Identifica t\xe8rmic, cotxe i combinaci\xf3 d\u2019avisos. La combinaci\xf3 sola no substitueix la identificaci\xf3.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 37\u201341.",!1),"sac19_09",A.m(p,p,h3,p,p,!1,h1,"manual/s2100/sac_19/armari-1f09.png",B.d,B.f,"Confirma cotxe i 1F09. Prova de rearmar el t\xe8rmic identificat.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 38.",!1),"sac19_09_ok",A.m(p,h4,a2,p,p,!0,h3,p,B.d,B.f,"S\u2019ha resolt el s\xedmptoma despr\xe9s de l\u2019actuaci\xf3?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 38.",!1),"sac19_11",A.m(p,p,h6,p,p,!1,h5,g6,B.d,B.f,"Confirma cotxe i 1F11. Prova de rearmar el t\xe8rmic identificat.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 39.",!1),"sac19_11_ok",A.m(p,h7,a2,p,p,!0,h6,p,B.d,B.f,"S\u2019ha resolt el s\xedmptoma despr\xe9s de l\u2019actuaci\xf3?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 39.",!1),"sac19_13",A.m(p,p,h8,p,p,!1,h2,"manual/s2100/sac_19/armari-1f13.png",B.d,B.f,"Confirma cotxe i 1F13 (exclusiu MA1 / MA2). Prova de rearmar el t\xe8rmic identificat.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 40.",!1),"sac19_13_ok",A.m(p,h9,a2,p,p,!0,h8,p,B.d,B.f,"S\u2019ha resolt el s\xedmptoma despr\xe9s de l\u2019actuaci\xf3?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 40.",!1),h4,A.m(p,p,g4,p,p,!1,h4,p,B.d,B.f,"Si 1F09 no rearma: desallotjar i alliberar estacionament mec\xe0nicament. Reutilitza B19 i, si no entra aire, B17/sirgues. El SAC pot mantenir l\u2019av\xeds malgrat alliberament real. Cal lla\xe7 de portes per traccionar, coordinat amb CCM.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 38.",!1),h7,A.m(p,p,p,p,p,!1,h7,p,B.d,B.f,"No anul\xb7lis el lla\xe7 sense localitzar el cotxe: podria continuar frenat. Comunica DISPLAY i resultat a CCM/Portacotxeres. Sense informaci\xf3 del DISPLAY cal diagn\xf2stic de causes, no atribuir-ho autom\xe0ticament a 1F11.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 39.",!1),h9,A.m(p,i1,i0,p,p,!0,h9,p,B.d,B.f,"Si 1F13 no rearma, el tren queda frenat per emerg\xe8ncia. \xc9s possible desfrenar des de cabina contr\xe0ria, d\u2019acord amb CCM?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 40.",!1),"sac20",A.m(p,p,i2,p,p,!1,b1,"manual/s2100/sac_20/rearme-compressor.png",B.d,B.f,"SAC 20 \xb7 Visualitza el compressor afectat al DISPLAY. A l\u2019armari de t\xe8rmics de qualsevol testera, prem \xabrearme t\xe8rmic compressor\xbb; la reposici\xf3 \xe9s independent del compressor afectat.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 41.",!1),"sac20_ok",A.m(p,i3,a2,p,p,!0,i2,p,B.d,B.f,"Ha reposat i has comprovat el funcionament correcte?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 41.",!1),"sac20_verificar",A.m(p,p,p,p,p,!1,i3,i4,B.d,B.f,"Si no reposa, comprova funcionament real dels compressors observant l\u2019evoluci\xf3 de TDP: pot haver-hi fallada de comunicaci\xf3. Contacta Portacotxeres i valora la situaci\xf3; no assumeixis compressor aturat nom\xe9s per l\u2019av\xeds.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 41.",!1),"sac21",A.m(p,p,p,p,p,!1,b3,i4,B.d,A.b([A.J("Puntual / intermitent",i5),A.J("Fixa durant tota la c\xe0rrega",i6),A.J("No puc determinar-ho",k)],n6),"SAC 21 \xb7 Comprova pressi\xf3 real de canonada general (\xf2ptima 8\u201311 kg/cm\xb2 segons fitxa) i evoluci\xf3 de l\u2019alarma durant la c\xe0rrega.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 42.",!1),i5,A.m(p,p,p,p,p,!1,i5,p,B.jS,B.f,"Pot apar\xe8ixer amb pressi\xf3 insuficient i normalitzar en arribar a la desitjada. Monitoritza l\u2019agulla del man\xf2metre i parla amb Portacotxeres. No s\u2019ha confirmat recuperaci\xf3 nom\xe9s per seleccionar aquest cas.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 42.",!1),"sac21_fixa",A.m(p,p,p,p,p,!1,i6,p,B.d,B.f,"Compressor que no treballa o manca de pressi\xf3. Parla amb Portacotxeres i valora retirada/canvi. El manual contempla un sol compressor fins a retirar, vigilant pressi\xf3; no \xe9s autoritzaci\xf3 autom\xe0tica de continu\xeftat.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 42.",!1),"sac23_original",A.m(p,p,p,p,p,!1,"sac23_original",p,B.d,B.f,"La fitxa indica que al 2100 original no afecta la conducci\xf3. Si persisteix el s\xedmptoma, cal identificar una altra causa; no aplicar la seq\xfc\xe8ncia del remodelat.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 44.",!1),"sac23_remodelat",A.m(p,p,i7,p,p,!1,"sac23_remodelat","manual/s2100/sac_23/remodelat-armari-tren-stop.png",B.X4,B.f,"Rearma amb TR de l\u2019IRIS o amb el polsador verd de rearme a la part inferior de l\u2019armari. El pilot tamb\xe9 pot indicar IRIS sense alimentaci\xf3.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 44, 64.",!1),"sac23_ok",A.m(p,i8,a2,p,p,!0,i7,p,B.d,B.f,"S\u2019ha resolt el s\xedmptoma despr\xe9s de l\u2019actuaci\xf3?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 44, 64.",!1),"sac23_anullar",A.m("Tren Stop anul\xb7lat: conserva aquesta condici\xf3 i les indicacions del CCM.",p,i9,p,p,!1,i8,"manual/s2100/sac_23/remodelat-rearme-anullacio.png",B.d,B.f,"Si no rearma, la fitxa identifica el polsador vermell d\u2019anul\xb7laci\xf3 Tren Stop. Confirma l\u2019element i coordina amb CCM; no \xe9s un t\xe8rmic gen\xe8ric.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 44, 64.",!1),i9,A.m(p,k,a2,p,p,!0,i9,p,B.d,B.f,"S\u2019ha resolt el s\xedmptoma mantenint registrada l\u2019anul\xb7laci\xf3 de Tren Stop?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 44, 64.",!1),"sac24",A.m(p,p,p,p,p,!1,"sac24",p,B.d,A.b([A.J(a7,a8),A.J("14 \xb7 fre pneum\xe0tic",m),A.J("19 \xb7 T\xe8rmic identificat",a9),A.J("1F11 caigut identificat al DISPLAY",h5),A.J("22 \xb7 tirador",b4),A.J("23 \xb7 Tren Stop",b5),A.J("Una altra alarma concreta",a3),A.J("24 sol \xb7 diagnosticar causa",b8)],n6),"SAC 24 \xb7 El lla\xe7 obert no identifica per si sol la causa. Pot ser tirador, home mort, punt 7, bolet, pressi\xf3 m\xednima, Tren Stop, t\xe8rmics o abs\xe8ncia de mode. Prioritza la causa concreta al DISPLAY. Si no normalitza, el manual indica desallotjar i anul\xb7lar lla\xe7 de fre quan correspongui, amb CCM i sense deixar un cotxe frenat.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 45.",!1),"sac_aire",A.m(p,p,p,p,p,!1,f6,p,B.jS,A.b([A.J(b0,b1),A.J(b2,b3),A.J("Cap alarma concreta / possible fuita",j0)],n6),"TDP baixa no implica fallada de fre pneum\xe0tic. Hi ha alarma de compressor identificada?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 41\u201342, 45.",!1),j0,A.m(p,p,p,p,p,!1,j0,p,B.jS,B.f,"Comprova evoluci\xf3 de la pressi\xf3 i possibles fuites. Comunica dades reals a CCM/Portacotxeres. No passar a B12 nom\xe9s perqu\xe8 hi hagi poca pressi\xf3.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 41\u201342, 45, 53\u201355.",!1),j1,A.m(p,a8,"pregunta_disyuntores_abierto",p,p,!0,j1,p,B.d,B.f,"S\u2019ha afluixat realment l\u2019estacionament?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 32\u201334.",!1),j2,A.m(p,a6,"pregunta_estacionamiento",p,"Portes obertes",!0,j2,p,B.d,B.f,"Amb portes f\xedsicament tancades, el SAC/DISPLAY tamb\xe9 les reconeix tancades?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 26.",!1),e5,A.m(p,p,p,p,p,!1,e5,p,B.d,B.f,"Continua amb passatge nom\xe9s en el sup\xf2sit d\u2019un \xfanic cotxe motor a\xefllat, amb av\xeds i seguiment de Portacotxeres. Acorda el canvi de motors / normalitzaci\xf3 ONIX. No s\u2019ha confirmat recuperaci\xf3.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 20.",!1),e4,A.m(p,e5,"sac03_reset",p,p,!0,e4,p,B.d,B.f,"Sou en terminal i Portacotxeres acorda fer el reset de bateries?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 20.",!1),"sac03_reset_ok",A.m(p,a5,a2,p,p,!0,"sac03_reset_ok",p,B.d,B.f,"Despr\xe9s del reset, s\u2019ha recuperat l\u2019equip i comprovat el funcionament?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 20.",!1),"sac03_zero",A.m(p,k,j3,p,p,!0,e6,p,B.d,B.f,"Els pant\xf2grafs estan baixats i el volt\xedmetre de l\xednia marca 0?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 21.",!1),"sac03_cofres",A.m(p,p,j4,p,p,!1,j3,p,B.b.j7(B.ti,1).ep(0),B.f,"Amb les condicions anteriors confirmades, rearma els cofres de tracci\xf3 de tots els cotxes, coordinat amb Portacotxeres.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 21.",!1),"sac06_con",A.m(p,p,j5,p,p,!1,o,u.k,B.d,B.f,"Intenta connectar CONVERTIDOR des de la P.M.M.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 23.",!1),"sac06_fusible",A.m(p,j6,q,p,p,!0,j5,p,B.d,B.f,"S\u2019il\xb7lumina SAC 05 \xb7 Fusible convertidor?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 23.",!1),"sac06_ok",A.m(p,j7,a2,p,p,!0,j6,p,B.d,B.f,"Ha rearmat el convertidor i s\u2019ha comprovat la recuperaci\xf3?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 23.",!1),j7,A.m(p,j8,"sac06_reset",p,p,!0,j7,p,B.d,B.f,"Sense SAC 05, Portacotxeres acorda provar un reset incloent bateries?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 23.",!1),"sac06_reset_ok",A.m(p,j8,a2,p,p,!0,"sac06_reset_ok",p,B.d,B.f,"Despr\xe9s del reset, s\u2019ha recuperat el convertidor?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 23.",!1),"sac06_retirada",A.m(p,p,p,p,p,!1,j8,p,B.d,B.f,"Amb un \xfanic convertidor: desallotja al moment, desconnecta llums, aire condicionat i megafonia. Retira al m\xe9s aviat possible amb CCM/Portacotxeres; situaci\xf3 cr\xedtica en S2100.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 23.",!1),"sac07",A.m(p,k0,j9,p,p,!0,"sac07",p,B.d,B.f,"SAC 07 \xb7 Comandament portes\n\nIdentifica la porta afectada. \xc9s costat andana?\n\nFont: criteri operatiu confirmat per l\u2019usuari; no \xe9s el procediment de controla.",!1),"sac07_andana",A.m(p,p,k1,p,p,!1,j9,p,B.d,B.f,"A la seg\xfcent estaci\xf3, comprova si el passatge obre aquesta porta. Aix\xf2 permet comprovar si t\xe9 tensi\xf3.\n\nFont: criteri operatiu confirmat.",!1),"sac07_via",A.m(p,p,k1,p,p,!1,k0,p,B.d,B.f,"Amb el tren correctament estacionat, despla\xe7a\u2019t a la porta afectada del costat via i acciona el comandament per comprovar si t\xe9 tensi\xf3.\n\nFont: criteri operatiu confirmat.",!1),"sac07_tensio",A.m(p,"sac07_iris",k2,p,p,!0,k1,p,B.d,B.f,"La porta disposa de tensi\xf3?",!1),"sac07_normal",A.m(p,p,p,p,p,!1,k2,p,B.d,B.f,"Amb tensi\xf3 comprovada, continua la marxa normal. Habitualment desapareix l\u2019av\xeds de comandament.\n\nFont: criteri operatiu confirmat.",!1),k3,A.m(p,a6,k2,p,p,!0,k3,p,B.d,B.f,"Despr\xe9s de rearmar IRIS, la porta disposa de tensi\xf3?",!1),k4,A.m(p,p,p,p,p,!1,k4,p,B.d,A.b([A.J("Utilitzar controla","sac08_controla"),A.J("No funciona el bip-bip",h)],n6),"Pot fallar el bip-bip o el polsador de tancament. Utilitza la controla amb el costat seleccionat, clau de cap\xe7alera d\u2019andana i cl\xe0xon abans de tancar.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 25.",!1),k5,A.m(p,e9,a2,p,p,!0,k5,p,B.d,B.f,"Les portes han tancat i el SAC/DISPLAY les reconeix tancades?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 25.",!1),"sac08_oberta",A.m(p,p,p,p,p,!1,"sac08_oberta","manual/s2100/sac_08/pilot-exterior.png",B.d,A.b([A.J("Comprovar el tancament",k5),A.J("Hi ha un objecte",k6)],n6),"Localitza la porta al DISPLAY o pel pilot exterior blanc; revisa tamb\xe9 la porta de testera. Dona permissi\xf3, agafa claus i walkie, despla\xe7a\u2019t a la porta i obre-la per comprovar obstacles. Torna a cabina i tanca. Si hi ha un objecte, aplica les condicions del procediment d\u2019obstrucci\xf3 abans de retirar-lo.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 26.",!1),"sac08_objecte",A.m(p,p,k5,p,p,!1,k6,p,B.b.jH(B.uI,new A.aLf()).ep(0),B.f,"Identifica el cotxe i el costat de la porta bloquejada. Retira tensi\xf3 al costat/cotxe mitjan\xe7ant el selector, retira l\u2019objecte, restitueix tensi\xf3 i tanca.\n\nLa fitxa tamb\xe9 contempla retirar l\u2019objecte amb permissi\xf3 de portes seleccionada. En S2100 remodelat, la manipulaci\xf3 s\u2019ha de fer amb ABS\xc8NCIA DE TENSI\xd3.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 27, 64.",!1),"sac08_seleccio",A.m(p,k8,k7,p,p,!0,"sac08_seleccio",p,B.d,B.f,"Prova la seq\xfc\xe8ncia normal d\u2019obertura. Encara que el pilot groc no s\u2019encengui, permet autoritzar permissi\xf3?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 28.",!1),"sac08_bombeta",A.m(p,p,p,p,p,!1,k7,p,B.d,B.f,"Continua la marxa amb normalitat i comunica a Portacotxeres que la bombeta de selecci\xf3 est\xe0 fosa.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 28.",!1),k8,A.m(p,k9,a2,p,p,!0,k8,p,B.d,B.f,"Passa tot per 0 i comprova de nou. Ara permet la selecci\xf3/permissi\xf3?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 28.",!1),k9,A.m(p,p,p,p,p,!1,k9,"manual/s2100/sac_08/selector-ma.png",B.d,B.f,"Retira tensi\xf3 de portes costat andana des de l\u2019armari del cotxe MA de cap\xe7alera. Anuncia al passatge que el desallotjament ser\xe0 \xfanicament pel primer cotxe. Desallotja per aquest cotxe i coordina canvi/retirada. En remodelats es pot desbloquejar una porta del costat/cotxe corresponent.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 28.",!1),"sac08_permissio",A.m(p,"sac08_permissio_controla",a2,p,p,!0,"sac08_permissio",p,B.d,B.f,"Passa tot per 0 i comprova de nou. Ara permet la permissi\xf3 de portes?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 29.",!1),l0,A.m(p,l2,l1,p,p,!0,l0,p,B.d,B.f,"La controla del costat corresponent permet l\u2019obertura/permissi\xf3?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 29.",!1),"sac08_auxiliar",A.m(p,p,p,p,p,!1,l1,p,B.d,B.f,"Problema de botonera: utilitza el sistema auxiliar de portes per autoritzar permissi\xf3 i avalua/planifica canvi de motors amb Portacotxeres.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 29.",!1),"sac08_km0",A.m(p,p,p,p,p,!1,l2,p,B.d,A.b([A.J("Reset de bateries acordat","sac08_reset"),A.J("Desallotjar retirant tensi\xf3 costat andana",l3),A.J("Pendent d\u2019instruccions",k)],n6),"Probable avaria del rel\xe9 km0. Amb CCM/Portacotxeres, valora reset de bateries o desallotjar retirant tensi\xf3 de portes costat andana d\u2019un cotxe.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 29.",!1),l3,A.m(p,p,p,p,p,!1,l3,p,B.b.jH(B.uI,new A.aLg()).ep(0),B.f,"Al cotxe identificat, retira tensi\xf3 de les portes del costat andana mitjan\xe7ant el selector i desallotja coordinat amb CCM. No \xe9s una recuperaci\xf3 del servei.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 29.",!1),"sac08_reset_ok",A.m(p,l2,a2,p,p,!0,"sac08_reset_ok",p,B.d,B.f,"Despr\xe9s del reset es permet permissi\xf3 i es comprova el funcionament de portes?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 29.",!1),"sac09_ok",A.m(p,k,a2,p,p,!0,n,p,B.d,B.f,"Ha cessat la fuita despr\xe9s d\u2019actuar sobre l\u2019aixeta identificada?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 57.",!1),"sac15_informat",A.m(p,p,p,p,p,!1,l,p,B.d,B.f,"Informa CCM de l\u2019anul\xb7laci\xf3 del fre de servei i mant\xe9n les limitacions de l\u2019actuaci\xf3 realitzada. No es dona per recuperat el fre ni per autoritzada marxa normal.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 35.",!1),"sac13_bolet_ok",A.m(p,l4,a2,p,p,!0,g5,p,B.d,B.f,"S\u2019ha alliberat l\u2019estacionament de tots els cotxes?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 32.",!1),l4,A.m(p,p,p,p,p,!1,l4,p,B.d,A.b([A.J("Es pot canviar de cabina i retrocedir",l5),A.J("Electrov\xe0lvules de tots els cotxes","sac13_b19_MA1"),A.J("No es pot determinar",k)],n6),"Possible problema de polsador. Coordina amb CCM l\u2019alternativa aplicable: canvi de cabina quan es pot retrocedir, o electrov\xe0lvules de tots els cotxes.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 32.",!1),l5,A.m(p,p,l6,p,p,!1,l5,p,B.d,B.f,"Amb la maniobra acordada, canvia de cabina i retira els estacionaments des d\u2019all\xe0.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 32.",!1),l6,A.m(p,k,a2,p,p,!0,l6,p,B.d,B.f,"S\u2019ha comprovat l\u2019alliberament real de tots els estacionaments?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 32.",!1),"sac16_ok",A.m(p,l7,a2,p,p,!0,h0,p,B.d,B.f,"S\u2019ha normalitzat l\u2019alarma despr\xe9s de reiniciar l\u2019electr\xf2nica de fre?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 36.",!1),l7,A.m(p,g8,"sac16_recuperar",p,p,!0,l7,p,B.d,B.f,"Portacotxeres acorda recuperar la cadena de tracci\xf3 del cotxe motor afectat?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 36.",!1),l8,A.m(p,g8,a2,p,p,!0,l8,p,B.d,B.f,"S\u2019ha normalitzat l\u2019alarma despr\xe9s de recuperar la cadena de tracci\xf3?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 36.",!1),"sac19_13_cabina",A.m(p,p,l9,p,p,!1,i0,p,B.d,B.f,"Realitza el desfrenament des de la cabina acordada. Cal anul\xb7lar el lla\xe7 de fre per poder desfrenar i iniciar la marxa; mant\xe9n aquesta condici\xf3 i les instruccions CCM.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 40.",!1),l9,A.m(p,i1,a2,p,p,!0,l9,p,B.d,B.f,"S\u2019ha pogut desfrenar des d\u2019aquesta cabina?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 40.",!1),i1,A.m(p,p,"sac19_13_b12",p,p,!1,i1,p,B.d,B.f,"Si no es pot desfrenar des de l\u2019altra cabina: B12 i REMOLCADA, amb anul\xb7laci\xf3 del lla\xe7 de fre. Coordina el procediment amb CCM. La remolcada continua essent necess\xe0ria encara que les B12 alliberin el fre.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 40.",!1),"sac22_marxa",A.m(p,p,m0,p,p,!1,"sac22_marxa",p,B.d,B.f,"No t\u2019aturis al t\xfanel per aquest motiu: continua fins a la seg\xfcent estaci\xf3 i estaciona correctament a l\u2019andana abans d\u2019anar a rearmar. Si t\u2019atures al t\xfanel, pot obrir el lla\xe7 i no desfrenar fins al rearme. Pregunta el motiu i coordina els recursos necessaris amb CCM.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 43.",!1),"sac22_estacio",A.m(p,p,e8,p,p,!1,m0,p,B.XT,B.f,"Amb el tren parat, identifica el tirador al DISPLAY 22 o pel pilot exterior taronja. Pregunta el motiu i demana recursos a CCM quan correspongui. Emporta\u2019t claus i walkie, dirigeix-te al cotxe identificat i rearma el tirador. Si el tren \xe9s aturat al t\xfanel, coordina l\u2019actuaci\xf3 amb CCM.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 43.",!1),m1,A.m(p,p,p,p,p,!1,m1,p,B.d,A.b([A.J("Cal utilitzar controla","sac25_controla"),A.J("Provar la megafonia",m2)],n6),"Si cal, utilitza controla: el tancament des d\u2019all\xe0 \xe9s independent d\u2019IRIS. Tot seguit prova la megafonia del tren.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 47.",!1),m2,A.m(p,m4,m3,p,p,!0,m2,p,B.d,B.f,"Funciona la megafonia del tren?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 47.",!1),"sac25_bip_ok",A.m(p,m5,a2,p,p,!0,m3,p,B.d,B.f,"Tamb\xe9 s\u2019ha recuperat el bip-bip i el tancament de portes?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 47.",!1),"sac25_iris_ko",A.m(p,p,p,p,p,!1,m4,p,B.d,B.f,"IRIS KO: tamb\xe9 falla la megafonia. Desallotja i comunica la incid\xe8ncia al CCM.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 47.",!1),"sac25_canvi",A.m(p,p,p,p,p,!1,m5,p,B.d,B.f,"Si \xfanicament falla el bip-bip, es pot anar amb passatge a canvi de motors utilitzant el sistema auxiliar. Valora amb CCM desallotjar si provoca molt retard a la l\xednia.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 47.",!1),"sac25_edp",A.m(p,p,p,p,p,!1,g,p,B.d,A.b([A.J("MA1",m6),A.J("MA2",m7),A.J(f,k)],n6),"Quin equip EDP cal recuperar?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 48.",!1),"sac25_edp_ma1",A.m(p,p,m8,p,p,!1,m6,"manual/s2100/sac_25/equip-posicio-ma1.png",B.d,B.f,"Atura manualment l\u2019equip de detecci\xf3 de posici\xf3 mantenint polsat fins que s\u2019apagui ON. Torna a encendre\u2019l polsant marxa.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 48.",!1),"sac25_edp_ma2",A.m(p,p,m8,p,p,!1,m7,"manual/s2100/sac_25/termic-edp-ma2.png",B.d,B.f,"Tira el t\xe8rmic EDP i deixa\u2019l baixat 2/3 estacions. Recupera\u2019l amb el tren parat/estacionat. La detecci\xf3 autom\xe0tica es pot recuperar a Trinitat Nova, Urquinaona i La Pau.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 48.",!1),"sac25_edp_ok",A.m(p,k,a2,p,p,!0,m8,p,B.d,B.f,"Un cop recuperat l\u2019equip, torna a anunciar correctament?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 48.",!1),"sac26_mirall",A.m(p,n0,m9,p,p,!0,e,p,B.d,B.f,"El mirall es tanca aproximadament als 5 km/h?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 49.",!1),"sac26_cesis",A.m(p,p,n1,p,p,!1,m9,p,B.d,B.f,"L\u2019avaria no sembla real. Tira/rearma el t\xe8rmic CESIS per normalitzar l\u2019alarma.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 49.",!1),"sac26_ok",A.m(p,k,a2,p,p,!0,n1,p,B.d,B.f,"S\u2019ha normalitzat l\u2019alarma?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 49.",!1),"sac26_retirada",A.m(p,p,p,p,p,!1,n0,p,B.d,B.f,"Possible fallada de detecci\xf3 de velocitat 0: no es garanteixen les seguretats de portes lligades a tren parat. Desallotja i retira el tren.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 49.",!1),"sac27_display",A.m(p,p,n2,p,p,!1,d,p,B.d,B.f,"Tira i rearma el t\xe8rmic del DISPLAY.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 50.",!1),n2,A.m(p,k,a2,p,p,!0,n2,p,B.d,B.f,"El DISPLAY torna a respondre correctament?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 50.",!1),"sac27_traccio",A.m(p,p,p,p,p,!1,c,p,B.d,A.b([A.J("Maniobra confirmada i prova realitzada",n3),A.J("Pendent de concreci\xf3 CCM",k)],n6),"Possible RIOM n\xfam. 1. La fitxa indica provar anul\xb7laci\xf3 de lla\xe7 i prova de tracci\xf3, seguida de desallotjament i retirada. La fitxa no precisa aqu\xed quin lla\xe7: confirma la maniobra concreta amb CCM/Portacotxeres abans d\u2019actuar. No es dona una anul\xb7laci\xf3 gen\xe8rica autom\xe0tica.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 50.",!1),"sac27_riom",A.m(p,p,n3,p,p,!1,b,p,B.d,B.f,"Observa la tensi\xf3 i comprova si el tren tracciona i desfrena. Comunica el resultat a CCM; la fitxa indica desallotjar i composici\xf3 a retirada.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 50.",!1),"sac27_retirada",A.m(p,p,p,p,p,!1,n3,p,B.d,B.f,"Desallotja i coordina composici\xf3 a retirada. Una resposta a la prova no elimina aquesta conseq\xfc\xe8ncia de la fitxa.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 50.",!1),"sac27_pma",A.m(p,p,n4,p,p,!1,a,"manual/s2100/connexio/bateries-pma.png",B.d,B.f,"Possible desconnexi\xf3 d\u2019equips per RIOM: connecta mitjan\xe7ant PMA. No substitueixis aquesta actuaci\xf3 per un reset de bateries.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 50.",!1),"sac27_pma_ok",A.m(p,k,a2,p,p,!0,n4,p,B.d,B.f,"S\u2019han reconnectat els equips i comprovat el funcionament?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 50.",!1),"sac03_ok",A.m(p,k,a2,p,p,!0,j4,p,B.d,B.f,"S\u2019han recuperat els equips i comprovat el funcionament despr\xe9s del rearme dels cofres?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 21.",!1),"b12_resultat",A.m(p,k,n5,p,p,!0,"b12_resultat",p,B.d,B.f,"S\u2019ha comprovat l\u2019alliberament amb B12, mantenint l\u2019anul\xb7laci\xf3 del lla\xe7 de fre i la coordinaci\xf3 CCM?",!1),"b12_condicions",A.m(p,p,p,p,p,!1,n5,p,B.d,B.f,"El cotxe continua sense fre pneum\xe0tic. Mant\xe9n l\u2019anul\xb7laci\xf3 del lla\xe7 de fre i les condicions acordades amb CCM; no \xe9s recuperaci\xf3 del fre ni marxa normal.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 35.",!1)],t.N,t.bg)})
 s($,"biJ","aQ4",()=>{var q=t.N
-return A.a5(["Fre de servei bloquejat","s9000_pregunta_fre","Govern / selector de marxa","s9000_govern","Avaria DDU","s9000_ddu","Cabina habilitada","s9000_cabina","Avaria cadena de tracci\xf3 (IOS86)","s9000_traccio","Avaries i procediments S9000","s9000_menu_avaries","Tirador d\u2019alarma","inicio_no_desfrena_s9000","Bolet / Manipulador en 7","pregunta_seta_s9000","Home mort","pregunta_hm_s9000","ATP (sense codis)","pregunta_atp_s9000","STOP (Tren Stop activat)","pregunta_tren_stop_s9000","Aire (Baixa pressi\xf3 TDP)","pregunta_tdp_s9000","Estacionaments aplicats","pregunta_estacionamiento_s9000","Portes obertes","inicio_no_tracciona_s9000","EED (Tirador verd fora de posici\xf3)","pregunta_eed_s9000","Tensi\xf3 nul\xb7la (0V)","pregunta_tension_s9000","Disjuntor (Obert)","pregunta_disyuntores_s9000","Connexi\xf3 del mode especial","inicio_modo_especial_s9000","Connexi\xf3 del mode socors","inicio_modo_socorro","Posada en marxa (P.A.)","inicio_puesta_marcha","Reset de bateries (final de l\xednia)","inicio_reset_baterias","Desconnexi\xf3 (portes tancades)","inicio_desc_cerradas","Desconnexi\xf3 (portes obertes)","inicio_desc_abiertas","Introduir n\xfamero de tren","inicio_num_tren"],q,q)})
-s($,"bir","aQ1",()=>{var q="inicio_no_desfrena_s9000",p="inicio_tirador",o="pregunta_estacionamiento_s9000",n="Tirador d\u2019alarma",m="assets/resolucion/s9000_tirador_alarma.jpg",l=null,k="pregunta_seta_s9000",j="procedimiento_seta_s9000",i="s9000_govern",h="assets/resolucion/s9000_manual_p082.jpg",g="s9000_comprova",f="pregunta_hm_s9000",e="procedimiento_hm_s9000",d="pregunta_tdp_s9000",c="pregunta_atp_s9000",b="s9000_mode_absent",a="procedimiento_atp_s9000",a0="assets/resolucion/s9000_reset_tbs.jpg",a1="pregunta_codis_recuperats_s9000",a2="fi_atp_recuperat_s9000",a3="procedimiento_m25_s9000",a4="s9000_aire",a5="s9000_pregunta_fre",a6="assets/resolucion/s9000_manual_p088.jpg",a7="pregunta_tren_stop_s9000",a8="procedimiento_tren_stop_s9000",a9="assets/resolucion/s9000_manual_p094.jpg",b0="inicio_b19",b1="fin_no_desfrena_ccm_s9000",b2="Estacionaments aplicats",b3="assets/resolucion/s9000_estacionamiento.jpg",b4="s9000_ddu",b5="Cabina habilitada / no respon",b6="s9000_cabina",b7="s9000_pendent",b8="assets/resolucion/s9000_manual_p005.jpg",b9="inicio_no_tracciona_s9000",c0="inicio_lazo_puertas",c1="pregunta_estacionamiento_trac_s9000",c2="assets/resolucion/s9000_lazo_puertas.jpg",c3="pregunta_eed_s9000",c4="procedimiento_eed_s9000",c5="pregunta_tension_s9000",c6="assets/resolucion/s9000_desbloqueo_puertas.jpg",c7="s9000_eed_via",c8="s9000_eed_andana",c9="procedimiento_tension_nula_s9000",d0="pregunta_disyuntores_s9000",d1="assets/resolucion/s9000_voltimetro_manometro.jpg",d2="procedimiento_disyuntores_s9000",d3="fin_no_tracciona_ccm_s9000",d4="s9000_disj_ok",d5="assets/resolucion/s9000_manual_p069.jpg",d6="s9000_traccio",d7="assets/resolucion/s9000_manual_p095.jpg",d8="inicio_menu_modos",d9="inicio_modo_especial_s9000",e0="inicio_modo_socorro",e1="inicio_menu_operativa_1",e2="inicio_puesta_marcha",e3="inicio_menu_operativa_2",e4="inicio_reset_baterias",e5="inicio_menu_operativa_3",e6="inicio_menu_operativa_desc_cerradas",e7="inicio_num_tren",e8="inicio_desc_cerradas",e9="inicio_desc_abiertas",f0="inicio_freno_servicio",f1="procedimiento_freno_16f70",f2="assets/resolucion/s9000_16f70_freno_servicio.jpg",f3="s9000_fre_ok",f4="fin_freno_servicio",f5="assets/resolucion/s9000_manual_p072.jpg",f6="assets/resolucion/s9000_panel_neumatico_auxiliar.jpg",f7="pregunta_confirma_b19_s9000",f8="fin_freno_liberado_s9000",f9="inicio_b17",g0="paso2_b17_sirgas",g1="assets/resolucion/s9000_sirgas_estacionamiento.jpg",g2="s9000_b17_ok",g3="fin_modo_especial_s9000",g4="assets/resolucion/s9000_modo_especial.jpg",g5="paso2_modo_socorro",g6="fin_modo_socorro",g7="assets/resolucion/s9000_manual_p102.jpg",g8="s9000_porta_no_tanca",g9="s9000_condemnar",h0="paso2_tirador",h1="fin_tirador",h2="s9000_tirador_condicions",h3="paso2_puesta_marcha",h4="fin_puesta_marcha",h5="fin_reset_baterias",h6="assets/resolucion/s9000_manual_p068.jpg",h7="fin_desc_cerradas",h8="assets/resolucion/s9000_desconexion_1.jpg",h9="assets/resolucion/s9000_desconexion_2.jpg",i0="fin_desc_abiertas",i1="fin_num_tren",i2="s9000_resolt",i3="s9000_govern_accio",i4="Comprovar recuperaci\xf3",i5="Mode especial autoritzat",i6="s9000_fuita",i7="s9000_compressor",i8="s9000_fre_b4",i9="s9000_fre_b4_ok",j0="s9000_fre_b7",j1="s9000_fre_final_ok",j2="s9000_b17_final",j3="assets/resolucion/s9000_manual_p073.jpg",j4="assets/resolucion/s9000_manual_p076.jpg",j5="assets/resolucion/s9000_detall_p080.jpg",j6="s9000_tirador_ok",j7="assets/resolucion/s9000_manual_p083.jpg",j8="s9000_tirador_no_reposa",j9="s9000_disj_alternatives",k0="s9000_disj_final",k1="Mode socors acordat",k2="s9000_convertidor",k3="Comprovar resultat",k4="assets/resolucion/s9000_manual_p070.jpg",k5="s9000_remolcada",k6="s9000_fre_electric",k7="assets/resolucion/s9000_manual_p074.jpg",k8="s9000_portes_seleccio",k9="s9000_portes_permis",l0="s9000_km0",l1="assets/resolucion/s9000_manual_p078.jpg",l2="assets/resolucion/s9000_manual_p079.jpg",l3="s9000_pantograf",l4="s9000_hvac",l5="assets/resolucion/s9000_manual_p097.jpg",l6="s9000_video",l7="assets/resolucion/s9000_manual_p098.jpg",l8="s9000_anunciador",l9="assets/resolucion/s9000_manual_p099.jpg",m0="Cabina habilitada",m1="assets/resolucion/s9000_manual_p101.jpg",m2="s9000_fuita_enganxall",m3="s9000_fuita_mb",m4="s9000_fuita_r",m5="s9000_fuita_ma",m6="assets/resolucion/s9000_manual_p089.jpg",m7="assets/resolucion/s9000_manual_p090.jpg",m8="s9000_remolc_socors",m9="s9000_remolc_avariat",n0="Desacoblament",n1="s9000_desacoblament",n2="assets/resolucion/s9000_manual_p092.jpg",n3="assets/resolucion/s9000_manual_p093.jpg",n4="s9000_termics",n5="s9000_termics_ma",n6="s9000_termics_mb",n7="s9000_termics_r",n8="assets/resolucion/s9000_manual_p084.jpg",n9="assets/resolucion/s9000_manual_p085.jpg",o0="assets/resolucion/s9000_manual_p086.jpg",o1="assets/resolucion/s9000_manual_p087.jpg",o2="s9000_esquema",o3="assets/resolucion/s9000_manual_p067.jpg",o4="s9000_resum_fuites",o5="assets/resolucion/s9000_manual_p091.jpg",o6="s9000_menu_0",o7="Equips i serveis",o8="s9000_menu_1",o9="s9000_menu_2",p0="Aire i frens",p1="s9000_menu_3",p2="Remolcada i consulta",p3="s9000_menu_avaries",p4="s9000_lamines",p5="s9000_lamina_5",p6="s9000_lamina_67",p7="s9000_lamina_68",p8="s9000_lamina_69",p9="s9000_lamina_70",q0="s9000_lamina_71",q1="s9000_lamina_72",q2="s9000_lamina_73",q3="s9000_lamina_74",q4="s9000_lamina_76",q5="s9000_lamina_77",q6="s9000_lamina_78",q7="s9000_lamina_79",q8="s9000_lamina_80",q9="s9000_lamina_81",r0="s9000_lamina_82",r1="s9000_lamina_83",r2="s9000_lamina_84",r3="s9000_lamina_85",r4="s9000_lamina_86",r5="s9000_lamina_87",r6="s9000_lamina_88",r7="s9000_lamina_89",r8="s9000_lamina_90",r9="s9000_lamina_91",s0="s9000_lamina_92",s1="s9000_lamina_93",s2="s9000_lamina_94",s3="s9000_lamina_95",s4="s9000_lamina_96",s5="s9000_lamina_97",s6="s9000_lamina_98",s7="s9000_lamina_99",s8="s9000_lamina_100",s9="s9000_lamina_101",t0="s9000_lamina_102",t1=t.d
-return A.a5([q,A.m(l,o,p,n,l,!0,q,m,B.d,B.f,"Tens un altaveu que parpelleja a la pantalla d\u2019alarmes de la DDU indicant un tirador d\u2019alarma accionat?",!1),k,A.m(l,i,j,"Bolet / Manipulador en 7",l,!0,k,h,B.d,B.f,"El bolet d\u2019emerg\xe8ncia est\xe0 accionat en alguna testera, o el manipulador \xe9s al punt 7?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 82.",!1),j,A.m(l,l,g,l,l,!1,j,h,B.d,B.f,"Rearma el bolet girant-lo en sentit antihorari, o treu el manipulador del punt 7. Comprova tamb\xe9 el bolet de la testera oposada. El bolet aplica fre d\u2019emerg\xe8ncia i d\u2019estacionament; afluixa l\u2019estacionament despr\xe9s de rearmar-lo. Pot apar\xe8ixer IOS14.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 82.",!1),f,A.m(l,d,e,"Home mort",l,!0,f,l,B.d,B.f,"Fa m\xe9s de 5 segons que no prems l\u2019home mort?",!1),e,A.m(l,l,l,l,l,!1,e,l,B.d,B.f,"Torna a pr\xe9mer el dispositiu de seguretat del manipulador per rearmar el lla\xe7 d\u2019emerg\xe8ncia.",!1),c,A.m(l,l,l,l,l,!1,c,a0,B.d,A.b([A.G("No hi ha mode de conducci\xf3",b),A.G("No rep codis ATP",a),A.G("Mode i codis correctes",f)],t1),"Quin estat mostra l\u2019equip de conducci\xf3?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 5.",!1),a,A.m(l,l,a1,l,l,!1,a,a0,B.d,B.f,"RESET TBS: reinicia l'equip ATC. Gira el comandament RESET TBS; el polsador torna a la seva posici\xf3 original.",!1),a1,A.m(l,a3,a2,l,l,!0,a1,l,B.d,B.f,"Has recuperat els codis ATP?",!1),a2,A.m(l,l,g,l,l,!1,a2,l,B.d,B.f,"Codis ATP recuperats. Comprova tamb\xe9 el mode de conducci\xf3 i la resoluci\xf3 del s\xedmptoma abans de donar l\u2019avaria per resolta.",!1),a3,A.m(l,l,l,l,l,!1,a3,l,B.d,B.f,"Sol\xb7licita autoritzaci\xf3 al CCM per circular en Manual +25 (M+25).",!1),d,A.m(l,a5,a4,"Aire (Baixa pressi\xf3 TDP)",l,!0,d,a6,B.d,B.f,"La TDP t\xe9 pressi\xf3 baixa? IOS218 indica TDP < 8 bar; IOS24 i FE per press\xf2stat de m\xednima, TDP < 6,5 bar.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 88.",!1),a7,A.m(l,q,a8,"STOP (Tren Stop activat)",l,!0,a7,"assets/resolucion/s9000_tren_stop_cesares.jpg",B.d,B.f,"Tens un avis de STOP (Tren Stop activat) a la DDU?",!1),a8,A.m(l,l,g,l,l,!1,a8,a9,B.d,B.f,"Rearma el Tren Stop amb TR al CESARES. A L4 el document indica que no est\xe0 instal\xb7lat com a sistema de seguretat, per\xf2 poden existir balises que l\u2019activin per error. L\u2019app anterior tamb\xe9 recull REBA per al depassament autoritzat; no \xe9s el bot\xf3 de rearme TR.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 94.",!1),o,A.m(l,b1,b0,b2,l,!0,o,b3,B.d,B.f,"T\u2019apareix el fre d\u2019estacionament aplicat a la DDU (pictograma 'P') i no aconsegueixes afluixar-lo des de la botonera verda?",!1),b1,A.m(l,l,l,l,l,!1,b1,b8,B.d,A.b([A.G("Avaria DDU",b4),A.G(b5,b6),A.G("No identificat",b7)],t1),"No s\u2019ha identificat la causa. Comprova la informaci\xf3 de la DDU, govern, selector i t\xe8rmics del S9000 identificats per cotxe. No apliquis refer\xe8ncies de t\xe8rmics del S2100.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 5.",!1),b9,A.m(l,c1,c0,"Portes obertes",l,!0,b9,c2,B.d,B.f,"Avaria del lla\xe7 de tracci\xf3:\nEn pr\xe9mer l\u2019home mort, l\u2019agulla de fre baixa a 0 per\xf2 el tren NO tracciona.\n\n\u26a0\ufe0f IMPORTANT: Despr\xe9s de solucionar l\u2019avaria, \xe9s obligatori passar el manipulador MARXA-FRE per '0' per poder recuperar la tracci\xf3.\n\nLa icona de portes a la DDU \xe9s GRISA, indicant portes obertes?",!1),c1,A.m(l,c3,b0,b2,l,!0,c1,b3,B.d,B.f,"T\u2019indica estacionament aplicat i impedeix la tracci\xf3?",!1),c3,A.m(l,c5,c4,"EED (Tirador verd fora de posici\xf3)",l,!0,c3,c6,B.d,B.f,"Tens algun tirador verd de desbloqueig de portes fora de posici\xf3 o alguna porta desbloquejada manualment?",!1),c4,A.m(l,l,l,l,l,!1,c4,c6,B.d,A.b([A.G("Costat via",c7),A.G("Costat andana",c8),A.G("Costat no identificat",b7)],t1),"Porta desbloquejada amb tirador verd (EED): identifica el costat.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 80.",!1),c5,A.m(l,d0,c9,"Tensi\xf3 nul\xb7la (0V)",l,!0,c5,d1,B.d,B.f,"Tens tensi\xf3 nul\xb7la (0V) al volt\xedmetre?",!1),c9,A.m(l,l,l,l,l,!1,c9,d1,B.d,B.f,"Comunica al CCM la manca de tensi\xf3 a la caten\xe0ria.\n\nNo intentis recuperar la tracci\xf3 fins que es confirmi que hi ha tensi\xf3 disponible i que el tren est\xe0 autoritzat a continuar.",!1),d0,A.m(l,d3,d2,"Disjuntor (Obert)",l,!0,d0,"assets/resolucion/s9000_disyuntores.jpg",B.d,B.f,"Els disjuntors principals estan oberts en una o en totes dues unitats?",!1),d2,A.m(l,l,d4,l,l,!1,d2,d5,B.d,B.f,"IOS112/113: passa manipulador, selector i govern per 0. Torna a posar el selector ENDAV. i comprova si tanquen. Si no, amb govern CON i manipulador a 0, prem CONNEXI\xd3 DISJUNTOR a la part inferior de DDU1 segons el document. No accionis la clau de posada a terra. Passa MARXA-FRE per 0 abans de recuperar tracci\xf3.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 69.",!1),d3,A.m(l,l,l,l,l,!1,d3,d7,B.d,A.b([A.G("IOS86 / cadena de tracci\xf3",d6),A.G("DDU no funciona",b4),A.G(b5,b6),A.G("Cap causa identificada",b7)],t1),"El tren continua sense traccionar. Identifica la causa abans d\u2019escollir una anul\xb7laci\xf3.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 95.",!1),d8,A.m(l,e0,d9,"Connexi\xf3 del mode especial",l,!0,d8,l,B.d,B.f,"Necessites connectar el mode especial (M.E.)?",!1),e1,A.m(l,e3,e2,"Posada en marxa (P.A.)",l,!0,e1,l,B.d,B.f,"Vols fer la posada en marxa autom\xe0tica (P.A.)?",!1),e3,A.m(l,e5,e4,"Reset de bateries (final de l\xednia)",l,!0,e3,l,B.d,B.f,"Necessites fer un reset de bateries a final de l\xednia?",!1),e5,A.m(l,e7,e6,l,l,!0,e5,l,B.d,B.f,"Far\xe0s una desconnexi\xf3 del tren?",!1),e6,A.m(l,e9,e8,"Desconnexi\xf3 (portes tancades)",l,!0,e6,l,B.d,B.f,"La desconnexi\xf3 \xe9s amb les portes tancades?",!1),f0,A.m(l,l,f1,l,l,!1,f0,f2,B.d,B.f,"Fre de servei aplicat i bloquejat: identifica el cotxe a la DDU (IOS207\u2013211). Pot haver-hi forta olor de sabata o fum sota el tren. Aquesta fitxa no correspon a baixa pressi\xf3 TDP sense diagn\xf2stic de fre bloquejat. Al cotxe identificat, obre l\u2019armari de t\xe8rmics amb la clau Southco.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 72.",!1),f1,A.m(l,l,f3,l,l,!1,f1,f2,B.d,B.f,"Al cotxe afectat: baixa 16F70 CONTROL DE FRENO PNEUMATICO i prem el bot\xf3 vermell 30S1 ANULACI\xd3 FRE DE SERVEI. Amb la coordinaci\xf3 del CCM, anul\xb7la els lla\xe7os d\u2019Equip de fre i de Tracci\xf3. En baixar 16F70 es perd la lectura de pressi\xf3 de fre de la DDU: no la utilitzis per donar per confirmat el desfrenament.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 72.",!1),f4,A.m(l,l,l,l,l,!1,f4,f5,B.d,B.f,"Desfrenament confirmat. Es mantenen les condicions d\u2019anul\xb7laci\xf3 dels lla\xe7os d\u2019Equip de fre i de Tracci\xf3. Comunica al CCM els equips a\xefllats i les maniobres; no equival a recuperar marxa normal.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 72.",!1),"inicio_b19",A.m(l,l,"fin_b19",l,l,!1,b0,f6,B.d,B.f,"A\xefllament per ELECTROV\xc0LVULA B19 (Quadrat vermell):\n\n1. A la caixa de passatge, localitza el panell pneum\xe0tic auxiliar senyalitzat amb el pictograma d\u2019estacionament o pant\xf2graf i obre\u2019l amb la clau Southco.\n2. Busca l\u2019electrov\xe0lvula B19.",!1),"fin_b19",A.m(l,l,f7,l,l,!1,"fin_b19",f6,B.d,B.f,"Gira B19 a la posici\xf3 A (Anul\xb7lada). C significa Connectada. Comprova la indicaci\xf3 d\u2019estacionament i el resultat de la maniobra.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 73.",!1),f7,A.m(l,f9,f8,l,l,!0,f7,b3,B.d,B.f,"S\u2019ha apagat l\u2019av\xeds de fre d\u2019estacionament despr\xe9s d\u2019utilitzar la B19?",!1),"inicio_b17",A.m(l,l,g0,l,l,!1,f9,f6,B.d,B.f,"A\xefllament mec\xe0nic per AIXETA B17 + SIRGUES (Quadrat vermell):\n\n1. Localitza l\u2019armari del panell pneum\xe0tic auxiliar i obre\u2019l amb la clau Southco.\n2. Gira l\u2019aixeta B17 per buidar el circuit d\u2019aire i a\xefllar-lo.",!1),g0,A.m(l,l,"fin_b17",l,l,!1,g0,g1,B.d,B.f,"3. Ves al cotxe MB1, obre l\u2019armari situat davant de l\u2019extintor i agafa el tirador (clau en forma de T) del material d\u2019emerg\xe8ncia.",!1),"fin_b17",A.m(l,l,g2,l,l,!1,"fin_b17",g1,B.d,B.f,"Estira completament les quatre sirgues del cotxe afectat amb l\u2019estri i comprova l\u2019alliberament de l\u2019estacionament. Despr\xe9s d\u2019actuar B17 + sirgues cal anul\xb7lar el LLA\xc7 DE TRACCI\xd3, coordinat amb el CCM.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 73.",!1),f8,A.m(l,l,l,l,l,!1,f8,"assets/resolucion/s9000_detall_p073.jpg",B.d,B.f,"Alliberament per B19 confirmat. Informa el CCM i conserva les condicions de l\u2019actuaci\xf3. Aquest resultat no normalitza altres a\xefllaments ni autoritza per si mateix la marxa.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 73.",!1),d9,A.m(l,l,g3,l,l,!1,d9,g4,B.d,B.f,"Connexi\xf3 del mode especial S9000:\n\n1. Desconnecta l\u2019equip ATC introduint i girant la clau M.E. a DES.\n2. Posa el manipulador M/F a 0.\n3. Selector de marxes a 0.\n4. Clau de govern a 0.\n5. Comprova que el llum M.E. estigui enc\xe8s.",!1),g3,A.m("\u26a0\ufe0f ATENCI\xd3: No el connectis sense autoritzaci\xf3 del CCM.",l,l,l,l,!1,g3,g4,B.d,B.f,"6. Connecta la clau de govern, posa el selector endavant i treu l\u2019estacionament.\n\nRecorda: velocitat m\xe0xima de 25 km/h amb passatge (35 km/h sense passatge). Si no veus la velocitat al veloc\xedmetre, busca-la a MANT -> CXA NEGRA -> BB01/BB02.",!1),e0,A.m(l,l,g5,l,l,!1,e0,"assets/resolucion/s9000_lazos_anulacion.jpg",B.d,B.f,"Av\xeds de mode socors / RIOM KO o p\xe8rdua de les dues DDU de la mateixa cabina. Amb govern CON, selecciona sentit de marxa i mode de conducci\xf3 i prem MODE SOCORS. Coordina l\u2019actuaci\xf3 amb CCM.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 102.",!1),g5,A.m(l,l,g6,l,l,!1,g5,"assets/resolucion/s9000_detall_p102.jpg",B.d,B.f,"Espera 40 segons o fins que tanquin els disjuntors. Afluixa el fre d\u2019estacionament. Pant\xf2grafs, convertidors, compressors, enllumenat i AACC es connecten autom\xe0ticament; els compressors funcionen autom\xe0ticament.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 102.",!1),g6,A.m(l,l,l,l,l,!1,g6,g7,B.d,B.f,"Mant\xe9n premut l\u2019home mort 3 segons abans de traccionar. El manipulador no modula: tracci\xf3 al 75 % i fre \xfanicament pneum\xe0tic al 100 %. Velocitat limitada a 40 km/h. La informaci\xf3 de DDU i volt\xedmetre pot ser err\xf2nia. L\u2019app anterior recull desconnexi\xf3 normalitzant el bot\xf3 i esperant 20 segons; \xe9s informaci\xf3 addicional que no figura a la p\xe0g. 102.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 102.",!1),c0,A.m(l,l,l,l,l,!1,c0,c2,B.d,A.b([A.G("Porta tancada i av\xeds normalitzat",g),A.G("Continua oberta / DDU marca oberta",g8),A.G("Tirador EED accionat",c4),A.G("Cal condemnar una porta",g9)],t1),"Porta no tanca: identifica cotxe i porta a la DDU i comprova les c\xe0meres. Prova un nou cicle d\u2019obertura/tancament. Si no es resol, agafa claus i walkie i comprova la guia; retira un possible objecte i torna a provar. Conserva la comprovaci\xf3 de tancament i enclavament i passa MARXA-FRE per 0 despr\xe9s de normalitzar.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 76.",!1),"inicio_tirador",A.m(l,l,h0,l,l,!1,p,m,B.d,B.f,"Abans de gestionar el tirador: segons el manual (p\xe0g. 83), si s\u2019acciona en marxa cal continuar fins a la seg\xfcent estaci\xf3 i rearmar estacionat a l\u2019andana; aturar-se al t\xfanel obre el lla\xe7. En arrencar d\u2019estaci\xf3, actua abans de superar 15 km/h o aproximadament 45 m.\n\nGesti\xf3 del tirador d\u2019alarma S9000:\n\n1. Utilitza el micr\xf2fon: prem el bot\xf3 PTT per parlar i deixa\u2019l anar per escoltar.\n2. Ves a la pantalla d\u2019alarmes de la DDU: hi veur\xe0s un altaveu que parpelleja al cotxe afectat.\n3. Utilitza la icona de la c\xe0mera per veure el passatger.",!1),"paso2_tirador",A.m(l,l,h1,l,l,!1,h0,"assets/resolucion/s9000_intercomunicador.jpg",B.d,B.f,"Si trigues a pr\xe9mer el PTT, la trucada es desviar\xe0 al CCM i veur\xe0s el pilot blau o el missatge 'INTERCOM. ACTIVO' a la r\xe0dio. Mentre continu\xef aix\xed, no podr\xe0s comunicar-te amb el CCM.\n\nPrem la tecla 5 o la fletxa, segons la composici\xf3, per NORMALITZAR i alliberar el radiotel\xe8fon. Aix\xf2 no recupera la conversa amb el passatger.",!1),"fin_tirador",A.m(l,l,h2,l,l,!1,h1,m,B.d,B.f,"4. Despr\xe9s de rebre la informaci\xf3, finalitza la comunicaci\xf3 prement 'ANU' al CESARES. Un cop anul\xb7lada, la comunicaci\xf3 amb aquell intercomunicador no es pot recuperar.\n5. Si hi ha m\xe9s tiradors actius, at\xe9n-los tots seguint la mateixa seq\xfc\xe8ncia.\n6. Informa el CCM del que ha passat.\n7. Rearma el tirador des de la pantalla d\u2019alarmes de la DDU o presencialment amb la clau de quadradet.\n\nSi surts de la cabina, deixa-la tancada i emporta\u2019t la clau de govern, la clau de quadradet i el walkie.",!1),e2,A.m(l,l,h3,l,l,!1,e2,"assets/resolucion/s9000_puesta_marcha_1.jpg",B.d,B.f,"Posada en marxa S9000:\n\n1. Prem el bot\xf3 f\xedsic de connexi\xf3 de bateries.\n2. Espera que el sistema inform\xe0tic de les DDU es carregui del tot.",!1),h3,A.m(l,l,h4,l,l,!1,h3,"assets/resolucion/s9000_puesta_marcha_2.jpg",B.d,B.f,"3. A la DDU, prem la bandera verda 'PA' (posada autom\xe0tica).\n4. Observa com les icones passen de gris a groc p\xe0l\xb7lid, indicant la connexi\xf3 (pant\xf2grafs, convertidors, compressors, il\xb7luminaci\xf3 i HVAC).",!1),h4,A.m(l,l,l,l,l,!1,h4,"assets/resolucion/s9000_puesta_marcha_3.jpg",B.d,B.f,"5. Verifica la pressi\xf3 de TDP al man\xf2metre: si \xe9s baixa (< 8.5 bar), espera que el compressor carregui aire fins a la zona verda (8.5 - 10 bar).\n6. Posa la clau de govern, el selector endavant i treu l\u2019estacionament.\n\n(Av\xeds: Si apareix IOS 216, indica que algun equip b\xe0sic no est\xe0 operatiu).",!1),e4,A.m(l,l,h5,l,l,!1,e4,h6,B.d,B.f,"Reset incloent bateries, sol\xb7licitat/coordinat amb Portacotxeres. Preferentment a final de l\xednia o via de maniobra pel risc de no reconnectar. A DDU1 \u2192 PMA, desconnecta autom\xe0ticament i espera que tots els equips estiguin en gris. Amb govern a 0, prem DESCONNEXI\xd3 BATERIES a DDU2 i espera que acabi el proc\xe9s.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 68.",!1),h5,A.m(l,l,g,l,l,!1,h5,h6,B.d,B.f,"Prem CONNEXI\xd3 BATERIES a la columna dreta. Atenci\xf3: les portes es tanquen lentament. Espera la c\xe0rrega de les DDU; a PMA connecta autom\xe0ticament i espera els equips. Selecciona govern CON, selector ENDAV. i mode de conducci\xf3. Ordre manual: bateria \u2192 pant\xf2graf \u2192 convertidor \u2192 compressor \u2192 enllumenat \u2192 aire; desconnexi\xf3 en ordre invers.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 68.",!1),e8,A.m(l,l,h7,l,l,!1,e8,h8,B.d,B.f,"Desconnexi\xf3 amb les portes tancades:\n\n1. A DDU -> Posada en marxa -> prem desconnexi\xf3 autom\xe0tica.\n2. Selecciona a la pantalla el costat de portes per sortir.\n3. Obre la porta de cortesia prement el bot\xf3 verd situat a la mateixa porta.",!1),h7,A.m(l,l,l,l,l,!1,h7,h9,B.d,B.f,"4. Posa el manipulador i el selector a 0, i retira la clau de govern.\n5. Surt per la porta de cortesia i prem el bot\xf3 exterior de tancament.\n\nEl tren detectar\xe0 la sortida i desconnectar\xe0 les bateries.",!1),e9,A.m(l,l,i0,l,l,!1,e9,h8,B.d,B.f,"Desconnexi\xf3 amb les portes obertes:\n\n1. A DDU -> Posada en marxa -> prem desconnexi\xf3 autom\xe0tica.\n2. Selecciona l\u2019obertura del tren per tots dos costats.",!1),i0,A.m(l,l,l,l,l,!1,i0,h9,B.d,B.f,"3. Posa el manipulador i el selector a 0, i retira la clau de govern.\n4. Prem f\xedsicament el bot\xf3 vermell de desconnexi\xf3 de bateries al panell lateral.",!1),"inicio_num_tren",A.m(l,l,i1,l,l,!1,e7,"assets/resolucion/s9000_numero_circulacion_1.jpg",B.d,B.f,"Introduir el n\xfamero de circulaci\xf3:\n\n1. A la DDU, prem el bot\xf3 de par\xe0metres.\n2. Amb la fletxa dreta cap avall, baixa de n\xfamero de conductor a n\xfamero de circulaci\xf3.\n3. Prem el bot\xf3 Enter per accedir al teclat de pantalla.",!1),"fin_num_tren",A.m(l,l,l,l,l,!1,i1,"assets/resolucion/s9000_numero_circulacion_2.jpg",B.d,B.f,"4. Utilitza els cursors intermedis per despla\xe7ar-te pels n\xfameros i prem Enter per seleccionar cada d\xedgit.\n5. Quan acabis, despla\xe7a\u2019t a la icona d\u2019acceptar (marca verda) i prem Enter per desar.",!1),"s9000_pendent",A.m(l,l,l,l,l,!1,b7,l,B.d,B.f,"No s\u2019ha confirmat la resoluci\xf3. Comunica al CCM/Portacotxeres el cotxe, els avisos i les actuacions realitzades. Conserva les condicions dels a\xefllaments efectuats; aquest resultat no autoritza una marxa normal.",!1),"s9000_comprova",A.m(l,b7,i2,l,l,!0,g,l,B.d,B.f,"S\u2019ha resolt el s\xedmptoma i s\u2019han comprovat els equips afectats?",!1),"s9000_resolt",A.m(l,l,l,l,l,!1,i2,l,B.d,B.f,"S\xedmptoma resolt i comprovat. Informa el CCM de les actuacions i mant\xe9n les condicions dels a\xefllaments existents. La desaparici\xf3 d\u2019un av\xeds no normalitza els lla\xe7os ni els equips anul\xb7lats.",!1),"s9000_govern",A.m(l,i3,c,l,l,!0,i,b8,B.d,B.f,"La clau de govern est\xe0 connectada i el selector de marxa est\xe0 correctament posicionat?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 5.",!1),i3,A.m(l,l,l,l,l,!1,i3,b8,B.d,A.b([A.G("Comprovar si s\u2019ha resolt",g),A.G(b5,b6)],t1),"Comprova la clau de govern i la posici\xf3 del selector de marxa. Si el tren no respon a les ordres, comprova si una altra cabina resta habilitada.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 5.",!1),b,A.m(l,l,l,l,l,!1,b,b8,B.d,A.b([A.G(i4,g),A.G(i5,d9)],t1),"Comprova i selecciona el mode de conducci\xf3. Si no es recupera, comunica l\u2019estat al CCM i coordina el mode degradat que correspongui. No confonguis abs\xe8ncia de mode amb abs\xe8ncia de codis.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 5.",!1),a5,A.m(l,a7,f0,l,l,!0,a5,f5,B.d,B.f,"La DDU identifica un cotxe amb fre de servei aplicat i bloquejat (IOS207\u2013211), o hi ha olor de sabata/fum sota el tren?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 72.",!1),"s9000_aire",A.m(l,l,l,l,l,!1,a4,a6,B.d,A.b([A.G("Fuita localitzada / soroll de fuita",i6),A.G("Compressor en avaria (IOS221\u2013223)",i7),A.G("Origen no identificat",b7)],t1),"Baixa pressi\xf3 TDP: identifica l\u2019origen. Una pressi\xf3 baixa no \xe9s, per si sola, una avaria de fre de servei bloquejat.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 88.",!1),"s9000_fre_ok",A.m(l,i8,f4,l,l,!0,f3,f5,B.d,B.f,"S\u2019ha confirmat que el cotxe ha quedat desfrenat, tenint en compte que la DDU pot haver perdut la lectura?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 72.",!1),"s9000_fre_b4",A.m(l,l,i9,l,l,!1,i8,f5,B.d,B.f,"Si no es normalitza, el document preveu accedir a vies pel costat de V1 i girar B4 del cofre del cotxe afectat. Coordina amb CCM l\u2019acc\xe9s a vies i la maniobra.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 72.",!1),"s9000_fre_b4_ok",A.m(l,j0,f4,l,l,!0,i9,f5,B.d,B.f,"S\u2019ha normalitzat el fre amb B4?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 72.",!1),"s9000_fre_b7",A.m(l,l,j1,l,l,!1,j0,f5,B.d,B.f,"Si B4 no normalitza el fre, el document preveu tamb\xe9 B7.1 i B7.2 del cotxe afectat. Coordina la maniobra i verifica el resultat.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 72.",!1),j1,A.m(l,b7,f4,l,l,!0,j1,f5,B.d,B.f,"S\u2019ha confirmat el desfrenament despr\xe9s de les maniobres?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 72.",!1),"s9000_b17_ok",A.m(l,b7,j2,l,l,!0,g2,j3,B.d,B.f,"S\u2019ha comprovat que l\u2019estacionament est\xe0 alliberat?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 73.",!1),"s9000_b17_final",A.m(l,l,l,l,l,!1,j2,j3,B.d,B.f,"Alliberament mec\xe0nic confirmat. Mant\xe9n registrada B17 + sirgues i l\u2019anul\xb7laci\xf3 del la\xe7 de tracci\xf3; coordina les condicions de circulaci\xf3 amb CCM. No \xe9s una sortida de marxa normal.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 73.",!1),g8,A.m(l,l,l,l,l,!1,g8,j4,B.d,B.f,"Si la porta no tanca o la DDU continua indicant oberta, el document preveu desallotjar i anul\xb7lar el lla\xe7 de portes, coordinat amb CCM. Indica que, si no s\u2019ha aconseguit tancar, es tancar\xe0 autom\xe0ticament en iniciar la marxa sense passatge. Comunica l\u2019estat real i mant\xe9n les condicions de la maniobra.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 76.",!1),"s9000_eed_via",A.m(l,l,g,l,l,!1,c7,j5,B.d,B.f,"Comunica al CCM i dirigeix-te a normalitzar la porta. Assegura\u2019t que cap passatger ha baixat a vies; pregunta al passatge si \xe9s necessari. Comprova la normalitzaci\xf3 de l\u2019EED i del la\xe7 de portes; passa el manipulador per 0 abans de recuperar tracci\xf3.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 80.",!1),c8,A.m(l,l,g,l,l,!1,c8,j5,B.d,B.f,"A la pantalla d\u2019alarmes de DDU1 corresponent al tirador, prem RECON. Si no hi ha visi\xf3 de c\xe0mera, normalitza localment. Comprova EED, porta i la\xe7; passa el manipulador per 0 abans de recuperar tracci\xf3.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 80.",!1),h2,A.m(l,l,j6,l,l,!1,h2,j7,B.d,B.f,"Tirador d\u2019alarma: el document indica que, en arrencar d\u2019estaci\xf3, obre el lla\xe7 si no s\u2019han superat 15 km/h o no han transcorregut aproximadament 45 m. Si s\u2019acciona en marxa, preveu continuar fins a la seg\xfcent estaci\xf3 i rearmar estacionat a l\u2019andana; una aturada al t\xfanel obrir\xe0 el lla\xe7 fins a reposar-lo.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 83.",!1),j6,A.m(l,j8,g,l,l,!0,j6,j7,B.d,B.f,"S\u2019ha pogut reposar el tirador i comprovar el resultat?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 83.",!1),j8,A.m(l,l,l,l,l,!1,j8,j7,B.d,B.f,"Si algun tirador no es pot reposar, el document preveu desallotjar i anul\xb7lar el la\xe7 de tiradors, coordinat amb CCM. Un tirador trencat no es resol repetint la reposici\xf3.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 83.",!1),"s9000_disj_ok",A.m(l,j9,g,l,l,!0,d4,d5,B.d,B.f,"Els disjuntors s\u2019han connectat i es mantenen tancats?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 69.",!1),j9,A.m(l,l,l,l,l,!1,j9,d5,B.d,A.b([A.G("Comprovar despr\xe9s de l\u2019actuaci\xf3",k0),A.G(k1,e0),A.G("Pendent d\u2019indicacions",b7)],t1),"Coordina amb CCM/Portacotxeres. El document preveu valorar els t\xe8rmics 16F66 i 16F67 del MB de la semiunitat afectada i tornar a provar el rearme; com a \xfaltim recurs, mode socors. No \xe9s un a\xefllament autom\xe0tic de la semiunitat.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 69.",!1),k0,A.m(l,b7,g,l,l,!0,k0,d5,B.d,B.f,"S\u2019han recuperat els disjuntors despr\xe9s de l\u2019actuaci\xf3 acordada?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 69.",!1),k2,A.m(l,l,l,l,l,!1,k2,k4,B.d,A.b([A.G(k3,g),A.G("Reset de bateries acordat",e4),A.G("Dos convertidors perduts / pendent",b7)],t1),"IOS25/26/27: identifica el convertidor auxiliar que no carrega bateria. El document preveu tirar el t\xe8rmic corresponent 16F10 o 16F11 al remolc. Si no es normalitza, reset de bateries a final de l\xednia. Amb un convertidor es mantenen els serveis al 100 % i cal anar a canvi aviat. Amb tots dos perduts, tracci\xf3 i serveis de bateria s\xf3n temporals; comunica l\u2019abast al CCM.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 70.",!1),i7,A.m(l,l,l,l,l,!1,i7,"assets/resolucion/s9000_detall_p071.jpg",B.d,A.b([A.G("Pressi\xf3 recuperada i comprovada",g),A.G("Cap compressor recuperat",k5),A.G("Hi ha una fuita",i6),A.G("Origen no confirmat",b7)],t1),"IOS221/222/223: identifica el compressor i el MA afectat. Si falla el master, l\u2019altre entra autom\xe0ticament. El document preveu tirar 11F4 Compressor Aire del MA afectat. TDP normal: 8\u201310 bar. Per sota de 6,5 bar aplica FE; si no es recupera cap compressor, cal remolcar. Nota del document: master 1 en dies imparells i master 2 en dies parells, segons data DDU.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 71.",!1),k6,A.m(l,l,l,l,l,!1,k6,k7,B.d,A.b([A.G(k3,g),A.G("Equip de tracci\xf3 afectat",d6),A.G("P\xe8rdua de codis",a)],t1),"IOS88: p\xe8rdua de fre el\xe8ctric en un o dos cotxes. Selecciona ATP o fes reset TBS si no es pot seleccionar. Si s\u2019han perdut codis, el document preveu M+25 autoritzat i avan\xe7ar uns metres per recuperar-los. Si no es normalitza, comprova equips de tracci\xf3 inhibits i tracta-ho com a avaria de tracci\xf3.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 74.",!1),k8,A.m(l,l,g,l,l,!1,k8,"assets/resolucion/s9000_detall_p077.jpg",B.d,B.f,"No es permet seleccionar costat de portes (bot\xf3 groc). Amb autoritzaci\xf3 del CCM, prem Tren Stop Deslocalitzat i torna a seleccionar el costat andana. Un cop seleccionat, normalitza Tren Stop Deslocalitzat. El document descriu que pot passar puntualment a L4 malgrat no disposar del sistema de control del costat d\u2019obertura.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 77.",!1),k9,A.m(l,l,l,l,l,!1,k9,l1,B.d,A.b([A.G(k3,g),A.G("Tampoc obren amb tiradors",l0),A.G(i5,d9),A.G("No resolt",b7)],t1),"No hi ha permissi\xf3 ATP: comprova la selecci\xf3 del costat andana. Amb autoritzaci\xf3 CCM, passa a M+25 i prova; si no funciona, el document preveu moure el tren 1 metre i tornar a provar. \xdaltima opci\xf3: ME autoritzat. Si no funciona, desallotjament amb obertura local. Si tampoc obren amb els tiradors, tracta l\u2019avaria KM0.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 78.",!1),"s9000_km0",A.m(l,l,l,l,l,!1,l0,l2,B.d,B.f,"IOS75: discrep\xe0ncia V=0; el tren parat detecta moviment i no obren portes ni tiradors. El document preveu deixar caigut 16F120 Circuito V=0 km/h al remolc: nom\xe9s es podran obrir localment les portes del remolc amb tiradors/LOPS. Desallotjar i retirar el tren. Alternativa del document: desconnectar bateries per obrir totes les portes amb EED. Coordina l\u2019opci\xf3 amb CCM.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 79.",!1),"s9000_condemnar",A.m(l,l,g,l,l,!1,g9,"assets/resolucion/s9000_detall_p081.jpg",B.d,B.f,"Condemnar una porta: identifica la porta i obre el fald\xf3. Si cal obrir-la, el document preveu desconnectar l\u2019alimentaci\xf3 i fer un cicle d\u2019obertura/tancament amb clau de quadradet sobre la lleva del motor. Per deixar-la condemnada: connector de comunicaci\xf3 desconnectat i alimentaci\xf3 connectada. Col\xb7loca els adhesius de fora de servei. Comprova tancament i estat del la\xe7.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 81.",!1),"s9000_traccio",A.m(l,l,g,l,l,!1,d6,d7,B.d,B.f,"IOS86: cotxe sense tracci\xf3 i/o fre el\xe8ctric, sense obertura de disjuntors. Identifica el cotxe i la semiunitat. El document preveu tirar i rearmar 16F66 Equipo de Tracci\xf3n 1 o 16F67 Equipo de Tracci\xf3n 2 del MB de la semiunitat afectada.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 95.",!1),"s9000_pantograf",A.m(l,l,g,l,l,!1,l3,"assets/resolucion/s9000_detall_p096.jpg",B.d,B.f,"IOS167\u2013172: identifica el pant\xf2graf no elevat amb ordre de pujar o a\xefllat. Comprova primer problemes el\xe8ctrics/caten\xe0ria. Una creu vermella indica inhibici\xf3 manual: a la pantalla corresponent, prem la icona de la semiunitat inhibida. Per baixar un sol pant\xf2graf, el document preveu 16F60 del cotxe afectat o U21 del panell pneum\xe0tic auxiliar.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 96.",!1),"s9000_hvac",A.m(l,l,g,l,l,!1,l4,l5,B.d,B.f,"Aire condicionat: desconnecta durant dues o tres estacions i reconnecta a PMM de DDU1. Si no es recupera, tira i rearma 16F38 del cotxe afectat. Despr\xe9s es pot provar 11F1 Climatizaci\xf3n L\xednea 1 o 11F2 L\xednea 2. Si persisteix, valora temperatura interior i canvi de motors amb CCM.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 97.",!1),"s9000_video",A.m(l,l,g,l,l,!1,l6,l7,B.d,B.f,"Identifica les c\xe0meres/equips afectats. Reseteja els equips corresponents amb 16F43 Pantallas video difusi\xf3n, 16F44 Controlador Multimedia / Video Difusi\xf3n o 16F47 Video Grabador. Comprova el resultat.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 98.",!1),l8,A.m(l,l,g,l,l,!1,l8,l9,B.d,B.f,"Anunciador o term\xf2metres no funcionen: el document preveu tirar 16F40 Megafon\xeda e Interfon\xeda del remolc o del MA corresponent. La central inclou costat de portes, term\xf2metres, interfonia, altaveus, micr\xf2fon, CESARES i bip-bip de portes.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 99.",!1),"s9000_ddu",A.m(l,l,l,l,l,!1,b4,"assets/resolucion/s9000_detall_p100.jpg",B.d,A.b([A.G(i4,g),A.G(m0,b6),A.G("Dues DDU perdudes: mode socors",e0)],t1),"DDU en negre: prova primer el bot\xf3 d\u2019encendre pantalla. El document preveu el t\xe8rmic del MA corresponent: 16F103 = DDU1; 16F102 = DDU2. Atenci\xf3: el primer f\xedsicament \xe9s el de DDU2. Si la DDU no accepta ordres, comprova cabina habilitada. Si fallen les dues DDU i no es recuperen, mode socors.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 100.",!1),"s9000_cabina",A.m(l,l,l,l,l,!1,b6,m1,B.d,A.b([A.G(k3,g),A.G(k1,e0)],t1),"Missatge cabina habilitada i el tren no respon a les ordres: possible govern oblidat/trencat o commutador avariat. El document preveu tirar 16F50 al MA amb la cabina habilitada. Si manipulador o selector no s\xf3n a 0, tamb\xe9 16F52 \xd3rdenes de marcha. Si \xe9s necessari, mode socors.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 101.",!1),"s9000_fuita",A.m(l,l,l,l,l,!1,i6,a6,B.d,A.b([A.G("Entre cotxes / enganxalls",m2),A.G("En cotxe MB",m3),A.G("En remolc R",m4),A.G("En cotxe MA",m5),A.G("No localitzada",b7)],t1),"Localitza la fuita abans d\u2019escollir les aixetes i anul\xb7lacions. IOS218: TDP < 8 bar; IOS24/FE: TDP < 6,5 bar. L\u2019anul\xb7laci\xf3 dels press\xf2stats de m\xednima nom\xe9s pot estar activada en una semiunitat.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 88.",!1),m2,A.m(l,l,g,l,l,!1,m2,m6,B.d,B.f,"Fuita entre cotxes/enganxalls: gira a horitzontal les aixetes col\xb7laterals a la fuita per a\xefllar el tram. Ambdues parts queden alimentades pels dos compressors. Segons el document, aquest cas no requereix anul\xb7lar lla\xe7os. Comprova que la pressi\xf3 es recupera.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 89.",!1),"s9000_fuita_mb",A.m(l,l,b7,l,l,!1,m3,m6,B.d,B.f,"Fuita en MB: gira a horitzontal les aixetes col\xb7laterals per a\xefllar el tram. Al cotxe afectat, gira B17 del panell inferior lateral costat V1 i allibera les sirgues. En actuar B17 cal anul\xb7lar el lla\xe7 de tracci\xf3. No donis per normalitzat l\u2019a\xefllament en desapar\xe8ixer l\u2019av\xeds.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 89.",!1),"s9000_fuita_r",A.m(l,l,b7,l,l,!1,m4,m7,B.d,B.f,"Fuita en R: a\xeflla el tram amb les aixetes col\xb7laterals horitzontals. Gira B17 i allibera sirgues del cotxe afectat. Cal anul\xb7lar el lla\xe7 de tracci\xf3 i el lla\xe7 d\u2019Equip de fre perqu\xe8 la lectura de TDP \xe9s al remolc. Coordina les condicions amb CCM.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 90.",!1),"s9000_fuita_ma",A.m(l,l,b7,l,l,!1,m5,m7,B.d,B.f,"Fuita en MA: a\xeflla el tram amb les aixetes col\xb7laterals horitzontals. Gira B17 i allibera sirgues. Cal anul\xb7lar tracci\xf3, Equip de fre i press\xf2stat de la semiunitat afectada (A/B) des del remolc. Nom\xe9s es pot anul\xb7lar el press\xf2stat d\u2019una semiunitat.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 90.",!1),"s9000_remolcada",A.m(l,l,l,l,l,!1,k5,n2,B.d,A.b([A.G("Tren de socors",m8),A.G("Tren avariat",m9),A.G(n0,n1)],t1),"Remolcada: selecciona el tren sobre el qual s\u2019actua. El tren de socors ha de circular en ME i iniciar mitjan\xe7ant bloqueig telef\xf2nic centralitzat amb el tren que precedeix l\u2019avariat. No acoblar mai el\xe8ctricament.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 92.",!1),m8,A.m(l,l,l,l,l,!1,m8,n2,B.d,B.f,"Acosta\u2019t marxa a la vista a 1 metre. Anul\xb7la tracci\xf3 per eliminar fre de retenci\xf3. Avan\xe7a alternant punts 1 i 0 de tracci\xf3 i dona punt enrere per assegurar l\u2019acoblament. No acoblar el\xe8ctricament. Coordina totes les maniobres amb CCM i l\u2019altre tren.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 92.",!1),m9,A.m(l,l,l,l,l,!1,m9,n2,B.d,B.f,"Immobilitza amb estacionament; seccionadors a 0 a la testera d\u2019acoblament. Espera confirmaci\xf3 d\u2019acoblament. Segons l\u2019avaria, connecta o no pneum\xe0ticament amb les aixetes. Anul\xb7la tracci\xf3 per eliminar retenci\xf3. Circula amb manipulador a 0, home mort premut i mode de conducci\xf3, segons coordinaci\xf3 del remolc.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 92.",!1),n1,A.m(l,l,l,l,l,!1,n1,n3,B.d,B.f,"Prem el bot\xf3 de desacoblament del panell esquerre i, mentre el mantens, acciona breument el manipulador entre 1 i 0 de tracci\xf3. El tren retrocedeix lleugerament fent el desacoblament mec\xe0nic. El document tamb\xe9 preveu l\u2019operaci\xf3 marxa enrere. Coordina la maniobra i comprova el desacoblament.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 93.",!1),"s9000_termics",A.m(l,l,l,l,l,!1,n4,n8,B.d,A.b([A.G("MA",n5),A.G("MB",n6),A.G("R",n7)],t1),"Taules de t\xe8rmics: selecciona el tipus de cotxe. Identifica sempre cotxe i t\xe8rmic abans de l\u2019actuaci\xf3.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 84.",!1),n5,A.m(l,l,l,l,l,!1,n5,n9,B.d,B.f,"Taula original de t\xe8rmics del cotxe MA. Amplia la imatge per identificar la refer\xe8ncia.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 85.",!1),n6,A.m(l,l,l,l,l,!1,n6,o0,B.d,B.f,"Taula original de t\xe8rmics del cotxe MB. Amplia la imatge per identificar la refer\xe8ncia.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 86.",!1),"s9000_termics_r",A.m(l,l,l,l,l,!1,n7,o1,B.d,B.f,"Taula original de t\xe8rmics del cotxe R. Amplia la imatge per identificar la refer\xe8ncia.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 87.",!1),"s9000_esquema",A.m(l,l,l,l,l,!1,o2,o3,B.d,B.f,"Situaci\xf3 dels tiradors/intercomunicadors i localitzaci\xf3 d\u2019armaris de t\xe8rmics del S9000.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 67.",!1),o4,A.m(l,l,l,l,l,!1,o4,o5,B.d,B.f,"Resum original de maniobres i lla\xe7os segons la ubicaci\xf3 de la fuita. Els n\xfameros de la taula indiquen l\u2019ordre d\u2019actuaci\xf3; una X indica que no correspon.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 91.",!1),"s9000_menu_0",A.m(l,l,l,l,l,!1,o6,l,B.d,A.b([A.G("Convertidor auxiliar",k2),A.G("Compressor",i7),A.G("Fre el\xe8ctric",k6),A.G("Tracci\xf3 sense obertura disjuntors",d6),A.G("Pant\xf2graf",l3),A.G("Aire condicionat",l4),A.G("Videovigil\xe0ncia",l6),A.G("Anunciador / term\xf2metres",l8),A.G("DDU",b4),A.G(m0,b6)],t1),o7,!1),"s9000_menu_1",A.m(l,l,l,l,l,!1,o8,l,B.d,A.b([A.G("Una porta no tanca",c0),A.G("No selecciona costat",k8),A.G("No permet permissi\xf3 / obertura",k9),A.G("Rel\xe9 KM0",l0),A.G("Porta desbloquejada / EED",c4),A.G("Condemnar una porta",g9)],t1),"Portes",!1),"s9000_menu_2",A.m(l,l,l,l,l,!1,o9,l,B.d,A.b([A.G("Baixa pressi\xf3 TDP",a4),A.G("Fuita d\u2019aire",i6),A.G("Resum de lla\xe7os per fuita",o4),A.G("Fre de servei bloquejat",f0),A.G("Estacionament aplicat",o)],t1),p0,!1),"s9000_menu_3",A.m(l,l,l,l,l,!1,p1,l,B.d,A.b([A.G("Remolcada",k5),A.G(n0,n1),A.G("Esquema equips",o2),A.G("Taules de t\xe8rmics",n4),A.G("Tren Stop",a8),A.G(n,p)],t1),p2,!1),p3,A.m(l,l,l,l,l,!1,p3,l,B.d,A.b([A.G("L\xe0mines originals del manual",p4),A.G(o7,o6),A.G("Portes",o8),A.G(p0,o9),A.G(p2,p1)],t1),"Avaries i procediments S9000",!1),"s9000_lamines",A.m(l,l,l,l,l,!1,p4,l,B.d,A.b([A.G("P\xe0gina 5",p5),A.G("P\xe0gina 67",p6),A.G("P\xe0gina 68",p7),A.G("P\xe0gina 69",p8),A.G("P\xe0gina 70",p9),A.G("P\xe0gina 71",q0),A.G("P\xe0gina 72",q1),A.G("P\xe0gina 73",q2),A.G("P\xe0gina 74",q3),A.G("P\xe0gina 76",q4),A.G("P\xe0gina 77",q5),A.G("P\xe0gina 78",q6),A.G("P\xe0gina 79",q7),A.G("P\xe0gina 80",q8),A.G("P\xe0gina 81",q9),A.G("P\xe0gina 82",r0),A.G("P\xe0gina 83",r1),A.G("P\xe0gina 84",r2),A.G("P\xe0gina 85",r3),A.G("P\xe0gina 86",r4),A.G("P\xe0gina 87",r5),A.G("P\xe0gina 88",r6),A.G("P\xe0gina 89",r7),A.G("P\xe0gina 90",r8),A.G("P\xe0gina 91",r9),A.G("P\xe0gina 92",s0),A.G("P\xe0gina 93",s1),A.G("P\xe0gina 94",s2),A.G("P\xe0gina 95",s3),A.G("P\xe0gina 96",s4),A.G("P\xe0gina 97",s5),A.G("P\xe0gina 98",s6),A.G("P\xe0gina 99",s7),A.G("P\xe0gina 100",s8),A.G("P\xe0gina 101",s9),A.G("P\xe0gina 102",t0)],t1),"L\xe0mines originals del manual S9000",!1),"s9000_lamina_5",A.m(l,l,l,l,l,!1,p5,b8,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 5. Amplia la imatge per consultar-la.",!1),"s9000_lamina_67",A.m(l,l,l,l,l,!1,p6,o3,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 67. Amplia la imatge per consultar-la.",!1),"s9000_lamina_68",A.m(l,l,l,l,l,!1,p7,h6,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 68. Amplia la imatge per consultar-la.",!1),"s9000_lamina_69",A.m(l,l,l,l,l,!1,p8,d5,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 69. Amplia la imatge per consultar-la.",!1),"s9000_lamina_70",A.m(l,l,l,l,l,!1,p9,k4,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 70. Amplia la imatge per consultar-la.",!1),"s9000_lamina_71",A.m(l,l,l,l,l,!1,q0,"assets/resolucion/s9000_manual_p071.jpg",B.d,B.f,"L\xe0mina original del manual, p\xe0g. 71. Amplia la imatge per consultar-la.",!1),"s9000_lamina_72",A.m(l,l,l,l,l,!1,q1,f5,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 72. Amplia la imatge per consultar-la.",!1),"s9000_lamina_73",A.m(l,l,l,l,l,!1,q2,j3,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 73. Amplia la imatge per consultar-la.",!1),"s9000_lamina_74",A.m(l,l,l,l,l,!1,q3,k7,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 74. Amplia la imatge per consultar-la.",!1),"s9000_lamina_76",A.m(l,l,l,l,l,!1,q4,j4,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 76. Amplia la imatge per consultar-la.",!1),"s9000_lamina_77",A.m(l,l,l,l,l,!1,q5,"assets/resolucion/s9000_manual_p077.jpg",B.d,B.f,"L\xe0mina original del manual, p\xe0g. 77. Amplia la imatge per consultar-la.",!1),"s9000_lamina_78",A.m(l,l,l,l,l,!1,q6,l1,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 78. Amplia la imatge per consultar-la.",!1),"s9000_lamina_79",A.m(l,l,l,l,l,!1,q7,l2,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 79. Amplia la imatge per consultar-la.",!1),"s9000_lamina_80",A.m(l,l,l,l,l,!1,q8,"assets/resolucion/s9000_manual_p080.jpg",B.d,B.f,"L\xe0mina original del manual, p\xe0g. 80. Amplia la imatge per consultar-la.",!1),"s9000_lamina_81",A.m(l,l,l,l,l,!1,q9,"assets/resolucion/s9000_manual_p081.jpg",B.d,B.f,"L\xe0mina original del manual, p\xe0g. 81. Amplia la imatge per consultar-la.",!1),"s9000_lamina_82",A.m(l,l,l,l,l,!1,r0,h,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 82. Amplia la imatge per consultar-la.",!1),"s9000_lamina_83",A.m(l,l,l,l,l,!1,r1,j7,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 83. Amplia la imatge per consultar-la.",!1),"s9000_lamina_84",A.m(l,l,l,l,l,!1,r2,n8,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 84. Amplia la imatge per consultar-la.",!1),"s9000_lamina_85",A.m(l,l,l,l,l,!1,r3,n9,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 85. Amplia la imatge per consultar-la.",!1),"s9000_lamina_86",A.m(l,l,l,l,l,!1,r4,o0,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 86. Amplia la imatge per consultar-la.",!1),"s9000_lamina_87",A.m(l,l,l,l,l,!1,r5,o1,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 87. Amplia la imatge per consultar-la.",!1),"s9000_lamina_88",A.m(l,l,l,l,l,!1,r6,a6,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 88. Amplia la imatge per consultar-la.",!1),"s9000_lamina_89",A.m(l,l,l,l,l,!1,r7,m6,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 89. Amplia la imatge per consultar-la.",!1),"s9000_lamina_90",A.m(l,l,l,l,l,!1,r8,m7,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 90. Amplia la imatge per consultar-la.",!1),"s9000_lamina_91",A.m(l,l,l,l,l,!1,r9,o5,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 91. Amplia la imatge per consultar-la.",!1),"s9000_lamina_92",A.m(l,l,l,l,l,!1,s0,n2,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 92. Amplia la imatge per consultar-la.",!1),"s9000_lamina_93",A.m(l,l,l,l,l,!1,s1,n3,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 93. Amplia la imatge per consultar-la.",!1),"s9000_lamina_94",A.m(l,l,l,l,l,!1,s2,a9,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 94. Amplia la imatge per consultar-la.",!1),"s9000_lamina_95",A.m(l,l,l,l,l,!1,s3,d7,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 95. Amplia la imatge per consultar-la.",!1),"s9000_lamina_96",A.m(l,l,l,l,l,!1,s4,"assets/resolucion/s9000_manual_p096.jpg",B.d,B.f,"L\xe0mina original del manual, p\xe0g. 96. Amplia la imatge per consultar-la.",!1),"s9000_lamina_97",A.m(l,l,l,l,l,!1,s5,l5,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 97. Amplia la imatge per consultar-la.",!1),"s9000_lamina_98",A.m(l,l,l,l,l,!1,s6,l7,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 98. Amplia la imatge per consultar-la.",!1),"s9000_lamina_99",A.m(l,l,l,l,l,!1,s7,l9,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 99. Amplia la imatge per consultar-la.",!1),s8,A.m(l,l,l,l,l,!1,s8,"assets/resolucion/s9000_manual_p100.jpg",B.d,B.f,"L\xe0mina original del manual, p\xe0g. 100. Amplia la imatge per consultar-la.",!1),s9,A.m(l,l,l,l,l,!1,s9,m1,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 101. Amplia la imatge per consultar-la.",!1),t0,A.m(l,l,l,l,l,!1,t0,g7,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 102. Amplia la imatge per consultar-la.",!1)],t.N,t.bg)})
+return A.a5(["Fre de servei bloquejat","s9000_pregunta_fre","Govern / selector de marxa","s9000_govern","Avaria DDU","s9000_ddu","Cabina habilitada","s9000_cabina","Avaria cadena de tracci\xf3 (IOS86)","s9000_traccio","Avaries i procediments S9000","s9000_menu_avaries","Tirador d\u2019alarma","inicio_no_desfrena_s9000","Bolet d\u2019emerg\xe8ncia","pregunta_seta_s9000","Home mort","pregunta_hm_s9000","ATP (sense codis)","pregunta_atp_s9000","STOP (Tren Stop activat)","pregunta_tren_stop_s9000","Aire (Baixa pressi\xf3 TDP)","pregunta_tdp_s9000","Estacionaments aplicats","pregunta_estacionamiento_s9000","Portes obertes","inicio_no_tracciona_s9000","EED (Tirador verd fora de posici\xf3)","pregunta_eed_s9000","Tensi\xf3 nul\xb7la (0V)","pregunta_tension_s9000","Disjuntor (Obert)","pregunta_disyuntores_s9000","Connexi\xf3 del mode especial","inicio_modo_especial_s9000","Connexi\xf3 del mode socors","inicio_modo_socorro","Posada en marxa (P.A.)","inicio_puesta_marcha","Reset de bateries (final de l\xednia)","inicio_reset_baterias","Desconnexi\xf3 (portes tancades)","inicio_desc_cerradas","Desconnexi\xf3 (portes obertes)","inicio_desc_abiertas","Introduir n\xfamero de tren","inicio_num_tren"],q,q)})
+s($,"bir","aQ1",()=>{var q="inicio_no_desfrena_s9000",p="inicio_tirador",o="pregunta_estacionamiento_s9000",n="Tirador d\u2019alarma",m="assets/resolucion/s9000_tirador_alarma.jpg",l=null,k="pregunta_seta_s9000",j="procedimiento_seta_s9000",i="pregunta_atp_s9000",h="assets/resolucion/s9000_manual_p082.jpg",g="s9000_comprova",f="pregunta_hm_s9000",e="procedimiento_hm_s9000",d="pregunta_tdp_s9000",c="s9000_mode_absent",b="procedimiento_atp_s9000",a="assets/resolucion/s9000_reset_tbs.jpg",a0="pregunta_codis_recuperats_s9000",a1="fi_atp_recuperat_s9000",a2="procedimiento_m25_s9000",a3="s9000_aire",a4="pregunta_tren_stop_s9000",a5="assets/resolucion/s9000_manual_p088.jpg",a6="procedimiento_tren_stop_s9000",a7="assets/resolucion/s9000_manual_p094.jpg",a8="inicio_b19",a9="fin_no_desfrena_ccm_s9000",b0="Estacionaments aplicats",b1="assets/resolucion/s9000_estacionamiento.jpg",b2="No s\u2019ha identificat la causa. Comunica-ho al CCM i segueix les seves indicacions.",b3="assets/resolucion/s9000_manual_p005.jpg",b4="inicio_no_tracciona_s9000",b5="inicio_lazo_puertas",b6="pregunta_estacionamiento_trac_s9000",b7="assets/resolucion/s9000_lazo_puertas.jpg",b8="pregunta_eed_s9000",b9="procedimiento_eed_s9000",c0="pregunta_tension_s9000",c1="assets/resolucion/s9000_desbloqueo_puertas.jpg",c2="s9000_eed_via",c3="s9000_eed_andana",c4="s9000_pendent",c5="procedimiento_tension_nula_s9000",c6="pregunta_disyuntores_s9000",c7="assets/resolucion/s9000_voltimetro_manometro.jpg",c8="procedimiento_disyuntores_s9000",c9="fin_no_tracciona_ccm_s9000",d0="s9000_disj_ok",d1="assets/resolucion/s9000_manual_p069.jpg",d2="assets/resolucion/s9000_manual_p095.jpg",d3="inicio_menu_modos",d4="inicio_modo_especial_s9000",d5="inicio_modo_socorro",d6="inicio_menu_operativa_1",d7="inicio_puesta_marcha",d8="inicio_menu_operativa_2",d9="inicio_reset_baterias",e0="inicio_menu_operativa_3",e1="inicio_menu_operativa_desc_cerradas",e2="inicio_num_tren",e3="inicio_desc_cerradas",e4="inicio_desc_abiertas",e5="inicio_freno_servicio",e6="procedimiento_freno_16f70",e7="assets/resolucion/s9000_16f70_freno_servicio.jpg",e8="s9000_fre_ok",e9="fin_freno_servicio",f0="assets/resolucion/s9000_manual_p072.jpg",f1="assets/resolucion/s9000_panel_neumatico_auxiliar.jpg",f2="pregunta_confirma_b19_s9000",f3="fin_freno_liberado_s9000",f4="inicio_b17",f5="paso2_b17_sirgas",f6="assets/resolucion/s9000_sirgas_estacionamiento.jpg",f7="s9000_b17_ok",f8="fin_modo_especial_s9000",f9="assets/resolucion/s9000_modo_especial.jpg",g0="paso2_modo_socorro",g1="fin_modo_socorro",g2="assets/resolucion/s9000_manual_p102.jpg",g3="s9000_porta_no_tanca",g4="s9000_condemnar",g5="paso2_tirador",g6="fin_tirador",g7="s9000_tirador_condicions",g8="paso2_puesta_marcha",g9="fin_puesta_marcha",h0="fin_reset_baterias",h1="assets/resolucion/s9000_manual_p068.jpg",h2="fin_desc_cerradas",h3="assets/resolucion/s9000_desconexion_1.jpg",h4="assets/resolucion/s9000_desconexion_2.jpg",h5="fin_desc_abiertas",h6="fin_num_tren",h7="s9000_resolt",h8="s9000_govern_accio",h9="s9000_cabina",i0="Comprovar recuperaci\xf3",i1="Mode especial autoritzat",i2="s9000_pregunta_fre",i3="s9000_fuita",i4="s9000_compressor",i5="s9000_fre_b4",i6="s9000_fre_b4_ok",i7="s9000_fre_b7",i8="s9000_fre_final_ok",i9="s9000_b17_final",j0="assets/resolucion/s9000_manual_p073.jpg",j1="assets/resolucion/s9000_manual_p076.jpg",j2="assets/resolucion/s9000_detall_p080.jpg",j3="s9000_tirador_ok",j4="assets/resolucion/s9000_manual_p083.jpg",j5="s9000_tirador_no_reposa",j6="s9000_disj_alternatives",j7="s9000_disj_final",j8="Mode socors acordat",j9="s9000_convertidor",k0="Comprovar resultat",k1="assets/resolucion/s9000_manual_p070.jpg",k2="s9000_remolcada",k3="s9000_fre_electric",k4="s9000_traccio",k5="assets/resolucion/s9000_manual_p074.jpg",k6="s9000_portes_seleccio",k7="s9000_portes_permis",k8="s9000_km0",k9="assets/resolucion/s9000_manual_p078.jpg",l0="assets/resolucion/s9000_manual_p079.jpg",l1="s9000_pantograf",l2="s9000_hvac",l3="assets/resolucion/s9000_manual_p097.jpg",l4="s9000_video",l5="assets/resolucion/s9000_manual_p098.jpg",l6="s9000_anunciador",l7="assets/resolucion/s9000_manual_p099.jpg",l8="s9000_ddu",l9="Cabina habilitada",m0="assets/resolucion/s9000_manual_p101.jpg",m1="s9000_fuita_enganxall",m2="s9000_fuita_mb",m3="s9000_fuita_r",m4="s9000_fuita_ma",m5="assets/resolucion/s9000_manual_p089.jpg",m6="assets/resolucion/s9000_manual_p090.jpg",m7="s9000_remolc_socors",m8="s9000_remolc_avariat",m9="Desacoblament",n0="s9000_desacoblament",n1="assets/resolucion/s9000_manual_p092.jpg",n2="assets/resolucion/s9000_manual_p093.jpg",n3="s9000_termics",n4="s9000_termics_ma",n5="s9000_termics_mb",n6="s9000_termics_r",n7="assets/resolucion/s9000_manual_p084.jpg",n8="assets/resolucion/s9000_manual_p085.jpg",n9="assets/resolucion/s9000_manual_p086.jpg",o0="assets/resolucion/s9000_manual_p087.jpg",o1="s9000_esquema",o2="assets/resolucion/s9000_manual_p067.jpg",o3="s9000_resum_fuites",o4="assets/resolucion/s9000_manual_p091.jpg",o5="s9000_menu_0",o6="Equips i serveis",o7="s9000_menu_1",o8="s9000_menu_2",o9="Aire i frens",p0="s9000_menu_3",p1="Remolcada i consulta",p2="s9000_menu_avaries",p3="s9000_lamines",p4="s9000_lamina_5",p5="s9000_lamina_67",p6="s9000_lamina_68",p7="s9000_lamina_69",p8="s9000_lamina_70",p9="s9000_lamina_71",q0="s9000_lamina_72",q1="s9000_lamina_73",q2="s9000_lamina_74",q3="s9000_lamina_76",q4="s9000_lamina_77",q5="s9000_lamina_78",q6="s9000_lamina_79",q7="s9000_lamina_80",q8="s9000_lamina_81",q9="s9000_lamina_82",r0="s9000_lamina_83",r1="s9000_lamina_84",r2="s9000_lamina_85",r3="s9000_lamina_86",r4="s9000_lamina_87",r5="s9000_lamina_88",r6="s9000_lamina_89",r7="s9000_lamina_90",r8="s9000_lamina_91",r9="s9000_lamina_92",s0="s9000_lamina_93",s1="s9000_lamina_94",s2="s9000_lamina_95",s3="s9000_lamina_96",s4="s9000_lamina_97",s5="s9000_lamina_98",s6="s9000_lamina_99",s7="s9000_lamina_100",s8="s9000_lamina_101",s9="s9000_lamina_102",t0=t.d
+return A.a5([q,A.m(l,o,p,n,l,!0,q,m,B.d,B.f,"Tens un altaveu que parpelleja a la pantalla d\u2019alarmes de la DDU indicant un tirador d\u2019alarma accionat?",!1),k,A.m(l,i,j,"Bolet d\u2019emerg\xe8ncia",l,!0,k,h,B.d,B.f,"El bolet d\u2019emerg\xe8ncia est\xe0 accionat en alguna testera?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 82.",!1),j,A.m(l,l,g,l,l,!1,j,"assets/resolucion/s9000_seta_emergencia.jpg",B.d,B.f,"Rearma el bolet girant-lo en sentit antihorari. Comprova tamb\xe9 el bolet de la testera oposada. El bolet aplica fre d\u2019emerg\xe8ncia i d\u2019estacionament; afluixa l\u2019estacionament despr\xe9s de rearmar-lo. Pot apar\xe8ixer IOS14.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 82.",!1),f,A.m(l,d,e,"Home mort",l,!0,f,l,B.d,B.f,"Fa m\xe9s de 5 segons que no prems l\u2019home mort?",!1),e,A.m(l,l,l,l,l,!1,e,l,B.d,B.f,"Torna a pr\xe9mer el dispositiu de seguretat del manipulador per rearmar el lla\xe7 d\u2019emerg\xe8ncia.",!1),i,A.m(l,l,l,l,l,!1,i,a,B.d,A.b([A.J("No hi ha mode de conducci\xf3",c),A.J("No rep codis ATP",b),A.J("Mode i codis correctes",f)],t0),"Quin estat mostra l\u2019equip de conducci\xf3?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 5.",!1),b,A.m(l,l,a0,l,l,!1,b,a,B.d,B.f,"RESET TBS: reinicia l'equip ATC. Gira el comandament RESET TBS; el polsador torna a la seva posici\xf3 original.",!1),a0,A.m(l,a2,a1,l,l,!0,a0,l,B.d,B.f,"Has recuperat els codis ATP?",!1),a1,A.m(l,l,g,l,l,!1,a1,l,B.d,B.f,"Codis ATP recuperats. Comprova tamb\xe9 el mode de conducci\xf3 i la resoluci\xf3 del s\xedmptoma abans de donar l\u2019avaria per resolta.",!1),a2,A.m(l,l,l,l,l,!1,a2,l,B.d,B.f,"Sol\xb7licita autoritzaci\xf3 al CCM per circular en Manual +25 (M+25).",!1),d,A.m(l,a4,a3,"Aire (Baixa pressi\xf3 TDP)",l,!0,d,a5,B.d,B.f,"La TDP t\xe9 pressi\xf3 baixa? IOS218 indica TDP < 8 bar; IOS24 i FE per press\xf2stat de m\xednima, TDP < 6,5 bar.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 88.",!1),a4,A.m(l,q,a6,"STOP (Tren Stop activat)",l,!0,a4,"assets/resolucion/s9000_tren_stop_cesares.jpg",B.d,B.f,"Tens un avis de STOP (Tren Stop activat) a la DDU?",!1),a6,A.m(l,l,g,l,l,!1,a6,a7,B.d,B.f,"Rearma el Tren Stop amb TR al CESARES. A L4 el document indica que no est\xe0 instal\xb7lat com a sistema de seguretat, per\xf2 poden existir balises que l\u2019activin per error. L\u2019app anterior tamb\xe9 recull REBA per al depassament autoritzat; no \xe9s el bot\xf3 de rearme TR.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 94.",!1),o,A.m(l,a9,a8,b0,l,!0,o,b1,B.d,B.f,"T\u2019apareix el fre d\u2019estacionament aplicat a la DDU (pictograma 'P') i no aconsegueixes afluixar-lo des de la botonera verda?",!1),a9,A.m(l,l,l,l,l,!1,a9,b3,B.d,B.f,b2,!1),b4,A.m(l,b6,b5,"Portes obertes",l,!0,b4,b7,B.d,B.f,"Avaria del lla\xe7 de tracci\xf3:\nEn pr\xe9mer l\u2019home mort, l\u2019agulla de fre baixa a 0 per\xf2 el tren NO tracciona.\n\n\u26a0\ufe0f IMPORTANT: Despr\xe9s de solucionar l\u2019avaria, \xe9s obligatori passar el manipulador MARXA-FRE per '0' per poder recuperar la tracci\xf3.\n\nLa icona de portes a la DDU \xe9s GRISA, indicant portes obertes?",!1),b6,A.m(l,b8,a8,b0,l,!0,b6,b1,B.d,B.f,"T\u2019indica estacionament aplicat i impedeix la tracci\xf3?",!1),b8,A.m(l,c0,b9,"EED (Tirador verd fora de posici\xf3)",l,!0,b8,c1,B.d,B.f,"Tens algun tirador verd de desbloqueig de portes fora de posici\xf3 o alguna porta desbloquejada manualment?",!1),b9,A.m(l,l,l,l,l,!1,b9,c1,B.d,A.b([A.J("Costat via",c2),A.J("Costat andana",c3),A.J("Costat no identificat",c4)],t0),"Porta desbloquejada amb tirador verd (EED): identifica el costat.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 80.",!1),c0,A.m(l,c6,c5,"Tensi\xf3 nul\xb7la (0V)",l,!0,c0,c7,B.d,B.f,"Tens tensi\xf3 nul\xb7la (0V) al volt\xedmetre?",!1),c5,A.m(l,l,l,l,l,!1,c5,c7,B.d,B.f,"Comunica al CCM la manca de tensi\xf3 a la caten\xe0ria.\n\nNo intentis recuperar la tracci\xf3 fins que es confirmi que hi ha tensi\xf3 disponible i que el tren est\xe0 autoritzat a continuar.",!1),c6,A.m(l,c9,c8,"Disjuntor (Obert)",l,!0,c6,"assets/resolucion/s9000_disyuntores.jpg",B.d,B.f,"Els disjuntors principals estan oberts en una o en totes dues unitats?",!1),c8,A.m(l,l,d0,l,l,!1,c8,d1,B.d,B.f,"IOS112/113: passa manipulador, selector i govern per 0. Torna a posar el selector ENDAV. i comprova si tanquen. Si no, amb govern CON i manipulador a 0, prem CONNEXI\xd3 DISJUNTOR a la part inferior de DDU1 segons el document. No accionis la clau de posada a terra. Passa MARXA-FRE per 0 abans de recuperar tracci\xf3.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 69.",!1),c9,A.m(l,l,l,l,l,!1,c9,d2,B.d,B.f,b2,!1),d3,A.m(l,d5,d4,"Connexi\xf3 del mode especial",l,!0,d3,l,B.d,B.f,"Necessites connectar el mode especial (M.E.)?",!1),d6,A.m(l,d8,d7,"Posada en marxa (P.A.)",l,!0,d6,l,B.d,B.f,"Vols fer la posada en marxa autom\xe0tica (P.A.)?",!1),d8,A.m(l,e0,d9,"Reset de bateries (final de l\xednia)",l,!0,d8,l,B.d,B.f,"Necessites fer un reset de bateries a final de l\xednia?",!1),e0,A.m(l,e2,e1,l,l,!0,e0,l,B.d,B.f,"Far\xe0s una desconnexi\xf3 del tren?",!1),e1,A.m(l,e4,e3,"Desconnexi\xf3 (portes tancades)",l,!0,e1,l,B.d,B.f,"La desconnexi\xf3 \xe9s amb les portes tancades?",!1),e5,A.m(l,l,e6,l,l,!1,e5,e7,B.d,B.f,"Fre de servei aplicat i bloquejat: identifica el cotxe a la DDU (IOS207\u2013211). Pot haver-hi forta olor de sabata o fum sota el tren. Aquesta fitxa no correspon a baixa pressi\xf3 TDP sense diagn\xf2stic de fre bloquejat. Al cotxe identificat, obre l\u2019armari de t\xe8rmics amb la clau Southco.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 72.",!1),e6,A.m(l,l,e8,l,l,!1,e6,e7,B.d,B.f,"Al cotxe afectat: baixa 16F70 CONTROL DE FRENO PNEUMATICO i prem el bot\xf3 vermell 30S1 ANULACI\xd3 FRE DE SERVEI. Amb la coordinaci\xf3 del CCM, anul\xb7la els lla\xe7os d\u2019Equip de fre i de Tracci\xf3. En baixar 16F70 es perd la lectura de pressi\xf3 de fre de la DDU: no la utilitzis per donar per confirmat el desfrenament.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 72.",!1),e9,A.m(l,l,l,l,l,!1,e9,f0,B.d,B.f,"Desfrenament confirmat. Es mantenen les condicions d\u2019anul\xb7laci\xf3 dels lla\xe7os d\u2019Equip de fre i de Tracci\xf3. Comunica al CCM els equips a\xefllats i les maniobres; no equival a recuperar marxa normal.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 72.",!1),"inicio_b19",A.m(l,l,"fin_b19",l,l,!1,a8,f1,B.d,B.f,"A\xefllament per ELECTROV\xc0LVULA B19 (Quadrat vermell):\n\n1. A la caixa de passatge, localitza el panell pneum\xe0tic auxiliar senyalitzat amb el pictograma d\u2019estacionament o pant\xf2graf i obre\u2019l amb la clau Southco.\n2. Busca l\u2019electrov\xe0lvula B19.",!1),"fin_b19",A.m(l,l,f2,l,l,!1,"fin_b19",f1,B.d,B.f,"Gira B19 a la posici\xf3 A (Anul\xb7lada). C significa Connectada. Comprova la indicaci\xf3 d\u2019estacionament i el resultat de la maniobra.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 73.",!1),f2,A.m(l,f4,f3,l,l,!0,f2,b1,B.d,B.f,"S\u2019ha apagat l\u2019av\xeds de fre d\u2019estacionament despr\xe9s d\u2019utilitzar la B19?",!1),"inicio_b17",A.m(l,l,f5,l,l,!1,f4,f1,B.d,B.f,"A\xefllament mec\xe0nic per AIXETA B17 + SIRGUES (Quadrat vermell):\n\n1. Localitza l\u2019armari del panell pneum\xe0tic auxiliar i obre\u2019l amb la clau Southco.\n2. Gira l\u2019aixeta B17 per buidar el circuit d\u2019aire i a\xefllar-lo.",!1),f5,A.m(l,l,"fin_b17",l,l,!1,f5,f6,B.d,B.f,"3. Ves al cotxe MB1, obre l\u2019armari situat davant de l\u2019extintor i agafa el tirador (clau en forma de T) del material d\u2019emerg\xe8ncia.",!1),"fin_b17",A.m(l,l,f7,l,l,!1,"fin_b17",f6,B.d,B.f,"Estira completament les quatre sirgues del cotxe afectat amb l\u2019estri i comprova l\u2019alliberament de l\u2019estacionament. Despr\xe9s d\u2019actuar B17 + sirgues cal anul\xb7lar el LLA\xc7 DE TRACCI\xd3, coordinat amb el CCM.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 73.",!1),f3,A.m(l,l,l,l,l,!1,f3,"assets/resolucion/s9000_detall_p073.jpg",B.d,B.f,"Alliberament per B19 confirmat. Informa el CCM i conserva les condicions de l\u2019actuaci\xf3. Aquest resultat no normalitza altres a\xefllaments ni autoritza per si mateix la marxa.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 73.",!1),d4,A.m(l,l,f8,l,l,!1,d4,f9,B.d,B.f,"Connexi\xf3 del mode especial S9000:\n\n1. Desconnecta l\u2019equip ATC introduint i girant la clau M.E. a DES.\n2. Posa el manipulador M/F a 0.\n3. Selector de marxes a 0.\n4. Clau de govern a 0.\n5. Comprova que el llum M.E. estigui enc\xe8s.",!1),f8,A.m("\u26a0\ufe0f ATENCI\xd3: No el connectis sense autoritzaci\xf3 del CCM.",l,l,l,l,!1,f8,f9,B.d,B.f,"6. Connecta la clau de govern, posa el selector endavant i treu l\u2019estacionament.\n\nRecorda: velocitat m\xe0xima de 25 km/h amb passatge (35 km/h sense passatge). Si no veus la velocitat al veloc\xedmetre, busca-la a MANT -> CXA NEGRA -> BB01/BB02.",!1),d5,A.m(l,l,g0,l,l,!1,d5,"assets/resolucion/s9000_lazos_anulacion.jpg",B.d,B.f,"Av\xeds de mode socors / RIOM KO o p\xe8rdua de les dues DDU de la mateixa cabina. Amb govern CON, selecciona sentit de marxa i mode de conducci\xf3 i prem MODE SOCORS. Coordina l\u2019actuaci\xf3 amb CCM.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 102.",!1),g0,A.m(l,l,g1,l,l,!1,g0,"assets/resolucion/s9000_detall_p102.jpg",B.d,B.f,"Espera 40 segons o fins que tanquin els disjuntors. Afluixa el fre d\u2019estacionament. Pant\xf2grafs, convertidors, compressors, enllumenat i AACC es connecten autom\xe0ticament; els compressors funcionen autom\xe0ticament.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 102.",!1),g1,A.m(l,l,l,l,l,!1,g1,g2,B.d,B.f,"Mant\xe9n premut l\u2019home mort 3 segons abans de traccionar. El manipulador no modula: tracci\xf3 al 75 % i fre \xfanicament pneum\xe0tic al 100 %. Velocitat limitada a 40 km/h. La informaci\xf3 de DDU i volt\xedmetre pot ser err\xf2nia. L\u2019app anterior recull desconnexi\xf3 normalitzant el bot\xf3 i esperant 20 segons; \xe9s informaci\xf3 addicional que no figura a la p\xe0g. 102.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 102.",!1),b5,A.m(l,l,l,l,l,!1,b5,b7,B.d,A.b([A.J("Porta tancada i av\xeds normalitzat",g),A.J("Continua oberta / DDU marca oberta",g3),A.J("Tirador EED accionat",b9),A.J("Cal condemnar una porta",g4)],t0),"Porta no tanca: identifica cotxe i porta a la DDU i comprova les c\xe0meres. Prova un nou cicle d\u2019obertura/tancament. Si no es resol, agafa claus i walkie i comprova la guia; retira un possible objecte i torna a provar. Conserva la comprovaci\xf3 de tancament i enclavament i passa MARXA-FRE per 0 despr\xe9s de normalitzar.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 76.",!1),"inicio_tirador",A.m(l,l,g5,l,l,!1,p,m,B.d,B.f,"Abans de gestionar el tirador: segons el manual (p\xe0g. 83), si s\u2019acciona en marxa cal continuar fins a la seg\xfcent estaci\xf3 i rearmar estacionat a l\u2019andana; aturar-se al t\xfanel obre el lla\xe7. En arrencar d\u2019estaci\xf3, actua abans de superar 15 km/h o aproximadament 45 m.\n\nGesti\xf3 del tirador d\u2019alarma S9000:\n\n1. Utilitza el micr\xf2fon: prem el bot\xf3 PTT per parlar i deixa\u2019l anar per escoltar.\n2. Ves a la pantalla d\u2019alarmes de la DDU: hi veur\xe0s un altaveu que parpelleja al cotxe afectat.\n3. Utilitza la icona de la c\xe0mera per veure el passatger.",!1),"paso2_tirador",A.m(l,l,g6,l,l,!1,g5,"assets/resolucion/s9000_intercomunicador.jpg",B.d,B.f,"Si trigues a pr\xe9mer el PTT, la trucada es desviar\xe0 al CCM i veur\xe0s el pilot blau o el missatge 'INTERCOM. ACTIVO' a la r\xe0dio. Mentre continu\xef aix\xed, no podr\xe0s comunicar-te amb el CCM.\n\nPrem la tecla 5 o la fletxa, segons la composici\xf3, per NORMALITZAR i alliberar el radiotel\xe8fon. Aix\xf2 no recupera la conversa amb el passatger.",!1),"fin_tirador",A.m(l,l,g7,l,l,!1,g6,m,B.d,B.f,"4. Despr\xe9s de rebre la informaci\xf3, finalitza la comunicaci\xf3 prement 'ANU' al CESARES. Un cop anul\xb7lada, la comunicaci\xf3 amb aquell intercomunicador no es pot recuperar.\n5. Si hi ha m\xe9s tiradors actius, at\xe9n-los tots seguint la mateixa seq\xfc\xe8ncia.\n6. Informa el CCM del que ha passat.\n7. Rearma el tirador des de la pantalla d\u2019alarmes de la DDU o presencialment amb la clau de quadradet.\n\nSi surts de la cabina, deixa-la tancada i emporta\u2019t la clau de govern, la clau de quadradet i el walkie.",!1),d7,A.m(l,l,g8,l,l,!1,d7,"assets/resolucion/s9000_puesta_marcha_1.jpg",B.d,B.f,"Posada en marxa S9000:\n\n1. Prem el bot\xf3 f\xedsic de connexi\xf3 de bateries.\n2. Espera que el sistema inform\xe0tic de les DDU es carregui del tot.",!1),g8,A.m(l,l,g9,l,l,!1,g8,"assets/resolucion/s9000_puesta_marcha_2.jpg",B.d,B.f,"3. A la DDU, prem la bandera verda 'PA' (posada autom\xe0tica).\n4. Observa com les icones passen de gris a groc p\xe0l\xb7lid, indicant la connexi\xf3 (pant\xf2grafs, convertidors, compressors, il\xb7luminaci\xf3 i HVAC).",!1),g9,A.m(l,l,l,l,l,!1,g9,"assets/resolucion/s9000_puesta_marcha_3.jpg",B.d,B.f,"5. Verifica la pressi\xf3 de TDP al man\xf2metre: si \xe9s baixa (< 8.5 bar), espera que el compressor carregui aire fins a la zona verda (8.5 - 10 bar).\n6. Posa la clau de govern, el selector endavant i treu l\u2019estacionament.\n\n(Av\xeds: Si apareix IOS 216, indica que algun equip b\xe0sic no est\xe0 operatiu).",!1),d9,A.m(l,l,h0,l,l,!1,d9,h1,B.d,B.f,"Reset incloent bateries, sol\xb7licitat/coordinat amb Portacotxeres. Preferentment a final de l\xednia o via de maniobra pel risc de no reconnectar. A DDU1 \u2192 PMA, desconnecta autom\xe0ticament i espera que tots els equips estiguin en gris. Amb govern a 0, prem DESCONNEXI\xd3 BATERIES a DDU2 i espera que acabi el proc\xe9s.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 68.",!1),h0,A.m(l,l,g,l,l,!1,h0,h1,B.d,B.f,"Prem CONNEXI\xd3 BATERIES a la columna dreta. Atenci\xf3: les portes es tanquen lentament. Espera la c\xe0rrega de les DDU; a PMA connecta autom\xe0ticament i espera els equips. Selecciona govern CON, selector ENDAV. i mode de conducci\xf3. Ordre manual: bateria \u2192 pant\xf2graf \u2192 convertidor \u2192 compressor \u2192 enllumenat \u2192 aire; desconnexi\xf3 en ordre invers.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 68.",!1),e3,A.m(l,l,h2,l,l,!1,e3,h3,B.d,B.f,"Desconnexi\xf3 amb les portes tancades:\n\n1. A DDU -> Posada en marxa -> prem desconnexi\xf3 autom\xe0tica.\n2. Selecciona a la pantalla el costat de portes per sortir.\n3. Obre la porta de cortesia prement el bot\xf3 verd situat a la mateixa porta.",!1),h2,A.m(l,l,l,l,l,!1,h2,h4,B.d,B.f,"4. Posa el manipulador i el selector a 0, i retira la clau de govern.\n5. Surt per la porta de cortesia i prem el bot\xf3 exterior de tancament.\n\nEl tren detectar\xe0 la sortida i desconnectar\xe0 les bateries.",!1),e4,A.m(l,l,h5,l,l,!1,e4,h3,B.d,B.f,"Desconnexi\xf3 amb les portes obertes:\n\n1. A DDU -> Posada en marxa -> prem desconnexi\xf3 autom\xe0tica.\n2. Selecciona l\u2019obertura del tren per tots dos costats.",!1),h5,A.m(l,l,l,l,l,!1,h5,h4,B.d,B.f,"3. Posa el manipulador i el selector a 0, i retira la clau de govern.\n4. Prem f\xedsicament el bot\xf3 vermell de desconnexi\xf3 de bateries al panell lateral.",!1),"inicio_num_tren",A.m(l,l,h6,l,l,!1,e2,"assets/resolucion/s9000_numero_circulacion_1.jpg",B.d,B.f,"Introduir el n\xfamero de circulaci\xf3:\n\n1. A la DDU, prem el bot\xf3 de par\xe0metres.\n2. Amb la fletxa dreta cap avall, baixa de n\xfamero de conductor a n\xfamero de circulaci\xf3.\n3. Prem el bot\xf3 Enter per accedir al teclat de pantalla.",!1),"fin_num_tren",A.m(l,l,l,l,l,!1,h6,"assets/resolucion/s9000_numero_circulacion_2.jpg",B.d,B.f,"4. Utilitza els cursors intermedis per despla\xe7ar-te pels n\xfameros i prem Enter per seleccionar cada d\xedgit.\n5. Quan acabis, despla\xe7a\u2019t a la icona d\u2019acceptar (marca verda) i prem Enter per desar.",!1),"s9000_pendent",A.m(l,l,l,l,l,!1,c4,l,B.d,B.f,"No s\u2019ha confirmat la resoluci\xf3. Comunica al CCM/Portacotxeres el cotxe, els avisos i les actuacions realitzades. Conserva les condicions dels a\xefllaments efectuats; aquest resultat no autoritza una marxa normal.",!1),"s9000_comprova",A.m(l,c4,h7,l,l,!0,g,l,B.d,B.f,"S\u2019ha resolt el s\xedmptoma i s\u2019han comprovat els equips afectats?",!1),"s9000_resolt",A.m(l,l,l,l,l,!1,h7,l,B.d,B.f,"S\xedmptoma resolt i comprovat. Informa el CCM de les actuacions i mant\xe9n les condicions dels a\xefllaments existents. La desaparici\xf3 d\u2019un av\xeds no normalitza els lla\xe7os ni els equips anul\xb7lats.",!1),"s9000_govern",A.m(l,h8,i,l,l,!0,"s9000_govern",b3,B.d,B.f,"La clau de govern est\xe0 connectada i el selector de marxa est\xe0 correctament posicionat?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 5.",!1),h8,A.m(l,l,l,l,l,!1,h8,b3,B.d,A.b([A.J("Comprovar si s\u2019ha resolt",g),A.J("Cabina habilitada / no respon",h9)],t0),"Comprova la clau de govern i la posici\xf3 del selector de marxa. Si el tren no respon a les ordres, comprova si una altra cabina resta habilitada.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 5.",!1),c,A.m(l,l,l,l,l,!1,c,b3,B.d,A.b([A.J(i0,g),A.J(i1,d4)],t0),"Comprova i selecciona el mode de conducci\xf3. Si no es recupera, comunica l\u2019estat al CCM i coordina el mode degradat que correspongui. No confonguis abs\xe8ncia de mode amb abs\xe8ncia de codis.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 5.",!1),i2,A.m(l,a4,e5,l,l,!0,i2,f0,B.d,B.f,"La DDU identifica un cotxe amb fre de servei aplicat i bloquejat (IOS207\u2013211), o hi ha olor de sabata/fum sota el tren?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 72.",!1),"s9000_aire",A.m(l,l,l,l,l,!1,a3,a5,B.d,A.b([A.J("Fuita localitzada / soroll de fuita",i3),A.J("Compressor en avaria (IOS221\u2013223)",i4),A.J("Origen no identificat",c4)],t0),"Baixa pressi\xf3 TDP: identifica l\u2019origen. Una pressi\xf3 baixa no \xe9s, per si sola, una avaria de fre de servei bloquejat.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 88.",!1),"s9000_fre_ok",A.m(l,i5,e9,l,l,!0,e8,f0,B.d,B.f,"S\u2019ha confirmat que el cotxe ha quedat desfrenat, tenint en compte que la DDU pot haver perdut la lectura?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 72.",!1),"s9000_fre_b4",A.m(l,l,i6,l,l,!1,i5,f0,B.d,B.f,"Si no es normalitza, el document preveu accedir a vies pel costat de V1 i girar B4 del cofre del cotxe afectat. Coordina amb CCM l\u2019acc\xe9s a vies i la maniobra.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 72.",!1),"s9000_fre_b4_ok",A.m(l,i7,e9,l,l,!0,i6,f0,B.d,B.f,"S\u2019ha normalitzat el fre amb B4?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 72.",!1),"s9000_fre_b7",A.m(l,l,i8,l,l,!1,i7,f0,B.d,B.f,"Si B4 no normalitza el fre, el document preveu tamb\xe9 B7.1 i B7.2 del cotxe afectat. Coordina la maniobra i verifica el resultat.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 72.",!1),i8,A.m(l,c4,e9,l,l,!0,i8,f0,B.d,B.f,"S\u2019ha confirmat el desfrenament despr\xe9s de les maniobres?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 72.",!1),"s9000_b17_ok",A.m(l,c4,i9,l,l,!0,f7,j0,B.d,B.f,"S\u2019ha comprovat que l\u2019estacionament est\xe0 alliberat?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 73.",!1),"s9000_b17_final",A.m(l,l,l,l,l,!1,i9,j0,B.d,B.f,"Alliberament mec\xe0nic confirmat. Mant\xe9n registrada B17 + sirgues i l\u2019anul\xb7laci\xf3 del la\xe7 de tracci\xf3; coordina les condicions de circulaci\xf3 amb CCM. No \xe9s una sortida de marxa normal.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 73.",!1),g3,A.m(l,l,l,l,l,!1,g3,j1,B.d,B.f,"Si la porta no tanca o la DDU continua indicant oberta, el document preveu desallotjar i anul\xb7lar el lla\xe7 de portes, coordinat amb CCM. Indica que, si no s\u2019ha aconseguit tancar, es tancar\xe0 autom\xe0ticament en iniciar la marxa sense passatge. Comunica l\u2019estat real i mant\xe9n les condicions de la maniobra.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 76.",!1),"s9000_eed_via",A.m(l,l,g,l,l,!1,c2,j2,B.d,B.f,"Comunica al CCM i dirigeix-te a normalitzar la porta. Assegura\u2019t que cap passatger ha baixat a vies; pregunta al passatge si \xe9s necessari. Comprova la normalitzaci\xf3 de l\u2019EED i del la\xe7 de portes; passa el manipulador per 0 abans de recuperar tracci\xf3.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 80.",!1),c3,A.m(l,l,g,l,l,!1,c3,j2,B.d,B.f,"A la pantalla d\u2019alarmes de DDU1 corresponent al tirador, prem RECON. Si no hi ha visi\xf3 de c\xe0mera, normalitza localment. Comprova EED, porta i la\xe7; passa el manipulador per 0 abans de recuperar tracci\xf3.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 80.",!1),g7,A.m(l,l,j3,l,l,!1,g7,j4,B.d,B.f,"Tirador d\u2019alarma: el document indica que, en arrencar d\u2019estaci\xf3, obre el lla\xe7 si no s\u2019han superat 15 km/h o no han transcorregut aproximadament 45 m. Si s\u2019acciona en marxa, preveu continuar fins a la seg\xfcent estaci\xf3 i rearmar estacionat a l\u2019andana; una aturada al t\xfanel obrir\xe0 el lla\xe7 fins a reposar-lo.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 83.",!1),j3,A.m(l,j5,g,l,l,!0,j3,j4,B.d,B.f,"S\u2019ha pogut reposar el tirador i comprovar el resultat?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 83.",!1),j5,A.m(l,l,l,l,l,!1,j5,j4,B.d,B.f,"Si algun tirador no es pot reposar, el document preveu desallotjar i anul\xb7lar el la\xe7 de tiradors, coordinat amb CCM. Un tirador trencat no es resol repetint la reposici\xf3.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 83.",!1),"s9000_disj_ok",A.m(l,j6,g,l,l,!0,d0,d1,B.d,B.f,"Els disjuntors s\u2019han connectat i es mantenen tancats?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 69.",!1),j6,A.m(l,l,l,l,l,!1,j6,d1,B.d,A.b([A.J("Comprovar despr\xe9s de l\u2019actuaci\xf3",j7),A.J(j8,d5),A.J("Pendent d\u2019indicacions",c4)],t0),"Coordina amb CCM/Portacotxeres. El document preveu valorar els t\xe8rmics 16F66 i 16F67 del MB de la semiunitat afectada i tornar a provar el rearme; com a \xfaltim recurs, mode socors. No \xe9s un a\xefllament autom\xe0tic de la semiunitat.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 69.",!1),j7,A.m(l,c4,g,l,l,!0,j7,d1,B.d,B.f,"S\u2019han recuperat els disjuntors despr\xe9s de l\u2019actuaci\xf3 acordada?\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 69.",!1),j9,A.m(l,l,l,l,l,!1,j9,k1,B.d,A.b([A.J(k0,g),A.J("Reset de bateries acordat",d9),A.J("Dos convertidors perduts / pendent",c4)],t0),"IOS25/26/27: identifica el convertidor auxiliar que no carrega bateria. El document preveu tirar el t\xe8rmic corresponent 16F10 o 16F11 al remolc. Si no es normalitza, reset de bateries a final de l\xednia. Amb un convertidor es mantenen els serveis al 100 % i cal anar a canvi aviat. Amb tots dos perduts, tracci\xf3 i serveis de bateria s\xf3n temporals; comunica l\u2019abast al CCM.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 70.",!1),i4,A.m(l,l,l,l,l,!1,i4,"assets/resolucion/s9000_detall_p071.jpg",B.d,A.b([A.J("Pressi\xf3 recuperada i comprovada",g),A.J("Cap compressor recuperat",k2),A.J("Hi ha una fuita",i3),A.J("Origen no confirmat",c4)],t0),"IOS221/222/223: identifica el compressor i el MA afectat. Si falla el master, l\u2019altre entra autom\xe0ticament. El document preveu tirar 11F4 Compressor Aire del MA afectat. TDP normal: 8\u201310 bar. Per sota de 6,5 bar aplica FE; si no es recupera cap compressor, cal remolcar. Nota del document: master 1 en dies imparells i master 2 en dies parells, segons data DDU.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 71.",!1),k3,A.m(l,l,l,l,l,!1,k3,k5,B.d,A.b([A.J(k0,g),A.J("Equip de tracci\xf3 afectat",k4),A.J("P\xe8rdua de codis",b)],t0),"IOS88: p\xe8rdua de fre el\xe8ctric en un o dos cotxes. Selecciona ATP o fes reset TBS si no es pot seleccionar. Si s\u2019han perdut codis, el document preveu M+25 autoritzat i avan\xe7ar uns metres per recuperar-los. Si no es normalitza, comprova equips de tracci\xf3 inhibits i tracta-ho com a avaria de tracci\xf3.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 74.",!1),k6,A.m(l,l,g,l,l,!1,k6,"assets/resolucion/s9000_detall_p077.jpg",B.d,B.f,"No es permet seleccionar costat de portes (bot\xf3 groc). Amb autoritzaci\xf3 del CCM, prem Tren Stop Deslocalitzat i torna a seleccionar el costat andana. Un cop seleccionat, normalitza Tren Stop Deslocalitzat. El document descriu que pot passar puntualment a L4 malgrat no disposar del sistema de control del costat d\u2019obertura.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 77.",!1),k7,A.m(l,l,l,l,l,!1,k7,k9,B.d,A.b([A.J(k0,g),A.J("Tampoc obren amb tiradors",k8),A.J(i1,d4),A.J("No resolt",c4)],t0),"No hi ha permissi\xf3 ATP: comprova la selecci\xf3 del costat andana. Amb autoritzaci\xf3 CCM, passa a M+25 i prova; si no funciona, el document preveu moure el tren 1 metre i tornar a provar. \xdaltima opci\xf3: ME autoritzat. Si no funciona, desallotjament amb obertura local. Si tampoc obren amb els tiradors, tracta l\u2019avaria KM0.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 78.",!1),"s9000_km0",A.m(l,l,l,l,l,!1,k8,l0,B.d,B.f,"IOS75: discrep\xe0ncia V=0; el tren parat detecta moviment i no obren portes ni tiradors. El document preveu deixar caigut 16F120 Circuito V=0 km/h al remolc: nom\xe9s es podran obrir localment les portes del remolc amb tiradors/LOPS. Desallotjar i retirar el tren. Alternativa del document: desconnectar bateries per obrir totes les portes amb EED. Coordina l\u2019opci\xf3 amb CCM.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 79.",!1),"s9000_condemnar",A.m(l,l,g,l,l,!1,g4,"assets/resolucion/s9000_detall_p081.jpg",B.d,B.f,"Condemnar una porta: identifica la porta i obre el fald\xf3. Si cal obrir-la, el document preveu desconnectar l\u2019alimentaci\xf3 i fer un cicle d\u2019obertura/tancament amb clau de quadradet sobre la lleva del motor. Per deixar-la condemnada: connector de comunicaci\xf3 desconnectat i alimentaci\xf3 connectada. Col\xb7loca els adhesius de fora de servei. Comprova tancament i estat del la\xe7.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 81.",!1),"s9000_traccio",A.m(l,l,g,l,l,!1,k4,d2,B.d,B.f,"IOS86: cotxe sense tracci\xf3 i/o fre el\xe8ctric, sense obertura de disjuntors. Identifica el cotxe i la semiunitat. El document preveu tirar i rearmar 16F66 Equipo de Tracci\xf3n 1 o 16F67 Equipo de Tracci\xf3n 2 del MB de la semiunitat afectada.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 95.",!1),"s9000_pantograf",A.m(l,l,g,l,l,!1,l1,"assets/resolucion/s9000_detall_p096.jpg",B.d,B.f,"IOS167\u2013172: identifica el pant\xf2graf no elevat amb ordre de pujar o a\xefllat. Comprova primer problemes el\xe8ctrics/caten\xe0ria. Una creu vermella indica inhibici\xf3 manual: a la pantalla corresponent, prem la icona de la semiunitat inhibida. Per baixar un sol pant\xf2graf, el document preveu 16F60 del cotxe afectat o U21 del panell pneum\xe0tic auxiliar.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 96.",!1),"s9000_hvac",A.m(l,l,g,l,l,!1,l2,l3,B.d,B.f,"Aire condicionat: desconnecta durant dues o tres estacions i reconnecta a PMM de DDU1. Si no es recupera, tira i rearma 16F38 del cotxe afectat. Despr\xe9s es pot provar 11F1 Climatizaci\xf3n L\xednea 1 o 11F2 L\xednea 2. Si persisteix, valora temperatura interior i canvi de motors amb CCM.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 97.",!1),"s9000_video",A.m(l,l,g,l,l,!1,l4,l5,B.d,B.f,"Identifica les c\xe0meres/equips afectats. Reseteja els equips corresponents amb 16F43 Pantallas video difusi\xf3n, 16F44 Controlador Multimedia / Video Difusi\xf3n o 16F47 Video Grabador. Comprova el resultat.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 98.",!1),l6,A.m(l,l,g,l,l,!1,l6,l7,B.d,B.f,"Anunciador o term\xf2metres no funcionen: el document preveu tirar 16F40 Megafon\xeda e Interfon\xeda del remolc o del MA corresponent. La central inclou costat de portes, term\xf2metres, interfonia, altaveus, micr\xf2fon, CESARES i bip-bip de portes.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 99.",!1),"s9000_ddu",A.m(l,l,l,l,l,!1,l8,"assets/resolucion/s9000_detall_p100.jpg",B.d,A.b([A.J(i0,g),A.J(l9,h9),A.J("Dues DDU perdudes: mode socors",d5)],t0),"DDU en negre: prova primer el bot\xf3 d\u2019encendre pantalla. El document preveu el t\xe8rmic del MA corresponent: 16F103 = DDU1; 16F102 = DDU2. Atenci\xf3: el primer f\xedsicament \xe9s el de DDU2. Si la DDU no accepta ordres, comprova cabina habilitada. Si fallen les dues DDU i no es recuperen, mode socors.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 100.",!1),"s9000_cabina",A.m(l,l,l,l,l,!1,h9,m0,B.d,A.b([A.J(k0,g),A.J(j8,d5)],t0),"Missatge cabina habilitada i el tren no respon a les ordres: possible govern oblidat/trencat o commutador avariat. El document preveu tirar 16F50 al MA amb la cabina habilitada. Si manipulador o selector no s\xf3n a 0, tamb\xe9 16F52 \xd3rdenes de marcha. Si \xe9s necessari, mode socors.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 101.",!1),"s9000_fuita",A.m(l,l,l,l,l,!1,i3,a5,B.d,A.b([A.J("Entre cotxes / enganxalls",m1),A.J("En cotxe MB",m2),A.J("En remolc R",m3),A.J("En cotxe MA",m4),A.J("No localitzada",c4)],t0),"Localitza la fuita abans d\u2019escollir les aixetes i anul\xb7lacions. IOS218: TDP < 8 bar; IOS24/FE: TDP < 6,5 bar. L\u2019anul\xb7laci\xf3 dels press\xf2stats de m\xednima nom\xe9s pot estar activada en una semiunitat.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 88.",!1),m1,A.m(l,l,g,l,l,!1,m1,m5,B.d,B.f,"Fuita entre cotxes/enganxalls: gira a horitzontal les aixetes col\xb7laterals a la fuita per a\xefllar el tram. Ambdues parts queden alimentades pels dos compressors. Segons el document, aquest cas no requereix anul\xb7lar lla\xe7os. Comprova que la pressi\xf3 es recupera.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 89.",!1),"s9000_fuita_mb",A.m(l,l,c4,l,l,!1,m2,m5,B.d,B.f,"Fuita en MB: gira a horitzontal les aixetes col\xb7laterals per a\xefllar el tram. Al cotxe afectat, gira B17 del panell inferior lateral costat V1 i allibera les sirgues. En actuar B17 cal anul\xb7lar el lla\xe7 de tracci\xf3. No donis per normalitzat l\u2019a\xefllament en desapar\xe8ixer l\u2019av\xeds.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 89.",!1),"s9000_fuita_r",A.m(l,l,c4,l,l,!1,m3,m6,B.d,B.f,"Fuita en R: a\xeflla el tram amb les aixetes col\xb7laterals horitzontals. Gira B17 i allibera sirgues del cotxe afectat. Cal anul\xb7lar el lla\xe7 de tracci\xf3 i el lla\xe7 d\u2019Equip de fre perqu\xe8 la lectura de TDP \xe9s al remolc. Coordina les condicions amb CCM.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 90.",!1),"s9000_fuita_ma",A.m(l,l,c4,l,l,!1,m4,m6,B.d,B.f,"Fuita en MA: a\xeflla el tram amb les aixetes col\xb7laterals horitzontals. Gira B17 i allibera sirgues. Cal anul\xb7lar tracci\xf3, Equip de fre i press\xf2stat de la semiunitat afectada (A/B) des del remolc. Nom\xe9s es pot anul\xb7lar el press\xf2stat d\u2019una semiunitat.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 90.",!1),"s9000_remolcada",A.m(l,l,l,l,l,!1,k2,n1,B.d,A.b([A.J("Tren de socors",m7),A.J("Tren avariat",m8),A.J(m9,n0)],t0),"Remolcada: selecciona el tren sobre el qual s\u2019actua. El tren de socors ha de circular en ME i iniciar mitjan\xe7ant bloqueig telef\xf2nic centralitzat amb el tren que precedeix l\u2019avariat. No acoblar mai el\xe8ctricament.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 92.",!1),m7,A.m(l,l,l,l,l,!1,m7,n1,B.d,B.f,"Acosta\u2019t marxa a la vista a 1 metre. Anul\xb7la tracci\xf3 per eliminar fre de retenci\xf3. Avan\xe7a alternant punts 1 i 0 de tracci\xf3 i dona punt enrere per assegurar l\u2019acoblament. No acoblar el\xe8ctricament. Coordina totes les maniobres amb CCM i l\u2019altre tren.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 92.",!1),m8,A.m(l,l,l,l,l,!1,m8,n1,B.d,B.f,"Immobilitza amb estacionament; seccionadors a 0 a la testera d\u2019acoblament. Espera confirmaci\xf3 d\u2019acoblament. Segons l\u2019avaria, connecta o no pneum\xe0ticament amb les aixetes. Anul\xb7la tracci\xf3 per eliminar retenci\xf3. Circula amb manipulador a 0, home mort premut i mode de conducci\xf3, segons coordinaci\xf3 del remolc.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 92.",!1),n0,A.m(l,l,l,l,l,!1,n0,n2,B.d,B.f,"Prem el bot\xf3 de desacoblament del panell esquerre i, mentre el mantens, acciona breument el manipulador entre 1 i 0 de tracci\xf3. El tren retrocedeix lleugerament fent el desacoblament mec\xe0nic. El document tamb\xe9 preveu l\u2019operaci\xf3 marxa enrere. Coordina la maniobra i comprova el desacoblament.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 93.",!1),"s9000_termics",A.m(l,l,l,l,l,!1,n3,n7,B.d,A.b([A.J("MA",n4),A.J("MB",n5),A.J("R",n6)],t0),"Taules de t\xe8rmics: selecciona el tipus de cotxe. Identifica sempre cotxe i t\xe8rmic abans de l\u2019actuaci\xf3.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 84.",!1),n4,A.m(l,l,l,l,l,!1,n4,n8,B.d,B.f,"Taula original de t\xe8rmics del cotxe MA. Amplia la imatge per identificar la refer\xe8ncia.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 85.",!1),n5,A.m(l,l,l,l,l,!1,n5,n9,B.d,B.f,"Taula original de t\xe8rmics del cotxe MB. Amplia la imatge per identificar la refer\xe8ncia.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 86.",!1),"s9000_termics_r",A.m(l,l,l,l,l,!1,n6,o0,B.d,B.f,"Taula original de t\xe8rmics del cotxe R. Amplia la imatge per identificar la refer\xe8ncia.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 87.",!1),"s9000_esquema",A.m(l,l,l,l,l,!1,o1,o2,B.d,B.f,"Situaci\xf3 dels tiradors/intercomunicadors i localitzaci\xf3 d\u2019armaris de t\xe8rmics del S9000.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 67.",!1),o3,A.m(l,l,l,l,l,!1,o3,o4,B.d,B.f,"Resum original de maniobres i lla\xe7os segons la ubicaci\xf3 de la fuita. Els n\xfameros de la taula indiquen l\u2019ordre d\u2019actuaci\xf3; una X indica que no correspon.\n\nFont: L4 Avaries t\xe8cniques, p\xe0g. 91.",!1),"s9000_menu_0",A.m(l,l,l,l,l,!1,o5,l,B.d,A.b([A.J("Convertidor auxiliar",j9),A.J("Compressor",i4),A.J("Fre el\xe8ctric",k3),A.J("Tracci\xf3 sense obertura disjuntors",k4),A.J("Pant\xf2graf",l1),A.J("Aire condicionat",l2),A.J("Videovigil\xe0ncia",l4),A.J("Anunciador / term\xf2metres",l6),A.J("DDU",l8),A.J(l9,h9)],t0),o6,!1),"s9000_menu_1",A.m(l,l,l,l,l,!1,o7,l,B.d,A.b([A.J("Una porta no tanca",b5),A.J("No selecciona costat",k6),A.J("No permet permissi\xf3 / obertura",k7),A.J("Rel\xe9 KM0",k8),A.J("Porta desbloquejada / EED",b9),A.J("Condemnar una porta",g4)],t0),"Portes",!1),"s9000_menu_2",A.m(l,l,l,l,l,!1,o8,l,B.d,A.b([A.J("Baixa pressi\xf3 TDP",a3),A.J("Fuita d\u2019aire",i3),A.J("Resum de lla\xe7os per fuita",o3),A.J("Fre de servei bloquejat",e5),A.J("Estacionament aplicat",o)],t0),o9,!1),"s9000_menu_3",A.m(l,l,l,l,l,!1,p0,l,B.d,A.b([A.J("Remolcada",k2),A.J(m9,n0),A.J("Esquema equips",o1),A.J("Taules de t\xe8rmics",n3),A.J("Tren Stop",a6),A.J(n,p)],t0),p1,!1),p2,A.m(l,l,l,l,l,!1,p2,l,B.d,A.b([A.J("L\xe0mines originals del manual",p3),A.J(o6,o5),A.J("Portes",o7),A.J(o9,o8),A.J(p1,p0)],t0),"Avaries i procediments S9000",!1),"s9000_lamines",A.m(l,l,l,l,l,!1,p3,l,B.d,A.b([A.J("P\xe0gina 5",p4),A.J("P\xe0gina 67",p5),A.J("P\xe0gina 68",p6),A.J("P\xe0gina 69",p7),A.J("P\xe0gina 70",p8),A.J("P\xe0gina 71",p9),A.J("P\xe0gina 72",q0),A.J("P\xe0gina 73",q1),A.J("P\xe0gina 74",q2),A.J("P\xe0gina 76",q3),A.J("P\xe0gina 77",q4),A.J("P\xe0gina 78",q5),A.J("P\xe0gina 79",q6),A.J("P\xe0gina 80",q7),A.J("P\xe0gina 81",q8),A.J("P\xe0gina 82",q9),A.J("P\xe0gina 83",r0),A.J("P\xe0gina 84",r1),A.J("P\xe0gina 85",r2),A.J("P\xe0gina 86",r3),A.J("P\xe0gina 87",r4),A.J("P\xe0gina 88",r5),A.J("P\xe0gina 89",r6),A.J("P\xe0gina 90",r7),A.J("P\xe0gina 91",r8),A.J("P\xe0gina 92",r9),A.J("P\xe0gina 93",s0),A.J("P\xe0gina 94",s1),A.J("P\xe0gina 95",s2),A.J("P\xe0gina 96",s3),A.J("P\xe0gina 97",s4),A.J("P\xe0gina 98",s5),A.J("P\xe0gina 99",s6),A.J("P\xe0gina 100",s7),A.J("P\xe0gina 101",s8),A.J("P\xe0gina 102",s9)],t0),"L\xe0mines originals del manual S9000",!1),"s9000_lamina_5",A.m(l,l,l,l,l,!1,p4,b3,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 5. Amplia la imatge per consultar-la.",!1),"s9000_lamina_67",A.m(l,l,l,l,l,!1,p5,o2,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 67. Amplia la imatge per consultar-la.",!1),"s9000_lamina_68",A.m(l,l,l,l,l,!1,p6,h1,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 68. Amplia la imatge per consultar-la.",!1),"s9000_lamina_69",A.m(l,l,l,l,l,!1,p7,d1,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 69. Amplia la imatge per consultar-la.",!1),"s9000_lamina_70",A.m(l,l,l,l,l,!1,p8,k1,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 70. Amplia la imatge per consultar-la.",!1),"s9000_lamina_71",A.m(l,l,l,l,l,!1,p9,"assets/resolucion/s9000_manual_p071.jpg",B.d,B.f,"L\xe0mina original del manual, p\xe0g. 71. Amplia la imatge per consultar-la.",!1),"s9000_lamina_72",A.m(l,l,l,l,l,!1,q0,f0,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 72. Amplia la imatge per consultar-la.",!1),"s9000_lamina_73",A.m(l,l,l,l,l,!1,q1,j0,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 73. Amplia la imatge per consultar-la.",!1),"s9000_lamina_74",A.m(l,l,l,l,l,!1,q2,k5,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 74. Amplia la imatge per consultar-la.",!1),"s9000_lamina_76",A.m(l,l,l,l,l,!1,q3,j1,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 76. Amplia la imatge per consultar-la.",!1),"s9000_lamina_77",A.m(l,l,l,l,l,!1,q4,"assets/resolucion/s9000_manual_p077.jpg",B.d,B.f,"L\xe0mina original del manual, p\xe0g. 77. Amplia la imatge per consultar-la.",!1),"s9000_lamina_78",A.m(l,l,l,l,l,!1,q5,k9,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 78. Amplia la imatge per consultar-la.",!1),"s9000_lamina_79",A.m(l,l,l,l,l,!1,q6,l0,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 79. Amplia la imatge per consultar-la.",!1),"s9000_lamina_80",A.m(l,l,l,l,l,!1,q7,"assets/resolucion/s9000_manual_p080.jpg",B.d,B.f,"L\xe0mina original del manual, p\xe0g. 80. Amplia la imatge per consultar-la.",!1),"s9000_lamina_81",A.m(l,l,l,l,l,!1,q8,"assets/resolucion/s9000_manual_p081.jpg",B.d,B.f,"L\xe0mina original del manual, p\xe0g. 81. Amplia la imatge per consultar-la.",!1),"s9000_lamina_82",A.m(l,l,l,l,l,!1,q9,h,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 82. Amplia la imatge per consultar-la.",!1),"s9000_lamina_83",A.m(l,l,l,l,l,!1,r0,j4,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 83. Amplia la imatge per consultar-la.",!1),"s9000_lamina_84",A.m(l,l,l,l,l,!1,r1,n7,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 84. Amplia la imatge per consultar-la.",!1),"s9000_lamina_85",A.m(l,l,l,l,l,!1,r2,n8,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 85. Amplia la imatge per consultar-la.",!1),"s9000_lamina_86",A.m(l,l,l,l,l,!1,r3,n9,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 86. Amplia la imatge per consultar-la.",!1),"s9000_lamina_87",A.m(l,l,l,l,l,!1,r4,o0,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 87. Amplia la imatge per consultar-la.",!1),"s9000_lamina_88",A.m(l,l,l,l,l,!1,r5,a5,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 88. Amplia la imatge per consultar-la.",!1),"s9000_lamina_89",A.m(l,l,l,l,l,!1,r6,m5,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 89. Amplia la imatge per consultar-la.",!1),"s9000_lamina_90",A.m(l,l,l,l,l,!1,r7,m6,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 90. Amplia la imatge per consultar-la.",!1),"s9000_lamina_91",A.m(l,l,l,l,l,!1,r8,o4,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 91. Amplia la imatge per consultar-la.",!1),"s9000_lamina_92",A.m(l,l,l,l,l,!1,r9,n1,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 92. Amplia la imatge per consultar-la.",!1),"s9000_lamina_93",A.m(l,l,l,l,l,!1,s0,n2,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 93. Amplia la imatge per consultar-la.",!1),"s9000_lamina_94",A.m(l,l,l,l,l,!1,s1,a7,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 94. Amplia la imatge per consultar-la.",!1),"s9000_lamina_95",A.m(l,l,l,l,l,!1,s2,d2,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 95. Amplia la imatge per consultar-la.",!1),"s9000_lamina_96",A.m(l,l,l,l,l,!1,s3,"assets/resolucion/s9000_manual_p096.jpg",B.d,B.f,"L\xe0mina original del manual, p\xe0g. 96. Amplia la imatge per consultar-la.",!1),"s9000_lamina_97",A.m(l,l,l,l,l,!1,s4,l3,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 97. Amplia la imatge per consultar-la.",!1),"s9000_lamina_98",A.m(l,l,l,l,l,!1,s5,l5,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 98. Amplia la imatge per consultar-la.",!1),"s9000_lamina_99",A.m(l,l,l,l,l,!1,s6,l7,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 99. Amplia la imatge per consultar-la.",!1),s7,A.m(l,l,l,l,l,!1,s7,"assets/resolucion/s9000_manual_p100.jpg",B.d,B.f,"L\xe0mina original del manual, p\xe0g. 100. Amplia la imatge per consultar-la.",!1),s8,A.m(l,l,l,l,l,!1,s8,m0,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 101. Amplia la imatge per consultar-la.",!1),s9,A.m(l,l,l,l,l,!1,s9,g2,B.d,B.f,"L\xe0mina original del manual, p\xe0g. 102. Amplia la imatge per consultar-la.",!1)],t.N,t.bg)})
 s($,"ber","aPv",()=>A.en(""))
 s($,"bev","aPw",()=>{var q=null
 return A.bU(q,q,!0,"background",new A.aj7(),q,new A.aj8(),q)})
@@ -116460,7 +116460,7 @@ f=i[2]
 e=[400*h/(h+27.13),400*g/(g+27.13),400*f/(f+27.13)]
 return new A.avy(k,(40*e[0]+20*e[1]+e[2])/20*j,j,j,b,1,q,l,A.z9(l,0.25),1.48+p)})
 s($,"bhj","aZM",()=>{var q=t.N
-return new A.alE(A.r(q,q),A.b([],A.av("J<bet>")))})
+return new A.alE(A.r(q,q),A.b([],A.av("I<bet>")))})
 s($,"biy","aQ2",()=>new A.abo($.aPF(),null))
 s($,"bfX","aYQ",()=>new A.anA(A.bK("/",!0,!1,!1),A.bK("[^/]$",!0,!1,!1),A.bK("^/",!0,!1,!1)))
 s($,"bfZ","a8T",()=>new A.avN(A.bK("[/\\\\]",!0,!1,!1),A.bK("[^/\\\\]$",!0,!1,!1),A.bK("^(\\\\\\\\[^\\\\]+\\\\[^\\\\/]+|[a-zA-Z]:[/\\\\])",!0,!1,!1),A.bK("^[/\\\\](?![/\\\\])",!0,!1,!1)))
