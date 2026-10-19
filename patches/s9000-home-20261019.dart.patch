@@ -1,42 +1,14 @@
 --- a/lib/main.dart
 +++ b/lib/main.dart
-@@ -1136,6 +1136,124 @@
+@@ -1136,6 +1136,97 @@
      );
    }
  
 +  void _abrirTermics(BuildContext context) {
-+    Navigator.push(
++    _abrirPasoDirecto(
 +      context,
-+      MaterialPageRoute(
-+        builder: (_) => MenuS9000Screen(
-+          volverInicio: _volverInicio,
-+          titulo: 'TÈRMICS',
-+          opciones: [
-+            OpcionMenuS9000(
-+              texto: 'TÈRMICS · IMATGE DE REFERÈNCIA',
-+              color: Colors.blueGrey,
-+              alPulsar: () => Navigator.push(
-+                context,
-+                MaterialPageRoute(
-+                  builder: (_) => PantallaImagenCompleta(
-+                    volverInicio: _volverInicio,
-+                    imagenPath: 'assets/resolucion/termicos_9000.jpg',
-+                  ),
-+                ),
-+              ),
-+            ),
-+            OpcionMenuS9000(
-+              texto: 'TAULES DE TÈRMICS · MA / MB / R',
-+              color: Colors.indigo,
-+              alPulsar: () => _abrirPasoDirecto(
-+                context,
-+                pasoInicialId: 's9000_termics',
-+                claveCausas: 'avaries_s9000',
-+              ),
-+            ),
-+          ],
-+        ),
-+      ),
++      pasoInicialId: 's9000_termics',
++      claveCausas: 'avaries_s9000',
 +    );
 +  }
 +
@@ -78,16 +50,6 @@
 +          ),
 +        ),
 +      ),
-+      OpcionMenuS9000(
-+        texto: 'CARRUSEL DE TRENS',
-+        color: Colors.deepPurple[700]!,
-+        alPulsar: () => Navigator.push(
-+          context,
-+          MaterialPageRoute(
-+            builder: (_) => const CarruselTrenesScreen(serie: '9000'),
-+          ),
-+        ),
-+      ),
 +      procediment('EQUIPS I SERVEIS', Colors.indigo[700]!, 's9000_menu_0'),
 +      procediment('PORTES', Colors.green[800]!, 's9000_menu_1'),
 +      procediment('AIRE I FRENS', Colors.cyan[800]!, 's9000_menu_2'),
@@ -117,6 +79,17 @@
 +                alPulsar: casella.alPulsar,
 +              ),
 +            ),
++          SizedBox(
++            width: constraints.maxWidth,
++            child: BotonCarruselTrenes(
++              alPulsar: () => Navigator.push(
++                context,
++                MaterialPageRoute(
++                  builder: (_) => const CarruselTrenesScreen(serie: '9000'),
++                ),
++              ),
++            ),
++          ),
 +        ],
 +      ),
 +    );
@@ -125,7 +98,7 @@
    @override
    Widget build(BuildContext context) {
      return Scaffold(
-@@ -1210,94 +1328,7 @@
+@@ -1210,94 +1301,7 @@
                ),
  
                const SizedBox(height: 14),
@@ -221,6 +194,17 @@
              ],
            ),
          ),
+@@ -2830,7 +2834,9 @@
+                                       ramaNoDesfrenaS2100,
+                                     ))
+                                       Text(
+-                                        '${imatge.variant} · Manual, pàg. ${imatge.pagina}',
++                                        imatge.pagina == null
++                                            ? imatge.variant
++                                            : '${imatge.variant} · Manual, pàg. ${imatge.pagina}',
+                                         style: const TextStyle(
+                                           color: Colors.white70,
+                                           fontSize: 12,
 --- a/lib/data/s9000_data.dart
 +++ b/lib/data/s9000_data.dart
 @@ -39,7 +39,6 @@
@@ -231,7 +215,26 @@
    // Rama No Desfrena
    "Tirador d’alarma": "inicio_no_desfrena_s9000",
    "Bolet d’emergència": "pregunta_seta_s9000",
-@@ -1149,6 +1148,7 @@
+@@ -1097,9 +1096,17 @@
+   "s9000_termics_ma": PasoDiagnostico(
+     id: "s9000_termics_ma",
+     preguntaOInstruccion:
+-        "Taula original de tèrmics del cotxe MA. Amplia la imatge per identificar la referència.\n\nFont: L4 Avaries tècniques, pàg. 85.",
++        "Taula original de tèrmics del cotxe MA. A sota tens també la fotografia real dels tèrmics dels cotxes A. Amplia les imatges per identificar la referència.\n\nFont: L4 Avaries tècniques, pàg. 85.",
+     esPregunta: false,
+     imagenPath: "assets/resolucion/s9000_manual_p085.jpg",
++    imatgesManual: const [
++      ImatgePasManual(
++        "assets/resolucion/termicos_9000.jpg",
++        "Tèrmics dels cotxes A · fotografia real",
++        null,
++        "Cotxe MA",
++      ),
++    ],
+   ),
+ 
+   "s9000_termics_mb": PasoDiagnostico(
+@@ -1149,6 +1156,7 @@
        OpcioSac("Anunciador / termòmetres", "s9000_anunciador"),
        OpcioSac("DDU", "s9000_ddu"),
        OpcioSac("Cabina habilitada", "s9000_cabina"),
@@ -239,7 +242,7 @@
      ],
    ),
  
-@@ -1181,324 +1181,11 @@
+@@ -1181,324 +1189,11 @@
  
    "s9000_menu_3": PasoDiagnostico(
      id: "s9000_menu_3",
