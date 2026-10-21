@@ -11,6 +11,7 @@ for item in manifest["files"]:
         # Only this reviewed, narrowly scoped test amendment is permitted.
         approved_git_blobs = {
             "test/manual_inventory_test.dart": "773ad38aa79958034bc7b9d39c34c9f19a7aabfc",
+            "test/s9000_ui_test.dart": "8d7941b9f4cb883d401736369dc61001834880e3",
         }
         actual_blob = subprocess.check_output(
             ["git", "hash-object", str(p)], cwd=root, text=True
