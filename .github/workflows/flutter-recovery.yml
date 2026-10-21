@@ -63,7 +63,7 @@ jobs:
         run: node --test test-web/access-gate.test.mjs
       - name: Flutter unit and widget tests including goldens
         working-directory: app
-        run: flutter test
+        run: flutter test --reporter expanded
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
