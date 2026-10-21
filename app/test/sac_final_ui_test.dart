@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:l4_incidencias/main.dart';
+import 'package:l4_incidencias/sac2100_screen.dart';
 import 'package:l4_incidencias/data/s2100_data.dart';
 
 void main() {
@@ -215,6 +216,40 @@ void main() {
     expect(find.text('TORNAR A L’INICI'), findsOneWidget);
     expect(find.text('SÍ'), findsNothing);
     expect(find.text('NO'), findsNothing);
+    expect(t.takeException(), isNull);
+    await t.pumpWidget(const SizedBox());
+    await t.pumpAndSettle();
+  });
+
+  testWidgets('Selector -> S2100 -> SAC -> procediment i retorn', (t) async {
+    t.view.physicalSize = const Size(390, 844);
+    t.view.devicePixelRatio = 1;
+    addTearDown(t.view.resetPhysicalSize);
+    addTearDown(t.view.resetDevicePixelRatio);
+    await t.pumpWidget(MaterialApp(
+      theme: ThemeData.dark(), home: const SelectorSerieScreen()));
+    await t.pumpAndSettle();
+    await t.ensureVisible(find.byType(SelectorSerieCard).first);
+    await t.tap(find.byType(SelectorSerieCard).first);
+    await t.pumpAndSettle();
+    expect(find.byType(TriajeS2100Screen), findsOneWidget);
+    await t.ensureVisible(find.byKey(const ValueKey('sac-display-entry')));
+    await t.tap(find.byKey(const ValueKey('sac-display-entry')));
+    await t.pumpAndSettle();
+    expect(find.byType(Sac2100Screen), findsOneWidget);
+    expect(find.byKey(const ValueKey('sac-zoom')), findsOneWidget);
+    await t.tap(find.byKey(const ValueKey('sac-12')));
+    await t.pumpAndSettle();
+    expect(find.byType(DiagnosticoInteractivoScreen), findsOneWidget);
+    expect(t.takeException(), isNull);
+    final context = t.element(find.byType(DiagnosticoInteractivoScreen));
+    Navigator.of(context).popUntil((route) => route.isFirst);
+    await t.pumpAndSettle();
+    expect(find.byType(SelectorSerieScreen), findsOneWidget);
+    await t.ensureVisible(find.byType(SelectorSerieCard).last);
+    await t.tap(find.byType(SelectorSerieCard).last);
+    await t.pumpAndSettle();
+    expect(find.byType(TriajeS9000Screen), findsOneWidget);
     expect(t.takeException(), isNull);
     await t.pumpWidget(const SizedBox());
     await t.pumpAndSettle();

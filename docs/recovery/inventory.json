@@ -750,7 +750,7 @@
     },
     {
       "path": "test/manual_inventory_test.dart",
-      "sha256": "33713be27cb9b2354a56dbd68548b497f11474a36deb8a41e1e959d5d2c612ad",
+      "sha256": "14d8970ca9349bb4b6b29aec95746a3e3de6ee1c0e5e93c1f167e97aee582718",
       "recovered_sha256": "33713be27cb9b2354a56dbd68548b497f11474a36deb8a41e1e959d5d2c612ad",
       "configuration_externalized": false
     },
@@ -774,7 +774,7 @@
     },
     {
       "path": "test/s9000_ui_test.dart",
-      "sha256": "aecb79888e11f5e0fdc452a4c10f43905448da848108e016bc792285fca5ef25",
+      "sha256": "a3a35c37608af54c9af20da79695c309e1c26cdde1b4f4f7f034ceffbbb65863",
       "recovered_sha256": "aecb79888e11f5e0fdc452a4c10f43905448da848108e016bc792285fca5ef25",
       "configuration_externalized": false
     },
@@ -786,7 +786,7 @@
     },
     {
       "path": "test/sac_final_ui_test.dart",
-      "sha256": "7163943110776f2d9d18da7165f6421b8acdec2df54c4a29edddbdac6c9984b9",
+      "sha256": "ef702f989acde273f8f1f7f0cda35c6f04b71494e10d1c7a01fe82b68182b17e",
       "recovered_sha256": "7163943110776f2d9d18da7165f6421b8acdec2df54c4a29edddbdac6c9984b9",
       "configuration_externalized": false
     },
