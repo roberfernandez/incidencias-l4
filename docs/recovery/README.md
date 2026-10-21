@@ -1,6 +1,6 @@
 # Recuperación Flutter de Incidències L4
 
-Estado: fuentes recuperadas; validación remota pendiente hasta registrar el resultado de Actions.
+Estado: compilación web y pruebas verificadas en GitHub Actions sobre 905f0cb. Véase [informe de revisión](REVIEW-20261021.md) para evidencia, límites y pendientes. No publicado.
 
 ## Referencia y límites
 Referencia funcional: `0a5af5e5690e513afce9ef9a98f4c104037caddc`.
@@ -63,8 +63,10 @@ La publicación sigue deliberadamente desactivada en este flujo.
 Una futura fase autorizada debe suministrar la configuración original, verificar login/sesión y recursos privados en un entorno apropiado, revisar móvil y escritorio y definir una promoción manual del artefacto aprobado.
 El artefacto de esta fase usa configuración ficticia y NO es apto para producción.
 
-## Pruebas pendientes de certificar
-- Resultado nuevo de GitHub Actions (compilación, análisis, pruebas e integridad).
-- Pruebas visuales golden en Linux: las referencias se conservan; no se regeneran para ocultar diferencias.
+## Pruebas y pendientes
+- Actions 39694298018: compilación correcta, análisis sin incidencias, 55 pruebas Flutter, 10 pruebas web y 598 comprobaciones S9000.
+- Referencias visuales conservadas y aprobadas con tolerancia multiplataforma del 6 % de píxeles distintos.
+- La entrada web depende de /tmb-agent/src/session.js y /tmb-agent/auth/; no es una aplicación autónoma de autenticación.
+- Revisar correo personal del bundle histórico publicado y permisos de redistribución de recursos técnicos antes de publicar.
 - Login real, aprobación, sesión horaria, cámara, guardado y carga de imágenes privadas no se prueban contra producción.
 - Las pruebas antiguas de cámara sobre JavaScript minificado de la raíz se conservan; la entrega original documenta ocho fallos por identificadores minificados históricos. No forman parte de la suite Dart recuperada.
