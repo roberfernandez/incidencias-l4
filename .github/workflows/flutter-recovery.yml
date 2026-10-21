@@ -52,6 +52,20 @@ jobs:
           node-version: '22'
       - run: flutter pub get --enforce-lockfile
         working-directory: app
+      - uses: actions/checkout@v4
+        with:
+          repository: roberfernandez/tmb-agent
+          ref: c07e75666cf774d6088666c2df9c9b2f07761470
+          path: .integration-tmb
+          sparse-checkout: |
+            src/session.js
+            auth/lib/main.dart
+          sparse-checkout-cone-mode: false
+          persist-credentials: false
+      - name: Offline operational configuration tests
+        run: python3 -m unittest discover -s scripts/recovery -p 'test_*.py'
+      - name: Pinned TMB session contract with simulated responses
+        run: node --test scripts/recovery/tmb_contract.test.mjs
       - name: Static analysis
         working-directory: app
         run: flutter analyze
