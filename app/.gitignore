@@ -1,0 +1,12 @@
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+build/
+coverage/
+test/failures/
+.env
+.env.*
+!*.example
+config.private.json
+*.keystore
+*.jks

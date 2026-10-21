@@ -1,0 +1,73 @@
+name: Flutter recovery - build and tests (no deployment)
+on:
+  push:
+    branches: ['recovery/**']
+  pull_request:
+    paths: ['app/**', 'scripts/recovery/**', '.github/workflows/flutter-recovery.yml']
+permissions:
+  contents: read
+concurrency:
+  group: flutter-recovery-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.41.9'
+          channel: stable
+          cache: true
+      - name: Verify recovered files and preserved published tree
+        run: python3 scripts/recovery/verify.py
+      - name: Resolve locked dependencies
+        working-directory: app
+        run: flutter pub get --enforce-lockfile
+      - name: Compile web without production configuration
+        working-directory: app
+        run: flutter build web --release --base-href /incidencias-l4/ --pwa-strategy=none --no-web-resources-cdn
+      - name: Preserve web access and cache retirement
+        run: python3 scripts/recovery/package_web.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: incidencies-web-build-only-${{ github.sha }}
+          path: app/build/web
+          retention-days: 7
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.41.9'
+          channel: stable
+          cache: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: flutter pub get --enforce-lockfile
+        working-directory: app
+      - name: Static analysis
+        working-directory: app
+        run: flutter analyze
+      - name: S9000 integrity
+        working-directory: app
+        run: dart test/s9000_integrity.dart
+      - name: Web access tests
+        working-directory: app
+        run: node --test test-web/access-gate.test.mjs
+      - name: Flutter unit and widget tests including goldens
+        working-directory: app
+        run: flutter test
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: test-failures-${{ github.sha }}
+          path: app/test/failures
+          if-no-files-found: ignore
+          retention-days: 7

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="$FLUTTER_BASE_HREF">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="Consulta i gestió d’incidències dels trens de l’L4">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Incidències L4">
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/Tren-apple.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="icons/Tren-192.png"/>
+
+  <title>Incidències L4 - TMB</title>
+  <link rel="manifest" href="manifest.json">
+  <style>
+    html:not(.access-approved) flutter-view { visibility: hidden !important; }
+    #access-status { position: fixed; inset: 0; z-index: 2147483647; display: grid; place-content: center; padding: 24px; background: #101010; color: white; font: 16px sans-serif; text-align: center; }
+    .access-approved #access-status { display: none; }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+</head>
+<body>
+  <a class="tmb-home tmb-return-button" href="https://roberfernandez.github.io/tmb-agent/" aria-label="Tornar a TMB Agent" title="Tornar a TMB Agent"><svg class="tmb-return-arrow" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 19-7-7 7-7M5 12h14"/></svg><img src="https://roberfernandez.github.io/tmb-agent/assets/icons/tmb-agent-192.png" alt=""></a>
+  <style>
+    html,body{margin:0;width:100%;height:100%;overflow:hidden}
+    #flutter_host{position:absolute;inset:0;overflow:hidden}
+    .tmb-home{position:fixed;z-index:1100;top:max(10px,env(safe-area-inset-top,0px));left:max(14px,env(safe-area-inset-left,0px));width:38px;height:38px;display:grid;place-items:center;border-radius:10px}
+    .tmb-home img{width:32px;height:32px;border-radius:8px;object-fit:cover}
+  </style>
+  <style>
+/* Retorn compacte: icona TMB Agent dins un cercle groc. */
+.tmb-return-button{display:inline-flex;align-items:center;justify-content:center;gap:0;width:52px;min-width:52px;height:52px;min-height:52px;padding:5px;box-sizing:border-box;border:2px solid #f1cb49;border-radius:999px;background:#182536;color:#f1cb49;flex:0 0 auto;text-decoration:none;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.tmb-return-button img{display:block;width:38px;height:38px;border-radius:10px;object-fit:contain;flex:0 0 auto}
+.tmb-return-button svg{display:none;width:22px;height:22px;flex:0 0 auto}
+.tmb-return-button:hover{background:#26394d;border-color:#ffe177;color:#ffe177}
+.tmb-return-button:active{background:#30465e}
+.tmb-return-button:focus-visible{outline:3px solid #98c5e0;outline-offset:3px}
+
+    :root{--tmb-return-height:calc(68px + env(safe-area-inset-top,0px))}
+    body::before{content:"";position:fixed;inset:0 0 auto;height:var(--tmb-return-height);z-index:1000;background:#0c1624;border-bottom:1px solid #2d3b4a;box-sizing:border-box;pointer-events:none}
+    #flutter_host{top:var(--tmb-return-height)}
+    .tmb-home.tmb-return-button{top:calc(8px + env(safe-area-inset-top,0px));left:max(12px,env(safe-area-inset-left,0px))}
+</style>
+  <div id="flutter_host"></div>
+  <!--
+    You can customize the "flutter_bootstrap.js" script.
+    This is useful to provide a custom configuration to the Flutter loader
+    or to give the user feedback during the initialization process.
+
+    For more details:
+    * https://docs.flutter.dev/platform-integration/web/initialization
+  -->
+  <div id="access-status" role="status">
+    <p id="access-message">Comprovant el teu accés…</p>
+    <button id="access-retry" hidden>Tornar-ho a provar</button>
+    <noscript>Cal activar JavaScript per comprovar l’accés.</noscript>
+  </div>
+  <script type="module" src="access-entry.js?v=s9000-ma-carousel-20261019"></script>
+</body>
+</html>
+

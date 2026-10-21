@@ -1,0 +1,566 @@
+[
+  {
+    "path": "manual/s2100/sac_13/des-con-des.png",
+    "page": 32,
+    "kind": "recorte directo",
+    "sha256": "8d6e144755ccb7c976cbe0afef81e584134a354dc8b442d737d4da66b5127231"
+  },
+  {
+    "path": "manual/s2100/sac_14/termic-1f11.png",
+    "page": 35,
+    "kind": "recorte directo",
+    "sha256": "910b6402491bc3e935c8b6bddc9c3c205b33f7302e11d1fdd64e9ebdf78713e3"
+  },
+  {
+    "path": "manual/s2100/sac_19/armari-1f09.png",
+    "page": 38,
+    "kind": "adaptación: eliminación de fragmentos de texto ajenos, sin alterar elementos ni flechas",
+    "sha256": "1309255dd1f87e4c105fc7b8d77412fdf8d451fcd3fb055ed4d350c75c476a0d"
+  },
+  {
+    "path": "manual/s2100/sac_19/armari-1f13.png",
+    "page": 40,
+    "kind": "recorte directo",
+    "sha256": "d422e26582d621e34bce4e4076063de3b54da640d0a22493cbe646d4f39edc62"
+  },
+  {
+    "path": "manual/s2100/sac_20/rearme-compressor.png",
+    "page": 41,
+    "kind": "recorte directo",
+    "sha256": "ab9a7a7088dcd249446527fada48b21e017b7190ad48a81d9847094d481525ac"
+  },
+  {
+    "path": "manual/s2100/sac_21/manometre-tdp.png",
+    "page": 42,
+    "kind": "recorte directo",
+    "sha256": "0879cd251f1fa0709e4bd691e694687f6e7b1abda1c96e0741f83b79a31e6920"
+  },
+  {
+    "path": "manual/s2100/sac_23/remodelat-armari-tren-stop.png",
+    "page": 44,
+    "kind": "adaptación: eliminación de fragmentos de texto ajenos, sin alterar elementos ni flechas",
+    "sha256": "08fd1cfa7a5378b5ccc7dfef4ded4dbcbb2bdbe9db8daaca702e70dee5ea7067"
+  },
+  {
+    "path": "manual/s2100/sac_23/remodelat-rearme-anullacio.png",
+    "page": 64,
+    "kind": "recorte directo",
+    "sha256": "3917fc3bd6b6ad14987526901bf3ffd5edf935f6e8810606dc805684b24c887b"
+  },
+  {
+    "path": "manual/s2100/sac_13/b19-coches-a.jpg",
+    "kind": "existente conservada",
+    "sha256": "2b079ed591d0023d0af7ab3694936cf1870db380d25130c25fc84f130226e791"
+  },
+  {
+    "path": "manual/s2100/sac_13/b19.jpg",
+    "kind": "existente conservada",
+    "sha256": "48f3fb7187eb5297f46ee6d1916595410fcbc32313239762bfa6d0f27bbccc6e"
+  },
+  {
+    "path": "manual/s2100/sac_13/b17-ma.jpg",
+    "kind": "existente conservada",
+    "sha256": "636f6cc204f2fce7f34cacbe024ff2e288250951fab26ddc1e8c5dfb65a0ec48"
+  },
+  {
+    "path": "manual/s2100/sac_13/b17-mb-remolque.jpg",
+    "kind": "existente conservada",
+    "sha256": "1aaf15702add99501df62b805c38cccfdffd68376e08ec8f49bf163e09237dec"
+  },
+  {
+    "path": "manual/s2100/sac_13/sirgas.jpg",
+    "kind": "existente conservada",
+    "sha256": "5c5f53706479a3652cc0fd07e970dc40dfd7d589a118ef1bd8457d960f29f2f9"
+  },
+  {
+    "path": "manual/s2100/sac_14/grifos-b12.jpg",
+    "kind": "existente conservada",
+    "sha256": "708513ecf16a037ce97a4c225afaea529c11e03e5b3c089b1646f61b40239328"
+  },
+  {
+    "path": "manual/s2100/sac_14/b12-2.jpg",
+    "kind": "existente conservada",
+    "sha256": "ceb4bba1619f788603dc0bf4588100bc98aece198145e56df642695986b2cd66"
+  },
+  {
+    "path": "manual/s2100/sac_14/b12.jpg",
+    "kind": "existente conservada",
+    "sha256": "2d8b9f91ae8110e7520f4c4c42d0c829b85db22fd36dbb31fac3870302680cae"
+  },
+  {
+    "path": "manual/s2100/sac_01/pupitre-disjuntor.png",
+    "page": 16,
+    "title": "Pupitre: comandament del disjuntor",
+    "nodes": [
+      "procedimiento_rearme_disyuntor"
+    ],
+    "variant": "S2100 · variant no diferenciada a la fitxa",
+    "cars": [],
+    "kind": "recorte directo",
+    "sha256": "698632cd6afe8bef8856327dfba3ef1e8a105d46656cc6efcfce9f0095d1ad7e"
+  },
+  {
+    "path": "manual/s2100/sac_01/detall-con-des.png",
+    "page": 16,
+    "title": "Disjuntor: detall CON / DES",
+    "nodes": [
+      "procedimiento_rearme_disyuntor"
+    ],
+    "variant": "S2100 · variant no diferenciada a la fitxa",
+    "cars": [],
+    "kind": "recorte directo",
+    "sha256": "66737234eae221ca59bd366ac285b222856f99bb0a7ec8fd48fa83fa01fe731f"
+  },
+  {
+    "path": "manual/s2100/connexio/bateries-pma.png",
+    "page": 15,
+    "title": "Bateries i posada en marxa automàtica (PMA)",
+    "nodes": [
+      "sac01_reset",
+      "sac02_reset",
+      "sac04_terminal"
+    ],
+    "variant": "S2100 · variant no diferenciada a la fitxa",
+    "cars": [],
+    "kind": "adaptación: eliminación de fragmento de texto ajeno",
+    "sha256": "20af85fd89c3ed1c94c226d2d51ac077432647d5437301cbad1e786b1f1200d9"
+  },
+  {
+    "path": "manual/s2100/connexio/display-pma.png",
+    "page": 15,
+    "title": "DISPLAY: estat dels equips a la posada en marxa",
+    "nodes": [
+      "sac01_reset",
+      "sac02_reset",
+      "sac04_terminal"
+    ],
+    "variant": "S2100 · variant no diferenciada a la fitxa",
+    "cars": [],
+    "kind": "recorte directo",
+    "sha256": "8887771dd841acf7c808dd7d0dd50d80489eb35e30742a904face9e8afc30b68"
+  },
+  {
+    "path": "manual/s2100/sac_02/display-un-inhibit.png",
+    "page": 18,
+    "title": "Exemple del DISPLAY: un equip inhibit",
+    "nodes": [
+      "sac02_un"
+    ],
+    "variant": "S2100 · variant no diferenciada a la fitxa",
+    "cars": [],
+    "kind": "adaptación: aislamiento de fotografía sin alterar su contenido",
+    "sha256": "ac648c21ff17d7b340eec58fe78cb6037b356414ee9aa9835f83e47b79b1a870"
+  },
+  {
+    "path": "manual/s2100/sac_02/cofre-motor.png",
+    "page": 18,
+    "title": "Cofre motor: 1F17 / 1F12; intervenció coordinada amb Portacotxeres",
+    "nodes": [
+      "sac02_seguiment",
+      "sac16_continua"
+    ],
+    "variant": "S2100 · variant no diferenciada a la fitxa",
+    "cars": [],
+    "kind": "recorte directo",
+    "sha256": "4a0b4ebf5a2dae402b5fcd84b773b764262ee634526820f2b60c2c7aed275a78"
+  },
+  {
+    "path": "manual/s2100/sac_02/display-tots-inhibits.png",
+    "page": 19,
+    "title": "Exemple del DISPLAY: tots inhibits",
+    "nodes": [
+      "sac02_tots"
+    ],
+    "variant": "S2100 · variant no diferenciada a la fitxa",
+    "cars": [],
+    "kind": "adaptación: aislamiento de fotografía sin alterar su contenido",
+    "sha256": "b0c01589f54c2201645b6619e9e302583ce05dfe776399b1292d996e72c4c8c6"
+  },
+  {
+    "path": "manual/s2100/sac_03/display-un-aillat.png",
+    "page": 20,
+    "title": "Exemple del DISPLAY: un equip aïllat",
+    "nodes": [
+      "sac03_un"
+    ],
+    "variant": "S2100 · variant no diferenciada a la fitxa",
+    "cars": [],
+    "kind": "adaptación: aislamiento de fotografía sin alterar su contenido",
+    "sha256": "ae04c46a06248bf376b9906e6788537ee6f6514eb6c7af73dabd297702f66043"
+  },
+  {
+    "path": "manual/s2100/sac_03/display-tots-aillats.png",
+    "page": 21,
+    "title": "Exemple del DISPLAY: tots aïllats",
+    "nodes": [
+      "sac03_tots"
+    ],
+    "variant": "S2100 · variant no diferenciada a la fitxa",
+    "cars": [],
+    "kind": "adaptación: aislamiento de fotografía sin alterar su contenido",
+    "sha256": "3953adafd01080b262528ee823556cf38b63c894d2c27ab76e92a0ee68d9f2fe"
+  },
+  {
+    "path": "manual/s2100/sac_03/cofre-exterior.png",
+    "page": 21,
+    "title": "Cofre de tracció: ubicació exterior",
+    "nodes": [
+      "sac03_tots"
+    ],
+    "variant": "S2100 · variant no diferenciada a la fitxa",
+    "cars": [],
+    "kind": "recorte directo",
+    "sha256": "2aac2ca49f32e08dd5d50c354ee55633537c243589acdf42cb54f5f18799859b"
+  },
+  {
+    "path": "manual/s2100/sac_03/cofre-interior.png",
+    "page": 21,
+    "title": "Cofre de tracció: detall interior",
+    "nodes": [
+      "sac03_tots"
+    ],
+    "variant": "S2100 · variant no diferenciada a la fitxa",
+    "cars": [],
+    "kind": "recorte directo",
+    "sha256": "1fdcb21a910fb9504feea650420c29dd82e9a34e4f17f1b1a7cb4306064c33a0"
+  },
+  {
+    "path": "manual/s2100/sac_06/instruments-bateria.png",
+    "page": 23,
+    "title": "Instruments A / B de bateria; identificació, procediment pendent",
+    "nodes": [
+      "sac06_pendent"
+    ],
+    "variant": "S2100 · variant no diferenciada a la fitxa",
+    "cars": [],
+    "kind": "adaptación: eliminación de fragmento de texto ajeno",
+    "sha256": "75bb435fd3290ac5e94f16a4aaba8ec4148ea0ddfc9b63e7a00fbbd20de19428"
+  },
+  {
+    "path": "manual/s2100/sac_06/comandament-convertidor.png",
+    "page": 23,
+    "title": "Convertidor P.M.M.; identificació, procediment pendent",
+    "nodes": [
+      "sac06_pendent"
+    ],
+    "variant": "S2100 · variant no diferenciada a la fitxa",
+    "cars": [],
+    "kind": "recorte directo",
+    "sha256": "cdd340fb6fe1a6b8f80001e458729839bb7dcc52e2191904abec92cafb050def"
+  },
+  {
+    "path": "manual/s2100/sac_07/controla-claxon.png",
+    "page": 25,
+    "title": "Controla lateral: clàxon abans de tancar",
+    "nodes": [
+      "inicio_pupitre_fallo"
+    ],
+    "variant": "S2100 · variant no diferenciada a la fitxa",
+    "cars": [],
+    "kind": "recorte directo",
+    "sha256": "44930a7dea5b3556c19f9a268c4ea571faeba7cae2a673d1262a86e6cd28b722"
+  },
+  {
+    "path": "manual/s2100/sac_07/botonera-portes.png",
+    "page": 25,
+    "title": "Botonera de portes: selecció de costat",
+    "nodes": [
+      "inicio_pupitre_fallo"
+    ],
+    "variant": "S2100 · variant no diferenciada a la fitxa",
+    "cars": [],
+    "kind": "recorte directo",
+    "sha256": "51f5f8b873c8f232c08eed3f1b230265c480c3a03c0b9c2936d01c132fc83580"
+  },
+  {
+    "path": "manual/s2100/sac_08/pilot-exterior.png",
+    "page": 26,
+    "title": "Pilot exterior: localitzar la porta afectada",
+    "nodes": [
+      "procedimiento_puertas_fallo"
+    ],
+    "variant": "S2100 · variant no diferenciada a la fitxa",
+    "cars": [],
+    "kind": "recorte directo",
+    "sha256": "090abfe5fff38554a8c173ff4b275250a2cfc333ba8c291d3fc6b110af910be9"
+  },
+  {
+    "path": "manual/s2100/sac_08/selector-ma.png",
+    "page": 27,
+    "title": "Absència de tensió: selector MA1 / MA2",
+    "nodes": [
+      "procedimiento_puertas_fallo"
+    ],
+    "variant": "S2100 · variant no diferenciada a la fitxa",
+    "cars": [
+      "MA1",
+      "MA2"
+    ],
+    "kind": "recorte directo",
+    "sha256": "d683a1ecffdb58f4197629e6258c8f1855a42e0194c82c502f2248e71172e026"
+  },
+  {
+    "path": "manual/s2100/sac_08/selector-mb-r.png",
+    "page": 27,
+    "title": "Absència de tensió: selector MB1 / R / MB2",
+    "nodes": [
+      "procedimiento_puertas_fallo"
+    ],
+    "variant": "S2100 · variant no diferenciada a la fitxa",
+    "cars": [
+      "MB1",
+      "R",
+      "MB2"
+    ],
+    "kind": "recorte directo",
+    "sha256": "244498ccbfd9245aeb1b1b16e5f4ba20974d36b2f1fe2f89c772a88eda320d71"
+  },
+  {
+    "path": "manual/s2100/sac_08/remodelat-pinyo.png",
+    "page": 64,
+    "title": "Accés al pinyó inferior; retirada d’objectes només sense tensió",
+    "nodes": [
+      "procedimiento_puertas_fallo"
+    ],
+    "variant": "S2100 remodelat · només en aquesta variant",
+    "cars": [],
+    "kind": "recorte directo",
+    "sha256": "e9414ae7a947ca4bfd96bd00736aa96b25236b8d386cb738d69e86938159d898"
+  },
+  {
+    "path": "manual/s2100/sac_12/comandament-pantograf.png",
+    "page": 30,
+    "title": "Connexió del pantògraf a posada en marxa",
+    "nodes": [
+      "sac12"
+    ],
+    "variant": "S2100 · variant no diferenciada a la fitxa",
+    "cars": [],
+    "kind": "recorte directo",
+    "sha256": "92e6a5247c4022dd8cfe3ea0d2e754e2ad726e9c5155e8b79b3f0b66b7460c17"
+  },
+  {
+    "path": "manual/s2100/sac_13/display-tots-estacionaments.png",
+    "page": 32,
+    "title": "Exemple del DISPLAY: estacionaments a tots els cotxes",
+    "nodes": [
+      "sac13_tots_pressio"
+    ],
+    "variant": "S2100 · variant no diferenciada a la fitxa",
+    "cars": [],
+    "kind": "adaptación: aislamiento de fotografía sin alterar su contenido",
+    "sha256": "b6c3ab57a1978822f5db45ea978e4efd680a068f6a0c4bc8ffe35533580a7c98"
+  },
+  {
+    "path": "manual/s2100/sac_13/display-un-estacionament.png",
+    "page": 33,
+    "title": "Exemple del DISPLAY: estacionament a un cotxe",
+    "nodes": [
+      "sac13_un_pressio"
+    ],
+    "variant": "S2100 · variant no diferenciada a la fitxa",
+    "cars": [],
+    "kind": "adaptación: aislamiento de fotografía sin alterar su contenido",
+    "sha256": "74f62fc80e084710cbc1c828bb21991dcc73921a56bfe3d452608f11eeec16fb"
+  },
+  {
+    "path": "manual/s2100/sac_22/pilot-taronja.png",
+    "page": 43,
+    "title": "Localització del cotxe: pilot exterior taronja",
+    "nodes": [
+      "procedimiento_tirador"
+    ],
+    "variant": "S2100 · variant no diferenciada a la fitxa",
+    "cars": [],
+    "kind": "recorte directo",
+    "sha256": "028596e00288cc7426af58727e459e790862469807c4b9e9d50e7566e21a2720"
+  },
+  {
+    "path": "manual/s2100/sac_22/tirador-rearme.png",
+    "page": 43,
+    "title": "Tirador d’alarma: rearme amb clau",
+    "nodes": [
+      "procedimiento_tirador"
+    ],
+    "variant": "S2100 · variant no diferenciada a la fitxa",
+    "cars": [],
+    "kind": "recorte directo",
+    "sha256": "95da49776d661308186d3133b3d0e46d0093a1b38a5e4426768cd4c79405c163"
+  },
+  {
+    "path": "manual/s2100/sac_23/remodelat-pilot.png",
+    "page": 64,
+    "title": "Pilot Tren Stop del pupitre",
+    "nodes": [
+      "sac23_remodelat"
+    ],
+    "variant": "S2100 remodelat · només en aquesta variant",
+    "cars": [],
+    "kind": "recorte directo",
+    "sha256": "41fdae8fdd6c3b663c06ebfe5f13d5cbd14641c60bd23c94a54ae1660cf9c8bc"
+  },
+  {
+    "path": "manual/s2100/sac_25/termic-iris.png",
+    "page": 47,
+    "title": "IRIS: identificació del tèrmic; procediment pendent",
+    "nodes": [
+      "sac25_pendent"
+    ],
+    "variant": "S2100 · variant no diferenciada a la fitxa",
+    "cars": [],
+    "kind": "recorte directo",
+    "sha256": "184deeaa0cd3eec3e4f5b7b12e6c4a23df2809e02ad3d39199f8548753e098d9"
+  },
+  {
+    "path": "manual/s2100/sac_25/termic-edp-ma2.png",
+    "page": 48,
+    "title": "EDP a MA2: identificació; procediment pendent",
+    "nodes": [
+      "sac25_pendent"
+    ],
+    "variant": "S2100 · variant no diferenciada a la fitxa",
+    "cars": [
+      "MA2"
+    ],
+    "kind": "recorte directo",
+    "sha256": "8fd0fda50379e3c845cd8f8dd5fbb838a37a7ebbf7df7d32eba461e2e56ce190"
+  },
+  {
+    "path": "manual/s2100/sac_25/equip-posicio-ma1.png",
+    "page": 48,
+    "title": "Equip de detecció de posició a MA1: identificació; procediment pendent",
+    "nodes": [
+      "sac25_pendent"
+    ],
+    "variant": "S2100 · variant no diferenciada a la fitxa",
+    "cars": [
+      "MA1"
+    ],
+    "kind": "recorte directo",
+    "sha256": "3289effd00a62b7812319983152eedc73610e0e415def5c4fea444296cafe1cf"
+  },
+  {
+    "path": "manual/s2100/compartits/bolet-emergencia.png",
+    "page": 52,
+    "title": "Bolet d’emergència de la cabina habilitada",
+    "nodes": [
+      "pregunta_seta",
+      "procedimiento_seta",
+      "sac13_tots_persisteix",
+      "sac02_tots"
+    ],
+    "variant": "S2100 · variant no diferenciada a la fitxa",
+    "cars": [],
+    "kind": "recorte directo",
+    "sha256": "4d465dfadb6e1c133b5dee8c08d65a467c7f3f6af81f02e859184de3d8c079a9"
+  },
+  {
+    "path": "manual/s2100/mode_especial/manipulador.png",
+    "page": 8,
+    "title": "Manipulador marxa / fre",
+    "nodes": [
+      "inicio_modo_especial",
+      "procedimiento_modo_especial"
+    ],
+    "variant": "S2100 · variant no diferenciada a la fitxa",
+    "cars": [],
+    "kind": "recorte directo",
+    "sha256": "954ad952e81fc9ae86e068786cf31aa75b8af80aaf416b67aa269e6ba52cfd42"
+  },
+  {
+    "path": "manual/s2100/mode_especial/selector-marxes.png",
+    "page": 8,
+    "title": "Selector de marxes",
+    "nodes": [
+      "inicio_modo_especial",
+      "procedimiento_modo_especial"
+    ],
+    "variant": "S2100 · variant no diferenciada a la fitxa",
+    "cars": [],
+    "kind": "recorte directo",
+    "sha256": "80c514951710cf6ffd749920f5a1fd8d66ca729dbc26f789d2d8d5f4324626e2"
+  },
+  {
+    "path": "manual/s2100/mode_especial/clau-govern.png",
+    "page": 8,
+    "title": "Clau de govern",
+    "nodes": [
+      "inicio_modo_especial",
+      "procedimiento_modo_especial"
+    ],
+    "variant": "S2100 · variant no diferenciada a la fitxa",
+    "cars": [],
+    "kind": "recorte directo",
+    "sha256": "a07c2aeacca8ecfb8cd6b4a6a5eb88c2ddd1ffbb552fc25f521b32943edc65ac"
+  },
+  {
+    "path": "manual/s2100/mode_especial/clau-atc.png",
+    "page": 8,
+    "title": "Bombí de desconnexió ATC / mode especial",
+    "nodes": [
+      "procedimiento_modo_especial_llave",
+      "procedimiento_modo_especial"
+    ],
+    "variant": "S2100 · variant no diferenciada a la fitxa",
+    "cars": [],
+    "kind": "recorte directo",
+    "sha256": "967c976ac1b43237f3dd3c123a1d2c400a0c54c519c9dfa716c3cbc38e60727b"
+  },
+  {
+    "path": "manual/s2100/mode_especial/pilot-me.png",
+    "page": 8,
+    "title": "Pilot de mode especial",
+    "nodes": [
+      "procedimiento_modo_especial_llave",
+      "procedimiento_modo_especial"
+    ],
+    "variant": "S2100 · variant no diferenciada a la fitxa",
+    "cars": [],
+    "kind": "recorte directo",
+    "sha256": "0451c2cfc92bd843f79ae0df3cadc143a3660a8999e7dd945bd543b1344d6cdd"
+  },
+  {
+    "path": "manual/s2100/compartits/preparacio-pupitre.jpg",
+    "page": null,
+    "kind": "imagen existente conservada sin cambios",
+    "sha256": "22cb76a16a3db0af63374a20fdbf811a605a6c4bd850d9f344a1e00f5750ee72"
+  },
+  {
+    "path": "manual/s2100/compartits/clau-especial.jpg",
+    "page": null,
+    "kind": "imagen existente conservada sin cambios",
+    "sha256": "ee9ec3cdb408c4acef10a5ca6f36da7e1c34f6ac2bd28cf03267e1ed9d38ad46"
+  },
+  {
+    "path": "manual/s2100/compartits/controla-existent.jpg",
+    "page": null,
+    "kind": "imagen existente conservada sin cambios",
+    "sha256": "212b51ab89c8326331e482a1a48109fc4a87bfd5c14c81805b4d3cbd3fdf5e41"
+  },
+  {
+    "path": "manual/s2100/compartits/termics-existents.jpg",
+    "page": null,
+    "kind": "adaptación JPEG calidad 97, resolución original 3072×4096, sin recorte",
+    "sha256": "ccfde501da049b474e53e7dc97b02007429a28b194b361c2386854e73cf04cac"
+  },
+  {
+    "path": "manual/s2100/compartits/pictogrames-existents.png",
+    "page": null,
+    "kind": "imagen existente conservada sin cambios",
+    "sha256": "88cf3c9da787bba406ce68b40512ea595e55c1e58def8de3eeb3c66dc4ef0fe1"
+  },
+  {
+    "path": "manual/s2100/compartits/panell-anullacions.jpg",
+    "page": null,
+    "kind": "fotografía aportada, sin modificación",
+    "source": "fotografía del panel aportada por el usuario",
+    "sha256": "bb54812afe0c7db4352a36afd0cec446ded0ad1fde13f7cde6120e85eaff2a32"
+  },
+  {
+    "path": "manual/s2100/sac_12/estado-pantografos-2100.jpg",
+    "page": null,
+    "kind": "fotografía aportada, sin modificación",
+    "source": "Display 12 real aportado por el usuario",
+    "sha256": "1002761bab064f7ce1ea807f9c046835dbacdb74efab2113cadf587ca3fdc53a"
+  }
+]
