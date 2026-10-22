@@ -26,7 +26,7 @@ async function initialize() {
       unavailable,
       start: () => {
         const script = document.createElement('script');
-        script.src = 'flutter_bootstrap.js?v=s9000-ma-carousel-20261019';
+        script.src = 'flutter_bootstrap.js?v=s9000-pictogrames-20261022';
         script.async = true;
         script.onerror = () => { gate.suspend(); unavailable(); };
         document.body.append(script);
