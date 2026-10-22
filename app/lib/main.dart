@@ -2987,8 +2987,8 @@ class PictogramasScreen extends StatelessWidget {
           ]
         : const [
             (
-              'Localització al tren i DDU',
-              'assets/resolucion/pictogramas_s9000.png',
+              'Localització al tren',
+              'assets/resolucion/pictogramas_s9000_localitzacio.png',
             ),
             (
               'Detall de la pantalla DDU',
