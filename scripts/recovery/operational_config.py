@@ -4,8 +4,9 @@ import json, os, pathlib, re, subprocess, tempfile, argparse
 def validate(env, session_source):
     url = env.get("L4_SUPABASE_URL", "")
     key = env.get("L4_SUPABASE_PUBLISHABLE_KEY", "")
-    if env.get("L4_ADMIN_EMAIL", ""):
-        raise ValueError("Personal email must not be embedded in public JavaScript")
+    admin_email = env.get("L4_ADMIN_EMAIL", "")
+    if not admin_email.strip():
+        raise ValueError("Existing email exception must be provided externally; do not silently remove it")
     if not re.fullmatch(r"https://[a-z0-9]{20}\.supabase\.co", url):
         raise ValueError("A real HTTPS project URL is required")
     if not re.fullmatch(r"sb_publishable_[A-Za-z0-9_-]{20,}", key):
@@ -20,7 +21,7 @@ def validate(env, session_source):
             expected_storage[1] != f"sb-{project}-auth-token"):
         raise ValueError("Configuration does not match the reviewed TMB session module")
     return {"L4_SUPABASE_URL": url, "L4_SUPABASE_PUBLISHABLE_KEY": key,
-            "L4_ADMIN_EMAIL": ""}
+            "L4_ADMIN_EMAIL": admin_email}
 
 def main():
     parser = argparse.ArgumentParser()

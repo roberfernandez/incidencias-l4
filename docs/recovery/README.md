@@ -1,3 +1,5 @@
+> Decisión vigente de cierre: [integración de fuentes y conservación de mecanismos](MERGE-PREPARATION.md). Se conserva la excepción personal; los pendientes de publicación no bloquean la integración de fuentes.
+
 # Recuperación Flutter de Incidències L4
 
 Estado: compilación web y pruebas verificadas en GitHub Actions sobre 905f0cb. Véase [informe de revisión](REVIEW-20261021.md) para evidencia, límites y pendientes. No publicado.

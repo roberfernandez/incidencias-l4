@@ -1,3 +1,5 @@
+> Decisión vigente de cierre: [integración de fuentes y conservación de mecanismos](MERGE-PREPARATION.md). Se conserva la excepción personal; los pendientes de publicación no bloquean la integración de fuentes.
+
 # Preparación de integración definitiva
 
 Estado: propuesta sin fusión ni despliegue. Rama recovery/flutter-20261021. Base revisada f25af22; TMB Agent contrastado en c07e75666cf774d6088666c2df9c9b2f07761470. No se consultaron datos reales ni se modificó Supabase.
