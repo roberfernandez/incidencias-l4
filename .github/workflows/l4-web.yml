@@ -1,0 +1,190 @@
+name: Incidencies L4 - verificar y publicar manualmente
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'app/**'
+      - 'scripts/release/**'
+      - 'scripts/recovery/**'
+      - '.github/workflows/l4-web.yml'
+  workflow_dispatch:
+    inputs:
+      operation:
+        description: 'Solo comprobar o publicar la web (nunca automático)'
+        required: true
+        type: choice
+        default: check
+        options:
+          - check
+          - publish
+      expected_sha:
+        description: 'SHA de main esperado (opcional, evita publicar otro commit)'
+        required: false
+        type: string
+      confirmation:
+        description: 'Para publicar escribe exactamente PUBLICAR'
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: l4-website-manual-release
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    name: Pruebas y compilacion de seguridad
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Confirm manual operation and source SHA
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          L4_OPERATION: ${{ inputs.operation }}
+          L4_EXPECTED_SHA: ${{ inputs.expected_sha }}
+          L4_CONFIRMATION: ${{ inputs.confirmation }}
+        run: python3 scripts/release/guard.py
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.41.9'
+          channel: stable
+          cache: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Lock Flutter dependencies
+        working-directory: app
+        run: flutter pub get --enforce-lockfile
+      - uses: actions/checkout@v4
+        with:
+          repository: roberfernandez/tmb-agent
+          ref: c07e75666cf774d6088666c2df9c9b2f07761470
+          path: .integration-tmb
+          sparse-checkout: |
+            src/session.js
+            auth/lib/main.dart
+          sparse-checkout-cone-mode: false
+          persist-credentials: false
+      - name: Offline publishing safeguards
+        run: python3 -m unittest discover -s scripts/release -p 'test_*.py'
+      - name: Offline configuration tests
+        run: python3 -m unittest discover -s scripts/recovery -p 'test_*.py'
+      - name: TMB Agent contract (mock network)
+        run: node --test scripts/recovery/tmb_contract.test.mjs
+      - name: Flutter static analysis
+        working-directory: app
+        run: flutter analyze
+      - name: S9000 integrity
+        working-directory: app
+        run: dart test/s9000_integrity.dart
+      - name: Web access tests
+        working-directory: app
+        run: node --test test-web/access-gate.test.mjs
+      - name: Flutter widget and golden tests
+        working-directory: app
+        run: flutter test --reporter expanded
+      - name: Build synthetic CI bundle on pull requests
+        if: github.event_name == 'pull_request'
+        working-directory: app
+        run: flutter build web --release --base-href /incidencias-l4/ --pwa-strategy=none --no-web-resources-cdn
+      - name: Package synthetic CI bundle (never publish)
+        if: github.event_name == 'pull_request'
+        run: python3 scripts/recovery/package_web.py
+      - name: Audit synthetic CI bundle (never publish)
+        if: github.event_name == 'pull_request'
+        run: python3 scripts/release/audit_candidate.py --web app/build/web --revision "${GITHUB_SHA:0:12}"
+
+  candidate:
+    name: Compilar candidato operativo (sin desplegar)
+    if: github.event_name == 'workflow_dispatch'
+    needs: verify
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Ensure this is still the current main commit
+        run: |
+          git fetch origin main
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+          test "$(git rev-parse origin/main)" = "$GITHUB_SHA"
+      - uses: actions/checkout@v4
+        with:
+          repository: roberfernandez/tmb-agent
+          ref: c07e75666cf774d6088666c2df9c9b2f07761470
+          path: .integration-tmb
+          sparse-checkout: |
+            src/session.js
+            auth/lib/main.dart
+          sparse-checkout-cone-mode: false
+          persist-credentials: false
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.41.9'
+          channel: stable
+          cache: true
+      - name: Load pinned public TMB Agent configuration (no values in logs)
+        run: python3 scripts/release/public_tmb_env.py --session-module .integration-tmb/src/session.js --github-env "$GITHUB_ENV"
+      - name: Compile with reviewed TMB client configuration
+        env:
+          L4_ADMIN_EMAIL: ${{ secrets.L4_ADMIN_EMAIL }}
+        run: python3 scripts/recovery/operational_config.py --session-module .integration-tmb/src/session.js --build
+      - name: Audit operational candidate and keep both S9000 images
+        run: python3 scripts/release/audit_candidate.py --web app/build/web --revision "${GITHUB_SHA:0:12}" --operational
+      - uses: actions/upload-artifact@v4
+        with:
+          name: l4-reviewed-web-${{ github.sha }}
+          path: app/build/web/
+          retention-days: 7
+          if-no-files-found: error
+          include-hidden-files: true
+
+  publish:
+    name: Publicar solamente con autorizacion explicita
+    if: github.event_name == 'workflow_dispatch' && inputs.operation == 'publish'
+    needs: candidate
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Check explicit authorization, Pages mode and unchanged main
+        env:
+          L4_OPERATION: ${{ inputs.operation }}
+          L4_EXPECTED_SHA: ${{ inputs.expected_sha }}
+          L4_CONFIRMATION: ${{ inputs.confirmation }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 scripts/release/guard.py
+          git fetch origin main
+          test "$(git rev-parse origin/main)" = "$GITHUB_SHA"
+          pages_source="$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq '.build_type')"
+          if [ "$pages_source" != 'workflow' ]; then
+            echo '::error::GitHub Pages debe estar configurado en Source = GitHub Actions. No se ha publicado nada.'
+            exit 1
+          fi
+      - uses: actions/download-artifact@v4
+        with:
+          name: l4-reviewed-web-${{ github.sha }}
+          path: candidate-web/
+      - name: Recheck exactly the tested build
+        run: python3 scripts/release/audit_candidate.py --web candidate-web --revision "${GITHUB_SHA:0:12}" --operational
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: candidate-web/
+      - id: deploy
+        uses: actions/deploy-pages@v4
