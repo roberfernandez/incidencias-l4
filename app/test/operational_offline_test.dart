@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:l4_incidencias/horarios_screen.dart';
 import 'package:l4_incidencias/main.dart';
+import 'package:l4_incidencias/acceso_screen.dart';
 
 void main() {
   test('Dates and train numbers retain display contract', () {
@@ -43,4 +44,25 @@ void main() {
     expect(find.text('Introdueix el número del tren'), findsOneWidget);
     expect(t.takeException(), isNull);
   });
+
+  for (final state in ['aprobado', 'rechazado', 'offline']) {
+    testWidgets('Saved session UI: $state', (t) async {
+      await t.pumpWidget(MaterialApp(home: AccesoScreen(
+        pantallaPrincipal: const Scaffold(body: Text('Synthetic authorized page')),
+        comprobarSesionGuardada: () async {
+          if (state == 'offline') throw StateError('simulated offline');
+          return state;
+        })));
+      await t.pumpAndSettle();
+      expect(find.text('Synthetic authorized page'),
+          state == 'aprobado' ? findsOneWidget : findsNothing);
+      if (state == 'offline') {
+        expect(find.text('Tornar-ho a provar'), findsOneWidget);
+      }
+      if (state == 'rechazado') {
+        expect(find.text('El teu compte no té l’accés aprovat actualment.'), findsOneWidget);
+      }
+      expect(t.takeException(), isNull);
+    });
+  }
 }
