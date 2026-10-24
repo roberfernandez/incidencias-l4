@@ -280,7 +280,7 @@ class SelectorSerieScreen extends StatelessWidget {
               const SizedBox(height: 14),
               PictogramesPortadaFranja(
                 titol: 'PICTOGRAMES COMUNS · 2100 / 9000',
-                imatge: 'manual/s2100/compartits/pictogrames-existents.png',
+                imatge: 'assets/resolucion/pictogramas_s9000_localitzacio.png',
                 alPulsar: () => Navigator.push(
                   context,
                   MaterialPageRoute(builder: (_) => PictogramasScreen(
