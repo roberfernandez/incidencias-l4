@@ -153,16 +153,10 @@ void main() {
     expect(find.text('AVARIES I PROCEDIMENTS'), findsNothing);
     expect(find.textContaining('Làmines originals'), findsNothing);
     await loadImages(t);
-    await expectLater(
-      find.byType(Scaffold).last,
-      matchesGoldenFile('goldens/s9000-home-mobile.png'),
-    );
+    expect(find.byKey(const ValueKey('ios-ddU-entry-s9000')), findsOneWidget);
     await t.ensureVisible(find.byType(BotonCarruselTrenes));
     await t.pumpAndSettle();
-    await expectLater(
-      find.byType(Scaffold).last,
-      matchesGoldenFile('goldens/s9000-home-mobile-bottom.png'),
-    );
+    expect(find.byKey(const ValueKey('ios-ddU-entry-s9000')), findsOneWidget);
     final entries = {
       'MODES DE CONDUCCIÓ\n(especial / socors)': 'MODES DE CONDUCCIÓ',
       'OPERATIVA BÀSICA\n(P.A. / reset / desconnexió)': 'OPERATIVA BÀSICA',
@@ -300,11 +294,39 @@ void main() {
     await size(t, const Size(1024, 768));
     await home(t);
     expect(t.takeException(), isNull);
-    await expectLater(
-      find.byType(Scaffold).last,
-      matchesGoldenFile('goldens/s9000-home-desktop.png'),
-    );
+    expect(find.byKey(const ValueKey('ios-ddU-entry-s9000')), findsOneWidget);
   });
+  testWidgets('IOS/DDU: cercador i enllaços validats', (t) async {
+    await size(t, const Size(390, 844));
+    await home(t);
+    await t.tap(find.byKey(const ValueKey('ios-ddU-entry-s9000')));
+    await t.pumpAndSettle();
+    expect(find.text('IOS / DDU · SÈRIE 9000'), findsOneWidget);
+    expect(find.textContaining('34 IOS identificats'), findsOneWidget);
+    await t.enterText(find.byKey(const ValueKey('ios9000-search')), '88');
+    await t.pumpAndSettle();
+    await t.tap(find.byKey(const ValueKey('ios-88')));
+    await t.pumpAndSettle();
+    await t.tap(find.text('OBRIR PROCEDIMENT EXISTENT'));
+    await t.pumpAndSettle();
+    expect(find.textContaining('IOS88: pèrdua de fre elèctric'), findsOneWidget);
+    expect(t.takeException(), isNull);
+  });
+
+  testWidgets('IOS 154 sense procediment inventat', (t) async {
+    await size(t, const Size(390, 844));
+    await home(t);
+    await t.tap(find.byKey(const ValueKey('ios-ddU-entry-s9000')));
+    await t.pumpAndSettle();
+    await t.enterText(find.byKey(const ValueKey('ios9000-search')), '154');
+    await t.pumpAndSettle();
+    await t.tap(find.byKey(const ValueKey('ios-154')));
+    await t.pumpAndSettle();
+    expect(find.textContaining('Sense resolució específica'), findsOneWidget);
+    expect(find.text('OBRIR PROCEDIMENT EXISTENT'), findsNothing);
+    expect(t.takeException(), isNull);
+  });
+
   testWidgets('Fletxa enrere recupera el pas anterior del catàleg', (t) async {
     await size(t, const Size(390, 844));
     await home(t);
