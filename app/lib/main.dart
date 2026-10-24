@@ -1,5 +1,6 @@
 import 'imatge_manual_protegida.dart';
 import 'sac2100_screen.dart';
+import 'ios9000_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:image_picker/image_picker.dart';
@@ -1144,6 +1145,15 @@ class _TriajeS9000ScreenState extends State<TriajeS9000Screen> {
     );
   }
 
+  void _abrirIos9000(BuildContext context) {
+    Navigator.push(context, MaterialPageRoute(
+      builder: (_) => Ios9000Screen(
+        onSelect: (id) => _abrirPasoDirecto(
+          context, pasoInicialId: id, claveCausas: 'avaries_s9000'),
+      ),
+    ));
+  }
+
   Widget _casellesConsulta(BuildContext context) {
     OpcionMenuS9000 procediment(String text, Color color, String id) =>
         OpcionMenuS9000(
@@ -1300,6 +1310,24 @@ class _TriajeS9000ScreenState extends State<TriajeS9000Screen> {
                 ],
               ),
 
+              const SizedBox(height: 14),
+              SizedBox(
+                width: double.infinity,
+                child: Card(
+                  color: const Color(0xFF211F27),
+                  child: ListTile(
+                    key: const ValueKey('ios-ddU-entry-s9000'),
+                    contentPadding: const EdgeInsets.symmetric(
+                      horizontal: 20, vertical: 17),
+                    leading: const Icon(Icons.list_alt, color: Colors.amber, size: 32),
+                    title: const Text('IOS / DDU',
+                      style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold)),
+                    subtitle: const Text('Incidència detectada per la DDU'),
+                    trailing: const Icon(Icons.chevron_right),
+                    onTap: () => _abrirIos9000(context),
+                  ),
+                ),
+              ),
               const SizedBox(height: 14),
               _casellesConsulta(context),
             ],
