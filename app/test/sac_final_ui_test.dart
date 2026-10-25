@@ -191,8 +191,9 @@ void main() {
     expect(find.textContaining('manual/s2100/'), findsNothing);
     expect(
       find.byWidgetPredicate((widget) =>
-          widget is RichText &&
-          widget.text.toPlainText().contains('Actua sobre 1F09 i 1F11')),
+          widget is Text &&
+          (widget.textSpan?.toPlainText() ?? widget.data ?? '')
+              .contains('Actua sobre 1F09 i 1F11')),
       findsOneWidget,
     );
     expect(find.byType(VisorImagenDiagnostico), findsNWidgets(2));
