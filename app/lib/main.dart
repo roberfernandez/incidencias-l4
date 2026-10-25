@@ -2668,7 +2668,7 @@ class _DiagnosticoInteractivoScreenState
   Widget _construirTextoFormateado(String texto) {
     // Pictogrames idèntics als de la franja de portada, un per tipus i pas.
     final patron = RegExp(
-      r'🟥|🔴|🔻|▼|quadrat vermell|triangle vermell|cercle vermell|'
+      r'🟥|🔴|🔻|▼|\bB(?:19|17|12)\b|quadrat vermell|triangle vermell|cercle vermell|'
       r'tèrmics?|termics?|1F\d{2,3}|16F\d{2,3}|11F[12]|'
       r'pantògrafs?|pantografs?|sirgues?|tiradors?',
       caseSensitive: false,
@@ -2678,8 +2678,8 @@ class _DiagnosticoInteractivoScreenState
       if (v == '🔴' || v.contains('cercle') ||
           v.contains('tèrmic') || v.contains('termic') ||
           RegExp(r'^(1f|16f|11f)\d').hasMatch(v)) return 0;
-      if (v == '🟥' || v.contains('quadrat')) return 1;
-      if (v == '🔻' || v == '▼' || v.contains('triangle')) return 2;
+      if (v == '🟥' || v.contains('quadrat') || v == 'b19' || v == 'b17') return 1;
+      if (v == '🔻' || v == '▼' || v.contains('triangle') || v == 'b12') return 2;
       if (v.contains('pantògraf') || v.contains('pantograf')) return 3;
       if (v.contains('sirga') || v.contains('tirador')) return 4;
       return null;
