@@ -277,7 +277,19 @@ class SelectorSerieScreen extends StatelessWidget {
                 },
               ),
 
-              const SizedBox(height: 18),
+              const SizedBox(height: 14),
+              PictogramesPortadaFranja(
+                titol: 'PICTOGRAMES COMUNS · 2100 / 9000',
+                imatge: 'assets/resolucion/pictogramas_s9000_localitzacio.png',
+                alPulsar: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => PictogramasScreen(
+                    serie: '2100',
+                    volverInicio: () => Navigator.of(context).popUntil((r) => r.isFirst),
+                  )),
+                ),
+              ),
+              const SizedBox(height: 14),
 
               SelectorSerieCard(
                 serie: '9000',
@@ -292,12 +304,78 @@ class SelectorSerieScreen extends StatelessWidget {
                   );
                 },
               ),
+              const SizedBox(height: 14),
+              PictogramesPortadaFranja(
+                titol: 'PICTOGRAMES DDU · NOMÉS SÈRIE 9000',
+                imatge: 'assets/resolucion/pictogramas_s9000_ddu.png',
+                alPulsar: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => PictogramasScreen(
+                    serie: '9000',
+                    volverInicio: () => Navigator.of(context).popUntil((r) => r.isFirst),
+                  )),
+                ),
+              ),
             ],
           ),
         ),
       ),
     );
   }
+}
+
+class PictogramesPortadaFranja extends StatelessWidget {
+  final String titol;
+  final String imatge;
+  final VoidCallback alPulsar;
+
+  const PictogramesPortadaFranja({super.key, required this.titol,
+    required this.imatge, required this.alPulsar});
+
+  @override
+  Widget build(BuildContext context) => InkWell(
+    onTap: alPulsar,
+    child: CustomPaint(
+      painter: _MarcDiscontinuGroc(),
+      child: Padding(
+        padding: const EdgeInsets.all(12),
+        child: Column(children: [
+          Text(titol, textAlign: TextAlign.center,
+            style: const TextStyle(color: Colors.yellow,
+              fontSize: 12, fontWeight: FontWeight.w800)),
+          const SizedBox(height: 8),
+          ConstrainedBox(
+            constraints: const BoxConstraints(maxHeight: 140),
+            child: Image.asset(imatge, fit: BoxFit.contain,
+              errorBuilder: (_, _, _) => const Text(
+                'Imatge no disponible', style: TextStyle(color: Colors.white70))),
+          ),
+          const SizedBox(height: 6),
+          const Text('Prem per ampliar',
+            style: TextStyle(fontSize: 11, color: Colors.white70)),
+        ]),
+      ),
+    ),
+  );
+}
+
+class _MarcDiscontinuGroc extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()..color = Colors.yellow..style = PaintingStyle.stroke
+      ..strokeWidth = 1.8;
+    final path = Path()..addRRect(RRect.fromRectAndRadius(
+      Offset.zero & size, const Radius.circular(14)));
+    for (final metric in path.computeMetrics()) {
+      for (double distance = 0; distance < metric.length; distance += 12) {
+        canvas.drawPath(metric.extractPath(distance,
+          (distance + 7).clamp(0.0, metric.length)), paint);
+      }
+    }
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }
 
 class SelectorSerieCard extends StatelessWidget {
