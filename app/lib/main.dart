@@ -280,6 +280,7 @@ class SelectorSerieScreen extends StatelessWidget {
               const SizedBox(height: 14),
               PictogramesPortadaFranja(
                 imatge: 'assets/resolucion/pictogramas_s9000_localitzacio.png',
+                retallVertical: true,
               ),
               const SizedBox(height: 14),
 
@@ -310,20 +311,28 @@ class SelectorSerieScreen extends StatelessWidget {
 
 class PictogramesPortadaFranja extends StatelessWidget {
   final String imatge;
+  final bool retallVertical;
 
-  const PictogramesPortadaFranja({super.key, required this.imatge});
+  const PictogramesPortadaFranja({
+    super.key,
+    required this.imatge,
+    this.retallVertical = false,
+  });
 
   @override
   Widget build(BuildContext context) => CustomPaint(
     painter: _MarcDiscontinuGroc(),
     child: Padding(
       padding: const EdgeInsets.all(8),
-      child: ConstrainedBox(
-        constraints: const BoxConstraints(maxHeight: 105),
-        child: Center(
+      child: SizedBox(
+        width: double.infinity,
+        height: retallVertical ? 160 : null,
+        child: ClipRect(
           child: Image.asset(
             imatge,
-            fit: BoxFit.contain,
+            width: double.infinity,
+            height: retallVertical ? 160 : null,
+            fit: retallVertical ? BoxFit.cover : BoxFit.contain,
             errorBuilder: (_, _, _) => const Text(
               'Imatge no disponible',
               style: TextStyle(color: Colors.white70),
