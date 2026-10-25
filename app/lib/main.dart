@@ -1153,7 +1153,8 @@ class _TriajeS9000ScreenState extends State<TriajeS9000Screen> {
           sesion: _sesion(pasoInicialId),
           volverInicio: _volverInicio,
           pasos: arbolS9000,
-          causasPorRama: causasPorRamaS9000,
+          // Una consulta directa no ha de repetir el menú de possibles causes.
+          causasPorRama: const <String, List<String>>{},
           enlacesCausasAIr: enlacesCausasAIrS9000,
           claveCausas: claveCausas,
         ),
