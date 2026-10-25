@@ -298,6 +298,76 @@ class SelectorSerieScreen extends StatelessWidget {
   }
 }
 
+
+class FranjaPictogramesGenerals extends StatelessWidget {
+  const FranjaPictogramesGenerals({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    const noms = ['TÈRMICS', "FRE D'ESTACIONAMENT",
+      'FRE DE SERVEI\n(PNEUMÀTIC)', 'PANTÒGRAFS', 'TIRADORS / SIRGUES'];
+    return Container(
+      key: const ValueKey('franja-pictogrames-generals'),
+      padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 8),
+      decoration: BoxDecoration(
+        color: const Color(0xFF18252E),
+        border: Border.all(color: const Color(0xFF52616B)),
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Row(children: List.generate(5, (i) => Expanded(
+        child: Column(mainAxisSize: MainAxisSize.min, children: [
+          SizedBox(height: 29, width: 36,
+            child: CustomPaint(painter: _PictogramaGeneralPainter(i))),
+          const SizedBox(height: 4),
+          SizedBox(height: 28, child: FittedBox(fit: BoxFit.scaleDown,
+            child: Text(noms[i], textAlign: TextAlign.center,
+              style: const TextStyle(color: Colors.white,
+                fontWeight: FontWeight.w800, fontSize: 11)))),
+        ]),
+      ))),
+    );
+  }
+}
+
+class _PictogramaGeneralPainter extends CustomPainter {
+  final int tipus;
+  const _PictogramaGeneralPainter(this.tipus);
+  @override
+  void paint(Canvas canvas, Size size) {
+    final c = Offset(size.width / 2, size.height / 2);
+    final d = size.height - 3;
+    final rect = Rect.fromCenter(center: c, width: d, height: d);
+    final red = Paint()..color = const Color(0xFFEF2332);
+    final outline = Paint()..color = Colors.black
+      ..style = PaintingStyle.stroke..strokeWidth = 2;
+    if (tipus == 0) {
+      canvas.drawCircle(c, d / 2, red);
+      canvas.drawCircle(c, d / 2, outline);
+    } else if (tipus == 2) {
+      final p = Path()..moveTo(c.dx - d / 2, c.dy - d / 2)
+        ..lineTo(c.dx + d / 2, c.dy - d / 2)
+        ..lineTo(c.dx, c.dy + d / 2)..close();
+      canvas.drawPath(p, red);
+      canvas.drawPath(p, outline);
+    } else {
+      canvas.drawRect(rect, red);
+      canvas.drawRect(rect, outline);
+      if (tipus >= 3) {
+        final t = TextPainter(
+          text: TextSpan(text: tipus == 3 ? 'P' : 'T',
+            style: TextStyle(color: Colors.white,
+              fontSize: d * .78, fontWeight: FontWeight.w900)),
+          textDirection: TextDirection.ltr,
+        )..layout();
+        t.paint(canvas, Offset(c.dx - t.width / 2, c.dy - t.height / 2));
+      }
+    }
+  }
+  @override
+  bool shouldRepaint(covariant _PictogramaGeneralPainter old) =>
+    old.tipus != tipus;
+}
+
 class PictogramesPortadaFranja extends StatelessWidget {
   final String imatge;
 
@@ -1012,6 +1082,8 @@ class _TriajeS2100ScreenState extends State<TriajeS2100Screen> {
                   );
                 },
               ),
+              const SizedBox(height: 10),
+              const FranjaPictogramesGenerals(),
             ],
           ),
         ),
@@ -1265,6 +1337,8 @@ class _TriajeS9000ScreenState extends State<TriajeS9000Screen> {
                   builder: (_) => const CarruselTrenesScreen(serie: '9000'),
                 ),
               ),
+          SizedBox(width: constraints.maxWidth,
+            child: const FranjaPictogramesGenerals()),
             ),
           ),
         ],
