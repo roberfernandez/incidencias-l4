@@ -1091,6 +1091,14 @@ final Map<String, PasoDiagnostico> arbolS9000 = {
       OpcioSac("R", "s9000_termics_r"),
     ],
     imagenPath: "assets/resolucion/s9000_manual_p084.jpg",
+    imatgesManual: const [
+      ImatgePasManual(
+        "assets/resolucion/s9000_manual_p067.jpg",
+        "Localització dels armaris de tèrmics · manual original",
+        null,
+        "Armaris de tèrmics",
+      ),
+    ],
   ),
 
   "s9000_termics_ma": PasoDiagnostico(

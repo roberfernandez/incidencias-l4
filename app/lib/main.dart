@@ -1117,6 +1117,24 @@ class _TriajeS9000ScreenState extends State<TriajeS9000Screen> {
               ),
             ),
             OpcionMenuS9000(
+              texto: 'ATP',
+              color: Colors.blue,
+              alPulsar: () => _abrirPasoDirecto(
+                context,
+                pasoInicialId: 'procedimiento_atp_s9000',
+                claveCausas: 'modos_conduccion',
+              ),
+            ),
+            OpcionMenuS9000(
+              texto: 'MANUAL +25 (M+25)',
+              color: Colors.orange,
+              alPulsar: () => _abrirPasoDirecto(
+                context,
+                pasoInicialId: 'procedimiento_m25_s9000',
+                claveCausas: 'modos_conduccion',
+              ),
+            ),
+            OpcionMenuS9000(
               texto: 'MODE SOCORS',
               color: Colors.deepPurple,
               alPulsar: () => _abrirPasoDirecto(
@@ -1137,7 +1155,7 @@ class _TriajeS9000ScreenState extends State<TriajeS9000Screen> {
       MaterialPageRoute(
         builder: (_) => MenuS9000Screen(
           volverInicio: _volverInicio,
-          titulo: 'OPERATIVA BÀSICA',
+          titulo: 'CONNEXIÓ / DESCONNEXIÓ',
           opciones: [
             OpcionMenuS9000(
               texto: 'POSADA EN MARXA (P.A.)',
@@ -1175,16 +1193,7 @@ class _TriajeS9000ScreenState extends State<TriajeS9000Screen> {
                 claveCausas: 'operativa_basica',
               ),
             ),
-            OpcionMenuS9000(
-              texto: 'INTRODUIR NÚMERO DE TREN',
-              color: Colors.blueGrey,
-              alPulsar: () => _abrirPasoDirecto(
-                context,
-                pasoInicialId: 'inicio_num_tren',
-                claveCausas: 'operativa_basica',
-              ),
-            ),
-          ],
+],
         ),
       ),
     );
@@ -1220,44 +1229,27 @@ class _TriajeS9000ScreenState extends State<TriajeS9000Screen> {
         );
     final caselles = [
       OpcionMenuS9000(
-        texto: 'MODES DE CONDUCCIÓ\n(especial / socors)',
-        color: Colors.teal[700]!,
-        alPulsar: () => _abrirMenuModos(context),
-      ),
-      OpcionMenuS9000(
-        texto: 'OPERATIVA BÀSICA\n(P.A. / reset / desconnexió)',
+        texto: 'CONNEXIÓ / DESCONNEXIÓ',
         color: Colors.blue[800]!,
         alPulsar: () => _abrirMenuOperativa(context),
       ),
+      OpcionMenuS9000(
+        texto: 'MODES DE CONDUCCIÓ',
+        color: Colors.teal[700]!,
+        alPulsar: () => _abrirMenuModos(context),
+      ),
+      procediment('REMOLCADA I DESACOBLAMENT',
+          Colors.deepOrange[800]!, 's9000_menu_3'),
+      procediment('PORTES', Colors.green[800]!, 's9000_menu_1'),
+      procediment('AIRE I FRENS', Colors.cyan[800]!, 's9000_menu_2'),
+      procediment('EQUIPS I SERVEIS', Colors.indigo[700]!, 's9000_menu_0'),
       OpcionMenuS9000(
         texto: 'TÈRMICS',
         color: Colors.blueGrey[700]!,
         alPulsar: () => _abrirTermics(context),
       ),
-      OpcionMenuS9000(
-        texto: 'PICTOGRAMES',
-        color: const Color(0xFF8D6E63),
-        alPulsar: () => Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (_) =>
-                PictogramasScreen(serie: '9000', volverInicio: _volverInicio),
-          ),
-        ),
-      ),
-      procediment('EQUIPS I SERVEIS', Colors.indigo[700]!, 's9000_menu_0'),
-      procediment('PORTES', Colors.green[800]!, 's9000_menu_1'),
-      procediment('AIRE I FRENS', Colors.cyan[800]!, 's9000_menu_2'),
-      procediment(
-        'REMOLCADA I DESACOBLAMENT',
-        Colors.deepOrange[800]!,
-        's9000_menu_3',
-      ),
-      procediment(
-        'TREN STOP',
-        Colors.pink[800]!,
-        'procedimiento_tren_stop_s9000',
-      ),
+      procediment('TREN STOP', Colors.pink[800]!,
+          'procedimiento_tren_stop_s9000'),
       procediment("TIRADOR D'ALARMA", Colors.red[900]!, 'inicio_tirador'),
     ];
     return LayoutBuilder(
@@ -1267,7 +1259,7 @@ class _TriajeS9000ScreenState extends State<TriajeS9000Screen> {
         children: [
           for (final casella in caselles)
             SizedBox(
-              width: (constraints.maxWidth - 10) / 2,
+              width: (constraints.maxWidth - 20) / 3,
               child: BotonTriajeCompacto(
                 texto: casella.texto,
                 colorFondo: casella.color,

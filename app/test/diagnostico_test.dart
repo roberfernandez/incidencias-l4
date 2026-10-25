@@ -129,9 +129,9 @@ void main() {
   ) async {
     await tester.pumpWidget(const MaterialApp(home: TriajeS9000Screen()));
     await tester.ensureVisible(
-      find.text('MODES DE CONDUCCIÓ\n(especial / socors)'),
+      find.text('MODES DE CONDUCCIÓ'),
     );
-    await tester.tap(find.text('MODES DE CONDUCCIÓ\n(especial / socors)'));
+    await tester.tap(find.text('MODES DE CONDUCCIÓ'));
     await tester.pumpAndSettle();
     await tester.tap(find.byTooltip('Inici de Resolució d’avaries'));
     await tester.pumpAndSettle();
