@@ -277,12 +277,6 @@ class SelectorSerieScreen extends StatelessWidget {
                 },
               ),
 
-              const SizedBox(height: 14),
-              PictogramesPortadaFranja(
-                imatge: 'assets/resolucion/pictogramas_s9000_localitzacio.png',
-              ),
-              const SizedBox(height: 14),
-
               SelectorSerieCard(
                 serie: '9000',
                 imagenPath: 'assets/9000.jpg',
@@ -295,10 +289,6 @@ class SelectorSerieScreen extends StatelessWidget {
                     ),
                   );
                 },
-              ),
-              const SizedBox(height: 14),
-              PictogramesPortadaFranja(
-                imatge: 'assets/resolucion/pictogramas_s9000_ddu.png',
               ),
             ],
           ),
