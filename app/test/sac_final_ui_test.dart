@@ -189,7 +189,12 @@ void main() {
     expect(find.textContaining('Font:'), findsNothing);
     expect(find.textContaining('Manual, pàg.'), findsNothing);
     expect(find.textContaining('manual/s2100/'), findsNothing);
-    expect(find.textContaining('Actua sobre 1F09 i 1F11'), findsOneWidget);
+    expect(
+      find.byWidgetPredicate((widget) =>
+          widget is RichText &&
+          widget.text.toPlainText().contains('Actua sobre 1F09 i 1F11')),
+      findsOneWidget,
+    );
     expect(find.byType(VisorImagenDiagnostico), findsNWidgets(2));
     expect(t.takeException(), isNull);
     await t.pumpWidget(const SizedBox());
