@@ -1337,10 +1337,10 @@ class _TriajeS9000ScreenState extends State<TriajeS9000Screen> {
                   builder: (_) => const CarruselTrenesScreen(serie: '9000'),
                 ),
               ),
-          SizedBox(width: constraints.maxWidth,
-            child: const FranjaPictogramesGenerals()),
             ),
           ),
+          SizedBox(width: constraints.maxWidth,
+            child: const FranjaPictogramesGenerals()),
         ],
       ),
     );
