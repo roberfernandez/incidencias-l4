@@ -2666,24 +2666,46 @@ class _DiagnosticoInteractivoScreenState
   }
 
   Widget _construirTextoFormateado(String texto) {
+    // Pictogrames idèntics als de la franja de portada, un per tipus i pas.
+    final patron = RegExp(
+      r'🟥|🔴|🔻|▼|quadrat vermell|triangle vermell|cercle vermell|'
+      r'tèrmics?|termics?|1F\d{2,3}|16F\d{2,3}|11F[12]|'
+      r'pantògrafs?|pantografs?|sirgues?|tiradors?',
+      caseSensitive: false,
+    );
+    int? tipus(String valor) {
+      final v = valor.toLowerCase();
+      if (v == '🔴' || v.contains('cercle') ||
+          v.contains('tèrmic') || v.contains('termic') ||
+          RegExp(r'^(1f|16f|11f)\d').hasMatch(v)) return 0;
+      if (v == '🟥' || v.contains('quadrat')) return 1;
+      if (v == '🔻' || v == '▼' || v.contains('triangle')) return 2;
+      if (v.contains('pantògraf') || v.contains('pantograf')) return 3;
+      if (v.contains('sirga') || v.contains('tirador')) return 4;
+      return null;
+    }
     final spans = <InlineSpan>[];
-    final simbolos = RegExp(r'🟥|▼|🔻');
-    var inicio = 0;
-    for (final match in simbolos.allMatches(texto)) {
-      spans.add(TextSpan(text: texto.substring(inicio, match.start)));
-      spans.add(
-        WidgetSpan(
-          alignment: PlaceholderAlignment.middle,
-          child: Icon(
-            match.group(0) == '🟥' ? Icons.square : Icons.arrow_drop_down,
-            color: Colors.redAccent,
-            size: 26,
+    final inclosos = <int>{};
+    var pos = 0;
+    for (final m in patron.allMatches(texto)) {
+      final t = tipus(m.group(0)!);
+      if (t == null || inclosos.contains(t)) continue;
+      spans.add(TextSpan(text: texto.substring(pos, m.end)));
+      spans.add(WidgetSpan(
+        alignment: PlaceholderAlignment.middle,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 4),
+          child: SizedBox(
+            height: 23,
+            width: 25,
+            child: CustomPaint(painter: _PictogramaGeneralPainter(t)),
           ),
         ),
-      );
-      inicio = match.end;
+      ));
+      inclosos.add(t);
+      pos = m.end;
     }
-    spans.add(TextSpan(text: texto.substring(inicio)));
+    spans.add(TextSpan(text: texto.substring(pos)));
     return Text.rich(
       TextSpan(children: spans),
       textAlign: TextAlign.center,
