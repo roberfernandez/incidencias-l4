@@ -128,20 +128,20 @@ void main() {
     await t.pumpAndSettle();
   }
 
-  testWidgets('Deu caselles compactes i carrusel lila ample al final', (
+  testWidgets('Nou caselles 3x3 i carrusel lila ample al final', (
     t,
   ) async {
     await size(t, const Size(390, 844));
     await home(t);
     final cards = find.byType(BotonTriajeCompacto);
-    expect(cards, findsNWidgets(10));
+    expect(cards, findsNWidgets(9));
     final colors = <Color>{};
     for (final card in cards.evaluate()) {
       final widget = card.widget as BotonTriajeCompacto;
       colors.add(widget.colorFondo);
-      expect(t.getSize(find.byWidget(widget)), const Size(174, 115));
+      expect(t.getSize(find.byWidget(widget)), const Size(112.66666666666667, 115));
     }
-    expect(colors.length, 10);
+    expect(colors.length, 9);
     expect(find.byType(BotonTriajePrincipal), findsNWidgets(2));
     final carousel = find.byType(BotonCarruselTrenes);
     expect(carousel, findsOneWidget);
@@ -158,10 +158,9 @@ void main() {
     await t.pumpAndSettle();
     expect(find.byKey(const ValueKey('ios-ddU-entry-s9000')), findsOneWidget);
     final entries = {
-      'MODES DE CONDUCCIÓ\n(especial / socors)': 'MODES DE CONDUCCIÓ',
-      'OPERATIVA BÀSICA\n(P.A. / reset / desconnexió)': 'OPERATIVA BÀSICA',
+      'MODES DE CONDUCCIÓ': 'MANUAL +25 (M+25)',
+      'CONNEXIÓ / DESCONNEXIÓ': 'POSADA EN MARXA (P.A.)',
       'TÈRMICS': 'MA',
-      'PICTOGRAMES': 'Pictogrames S9000',
       'CARRUSEL DE TRENS': 'CARRUSEL DE TRENS',
       'EQUIPS I SERVEIS': 'Esquema equips',
       'PORTES': 'Una porta no tanca',
@@ -174,7 +173,6 @@ void main() {
       await press(t, entry.key);
       expect(find.byType(TriajeS9000Screen).hitTestable(), findsNothing);
       if (entry.value != null &&
-          entry.key != 'PICTOGRAMES' &&
           entry.key != 'CARRUSEL DE TRENS') {
         expect(find.text(entry.value!), findsOneWidget);
       }
