@@ -2690,7 +2690,8 @@ class _DiagnosticoInteractivoScreenState
     for (final m in patron.allMatches(texto)) {
       final t = tipus(m.group(0)!);
       if (t == null || inclosos.contains(t)) continue;
-      spans.add(TextSpan(text: texto.substring(pos, m.end)));
+      final anticSimbol = const ['🟥', '🔴', '🔻', '▼'].contains(m.group(0));
+      spans.add(TextSpan(text: texto.substring(pos, anticSimbol ? m.start : m.end)));
       spans.add(WidgetSpan(
         alignment: PlaceholderAlignment.middle,
         child: Padding(
