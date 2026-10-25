@@ -192,7 +192,8 @@ void main() {
     expect(
       find.byWidgetPredicate((widget) =>
           widget is Text &&
-          (widget.textSpan?.toPlainText() ?? widget.data ?? '')
+          (widget.textSpan?.toPlainText(includePlaceholders: false) ??
+                  widget.data ?? '')
               .contains('Actua sobre 1F09 i 1F11')),
       findsOneWidget,
     );
