@@ -109,7 +109,13 @@ void main() {
   }
 
   Future<void> press(WidgetTester t, String text) async {
-    final f = find.text(text);
+    final compactMatch = find.descendant(
+      of: find.byType(BotonTriajeCompacto),
+      matching: find.text(text),
+    );
+    final f = compactMatch.evaluate().isNotEmpty
+        ? compactMatch
+        : find.text(text);
     await t.ensureVisible(f);
     await t.pumpAndSettle();
     await t.tap(f);
