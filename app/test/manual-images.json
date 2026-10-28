@@ -562,5 +562,19 @@
     "kind": "fotografía aportada, sin modificación",
     "source": "Display 12 real aportado por el usuario",
     "sha256": "1002761bab064f7ce1ea807f9c046835dbacdb74efab2113cadf587ca3fdc53a"
+  },
+  {
+    "path": "manual/s2100/compartits/termics-r-armari.jpg",
+    "page": null,
+    "kind": "fotografía original aportada, sin modificación",
+    "sha256": "808c468abd6f401b0b5cc0e9ae141ce82c4692a0fc6f0590a53111740954e179",
+    "bytes": 182852
+  },
+  {
+    "path": "manual/s2100/compartits/termics-r-llegenda.jpg",
+    "page": null,
+    "kind": "fotografía original aportada, sin modificación",
+    "sha256": "418adf6c83e18143ad2e3eeb8b4d5605fba4e6cab0860ce32ae552f9f6ac3ae1",
+    "bytes": 195082
   }
 ]
