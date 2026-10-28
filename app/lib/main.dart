@@ -1057,11 +1057,8 @@ class _TriajeS2100ScreenState extends State<TriajeS2100Screen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (_) => PantallaImagenCompleta(
+                            builder: (_) => TermicsS2100Screen(
                               volverInicio: _volverInicio,
-                              imagenPath:
-                                  'manual/s2100/compartits/termics-existents.jpg',
-                              titol: 'TÈRMICS · COTXES MA',
                             ),
                           ),
                         );
@@ -3253,6 +3250,67 @@ class VisorImagenDiagnostico extends StatelessWidget {
           ),
         );
       },
+    );
+  }
+}
+
+class TermicsS2100Screen extends StatelessWidget {
+  final VoidCallback? volverInicio;
+
+  const TermicsS2100Screen({super.key, this.volverInicio});
+
+  static const maPath = 'manual/s2100/compartits/termics-existents.jpg';
+  static const armariPath = 'manual/s2100/compartits/termics-r-armari.jpg';
+  static const llegendaPath = 'manual/s2100/compartits/termics-r-llegenda.jpg';
+
+  Widget _foto(String titol, String path) => Padding(
+    padding: const EdgeInsets.only(bottom: 24),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Text(titol, style: const TextStyle(fontWeight: FontWeight.bold)),
+        const SizedBox(height: 8),
+        ImatgeManualProtegida(path: path),
+      ],
+    ),
+  );
+
+  @override
+  Widget build(BuildContext context) {
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('TÈRMICS · S2100'),
+          actions: [
+            if (volverInicio != null)
+              BotonHomeDiagnostico(onPressed: volverInicio!),
+          ],
+          bottom: const TabBar(
+            tabs: [
+              Tab(text: 'MA (cabina)'),
+              Tab(text: 'R (remolque)'),
+              Tab(text: 'MB'),
+            ],
+          ),
+        ),
+        body: TabBarView(
+          children: [
+            ListView(
+              padding: const EdgeInsets.all(16),
+              children: [_foto('COTXES MA', maPath)],
+            ),
+            ListView(
+              padding: const EdgeInsets.all(16),
+              children: [
+                _foto('REMOLC R · ARMARI', armariPath),
+                _foto('REMOLC R · LLEGENDA', llegendaPath),
+              ],
+            ),
+            const Center(child: Text('Fotografies pendents')),
+          ],
+        ),
+      ),
     );
   }
 }
