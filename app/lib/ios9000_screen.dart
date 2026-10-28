@@ -110,7 +110,7 @@ class _Ios9000ScreenState extends State<Ios9000Screen> {
                   style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 17)),
                 const SizedBox(height: 8),
                 if (selected.desti == null)
-                  const Text('Sense procediment específic establert. Comunicar-ho al CCM.')
+                  const Text('Sense resolució específica establerta. Comunicar-ho al CCM.')
                 else ...[
                   if (selected.relacionat)
                     const Text('Procediment general relacionat: comprova que correspongui a la incidència.',
