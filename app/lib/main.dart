@@ -1061,6 +1061,7 @@ class _TriajeS2100ScreenState extends State<TriajeS2100Screen> {
                               volverInicio: _volverInicio,
                               imagenPath:
                                   'manual/s2100/compartits/termics-existents.jpg',
+                              titol: 'TÈRMICS · COTXES MA',
                             ),
                           ),
                         );
@@ -3259,11 +3260,13 @@ class VisorImagenDiagnostico extends StatelessWidget {
 class PantallaImagenCompleta extends StatefulWidget {
   final VoidCallback? volverInicio;
   final String imagenPath;
+  final String titol;
 
   const PantallaImagenCompleta({
     super.key,
     this.volverInicio,
     required this.imagenPath,
+    this.titol = 'Imatge',
   });
 
   @override
@@ -3285,7 +3288,7 @@ class _PantallaImagenCompletaState extends State<PantallaImagenCompleta> {
       backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: const Text('Imatge'),
+        title: Text(widget.titol),
         actions: [
           if (widget.volverInicio != null)
             BotonHomeDiagnostico(onPressed: widget.volverInicio!),
