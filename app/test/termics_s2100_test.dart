@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:l4_incidencias/main.dart';
 import 'package:l4_incidencias/imatge_manual_protegida.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 void main() {
+  TestWidgetsFlutterBinding.ensureInitialized();
   setUpAll(() async {
+    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+        .setMockMethodCallHandler(
+          const MethodChannel('plugins.flutter.io/shared_preferences'),
+          (call) async => call.method == 'getAll' ? <String, Object>{} : true,
+        );
     await Supabase.initialize(
       url: 'https://example.supabase.co',
       publishableKey: 'build-only-placeholder',
