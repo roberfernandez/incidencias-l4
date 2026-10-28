@@ -609,14 +609,20 @@ final Map<String, PasoDiagnostico> procedimientosSac2100 = {
   "sac19": PasoDiagnostico(
     id: "sac19",
     preguntaOInstruccion:
-        "SAC 19 / DISPLAY · Identifica tèrmic, cotxe i combinació d’avisos. La combinació sola no substitueix la identificació.\n\nFont: L4 Avaries tècniques, pàg. 37–41.",
+        "SAC 19 · El tren detecta un tèrmic caigut. Consulta el DISPLAY per identificar el cotxe afectat i el tèrmic, si hi consta. Localitza l’armari corresponent i comprova quin tèrmic està caigut. Si no es pot rearmar o torna a disparar-se, no hi insisteixis: comunica-ho al CCM. Els procediments de 1F09 i 1F13 només s’apliquen si s’han identificat aquests tèrmics.\n\nFont: L4 Avaries tècniques, pàg. 37–40.",
     esPregunta: false,
     opcions: [
       OpcioSac("1F09 identificat · 19 + 13", "sac19_09"),
       OpcioSac("1F13 identificat al DISPLAY", "sac19_13"),
-      OpcioSac("Tèrmic compressor · SAC 20", "sac20"),
+      OpcioSac("Un altre tèrmic identificat", "sac19_altre"),
       OpcioSac("No identificat", "sac_pendent"),
     ],
+  ),
+  "sac19_altre": PasoDiagnostico(
+    id: "sac19_altre",
+    preguntaOInstruccion:
+        "Comunica al CCM el cotxe i la referència del tèrmic identificat al DISPLAY o a l'armari. No apliquis els procediments de 1F09, 1F13 ni de compressor a un tèrmic diferent. Si no es manté rearmat, no hi insisteixis. Consulta la identificació dels armaris a TÈRMICS de la pantalla inicial.",
+    esPregunta: false,
   ),
   "sac19_09": PasoDiagnostico(
     id: "sac19_09",
