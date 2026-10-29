@@ -448,5 +448,39 @@ Map<String, PasoDiagnostico> ajustarOperativaSac2100(
       separarTextoTrenStop: p.separarTextoTrenStop,
     );
   }
+
+  // Preserve the selected car throughout the single-car parking-brake route.
+  // Explicit graph edges keep Back navigation and new incidents independent.
+  for (final c in cotxes2100) {
+    final b19 = 'pregunta_b19_es_ma_$c';
+    final b17 = 'pregunta_b17_es_ma_$c';
+    final confirm = 'pregunta_confirma_b19_$c';
+    PasoDiagnostico contextual(PasoDiagnostico p, String id,
+        String Function(String) route) => PasoDiagnostico(
+      id: id,
+      preguntaOInstruccion: p.preguntaOInstruccion.startsWith('Cotxe:')
+          ? p.preguntaOInstruccion : 'Cotxe: $c\n\n${p.preguntaOInstruccion}',
+      esPregunta: p.esPregunta,
+      botonSiDestino: p.botonSiDestino == null ? null : route(p.botonSiDestino!),
+      botonNoDestino: p.botonNoDestino == null ? null : route(p.botonNoDestino!),
+      opcions: [for (final o in p.opcions) OpcioSac(o.text, route(o.desti))],
+      advertencia: p.advertencia,
+      imagenPath: p.imagenPath,
+      imatgesManual: p.imatgesManual,
+      causaDescartadaAlSi: p.causaDescartadaAlSi,
+      causaDescartadaAlNo: p.causaDescartadaAlNo,
+      separarTextoTrenStop: p.separarTextoTrenStop,
+    );
+    final pressure = 'sac13_un_pressio_$c';
+    final cab = 'sac13_un_cabina_$c';
+    n[pressure] = contextual(n[pressure]!, pressure,
+        (id) => id == 'sac13_un_cabina' ? cab : id);
+    n[cab] = contextual(n['sac13_un_cabina']!, cab,
+        (id) => id == 'pregunta_b19_es_ma' ? b19 : id);
+    n[b19] = contextual(n[b19]!, b19,
+        (id) => id == 'pregunta_confirma_b19' ? confirm : id);
+    n[confirm] = contextual(n['pregunta_confirma_b19']!, confirm,
+        (id) => id == 'pregunta_b17_es_ma' ? b17 : id);
+  }
   return n;
 }

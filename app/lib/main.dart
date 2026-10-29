@@ -2960,7 +2960,8 @@ class _DiagnosticoInteractivoScreenState
                                       imagenPath: paso.imagenPath!,
                                       volverInicio: widget.volverInicio,
                                     ),
-                                  if (paso.id == 'procedimiento_b19_ma') ...[
+                                  if (paso.imagenPath ==
+                                      'manual/s2100/sac_13/b19-coches-a.jpg') ...[
                                     const SizedBox(height: 16),
                                     const Text(
                                       'Diagrama de l’armari pneumàtic · MA1 / MA2',
