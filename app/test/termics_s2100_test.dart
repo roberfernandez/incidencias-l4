@@ -40,8 +40,13 @@ void main() {
 
     await tester.tap(find.text('MB'));
     await tester.pumpAndSettle();
-    expect(find.text('Fotografies pendents'), findsOneWidget);
-    expect(find.byType(ImatgeManualProtegida), findsNothing);
+    expect(tester.widgetList<ImatgeManualProtegida>(find.byType(ImatgeManualProtegida))
+      .map((image) => image.path), [
+        TermicsS2100Screen.mbArmariPath,
+        TermicsS2100Screen.mbLlegendaPath,
+      ]);
+    expect(find.text('REMOLC R · ARMARI'), findsNothing);
+    expect(find.text('Fotografies pendents'), findsNothing);
     await tester.pumpWidget(const SizedBox());
   });
 }
