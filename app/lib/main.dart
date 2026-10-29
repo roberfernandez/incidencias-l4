@@ -2960,6 +2960,16 @@ class _DiagnosticoInteractivoScreenState
                                       imagenPath: paso.imagenPath!,
                                       volverInicio: widget.volverInicio,
                                     ),
+                                  if (paso.id == 'procedimiento_b19_ma') ...[
+                                    const SizedBox(height: 16),
+                                    const Text(
+                                      'Diagrama de l’armari pneumàtic · MA1 / MA2',
+                                      style: TextStyle(fontWeight: FontWeight.bold),
+                                    ),
+                                    const ImatgeManualProtegida(
+                                      path: 'manual/s2100/sac_13/b19-ma-diagrama.png',
+                                    ),
+                                  ],
                                   _construirTextoFormateado(
                                     identical(widget.pasos, ramaNoDesfrenaS2100)
                                         ? textOperatiu2100(
