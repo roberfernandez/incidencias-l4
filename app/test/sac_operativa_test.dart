@@ -122,8 +122,8 @@ void main() {
     expect(
       reach('sac13_un_pressio'),
       containsAll([
-        'pregunta_b19_es_ma',
-        'pregunta_b17_es_ma',
+        for (final c in cotxes2100) 'pregunta_b19_es_ma_$c',
+        for (final c in cotxes2100) 'pregunta_b17_es_ma_$c',
         'procedimiento_sirgas_accion',
       ]),
     );
