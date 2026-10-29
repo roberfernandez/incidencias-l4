@@ -1,0 +1,35 @@
+{
+  "bucket": "manual-incidencies-private",
+  "images": [
+    {
+      "path": "manual/s2100/compartits/termics-mb-armari.jpg",
+      "page": null,
+      "kind": "fotografía original aportada, sin modificación",
+      "sha256": "e5153cb4f2a4968cef8730701c9a7ced20be7163ef8b680ef5f3db9e54644d39",
+      "bytes": 179018
+    },
+    {
+      "path": "manual/s2100/compartits/termics-mb-llegenda.jpg",
+      "page": null,
+      "kind": "fotografía original aportada, sin modificación",
+      "sha256": "6f971ee17f39f02152aa04723a4652726d9619723860c9a05161286951eaf440",
+      "bytes": 247778
+    }
+  ],
+  "status": "uploaded_private_sha256_verified",
+  "verification": [
+    {
+      "path": "manual/s2100/compartits/termics-mb-armari.jpg",
+      "bytes": 179018,
+      "sha256": "e5153cb4f2a4968cef8730701c9a7ced20be7163ef8b680ef5f3db9e54644d39",
+      "private": true
+    },
+    {
+      "path": "manual/s2100/compartits/termics-mb-llegenda.jpg",
+      "bytes": 247778,
+      "sha256": "6f971ee17f39f02152aa04723a4652726d9619723860c9a05161286951eaf440",
+      "private": true
+    }
+  ],
+  "temporary_upload": "disabled"
+}

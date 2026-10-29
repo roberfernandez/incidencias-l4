@@ -576,5 +576,19 @@
     "kind": "fotografía original aportada, sin modificación",
     "sha256": "418adf6c83e18143ad2e3eeb8b4d5605fba4e6cab0860ce32ae552f9f6ac3ae1",
     "bytes": 195082
+  },
+  {
+    "path": "manual/s2100/compartits/termics-mb-armari.jpg",
+    "page": null,
+    "kind": "fotografía original aportada, sin modificación",
+    "sha256": "e5153cb4f2a4968cef8730701c9a7ced20be7163ef8b680ef5f3db9e54644d39",
+    "bytes": 179018
+  },
+  {
+    "path": "manual/s2100/compartits/termics-mb-llegenda.jpg",
+    "page": null,
+    "kind": "fotografía original aportada, sin modificación",
+    "sha256": "6f971ee17f39f02152aa04723a4652726d9619723860c9a05161286951eaf440",
+    "bytes": 247778
   }
 ]

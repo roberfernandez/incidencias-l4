@@ -3262,6 +3262,8 @@ class TermicsS2100Screen extends StatelessWidget {
   static const maPath = 'manual/s2100/compartits/termics-existents.jpg';
   static const armariPath = 'manual/s2100/compartits/termics-r-armari.jpg';
   static const llegendaPath = 'manual/s2100/compartits/termics-r-llegenda.jpg';
+  static const mbArmariPath = 'manual/s2100/compartits/termics-mb-armari.jpg';
+  static const mbLlegendaPath = 'manual/s2100/compartits/termics-mb-llegenda.jpg';
 
   Widget _foto(String titol, String path) => Padding(
     padding: const EdgeInsets.only(bottom: 24),
@@ -3307,7 +3309,13 @@ class TermicsS2100Screen extends StatelessWidget {
                 _foto('REMOLC R · LLEGENDA', llegendaPath),
               ],
             ),
-            const Center(child: Text('Fotografies pendents')),
+            ListView(
+              padding: const EdgeInsets.all(16),
+              children: [
+                _foto('COTXES MB · ARMARI', mbArmariPath),
+                _foto('COTXES MB · LLEGENDA', mbLlegendaPath),
+              ],
+            ),
           ],
         ),
       ),
