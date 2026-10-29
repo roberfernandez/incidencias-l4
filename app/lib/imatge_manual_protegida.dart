@@ -86,8 +86,12 @@ class _ImatgeManualProtegidaState extends State<ImatgeManualProtegida>
     ]);
     if(bytes == null) return const Center(child: Padding(
       padding: EdgeInsets.all(16), child: CircularProgressIndicator()));
-    final image = Image.memory(bytes!, fit: BoxFit.contain,
-      errorBuilder: (_, __, ___) => const Text('No es pot mostrar la imatge.'));
+    // The original MB legend is sideways: orient it for reading in both views.
+    final image = RotatedBox(
+      quarterTurns: widget.path == 'manual/s2100/compartits/termics-mb-llegenda.jpg' ? 3 : 0,
+      child: Image.memory(bytes!, fit: BoxFit.contain,
+        errorBuilder: (_, __, ___) => const Text('No es pot mostrar la imatge.')),
+    );
     if(widget.fullScreen) return InteractiveViewer(minScale: 1,maxScale: 6,
       child: Center(child: image));
     return Column(mainAxisSize: MainAxisSize.min, children: [
